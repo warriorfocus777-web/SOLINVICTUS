@@ -1,117 +1,1420 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Sol Invictus</title>
-  <meta name="description" content="Sol Invictus — coming soon.">
-  <meta name="theme-color" content="#0b0906">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='14' fill='%23f2b33d'/%3E%3Cg stroke='%23f2b33d' stroke-width='4' stroke-linecap='round'%3E%3Cpath d='M32 4v8M32 52v8M4 32h8M52 32h8M12 12l6 6M46 46l6 6M12 52l6-6M46 18l6-6'/%3E%3C/g%3E%3C/svg%3E">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg: #0b0906;
-      --ink: #f4ead8;
-      --muted: #a8998088;
-      --sun: #f2b33d;
-      --ember: #e0672b;
-    }
-    * { box-sizing: border-box; margin: 0; }
-    html, body { height: 100%; }
-    body {
-      background: var(--bg);
-      color: var(--ink);
-      font-family: Inter, system-ui, sans-serif;
-      display: grid;
-      place-items: center;
-      overflow: hidden;
-      padding: 24px 16px;
-    }
-    .glow {
-      position: fixed;
-      inset: 0;
-      background:
-        radial-gradient(circle at 50% 42%, rgba(242,179,61,.22), transparent 38%),
-        radial-gradient(circle at 50% 120%, rgba(224,103,43,.18), transparent 55%);
-      pointer-events: none;
-    }
-    main { position: relative; text-align: center; max-width: 640px; }
-    .sun {
-      width: 132px; height: 132px; margin: 0 auto 40px;
-      animation: spin 60s linear infinite;
-    }
-    @keyframes spin { to { transform: rotate(360deg); } }
-    @media (prefers-reduced-motion: reduce) { .sun { animation: none; } }
-    h1 {
-      font-family: Cinzel, serif;
-      font-weight: 700;
-      font-size: clamp(2.6rem, 9vw, 5rem);
-      letter-spacing: .14em;
-      line-height: 1;
-      background: linear-gradient(180deg, #fff3d6 10%, var(--sun) 60%, var(--ember));
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-    .tag {
-      margin-top: 18px;
-      font-family: Cinzel, serif;
-      font-size: clamp(.8rem, 2.4vw, 1rem);
-      letter-spacing: .4em;
-      color: var(--sun);
-      opacity: .8;
-    }
-    p.lead {
-      margin-top: 36px;
-      font-size: 1.05rem;
-      line-height: 1.6;
-      color: #d8ccb6;
-    }
-    .soon {
-      display: inline-block;
-      margin-top: 32px;
-      padding: 10px 22px;
-      border: 1px solid rgba(242,179,61,.45);
-      border-radius: 999px;
-      font-size: .8rem;
-      letter-spacing: .25em;
-      text-transform: uppercase;
-      color: var(--sun);
-    }
-    footer {
-      position: fixed; bottom: 18px; left: 0; right: 0;
-      text-align: center; font-size: .75rem; color: #7d705c;
-      letter-spacing: .1em;
-    }
-  </style>
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SOL — Seekers of Light · Solar Alchemy for the modern soul</title>
+<meta name="description" content="The way forward is full conscious awakening: facing every hidden or rejected part of oneself with clear awareness and restoring inner harmony. Four stages, four traditions, one Great Work.">
+<meta name="theme-color" content="#000000">
+<meta property="og:type" content="website">
+<meta property="og:title" content="SOL — Seekers of Light">
+<meta property="og:description" content="Become sun-like. Solar Alchemy: the Shadow, the four stages of the Great Work, and the daily practice of awakening.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23000'/%3E%3Ccircle cx='16' cy='16' r='10' fill='none' stroke='%23ffd65c' stroke-width='2'/%3E%3Ccircle cx='16' cy='16' r='3' fill='%23ffd65c'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<style>/* cyrillic-ext */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/ab46e053.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/9c573226.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/67736687.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/b6160b94.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/d6787a4e.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/ab46e053.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/9c573226.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/67736687.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/b6160b94.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/d6787a4e.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/fonts/ab46e053.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/fonts/9c573226.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/fonts/67736687.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/fonts/b6160b94.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/fonts/d6787a4e.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/1078dff4.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/ff3b9378.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/c418f075.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/5c86cd14.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/1078dff4.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/ff3b9378.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/c418f075.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/5c86cd14.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/a8f7aa72.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/a2462c01.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/289a7b25.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/5d530513.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/a8f7aa72.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/a2462c01.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/289a7b25.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/5d530513.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+
+
+
+
+
+
+
+
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"WebSite","name":"SOL — Seekers of Light","description":"Solar Alchemy for the modern soul."},
+{"@type":"ItemList","name":"The SOL Library","itemListElement":[
+{"@type":"Book","name":"In Search of the Miraculous","author":"P. D. Ouspensky"},
+{"@type":"Book","name":"Anatomy of the Psyche","author":"Edward F. Edinger"},
+{"@type":"Book","name":"The Book of Five Rings","author":"Miyamoto Musashi"},
+{"@type":"Book","name":"The Secret Teachings of All Ages","author":"Manly P. Hall"},
+{"@type":"Book","name":"Views from the Real World","author":"G. I. Gurdjieff"},
+{"@type":"Book","name":"The Tibetan Book of the Dead","editor":"W. Y. Evans-Wentz"},
+{"@type":"Book","name":"The Enneads","author":"Plotinus"},
+{"@type":"Book","name":"The Nag Hammadi Scriptures","editor":"Marvin Meyer"},
+{"@type":"Book","name":"Psychology and Alchemy","author":"C. G. Jung"},
+{"@type":"Book","name":"Mysterium Coniunctionis","author":"C. G. Jung"},
+{"@type":"Book","name":"A Dictionary of Alchemical Imagery","author":"Lyndy Abraham"}]}]}
+</script>
+<style>
+:root{
+  --ground:#000;--ink:#e8e2d4;--body:#c4bba8;--dim:#8a847a;
+  --gold:#ffd65c;--gold-mid:#e8b040;--gold-deep:#a6621c;
+  --line:rgba(232,226,212,.12);--line-gold:rgba(231,184,64,.28);
+  --glass:rgba(18,7,5,.62);
+  --serif:'Playfair Display',Georgia,serif;--sans:Montserrat,system-ui,sans-serif;
+  --pad:clamp(20px,4vw,64px);--max:1240px;--ease:cubic-bezier(.2,.7,.2,1);
+  --atlas:none;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--ground);color:var(--ink);font:400 16px/1.65 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:var(--gold);text-decoration:none}
+a:hover{color:#fff1c2}
+::selection{background:rgba(255,214,92,.3);color:#fff}
+:focus-visible{outline:1px solid var(--gold);outline-offset:3px}
+img{display:block;max-width:100%}
+p{margin:0;text-wrap:pretty}
+h1,h2,h3{margin:0;font-weight:500;text-wrap:balance}
+button{font:inherit}
+#field{position:fixed;inset:0;width:100%;height:100%;display:block;z-index:0}
+main,footer{position:relative;z-index:1}
+.rails{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:15}
+
+.eyebrow{font:500 11px/1.2 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--dim);display:flex;gap:14px;align-items:center}
+.eyebrow b{font-weight:500;color:var(--gold-mid)}
+.eyebrow::before{content:"";width:28px;height:1px;background:var(--line-gold)}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+.sec{padding:clamp(96px,14vh,168px) 0;position:relative}
+.h2{font:500 clamp(38px,5.2vw,68px)/1.04 var(--serif);letter-spacing:-.02em;margin:22px 0 0}
+.h2 em{font-style:italic;font-weight:400;color:var(--gold)}
+.lede{font-size:17px;color:var(--body);max-width:56ch;margin-top:22px}
+.shadowtype{text-shadow:0 2px 14px rgba(0,0,0,.85)}
+cite{font-style:normal}
+
+dfn{font-style:inherit;border-bottom:1px dotted rgba(231,184,64,.55);cursor:help;transition:color .2s}
+dfn:hover,dfn:focus-visible{color:var(--gold);outline:none}
+.gloss{position:fixed;z-index:40;max-width:300px;padding:16px 18px;background:rgba(18,7,5,.9);-webkit-backdrop-filter:blur(16px) saturate(1.5);backdrop-filter:blur(16px) saturate(1.5);border-radius:14px;box-shadow:inset 0 1px 0 rgba(232,226,212,.06),0 8px 32px rgba(0,0,0,.5);pointer-events:none;opacity:0;transform:translateY(6px);transition:opacity .25s,transform .25s var(--ease)}
+.gloss.show{opacity:1;transform:none}
+.gloss b{display:block;font:italic 400 18px/1.2 var(--serif);color:var(--gold);margin-bottom:6px}
+.gloss span{display:block;font-size:13.5px;line-height:1.55;color:var(--body)}
+
+.btn{white-space:nowrap;display:inline-flex;align-items:center;gap:12px;height:52px;padding:0 26px;border-radius:999px;font:600 11.5px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;transition:background .3s var(--ease),color .3s,border-color .3s,transform .3s var(--ease);cursor:pointer;border:0}
+.btn-gold{background:var(--gold);color:#120705}
+.btn-gold:hover{background:#ffe48f;color:#120705;transform:translateY(-1px)}
+.btn-line{border:1px solid rgba(232,226,212,.28);color:var(--ink);background:transparent}
+.btn-line:hover{border-color:var(--gold);color:var(--gold)}
+.btn-sm{height:38px;padding:0 16px;font-size:10.5px}
+.btn .arr{display:inline-block;transition:transform .3s var(--ease)}
+.btn:hover .arr{transform:translateX(4px)}
+
+.nav{position:fixed;inset:0 0 auto;z-index:20;transition:background .4s,border-color .4s;border-bottom:1px solid transparent}
+.nav.solid{background:rgba(0,0,0,.6);-webkit-backdrop-filter:blur(14px) saturate(1.4);backdrop-filter:blur(14px) saturate(1.4);border-color:var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:76px;gap:24px}
+.brand{display:flex;align-items:center;gap:12px;color:var(--ink);font:500 15px/1 var(--serif);letter-spacing:.32em}
+.brand:hover{color:var(--ink)}
+.mark{width:15px;height:15px;border:1.3px solid var(--gold);border-radius:50%;display:grid;place-items:center;flex:none}
+.mark::after{content:"";width:4px;height:4px;border-radius:50%;background:var(--gold)}
+.brand small{font:500 10px/1 var(--sans);letter-spacing:.22em;color:var(--dim);text-transform:uppercase;margin-left:6px}
+.links{display:flex;gap:26px;align-items:center}
+.links a{white-space:nowrap;font:500 11px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--body)}
+.links a:hover{color:var(--gold)}
+.links .btn{height:40px;padding:0 18px}
+.phase{display:flex;gap:10px;align-items:center;font:500 10.5px/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--gold-mid);white-space:nowrap;padding-right:6px;border-right:1px solid var(--line);margin-right:-4px;padding:6px 18px 6px 0}
+.phase i{width:5px;height:5px;border-radius:50%;background:currentColor;box-shadow:0 0 0 3px rgba(255,214,92,.12)}
+@media (max-width:1240px){.links a:not(.btn){display:none}.brand small{display:none}}
+@media (max-width:560px){.phase{display:none}}
+
+.hero{position:relative;min-height:100svh;display:flex;align-items:center}
+.hero .wrap{width:100%}
+.hero-copy{max-width:560px;padding:120px 0 170px}
+.hero h1{font:500 clamp(58px,8.6vw,124px)/.95 var(--serif);letter-spacing:-.035em;margin:26px 0 0}
+.hero h1 em{font-style:italic;font-weight:400;color:var(--gold)}
+.hero .lede{font-size:17.5px;max-width:44ch;margin-top:28px}
+.cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:40px}
+.hero-foot{position:absolute;left:0;right:0;bottom:5vh}
+.hero-foot .wrap{display:flex;justify-content:space-between;align-items:flex-end;gap:24px}
+.hero-quote{font:italic 400 15px/1.5 var(--serif);color:var(--body);max-width:44ch}
+.hero-quote cite{display:block;font:500 10.5px/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--dim);margin-top:10px}
+.scroll{font:500 10.5px/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--dim);display:flex;gap:12px;align-items:center}
+.scroll::after{content:"";width:1px;height:40px;background:linear-gradient(var(--gold-mid),transparent)}
+@media (max-width:820px){.hero{align-items:flex-end}.hero-copy{padding:56vh 0 150px}.scroll{display:none}}
+
+.premise .grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:clamp(40px,7vw,120px);align-items:end;margin-top:56px}
+.premise blockquote{margin:0;font:400 clamp(30px,3.6vw,50px)/1.18 var(--serif);letter-spacing:-.015em}
+.premise blockquote em{color:var(--gold);font-style:italic}
+.stanzas{display:grid;border-top:1px solid var(--line)}
+.stanza{display:grid;grid-template-columns:44px minmax(0,1fr);gap:16px;padding:22px 0;border-bottom:1px solid var(--line)}
+.stanza .n{font:italic 400 18px/1.4 var(--serif);color:var(--gold-mid)}
+.stanza h3{font:600 11.5px/1.4 var(--sans);letter-spacing:.2em;text-transform:uppercase;margin-bottom:6px}
+.stanza p{font-size:15px;color:var(--body)}
+.mirror{margin-top:96px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(32px,6vw,96px);align-items:start}
+.mirror h3{font:500 clamp(28px,3vw,38px)/1.12 var(--serif);letter-spacing:-.015em}
+.mirror h3 em{color:var(--gold);font-weight:400}
+.mirror .hint{margin-top:14px;color:var(--body);font-size:15px;max-width:42ch}
+.mirror-out{margin-top:22px;min-height:120px}
+.mirror-out .trait{font:italic 400 clamp(34px,4vw,52px)/1.1 var(--serif);color:var(--gold);letter-spacing:-.015em}
+.mirror-out p{margin-top:14px;color:var(--body);font-size:15.5px;max-width:48ch}
+@media (max-width:900px){.premise .grid,.mirror{grid-template-columns:1fr}}
+
+.form{display:flex;gap:10px;width:min(520px,100%);padding:6px;border:1px solid rgba(232,226,212,.22);border-radius:999px;background:var(--glass);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);transition:border-color .3s}
+.form input{flex:1;min-width:0;background:transparent;border:0;color:var(--ink);font:400 15px var(--sans);padding:0 18px;outline:none}
+.form input::placeholder{color:var(--dim)}
+.form:focus-within{border-color:var(--gold-mid)}
+.form .btn{height:46px}
+@media (max-width:520px){.form{flex-direction:column;border-radius:18px}.form input{height:48px}.form .btn{justify-content:center}}
+
+.panels{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));margin-top:64px;border-top:1px solid var(--line)}
+.panel{padding:28px 22px 32px 0;border-right:1px solid var(--line);display:grid;gap:14px;align-content:start}
+.panel+.panel{padding-left:22px}
+.panel:last-child{border-right:0}
+.panel .rn{font:italic 400 15px/1 var(--serif);color:var(--gold-mid)}
+.panel .lux{height:1px;width:100%;background:linear-gradient(90deg,var(--gold) var(--l),rgba(232,226,212,.1) var(--l))}
+.panel h3{font:500 26px/1.1 var(--serif);letter-spacing:-.01em}
+.panel p{font-size:14.5px;color:var(--body)}
+.gt{margin-top:64px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:32px;align-items:end}
+.gt blockquote{margin:0;font:400 clamp(24px,2.8vw,36px)/1.25 var(--serif);letter-spacing:-.01em;max-width:34ch}
+.gt cite{display:block;margin-top:16px;font:500 10px/1.4 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--dim)}
+@media (max-width:1000px){.panels{grid-template-columns:1fr}.panel,.panel+.panel{padding:24px 0;border-right:0;border-bottom:1px solid var(--line)}.gt{grid-template-columns:1fr}}
+
+.opus-index{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:64px;border-top:1px solid var(--line)}
+.opus-index a{display:block;padding:24px 22px 26px 0;border-right:1px solid var(--line);color:var(--ink);transition:background .3s}
+.opus-index a+a{padding-left:22px}
+.opus-index a:last-child{border-right:0}
+.opus-index a:hover{background:rgba(255,214,92,.04);color:var(--ink)}
+.opus-index .rn{font:italic 400 15px/1 var(--serif);color:var(--tone)}
+.opus-index .sw{display:block;height:2px;width:32px;background:var(--tone);margin-top:16px}
+.opus-index .st{font:500 26px/1.1 var(--serif);margin:14px 0 4px;letter-spacing:-.01em}
+.opus-index .tr{font:500 10.5px/1.4 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--dim)}
+.opus-index .fig{font-size:14px;color:var(--body);margin-top:14px}
+@media (max-width:820px){.opus-index{grid-template-columns:repeat(2,minmax(0,1fr))}.opus-index a:nth-child(2){border-right:0}.opus-index a:nth-child(3){padding-left:0}.opus-index a:nth-child(n+3){border-top:1px solid var(--line)}}
+
+.stage{position:relative;height:150svh}
+.stick{position:sticky;top:0;height:100svh;min-height:560px}
+.label{position:absolute;font:500 11px/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--dim);text-shadow:0 1px 8px #000,0 0 2px #000}
+.label b{font-weight:500;color:var(--tone)}
+.tl{top:max(96px,10vh);left:var(--pad)}
+.br{bottom:6vh;right:var(--pad)}
+.card{position:absolute;left:var(--pad);bottom:6vh;max-width:min(420px,calc(100vw - 2*var(--pad)));padding:26px 30px 28px;background:var(--glass);-webkit-backdrop-filter:blur(16px) saturate(1.5);backdrop-filter:blur(16px) saturate(1.5);border-radius:18px;box-shadow:inset 0 1px 0 rgba(232,226,212,.06),0 8px 32px rgba(0,0,0,.35);opacity:0;transform:translateY(30px)}
+.on .card{animation:enter .8s var(--ease) .2s forwards}
+@keyframes enter{to{opacity:1;transform:none}}
+.pill{display:inline-block;font:500 10px/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;padding:7px 12px 6px;border:1px solid rgba(232,226,212,.3);border-radius:999px}
+.card h2{font:500 42px/1.05 var(--serif);letter-spacing:-.02em;margin:18px 0 8px;text-shadow:0 2px 14px rgba(0,0,0,.85)}
+.card .sub{font:italic 400 19px/1.35 var(--serif);margin:0 0 14px;text-shadow:0 2px 12px rgba(0,0,0,.85)}
+.card .sub cite{display:block;font:500 10px/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--dim);margin-top:10px}
+.card .body{font-size:14.5px;line-height:1.6;color:var(--body);max-width:38ch}
+.spec{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:20px;padding-top:16px;border-top:1px solid var(--line)}
+.spec span{display:block;font:500 9.5px/1.3 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--dim);margin-bottom:5px}
+.spec b{display:block;font:italic 400 15px/1.25 var(--serif);color:var(--tone)}
+.glnum{display:inline-flex;gap:1px;margin-right:12px;color:var(--tone);vertical-align:-.1em}
+.glnum .gl{width:1.05em;height:1.1em}
+.glnum i{width:.6em}
+@media (max-height:700px){.card .body{display:none}}
+@media (max-width:700px){.card h2{font-size:34px}.card{padding:22px 22px 24px}}
+
+.gl{display:inline-block;width:.82em;height:.95em;vertical-align:-.12em;background:currentColor;-webkit-mask-image:var(--atlas);mask-image:var(--atlas);-webkit-mask-size:1600% 500%;mask-size:1600% 500%;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-position:calc(var(--gx) * 100% / 15) calc(var(--gy) * 100% / 4);mask-position:calc(var(--gx) * 100% / 15) calc(var(--gy) * 100% / 4)}
+.dec .gl{color:var(--gold-mid)}
+
+.paths .cells{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:64px;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:rgba(0,0,0,.5)}
+.path{padding:30px 28px 34px;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:22px;transition:background .4s}
+.path:last-child{border-right:0}
+.path:hover{background:rgba(255,214,92,.035)}
+.path .rn{font:italic 400 15px/1 var(--serif);color:var(--gold-mid)}
+.path h3{font:500 26px/1.1 var(--serif);letter-spacing:-.01em;margin-top:-8px}
+.kv{display:grid;gap:4px}
+.kv span{font:500 10px/1.3 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--dim)}
+.kv p{font-size:15px}
+.path blockquote{margin:auto 0 0;padding-top:20px;border-top:1px solid var(--line);font:italic 400 16px/1.45 var(--serif);color:var(--body)}
+.path blockquote cite,.light blockquote cite{display:block;margin-top:10px;font:500 9.5px/1.4 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--dim)}
+.convergence{margin-top:72px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:40px;align-items:end}
+.convergence p{font:400 clamp(26px,3vw,40px)/1.2 var(--serif);letter-spacing:-.015em;max-width:26ch}
+.convergence p em{color:var(--gold)}
+@media (max-width:1000px){.paths .cells{grid-template-columns:repeat(2,minmax(0,1fr))}.path:nth-child(2){border-right:0}.path:nth-child(n+3){border-top:1px solid var(--line)}}
+@media (max-width:620px){.paths .cells{grid-template-columns:1fr}.path{border-right:0}.path+.path{border-top:1px solid var(--line)}.convergence{grid-template-columns:1fr}}
+
+.quiz-wrap{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(40px,6vw,96px);align-items:start}
+.quiz{background:var(--glass);-webkit-backdrop-filter:blur(16px) saturate(1.5);backdrop-filter:blur(16px) saturate(1.5);border-radius:18px;box-shadow:inset 0 1px 0 rgba(232,226,212,.06),0 8px 32px rgba(0,0,0,.35);padding:clamp(22px,3vw,34px)}
+.q-head{display:flex;justify-content:space-between;align-items:center;gap:16px;font:500 10.5px/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--dim)}
+.q-bar{flex:1;max-width:180px;height:1px;background:var(--line);position:relative}
+.q-bar i{position:absolute;left:0;top:0;bottom:0;background:var(--gold);transition:width .5s var(--ease)}
+.q-title{font:500 clamp(24px,2.4vw,30px)/1.2 var(--serif);letter-spacing:-.01em;margin:24px 0}
+.q-opts{display:grid;gap:10px}
+.q-opt{text-align:left;display:grid;grid-template-columns:24px minmax(0,1fr);gap:12px;align-items:baseline;padding:15px 18px;border:1px solid var(--line);border-radius:12px;background:transparent;color:var(--ink);font:400 15px/1.45 var(--sans);cursor:pointer;transition:border-color .25s,background .25s}
+.q-opt:hover{border-color:var(--line-gold);background:rgba(255,214,92,.05)}
+.q-opt span{font:italic 400 16px/1 var(--serif);color:var(--gold-mid)}
+.q-res .eyebrow{margin-bottom:18px}
+.q-res h3{font:500 clamp(40px,4.4vw,56px)/1 var(--serif);letter-spacing:-.02em;color:var(--tone,var(--gold))}
+.q-res .who{font:italic 400 19px/1.4 var(--serif);margin-top:10px}
+.q-res p{color:var(--body);margin-top:16px;font-size:15.5px}
+.q-res .rx{margin-top:20px;padding-top:16px;border-top:1px solid var(--line);font-size:14.5px;color:var(--body)}
+.q-res .rx b{display:block;font:500 10px/1.3 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--dim);margin-bottom:6px}
+.q-res .cta{margin-top:26px}
+@media (max-width:900px){.quiz-wrap{grid-template-columns:1fr}}
+
+.lineage .engr{position:absolute;right:-8vw;top:6%;width:min(760px,70vw);opacity:.16;pointer-events:none;mix-blend-mode:screen}
+.lights{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(20px,3vw,40px);margin-top:64px;position:relative}
+.light{display:flex;flex-direction:column}
+.portrait{position:relative;aspect-ratio:4/5;border-radius:18px;overflow:hidden;background:radial-gradient(120% 80% at 50% 30%,rgba(166,98,28,.10),transparent 60%),#030201;border:1px solid var(--line)}
+.portrait canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.light .meta{padding:24px 4px 0;display:grid;gap:10px}
+.light h3{font:500 30px/1.05 var(--serif);letter-spacing:-.015em}
+.light .trad{font:500 10.5px/1.4 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--gold-mid)}
+.light .teach{font-size:15px;color:var(--body)}
+.light blockquote{margin:6px 0 0;font:italic 400 18px/1.45 var(--serif)}
+@media (max-width:900px){.lights{grid-template-columns:1fr;max-width:460px}}
+
+.practice ol{list-style:none;margin:64px 0 0;padding:0;border-top:1px solid var(--line)}
+.practice li{display:grid;grid-template-columns:80px minmax(0,1fr) minmax(0,1.3fr) 190px;gap:32px;padding:34px 0;border-bottom:1px solid var(--line);align-items:baseline;transition:background .3s}
+.practice li:hover{background:linear-gradient(90deg,rgba(255,214,92,.04),transparent 70%)}
+.practice .n{font:italic 400 22px/1 var(--serif);color:var(--gold-mid)}
+.practice h3{font:500 28px/1.1 var(--serif);letter-spacing:-.01em}
+.practice p{font-size:15.5px;color:var(--body)}
+.practice .src{font:500 10px/1.4 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--dim);display:flex;flex-direction:column;align-items:flex-end;gap:14px;text-align:right}
+@media (max-width:900px){.practice li{grid-template-columns:48px minmax(0,1fr);gap:10px 18px}.practice li p,.practice .src{grid-column:2}.practice .src{align-items:flex-start;text-align:left}}
+
+.tabs{display:inline-flex;flex-wrap:wrap;gap:4px;padding:4px;border:1px solid var(--line);border-radius:999px;margin-top:44px;background:rgba(0,0,0,.5)}
+.tab{height:40px;padding:0 20px;border-radius:999px;border:0;background:transparent;color:var(--body);font:600 11px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;cursor:pointer;transition:background .3s,color .3s}
+.tab:hover{color:var(--gold)}
+.tab[aria-selected="true"]{background:var(--gold);color:#120705}
+.track-intro{margin-top:22px;color:var(--body);max-width:62ch;font-size:15.5px}
+.lib{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:36px;border-top:1px solid var(--line);border-left:1px solid var(--line);background:rgba(0,0,0,.5)}
+.book{padding:26px 26px 30px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:10px;transition:background .3s}
+.book:hover{background:rgba(255,214,92,.035)}
+.book .ord{font:italic 400 30px/1 var(--serif);color:var(--gold-mid)}
+.book .tag{font:500 9.5px/1.3 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--dim)}
+.book h3{font:italic 400 22px/1.2 var(--serif)}
+.book .by{font:500 12px/1.4 var(--sans)}
+.book p{font-size:14px;color:var(--body)}
+@media (max-width:1000px){.lib{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.lib{grid-template-columns:1fr}}
+
+.join{min-height:100svh;display:flex;align-items:center;border-top:1px solid var(--line)}
+.join .wrap{width:100%}
+.join-copy{max-width:560px}
+.join .h2{font-size:clamp(48px,6.4vw,92px)}
+.join .form{margin-top:36px}
+.thanks{margin-top:18px;font:italic 400 17px var(--serif);color:var(--gold);min-height:1.5em}
+.weeks{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:36px;border-top:1px solid var(--line);max-width:520px}
+.weeks div{padding:14px 12px 0 0;font:500 10px/1.5 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--dim)}
+.weeks b{display:block;font:italic 400 16px/1.2 var(--serif);letter-spacing:0;text-transform:none;color:var(--ink);margin-bottom:4px}
+.credit{margin-top:40px;font:500 10.5px/1.6 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--dim)}
+.credit b{font-weight:500;color:var(--ink)}
+@media (max-width:820px){.join{align-items:flex-end}.join .wrap{padding-top:54vh;padding-bottom:80px}}
+
+footer{border-top:1px solid var(--line);padding:32px 0;background:#000}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;font:500 10.5px/1.6 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--dim)}
+footer em{font:italic 400 15px var(--serif);letter-spacing:0;text-transform:none;color:var(--gold-mid)}
+
+.ritual{position:fixed;inset:0;z-index:60;background:#000;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:14px;padding-bottom:9vh;opacity:0;transition:opacity .8s var(--ease)}
+.ritual.open{opacity:1}
+.ritual[hidden]{display:none}
+.ritual canvas{position:absolute;inset:0;width:100%;height:100%}
+.ritual .cue{position:relative;font:italic 400 clamp(26px,3vw,36px)/1.2 var(--serif);text-shadow:0 2px 14px #000}
+.ritual .time{position:relative;font:500 11px/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--dim)}
+.ritual .x{position:absolute;top:24px;right:var(--pad)}
+
+.js .rv{opacity:0;transform:translateY(24px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.js .rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .js .rv{opacity:1;transform:none;transition:none}
+  .card,.on .card{animation:none;opacity:1;transform:none}
+}
+</style>
 </head>
 <body>
-  <div class="glow"></div>
-  <main>
-    <svg class="sun" viewBox="0 0 120 120" aria-hidden="true">
-      <defs>
-        <radialGradient id="core" cx="50%" cy="45%" r="55%">
-          <stop offset="0" stop-color="#fff1c9"/>
-          <stop offset=".55" stop-color="#f2b33d"/>
-          <stop offset="1" stop-color="#e0672b"/>
-        </radialGradient>
-      </defs>
-      <g stroke="#f2b33d" stroke-width="3" stroke-linecap="round" opacity=".85">
-        <path d="M60 4v16M60 100v16M4 60h16M100 60h16M20.4 20.4l11.3 11.3M88.3 88.3l11.3 11.3M20.4 99.6l11.3-11.3M88.3 31.7l11.3-11.3"/>
-      </g>
-      <g stroke="#e0672b" stroke-width="2" stroke-linecap="round" opacity=".6">
-        <path d="M38.6 8.3l3 10.6M78.4 101.1l3 10.6M8.3 81.4l10.6-3M101.1 41.6l10.6-3M8.3 38.6l10.6 3M101.1 78.4l10.6 3M38.6 111.7l3-10.6M78.4 18.9l3-10.6"/>
-      </g>
-      <circle cx="60" cy="60" r="27" fill="url(#core)"/>
-    </svg>
-    <h1>SOL INVICTUS</h1>
-    <div class="tag">THE UNCONQUERED SUN</div>
-    <p class="lead">Something is rising. We're building it now.</p>
-    <div class="soon">Coming soon</div>
-  </main>
-  <footer>© <span id="y">2026</span> Sol Invictus · solinvictus.app</footer>
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
-</body>
-</html>
+
+<script>document.documentElement.classList.add('js')</script>
+<canvas id="field" aria-hidden="true"></canvas>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="brand" href="#top"><span class="mark"></span>SOL<small>Seekers of Light</small></a>
+    <nav class="links" aria-label="Primary">
+      <span class="phase" aria-hidden="true"><i></i><span id="phaseTxt">Sol</span></span>
+      <a href="#premise">The Shadow</a>
+      <a href="#myth">The Myth</a>
+      <a href="#opus">The Great Work</a>
+      <a href="#paths">Four Paths</a>
+      <a href="#stage-test">Your Stage</a>
+      <a href="#library">Library</a>
+      <a class="btn btn-line" href="#join">Begin</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" data-scene="sun" data-layout="hero" data-tone="255,200,84" data-phase="Sol" data-screen-label="Hero">
+    <div class="wrap">
+      <div class="hero-copy">
+        <div class="eyebrow" id="heroEyebrow"><b>SOL</b> Seekers of Light</div>
+        <h1 class="shadowtype">Become<br><em>sun-like.</em></h1>
+        <p class="lede shadowtype">The way forward is full conscious awakening: facing every hidden or rejected part of oneself with clear awareness and restoring inner harmony.</p>
+        <div class="cta">
+          <a class="btn btn-gold" href="#stage-test">Find your stage <span class="arr">→</span></a>
+          <a class="btn btn-line" href="#premise">Meet the Shadow</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-foot">
+      <div class="wrap">
+        <p class="hero-quote shadowtype">“Never did eye see the sun unless it had first become sun-like.”<cite>Plotinus · Enneads I.6.9</cite></p>
+        <span class="scroll">Descend</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec premise" id="premise" data-scene="dust" data-tone="140,124,106" data-ga=".55" data-phase="Prima Materia" data-screen-label="The Shadow">
+    <div class="wrap">
+      <div class="eyebrow rv"><b>I</b> The Shadow as Prima Materia</div>
+      <div class="grid">
+        <blockquote class="rv">The Shadow is not what you lack, but <em>what you refuse to claim.</em></blockquote>
+        <div class="stanzas rv">
+          <div class="stanza"><span class="n">i.</span><div><h3>Denied, it persists</h3><p>Severed potential does not vanish. It returns as <dfn tabindex="0" data-g="projection">projection</dfn> — the darkness most vividly seen in others, the compulsion that slips past choice.</p></div></div>
+          <div class="stanza"><span class="n">ii.</span><div><h3>Seen, it returns</h3><p>Its power is relational, fed by the energy of refusal. Recognition dissolves the estrangement that sustains it.</p></div></div>
+          <div class="stanza"><span class="n">iii.</span><div><h3>Reclaimed, it becomes gold</h3><p>Not an enemy to vanquish, but the <dfn tabindex="0" data-g="prima">prima materia</dfn> from which liberation is alchemically forged.</p></div></div>
+        </div>
+      </div>
+      <div class="mirror rv">
+        <div>
+          <div class="eyebrow">The Mirror</div>
+          <h3 style="margin-top:18px">What irritates you most <em>in other people?</em></h3>
+          <p class="hint">Name one trait. The mirror will hand it back.</p>
+        </div>
+        <div>
+          <form class="form" id="mirrorForm" autocomplete="off">
+            <input id="mirrorIn" maxlength="40" required="" placeholder="e.g. arrogance" aria-label="A trait that irritates you in others">
+            <button class="btn btn-gold" type="submit">Reflect <span class="arr">→</span></button>
+          </form>
+          <div class="mirror-out" id="mirrorOut" aria-live="polite"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="myth" data-screen-label="The Myth">
+    <div class="wrap">
+      <div class="eyebrow rv"><b>II</b> The Myth of the Scattered Light</div>
+      <h2 class="h2 rv">Before the Work, <em>a fall.</em></h2>
+      <p class="lede rv">The Valentinian Gnostics of the second century told the oldest version of SOL’s story: light that was scattered, forgot itself, and is gathered home by knowing.</p>
+      <div class="panels rv">
+        <article class="panel" style="--l:100%"><span class="rn">i.</span><div class="lux"></div><h3>The Fullness</h3><p>The unknowable Father and his aeons — paired emanations in harmony. The <dfn tabindex="0" data-g="pleroma">Pleroma</dfn>.</p></article>
+        <article class="panel" style="--l:78%"><span class="rn">ii.</span><div class="lux"></div><h3>Sophia’s longing</h3><p>Wisdom, the youngest aeon, longs to know the Father directly — a passion beyond her measure.</p></article>
+        <article class="panel" style="--l:30%"><span class="rn">iii.</span><div class="lux"></div><h3>The fall</h3><p>Her longing falls outside the Fullness. From it the lower world is shaped by a craftsman who does not know the light above him.</p></article>
+        <article class="panel" style="--l:10%"><span class="rn">iv.</span><div class="lux"></div><h3>The spark</h3><p>Yet seeds of light are sown into human beings: a spark, asleep, forgetful of where it came from.</p></article>
+        <article class="panel" style="--l:100%"><span class="rn">v.</span><div class="lux"></div><h3>The gathering</h3><p><dfn tabindex="0" data-g="gnosis">Gnosis</dfn> awakens the spark. What was scattered is gathered back into the Fullness.</p></article>
+      </div>
+      <div class="gt rv">
+        <blockquote>“Since the deficiency came into being because the Father was not known, when the Father is known, from that moment on the deficiency will no longer exist.”<cite>The Gospel of Truth · Nag Hammadi Codex I,3</cite></blockquote>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="opus" data-scene="dust" data-tone="118,110,102" data-ga=".5" data-phase="The Great Work" style="padding-bottom:72px" data-screen-label="The Great Work">
+    <div class="wrap">
+      <div class="eyebrow rv"><b>III</b> The Magnum Opus</div>
+      <h2 class="h2 rv">From lead <em>to gold.</em></h2>
+      <p class="lede rv">Jung read the alchemists’ four colours as the stages of <dfn tabindex="0" data-g="individuation">individuation</dfn> — from the Shadow to the Self. Scroll, and the light changes with you: lead, silver, dawn, gold.</p>
+      <nav class="opus-index rv" aria-label="Stages">
+        <a href="#nigredo" style="--tone:#a39a90"><span class="rn">I</span><span class="sw"></span><div class="st">Nigredo</div><div class="tr">Blackening · Descent</div><p class="fig">Maximus meets the Shadow</p></a>
+        <a href="#albedo" style="--tone:#e2e4e8"><span class="rn">II</span><span class="sw"></span><div class="st">Albedo</div><div class="tr">Whitening · Purification</div><p class="fig">Musashi washes the stone</p></a>
+        <a href="#citrinitas" style="--tone:#ffd65c"><span class="rn">III</span><span class="sw"></span><div class="st">Citrinitas</div><div class="tr">Yellowing · Dawn</div><p class="fig">The Seeker wakes the inner sun</p></a>
+        <a href="#rubedo" style="--tone:#f08a50"><span class="rn">IV</span><span class="sw"></span><div class="st">Rubedo</div><div class="tr">Reddening · Union</div><p class="fig">Aragorn becomes whole</p></a>
+      </nav>
+    </div>
+  </section>
+
+  <section class="stage" id="nigredo" data-scene="max" data-layout="stage" data-tone="150,140,130" data-phase="I · Nigredo" style="--tone:#a39a90" data-screen-label="I Nigredo">
+    <div class="stick">
+      <div class="label tl"><b>I</b> — Nigredo</div>
+      <div class="label br">01 / 04</div>
+      <div class="card">
+        <span class="pill">Stage I · Blackening</span>
+        <h2>Maximus</h2>
+        <p class="sub">“What we do in life echoes in eternity.”<cite>Gladiator, 2000</cite></p>
+        <p class="body">Putrefaction and spiritual death — the dark night of the soul, where one meets the shadow within. The old is burned away so the new can begin; whoever enters the arena consciously finds the light was always inside the dark.</p>
+        <div class="spec"><div><span>Archetype</span><b>The Shadow</b></div><div><span>Symbol</span><b>Raven</b></div><div><span>Planet · Metal</span><b>Saturn · Lead</b></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="stage" id="albedo" data-scene="musashi" data-layout="stage" data-tone="226,228,232" data-phase="II · Albedo" style="--tone:#e2e4e8" data-screen-label="II Albedo">
+    <div class="stick">
+      <div class="label tl"><b>II</b> — Albedo</div>
+      <div class="label br">02 / 04</div>
+      <div class="card">
+        <span class="pill">Stage II · Whitening</span>
+        <h2>Musashi</h2>
+        <p class="sub">“Do nothing which is of no use.”<cite>The Book of Five Rings, c. 1645</cite></p>
+        <p class="body">Ablutio — the washing away of impurities. Projections are withdrawn: what was blamed on the world is recognised within. A cool, lunar clarity; the unconscious is no longer entirely dark.</p>
+        <div class="spec"><div><span>Archetype</span><b>Anima · Animus</b></div><div><span>Symbol</span><b>White swan</b></div><div><span>Planet · Metal</span><b>Moon · Silver</b></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="stage" id="citrinitas" data-scene="robe" data-layout="stage" data-tone="255,214,92" data-phase="III · Citrinitas" style="--tone:#ffd65c" data-screen-label="III Citrinitas">
+    <div class="stick">
+      <div class="label tl"><b>III</b> — Citrinitas</div>
+      <div class="label br">03 / 04</div>
+      <div class="card">
+        <span class="pill">Stage III · Yellowing</span>
+        <h2>The Seeker</h2>
+        <p class="sub">One intelligence, answering in gold.</p>
+        <p class="body">The dawning of the solar light inherent in one’s being — the reflected lunar light is no longer needed. Understanding becomes embodiment: the hand is raised, the scroll is open.</p>
+        <div class="spec"><div><span>Archetype</span><b>The Sage</b></div><div><span>Symbol</span><b>Aurora</b></div><div><span>Planet · Metal</span><b>Rising Sun</b></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="stage" id="rubedo" data-scene="king" data-layout="stage" data-tone="244,138,76" data-phase="IV · Rubedo" style="--tone:#f08a50" data-screen-label="IV Rubedo">
+    <div class="stick">
+      <div class="label tl"><b>IV</b> — Rubedo</div>
+      <div class="label br">04 / 04</div>
+      <div class="card">
+        <span class="pill">Stage IV · Reddening</span>
+        <h2>Aragorn</h2>
+        <p class="sub">“As long as our ideas are the same, we will never be apart.”<cite>Attributed to Gurdjieff</cite></p>
+        <p class="body"><dfn tabindex="0" data-g="coniunctio">Coniunctio</dfn> — the union of opposites in the Self. Not perfection but wholeness: light and shadow no longer at war. The king returns; what was scattered is gathered.</p>
+        <div class="spec"><div><span>Archetype</span><b>The Self</b></div><div><span>Symbol</span><b>Phoenix</b></div><div><span>Planet · Metal</span><b>Sun · Gold</b></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec paths" id="paths" data-scene="dust" data-tone="214,150,52" data-ga=".5" data-phase="Four Paths" data-screen-label="Four Paths">
+    <div class="wrap">
+      <div class="eyebrow rv"><b>IV</b> Four Paths Through the Darkness</div>
+      <h2 class="h2 rv">Four traditions. <em>One method.</em></h2>
+      <p class="lede rv">Different cosmologies, the same truth: the unintegrated cannot be escaped — only recognised, and through recognition, transformed.</p>
+      <div class="cells rv">
+        <article class="path">
+          <span class="rn">i.</span><h3>Bardo Thödol</h3>
+          <div class="kv"><span>The shadow appears as</span><p>Wrathful deities — the mind’s own karmic residues in the <dfn tabindex="0" data-g="bardo">bardo</dfn></p></div>
+          <div class="kv"><span>Transformed through</span><p>Visionary recognition</p></div>
+          <blockquote>“Recognize them to be thine own thought-forms.”<cite>Evans-Wentz, 1927</cite></blockquote>
+        </article>
+        <article class="path">
+          <span class="rn">ii.</span><h3>C. G. Jung</h3>
+          <div class="kv"><span>The shadow appears as</span><p>Autonomous complexes, held in projection</p></div>
+          <div class="kv"><span>Transformed through</span><p>Withdrawing the projection</p></div>
+          <blockquote>“One does not become enlightened by imagining figures of light, but by making the darkness conscious.”<cite>CW 13, §335</cite></blockquote>
+        </article>
+        <article class="path">
+          <span class="rn">iii.</span><h3>Manly P. Hall</h3>
+          <div class="kv"><span>The shadow appears as</span><p>The dweller on the threshold</p></div>
+          <div class="kv"><span>Transformed through</span><p>Conscious passage — the nigredo</p></div>
+          <blockquote>The darkness is translucent; the light was always within it.<cite>After The Secret Teachings of All Ages</cite></blockquote>
+        </article>
+        <article class="path">
+          <span class="rn">iv.</span><h3>The Fourth Way</h3>
+          <div class="kv"><span>The shadow appears as</span><p>The <dfn tabindex="0" data-g="chief">chief feature</dfn> — the trait the personality revolves around</p></div>
+          <div class="kv"><span>Transformed through</span><p><dfn tabindex="0" data-g="selfrem">Self-remembering</dfn></p></div>
+          <blockquote>What is clearly perceived loses its grip.<cite>After In Search of the Miraculous</cite></blockquote>
+        </article>
+      </div>
+      <div class="convergence rv">
+        <p>Not effort, not virtue, not ritual — <em>correct seeing.</em></p>
+        <a class="btn btn-line" href="#stage-test">Where are you? <span class="arr">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="stage-test" data-screen-label="Your Stage">
+    <div class="wrap quiz-wrap">
+      <div>
+        <div class="eyebrow rv"><b>V</b> Your Stage</div>
+        <h2 class="h2 rv">Where are you <em>in the Work?</em></h2>
+        <p class="lede rv">Seven questions. Answer with what is true, not what is hoped. There is no wrong stage — every one is necessary, and each returns in a new key.</p>
+      </div>
+      <div class="quiz rv" id="quiz" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <section class="sec lineage" id="lineage" style="overflow:hidden" data-screen-label="Lineage">
+    <img class="engr" src="assets/images/a524d78a.jpg" alt="" aria-hidden="true" loading="lazy">
+    <div class="wrap">
+      <div class="eyebrow rv"><b>VI</b> Lineage</div>
+      <h2 class="h2 rv">Three lights <em>on one path.</em></h2>
+      <p class="lede rv">Neoplatonist, teacher of the Fourth Way, and the Light of the World. Three traditions that deepen Solar Alchemy: illumination within, conscious transformation, and light made visible.</p>
+      <div class="lights">
+        <article class="light rv">
+          <div class="portrait" data-src="plotinus"><canvas aria-hidden="true"></canvas></div>
+          <div class="meta">
+            <span class="trad">Ascent to the One</span>
+            <h3>Plotinus</h3>
+            <p class="teach">Founder of Neoplatonism (c. 204–270). The soul’s ascent in three movements: purification, the turn inward, and union — katharsis, epistrophē, <dfn tabindex="0" data-g="henosis">henōsis</dfn>.</p>
+            <blockquote>“We must close the eyes and call instead upon another vision which is to be waked within you.”<cite>Enneads I.6.8 · tr. MacKenna</cite></blockquote>
+          </div>
+        </article>
+        <article class="light rv">
+          <div class="portrait" data-src="gurdjieff"><canvas aria-hidden="true"></canvas></div>
+          <div class="meta">
+            <span class="trad">The Fourth Way</span>
+            <h3>G. I. Gurdjieff</h3>
+            <p class="teach">Teacher of the Fourth Way (c. 1866–1949), founder of the Institute for the Harmonious Development of Man. The work is done in ordinary life, through the intellectual, emotional and moving centres together.</p>
+            <blockquote>“Remember yourself always and everywhere.”<cite>Aphorism, Study House at the Prieuré</cite></blockquote>
+          </div>
+        </article>
+        <article class="light rv">
+          <div class="portrait" data-src="christ"><canvas aria-hidden="true"></canvas></div>
+          <div class="meta">
+            <span class="trad">The Light of the World</span>
+            <h3>Jesus of Nazareth</h3>
+            <p class="teach">The light as inner presence and outward act: “I am the light of the world” (John 8:12) and “Let your light so shine before men” (Matthew 5:16).</p>
+            <blockquote>“The kingdom of God is within you.”<cite>Luke 17:21 · KJV</cite></blockquote>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec practice" id="practice" data-screen-label="Practice">
+    <div class="wrap">
+      <div class="eyebrow rv"><b>VII</b> The Daily Work</div>
+      <h2 class="h2 rv">Remember yourself <em>always and everywhere.</em></h2>
+      <ol>
+        <li class="rv"><span class="n">01</span><h3>Self-remembering</h3><p>Catch the familiar tightening, tone or rehearsal mid-argument. See the pattern wearing the situation as disguise — without justifying it.</p><span class="src">Fourth Way</span></li>
+        <li class="rv"><span class="n">02</span><h3>The inner Sun</h3><p>Imagine a radiant sun in the solar plexus, its warmth expanding through your whole being, dissolving what is heavy.</p><span class="src">Solar meditation<button class="btn btn-gold btn-sm" type="button" id="ritualOpen">Begin · 3 min <span class="arr">→</span></button></span></li>
+        <li class="rv"><span class="n">03</span><h3>Conscious effort</h3><p>Bring full attention to one ordinary task. Energy spent consciously is an investment; spent mechanically, it is lost.</p><span class="src">Gurdjieff</span></li>
+        <li class="rv"><span class="n">04</span><h3>The lunar balance</h3><p>Let feeling and intuition guide the solar will. Answer intense activity with rest and reflection.</p><span class="src">Solar &amp; Lunar</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="sec" id="library" data-scene="dust" data-tone="232,170,64" data-ga=".55" data-phase="The Library" style="border-top:1px solid var(--line)" data-screen-label="Library">
+    <div class="wrap">
+      <div class="eyebrow rv"><b>VIII</b> The Library</div>
+      <h2 class="h2 rv">Read in order. <em>Read slowly.</em></h2>
+      <p class="lede rv">Twelve books, three paths through them. Every quotation on this page comes from one of these.</p>
+      <div class="tabs rv" role="tablist" aria-label="Reading tracks">
+        <button class="tab" role="tab" aria-selected="true" data-track="0">Beginner</button>
+        <button class="tab" role="tab" aria-selected="false" data-track="1">Practitioner</button>
+        <button class="tab" role="tab" aria-selected="false" data-track="2">Scholar</button>
+      </div>
+      <p class="track-intro" id="trackIntro"></p>
+      <div class="lib" id="lib" role="tabpanel"></div>
+    </div>
+  </section>
+
+  <section class="join" id="join" data-scene="sun" data-layout="end" data-tone="255,214,92" data-phase="Sol" data-screen-label="Join">
+    <div class="wrap">
+      <div class="join-copy">
+        <div class="eyebrow rv">Become a Seeker</div>
+        <h2 class="h2 rv shadowtype">Begin the <em>40-Day Opus.</em></h2>
+        <p class="lede rv shadowtype">Forty days through the four stages — one teaching and one practice each morning, from nigredo to rubedo. Free, by email. Nothing else.</p>
+        <div class="weeks rv"><div><b>Nigredo</b>Days 1–10</div><div><b>Albedo</b>Days 11–20</div><div><b>Citrinitas</b>Days 21–30</div><div><b>Rubedo</b>Days 31–40</div></div>
+        <form class="form rv" id="joinForm">
+          <input type="email" required="" placeholder="Your email" aria-label="Email address">
+          <button class="btn btn-gold" type="submit">Begin <span class="arr">→</span></button>
+        </form>
+        <p class="thanks" id="thanks" aria-live="polite"></p>
+        <p class="credit rv">Created by <b>Solar Sage</b> &amp; <b>Solar Soldier</b></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span style="display:flex;gap:12px;align-items:center"><span class="mark"></span>SOL — Seekers of Light</span>
+    <em>Lux in Tenebris.</em>
+    <span>© 2026</span>
+  </div>
+</footer>
+
+<div class="gloss" id="gloss" role="tooltip"><b></b><span></span></div>
+
+<div class="ritual" id="ritual" hidden="" role="dialog" aria-modal="true" aria-label="The inner Sun · three-minute practice">
+  <canvas aria-hidden="true"></canvas>
+  <button class="btn btn-line btn-sm x" type="button" id="ritualClose">End</button>
+  <p class="cue" id="ritualCue">Breathe in</p>
+  <p class="time" id="ritualTime">3:00</p>
+</div>
+
+<script>
+(() => {
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const ss = (a, b, x) => { const t = Math.min(1, Math.max(0, (x - a) / (b - a))); return t * t * (3 - 2 * t); };
+  const c01 = x => x < 0 ? 0 : x > 1 ? 1 : x;
+  const rnd = Math.random;
+  const load = src => new Promise((res, rej) => { const i = new Image(); i.onload = () => res(i); i.onerror = rej; i.src = src; });
+  const BUCKETS = 10;
+  const RES = k => (window.__resources && window.__resources['sol-' + k]) || ('media/sol/' + k + (k === 'glyphs' ? '.png' : '.jpg'));
+
+  const KIND = {
+    sun:      { mode:'dark', body:[46,110], lo:40, span:200, fade:false },
+    robe:     { mode:'dark', body:[40,95], lo:36, span:200, bottom:.78, s:.80, y:.47 },
+    king:     { mode:'dark', body:[72,118], lo:60, span:170, bottom:.84, s:.86, y:.48 },
+    max:      { mode:'dark', body:[44,90], lo:40, span:190, bottom:.86, s:.92, y:.48, left:[.04,.16], right:[.74,.62] },
+    musashi:  { mode:'key', bottom:.97, top:[.02,.08], skip:[0,.34,.8,1], s:.90, y:.50 },
+    portrait: { mode:'photo', bottom:.9 }
+  };
+
+  function sample(img, K) {
+    const w = img.naturalWidth, h = img.naturalHeight;
+    const c = document.createElement('canvas'); c.width = w; c.height = h;
+    const g = c.getContext('2d', { willReadFrequently: true }); g.drawImage(img, 0, 0);
+    const d = g.getImageData(0, 0, w, h).data, out = [];
+    const lum = i => 0.2126 * d[i] + 0.7152 * d[i + 1] + 0.0722 * d[i + 2];
+    if (K.mode === 'photo') return samplePhoto(d, w, h, K, lum);
+    const L0 = K.left || [0,.1], R0 = K.right || [1,.9], T0 = K.top || [0,.04], B0 = K.bottom || 1;
+    const edgeAt = (u, v) => K.fade === false ? 1 : ss(L0[0], L0[1], u) * ss(R0[0], R0[1], u) * ss(T0[0], T0[1], v) * ss(1, B0, v);
+    let br = 0, bg = 0, bb = 0;
+    if (K.mode === 'key') {
+      let n = 0; const m = Math.max(2, (w * .04) | 0);
+      for (const [x0, y0] of [[0,0],[w-m,0]]) for (let y = y0; y < y0 + m; y++) for (let x = x0; x < x0 + m; x++) { const i = (y*w+x)*4; br += d[i]; bg += d[i+1]; bb += d[i+2]; n++; }
+      br /= n; bg /= n; bb /= n;
+    }
+    for (let y = 0; y < h - 1; y++) for (let x = 0; x < w - 1; x++) {
+      const u = x / w, v = y / h;
+      if (K.skip && u >= K.skip[0] && u < K.skip[1] && v >= K.skip[2] && v < K.skip[3]) continue;
+      const i = (y * w + x) * 4, L = lum(i), e = edgeAt(u, v);
+      if (e <= 0) continue;
+      if (K.mode === 'dark') {
+        if (L <= 36) continue;
+        if (rnd() < e * ss(K.body[0], K.body[1], L)) out.push([u, v, c01((L - K.lo) / K.span)]);
+      } else {
+        const dist = Math.hypot(d[i] - br, d[i+1] - bg, d[i+2] - bb);
+        const grad = Math.abs(L - lum(i + 4)) + Math.abs(L - lum(i + w * 4));
+        const s = Math.max(ss(38, 95, dist), ss(18, 60, grad));
+        if (rnd() < s * e) out.push([u, v, 0.5 * L / 255 + 0.5 * s]);
+      }
+    }
+    return { pts: out, aspect: w / h, jx: 1 / w, jy: 1 / h };
+  }
+  function samplePhoto(d, w, h, K, lum) {
+    const bgm = new Uint8Array(w * h), q = [];
+    const isBg = p => { const i = p * 4; return d[i] > 222 && d[i + 1] > 222 && d[i + 2] > 222; };
+    const seed = p => { if (!bgm[p] && isBg(p)) { bgm[p] = 1; q.push(p); } };
+    for (let x = 0; x < w; x++) { seed(x); seed((h - 1) * w + x); }
+    for (let y = 0; y < h; y++) { seed(y * w); seed(y * w + w - 1); }
+    while (q.length) { const p = q.pop(), x = p % w, y = (p / w) | 0;
+      if (x > 0) seed(p - 1); if (x < w - 1) seed(p + 1); if (y > 0) seed(p - w); if (y < h - 1) seed(p + w); }
+    const hist = new Uint32Array(256); let cnt = 0;
+    for (let p = 0; p < w * h; p++) if (!bgm[p]) { hist[lum(p * 4) | 0]++; cnt++; }
+    const pct = f => { let a = 0; for (let i = 0; i < 256; i++) { a += hist[i]; if (a >= cnt * f) return i; } return 255; };
+    const lo = pct(.02), hi = Math.max(lo + 1, pct(.985)), out = [];
+    for (let y = 0; y < h; y++) for (let x = 0; x < w; x++) {
+      const p = y * w + x; if (bgm[p]) continue;
+      const v = y / h, n = c01((lum(p * 4) - lo) / (hi - lo));
+      if (rnd() < ss(1, K.bottom, v) * (0.07 + 0.93 * Math.pow(n, 1.15))) out.push([x / w, v, n]);
+    }
+    return { pts: out, aspect: w / h, jx: 1 / w, jy: 1 / h };
+  }
+  const shuffle = a => { for (let i = a.length - 1; i > 0; i--) { const j = (rnd() * (i + 1)) | 0; [a[i], a[j]] = [a[j], a[i]]; } return a; };
+
+  /* ---------- glyphs ---------- */
+  document.documentElement.style.setProperty('--atlas', 'url("' + RES('glyphs') + '")');
+  const LET = []; for (let i = 17; i <= 47; i++) LET.push(i); LET.push(50, 51, 52, 56, 57, 58, 59, 61, 62, 63, 64, 65, 66, 67, 68, 70, 71, 72);
+  const rndG = () => LET[(rnd() * LET.length) | 0];
+  const GL = { gold: null };
+  function glyphAt(ctx, idx, x, y, s, rot) {
+    ctx.save(); ctx.translate(x, y); if (rot) ctx.rotate(rot);
+    ctx.drawImage(GL.gold, (idx % 16) * 64, ((idx / 16) | 0) * 64, 64, 64, -s / 2, -s / 2, s, s); ctx.restore();
+  }
+  const R1 = Array.from({ length: 14 }, (_, i) => LET[(i * 7 + 3) % LET.length]);
+  const R2 = Array.from({ length: 44 }, (_, i) => LET[(i * 11 + 5) % LET.length]);
+  function drawRings(ctx, t, p, alpha) {
+    if (!GL.gold || alpha <= 0.01) return;
+    if (!reduced) { if (rnd() < .05) R1[(rnd() * R1.length) | 0] = rndG(); if (rnd() < .08) R2[(rnd() * R2.length) | 0] = rndG(); }
+    const r1 = reduced ? 0 : -t * .05, r2 = p.spin * .6, k = p.k;
+    ctx.globalAlpha = .9 * alpha;
+    R1.forEach((g, i) => { const th = r1 + i / R1.length * 6.2832; glyphAt(ctx, g, p.cx + Math.cos(th) * k * .076, p.cy + Math.sin(th) * k * .076, k * .024, th + 1.5708); });
+    ctx.globalAlpha = .3 * alpha;
+    R2.forEach((g, i) => { const th = r2 + i / R2.length * 6.2832; glyphAt(ctx, g, p.cx + Math.cos(th) * k * .405, p.cy + Math.sin(th) * k * .405, k * .017, th + 1.5708); });
+    ctx.globalAlpha = 1;
+  }
+  function decode(el, force) {
+    if (reduced || !el || (el.dataset.dec && !force)) return; el.dataset.dec = 1;
+    const w = document.createTreeWalker(el, NodeFilter.SHOW_TEXT), nodes = [];
+    while (w.nextNode()) if (w.currentNode.nodeValue.trim() && !w.currentNode.parentElement.closest('.glnum')) nodes.push(w.currentNode);
+    nodes.forEach(n => {
+      const txt = n.nodeValue, wrap = document.createElement('span'); wrap.className = 'dec';
+      const spans = [...txt].map(ch => { const s = document.createElement('span'); s.textContent = ch; wrap.appendChild(s); return s; });
+      n.replaceWith(wrap);
+      const t0 = performance.now(), dur = 600 + txt.length * 30;
+      const tick = now => {
+        const p = (now - t0) / dur; let done = true;
+        spans.forEach((s, i) => {
+          const ch = txt[i]; if (ch === ' ') return;
+          if (p > .15 + .85 * i / txt.length) { if (s.className) { s.className = ''; s.removeAttribute('style'); s.textContent = ch; } }
+          else { done = false; if (!s.className || rnd() < .25) { const g = rndG(); s.className = 'gl'; s.textContent = ''; s.style.setProperty('--gx', g % 16); s.style.setProperty('--gy', (g / 16) | 0); } }
+        });
+        if (!done) requestAnimationFrame(tick); else if (wrap.parentNode) wrap.replaceWith(document.createTextNode(txt));
+      };
+      requestAnimationFrame(tick);
+    });
+  }
+  document.querySelectorAll('.label.br').forEach(l => {
+    const span = document.createElement('span'); span.className = 'glnum'; span.setAttribute('aria-hidden', 'true');
+    [...l.textContent.replace(/\s/g, '')].forEach(ch => {
+      const e = document.createElement('span');
+      if (/\d/.test(ch)) { e.className = 'gl'; e.style.setProperty('--gx', +ch); e.style.setProperty('--gy', 0); } else e.appendChild(document.createElement('i'));
+      span.appendChild(e);
+    });
+    l.prepend(span);
+  });
+
+  /* ---------- the one field ---------- */
+  const cv = document.getElementById('field'), ctx = cv.getContext('2d');
+  const MOB = innerWidth < 700, N = MOB ? 11000 : 24000;
+  let W = 0, H = 0, dpr = 1, PAD = 20;
+  const F32 = () => new Float32Array(N);
+  const DX = F32(), DY = F32(), DT = F32(), SX = F32(), SY = F32(), DL = F32(), AM = F32(), SP = F32(), P1 = F32(), P2 = F32(), LX = F32(), LY = F32(), LD = F32();
+  for (let i = 0; i < N; i++) {
+    const side = rnd() < .5, off = rnd() < .45;
+    DX[i] = off ? (side ? -.02 - rnd() * .2 : 1.02 + rnd() * .2) : (side ? rnd() * .085 : 1 - rnd() * .085);
+    DY[i] = -.05 + rnd() * 1.1; DT[i] = .05 + rnd() * .32;
+    const th = rnd() * 6.2832, r = 60 + rnd() * 140; SX[i] = Math.cos(th) * r; SY[i] = Math.sin(th) * r;
+    const th2 = rnd() * 6.2832, r2 = 40 * Math.sqrt(rnd()); LX[i] = Math.cos(th2) * r2; LY[i] = Math.sin(th2) * r2;
+    DL[i] = rnd(); LD[i] = rnd() * 1.4; AM[i] = 1.4 + rnd() * .2; SP[i] = .35 + rnd() * 1.35; P1[i] = rnd() * 6.283; P2[i] = rnd() * 6.283;
+  }
+  const X = F32(), Y = F32(), BK = new Uint8Array(N), ORD = new Int32Array(N), CNT = new Int32Array(BUCKETS + 1);
+  const TG = {};
+  function targets(src) {
+    const pool = shuffle(src.pts), M = Math.min(pool.length, N);
+    const U = F32(), V = F32(), T = F32(), F = new Uint8Array(N);
+    for (let i = 0; i < M; i++) { const p = pool[i]; U[i] = (p[0] + rnd() * src.jx - .5) * src.aspect; V[i] = p[1] + rnd() * src.jy - .5; T[i] = p[2]; F[i] = 1; }
+    return { U, V, T, F, asp: src.aspect };
+  }
+  const scenes = [...document.querySelectorAll('[data-scene]')].map(el => ({
+    el, fig: el.dataset.scene, layout: el.dataset.layout || 'dust', tone: el.dataset.tone.split(',').map(Number),
+    ga: +(el.dataset.ga || 1), name: el.dataset.phase, c: 0, ph: rnd() * 6.283
+  }));
+  const stars = Array.from({ length: 220 }, () => ({ x: rnd(), y: rnd(), s: .5 + rnd() * 1.1, a: .15 + rnd() * .35, sp: .4 + rnd() * 1.6, ph: rnd() * 6.283 }));
+  let P = 0, PS = 0, PX = 0, PY = 0, ptx = 0, pty = 0, LOAD0 = -1, T0 = performance.now();
+  function measure() { scenes.forEach(s => { const r = s.el.getBoundingClientRect(); s.c = r.top + scrollY + r.height / 2; }); }
+  function target() {
+    const c = scrollY + H / 2;
+    if (c <= scenes[0].c) return 0;
+    for (let i = 0; i < scenes.length - 1; i++) {
+      const a = scenes[i].c, b = scenes[i + 1].c;
+      if (c < b) return i + c01(((c - a) / (b - a) - .2) / .6);
+    }
+    return scenes.length - 1;
+  }
+  function place(s, t) {
+    const tg = TG[s.fig]; if (!tg) return null;
+    const m = Math.min(W, H); let size, fx, fy, par = 1, spin = 0;
+    if (s.layout === 'hero' || s.layout === 'end') {
+      if (W < 820) { size = Math.min(W * .86, H * .46); fx = W / 2; fy = 84 + size / 2; par = .5; }
+      else { size = Math.min(H * .84, W * .5); fx = W - W * .05 - size / 2; fy = H * .5; }
+      spin = reduced ? 0 : (s.layout === 'hero' ? 1 : -1) * t * .03;
+    } else {
+      const K = KIND[s.fig]; size = K.s * m; fx = W * .5; fy = K.y * H;
+      if (W < 700) { size = Math.min(size, H * .5); fy = 86 + size / 2; }
+      else {
+        const cardR = PAD + Math.min(420, W - 2 * PAD), gap = 24;
+        if (fx - size * tg.asp / 2 < cardR + gap) { size = Math.min(size, (W - cardR - gap * 2) / tg.asp); fx = cardR + gap + size * tg.asp / 2; }
+      }
+    }
+    const breath = reduced ? 1 : 1 + .006 * (1 - Math.cos(.35 * t + s.ph));
+    const sway = reduced || s.layout !== 'stage' ? 0 : 8 * Math.sin(.217 * t + s.ph * 1.7);
+    return { cx: fx + sway + PX * 18 * par, cy: fy + PY * 10 * par, k: size * breath, size, spin, cs: Math.cos(spin), sn: Math.sin(spin), tg };
+  }
+  function draw(t) {
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.fillStyle = '#000'; ctx.fillRect(0, 0, W, H);
+    for (const s of stars) {
+      const tw = reduced ? 1 : .55 + .45 * Math.sin(s.sp * t + s.ph);
+      ctx.fillStyle = `rgba(255,196,72,${(s.a * tw).toFixed(3)})`; ctx.fillRect(s.x * W, s.y * H, s.s, s.s);
+    }
+    if (LOAD0 < 0) return;
+    const a = Math.min(Math.floor(PS), scenes.length - 1), f = PS - a, A = scenes[a], B = scenes[Math.min(a + 1, scenes.length - 1)];
+    const pa = A.fig !== 'dust' ? place(A, t) : null, pb = B !== A && B.fig !== 'dust' ? place(B, t) : null;
+    const col = A.tone.map((v, j) => Math.round(v + (B.tone[j] - v) * f)), ga = A.ga + (B.ga - A.ga) * f;
+    ctx.lineWidth = 1;
+    for (const [p, s, w] of [[pa, A, 1 - f], [pb, B, f]]) if (p && s.layout === 'stage' && w > .02) {
+      ctx.strokeStyle = `rgba(${s.tone.join(',')},${(.12 * w).toFixed(3)})`;
+      ctx.beginPath(); ctx.ellipse(p.cx, Math.min(H * .9, p.cy + p.size * .44), Math.min(W * .3, p.size * .62), H * .045, 0, 0, 6.2832); ctx.stroke();
+    }
+    const ta = pa && pa.tg, tb = pb && pb.tg, lt = t - LOAD0;
+    CNT.fill(0);
+    for (let i = 0; i < N; i++) {
+      let xa, ya, va, xb, yb, vb;
+      if (ta && ta.F[i]) { const u = ta.U[i], v = ta.V[i]; xa = pa.cx + (u * pa.cs - v * pa.sn) * pa.k; ya = pa.cy + (u * pa.sn + v * pa.cs) * pa.k; va = ta.T[i]; }
+      else { xa = DX[i] * W; ya = DY[i] * H; va = DT[i]; }
+      if (B === A) { xb = xa; yb = ya; vb = va; }
+      else if (tb && tb.F[i]) { const u = tb.U[i], v = tb.V[i]; xb = pb.cx + (u * pb.cs - v * pb.sn) * pb.k; yb = pb.cy + (u * pb.sn + v * pb.cs) * pb.k; vb = tb.T[i]; }
+      else { xb = DX[i] * W; yb = DY[i] * H; vb = DT[i]; }
+      let e;
+      if (reduced) e = f < .5 ? 0 : 1;
+      else { let g = (f - DL[i] * .35) / .65; g = g < 0 ? 0 : g > 1 ? 1 : g; e = g * g * (3 - 2 * g); }
+      let x = xa + (xb - xa) * e, y = ya + (yb - ya) * e;
+      if (!reduced) {
+        const sc = Math.sin(Math.PI * e); x += SX[i] * sc; y += SY[i] * sc;
+        let lp = (lt - LD[i]) / 1.8; lp = lp < 0 ? 0 : lp > 1 ? 1 : lp; const le = 1 - lp * lp * (3 - 2 * lp);
+        x += LX[i] * le + AM[i] * Math.sin(SP[i] * t + P1[i]);
+        y += LY[i] * le + AM[i] * Math.cos(SP[i] * .83 * t + P2[i]);
+      }
+      const v = va + (vb - va) * e, b = Math.min(BUCKETS - 1, (v * BUCKETS) | 0);
+      X[i] = x; Y[i] = y; BK[i] = b; CNT[b + 1]++;
+    }
+    for (let b = 1; b <= BUCKETS; b++) CNT[b] += CNT[b - 1];
+    const start = CNT.slice(0, BUCKETS);
+    for (let i = 0; i < N; i++) ORD[start[BK[i]]++] = i;
+    for (let b = 0; b < BUCKETS; b++) {
+      const from = CNT[b], to = CNT[b + 1]; if (from === to) continue;
+      const tb2 = (b + .5) / BUCKETS, z = .45 + 1.15 * tb2, hz = z / 2;
+      ctx.fillStyle = `rgba(${col[0]},${col[1]},${col[2]},${(ga * (.22 + .78 * tb2)).toFixed(3)})`;
+      for (let j = from; j < to; j++) { const i = ORD[j], x = X[i], y = Y[i]; if (x < -4 || x > W + 4 || y < -4 || y > H + 4) continue; ctx.fillRect(x - hz, y - hz, z, z); }
+    }
+    const ringIn = reduced ? 1 : c01((lt - 1.8) / 1.6);
+    if (pa && A.fig === 'sun') drawRings(ctx, t, pa, (1 - f) * ringIn);
+    if (pb && B.fig === 'sun') drawRings(ctx, t, pb, f * ringIn);
+  }
+
+  /* ---------- rails ---------- */
+  const rail = document.createElement('canvas'); rail.className = 'rails'; rail.setAttribute('aria-hidden', 'true'); document.body.appendChild(rail);
+  const rctx = rail.getContext('2d'); let rdpr = 1;
+  const hash = n => { n = (n ^ 61) ^ (n >>> 16); n = n + (n << 3); n = n ^ (n >>> 4); n = Math.imul(n, 0x27d4eb2d); return (n ^ (n >>> 15)) >>> 0; };
+  function drawRails(t) {
+    rctx.setTransform(rdpr, 0, 0, rdpr, 0, 0); rctx.clearRect(0, 0, W, H);
+    if (!GL.gold || W < 900) return;
+    const step = 26, s = 11, off = scrollY * .25 + (reduced ? 0 : t * 6);
+    const pulse = reduced ? -999 : (t * 140) % (H + 600) - 300;
+    for (let y = -step - (off % step); y < H + step; y += step) {
+      const row = Math.round((y + off) / step);
+      rctx.globalAlpha = .1 + .5 * Math.exp(-Math.pow((y - pulse) / 70, 2)); glyphAt(rctx, LET[hash(row + 1000) % LET.length], 18, y, s);
+      rctx.globalAlpha = .1 + .5 * Math.exp(-Math.pow((H - y - pulse) / 70, 2)); glyphAt(rctx, LET[hash(row + 7) % LET.length], W - 18, y, s);
+    }
+    rctx.globalAlpha = 1;
+  }
+
+  /* ---------- portraits ---------- */
+  function Portrait(el) {
+    const pc = el.querySelector('canvas'), pctx = pc.getContext('2d');
+    const st = { el, fig: null, vis: false, t0: null, w: 0, h: 0, d: 1 };
+    st.resize = () => { st.d = Math.min(2, devicePixelRatio || 1); st.w = el.clientWidth; st.h = el.clientHeight; pc.width = st.w * st.d; pc.height = st.h * st.d; };
+    st.load = () => {
+      if (st.loading) return; st.loading = true;
+      load(RES(el.dataset.src)).then(img => {
+        const src = sample(img, KIND.portrait), pool = shuffle(src.pts).slice(0, MOB ? 18000 : 34000);
+        const pts = pool.map(p => ({ u: (p[0] + rnd() * src.jx - .5) * src.aspect, v: p[1] + rnd() * src.jy - .5, t: p[2], b: Math.min(BUCKETS - 1, (p[2] * BUCKETS) | 0) })).sort((a, b) => a.b - b.b);
+        const n = pts.length, U = new Float32Array(n), V = new Float32Array(n), Z = new Float32Array(n), Q = new Float32Array(n), starts = [];
+        let last = -1;
+        pts.forEach((p, i) => { if (p.b !== last) { for (let b = last + 1; b <= p.b; b++) starts[b] = i; last = p.b; } U[i] = p.u; V[i] = p.v; Z[i] = .55 + .95 * p.t; Q[i] = rnd() * 6.283; });
+        for (let b = last + 1; b <= BUCKETS; b++) starts[b] = n;
+        st.fig = { U, V, Z, Q, starts, asp: src.aspect }; st.resize(); if (reduced) st.draw(99);
+      });
+    };
+    st.draw = t => {
+      const f = st.fig; if (!f) return;
+      if (st.t0 === null) st.t0 = t;
+      const lt = t - st.t0, w = st.w, h = st.h;
+      pctx.setTransform(st.d, 0, 0, st.d, 0, 0); pctx.clearRect(0, 0, w, h);
+      const size = Math.min(w / f.asp, h) * .98, cx = w / 2 + PX * 5, cy = h * .51 + PY * 3;
+      const k = size * (reduced ? 1 : 1 + .006 * (1 - Math.cos(.35 * t)));
+      const ap = reduced ? 1 : ss(0, 1.8, lt);
+      for (let b = 0; b < BUCKETS; b++) {
+        const a0 = f.starts[b], e0 = f.starts[b + 1]; if (a0 === e0) continue;
+        pctx.fillStyle = `rgba(255,214,92,${(ap * (.22 + .78 * (b + .5) / BUCKETS)).toFixed(3)})`;
+        for (let i = a0; i < e0; i++) {
+          let x = cx + f.U[i] * k, y = cy + f.V[i] * k;
+          if (!reduced) { const q = f.Q[i]; x += 1.2 * Math.sin(t * (.4 + q * .2) + q); y += 1.2 * Math.cos(t * (.35 + q * .2) + q * 1.3); }
+          const z = f.Z[i]; pctx.fillRect(x - z / 2, y - z / 2, z, z);
+        }
+      }
+    };
+    st.resize();
+    return st;
+  }
+  const portraits = [...document.querySelectorAll('.portrait')].map(Portrait);
+
+  /* ---------- sizing, input, loops ---------- */
+  function resize() {
+    dpr = Math.min(2, devicePixelRatio || 1); W = innerWidth; H = innerHeight;
+    cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr);
+    rdpr = dpr; rail.width = cv.width; rail.height = cv.height;
+    PAD = Math.min(64, Math.max(20, W * .04));
+    measure(); portraits.forEach(p => p.resize());
+    if (reduced) redraw();
+  }
+  function redraw() { P = target(); PS = P; draw(99); drawRails(0); portraits.forEach(p => p.vis && p.draw(99)); updatePhase(); }
+  const phaseTxt = document.getElementById('phaseTxt'); let phaseIdx = -1;
+  function updatePhase() {
+    const i = Math.round(PS); if (i === phaseIdx) return; phaseIdx = i;
+    phaseTxt.textContent = scenes[i].name; phaseTxt.parentElement.style.color = `rgb(${scenes[i].tone.join(',')})`; decode(phaseTxt, true);
+  }
+  addEventListener('resize', resize);
+  addEventListener('load', measure);
+  if (window.ResizeObserver) new ResizeObserver(() => measure()).observe(document.body);
+  if (!reduced) addEventListener('pointermove', e => { ptx = (e.clientX / innerWidth) * 2 - 1; pty = (e.clientY / innerHeight) * 2 - 1; }, { passive: true });
+  if (reduced) addEventListener('scroll', redraw, { passive: true });
+  resize();
+
+  load(RES('glyphs')).then(img => {
+    const c = document.createElement('canvas'); c.width = img.width; c.height = img.height;
+    const g = c.getContext('2d'); g.drawImage(img, 0, 0); g.globalCompositeOperation = 'source-in'; g.fillStyle = 'rgb(255,214,92)'; g.fillRect(0, 0, c.width, c.height);
+    GL.gold = c; if (reduced) redraw();
+  });
+  const FIGSRC = { sun: RES('sun'), max: RES('max'), musashi: RES('musashi'), robe: RES('robe'), king: RES('king') };
+  const loadFig = k => load(FIGSRC[k]).then(img => { TG[k] = targets(sample(img, KIND[k])); if (reduced) redraw(); });
+  loadFig('sun').then(() => {
+    LOAD0 = (performance.now() - T0) / 1000; if (reduced) redraw();
+    ['max', 'musashi', 'robe', 'king'].reduce((p, k) => p.then(() => loadFig(k)), Promise.resolve());
+  });
+
+  const near = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { portraits.find(p => p.el === e.target).load(); near.unobserve(e.target); } }), { rootMargin: '900px 0px' });
+  const pvis = new IntersectionObserver(es => es.forEach(e => { const p = portraits.find(p => p.el === e.target); p.vis = e.isIntersecting; if (reduced && p.vis) p.draw(99); }));
+  portraits.forEach(p => { near.observe(p.el); pvis.observe(p.el); });
+  const stageObs = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); e.target.querySelectorAll('.label,.pill').forEach(n => decode(n)); } }), { threshold: .25 });
+  document.querySelectorAll('.stage').forEach(s => stageObs.observe(s));
+
+  if (!reduced) {
+    const loop = now => {
+      const t = (now - T0) / 1000;
+      P = target(); PS += (P - PS) * .1; if (Math.abs(P - PS) < 1e-4) PS = P;
+      PX += (ptx - PX) * .05; PY += (pty - PY) * .05;
+      draw(t); drawRails(t); updatePhase();
+      portraits.forEach(p => p.vis && p.draw(t));
+      requestAnimationFrame(loop);
+    };
+    requestAnimationFrame(loop);
+  }
+
+  /* ---------- page behaviour ---------- */
+  const rv = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); if (e.target.classList.contains('eyebrow')) decode(e.target); rv.unobserve(e.target); } }), { threshold: .12 });
+  document.querySelectorAll('.rv').forEach(n => rv.observe(n));
+  decode(document.getElementById('heroEyebrow'));
+  const nav = document.getElementById('nav');
+  const onScroll = () => nav.classList.toggle('solid', scrollY > 40);
+  addEventListener('scroll', onScroll, { passive: true }); onScroll();
+
+  // glossary
+  const GLOSS = {
+    projection: ['Projection', 'Seeing in another what is unconscious in oneself. What is not made conscious is met outside, as fate.'],
+    prima: ['Prima materia', 'The alchemists’ “first matter”: the formless, despised base from which the gold is made. In the psyche, the unclaimed material of the self.'],
+    pleroma: ['Pleroma', 'The “Fullness” of the Valentinian myth: the divine realm of the unknowable Father and his paired aeons.'],
+    gnosis: ['Gnosis', 'Not information but recognition — knowing who we are, where we came from, and where we are going.'],
+    individuation: ['Individuation', 'Jung’s word for becoming whole: integrating the shadow, the anima or animus, and finally realising the Self.'],
+    coniunctio: ['Coniunctio', 'The sacred marriage of opposites — sun and moon, king and queen — that crowns the alchemical work.'],
+    bardo: ['Bardo', 'Tibetan for “in-between”: above all the interval between death and rebirth, where the mind meets its own projections.'],
+    chief: ['Chief feature', 'In the Fourth Way, the central weakness around which the false personality turns — the axis of mechanical life.'],
+    selfrem: ['Self-remembering', 'Gurdjieff’s core practice: divided attention — aware of what one observes and, at the same moment, of oneself observing.'],
+    henosis: ['Henōsis', 'Plotinus’ union with the One: not a merging achieved by effort, but the soul’s return to its source.']
+  };
+  const gloss = document.getElementById('gloss'), gB = gloss.querySelector('b'), gS = gloss.querySelector('span');
+  const showG = el => {
+    const d = GLOSS[el.dataset.g]; if (!d) return; gB.textContent = d[0]; gS.textContent = d[1];
+    const r = el.getBoundingClientRect(), gw = Math.min(300, innerWidth - 32);
+    gloss.style.left = Math.max(16, Math.min(innerWidth - gw - 16, r.left + r.width / 2 - gw / 2)) + 'px';
+    gloss.style.top = (r.top > 180 ? r.top - 12 : r.bottom + 12) + 'px';
+    gloss.style.transform = r.top > 180 ? 'translateY(-100%)' : 'none';
+    gloss.classList.add('show');
+  };
+  const hideG = () => gloss.classList.remove('show');
+  document.querySelectorAll('dfn[data-g]').forEach(d => { d.addEventListener('mouseenter', () => showG(d)); d.addEventListener('focus', () => showG(d)); d.addEventListener('mouseleave', hideG); d.addEventListener('blur', hideG); });
+  addEventListener('scroll', hideG, { passive: true });
+
+  // mirror
+  document.getElementById('mirrorForm').addEventListener('submit', e => {
+    e.preventDefault();
+    const v = document.getElementById('mirrorIn').value.trim().replace(/[<>]/g, ''); if (!v) return;
+    const out = document.getElementById('mirrorOut'); out.innerHTML = '';
+    const tr = document.createElement('div'); tr.className = 'trait'; tr.textContent = '“' + v + '.”';
+    const p1 = document.createElement('p'); p1.textContent = 'What we see most vividly in others is often what we refuse to claim. The charge is the clue: the stronger the irritation, the closer the shadow.';
+    const p2 = document.createElement('p'); p2.textContent = `Where does ${v.toLowerCase()} live in you — and what would it give you, if it were reclaimed rather than condemned?`;
+    out.append(tr, p1, p2); decode(tr, true);
+  });
+
+  // quiz
+  const STAGES = [
+    { rn: 'I', name: 'Nigredo', who: 'Maximus · the descent', tone: '#a39a90', href: '#nigredo',
+      text: 'Something is ending, and the shadow is close. This is not failure — it is the prima materia. The dark is where the work begins, and it is translucent to anyone who enters it consciously.',
+      rx: ['Begin with', 'Self-remembering. Notice, without judging, what you react to today. Do not fix it — see it.'] },
+    { rn: 'II', name: 'Albedo', who: 'Musashi · the washing', tone: '#e2e4e8', href: '#albedo',
+      text: 'The storm has passed and the washing has begun. You are withdrawing projections and seeing more clearly what was yours all along. Stay with the cool light; do not rush to dawn.',
+      rx: ['Begin with', 'The lunar balance. Answer activity with rest and reflection, and let feeling inform will.'] },
+    { rn: 'III', name: 'Citrinitas', who: 'The Seeker · the dawn', tone: '#ffd65c', href: '#citrinitas',
+      text: 'Insight is arriving from within, no longer borrowed. The task now is embodiment — letting what you understand become how you live.',
+      rx: ['Begin with', 'The inner Sun. Three minutes, each morning, with the light at the solar plexus.'] },
+    { rn: 'IV', name: 'Rubedo', who: 'Aragorn · the union', tone: '#f08a50', href: '#rubedo',
+      text: 'Light and shadow are working together, and the work has moved into ordinary life. Wholeness is not the end of the Work — it is the Work, given away.',
+      rx: ['Begin with', 'Conscious effort. Bring full attention to one ordinary task, and offer what you have found to someone else.'] }
+  ];
+  const QS = [
+    ['When someone irritates you deeply, you…', ['React before you notice what happened', 'Notice afterwards that it says something about you', 'Feel curious about what it is showing you', 'Feel the charge, and still see both sides']],
+    ['Your relationship to your darker traits:', ['I would rather not look', 'I am beginning to name them', 'I see them at work — and their hidden gifts', 'They are part of me, not my enemy']],
+    ['Right now, life feels like…', ['A dark night — things falling apart', 'A clearing — quieter after a storm', 'A dawn — insight arriving', 'A homecoming — things fitting together']],
+    ['Your practice is mostly about…', ['Finding where to begin at all', 'Letting go of old habits and stories', 'Turning understanding into action', 'Living it inside ordinary life']],
+    ['Which sentence feels truest?', ['“Something has to end.”', '“I want to see clearly.”', '“I am beginning to know.”', '“I want to give what I have found.”']],
+    ['Through the day, your attention is…', ['Mostly lost in reactions', 'Waking in moments, then gone', 'Remembering itself more often', 'Steady, even in conflict']],
+    ['Which image calls to you?', ['The raven', 'The white swan', 'The aurora', 'The phoenix']]
+  ];
+  const quiz = document.getElementById('quiz'); let qi = 0, score = [0, 0, 0, 0];
+  const el = (tag, cls, txt) => { const n = document.createElement(tag); if (cls) n.className = cls; if (txt != null) n.textContent = txt; return n; };
+  function renderQ() {
+    quiz.innerHTML = '';
+    const head = el('div', 'q-head'); head.append(el('span', null, `Question ${qi + 1} of ${QS.length}`));
+    const bar = el('div', 'q-bar'), fill = el('i'); fill.style.width = (qi / QS.length * 100) + '%'; bar.append(fill); head.append(bar);
+    const [q, opts] = QS[qi], order = shuffle([0, 1, 2, 3]);
+    const box = el('div', 'q-opts');
+    order.forEach((s, j) => {
+      const b = el('button', 'q-opt'); b.type = 'button';
+      b.append(el('span', null, 'abcd'[j] + '.'), el('div', null, opts[s]));
+      b.addEventListener('click', () => { score[s]++; qi++; qi < QS.length ? renderQ() : renderR(); });
+      box.append(b);
+    });
+    quiz.append(head, el('h3', 'q-title', q), box);
+    requestAnimationFrame(() => { fill.style.width = ((qi + 1) / QS.length * 100) + '%'; });
+  }
+  function renderR(saved) {
+    let best = 0; score.forEach((v, i) => { if (v > score[best]) best = i; });
+    if (saved != null) best = saved;
+    try { localStorage.setItem('sol.stage', best); } catch (e) {}
+    const S = STAGES[best]; quiz.innerHTML = '';
+    const r = el('div', 'q-res'); r.style.setProperty('--tone', S.tone);
+    const eb = el('div', 'eyebrow'); eb.append(el('b', null, S.rn), document.createTextNode(' Your stage'));
+    const rx = el('div', 'rx'); rx.append(el('b', null, S.rx[0]), document.createTextNode(S.rx[1]));
+    const cta = el('div', 'cta');
+    const go = el('a', 'btn btn-gold', null); go.href = S.href; go.append(document.createTextNode(`See ${S.name} `), el('span', 'arr', '→'));
+    const again = el('button', 'btn btn-line', 'Retake'); again.type = 'button';
+    again.addEventListener('click', () => { qi = 0; score = [0, 0, 0, 0]; renderQ(); });
+    cta.append(go, again);
+    const h = el('h3', null, S.name);
+    r.append(eb, h, el('p', 'who', S.who), el('p', null, S.text), rx, cta);
+    quiz.append(r); decode(h, true);
+  }
+  let saved = null; try { saved = localStorage.getItem('sol.stage'); } catch (e) {}
+  saved != null && saved !== '' ? renderR(+saved) : renderQ();
+
+  // library
+  const TRACKS = [
+    ['Where to begin: the clearest doors into each tradition, in the order they open onto one another.', [
+      ['Fourth Way', 'In Search of the Miraculous', 'P. D. Ouspensky, 1949', 'The fullest record of Gurdjieff’s teaching: self-remembering, the centres, chief feature.'],
+      ['Alchemy · Psyche', 'Anatomy of the Psyche', 'Edward F. Edinger, 1985', 'The alchemical operations as stages of inner change, from calcinatio to coniunctio.'],
+      ['Strategy · Discipline', 'The Book of Five Rings', 'Miyamoto Musashi, c. 1645', 'The nine principles of the Way, including “Do nothing which is of no use.”'],
+      ['Western Esotericism', 'The Secret Teachings of All Ages', 'Manly P. Hall, 1928', 'The mysteries, the initiatic descent, and Hermetic alchemy in one encyclopedic volume.']]],
+    ['For those already practising: primary voices, read slowly, one practice at a time.', [
+      ['Fourth Way', 'Views from the Real World', 'G. I. Gurdjieff, 1973', 'Talks given across Europe and America, 1914–1931 — the teaching in his own words.'],
+      ['Tibetan Buddhism', 'The Tibetan Book of the Dead', 'ed. W. Y. Evans-Wentz, 1927 · commentary by C. G. Jung, 1935', 'The Bardo Thödol: liberation through recognising the visions as one’s own mind.'],
+      ['Neoplatonism', 'The Enneads', 'Plotinus · tr. Stephen MacKenna, 1917–30', 'Begin with treatise I.6, “On Beauty”: the soul must become sun-like to see the Sun.'],
+      ['Gnosticism', 'The Nag Hammadi Scriptures', 'ed. Marvin Meyer · HarperOne, 2007', 'Includes the Valentinian Gospel of Truth and the Tripartite Tractate.']]],
+    ['The scholarly foundation: critical editions and the reference works behind every claim on this page.', [
+      ['Depth Psychology', 'Psychology and Alchemy', 'C. G. Jung · Collected Works 12, 1944', 'The alchemical opus read as the process of individuation, from the Shadow to the Self.'],
+      ['Depth Psychology', 'Mysterium Coniunctionis', 'C. G. Jung · Collected Works 14, 1955–56', 'Jung’s last major work: the union of opposites, the rubedo of the psyche.'],
+      ['Alchemy · Reference', 'A Dictionary of Alchemical Imagery', 'Lyndy Abraham · Cambridge University Press, 1998', 'The standard reference for the raven, swan, red king and the colours of the work.'],
+      ['Neoplatonism · Critical', 'The Enneads', 'ed. Lloyd P. Gerson · Cambridge University Press, 2018', 'The modern critical English translation of the complete text.']]]
+  ];
+  const lib = document.getElementById('lib'), intro = document.getElementById('trackIntro'), tabs = [...document.querySelectorAll('.tab')];
+  function renderTrack(k) {
+    tabs.forEach((t, i) => t.setAttribute('aria-selected', i === k));
+    intro.textContent = TRACKS[k][0]; lib.innerHTML = '';
+    TRACKS[k][1].forEach((b, i) => {
+      const a = el('article', 'book');
+      a.append(el('span', 'ord', String(i + 1).padStart(2, '0')), el('span', 'tag', b[0]), el('h3', null, b[1]), el('span', 'by', b[2]), el('p', null, b[3]));
+      lib.append(a);
+    });
+  }
+  tabs.forEach((t, i) => t.addEventListener('click', () => renderTrack(i)));
+  renderTrack(0);
+
+  // ritual
+  const rit = document.getElementById('ritual'), rcv = rit.querySelector('canvas'), rc = rcv.getContext('2d');
+  const cue = document.getElementById('ritualCue'), rtime = document.getElementById('ritualTime');
+  let rOn = false, rT0 = 0, rOrder = null, lastFocus = null;
+  function ritualFrame(now) {
+    if (!rOn) return;
+    const t = (now - rT0) / 1000, w = innerWidth, h = innerHeight, d = Math.min(2, devicePixelRatio || 1);
+    if (rcv.width !== Math.round(w * d)) { rcv.width = w * d; rcv.height = h * d; }
+    rc.setTransform(d, 0, 0, d, 0, 0); rc.fillStyle = '#000'; rc.fillRect(0, 0, w, h);
+    const left = Math.max(0, 180 - t), cyc = t % 10, inhale = cyc < 4;
+    const s = reduced ? .6 : (inhale ? ss(0, 4, cyc) : 1 - ss(4, 10, cyc));
+    if (left > 0) { cue.textContent = inhale ? 'Breathe in — the light gathers' : 'Breathe out — it spreads through you'; rtime.textContent = `${Math.floor(left / 60)}:${String(Math.floor(left % 60)).padStart(2, '0')}`; }
+    else { cue.textContent = 'Remember yourself.'; rtime.textContent = 'Complete'; }
+    const tg = TG.sun;
+    if (tg) {
+      if (!rOrder) { rOrder = [...Array(BUCKETS)].map(() => []); for (let i = 0; i < N; i++) if (tg.F[i]) rOrder[Math.min(BUCKETS - 1, (tg.T[i] * BUCKETS) | 0)].push(i); }
+      const k = Math.min(w, h * .82) * (.62 + .16 * s), cx = w / 2, cy = h * .42, sp = reduced ? 0 : t * .02, cs = Math.cos(sp), sn = Math.sin(sp);
+      for (let b = 0; b < BUCKETS; b++) {
+        const tb2 = (b + .5) / BUCKETS, z = .45 + 1.15 * tb2;
+        rc.fillStyle = `rgba(255,214,92,${((.55 + .45 * s) * (.22 + .78 * tb2)).toFixed(3)})`;
+        for (const i of rOrder[b]) { const u = tg.U[i], v = tg.V[i]; rc.fillRect(cx + (u * cs - v * sn) * k - z / 2, cy + (u * sn + v * cs) * k - z / 2, z, z); }
+      }
+    }
+    requestAnimationFrame(ritualFrame);
+  }
+  function openRitual() { lastFocus = document.activeElement; rit.hidden = false; rOn = true; rT0 = performance.now(); requestAnimationFrame(() => rit.classList.add('open')); requestAnimationFrame(ritualFrame); document.getElementById('ritualClose').focus(); document.body.style.overflow = 'hidden'; }
+  function closeRitual() { rOn = false; rit.classList.remove('open'); document.body.style.overflow = ''; setTimeout(() => { rit.hidden = true; }, 500); lastFocus && lastFocus.focus(); }
+  document.getElementById('ritualOpen').addEventListener('click', openRitual);
+  document.getElementById('ritualClose').addEventListener('click', closeRitual);
+  addEventListener('keydown', e => { if (e.key === 'Escape' && rOn) closeRitual(); });
+
+  document.getElementById('joinForm').addEventListener('submit', e => {
+    e.preventDefault(); e.target.reset();
+    document.getElementById('thanks').textContent = 'Welcome, Seeker. Day 1 of the Opus arrives tomorrow at dawn.';
+  });
+})();
+</script>
+
+
+<div id="__claude_design_branding"><style>#__claude_design_branding{position:fixed;right:16px;bottom:16px;z-index:2147483646;display:flex;align-items:center;gap:7px;height:30px;padding:0 5px 0 10px;border-radius:999px;font-family:"Anthropic Sans",-apple-system,BlinkMacSystemFont,system-ui,sans-serif;font-size:12.5px;font-weight:400;line-height:1;letter-spacing:normal;text-transform:none;color:#141413;background:rgba(255,255,255,.86);-webkit-backdrop-filter:blur(24px);backdrop-filter:blur(24px);box-shadow:0 0 0 .5px rgba(31,30,29,.14),0 2px 10px rgba(0,0,0,.09)}
+#__claude_design_branding *{box-sizing:border-box;margin:0}
+#__claude_design_branding a{color:inherit;text-decoration:none;display:inline-flex;align-items:center;gap:7px;white-space:nowrap}
+#__claude_design_branding a:hover span{text-decoration:underline}
+#__claude_design_branding svg{flex:none}
+#__claude_design_branding a svg{color:#D97757}
+#__claude_design_branding button{width:20px;height:20px;padding:0;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;color:currentColor;opacity:.55;border:0;background:none;cursor:pointer;flex:none;font:inherit;transition:opacity .14s}
+#__claude_design_branding button:hover{opacity:1;background:rgba(127,127,127,.22)}
+@media print{#__claude_design_branding{display:none}}</style><a href="https://claude.com/product/design" target="_blank" rel="noopener noreferrer"><svg width="14" height="14" viewBox="0 0 20 21" fill="none" aria-hidden="true"><path fill="currentColor" d="M9.99902 0C15.5258 0.000170936 19.999 4.50643 19.999 10.0547C19.999 11.7656 19.5863 12.9976 18.7861 13.8203C17.9924 14.6362 16.9465 14.9138 15.9854 15.0078C15.05 15.0993 14.0097 15.0262 13.2549 15.0186C12.8524 15.0145 12.5177 15.0267 12.2441 15.0703C11.9682 15.1144 11.8143 15.1813 11.7305 15.2432C11.4745 15.4322 11.3353 15.7121 11.2656 16.1602C11.2303 16.3875 11.2168 16.6362 11.209 16.9131C11.2017 17.1715 11.1986 17.4893 11.1807 17.7705C11.1469 18.2975 11.0495 19.0865 10.4199 19.5908C9.7846 20.0996 8.88652 20.1057 7.85449 19.877C7.36399 19.7682 6.88652 19.6232 6.42578 19.4453C2.66989 17.9949 0.000187748 14.3414 0 10.0547C0 4.50643 4.47223 0.000171048 9.99902 0ZM9.99902 1.60547C5.36781 1.60564 1.60547 5.38391 1.60547 10.0547C1.60566 13.6582 3.84823 16.7296 7.00391 17.9482C7.39027 18.0974 7.79085 18.2184 8.20215 18.3096C9.1375 18.5169 9.384 18.3633 9.41602 18.3379C9.4524 18.3087 9.54558 18.1915 9.5791 17.668C9.5947 17.4239 9.59473 17.1786 9.60352 16.8672C9.61179 16.5742 9.62831 16.2435 9.67969 15.9131C9.78359 15.2455 10.0474 14.4906 10.7764 13.9521C11.1479 13.6778 11.5842 13.5493 11.9912 13.4844C12.4007 13.4191 12.8434 13.4088 13.2705 13.4131C14.1753 13.4222 15.0071 13.4905 15.8291 13.4102C16.6257 13.3322 17.2249 13.1235 17.6357 12.7012C18.0401 12.2855 18.3935 11.5261 18.3936 10.0547C18.3936 5.38391 14.6302 1.60564 9.99902 1.60547ZM5.11621 9.86719C5.86386 9.91468 6.45486 10.5348 6.45508 11.2939C6.45506 12.0838 5.81519 12.7245 5.02539 12.7246C4.28481 12.7246 3.67573 12.1617 3.60254 11.4404L3.59473 11.2939L3.60156 11.1533C3.66942 10.4596 4.23282 9.91186 4.93359 9.86719H5.11621ZM14.9814 7.19141C15.729 7.23889 16.3199 7.85919 16.3203 8.61816C16.3203 9.40801 15.6804 10.0487 14.8906 10.0488C14.1501 10.0487 13.5409 9.48586 13.4678 8.76465L13.46 8.61816L13.4668 8.47754C13.5348 7.78403 14.0983 7.23618 14.7988 7.19141H14.9814ZM6.4541 4.93457C7.20161 4.9822 7.79275 5.60231 7.79297 6.36133C7.79288 7.151 7.15291 7.7917 6.36328 7.79199C5.62274 7.79199 5.01369 7.22903 4.94043 6.50781L4.93262 6.36133L4.93945 6.2207C5.00731 5.52698 5.5707 4.97922 6.27148 4.93457H6.4541ZM11.3867 3.59668C12.1343 3.64419 12.7253 4.26436 12.7256 5.02344C12.7256 5.81326 12.0857 6.45393 11.2959 6.4541C10.5553 6.4541 9.94622 5.89123 9.87305 5.16992L9.86523 5.02344L9.87207 4.88281C9.93996 4.18912 10.5033 3.64133 11.2041 3.59668H11.3867Z"></path></svg><span>Made with Claude Design</span></a><button type="button" aria-label="Dismiss" onclick="this.parentElement.remove()"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 2l8 8M10 2l-8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg></button></div></body></html>
