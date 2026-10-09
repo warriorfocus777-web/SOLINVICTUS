@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sol Invictus</title>
+  <meta name="description" content="Sol Invictus — coming soon.">
+  <meta name="theme-color" content="#0b0906">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='14' fill='%23f2b33d'/%3E%3Cg stroke='%23f2b33d' stroke-width='4' stroke-linecap='round'%3E%3Cpath d='M32 4v8M32 52v8M4 32h8M52 32h8M12 12l6 6M46 46l6 6M12 52l6-6M46 18l6-6'/%3E%3C/g%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0906;
+      --ink: #f4ead8;
+      --muted: #a8998088;
+      --sun: #f2b33d;
+      --ember: #e0672b;
+    }
+    * { box-sizing: border-box; margin: 0; }
+    html, body { height: 100%; }
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Inter, system-ui, sans-serif;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      padding: 24px 16px;
+    }
+    .glow {
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(circle at 50% 42%, rgba(242,179,61,.22), transparent 38%),
+        radial-gradient(circle at 50% 120%, rgba(224,103,43,.18), transparent 55%);
+      pointer-events: none;
+    }
+    main { position: relative; text-align: center; max-width: 640px; }
+    .sun {
+      width: 132px; height: 132px; margin: 0 auto 40px;
+      animation: spin 60s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @media (prefers-reduced-motion: reduce) { .sun { animation: none; } }
+    h1 {
+      font-family: Cinzel, serif;
+      font-weight: 700;
+      font-size: clamp(2.6rem, 9vw, 5rem);
+      letter-spacing: .14em;
+      line-height: 1;
+      background: linear-gradient(180deg, #fff3d6 10%, var(--sun) 60%, var(--ember));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .tag {
+      margin-top: 18px;
+      font-family: Cinzel, serif;
+      font-size: clamp(.8rem, 2.4vw, 1rem);
+      letter-spacing: .4em;
+      color: var(--sun);
+      opacity: .8;
+    }
+    p.lead {
+      margin-top: 36px;
+      font-size: 1.05rem;
+      line-height: 1.6;
+      color: #d8ccb6;
+    }
+    .soon {
+      display: inline-block;
+      margin-top: 32px;
+      padding: 10px 22px;
+      border: 1px solid rgba(242,179,61,.45);
+      border-radius: 999px;
+      font-size: .8rem;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      color: var(--sun);
+    }
+    footer {
+      position: fixed; bottom: 18px; left: 0; right: 0;
+      text-align: center; font-size: .75rem; color: #7d705c;
+      letter-spacing: .1em;
+    }
+  </style>
+</head>
+<body>
+  <div class="glow"></div>
+  <main>
+    <svg class="sun" viewBox="0 0 120 120" aria-hidden="true">
+      <defs>
+        <radialGradient id="core" cx="50%" cy="45%" r="55%">
+          <stop offset="0" stop-color="#fff1c9"/>
+          <stop offset=".55" stop-color="#f2b33d"/>
+          <stop offset="1" stop-color="#e0672b"/>
+        </radialGradient>
+      </defs>
+      <g stroke="#f2b33d" stroke-width="3" stroke-linecap="round" opacity=".85">
+        <path d="M60 4v16M60 100v16M4 60h16M100 60h16M20.4 20.4l11.3 11.3M88.3 88.3l11.3 11.3M20.4 99.6l11.3-11.3M88.3 31.7l11.3-11.3"/>
+      </g>
+      <g stroke="#e0672b" stroke-width="2" stroke-linecap="round" opacity=".6">
+        <path d="M38.6 8.3l3 10.6M78.4 101.1l3 10.6M8.3 81.4l10.6-3M101.1 41.6l10.6-3M8.3 38.6l10.6 3M101.1 78.4l10.6 3M38.6 111.7l3-10.6M78.4 18.9l3-10.6"/>
+      </g>
+      <circle cx="60" cy="60" r="27" fill="url(#core)"/>
+    </svg>
+    <h1>SOL INVICTUS</h1>
+    <div class="tag">THE UNCONQUERED SUN</div>
+    <p class="lead">Something is rising. We're building it now.</p>
+    <div class="soon">Coming soon</div>
+  </main>
+  <footer>© <span id="y">2026</span> Sol Invictus · solinvictus.app</footer>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
