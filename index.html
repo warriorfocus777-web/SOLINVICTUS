@@ -37,6 +37,7 @@
   }
 
   * { box-sizing: border-box; }
+  [hidden] { display: none !important; }
   html { background: var(--bg); -webkit-text-size-adjust: 100%; }
   body {
     min-width: 320px;
@@ -49,12 +50,18 @@
     background: var(--bg);
     font: 14px/1.5 var(--sans);
     -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -webkit-tap-highlight-color: transparent;
   }
   ::selection { color: var(--bg); background: var(--ink); }
-  a { color: inherit; text-decoration: none; }
+  a { color: inherit; text-decoration: none; touch-action: manipulation; }
   :focus-visible { outline: 1px solid var(--ink); outline-offset: 4px; }
 
   #rain, .vignette { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+  #rain {
+    -webkit-mask-image: radial-gradient(ellipse 60% 55% at 50% 46%, rgba(0,0,0,.45), #000);
+    mask-image: radial-gradient(ellipse 60% 55% at 50% 46%, rgba(0,0,0,.45), #000);
+  }
   .vignette { background: radial-gradient(ellipse 85% 80% at 50% 48%, transparent 40%, rgba(18,18,19,.72) 100%); }
 
   .shell {
@@ -72,16 +79,17 @@
     gap: 16px;
     padding-block: 26px;
   }
-  .wordmark { font-size: 13px; letter-spacing: .04em; color: var(--muted); }
+  .wordmark { font-size: 13px; letter-spacing: .04em; color: var(--muted); transition: color .2s; }
+  .wordmark:hover { color: var(--ink); }
 
-  .density { display: flex; align-items: center; gap: 2px; margin: 0; padding: 0; border: 0; font-size: 11px; }
+  .density { display: flex; align-items: center; gap: 2px; margin: 0; padding: 0; border: 0; font-size: 12px; }
   .density legend { float: left; margin-right: 10px; padding: 0; letter-spacing: .04em; color: var(--muted); }
   .density label { position: relative; display: block; cursor: pointer; }
   .density input { position: absolute; inset: 0; margin: 0; opacity: 0; cursor: pointer; }
   .density span {
     display: block;
-    min-width: 28px;
-    padding: 5px 4px;
+    min-width: 36px;
+    padding: 7px 4px;
     text-align: center;
     color: var(--muted);
     transition: color .2s;
@@ -102,6 +110,7 @@
     margin: 0;
     font: 400 clamp(46px, 8vw, 76px)/1 var(--serif);
     letter-spacing: -.012em;
+    font-variant-numeric: lining-nums;
   }
   .threshold p { margin: 14px 0 0; font-size: 15px; color: var(--muted); }
 
@@ -125,7 +134,7 @@
     overflow: hidden;
     border: 1px solid var(--line);
     background: var(--door);
-    transition: transform .35s var(--ease), border-color .35s, background-color .35s;
+    transition: transform .35s var(--ease), border-color .35s, background-color .35s, box-shadow .35s;
   }
   .door::before {
     content: "";
@@ -149,21 +158,30 @@
     transition: transform .35s var(--ease), color .35s, filter .35s;
   }
   .mark .solid { fill: currentColor; stroke: none; }
-  .name { margin: auto 0 0; padding-top: 34px; font: 400 clamp(27px, 3.3vw, 33px)/1.12 var(--serif); }
+  .name { margin: auto 0 0; padding-top: 34px; font: 400 clamp(27px, 3.3vw, 33px)/1.12 var(--serif); font-variant-numeric: lining-nums; text-wrap: balance; }
   .line { margin: 8px 0 0; color: var(--muted); }
 
   .door:focus-visible { outline-offset: 3px; }
-  .door:hover, .door:focus-visible { background: var(--door-hover); border-color: var(--line-strong); }
-  .door:hover::before, .door:focus-visible::before { opacity: 1; }
-  .door:hover .mark, .door:focus-visible .mark {
+  .door:focus-visible, .door:active { background: var(--door-hover); border-color: var(--line-strong); }
+  .door:focus-visible::before, .door:active::before { opacity: 1; }
+  .door:focus-visible .mark, .door:active .mark {
     color: var(--ink);
     transform: scale(1.14);
     filter: drop-shadow(0 0 6px rgba(236,235,231,.5));
   }
-  .door:active { transform: translateY(0); }
   @media (hover: hover) {
-    .door:hover, .door:focus-visible { transform: translateY(-3px); }
-    .door:active { transform: translateY(-1px); }
+    .door:hover { background: var(--door-hover); border-color: var(--line-strong); }
+    .door:hover::before { opacity: 1; }
+    .door:hover .mark {
+      color: var(--ink);
+      transform: scale(1.14);
+      filter: drop-shadow(0 0 6px rgba(236,235,231,.5));
+    }
+    .door:hover, .door:focus-visible {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 32px -22px rgba(0,0,0,.9);
+    }
+    .door:active { transform: translateY(-1px); transition-duration: .1s; }
   }
 
   .trail {
@@ -184,10 +202,15 @@
   }
 
   @media (max-width: 640px) {
-    header.shell { padding-block: 18px; }
+    header.shell { padding-block: 10px; }
+    main.shell { padding-block: 12px 20px; }
+    .threshold { margin-bottom: 26px; }
+    .threshold p { margin-top: 8px; }
     .doors { grid-template-columns: minmax(0, 1fr); gap: 10px; }
-    .door { min-height: 158px; padding: 20px 22px 22px; }
-    .name { padding-top: 22px; }
+    .door { min-height: 0; padding: 18px 20px 20px; }
+    .name { padding-top: 18px; }
+    .density legend { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+    .density span { padding-block: 11px; }
   }
   @media (max-height: 760px) and (min-width: 641px) {
     .door { min-height: 164px; }
@@ -195,8 +218,8 @@
   }
   @media (prefers-reduced-motion: reduce) {
     .door, .door::before, .mark { transition: none; }
-    .door:hover, .door:focus-visible, .door:active { transform: none; }
-    .door:hover .mark, .door:focus-visible .mark { transform: none; }
+    .door:hover, .door:focus-visible, .door:active { transform: none; box-shadow: none; }
+    .door:hover .mark, .door:focus-visible .mark, .door:active .mark { transform: none; }
   }
   @media print {
     #rain, .vignette, .density { display: none; }
@@ -231,7 +254,7 @@
           <svg class="mark" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="4.2"/><path d="M10 1.5v3M10 15.5v3M1.5 10h3M15.5 10h3M4 4l2.1 2.1M13.9 13.9L16 16M16 4l-2.1 2.1M6.1 13.9L4 16"/></svg>
         </div>
         <h2 class="name">Seekers of Light</h2>
-        <p class="line">Solar alchemy: the Shadow, four stages, one Great Work.</p>
+        <p class="line">Solar alchemy, in four stages.</p>
       </a>
     </li>
     <li>
@@ -241,7 +264,7 @@
           <svg class="mark" viewBox="0 0 20 20" aria-hidden="true"><rect x="2.5" y="2.5" width="15" height="15"/><rect class="solid" x="6.5" y="6.5" width="7" height="7"/></svg>
         </div>
         <h2 class="name">Cadre 22</h2>
-        <p class="line">Haitian sovereignty, judgements, and the ledger.</p>
+        <p class="line">Haitian sovereignty, judgements, ledger.</p>
       </a>
     </li>
     <li>
@@ -251,7 +274,7 @@
           <svg class="mark" viewBox="0 0 20 20" aria-hidden="true"><circle class="solid" cx="10" cy="4.5" r="1.9"/><circle class="solid" cx="4" cy="15" r="1.9"/><circle class="solid" cx="16" cy="15" r="1.9"/></svg>
         </div>
         <h2 class="name">SOL / MATRIX</h2>
-        <p class="line">A temporary-belief instrument: charge, signal, release.</p>
+        <p class="line">Charge, signal, release.</p>
       </a>
     </li>
     <li>
@@ -261,7 +284,7 @@
           <svg class="mark" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.8L18.2 10 10 18.2 1.8 10z"/><path class="solid" d="M10 6.6L13.4 10 10 13.4 6.6 10z"/></svg>
         </div>
         <h2 class="name">Juan Montes Enterprises</h2>
-        <p class="line">Markets, credit, geopolitics, and Venezuela.</p>
+        <p class="line">Markets, credit, geopolitics, Venezuela.</p>
       </a>
     </li>
   </ul>
@@ -277,7 +300,7 @@
   const CELL = 14, DOT = 2, TAIL = 16, STEP_MS = 1000 / 30;
   const DENSITY = { low: 1 / 90000, mid: 1 / 38000, high: 1 / 17000 }; // drops per square pixel
 
-  let width = 0, height = 0, drops = [], density = 'low', raf = 0, last = 0;
+  let width = 0, height = 0, drops = [], target = 0, density = 'low', raf = 0, last = 0;
 
   const spawn = (scatter) => ({
     x: Math.floor(Math.random() * Math.ceil(width / CELL)) * CELL,
@@ -285,6 +308,7 @@
     speed: 26 + Math.random() * 46, // px per second
     tail: 7 + Math.floor(Math.random() * TAIL),
     bright: .35 + Math.random() * .4,
+    born: scatter && !calm.matches ? performance.now() + Math.random() * 900 : -Infinity,
   });
 
   const fit = () => {
@@ -294,21 +318,27 @@
     canvas.width = Math.round(width * ratio);
     canvas.height = Math.round(height * ratio);
     ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
-    const count = Math.round(width * height * DENSITY[density]);
-    drops.length = Math.min(drops.length, count);
-    while (drops.length < count) drops.push(spawn(true));
+    target = Math.round(width * height * DENSITY[density]);
+    if (calm.matches) drops.length = Math.min(drops.length, target);
+    while (drops.length < target) drops.push(spawn(true));
   };
 
-  const draw = () => {
+  const draw = (now) => {
     ctx.clearRect(0, 0, width, height);
     ctx.fillStyle = '#ecebe7';
     for (const d of drops) {
-      const head = Math.floor(d.y / CELL) * CELL;
-      for (let i = 0; i < d.tail; i++) {
-        const y = head - i * CELL;
+      const rise = Math.min(Math.max((now - d.born) / 900, 0), 1);
+      if (!rise) continue;
+      const position = d.y / CELL, head = Math.floor(position);
+      for (let row = head + 1; row > head - d.tail; row--) {
+        const y = row * CELL;
         if (y < -CELL || y > height) continue;
-        const fade = 1 - i / d.tail;
-        ctx.globalAlpha = i === 0 ? d.bright : d.bright * .34 * fade * fade;
+        const t = position - row; // cells behind the head; negative is the cell it is entering
+        let light;
+        if (t < 0) light = 1 + t;
+        else if (t < 1) light = 1 - .66 * t;
+        else light = .34 * ((d.tail - t) / (d.tail - 1)) ** 2;
+        ctx.globalAlpha = d.bright * rise * Math.max(light, 0);
         ctx.fillRect(d.x, y, DOT, DOT);
       }
     }
@@ -321,17 +351,20 @@
     if (elapsed < STEP_MS) return;
     last = now;
     const seconds = Math.min(elapsed, 100) / 1000;
-    for (let i = 0; i < drops.length; i++) {
+    for (let i = drops.length - 1; i >= 0; i--) {
       drops[i].y += drops[i].speed * seconds;
-      if ((drops[i].y - drops[i].tail * CELL) > height) drops[i] = spawn(false);
+      if (drops[i].y - drops[i].tail * CELL > height) {
+        if (drops.length > target) drops.splice(i, 1);
+        else drops[i] = spawn(false);
+      }
     }
-    draw();
+    draw(now);
   };
 
   const stop = () => { cancelAnimationFrame(raf); raf = 0; };
   const sync = () => {
     stop();
-    draw();
+    draw(performance.now());
     if (!calm.matches && !document.hidden) { last = performance.now(); raf = requestAnimationFrame(frame); }
   };
 
@@ -348,7 +381,7 @@
     density = e.target.value;
     remember(density);
     fit();
-    draw();
+    draw(performance.now());
   });
 
   fit();
@@ -357,10 +390,27 @@
   let resizing = 0;
   addEventListener('resize', () => {
     clearTimeout(resizing);
-    resizing = setTimeout(() => { fit(); draw(); }, 150);
+    resizing = setTimeout(() => {
+      // A phone's address bar sliding away is not a resize worth redrawing for.
+      if (innerWidth === width && Math.abs(innerHeight - height) < 140) return;
+      fit();
+      draw(performance.now());
+    }, 150);
   });
   document.addEventListener('visibilitychange', sync);
+  addEventListener('pageshow', sync);
   calm.addEventListener('change', sync);
+
+  document.querySelectorAll('.door').forEach((door) => {
+    const fetchAhead = () => {
+      const link = document.createElement('link');
+      link.rel = 'prefetch';
+      link.href = door.href;
+      document.head.append(link);
+    };
+    door.addEventListener('pointerenter', fetchAhead, { once: true });
+    door.addEventListener('focus', fetchAhead, { once: true });
+  });
 
   // Pointer glow and the quiet glyph trail, only where a real pointer exists.
   if (!matchMedia('(hover: hover) and (pointer: fine)').matches) return;
@@ -377,12 +427,17 @@
     });
     let next = 0, lastX = null, lastY = null;
 
-    door.addEventListener('pointerleave', () => { lastX = lastY = null; });
-    door.addEventListener('pointermove', (e) => {
+    const aim = (e) => {
       const box = door.getBoundingClientRect();
       const x = e.clientX - box.left, y = e.clientY - box.top;
       door.style.setProperty('--x', x + 'px');
       door.style.setProperty('--y', y + 'px');
+      return [x, y];
+    };
+    door.addEventListener('pointerenter', aim);
+    door.addEventListener('pointerleave', () => { lastX = lastY = null; });
+    door.addEventListener('pointermove', (e) => {
+      const [x, y] = aim(e);
       if (calm.matches) return;
       if (lastX !== null && Math.hypot(x - lastX, y - lastY) < GAP) return;
       lastX = x; lastY = y;
