@@ -1,0 +1,1221 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#000000">
+  <meta name="description" content="SOL / MATRIX — a temporary-belief instrument. Construct, lose, charge, release.">
+  <meta name="color-scheme" content="dark">
+  <title>SOL / MATRIX — Charge and Release</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: dark;
+      --black: #000000;
+      --green: #00FF41;
+      --green-bright: #39FF14;
+      --green-muted: #008F11;
+      --line: rgba(0,255,65,.22);
+      --line-strong: rgba(0,255,65,.48);
+      --copy: rgba(0,255,65,.72);
+      --serif: "Playfair Display", Georgia, serif;
+      --sans: "Montserrat", Arial, sans-serif;
+      --measure: 1160px;
+      --gutter: clamp(22px, 5.2vw, 82px);
+      --header-height: 72px;
+    }
+
+    * { box-sizing: border-box; }
+    html { background: var(--black); scroll-behavior: smooth; scroll-padding-top: calc(var(--header-height) + 12px); }
+    body {
+      min-width: 320px;
+      margin: 0;
+      overflow-x: hidden;
+      color: var(--green);
+      background: var(--black);
+      font-family: var(--sans);
+      font-size: 13px;
+      line-height: 1.75;
+      letter-spacing: .012em;
+    }
+    ::selection { color: var(--black); background: var(--green); }
+    a { color: inherit; text-decoration: none; }
+    button, input, textarea { font: inherit; }
+    button { color: inherit; }
+    button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visible {
+      outline: 1px solid var(--green-bright);
+      outline-offset: 5px;
+    }
+    [hidden] { display: none !important; }
+    .skip-link {
+      position: fixed; z-index: 100; top: 12px; left: 12px;
+      padding: 10px 14px; transform: translateY(-160%);
+      border: 1px solid var(--green-bright); background: var(--green-bright);
+      color: #001700; font-size: 9px; font-weight: 700;
+      letter-spacing: .13em; text-transform: uppercase;
+    }
+    .skip-link:focus { transform: translateY(0); }
+
+    /* One ambient visual system. The canvas pauses outside an active tab. */
+    #rain {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      opacity: .78;
+    }
+    .site { position: relative; z-index: 1; }
+    .wrap { width: min(var(--measure), calc(100% - var(--gutter) * 2)); margin-inline: auto; }
+    .serif { font-family: var(--serif); font-weight: 400; letter-spacing: -.045em; }
+    .eyebrow, .micro, .nav, .stage-index, .field-index, .brand-name, .quiet-label, .instruction-label, .instruction-end {
+      font-family: var(--sans);
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: .19em;
+      text-transform: uppercase;
+    }
+    .eyebrow, .micro, .stage-index, .field-index, .quiet-label { color: var(--green-muted); }
+    .muted { color: var(--copy); }
+
+    /* Header — three operations, no secondary navigation. */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      min-height: var(--header-height);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding-inline: var(--gutter);
+      border-bottom: 1px solid var(--line);
+      background: #000;
+    }
+    .brand { display: inline-flex; align-items: center; gap: 12px; white-space: nowrap; }
+    .brand-mark { display: block; width: 31px; height: 31px; flex: 0 0 auto; color: var(--green); }
+    .brand-name { color: var(--green); font-size: 10px; letter-spacing: .23em; }
+    .brand-name span { padding-inline: 3px; color: var(--green-muted); }
+    .nav { display: flex; align-items: center; gap: clamp(22px, 3vw, 42px); }
+    .nav a { color: var(--green-muted); transition: color .18s ease; }
+    .nav a:hover, .nav a:focus-visible { color: var(--green-bright); }
+
+    /* Hero — solar geometry above a descending, deliberately sparse field. */
+    .hero {
+      min-height: min(790px, calc(100svh - var(--header-height)));
+      display: flex;
+      align-items: center;
+      padding-block: clamp(84px, 11vw, 148px) clamp(72px, 8vw, 110px);
+      border-bottom: 1px solid var(--line);
+    }
+    .hero-inner { display: flex; align-items: center; justify-content: space-between; gap: clamp(44px, 8vw, 112px); width: 100%; }
+    .hero-copy { flex: 1 1 670px; min-width: 0; }
+    .hero-kicker { display: flex; align-items: center; gap: 13px; margin-bottom: 26px; color: var(--green-muted); }
+    .live-dot { width: 5px; height: 5px; display: inline-block; border-radius: 50%; background: var(--green); }
+    h1 {
+      max-width: 850px;
+      margin: 0;
+      color: var(--green-bright);
+      font-family: var(--serif);
+      font-size: clamp(68px, 10.5vw, 140px);
+      font-weight: 400;
+      letter-spacing: -.068em;
+      line-height: .95;
+    }
+    .hero-sub { max-width: 570px; margin: 30px 0 31px; color: var(--copy); font-size: 12px; line-height: 2.05; }
+    .primary-action {
+      min-height: 45px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      padding: 11px 18px;
+      border: 1px solid var(--green-bright);
+      background: var(--green-bright);
+      color: #001700;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: box-shadow .18s ease, transform .18s ease;
+    }
+    .primary-action:hover { box-shadow: 0 0 15px rgba(57,255,20,.15); transform: translateY(-1px); }
+    .primary-action:active { transform: translateY(0); }
+    .primary-action:disabled { opacity: .38; cursor: not-allowed; box-shadow: none; transform: none; }
+    .hero-mark { width: clamp(210px, 29vw, 360px); flex: 0 0 auto; color: var(--green-muted); opacity: .92; }
+    .hero-mark svg { display: block; width: 100%; height: auto; overflow: visible; }
+    .hero-tail { display: flex; align-items: center; justify-content: space-between; gap: 22px; padding-top: 21px; }
+    .hero-tail .micro { font-size: 8px; }
+    .formula-line { color: var(--green-muted); font-family: var(--serif); font-size: 16px; letter-spacing: -.01em; }
+
+    /* Section hierarchy — no panels, gradients or glass treatments. */
+    section { scroll-margin-top: calc(var(--header-height) + 8px); }
+    .section { padding-block: clamp(82px, 10vw, 136px); border-bottom: 1px solid var(--line); }
+    .section-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 42px; margin-bottom: clamp(36px, 5vw, 60px); }
+    .section-head-main { max-width: 800px; }
+    .section-head h2 {
+      margin: 11px 0 0;
+      color: var(--green);
+      font-family: var(--serif);
+      font-size: clamp(45px, 6.4vw, 79px);
+      font-weight: 400;
+      letter-spacing: -.06em;
+      line-height: 1.02;
+    }
+    .section-intro { max-width: 325px; padding-top: 30px; margin: 0; color: var(--copy); font-size: 11px; line-height: 1.95; }
+
+    /* Four stages: a single shared grammar, four distinct operations. */
+    .stage-row { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .stage-tile {
+      position: relative;
+      min-width: 0;
+      min-height: 245px;
+      padding: 24px 23px 28px 0;
+      border: 0;
+      border-right: 1px solid var(--line);
+      background: transparent;
+      text-align: left;
+      cursor: pointer;
+      transition: background-color .18s ease;
+    }
+    .stage-tile + .stage-tile { padding-left: 23px; }
+    .stage-tile:last-child { border-right: 0; }
+    .stage-tile:hover, .stage-tile[aria-pressed="true"] { background: rgba(0,255,65,.025); }
+    .stage-topline { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .stage-mark { width: 34px; height: 34px; display: block; color: var(--green-muted); transition: color .18s ease, filter .18s ease; }
+    .stage-tile[aria-pressed="true"] .stage-mark { color: var(--green-bright); filter: drop-shadow(0 0 4px rgba(57,255,20,.22)); }
+    .stage-name { margin: 34px 0 9px; color: var(--green); font-family: var(--serif); font-size: clamp(24px, 2.35vw, 33px); font-weight: 400; letter-spacing: -.045em; line-height: 1.06; }
+    .stage-desc { max-width: 200px; margin: 0; color: var(--copy); font-size: 10px; line-height: 1.85; }
+    .stage-arrow { position: absolute; right: 23px; bottom: 19px; color: var(--green-muted); font-size: 16px; }
+    .stage-tile[aria-pressed="true"] .stage-name { color: var(--green-bright); }
+    .instruction {
+      min-height: 74px;
+      display: none;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      margin-top: 24px;
+      padding: 4px 0 4px 18px;
+      border-left: 1px solid var(--green-bright);
+    }
+    .instruction.is-visible { display: flex; }
+    .instruction-label { display: block; color: var(--green-muted); font-size: 8px; }
+    .instruction-text { margin: 4px 0 0; color: var(--green-bright); font-family: var(--serif); font-size: clamp(19px, 2.15vw, 26px); line-height: 1.35; }
+    .instruction-end { flex: 0 0 auto; color: var(--green-muted); font-size: 8px; }
+
+    /* Mirror — a local structural check, not an AI assessment. */
+    .mirror-area { max-width: 950px; }
+    .mirror-question { max-width: 900px; margin: 0 0 18px; color: var(--green-bright); font-family: var(--serif); font-size: clamp(40px, 6vw, 75px); font-weight: 400; letter-spacing: -.06em; line-height: 1.06; }
+    .mirror-guidance { max-width: 650px; margin: 0 0 28px; color: var(--copy); font-size: 11px; line-height: 1.95; }
+    .mirror-input {
+      display: block;
+      width: 100%;
+      min-height: 132px;
+      padding: 17px 0;
+      resize: vertical;
+      border: 0;
+      border-top: 1px solid var(--line-strong);
+      border-bottom: 1px solid var(--line-strong);
+      border-radius: 0;
+      outline-offset: 5px;
+      background: transparent;
+      color: var(--green);
+      font-family: var(--sans);
+      font-size: 12px;
+      line-height: 1.95;
+    }
+    .mirror-input::placeholder { color: rgba(0,143,17,.9); opacity: 1; }
+    .mirror-actions { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; margin-top: 20px; }
+    .mirror-privacy { color: var(--green-muted); font-size: 8px; letter-spacing: .13em; text-transform: uppercase; }
+    .mirror-actions .field-action { margin-top: 0; color: var(--green-bright); border-color: var(--green-muted); }
+    .mirror-actions .field-action:hover { border-color: var(--green-bright); }
+    .mirror-result { min-height: 29px; margin: 23px 0 0; color: var(--green-bright); font-family: var(--serif); font-size: 19px; line-height: 1.45; }
+    .mirror-method { max-width: 610px; margin: 6px 0 0; color: var(--green-muted); font-size: 9px; line-height: 1.8; }
+
+    /* Field instruments: three clear operations, not a dashboard. */
+    .field-row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .field-card { min-width: 0; min-height: 465px; display: flex; flex-direction: column; padding: 23px 28px 27px 0; border-right: 1px solid var(--line); }
+    .field-card + .field-card { padding-left: 28px; }
+    .field-card:last-child { border-right: 0; }
+    .field-index { color: var(--green-muted); }
+    .field-visual { min-height: 145px; display: flex; align-items: center; justify-content: flex-start; margin: 4px 0 6px; color: var(--green-muted); }
+    .field-visual svg { display: block; width: 132px; height: 132px; overflow: visible; }
+    .field-title { margin: 3px 0 9px; color: var(--green); font-family: var(--serif); font-size: 33px; font-weight: 400; letter-spacing: -.045em; }
+    .field-copy { max-width: 300px; margin: 0 0 23px; color: var(--copy); font-size: 10px; line-height: 1.9; }
+    .field-action {
+      align-self: flex-start;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: auto;
+      padding: 8px 0 7px;
+      border: 0;
+      border-bottom: 1px solid var(--green-muted);
+      background: transparent;
+      color: var(--green);
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: color .18s ease, border-color .18s ease;
+    }
+    .field-action:hover:not(:disabled) { color: var(--green-bright); border-color: var(--green-bright); }
+    .field-action:disabled { opacity: .38; cursor: not-allowed; }
+    .sigil-form { margin-top: 1px; }
+    .sigil-input {
+      display: block;
+      width: 100%;
+      padding: 10px 0 9px;
+      border: 0;
+      border-bottom: 1px solid var(--line-strong);
+      border-radius: 0;
+      background: transparent;
+      color: var(--green);
+      font-size: 10px;
+    }
+    .sigil-input::placeholder { color: rgba(0,143,17,.9); }
+    .sigil-active { margin: 14px 0 8px; padding: 10px 0 0; border-top: 1px solid var(--line); }
+    .sigil-stage { min-height: 111px; display: flex; align-items: center; gap: 17px; }
+    .sigil-glyph { width: 104px; height: 104px; flex: 0 0 auto; color: var(--green-bright); }
+    .sigil-state { color: var(--green-muted); font-size: 8px; line-height: 1.8; letter-spacing: .12em; text-transform: uppercase; }
+    .sigil-state strong { display: block; margin-bottom: 4px; color: var(--green); font-weight: 600; }
+    .sigil-state span { display: block; max-width: 155px; }
+    .sigil-sequence { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 13px; margin-top: 9px; color: var(--green-muted); font-size: 8px; letter-spacing: .12em; text-transform: uppercase; }
+    .sigil-sequence span[aria-current="step"] { color: var(--green-bright); }
+    .sigil-sequence i { font-style: normal; opacity: .55; }
+    .sigil-controls { min-height: 36px; display: flex; align-items: center; flex-wrap: wrap; gap: 16px; margin-top: 7px; }
+    .sigil-lose, .sigil-hold, .sigil-discard {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 8px 0;
+      border: 0;
+      border-bottom: 1px solid var(--green-muted);
+      background: transparent;
+      color: var(--green);
+      font-size: 8px;
+      font-weight: 600;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+    .sigil-lose:hover, .sigil-hold:hover, .sigil-discard:hover { color: var(--green-bright); border-color: var(--green-bright); }
+    .sigil-hold { touch-action: none; user-select: none; -webkit-user-select: none; }
+    .sigil-hold:active { color: var(--green-bright); }
+    .sigil-discard { color: var(--green-muted); }
+    .sigil-feedback { min-height: 22px; margin: 10px 0 0; color: var(--green-muted); font-size: 8px; line-height: 1.7; letter-spacing: .08em; }
+
+    .tunnel-visual { width: 100% !important; max-width: 230px; height: auto !important; overflow: visible; }
+    .tunnel-node { cursor: pointer; outline: none; }
+    .tunnel-node .node-ring { fill: #000; stroke: var(--green-muted); stroke-width: 1.1; transition: fill .16s ease, stroke .16s ease, filter .16s ease; }
+    .tunnel-node .node-core { fill: var(--green-muted); }
+    .tunnel-node:hover .node-ring, .tunnel-node[aria-pressed="true"] .node-ring, .tunnel-node:focus-visible .node-ring {
+      fill: rgba(57,255,20,.12); stroke: var(--green-bright); filter: drop-shadow(0 0 4px rgba(57,255,20,.3));
+    }
+    .tunnel-node[aria-pressed="true"] .node-core { fill: var(--green-bright); }
+    .tunnel-labels { fill: var(--green-muted); font-family: var(--sans); font-size: 7px; font-weight: 600; letter-spacing: 1px; }
+    .tunnel-selection { min-height: 35px; max-width: 285px; margin: 0 0 13px; color: var(--green-bright); font-family: var(--serif); font-size: 16px; line-height: 1.45; }
+    .tunnel-detail { margin: 8px 0 20px; padding: 12px 0 0; border-top: 1px solid var(--line); }
+    .tunnel-steps { display: grid; grid-template-columns: 1fr 1fr; gap: 11px 16px; margin: 0; padding: 0; list-style: none; }
+    .tunnel-steps li { display: flex; flex-direction: column; gap: 2px; }
+    .tunnel-steps strong { color: var(--green); font-family: var(--serif); font-size: 17px; font-weight: 400; }
+    .tunnel-steps span { color: var(--green-muted); font-size: 8px; line-height: 1.65; }
+    .release-note { max-width: 280px; margin: 0 0 22px; color: var(--copy); font-size: 10px; line-height: 1.9; }
+    .release-formula { max-width: 260px; margin: 1px 0 24px; color: var(--green-bright); font-family: var(--serif); font-size: 21px; line-height: 1.35; }
+    .release-visual { color: var(--green-muted); }
+
+    /* Footer links the operative node back to the contemplative parent. */
+    footer { padding: 27px var(--gutter) 35px; }
+    .footer-inner { width: min(var(--measure), 100%); margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .footer-line { margin: 0; color: var(--green-muted); font-family: var(--serif); font-size: 16px; font-weight: 400; letter-spacing: 0; }
+    .footer-node { color: var(--green-muted); font-size: 8px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; white-space: nowrap; }
+    .footer-node:hover { color: var(--green-bright); }
+
+    @media (max-width: 900px) {
+      .hero-inner { gap: 42px; }
+      .hero-mark { width: clamp(190px, 27vw, 260px); }
+      .stage-tile { min-height: 230px; padding-right: 17px; }
+      .stage-tile + .stage-tile { padding-left: 17px; }
+      .stage-arrow { right: 17px; }
+      .field-card { padding-right: 19px; }
+      .field-card + .field-card { padding-left: 19px; }
+    }
+    @media (max-width: 760px) {
+      .hero { min-height: auto; }
+      .hero-inner { align-items: flex-start; }
+      .hero-mark { width: clamp(160px, 25vw, 205px); margin-top: 24px; }
+      .stage-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .stage-tile, .stage-tile + .stage-tile { min-height: 205px; padding: 21px 20px 25px 0; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+      .stage-tile:nth-child(2n) { padding-left: 20px; border-right: 0; }
+      .stage-tile:nth-last-child(-n+2) { border-bottom: 0; }
+      .stage-arrow { right: 18px; }
+      .stage-tile:nth-child(2n) .stage-arrow { right: 0; }
+      .field-row { grid-template-columns: 1fr; }
+      .field-card, .field-card + .field-card { min-height: 0; padding: 24px 0 29px; border-right: 0; border-bottom: 1px solid var(--line); }
+      .field-card:last-child { border-bottom: 0; }
+      .field-visual { min-height: 128px; }
+      .field-visual svg { width: 118px; height: 118px; }
+      .field-copy { max-width: 420px; }
+      .sigil-glyph { width: 96px; height: 96px; }
+      .tunnel-visual { width: min(230px, 72vw) !important; }
+    }
+    @media (max-width: 600px) {
+      :root { --header-height: 60px; }
+      html { scroll-padding-top: 66px; }
+      .topbar { min-height: var(--header-height); }
+      .nav { display: none; }
+      .brand-mark { width: 27px; height: 27px; }
+      .hero { padding-block: 76px 66px; }
+      .hero-inner { display: block; }
+      .hero-copy { width: 100%; }
+      h1 { max-width: 510px; font-size: clamp(58px, 16.8vw, 88px); }
+      .hero-sub { max-width: 410px; margin-top: 24px; }
+      .hero-mark { width: min(205px, 49vw); margin: 39px 0 0 auto; }
+      .hero-tail { align-items: flex-start; flex-direction: column; gap: 5px; }
+      .section-head { display: block; }
+      .section-intro { max-width: 390px; padding-top: 15px; }
+      .stage-tile, .stage-tile + .stage-tile { min-height: 0; padding-top: 19px; padding-bottom: 22px; }
+      .stage-name { margin: 12px 0 4px; font-size: 28px; }
+      .stage-desc { max-width: 280px; }
+      .stage-arrow { top: 42px; bottom: auto; }
+      .instruction { align-items: flex-start; }
+      .instruction-end { display: none; }
+      .mirror-actions { align-items: flex-start; }
+      .mirror-privacy { width: 100%; order: 2; }
+      .footer-inner { align-items: flex-start; flex-direction: column; gap: 8px; }
+      .footer-line { font-size: 15px; }
+      .footer-node { white-space: normal; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <canvas id="rain" aria-hidden="true"></canvas>
+  <div class="site">
+    <header class="topbar">
+      <a class="brand" href="/sol/" aria-label="Return to SOL — Seekers of Light">
+        <svg class="brand-mark" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+          <path d="M13 32a19 19 0 0 1 38 0" stroke="currentColor" stroke-width="1.7"/>
+          <path d="M6 32h52" stroke="currentColor" stroke-width="1.4"/>
+          <path d="M32 5v8M15 12l5 7M49 12l-5 7M5 23l9 3M59 23l-9 3" stroke="currentColor" stroke-width="1.05"/>
+          <path d="M16 37v9m8-9v14m8-14v18m8-18v13m8-13v16" stroke="currentColor" stroke-width="1.05" opacity=".8"/>
+        </svg>
+        <span class="brand-name">SOL <span>/</span> MATRIX</span>
+      </a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="#stages">Stages</a>
+        <a href="#mirror">Mirror</a>
+        <a href="#field">Field</a>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section class="hero wrap" aria-labelledby="hero-title">
+        <div class="hero-inner">
+          <div class="hero-copy">
+            <div class="hero-kicker eyebrow"><span class="live-dot" aria-hidden="true"></span> Operative arm of Seekers of Light</div>
+            <h1 id="hero-title">Charge and<br>release.</h1>
+            <p class="hero-sub">Belief is a tool. Compress the signal. Use the construct. Discard the form.</p>
+            <a class="primary-action" href="#stages">Enter the field <span aria-hidden="true">→</span></a>
+            <div class="hero-tail">
+              <span class="micro">Temporary belief instrument</span>
+              <span class="formula-line">Construct → Lose → Charge → Release</span>
+            </div>
+          </div>
+          <div class="hero-mark" aria-hidden="true">
+            <!-- Original mark: rising solar arc, thin horizon, open circuit rings and descending signal. -->
+            <svg viewBox="0 0 360 360" fill="none">
+              <g stroke="currentColor" stroke-width=".85" opacity=".44">
+                <circle cx="180" cy="133" r="105"/>
+                <circle cx="180" cy="133" r="89" stroke-dasharray="1 7"/>
+                <circle cx="180" cy="133" r="72" stroke-dasharray="28 9 2 9"/>
+                <path d="M180 8v34M180 224v16M54 133h31M275 133h31M91 44l22 22M247 200l22 22M269 44l-22 22M113 200l-22 22"/>
+                <path d="M180 28a105 105 0 0 1 105 105H75A105 105 0 0 1 180 28Z"/>
+              </g>
+              <path d="M118 133a62 62 0 0 1 124 0" stroke="currentColor" stroke-width="1.7"/>
+              <path d="M39 133h282" stroke="currentColor" stroke-width="1.4"/>
+              <g stroke="currentColor" stroke-width=".95" opacity=".7">
+                <path d="M56 151v44m18-44v70m20-44v28m19-44v93m20-93v55m20-55v116m20-116v67m20-67v42m20-42v87m20-87v54m20-54v105m20-105v66m18-66v38"/>
+                <path d="M56 195h8m10 26h8m31 27h8m39 24h8m39-67h8m18 34h8m28 0h8"/>
+                <circle cx="60" cy="198" r="2.5"/><circle cx="78" cy="224" r="2.5"/><circle cx="117" cy="251" r="2.5"/><circle cx="160" cy="272" r="2.5"/><circle cx="220" cy="221" r="2.5"/><circle cx="244" cy="255" r="2.5"/><circle cx="276" cy="190" r="2.5"/>
+              </g>
+              <g stroke="currentColor" stroke-width=".75" opacity=".38">
+                <path d="M131 133v22m18-22v31m18-31v39m26-39v31m18-31v22"/>
+                <path d="M140 165h80M151 176h58M162 187h36"/>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="stages" aria-labelledby="stages-title">
+        <div class="wrap">
+          <div class="section-head">
+            <div class="section-head-main">
+              <div class="eyebrow">01 / Stage</div>
+              <h2 id="stages-title">Choose the operation.</h2>
+            </div>
+            <p class="section-intro">A stage is a temporary lens, not an identity. Select one; its instruction ends when you leave this section.</p>
+          </div>
+
+          <div class="stage-row" role="group" aria-label="Select an alchemical stage">
+            <button class="stage-tile" type="button" data-stage="0" aria-pressed="false">
+              <div class="stage-topline">
+                <span class="stage-index">I / Nigredo</span>
+                <svg class="stage-mark" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M20 5A15 15 0 1 1 8.8 10" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"/><path d="M9 5v7h7" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <h3 class="stage-name">Dissolution</h3>
+              <p class="stage-desc">Observe the loop. Do not feed it.</p>
+              <span class="stage-arrow" aria-hidden="true">→</span>
+            </button>
+            <button class="stage-tile" type="button" data-stage="1" aria-pressed="false">
+              <div class="stage-topline">
+                <span class="stage-index">II / Albedo</span>
+                <svg class="stage-mark" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M9 7h22v26H9V14" stroke="currentColor" stroke-width="1.25" stroke-linecap="square"/><circle cx="20" cy="20" r="5.5" stroke="currentColor" stroke-width="1.1"/></svg>
+              </div>
+              <h3 class="stage-name">Clarification</h3>
+              <p class="stage-desc">Strip the projection. Name the tunnel.</p>
+              <span class="stage-arrow" aria-hidden="true">→</span>
+            </button>
+            <button class="stage-tile" type="button" data-stage="2" aria-pressed="false">
+              <div class="stage-topline">
+                <span class="stage-index">III / Citrinitas</span>
+                <svg class="stage-mark" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M20 5 34 32H6Z" stroke="currentColor" stroke-width="1.25" stroke-linejoin="round"/><path d="M20 15v9m-4.5 3.5h9" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/></svg>
+              </div>
+              <h3 class="stage-name">Charging</h3>
+              <p class="stage-desc">Compress. Charge. Release the form.</p>
+              <span class="stage-arrow" aria-hidden="true">→</span>
+            </button>
+            <button class="stage-tile" type="button" data-stage="3" aria-pressed="false">
+              <div class="stage-topline">
+                <span class="stage-index">IV / Rubedo</span>
+                <svg class="stage-mark" viewBox="0 0 40 40" fill="none" aria-hidden="true"><circle cx="20" cy="20" r="15" stroke="currentColor" stroke-width="1.2"/><path d="M20 10 29 27H11Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><circle cx="20" cy="20" r="2" fill="currentColor"/></svg>
+              </div>
+              <h3 class="stage-name">Release</h3>
+              <p class="stage-desc">Use the construct. Stop believing in it.</p>
+              <span class="stage-arrow" aria-hidden="true">→</span>
+            </button>
+          </div>
+
+          <div class="instruction" id="stage-instruction" aria-live="polite" aria-atomic="true">
+            <div>
+              <span class="instruction-label" id="instruction-label">Temporary instruction</span>
+              <p class="instruction-text" id="instruction-text"></p>
+            </div>
+            <span class="instruction-end">Ends on exit</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="mirror" aria-labelledby="mirror-title">
+        <div class="wrap">
+          <div class="section-head">
+            <div class="section-head-main">
+              <div class="eyebrow">02 / Mirror</div>
+              <h2 id="mirror-title">Name the mechanism.</h2>
+            </div>
+            <p class="section-intro">No reaction is required. Precision matters more than intensity. Stay with your own sequence.</p>
+          </div>
+          <div class="mirror-area">
+            <h3 class="mirror-question">What meme is currently running you?</h3>
+            <p class="mirror-guidance">Name the cue, what you do next, and what that action briefly secures or avoids. The test checks structure only; it cannot determine whether an explanation is true.</p>
+            <label class="quiet-label" for="mirror-input">Private reflection · this page only</label>
+            <textarea class="mirror-input" id="mirror-input" rows="4" maxlength="1200" placeholder="I notice that I … when … because it briefly …" aria-describedby="mirror-method"></textarea>
+            <div class="mirror-actions">
+              <button class="field-action mirror-submit" id="mirror-check" type="button">Test the reflection <span aria-hidden="true">→</span></button>
+              <span class="mirror-privacy">Local only · no account · no transmission</span>
+            </div>
+            <p class="mirror-result" id="mirror-result" role="status" aria-live="polite"></p>
+            <p class="mirror-method" id="mirror-method">Local structure check: first-person reference + cue or context + action + short-term payoff. Nothing is sent to a server.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="field" aria-labelledby="field-title">
+        <div class="wrap">
+          <div class="section-head">
+            <div class="section-head-main">
+              <div class="eyebrow">03 / Field</div>
+              <h2 id="field-title">Construct. Lose. Release.</h2>
+            </div>
+            <p class="section-intro">A form is useful only while it is useful. Nothing here becomes a permanent record.</p>
+          </div>
+
+          <div class="field-row">
+            <article class="field-card" aria-labelledby="sigil-title">
+              <div class="field-index">01 / Sigil</div>
+              <div class="field-visual" aria-hidden="true">
+                <!-- Pure geometric mark: intersecting arcs and circles, open centre. -->
+                <svg viewBox="0 0 140 140" fill="none">
+                  <g stroke="currentColor" stroke-width="1.05" stroke-linecap="round">
+                    <path d="M70 17A53 53 0 0 1 123 70"/><path d="M123 70A53 53 0 0 1 70 123"/>
+                    <path d="M70 123A53 53 0 0 1 17 70"/><path d="M17 70A53 53 0 0 1 70 17"/>
+                    <path d="M37 38a44 44 0 0 1 66 0M103 102a44 44 0 0 1-66 0" opacity=".78"/>
+                    <path d="M38 102a44 44 0 0 1 0-64M102 38a44 44 0 0 1 0 64" opacity=".78"/>
+                    <circle cx="70" cy="70" r="18" stroke-dasharray="1.5 5"/>
+                    <circle cx="70" cy="70" r="5" stroke-dasharray="1 3"/>
+                  </g>
+                </svg>
+              </div>
+              <h3 class="field-title" id="sigil-title">Sigil</h3>
+              <p class="field-copy">Reduce a seed to a pure geometric mark. The source phrase is discarded at construction.</p>
+
+              <form class="sigil-form" id="sigil-form">
+                <label class="quiet-label" for="sigil-seed">A short seed</label>
+                <input class="sigil-input" id="sigil-seed" type="text" maxlength="90" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Enter a phrase to compress">
+                <button class="field-action" id="sigil-compress" type="submit">Construct <span aria-hidden="true">→</span></button>
+              </form>
+
+              <div class="sigil-active" id="sigil-active" hidden aria-live="polite">
+                <div class="sigil-stage">
+                  <svg class="sigil-glyph" id="sigil-glyph" viewBox="0 0 100 100" fill="none" aria-hidden="true"></svg>
+                  <div class="sigil-state"><strong id="sigil-state-title">Constructed</strong><span id="sigil-state-copy">The source has been discarded.</span></div>
+                </div>
+                <div class="sigil-sequence" aria-label="Sigil sequence">
+                  <span id="sigil-step-construct" aria-current="step">Construct</span><i aria-hidden="true">→</i>
+                  <span id="sigil-step-lose">Lose</span><i aria-hidden="true">→</i>
+                  <span id="sigil-step-charge">Charge</span>
+                </div>
+                <div class="sigil-controls">
+                  <button class="sigil-lose" id="sigil-lose" type="button">Let the source go <span aria-hidden="true">→</span></button>
+                  <button class="sigil-hold" id="sigil-hold" type="button" hidden>Hold to charge <span aria-hidden="true">↗</span></button>
+                  <button class="sigil-discard" id="sigil-discard" type="button">Discard</button>
+                </div>
+              </div>
+              <p class="sigil-feedback" id="sigil-feedback" role="status" aria-live="polite"></p>
+            </article>
+
+            <article class="field-card" aria-labelledby="tunnel-title">
+              <div class="field-index">02 / Tunnel</div>
+              <div class="field-visual" aria-hidden="true">
+                <!-- Four selectable loop points around a concentric field. -->
+                <svg class="tunnel-visual" viewBox="0 0 240 170" fill="none" role="group" aria-label="Select a point in the loop: cue, attention, action or payoff">
+                  <g stroke="currentColor" stroke-width=".85" opacity=".72">
+                    <circle cx="120" cy="85" r="57"/><circle cx="120" cy="85" r="43"/>
+                    <circle cx="120" cy="85" r="29"/><circle cx="120" cy="85" r="15"/>
+                    <path d="M120 21v128M56 85h128M75 40l90 90M165 40l-90 90" stroke-dasharray="2 5" opacity=".62"/>
+                    <path d="M120 20v10M120 140v10M55 85h10M175 85h10"/>
+                  </g>
+                  <circle cx="120" cy="85" r="3.2" fill="currentColor"/>
+                  <g class="tunnel-labels" aria-hidden="true" text-anchor="middle">
+                    <text x="120" y="10">CUE</text><text x="218" y="88">ATTENTION</text>
+                    <text x="120" y="166">ACTION</text><text x="22" y="88">PAYOFF</text>
+                  </g>
+                  <g class="tunnel-node" data-loop-step="cue" role="button" tabindex="0" aria-label="Cue: what starts the sequence?" aria-pressed="false">
+                    <circle class="node-ring" cx="120" cy="28" r="7"/><circle class="node-core" cx="120" cy="28" r="2.1"/>
+                  </g>
+                  <g class="tunnel-node" data-loop-step="attention" role="button" tabindex="0" aria-label="Attention: what captures the field?" aria-pressed="false">
+                    <circle class="node-ring" cx="177" cy="85" r="7"/><circle class="node-core" cx="177" cy="85" r="2.1"/>
+                  </g>
+                  <g class="tunnel-node" data-loop-step="action" role="button" tabindex="0" aria-label="Action: what happens next?" aria-pressed="false">
+                    <circle class="node-ring" cx="120" cy="142" r="7"/><circle class="node-core" cx="120" cy="142" r="2.1"/>
+                  </g>
+                  <g class="tunnel-node" data-loop-step="payoff" role="button" tabindex="0" aria-label="Payoff: what is briefly secured or avoided?" aria-pressed="false">
+                    <circle class="node-ring" cx="63" cy="85" r="7"/><circle class="node-core" cx="63" cy="85" r="2.1"/>
+                  </g>
+                </svg>
+              </div>
+              <h3 class="field-title" id="tunnel-title">Tunnel</h3>
+              <p class="field-copy">Trace the sequence between a cue and its reinforcement. Select a node; the field responds locally.</p>
+              <p class="tunnel-selection" id="tunnel-selection" aria-live="polite" aria-atomic="true" hidden></p>
+              <div class="tunnel-detail" id="tunnel-detail" hidden>
+                <ol class="tunnel-steps">
+                  <li><strong>Cue</strong><span>What starts the sequence?</span></li>
+                  <li><strong>Attention</strong><span>What captures the field?</span></li>
+                  <li><strong>Action</strong><span>What do you do next?</span></li>
+                  <li><strong>Payoff</strong><span>What is briefly secured?</span></li>
+                </ol>
+              </div>
+              <button class="field-action" id="tunnel-trace" type="button" aria-expanded="false" aria-controls="tunnel-detail">Trace the loop <span aria-hidden="true">→</span></button>
+            </article>
+
+            <article class="field-card" aria-labelledby="release-title">
+              <div class="field-index">03 / Release</div>
+              <div class="field-visual release-visual" aria-hidden="true">
+                <!-- Augoeides-style radiant core: point and thin rays, no figurative form. -->
+                <svg viewBox="0 0 140 140" fill="none">
+                  <g stroke="currentColor" stroke-width=".95" stroke-linecap="round">
+                    <circle cx="70" cy="70" r="42" stroke-dasharray="1.5 6"/>
+                    <circle cx="70" cy="70" r="27"/>
+                    <path d="M70 9v31M70 100v31M9 70h31M100 70h31M27 27l22 22M91 91l22 22M113 27 91 49M49 91 27 113"/>
+                    <path d="m70 16 0 8m0 92v8M16 70h8m92 0h8M32 32l6 6m64 64 6 6M108 32l-6 6m-64 64-6 6" opacity=".7"/>
+                  </g>
+                  <circle cx="70" cy="70" r="5" fill="currentColor"/>
+                </svg>
+              </div>
+              <h3 class="field-title" id="release-title">Release</h3>
+              <p class="release-note">Use the construct. Then stop believing in it. Nothing needs to be kept.</p>
+              <p class="release-formula">The mark is not the meaning.</p>
+              <button class="field-action" id="release-all" type="button">End the operation <span aria-hidden="true">→</span></button>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <p class="footer-line">Belief is a tool · Nothing is true · Everything is permitted</p>
+        <a class="footer-node" href="/sol/">Solar Alchemy ↔ Memetic Node</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    (() => {
+      'use strict';
+
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const canvas = document.getElementById('rain');
+      let ctx = null;
+      try { ctx = canvas.getContext('2d', { alpha: true, desynchronized: true }); } catch (_) { /* Rain is optional; content remains usable. */ }
+      const stageButtons = [...document.querySelectorAll('[data-stage]')];
+      const stageSection = document.getElementById('stages');
+      const fieldSection = document.getElementById('field');
+      const instruction = document.getElementById('stage-instruction');
+      const instructionText = document.getElementById('instruction-text');
+      const instructionLabel = document.getElementById('instruction-label');
+      const stageData = [
+        { name: 'Nigredo / Dissolution', instruction: 'Observe the loop without feeding it.', multiplier: .96 },
+        { name: 'Albedo / Clarification', instruction: 'Strip the projection. Name the tunnel.', multiplier: 1.14 },
+        { name: 'Citrinitas / Charging', instruction: 'Compress. Charge. Release the form.', multiplier: 1.34 },
+        { name: 'Rubedo / Release', instruction: 'Use the construct. Then stop believing in it.', multiplier: 1.54 }
+      ];
+
+      let activeStage = null;
+      let width = 0;
+      let height = 0;
+      let ratio = 1;
+      let columns = [];
+      let rafId = 0;
+      let lastFrame = 0;
+      let pageVisible = !document.hidden;
+      let stageFocusElement = null;
+      let temporaryFocusElement = null;
+      let temporaryFocusPoint = null;
+      let stageFocusPoint = null;
+      let boostLevel = 0;
+      let boostStartedAt = 0;
+      let boostDuration = 0;
+      let chargeActive = false;
+      let chargeFocusElement = null;
+      let chargeFocusPoint = null;
+      const glyphs = Array.from('ｱｶｻﾀﾅﾊﾏﾔﾗﾜﾝ0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ');
+
+      function getElementPoint(element) {
+        if (!element || !element.isConnected) return null;
+        const rect = element.getBoundingClientRect();
+        if (rect.bottom < 0 || rect.top > height || rect.right < 0 || rect.left > width) return null;
+        return { x: rect.left + rect.width / 2, y: rect.top + rect.height / 2 };
+      }
+      function refreshFocusPoints() {
+        stageFocusPoint = getElementPoint(stageFocusElement);
+        temporaryFocusPoint = getElementPoint(temporaryFocusElement);
+        chargeFocusPoint = getElementPoint(chargeFocusElement);
+      }
+      function activeFocusPoint() {
+        if (chargeActive && chargeFocusPoint) return chargeFocusPoint;
+        const boost = currentBoost(performance.now());
+        if (boost > 0 && temporaryFocusPoint) return temporaryFocusPoint;
+        return stageFocusPoint;
+      }
+      function currentMultiplier() { return activeStage === null ? .78 : stageData[activeStage].multiplier; }
+      function currentBoost(now) {
+        if (!boostLevel || !boostDuration) return 0;
+        const elapsed = now - boostStartedAt;
+        if (elapsed >= boostDuration) {
+          boostLevel = 0;
+          boostDuration = 0;
+          temporaryFocusElement = null;
+          temporaryFocusPoint = null;
+          return 0;
+        }
+        const remain = 1 - elapsed / boostDuration;
+        return boostLevel * remain * remain;
+      }
+      function pulseRain(amount, duration, focusElement) {
+        boostLevel = Math.max(boostLevel, amount);
+        boostStartedAt = performance.now();
+        boostDuration = duration;
+        temporaryFocusElement = focusElement || null;
+        refreshFocusPoints();
+      }
+      function setChargeState(isActive, element = null) {
+        chargeActive = isActive;
+        chargeFocusElement = isActive ? element : null;
+        refreshFocusPoints();
+      }
+
+      function resizeRain() {
+        if (!ctx) return;
+        width = window.innerWidth;
+        height = window.innerHeight;
+        ratio = Math.min(window.devicePixelRatio || 1, 1.25);
+        canvas.width = Math.max(1, Math.floor(width * ratio));
+        canvas.height = Math.max(1, Math.floor(height * ratio));
+        ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+        const step = width < 600 ? 46 : 54;
+        columns = [];
+        for (let x = 16; x < width; x += step) {
+          columns.push({
+            x,
+            y: -Math.random() * Math.max(height, 1),
+            speed: .58 + Math.random() * .52,
+            active: false,
+            age: 0,
+            life: 0,
+            tail: 5 + Math.floor(Math.random() * 6),
+            char: glyphs[Math.floor(Math.random() * glyphs.length)]
+          });
+        }
+        const initialCount = Math.min(columns.length, width < 600 ? 1 : 2);
+        for (let i = 0; i < initialCount; i++) {
+          const c = columns[Math.floor(Math.random() * columns.length)];
+          if (!c) continue;
+          c.active = true;
+          c.age = 14;
+          c.life = 90 + Math.floor(Math.random() * 45);
+          c.y = Math.random() * Math.max(height, 1);
+        }
+        refreshFocusPoints();
+      }
+
+      function drawRain(now) {
+        if (!pageVisible || reducedMotion || !ctx) { rafId = 0; return; }
+        if (now - lastFrame < 42) { rafId = requestAnimationFrame(drawRain); return; }
+        lastFrame = now;
+        ctx.fillStyle = 'rgba(0,0,0,.17)';
+        ctx.fillRect(0, 0, width, height);
+
+        const boost = chargeActive ? .82 : currentBoost(now);
+        const density = currentMultiplier();
+        const maxActive = Math.min(5, 1 + Math.round(Math.max(0, density - .75) * 4) + Math.round(boost * 2.4));
+        let activeCount = 0;
+        for (const c of columns) if (c.active) activeCount++;
+        const spawnChance = .00034 * density + boost * .00042;
+        const focus = activeFocusPoint();
+        const fontSize = width < 600 ? 10 : 11;
+        ctx.font = `${fontSize}px monospace`;
+        ctx.textAlign = 'center';
+
+        for (const c of columns) {
+          if (!c.active && activeCount < maxActive) {
+            let weight = 1;
+            if (focus) {
+              const dx = c.x - focus.x;
+              weight = .12 + 1.25 * Math.exp(-(dx * dx) / (2 * 165 * 165));
+            }
+            if (Math.random() < spawnChance * weight) {
+              c.active = true;
+              activeCount++;
+              c.y = focus ? focus.y - 85 + Math.random() * 170 : -Math.random() * 100;
+              c.age = 0;
+              c.life = 78 + Math.floor(Math.random() * 84);
+              c.tail = 5 + Math.floor(Math.random() * 7);
+            }
+          }
+          if (!c.active) continue;
+          c.age++;
+          c.y += c.speed * (1 + density * .13 + boost * .18);
+          if (Math.random() < .04) c.char = glyphs[Math.floor(Math.random() * glyphs.length)];
+          const fade = Math.min(1, c.age / 13, (c.life - c.age) / 18);
+          for (let t = 0; t < c.tail; t++) {
+            const y = c.y - t * fontSize * 1.27;
+            if (y < -fontSize || y > height + fontSize) continue;
+            const alpha = Math.max(0, fade * (.22 + (density - .75) * .16 + boost * .48) * (1 - t / (c.tail + 1)));
+            if (alpha <= .014) continue;
+            ctx.fillStyle = t === 0
+              ? `rgba(57,255,20,${Math.min(.88, alpha + .12)})`
+              : `rgba(0,255,65,${Math.min(.62, alpha)})`;
+            ctx.fillText(t === 0 ? c.char : glyphs[(c.age + t * 7) % glyphs.length], c.x, y);
+          }
+          if (c.age >= c.life || c.y - c.tail * fontSize > height + 20) {
+            c.active = false;
+            activeCount--;
+          }
+        }
+        rafId = requestAnimationFrame(drawRain);
+      }
+      function startRain() {
+        if (!ctx || reducedMotion || !pageVisible || rafId) return;
+        lastFrame = 0;
+        rafId = requestAnimationFrame(drawRain);
+      }
+      function stopRain(clear = false) {
+        if (rafId) cancelAnimationFrame(rafId);
+        rafId = 0;
+        if (clear && ctx) ctx.clearRect(0, 0, width, height);
+      }
+      resizeRain();
+      startRain();
+      window.addEventListener('resize', resizeRain, { passive: true });
+      window.addEventListener('scroll', refreshFocusPoints, { passive: true });
+      document.addEventListener('visibilitychange', () => {
+        pageVisible = !document.hidden;
+        if (!pageVisible) {
+          stopRain(true);
+          if (sigilPhase !== 'idle') releaseSigil('Released when the page became inactive. Nothing retained.');
+          clearStage();
+          resetTunnel();
+          boostLevel = 0;
+          boostDuration = 0;
+          temporaryFocusElement = null;
+          temporaryFocusPoint = null;
+        } else startRain();
+      });
+
+      function clearStage() {
+        activeStage = null;
+        stageFocusElement = null;
+        stageButtons.forEach(button => button.setAttribute('aria-pressed', 'false'));
+        instruction.classList.remove('is-visible');
+        instructionText.textContent = '';
+        refreshFocusPoints();
+      }
+      stageButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const next = Number(button.dataset.stage);
+          if (!Number.isInteger(next) || !stageData[next]) return;
+          activeStage = next;
+          stageFocusElement = button;
+          stageButtons.forEach((item, index) => item.setAttribute('aria-pressed', String(index === next)));
+          instructionLabel.textContent = `Temporary instruction · ${stageData[next].name}`;
+          instructionText.textContent = stageData[next].instruction;
+          instruction.classList.add('is-visible');
+          refreshFocusPoints();
+        });
+      });
+      if ('IntersectionObserver' in window) {
+        const stageObserver = new IntersectionObserver(entries => {
+          const entry = entries[0];
+          if (entry && !entry.isIntersecting && activeStage !== null) clearStage();
+        }, { threshold: .08 });
+        stageObserver.observe(stageSection);
+      }
+
+      /* Mirror check: structural heuristic only; it does not interpret meaning. */
+      const mirrorInput = document.getElementById('mirror-input');
+      const mirrorCheck = document.getElementById('mirror-check');
+      const mirrorResult = document.getElementById('mirror-result');
+      const firstPersonPattern = /\b(i|i'm|i’ve|i've|me|my|mine|myself)\b/i;
+      const cuePattern = /\b(when|whenever|after|before|if|once|as soon as|each time|every time|triggered by)\b/i;
+      const actionPattern = /\b(scroll|check|compare|avoid|react|repeat|seek|refresh|perform|prove|argue|withdraw|ruminat\w*|reassur\w*|re-read|recheck|post|reply|buy|work|overthink|monitor|search|look)\b/i;
+      const payoffPattern = /\b(because|so that|to feel|to avoid|to get|to secure|relief|validation|control|belonging|approval|certainty|safety|attention|recognition|reassurance|escape|less anxious|less uncertain)\b/i;
+      let previousPrecision = false;
+      mirrorCheck.addEventListener('click', () => {
+        const value = mirrorInput.value.trim();
+        const hasFirstPerson = firstPersonPattern.test(value);
+        const hasCue = cuePattern.test(value);
+        const hasAction = actionPattern.test(value);
+        const hasPayoff = payoffPattern.test(value);
+        const substantive = value.length >= 32;
+        const structured = hasFirstPerson && hasCue && hasAction && hasPayoff && substantive;
+        if (structured) {
+          mirrorResult.textContent = 'Sequence named. Test the explanation; do not turn it into an identity.';
+          if (!previousPrecision) pulseRain(.064, 4300, mirrorInput);
+        } else if (!hasFirstPerson) {
+          mirrorResult.textContent = 'Begin with “I”: what do I do, and what does it secure or avoid?';
+        } else if (!hasCue || !hasAction) {
+          mirrorResult.textContent = 'Name the cue and the action: when does it begin, and what do I do next?';
+        } else if (!hasPayoff || !substantive) {
+          mirrorResult.textContent = 'Name the short-term payoff: what does the action briefly secure or help me avoid?';
+        }
+        previousPrecision = structured;
+      });
+      mirrorInput.addEventListener('input', () => {
+        previousPrecision = false;
+        mirrorResult.textContent = '';
+      });
+      mirrorInput.addEventListener('keydown', event => {
+        if (event.key === 'Escape') {
+          mirrorInput.value = '';
+          mirrorResult.textContent = '';
+          previousPrecision = false;
+          boostLevel = 0;
+          boostDuration = 0;
+          temporaryFocusElement = null;
+          refreshFocusPoints();
+        }
+      });
+
+      /* Sigil: Construct → Lose → actively hold to Charge → Release. */
+      const sigilForm = document.getElementById('sigil-form');
+      const sigilSeed = document.getElementById('sigil-seed');
+      const sigilActive = document.getElementById('sigil-active');
+      const sigilGlyph = document.getElementById('sigil-glyph');
+      const sigilStateTitle = document.getElementById('sigil-state-title');
+      const sigilStateCopy = document.getElementById('sigil-state-copy');
+      const sigilCompress = document.getElementById('sigil-compress');
+      const sigilLose = document.getElementById('sigil-lose');
+      const sigilHold = document.getElementById('sigil-hold');
+      const sigilDiscard = document.getElementById('sigil-discard');
+      const sigilFeedback = document.getElementById('sigil-feedback');
+      const sigilSteps = {
+        construct: document.getElementById('sigil-step-construct'),
+        lose: document.getElementById('sigil-step-lose'),
+        charge: document.getElementById('sigil-step-charge')
+      };
+      let sigilPhase = 'idle';
+      let loseTimeout = 0;
+      let clickFallbackTimeout = 0;
+      let maxChargeTimeout = 0;
+      let suppressClickUntil = 0;
+      let heldKey = null;
+
+      function setSigilStep(step) {
+        Object.entries(sigilSteps).forEach(([name, element]) => {
+          if (name === step) element.setAttribute('aria-current', 'step');
+          else element.removeAttribute('aria-current');
+        });
+      }
+      function hashSeed(value) {
+        let hash = 2166136261;
+        for (let i = 0; i < value.length; i++) {
+          hash ^= value.charCodeAt(i);
+          hash = Math.imul(hash, 16777619);
+        }
+        return hash >>> 0;
+      }
+      function makeSigil(value) {
+        let seed = hashSeed(value);
+        const next = () => {
+          seed = (Math.imul(seed, 1664525) + 1013904223) >>> 0;
+          return seed / 4294967296;
+        };
+        const cx = 50, cy = 50;
+        const points = [];
+        let paths = '';
+        for (let i = 0; i < 8; i++) {
+          const angle = Math.PI * 2 * i / 8 - Math.PI / 2;
+          const radius = 24 + Math.round(next() * 19);
+          const x = cx + Math.cos(angle) * radius;
+          const y = cy + Math.sin(angle) * radius;
+          points.push([x, y]);
+          const bend = angle + (next() - .5) * .45;
+          const mx = cx + Math.cos(bend) * radius * (.42 + next() * .12);
+          const my = cy + Math.sin(bend) * radius * (.42 + next() * .12);
+          paths += `<path d="M${cx.toFixed(1)} ${cy.toFixed(1)} Q${mx.toFixed(1)} ${my.toFixed(1)} ${x.toFixed(1)} ${y.toFixed(1)}"/>`;
+        }
+        const a = points[Math.floor(next() * 8)];
+        const b = points[(Math.floor(next() * 8) + 3) % 8];
+        const controlX = cx + (next() - .5) * 35;
+        const controlY = cy + (next() - .5) * 35;
+        paths += `<path d="M${a[0].toFixed(1)} ${a[1].toFixed(1)} Q${controlX.toFixed(1)} ${controlY.toFixed(1)} ${b[0].toFixed(1)} ${b[1].toFixed(1)}"/>`;
+        paths += '<circle cx="50" cy="50" r="8" stroke-dasharray="1 4"/><circle cx="50" cy="50" r="2.2"/>';
+        return `<g stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" fill="none">${paths}</g>`;
+      }
+      function clearSigilTimers() {
+        window.clearTimeout(loseTimeout);
+        window.clearTimeout(clickFallbackTimeout);
+        window.clearTimeout(maxChargeTimeout);
+        loseTimeout = clickFallbackTimeout = maxChargeTimeout = 0;
+      }
+      function releaseSigil(message = 'Released. No source or mark retained.', restoreFocus = false) {
+        const shouldRestoreFocus = restoreFocus && sigilActive.contains(document.activeElement);
+        clearSigilTimers();
+        sigilPhase = 'idle';
+        heldKey = null;
+        setChargeState(false);
+        sigilGlyph.innerHTML = '';
+        sigilGlyph.style.visibility = 'visible';
+        sigilActive.hidden = true;
+        sigilSeed.disabled = false;
+        sigilSeed.value = '';
+        sigilSeed.placeholder = 'Enter a phrase to compress';
+        sigilCompress.disabled = false;
+        sigilFeedback.textContent = message;
+        setSigilStep('construct');
+        if (shouldRestoreFocus) {
+          try { sigilSeed.focus({ preventScroll: true }); } catch (_) { sigilSeed.focus(); }
+        }
+      }
+      function finishCharge() {
+        if (sigilPhase !== 'charging') return;
+        suppressClickUntil = Date.now() + 450;
+        releaseSigil('Released. The rain returns to baseline. Nothing retained.', true);
+      }
+      function beginCharge() {
+        if (sigilPhase !== 'ready' || chargeActive) return;
+        sigilPhase = 'charging';
+        setSigilStep('charge');
+        sigilStateTitle.textContent = 'Charging';
+        sigilStateCopy.textContent = 'The field responds only while held.';
+        setChargeState(true, sigilGlyph);
+        maxChargeTimeout = window.setTimeout(finishCharge, 12000);
+      }
+      sigilForm.addEventListener('submit', event => {
+        event.preventDefault();
+        if (sigilPhase !== 'idle') return;
+        let seedSource = sigilSeed.value.trim();
+        if (!seedSource) { sigilSeed.focus(); return; }
+        sigilGlyph.innerHTML = makeSigil(seedSource);
+        seedSource = '';
+        sigilSeed.value = '';
+        sigilSeed.disabled = true;
+        sigilSeed.placeholder = 'Source phrase discarded';
+        sigilCompress.disabled = true;
+        sigilFeedback.textContent = '';
+        sigilActive.hidden = false;
+        sigilPhase = 'constructed';
+        setSigilStep('construct');
+        sigilStateTitle.textContent = 'Constructed';
+        sigilStateCopy.textContent = 'The source phrase has been discarded.';
+        sigilGlyph.style.visibility = 'visible';
+        sigilLose.hidden = false;
+        sigilHold.hidden = true;
+        refreshFocusPoints();
+        sigilLose.focus({ preventScroll: true });
+      });
+      sigilLose.addEventListener('click', () => {
+        if (sigilPhase !== 'constructed') return;
+        sigilPhase = 'losing';
+        setSigilStep('lose');
+        sigilGlyph.style.visibility = 'hidden';
+        sigilLose.hidden = true;
+        sigilStateTitle.textContent = 'Lose';
+        sigilStateCopy.textContent = 'Turn attention elsewhere. Let the source go.';
+        loseTimeout = window.setTimeout(() => {
+          if (sigilPhase !== 'losing') return;
+          sigilGlyph.style.visibility = 'visible';
+          sigilPhase = 'ready';
+          sigilStateTitle.textContent = 'Source released';
+          sigilStateCopy.textContent = 'Hold the mark only if useful. Release to discard.';
+          sigilHold.hidden = false;
+          refreshFocusPoints();
+          sigilHold.focus({ preventScroll: true });
+        }, 1350);
+      });
+      sigilHold.addEventListener('pointerdown', event => {
+        if (sigilPhase !== 'ready') return;
+        event.preventDefault();
+        try { sigilHold.setPointerCapture(event.pointerId); } catch (_) {}
+        beginCharge();
+      });
+      sigilHold.addEventListener('pointerup', () => finishCharge());
+      sigilHold.addEventListener('pointercancel', () => finishCharge());
+      sigilHold.addEventListener('lostpointercapture', () => finishCharge());
+      sigilHold.addEventListener('keydown', event => {
+        if ((event.key === ' ' || event.key === 'Enter') && !event.repeat && sigilPhase === 'ready') {
+          event.preventDefault();
+          heldKey = event.key;
+          beginCharge();
+        }
+      });
+      sigilHold.addEventListener('keyup', event => {
+        if (heldKey && event.key === heldKey) finishCharge();
+      });
+      sigilHold.addEventListener('click', () => {
+        if (Date.now() < suppressClickUntil || sigilPhase !== 'ready') return;
+        beginCharge();
+        clickFallbackTimeout = window.setTimeout(finishCharge, 900);
+      });
+      sigilDiscard.addEventListener('click', () => releaseSigil('Discarded. No source or mark retained.', true));
+      window.addEventListener('blur', () => {
+        if (sigilPhase !== 'idle') releaseSigil('Released when focus left the page. Nothing retained.');
+      });
+
+      /* Tunnel nodes are a small interactive map, not a separate tracking system. */
+      const tunnelTrace = document.getElementById('tunnel-trace');
+      const tunnelDetail = document.getElementById('tunnel-detail');
+      const tunnelSelection = document.getElementById('tunnel-selection');
+      const tunnelNodes = [...document.querySelectorAll('[data-loop-step]')];
+      const tunnelCopy = {
+        cue: ['Cue', 'What starts the sequence?'],
+        attention: ['Attention', 'What captures the field?'],
+        action: ['Action', 'What do I do next?'],
+        payoff: ['Payoff', 'What is briefly secured or avoided?']
+      };
+      function resetTunnel() {
+        tunnelNodes.forEach(node => node.setAttribute('aria-pressed', 'false'));
+        tunnelSelection.hidden = true;
+        tunnelSelection.textContent = '';
+        tunnelDetail.hidden = true;
+        tunnelTrace.setAttribute('aria-expanded', 'false');
+        tunnelTrace.innerHTML = 'Trace the loop <span aria-hidden="true">→</span>';
+      }
+      function selectTunnelNode(node) {
+        const key = node.dataset.loopStep;
+        if (!tunnelCopy[key]) return;
+        const wasSelected = node.getAttribute('aria-pressed') === 'true';
+        tunnelNodes.forEach(item => item.setAttribute('aria-pressed', String(item === node && !wasSelected)));
+        if (wasSelected) {
+          tunnelSelection.hidden = true;
+          tunnelSelection.textContent = '';
+          return;
+        }
+        tunnelSelection.textContent = `${tunnelCopy[key][0]} — ${tunnelCopy[key][1]}`;
+        tunnelSelection.hidden = false;
+        pulseRain(.032, 2100, node);
+      }
+      tunnelNodes.forEach(node => {
+        node.addEventListener('click', () => selectTunnelNode(node));
+        node.addEventListener('keydown', event => {
+          if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            node.dispatchEvent(new MouseEvent('click', { bubbles: true, cancelable: true, view: window }));
+          }
+        });
+      });
+      tunnelTrace.addEventListener('click', () => {
+        const expanded = tunnelTrace.getAttribute('aria-expanded') === 'true';
+        tunnelTrace.setAttribute('aria-expanded', String(!expanded));
+        tunnelDetail.hidden = expanded;
+        tunnelTrace.innerHTML = expanded
+          ? 'Trace the loop <span aria-hidden="true">→</span>'
+          : 'Close the loop <span aria-hidden="true">↑</span>';
+      });
+
+      function endOperation() {
+        releaseSigil('Operation ended. No source or mark retained.');
+        clearStage();
+        boostLevel = 0;
+        boostDuration = 0;
+        temporaryFocusElement = null;
+        temporaryFocusPoint = null;
+        mirrorInput.value = '';
+        mirrorResult.textContent = '';
+        previousPrecision = false;
+        resetTunnel();
+        refreshFocusPoints();
+      }
+      document.getElementById('release-all').addEventListener('click', endOperation);
+
+      if ('IntersectionObserver' in window) {
+        const fieldObserver = new IntersectionObserver(entries => {
+          const entry = entries[0];
+          if (entry && !entry.isIntersecting) {
+            if (sigilPhase !== 'idle') releaseSigil('Released on exit. No source or mark retained.');
+            if (temporaryFocusElement && fieldSection.contains(temporaryFocusElement)) {
+              boostLevel = 0;
+              boostDuration = 0;
+              temporaryFocusElement = null;
+              temporaryFocusPoint = null;
+            }
+            resetTunnel();
+          }
+        }, { threshold: .04 });
+        fieldObserver.observe(fieldSection);
+      }
+
+      window.addEventListener('pagehide', () => {
+        if (sigilPhase !== 'idle') releaseSigil('Operation ended. Nothing retained.');
+        clearStage();
+        resetTunnel();
+        boostLevel = 0;
+        boostDuration = 0;
+        temporaryFocusElement = null;
+        stopRain(true);
+      });
+    })();
+  </script>
+</body>
+</html>

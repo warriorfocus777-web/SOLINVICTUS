@@ -1,0 +1,45 @@
+/* One shared motion vocabulary. No JavaScript animation loop. */
+:root{--motion-ease:cubic-bezier(.2,.7,.2,1)}
+.solar-study{--rise:0;isolation:isolate}
+.orb,.crown{position:absolute;inset:0;pointer-events:none}
+.solar-disc{animation:none;transform:translate(-50%,calc(-38% - var(--rise)*24%));background:radial-gradient(circle at 50% 35%,#fff,#f1f1f1 65%,#cecece);box-shadow:0 0 22px #ffffff16}
+.orbit-one,.orbit-two,.orbit-three{animation:none;border-width:1px;border-style:solid}
+.orbit-one{opacity:.35}.orbit-two{opacity:.55}.orbit-three{opacity:.75}
+.orbit-one:after{display:none}
+.solar-glyph{position:absolute;top:68%;transform:translateY(-150%);font:8px var(--mono);letter-spacing:.12em;color:#aaa;z-index:3}
+.glyph-left{left:4%}.glyph-right{right:4%}
+.study-top{top:3%;font-size:8px;letter-spacing:.18em}.study-bottom{left:4%;right:4%;bottom:2%}
+.motion-toggle,.tape-toggle{font:10px var(--mono);min-height:44px;cursor:pointer;color:#b0b0b0;background:none;border:0;padding:10px}
+.motion-toggle:hover,.tape-toggle:hover{color:#fff}
+.reveal,.solar-study{transition:opacity 900ms var(--motion-ease),translate 900ms var(--motion-ease)}
+.reveal-pending{opacity:0;translate:0 8px}.reveal:focus-within{opacity:1;translate:none}
+.focus{transition:border-color 240ms var(--motion-ease),translate 240ms var(--motion-ease),opacity 900ms var(--motion-ease)}
+.focus-number>span,.desk-open>span{display:inline-block;transition:transform 240ms var(--motion-ease)}
+.focus:hover,.focus:focus-visible{translate:0 -2px;border-color:#aaa}
+.focus:hover .focus-number>span,.focus:focus-visible .focus-number>span,.focus:hover .desk-open>span,.focus:focus-visible .desk-open>span{transform:translateX(3px)}
+.desk-open{display:inline-flex;align-items:center;gap:18px;font:11px var(--mono);padding-bottom:5px;border-bottom:1px solid transparent;transition:border-color 240ms var(--motion-ease)}
+.focus:hover .desk-open,.focus:focus-visible .desk-open{border-color:#aaa}
+.text-link,.button,.main-nav a,.stage-note a{transition:color 240ms var(--motion-ease),background-color 240ms var(--motion-ease),border-color 240ms var(--motion-ease)}
+.coverage-tape{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:24px;min-height:60px;border-top:1px solid var(--line);padding-block:8px}
+.tape-caption small{display:block;font-size:9px;color:#a6a6a6}.tape-caption .eyebrow{font-size:9px}
+.tape-window{min-width:0;overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 22px,#000 calc(100% - 22px),transparent)}
+.tape-track{display:flex;width:max-content;max-width:none;animation:none}
+.tape-group{display:flex;align-items:center;flex-shrink:0;white-space:nowrap;gap:32px;padding-right:32px}
+.tape-group>span{display:flex;align-items:center;gap:12px;font:10px var(--mono);letter-spacing:.04em;color:#bababa;min-height:30px}
+.px{display:inline-block;width:3px;height:3px;background:#b0b0b0;opacity:.4;flex:none}
+.tape-ready .tape-track{animation:coverage-flow 48s linear infinite}
+.tape-paused .tape-track,.tape-offscreen .tape-track{animation-play-state:paused}
+/* Without script there is no moving strip or inaccessible clipped content. */
+.coverage-tape:not(.tape-ready) .tape-window{mask-image:none;overflow:visible}
+.coverage-tape:not(.tape-ready) .tape-track{width:auto}
+.coverage-tape:not(.tape-ready) .tape-group{flex-wrap:wrap;white-space:normal;gap:8px 18px;padding:0}
+.coverage-tape:not(.tape-ready) .tape-group[aria-hidden=true]{display:none}
+@keyframes coverage-flow{to{transform:translateX(-50%)}}
+@media(max-width:700px){.coverage-tape{gap:6px 12px;grid-template-columns:minmax(0,1fr) auto;padding-block:10px}.tape-caption{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center}.tape-toggle{font-size:9px;padding-inline:5px}.tape-group{gap:24px;padding-right:24px}.tape-group>span{font-size:9px}.focus-number{font-size:9px}}
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}.solar-disc{transform:translate(-50%,-46%)}
+ .reveal,.solar-study,.focus,.focus-number>span,.desk-open>span,.desk-open,.text-link,.button,.main-nav a,.stage-note a{transition:none!important}
+ .reveal-pending{opacity:1;translate:none}.focus:hover,.focus:focus-visible{translate:none}.focus-number>span,.desk-open>span{transform:none!important}
+ .tape-ready .tape-track{animation:none;width:auto}.tape-window{mask-image:none;overflow:visible}.tape-group{flex-wrap:wrap;white-space:normal;gap:8px 18px;padding:0}.tape-group[aria-hidden=true]{display:none}.coverage-tape{grid-template-columns:auto minmax(0,1fr)}
+ .motion-toggle,.tape-toggle{display:none!important}
+}
