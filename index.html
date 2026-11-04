@@ -19,6 +19,8 @@
   if (location.hash.length > 1) location.replace('/sol/' + location.hash);
   document.documentElement.classList.add('js');
 </script>
+<!-- the doors open instantly: each instrument is fetched as the pointer moves toward it -->
+<script type="speculationrules">{"prefetch":[{"source":"document","where":{"href_matches":["/sol/","/cadre/","/cadre7/","/matthieu/"]},"eagerness":"moderate"}]}</script>
 <style>
 @font-face{font-family:"Outfit";font-weight:300;font-display:swap;src:url(/matthieu/fonts/outfit-latin-300-normal.woff2) format("woff2")}
 @font-face{font-family:"Outfit";font-weight:400;font-display:swap;src:url(/matthieu/fonts/outfit-latin-400-normal.woff2) format("woff2")}
@@ -42,9 +44,12 @@ a:focus-visible{outline:1px solid var(--accent);outline-offset:4px}
 ::selection{background:var(--accent);color:#000}
 .shell{width:100%;max-width:1180px;margin:0 auto;padding-left:max(28px,env(safe-area-inset-left));padding-right:max(28px,env(safe-area-inset-right))}
 
-/* the sun: slow rings behind the title */
+/* the sun: a living corona (WebGL) behind slow rings; the CSS glow stays as the fallback */
+.corona{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:0;transition:opacity 2.4s var(--ease)}
+.gl .corona{opacity:1}
 .sun{position:fixed;left:50%;top:-12vh;width:min(1100px,150vw);aspect-ratio:1;transform:translateX(-50%);pointer-events:none;z-index:0}
-.sun::before{content:"";position:absolute;inset:18%;border-radius:50%;background:radial-gradient(circle,rgba(201,168,108,.16),rgba(201,168,108,.05) 38%,transparent 66%)}
+.sun::before{content:"";position:absolute;inset:18%;border-radius:50%;background:radial-gradient(circle,rgba(201,168,108,.16),rgba(201,168,108,.05) 38%,transparent 66%);transition:opacity 2.4s var(--ease)}
+.gl .sun::before{opacity:0}
 .sun svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
 .sun .r1{animation:spin 160s linear infinite;transform-origin:50% 50%}
 .sun .r2{animation:spin 240s linear infinite reverse;transform-origin:50% 50%}
@@ -57,6 +62,8 @@ header,main,footer{position:relative;z-index:2}
 header .shell{display:flex;align-items:center;justify-content:space-between;height:72px}
 .wordmark{display:flex;align-items:center;gap:12px;font-size:14px;font-weight:400;letter-spacing:.04em}
 .wordmark svg{width:22px;height:22px}
+.wordmark svg .core{transform-origin:11px 11px;animation:beat 4.8s ease-in-out infinite}
+@keyframes beat{0%,100%{transform:scale(1)}50%{transform:scale(1.35)}}
 .wordmark:hover{color:var(--accent)}
 .top-link{font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);transition:color .3s}
 .top-link:hover{color:var(--text)}
@@ -66,37 +73,77 @@ main .shell{padding-top:6vh;padding-bottom:6vh}
 .threshold{text-align:center;margin:0 auto 64px;max-width:820px}
 .eyebrow{display:inline-flex;align-items:center;gap:14px;font-size:11px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin:0 0 22px}
 .eyebrow::before,.eyebrow::after{content:"";width:28px;height:1px;background:var(--accent);opacity:.6}
-h1{font-family:var(--display);font-weight:400;font-size:clamp(58px,9vw,112px);line-height:.95;letter-spacing:-.02em;margin:0}
+.js .eyebrow::before,.js .eyebrow::after{transform:scaleX(0);animation:wing 1.2s var(--ease) .35s forwards}
+.js .eyebrow::before{transform-origin:right}.js .eyebrow::after{transform-origin:left}
+@keyframes wing{to{transform:scaleX(1)}}
+h1{position:relative;font-family:var(--display);font-weight:400;font-size:clamp(58px,9vw,112px);line-height:.95;letter-spacing:-.02em;margin:0}
+/* letters rise out of the light, then a gold sheen crosses the name now and then */
+h1 .ch{display:inline-block;white-space:pre}
+.js h1 .ch{opacity:0;transform:translateY(.32em);filter:blur(8px);animation:chIn 1.25s var(--ease) forwards;animation-delay:calc(.2s + var(--i) * .055s)}
+@keyframes chIn{to{opacity:1;transform:none;filter:blur(0)}}
+h1::after{content:attr(data-text);position:absolute;inset:0;pointer-events:none;color:transparent;
+  background:linear-gradient(105deg,transparent 38%,rgba(255,236,190,.95) 49%,rgba(201,168,108,.9) 52%,transparent 62%) no-repeat;background-size:300% 100%;background-position:130% 0;
+  -webkit-background-clip:text;background-clip:text;animation:sheen 11s var(--ease) 1.7s infinite}
+@keyframes sheen{0%{background-position:130% 0}22%,100%{background-position:-30% 0}}
 .sub{font-family:var(--serif);font-style:italic;font-size:19px;color:var(--muted);margin:22px 0 0}
 
 .doors{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border:1px solid var(--line);background:rgba(0,0,0,.35);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
 .doors li{min-width:0}
 .doors li+li{border-left:1px solid var(--line)}
 .doors li.author{grid-column:1/-1;border-left:0;border-top:1px solid var(--line)}
-.door{--mx:50%;--my:50%;position:relative;display:flex;flex-direction:column;height:100%;min-height:250px;padding:30px 30px 28px;overflow:hidden;transition:background .5s}
-.door::before{content:"";position:absolute;left:0;right:0;top:0;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .9s var(--ease)}
-.door::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .5s;background:radial-gradient(340px circle at var(--mx) var(--my),rgba(201,168,108,.10),transparent 60%)}
+.door{--mx:50%;--my:50%;--tint:var(--accent);position:relative;display:flex;flex-direction:column;height:100%;min-height:330px;padding:30px 30px 28px;overflow:hidden;transition:background .5s}
+.door::before{content:"";position:absolute;left:0;right:0;top:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--tint));transform:scaleX(0);transform-origin:left;transition:transform .9s var(--ease)}
+.door::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .5s;background:radial-gradient(360px circle at var(--mx) var(--my),color-mix(in srgb,var(--tint) 13%,transparent),transparent 62%)}
 .door:hover::before,.door:focus-visible::before{transform:scaleX(1)}
 .door:hover::after,.door:focus-visible::after{opacity:1}
 .door>*{position:relative;z-index:1}
-.door .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:auto}
+.door .top{display:flex;justify-content:space-between;align-items:center}
 .num{font-family:var(--display);font-size:20px;color:var(--accent)}
 .label{font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
-.name{font-family:var(--display);font-weight:400;font-size:clamp(28px,2.5vw,36px);line-height:1.05;letter-spacing:-.01em;margin:56px 0 10px}
-.line{font-size:14.5px;line-height:1.5;color:var(--muted);margin:0 0 22px;max-width:34ch;min-height:3em}
+.name{font-family:var(--display);font-weight:400;font-size:clamp(28px,2.5vw,36px);line-height:1.05;letter-spacing:-.01em;margin:0 0 10px}
+.line{font-size:14.5px;line-height:1.5;color:var(--muted);margin:0 0 14px;max-width:34ch;min-height:3em}
+.meta{display:flex;align-items:center;gap:9px;min-height:16px;margin:0 0 22px;font-size:10.5px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:color-mix(in srgb,var(--muted) 82%,#000)}
+.meta .dot{width:6px;height:6px;border-radius:50%;background:var(--tint);box-shadow:0 0 0 0 color-mix(in srgb,var(--tint) 60%,transparent);animation:ping 2.6s ease-out infinite}
+@keyframes ping{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--tint) 55%,transparent)}80%,100%{box-shadow:0 0 0 7px transparent}}
 .go{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}
 .go span{display:inline-block;transition:transform .4s var(--ease)}
 .door:hover .go span{transform:translateX(6px)}
 
+/* emblems: each instrument drawn in a single gold line */
+.figure{flex:1;display:flex;align-items:center;min-height:120px;margin:18px 0 22px}
+.emb{display:block;height:104px;width:auto;max-width:100%;overflow:visible;color:var(--accent);opacity:.62;transition:opacity .6s,color .6s,filter .6s,transform 1.4s var(--ease)}
+.door:hover .emb,.door:focus-visible .emb{opacity:1;color:var(--tint);filter:drop-shadow(0 0 10px color-mix(in srgb,var(--tint) 45%,transparent))}
+.js .emb path,.js .emb .ln{stroke-dasharray:1 1;stroke-dashoffset:1}
+.drawn .emb path,.drawn .emb .ln{animation:draw var(--u,.9s) var(--ease) var(--t,0s) forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.emb .stage{fill:var(--c);opacity:0;transform-box:fill-box;transform-origin:center}
+.drawn .emb .stage{animation:pop .6s var(--ease) var(--t) forwards}
+@keyframes pop{from{opacity:0;transform:scale(0)}to{opacity:1;transform:scale(1)}}
+.emb-sol .rays{transform-origin:60px 60px;transition:transform 2.4s var(--ease)}
+.door:hover .emb-sol .rays{transform:rotate(30deg)}
+.emb-c7 path{animation-timing-function:linear!important}
+.drawn .emb-c7.again path{animation:pour var(--u) linear calc(var(--t) * .7) both}
+@keyframes pour{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+.emb-c22 path{transition:fill .5s}
+.door:hover .emb-c22 path{animation:lit 1.6s var(--ease) calc(var(--t) * 1.2) both}
+@keyframes lit{0%{fill:transparent}35%{fill:color-mix(in srgb,var(--tint) 30%,transparent)}100%{fill:color-mix(in srgb,var(--tint) 8%,transparent)}}
+.door-sol{--tint:#ffd65c}.door-c22{--tint:#b9c4c2}.door-c7{--tint:#00d4ff}
+
 .author .door{min-height:0;flex-direction:row;align-items:center;gap:28px;padding:26px 30px}
-.author .mono{flex:none;width:52px;height:52px}
+.author .mono{flex:none;width:52px;height:52px;transition:transform 1.2s var(--ease)}
+.author .door:hover .mono{transform:none;filter:drop-shadow(0 0 10px rgba(201,168,108,.4))}
 .author .who{flex:1;min-width:0}
 .author .label{display:block;margin-bottom:8px}
 .author .name{margin:0 0 6px;font-size:clamp(26px,2.3vw,32px)}
 .author .line{margin:0;max-width:none;min-height:0}
 .author .go{flex:none}
 
-footer .shell{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-top:26px;padding-bottom:max(26px,env(safe-area-inset-bottom));background:linear-gradient(var(--line),var(--line)) no-repeat center top/calc(100% - 56px) 1px;font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+footer .shell{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:16px;padding-top:26px;padding-bottom:max(26px,env(safe-area-inset-bottom));background:linear-gradient(var(--line),var(--line)) no-repeat center top/calc(100% - 56px) 1px;font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+footer .shell>:last-child{text-align:right}
+.solar{display:inline-flex;align-items:center;justify-content:center;gap:10px;color:color-mix(in srgb,var(--muted) 85%,#000)}
+.solar svg{flex:none}
+.solar svg{width:15px;height:15px;overflow:visible}
+.solar .disc{transition:transform 1.2s var(--ease)}
 
 /* entrance */
 .js .rise{opacity:0;transform:translateY(16px);animation:rise 1s var(--ease) forwards;animation-delay:var(--d,0s)}
@@ -106,24 +153,34 @@ footer .shell{display:flex;justify-content:space-between;align-items:center;gap:
   .line{min-height:0}
   .doors{grid-template-columns:1fr}
   .doors li+li{border-left:0;border-top:1px solid var(--line)}
-  .door{min-height:0;padding:24px 24px 22px}
-  .name{margin-top:28px}
+  .door{min-height:0;padding:24px 24px 22px;padding-right:132px}
+  .figure{position:absolute;right:20px;top:50%;transform:translateY(-50%);margin:0;min-height:0}
+  .emb{height:84px;max-width:104px}
+  .door .top{margin-bottom:26px}
   .threshold{margin-bottom:44px}
+  footer .shell{grid-template-columns:1fr;text-align:center}
+  footer .shell>:last-child{text-align:center}
 }
 @media (max-width:560px){
-  .author .door{flex-wrap:wrap;gap:18px}
+  .door{padding-right:112px}
+  .emb{height:70px;max-width:86px}
+  .author .door{flex-wrap:wrap;gap:18px;padding-right:24px}
   .author .go{width:100%}
   .top-link{display:none}
-  footer .shell{flex-direction:column;text-align:center}
 }
 @media (prefers-reduced-motion:reduce){
-  .sun .r1,.sun .r2,.grain{animation:none}
-  .js .rise{opacity:1;transform:none;animation:none}
-  .door::before,.go span{transition:none}
+  .sun .r1,.sun .r2,.grain,.wordmark svg .core,.meta .dot,h1::after{animation:none}
+  .js .rise,.js h1 .ch{opacity:1;transform:none;filter:none;animation:none}
+  .js .eyebrow::before,.js .eyebrow::after{transform:none;animation:none}
+  .js .emb path,.js .emb .ln{stroke-dasharray:none;animation:none!important}
+  .emb .stage{opacity:1;animation:none!important}
+  .door::before,.go span,.emb,.emb-sol .rays,.author .mono{transition:none}
+  .door:hover .emb-c22 path{animation:none}
 }
 </style>
 </head>
 <body>
+<canvas class="corona" aria-hidden="true"></canvas>
 <div class="sun" aria-hidden="true">
   <svg viewBox="0 0 1000 1000">
     <g class="r1" fill="none" stroke="#c9a86c">
@@ -142,7 +199,7 @@ footer .shell{display:flex;justify-content:space-between;align-items:center;gap:
 <header>
   <div class="shell">
     <a class="wordmark" href="/" aria-label="Sol Invictus, home">
-      <svg viewBox="0 0 22 22" fill="none" stroke="#c9a86c" aria-hidden="true"><circle cx="11" cy="11" r="6.5" stroke-width="1.2"/><circle cx="11" cy="11" r="1.6" fill="#c9a86c" stroke="none"/></svg>
+      <svg viewBox="0 0 22 22" fill="none" stroke="#c9a86c" aria-hidden="true"><circle cx="11" cy="11" r="6.5" stroke-width="1.2"/><circle class="core" cx="11" cy="11" r="1.6" fill="#c9a86c" stroke="none"/></svg>
       <span>solinvictus.app</span>
     </a>
     <a class="top-link" href="/matthieu/">Matthieu Théard</a>
@@ -153,36 +210,42 @@ footer .shell{display:flex;justify-content:space-between;align-items:center;gap:
   <div class="shell">
     <div class="threshold">
       <p class="eyebrow rise" style="--d:.05s">The unconquered sun</p>
-      <h1 class="rise" style="--d:.15s">Sol Invictus</h1>
-      <p class="sub rise" style="--d:.3s">Choose an instrument.</p>
+      <h1 data-text="Sol Invictus" aria-label="Sol Invictus"><span class="ch" aria-hidden="true" style="--i:0">S</span><span class="ch" aria-hidden="true" style="--i:1">o</span><span class="ch" aria-hidden="true" style="--i:2">l</span><span class="ch" aria-hidden="true" style="--i:3"> </span><span class="ch" aria-hidden="true" style="--i:4">I</span><span class="ch" aria-hidden="true" style="--i:5">n</span><span class="ch" aria-hidden="true" style="--i:6">v</span><span class="ch" aria-hidden="true" style="--i:7">i</span><span class="ch" aria-hidden="true" style="--i:8">c</span><span class="ch" aria-hidden="true" style="--i:9">t</span><span class="ch" aria-hidden="true" style="--i:10">u</span><span class="ch" aria-hidden="true" style="--i:11">s</span></h1>
+      <p class="sub rise" style="--d:.85s">Choose an instrument.</p>
     </div>
 
-    <ul class="doors rise" style="--d:.45s">
-      <li>
-        <a class="door" href="/sol/">
+    <ul class="doors">
+      <li class="rise" style="--d:1.0s">
+        <a class="door door-sol" href="/sol/">
           <div class="top"><span class="num">I</span><span class="label">Contemplative</span></div>
+          <div class="figure"><svg class="emb emb-sol" viewBox="0 0 120 120" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"><circle class="ln" pathLength="1" style="--t:0s" cx="60" cy="60" r="22"/><circle class="ln" pathLength="1" style="--t:.15s" cx="60" cy="60" r="3.2"/><path pathLength="1" style="--t:0.35s" d="M60.0 30.0L60.0 14.0"/><path pathLength="1" style="--t:0.40s" d="M75.0 34.0L80.0 25.4"/><path pathLength="1" style="--t:0.45s" d="M86.0 45.0L94.6 40.0"/><path pathLength="1" style="--t:0.50s" d="M90.0 60.0L106.0 60.0"/><path pathLength="1" style="--t:0.55s" d="M86.0 75.0L94.6 80.0"/><path pathLength="1" style="--t:0.60s" d="M75.0 86.0L80.0 94.6"/><path pathLength="1" style="--t:0.65s" d="M60.0 90.0L60.0 106.0"/><path pathLength="1" style="--t:0.70s" d="M45.0 86.0L40.0 94.6"/><path pathLength="1" style="--t:0.75s" d="M34.0 75.0L25.4 80.0"/><path pathLength="1" style="--t:0.80s" d="M30.0 60.0L14.0 60.0"/><path pathLength="1" style="--t:0.85s" d="M34.0 45.0L25.4 40.0"/><path pathLength="1" style="--t:0.90s" d="M45.0 34.0L40.0 25.4"/></g><circle class="stage" style="--t:0.90s;--c:#5a5550" cx="98.2" cy="21.8" r="2.2"/><circle class="stage" style="--t:1.02s;--c:#e8e2d4" cx="98.2" cy="98.2" r="2.2"/><circle class="stage" style="--t:1.14s;--c:#ffd65c" cx="21.8" cy="98.2" r="2.2"/><circle class="stage" style="--t:1.26s;--c:#f08a50" cx="21.8" cy="21.8" r="2.2"/></svg></div>
           <h2 class="name">Seekers of Light</h2>
           <p class="line">Solar alchemy, in four stages.</p>
+          <p class="meta">Nigredo · Albedo · Citrinitas · Rubedo</p>
           <span class="go">Enter <span aria-hidden="true">→</span></span>
         </a>
       </li>
-      <li>
-        <a class="door" href="/cadre/">
+      <li class="rise" style="--d:1.12s">
+        <a class="door door-c22" href="/cadre/">
           <div class="top"><span class="num">II</span><span class="label">Analytical</span></div>
+          <div class="figure"><svg class="emb emb-c22" viewBox="0 0 150 115" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width=".9" stroke-linejoin="round"><path pathLength="1" style="--t:0.00s" d="M93.8 63.7 88.2 57.7 87.9 56.2 93.8 54 90.9 51.5 88.7 47.7 90.6 44.7 93.4 44.3 92.7 42.8 90.5 41.9 90.6 39 91.8 39.8 92.9 39.3 92.5 36.9 95.2 37.8 94.2 35.8 91 35.3 88.1 32.5 78.3 27 72 25.6 72.4 22.4 74.9 19.8 83.3 20.7 87.3 20 93.9 15.5 95.4 15.7 97.3 19.1 99.5 19.8 99 21.7 101 23.2 102.6 27.6 104 29.1 107.5 31.2 111.1 28.3 113.8 29.1 114 32.7 118.2 35.6 120.5 43.8 118.1 47.2 117.8 51.2 119.2 52.6 119.2 56.8 118 67.5 111.8 68 106.4 64.6 105.3 62.9 95.5 62.1 93.8 63.7Z"/><path pathLength="1" style="--t:0.09s" d="M144.2 45 150 48.8 149.8 52.1 142.4 60.8 138.1 62.6 138.2 63.6 141.7 63 145 67.2 145.7 73.7 143.7 77.3 142 78.4 133.8 74.9 125.4 77 121.4 75.6 118.2 72.5 113.2 69.9 111.8 68 118 67.5 119.2 56.8 119.2 52.6 117.8 51.2 118.1 47.2 120.5 43.8 124.7 46.1 132.1 41.9 136.9 44.7 144.2 45Z"/><path pathLength="1" style="--t:0.18s" d="M36.4 81.3 39.4 80.8 40.7 81.6 40.8 82.8 37.9 83.5 36.6 82.8 36.4 81.3ZM1.9 96.2 0 92.4 3.9 84.8 3.3 82.4 7.8 79.9 15.2 79.1 24.2 82.7 27.2 82.8 27.9 83.8 34 84.8 36.1 86.3 39.5 86 38.1 88 39.2 89.2 37.1 92.6 31.3 93.6 30.7 96 21.3 93.8 1.9 96.2Z"/><path pathLength="1" style="--t:0.27s" d="M38.1 88 41.3 84.4 45.6 83.6 47.5 84 46.5 85.7 40.8 85.9 44.1 88.4 46.5 88.5 50.7 87.1 75.4 90.8 75.1 95 76.4 95 78.5 98.3 77.7 104 76 99.7 72.3 96.5 61.6 95.9 51.4 97.7 48.7 97 49.7 94.8 46.8 92.5 43.7 92.6 42.5 93.6 37.1 92.6 39.2 89.2 38.1 88Z"/><path pathLength="1" style="--t:0.36s" d="M101.3 11.8 103.8 14.2 110.7 15.5 113.6 18.7 112.5 18.7 113.4 20.6 114.6 20.7 115 19.5 114.4 19.5 114.4 18 116.5 18.5 118.5 16.8 120.2 17.4 119.8 18.7 120.6 19.3 123.8 19 127.9 20.4 127.8 24.1 125.2 26.3 125.2 29.1 127.3 33.5 126.6 35.8 128.6 36.3 131.2 39 132.1 41.9 123.7 46.2 120.5 43.8 118.2 35.6 114 32.7 113.8 29.1 111.1 28.3 107.5 31.2 104 29.1 102.6 27.6 101 23.2 99 21.7 99.5 19.8 97.3 19.1 95.4 15.7 96.3 14.5 98.3 15.1 101.3 11.8Z"/><path pathLength="1" style="--t:0.45s" d="M143.8 21.1 146.6 37.5 145 40.8 142.8 42.4 144.2 45 136.9 44.7 132.1 41.9 131.2 39 128.6 36.3 126.6 35.8 127.3 33.5 125.2 29.1 125.2 26.3 127.8 24.1 128.5 21 130 21.8 132.6 19.8 138.1 20.8 137.7 22.1 135.6 22.2 136.2 23.2 138.9 22.9 140.4 24 140.8 22.7 139.3 22.1 139.2 21 143.8 21.1Z"/><path pathLength="1" style="--t:0.54s" d="M86.2 0 88.8 0.1 98 4.5 97.4 5.8 86.6 3 83.7 3.2 80.5 1.5 86.2 0ZM72 25.6 70.5 26.4 66.7 24.4 63.4 25.8 56.8 25.2 54.3 23.2 53.7 20.2 55.9 16.6 59.2 15.3 56.2 14.9 57.1 14.2 60.2 14.2 66.6 11.2 69.6 8.4 70.8 9.4 78.8 9.5 80.1 10.3 81.5 8.9 90.2 8.1 101.3 11.8 98.3 15.1 96.3 14.5 95.4 15.7 93.9 15.5 87.3 20 83.3 20.7 74.9 19.8 72.4 22.4 72 25.6Z"/><path pathLength="1" style="--t:0.63s" d="M142 78.4 139.3 81.9 137.3 82.6 133.3 81.9 130.5 83 136 89.3 135.6 92.3 138.5 93.3 140.1 95.4 145.7 98.2 146.3 98.8 145.7 99.9 141 100.7 138.3 99 130.3 98.8 121.2 96.8 112.4 96.8 111 95.1 105.2 93.9 101.6 96.7 95.2 98.2 94 99.3 92.2 98.7 90.7 101.5 87.2 100.5 85.7 101.7 84 100.2 79.9 100.6 77.3 95.9 75.1 95 75.4 90.8 79.1 90.1 83.7 91.2 83.4 92.1 85.8 91.4 93.3 91.9 97.9 85.4 99.6 85.1 108.4 85.9 109.1 85.1 111.5 87 112.4 86.8 113.6 78.2 108.2 76.4 105.2 73.5 102.1 72.6 98.5 66.8 93.8 63.7 95.5 62.1 105.3 62.9 106.4 64.6 110.5 66.7 113.2 69.9 118.2 72.5 121.4 75.6 125.4 77 133.8 74.9 142 78.4ZM67.1 69.7 63.1 65.9 62.8 64.1 65.4 62.4 67.8 62.4 86.5 70.2 88 72.1 88.4 76.2 87.3 77.5 86 75.8 76.4 74 71.8 71 67.1 69.7Z"/><path pathLength="1" style="--t:0.72s" d="M43.6 111 47.2 111.3 48 112.6 43.3 112.8 41.1 111 41.5 110.3 43.6 111ZM78 106.2 71.8 105.7 69.8 104.6 62.8 103.4 59.6 103.8 59.4 102.9 62 102.3 58.5 101.9 54.3 102 50.7 103.4 49.4 101.9 48 104.2 45.8 103.9 45.8 102.3 43.6 104.6 44.4 101.9 34.8 108.4 33.9 109.9 36.1 112.3 36.6 114.7 32.4 114.8 31 114.1 25.3 106.3 20.2 102.5 17 101.5 16.1 100 13 98.8 7.4 100.2 1.9 96.2 21.3 93.8 30.7 96 31.3 93.6 37.1 92.6 42.5 93.6 43.7 92.6 46.8 92.5 49.7 94.8 48.7 97 51.4 97.7 61.6 95.9 72.3 96.5 76 99.7 78 106.2Z"/><path pathLength="1" style="--t:0.81s" d="M145.7 99.9 142.9 105.1 143.6 111.5 142.8 114.1 136.6 107.2 127.2 103.1 103.7 104.6 102 103.8 101.6 106.7 98.7 106 91.3 106.5 91.6 107.6 84.4 108.4 78 106.2 77.6 102.8 78.5 98.3 79.9 100.6 84 100.2 85.7 101.7 87.2 100.5 90.7 101.5 92.2 98.7 94 99.3 95.2 98.2 101.6 96.7 105.2 93.9 111 95.1 112.4 96.8 121.2 96.8 130.3 98.8 138.3 99 141 100.7 145.7 99.9Z"/></g></svg></div>
           <h2 class="name">Cadre 22</h2>
           <p class="line">Haitian security: signed judgements, revised monthly.</p>
+          <p class="meta">FR · EN · HT</p>
           <span class="go">Enter <span aria-hidden="true">→</span></span>
         </a>
       </li>
-      <li>
-        <a class="door" href="/cadre7/">
+      <li class="rise" style="--d:1.24s">
+        <a class="door door-c7" href="/cadre7/">
           <div class="top"><span class="num">III</span><span class="label">Diagnostic</span></div>
+          <div class="figure"><svg class="emb emb-c7" viewBox="0 0 120 119" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"><path pathLength="1" style="--t:0.07s;--u:0.08s" d="M59.6 59.6 59.6 2.3"/><path pathLength="1" style="--t:0.16s;--u:0.08s" d="M59.6 59.6 59.6 116.8"/><path pathLength="1" style="--t:0.25s;--u:0.08s" d="M59.6 59.6 2.3 59.6"/><path pathLength="1" style="--t:0.34s;--u:0.08s" d="M59.6 59.6 117.4 59.6"/><path pathLength="1" style="--t:0.43s;--u:0.04s" d="M47.6 51.4 49.8 50.6 51.6 48.7 51.9 45.4 51.1 43.4 49.2 41.7 47.2 41.3 45 41.6 43.2 42.7 42.5 43.7 42 47.2 42.9 49.1 44.6 50.7 46.2 51.5 47.4 51.5Z"/><path pathLength="1" style="--t:0.45s;--u:0.04s" d="M47.1 51.4 47.1 48.3"/><path pathLength="1" style="--t:0.46s;--u:0.04s" d="M48.8 46.4 50.7 46.4"/><path pathLength="1" style="--t:0.46s;--u:0.04s" d="M46.9 44.7 47.1 43"/><path pathLength="1" style="--t:0.47s;--u:0.04s" d="M45.2 46.4 43.3 46.3"/><path pathLength="1" style="--t:0.47s;--u:0.04s" d="M37.9 56.7 37.5 56 36.7 55.7"/><path pathLength="1" style="--t:0.48s;--u:0.04s" d="M36.6 55.6 36 54.4 34.7 53.5 30.5 49 28.3 44.9 28.2 42.8 28.8 41.6 30.2 40.2 32.6 39.1 34.6 39.3 36.5 40.8 36.5 42.9 34.1 44.3"/><path pathLength="1" style="--t:0.50s;--u:0.04s" d="M37.9 56.8 36.4 57.7"/><path pathLength="1" style="--t:0.50s;--u:0.04s" d="M36.4 57.7 36.4 59.3"/><path pathLength="1" style="--t:0.51s;--u:0.04s" d="M36.4 60.7 36.9 61.3 36 61.7"/><path pathLength="1" style="--t:0.51s;--u:0.04s" d="M35.7 62 36.1 62.9 37 63.3"/><path pathLength="1" style="--t:0.51s;--u:0.04s" d="M37 63.3 38.2 62.3 38.6 61.1"/><path pathLength="1" style="--t:0.52s;--u:0.04s" d="M37 63.3 36.1 64.7 31 69.7 28.6 74.1 28.6 76.1 29.7 78.2 30.9 79.2 32.7 79.6 34.7 79.6 37.3 77.7 37.4 76.7 36.8 75.7 34.4 74.5"/><path pathLength="1" style="--t:0.54s;--u:0.04s" d="M42.3 72 42.8 70.2 43.8 68.8 44.8 68 46.9 67.3"/><path pathLength="1" style="--t:0.55s;--u:0.04s" d="M47 67.3 48.4 67.2 50.2 68.1 51.3 69.4 52 72.1"/><path pathLength="1" style="--t:0.55s;--u:0.04s" d="M52.1 72.2 52 73.5 50.5 75.7 49 76.5 47.2 76.7"/><path pathLength="1" style="--t:0.56s;--u:0.04s" d="M47.1 76.7 47.2 73.7"/><path pathLength="1" style="--t:0.56s;--u:0.04s" d="M48.8 72.1 51.9 72.2"/><path pathLength="1" style="--t:0.57s;--u:0.04s" d="M47.1 70.5 47 67.4"/><path pathLength="1" style="--t:0.57s;--u:0.04s" d="M45.5 72.2 42.4 72"/><path pathLength="1" style="--t:0.58s;--u:0.04s" d="M42.3 72.1 42.7 74.3 43.9 75.8 45.5 76.7 47 76.7"/><path pathLength="1" style="--t:0.59s;--u:0.04s" d="M55 82.9 47.5 88.6 44.6 89.9 43 89.9 41.1 89.1 39.9 87.8 39.2 85.6 39.5 83.5 41.1 82.3 43 82.6 43.9 84.8"/><path pathLength="1" style="--t:0.61s;--u:0.04s" d="M55.1 82.9 56.2 84.2 57.7 84.9"/><path pathLength="1" style="--t:0.61s;--u:0.04s" d="M59.6 83.2 61.2 83.2"/><path pathLength="1" style="--t:0.62s;--u:0.04s" d="M61.3 83.1 62.4 81.7"/><path pathLength="1" style="--t:0.62s;--u:0.04s" d="M62.5 81.6 61.3 80.6"/><path pathLength="1" style="--t:0.62s;--u:0.04s" d="M62.6 81.7 63.4 82.8"/><path pathLength="1" style="--t:0.62s;--u:0.04s" d="M63.3 82.9 62.5 84 61.8 84.3"/><path pathLength="1" style="--t:0.63s;--u:0.04s" d="M63.4 82.9 71.3 88.8 74.9 90.3 77.6 89.7 79.1 88.2 79.9 86.5 79.5 84.1 78.8 83.1 77.2 82 76.2 82 75.6 82.5 74.9 84.8"/><path pathLength="1" style="--t:0.65s;--u:0.04s" d="M72.8 76.2 72.5 74.2"/><path pathLength="1" style="--t:0.66s;--u:0.04s" d="M70.7 72.4 69.2 72.4"/><path pathLength="1" style="--t:0.66s;--u:0.04s" d="M72.4 70.6 72.4 67.3"/><path pathLength="1" style="--t:0.67s;--u:0.04s" d="M72.4 67.3 74.1 67.3 75.5 68.3 77 70.1 77.7 72.2 77.5 73.7 76.7 75 74.8 76.7 72.7 77.2 70.2 76.4 68.1 74.2 67.8 73 68 71.1 69 69 70.9 67.6 72.4 67.3Z"/><path pathLength="1" style="--t:0.69s;--u:0.04s" d="M74.5 72.2 76.4 72.2"/><path pathLength="1" style="--t:0.70s;--u:0.04s" d="M80.9 61.4 81.7 63.1 82.8 63.9"/><path pathLength="1" style="--t:0.70s;--u:0.04s" d="M82.9 63.9 85.3 62.1 86 59.8"/><path pathLength="1" style="--t:0.70s;--u:0.04s" d="M86 59.6 85.1 57.1 83.3 55.4"/><path pathLength="1" style="--t:0.70s;--u:0.04s" d="M83.2 55.4 82.4 55.7 80.9 58.2"/><path pathLength="1" style="--t:0.71s;--u:0.04s" d="M83.2 58.3 83.2 59.6"/><path pathLength="1" style="--t:0.71s;--u:0.04s" d="M83.2 59.8 83 61.6"/><path pathLength="1" style="--t:0.72s;--u:0.04s" d="M82.9 64 83.4 65.4 88.8 71.6 90.3 74.1 90.4 76 89.7 77.7 88.1 79.5 86.4 80.1 83.9 79.8 82.6 79 81.9 78 81.8 76.7 82.5 75.7 83.9 74.9 84.9 75"/><path pathLength="1" style="--t:0.74s;--u:0.04s" d="M83.3 55.3 84 53.9 87.3 50.6 89.6 47.4 90.3 45.1 90.4 43 89.5 40.9 87.9 39.6 86.6 39.1 84.8 39.1 83.9 39.5 82.7 41.4 83 42.9 83.5 43.5 85.5 44.1"/><path pathLength="1" style="--t:0.77s;--u:0.04s" d="M76.9 46.5 74.8 46.6"/><path pathLength="1" style="--t:0.77s;--u:0.04s" d="M72.7 48.5 72.9 50.2"/><path pathLength="1" style="--t:0.78s;--u:0.04s" d="M71.2 46.7 69 46.7"/><path pathLength="1" style="--t:0.78s;--u:0.04s" d="M67.7 45.4 68.1 44 69.8 42.3 71.2 41.6 73.3 41.4 74.6 41.7 76.2 42.9 77.5 44.8 77.9 46.6 77.5 48.5 76.2 50.1 73.6 51.6 72.1 51.9 70.9 51.6 68.7 49.9 67.6 47.5 67.7 45.6Z"/><path pathLength="1" style="--t:0.81s;--u:0.04s" d="M72.8 44.9 72.9 42.9"/><path pathLength="1" style="--t:0.81s;--u:0.04s" d="M62 37.2 63.1 36.9 63.8 35.7"/><path pathLength="1" style="--t:0.81s;--u:0.04s" d="M63.8 35.7 65.1 35.1 71.5 29.4 74 28.1 77.5 28.4 79.5 30.2 80.5 32.3 80.1 35.5 79.2 36.7 78.3 37.1 77.2 37 76.1 36.1 75.2 34.4 75.2 33.6"/><path pathLength="1" style="--t:0.84s;--u:0.04s" d="M63.8 35.6 62.8 34.2 61.5 33.5"/><path pathLength="1" style="--t:0.84s;--u:0.04s" d="M61.3 35.8 59.8 35.8"/><path pathLength="1" style="--t:0.85s;--u:0.04s" d="M61.3 35.9 61.9 37.2"/><path pathLength="1" style="--t:0.86s;--u:0.04s" d="M57.5 37.2 57.8 35.9 57 34.7"/><path pathLength="1" style="--t:0.86s;--u:0.04s" d="M56.9 34.7 55.6 35.9"/><path pathLength="1" style="--t:0.86s;--u:0.04s" d="M55.6 36.1 56 36.7 57.4 37.2"/><path pathLength="1" style="--t:0.86s;--u:0.04s" d="M55.5 36 49.4 30.7 46.7 29.3 43.7 28.5 41.7 28.9 40.3 30 38.9 32.1 38.6 33.5 39.1 35.7 40 36.9 41.1 37.4 42.6 36.9 43.4 35.7 43.6 34.2"/><path pathLength="1" style="--t:0.89s;--u:0.04s" d="M57 34.6 58 33.5"/><path pathLength="1" style="--t:0.89s;--u:0.04s" d="M58.7 31.4 56.5 29.4 55.3 27.7 55.2 26.6"/><path pathLength="1" style="--t:0.90s;--u:0.04s" d="M55.3 26.5 58 28.3 59.6 28.8"/><path pathLength="1" style="--t:0.90s;--u:0.04s" d="M59.8 28.9 63.5 27.1"/><path pathLength="1" style="--t:0.91s;--u:0.04s" d="M63.6 27.1 62.8 29.4 60.9 31.5"/><path pathLength="1" style="--t:0.91s;--u:0.04s" d="M63.6 27 64.3 25.5 64.4 23.4"/><path pathLength="1" style="--t:0.92s;--u:0.04s" d="M64.3 23.4 59.7 26.2"/><path pathLength="1" style="--t:0.92s;--u:0.04s" d="M59.5 25.9 54.3 23.4"/><path pathLength="1" style="--t:0.93s;--u:0.04s" d="M54.2 23.5 54.5 25.4 55.2 26.4"/><path pathLength="1" style="--t:0.93s;--u:0.04s" d="M54.2 23.3 54.2 21.5 55.3 19.1"/><path pathLength="1" style="--t:0.93s;--u:0.04s" d="M55.4 19.1 58.4 21.8 59.4 22.2"/><path pathLength="1" style="--t:0.94s;--u:0.04s" d="M59.6 22.4 60.4 22 63.3 19.2"/><path pathLength="1" style="--t:0.94s;--u:0.04s" d="M63.4 19.2 64.2 20.8 64.3 23.3"/><path pathLength="1" style="--t:0.95s;--u:0.04s" d="M63.4 19.1 62.7 16.9 61.9 16.4"/><path pathLength="1" style="--t:0.95s;--u:0.04s" d="M61.7 16.5 59.7 18.1"/><path pathLength="1" style="--t:0.95s;--u:0.04s" d="M59.4 18.2 58.3 17.7 56.9 16"/><path pathLength="1" style="--t:0.96s;--u:0.04s" d="M56.9 16 56.1 16.5 55.3 19"/><path pathLength="1" style="--t:0.96s;--u:0.04s" d="M56.9 16 57.6 14.6 59.3 13.4"/><path pathLength="1" style="--t:0.97s;--u:0.04s" d="M59.7 14 61.3 14.9 61.8 16.4"/><path pathLength="1" style="--t:0.97s;--u:0.04s" d="M63.3 10.7 60.5 8.3"/><path pathLength="1" style="--t:0.98s;--u:0.04s" d="M60.8 7.2 64.3 7.2"/><path pathLength="1" style="--t:0.99s;--u:0.04s" d="M60.5 6.2 62.8 3.7"/><path pathLength="1" style="--t:0.99s;--u:0.04s" d="M58.5 8.5 55.7 11.2"/><path pathLength="1" style="--t:1.00s;--u:0.04s" d="M54.7 7.1 58.1 7.3"/><path pathLength="1" style="--t:1.00s;--u:0.04s" d="M58.3 6.2 55.8 4"/><path pathLength="1" style="--t:1.02s;--u:0.04s" d="M35.9 56.8 34.7 57.2 34.2 57.9"/><path pathLength="1" style="--t:1.03s;--u:0.04s" d="M34.4 61.2 35.6 61.9"/><path pathLength="1" style="--t:1.03s;--u:0.04s" d="M26.7 61.5 24.2 65.7 21.6 68.3"/><path pathLength="1" style="--t:1.04s;--u:0.04s" d="M21.6 68.3 18.9 61.7"/><path pathLength="1" style="--t:1.05s;--u:0.04s" d="M18.9 58.2 21.8 51.9"/><path pathLength="1" style="--t:1.05s;--u:0.04s" d="M22 51.9 23.3 52.8 26.6 57.9"/><path pathLength="1" style="--t:1.06s;--u:0.04s" d="M22 50.6 25.4 40.8 27.2 33.3 26.8 31.2 25.5 29.9 24.4 29.3 22 28.9 19.8 29.5 18.4 30.8 17.6 32 17.3 34.2 18.1 36.1 19.5 36.7 21.1 36 22.2 33.8"/><path pathLength="1" style="--t:1.09s;--u:0.04s" d="M21.9 50.6 17.4 46.8 15.8 45.9 13.1 45.8 11.7 47.1 11.6 48.2 12.2 50 13.8 51 15.4 50.6 16.1 49"/><path pathLength="1" style="--t:1.11s;--u:0.04s" d="M10.9 55.9 8.7 58.4"/><path pathLength="1" style="--t:1.11s;--u:0.04s" d="M7.4 58.3 7.5 54.9"/><path pathLength="1" style="--t:1.12s;--u:0.04s" d="M6.2 58.7 4 56.1"/><path pathLength="1" style="--t:1.13s;--u:0.04s" d="M8.7 61 7.4 61.3"/><path pathLength="1" style="--t:1.13s;--u:0.04s" d="M7.4 61.3 7.5 64.7"/><path pathLength="1" style="--t:1.13s;--u:0.04s" d="M10.9 63.6 8.8 61"/><path pathLength="1" style="--t:1.14s;--u:0.04s" d="M6.1 61.2 3.9 63.4"/><path pathLength="1" style="--t:1.15s;--u:0.04s" d="M15.6 69.9 15.2 68.5 14.3 67.7 12.3 68.1 11.3 69.7 11.3 71.2 12.9 72.8 15.2 72.9 17.7 72 21.5 69"/><path pathLength="1" style="--t:1.16s;--u:0.04s" d="M21.6 69 25 76.4 28.1 84.7 27.6 86.9 26.4 88.5 24.6 89.9 22.9 90 21 89.6 19.8 88.7 18.5 87 18 85.3 18.4 82.6 19.4 81.3 20.2 80.9 21.4 81.3 22.2 82.1 22.9 84.4"/><path pathLength="1" style="--t:1.20s;--u:0.04s" d="M58.1 86.9 55.8 90 55.3 92.1"/><path pathLength="1" style="--t:1.20s;--u:0.04s" d="M55.3 92.1 59.3 90"/><path pathLength="1" style="--t:1.20s;--u:0.04s" d="M59.5 90 63 91.9"/><path pathLength="1" style="--t:1.20s;--u:0.04s" d="M63.1 91.8 62.8 90.5 60.2 87.2"/><path pathLength="1" style="--t:1.21s;--u:0.04s" d="M63.1 92 64.3 94.3 64.4 96"/><path pathLength="1" style="--t:1.22s;--u:0.04s" d="M64.3 96 59.5 93.3"/><path pathLength="1" style="--t:1.22s;--u:0.04s" d="M59.1 93.1 54.2 95.6"/><path pathLength="1" style="--t:1.23s;--u:0.04s" d="M54.2 95.6 54.2 94 55.3 92.2"/><path pathLength="1" style="--t:1.23s;--u:0.04s" d="M54.2 95.6 53.9 96.9 54.5 99.5 55.1 100.3"/><path pathLength="1" style="--t:1.23s;--u:0.04s" d="M55.3 100.3 57.9 97.8 59.1 97.2"/><path pathLength="1" style="--t:1.24s;--u:0.04s" d="M59.4 97 60.4 97.2 63.7 99.5"/><path pathLength="1" style="--t:1.24s;--u:0.04s" d="M63.8 99.6 63.3 102 62.5 103"/><path pathLength="1" style="--t:1.25s;--u:0.04s" d="M62.3 103 60.4 101.7 59.4 101.5"/><path pathLength="1" style="--t:1.25s;--u:0.04s" d="M59.1 101.9 56.9 103.2"/><path pathLength="1" style="--t:1.25s;--u:0.04s" d="M56.8 103.2 55.7 102.3 55.2 100.4"/><path pathLength="1" style="--t:1.26s;--u:0.04s" d="M56.9 103.3 57.9 105 59.4 105.7"/><path pathLength="1" style="--t:1.26s;--u:0.04s" d="M59.7 105.8 61.7 104.8 62.4 103.1"/><path pathLength="1" style="--t:1.27s;--u:0.04s" d="M63.8 99.5 64.4 98.6 64.4 96.1"/><path pathLength="1" style="--t:1.28s;--u:0.04s" d="M63.4 108.5 60.5 110.8"/><path pathLength="1" style="--t:1.28s;--u:0.04s" d="M60.5 110.8 60.8 112.1"/><path pathLength="1" style="--t:1.28s;--u:0.04s" d="M60.9 112.1 64.6 112.1"/><path pathLength="1" style="--t:1.29s;--u:0.04s" d="M60.8 113.2 63.1 115.2"/><path pathLength="1" style="--t:1.30s;--u:0.04s" d="M58.7 113 58.5 111.7"/><path pathLength="1" style="--t:1.30s;--u:0.04s" d="M58.4 111.7 54.9 111.7"/><path pathLength="1" style="--t:1.30s;--u:0.04s" d="M56.3 108.6 58.6 110.8"/><path pathLength="1" style="--t:1.31s;--u:0.04s" d="M58.6 113 56.2 115"/><path pathLength="1" style="--t:1.32s;--u:0.04s" d="M96 86 95.9 59.8"/><path pathLength="1" style="--t:1.34s;--u:0.04s" d="M95.9 59.6 96.2 36.1 95.9 34.3"/><path pathLength="1" style="--t:1.36s;--u:0.04s" d="M95.8 34.2 91.3 34.5"/><path pathLength="1" style="--t:1.36s;--u:0.04s" d="M95.9 34.1 98.1 32.2 98.7 30.9"/><path pathLength="1" style="--t:1.37s;--u:0.04s" d="M101.4 47.2 103.8 49.5"/><path pathLength="1" style="--t:1.38s;--u:0.04s" d="M103.6 50.4 99.8 50.6"/><path pathLength="1" style="--t:1.38s;--u:0.04s" d="M101.2 54.1 103.9 51.8"/><path pathLength="1" style="--t:1.39s;--u:0.04s" d="M105 51.9 105.1 55.4"/><path pathLength="1" style="--t:1.40s;--u:0.04s" d="M106.1 51.6 108.6 54"/><path pathLength="1" style="--t:1.40s;--u:0.04s" d="M109.2 55.9 111.5 58.3"/><path pathLength="1" style="--t:1.41s;--u:0.04s" d="M112.7 58.3 114.1 58.4"/><path pathLength="1" style="--t:1.41s;--u:0.04s" d="M114.2 58.3 116.4 56.1"/><path pathLength="1" style="--t:1.41s;--u:0.04s" d="M112.6 54.5 112.7 58.2"/><path pathLength="1" style="--t:1.42s;--u:0.04s" d="M111.3 60.7 108.9 62.9"/><path pathLength="1" style="--t:1.43s;--u:0.04s" d="M105.3 63.8 105.4 67.2"/><path pathLength="1" style="--t:1.43s;--u:0.04s" d="M104.3 67.5 101.9 65.6"/><path pathLength="1" style="--t:1.44s;--u:0.04s" d="M100.6 68.6 104 68.6"/><path pathLength="1" style="--t:1.44s;--u:0.04s" d="M104.3 69.9 101.9 72"/><path pathLength="1" style="--t:1.45s;--u:0.04s" d="M105.6 70.1 105.7 73.3"/><path pathLength="1" style="--t:1.45s;--u:0.04s" d="M106.9 69.8 109.2 71.9"/><path pathLength="1" style="--t:1.46s;--u:0.04s" d="M107 68.7 106.5 67.4"/><path pathLength="1" style="--t:1.46s;--u:0.04s" d="M106.5 67.3 109.1 65.3"/><path pathLength="1" style="--t:1.47s;--u:0.04s" d="M107 68.7 110.2 68.8"/><path pathLength="1" style="--t:1.47s;--u:0.04s" d="M112.6 64.7 112.7 60.9"/><path pathLength="1" style="--t:1.48s;--u:0.04s" d="M112.7 60.8 114.1 60.5"/><path pathLength="1" style="--t:1.48s;--u:0.04s" d="M114.1 60.5 116.2 63.1"/><path pathLength="1" style="--t:1.49s;--u:0.04s" d="M106.4 50.5 109.6 50.2"/><path pathLength="1" style="--t:1.49s;--u:0.04s" d="M106.1 49.4 108.3 46.8"/><path pathLength="1" style="--t:1.50s;--u:0.04s" d="M105 45.8 104.9 49.3"/></g></svg></div>
           <h2 class="name">Cadre 7</h2>
           <p class="line">The parallel force in Haiti: three cells, read monthly.</p>
+          <p class="meta" id="c7-live">FR · EN · monthly board</p>
           <span class="go">Enter <span aria-hidden="true">→</span></span>
         </a>
       </li>
-      <li class="author">
+      <li class="author rise" style="--d:1.36s">
         <a class="door" href="/matthieu/">
           <img class="mono" src="/matthieu/monogram.svg" alt="" width="52" height="52">
           <div class="who">
@@ -200,16 +263,129 @@ footer .shell{display:flex;justify-content:space-between;align-items:center;gap:
 <footer>
   <div class="shell">
     <span>Sol Invictus · 2026</span>
+    <span class="solar" id="solar" aria-live="off"><svg viewBox="-8 -8 16 16" aria-hidden="true"><line x1="-8" y1="3" x2="8" y2="3" stroke="#9a958d" stroke-width=".8"/><circle class="disc" r="3" cy="3" fill="#c9a86c"/></svg><span>Port-au-Prince</span></span>
     <span>Three instruments · one profile</span>
   </div>
 </footer>
 
 <script>
+(() => {
+const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const MOB = matchMedia('(max-width: 700px)').matches;
+
+/* ── doors: the light follows the pointer ───────────────────────── */
 document.querySelectorAll('.door').forEach(d => d.addEventListener('pointermove', e => {
   const r = d.getBoundingClientRect();
   d.style.setProperty('--mx', (e.clientX - r.left) + 'px');
   d.style.setProperty('--my', (e.clientY - r.top) + 'px');
 }));
+
+/* ── emblems: drawn once the doors have risen; the vèvè is poured again on hover ── */
+const doors = document.querySelector('.doors');
+setTimeout(() => doors.classList.add('drawn'), RM ? 0 : 1250);
+const c7 = document.querySelector('.emb-c7'), c7door = document.querySelector('.door-c7');
+let pouring = false;
+c7door.addEventListener('pointerenter', () => {
+  if (RM || pouring || !doors.classList.contains('drawn')) return;
+  pouring = true; c7.classList.remove('again'); void c7.getBoundingClientRect(); c7.classList.add('again');
+  setTimeout(() => pouring = false, 1300);
+});
+document.querySelector('.emb-sol g').lastElementChild && (() => {          // group the rays so they can turn
+  const g = document.querySelector('.emb-sol g'), rays = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+  rays.setAttribute('class', 'rays'); [...g.querySelectorAll('path')].forEach(p => rays.append(p)); g.append(rays);
+})();
+
+/* ── Cadre 7: the current board, read from the desk's own open record ── */
+fetch('/cadre7/desk.json', {cache: 'no-cache'}).then(r => r.ok ? r.json() : Promise.reject()).then(d => {
+  const key = p => { const [m, y] = p.split('.'); return +y * 100 + +m; };
+  const b = [...d.boards].sort((a, c) => key(c.period) - key(a.period))[0];
+  if (!b) return;
+  const el = document.getElementById('c7-live');
+  el.innerHTML = '';
+  const dot = document.createElement('span'); dot.className = 'dot'; dot.setAttribute('aria-hidden', 'true');
+  el.append(dot, document.createTextNode(`Board ${b.period} · ${b.status === 'signed' ? 'signed' : 'draft'} · ${d.sources.length} sources`));
+}).catch(() => {});
+
+/* ── the sun over Port-au-Prince (solar elevation, NOAA low-precision formulae) ── */
+function sunAlt(ms){
+  const r = Math.PI / 180, lat = 18.54, lon = -72.34, n = ms / 864e5 + 2440587.5 - 2451545;
+  const L = (280.46 + .9856474 * n) % 360, g = ((357.528 + .9856003 * n) % 360) * r;
+  const lam = (L + 1.915 * Math.sin(g) + .02 * Math.sin(2 * g)) * r, eps = (23.439 - 4e-7 * n) * r;
+  const ra = Math.atan2(Math.cos(eps) * Math.sin(lam), Math.cos(lam)), dec = Math.asin(Math.sin(eps) * Math.sin(lam));
+  const gmst = ((18.697374558 + 24.06570982441908 * n) % 24 + 24) % 24, H = (gmst * 15 + lon) * r - ra;
+  return Math.asin(Math.sin(lat * r) * Math.sin(dec) + Math.cos(lat * r) * Math.cos(dec) * Math.cos(H)) / r;
+}
+const solar = document.getElementById('solar'), disc = solar.querySelector('.disc'), stxt = solar.querySelector('span');
+const tfmt = new Intl.DateTimeFormat('en-GB', {timeZone: 'America/Port-au-Prince', hour: '2-digit', minute: '2-digit'});
+let ALT = 30;
+function tickSun(){
+  const now = Date.now(); ALT = sunAlt(now);
+  const rising = sunAlt(now + 6e5) > ALT, a = Math.round(Math.abs(ALT));
+  stxt.textContent = `Port-au-Prince ${tfmt.format(now)} · sun ${a}° ${ALT >= 0 ? 'above' : 'below'} the horizon${ALT >= 0 ? (rising ? ', rising' : ', setting') : ''}`;
+  disc.style.transform = `translateY(${(-Math.max(-1, Math.min(1, ALT / 60)) * 7).toFixed(2)}px)`;
+  disc.setAttribute('fill', ALT >= 0 ? '#c9a86c' : '#5a5550');
+}
+tickSun(); setInterval(tickSun, 30000);
+
+/* ── the corona: a slow fbm fire around the sun's centre; warmth follows the real sun ── */
+const cv = document.querySelector('.corona');
+const gl = cv.getContext('webgl', {antialias: false, alpha: false, depth: false, powerPreference: 'low-power'});
+if (!gl) return;
+const vs = 'attribute vec2 p;void main(){gl_Position=vec4(p,0.,1.);}';
+const fs = `precision mediump float;
+uniform vec2 R,C,P;uniform float T,K,W;
+float h(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}
+float n(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix(h(i),h(i+vec2(1,0)),f.x),mix(h(i+vec2(0,1)),h(i+1.),f.x),f.y);}
+float fbm(vec2 p){float v=0.,a=.5;for(int i=0;i<5;i++){v+=a*n(p);p=p*2.03+vec2(1.7,9.2);a*=.5;}return v;}
+void main(){
+  vec2 uv=(gl_FragCoord.xy-C)/R.y+(P-.5)*vec2(-.05,.035);
+  float r=length(uv);vec2 d=uv/max(r,1e-4);
+  float corona=fbm(d*2.4+vec2(r*3.2-T*.045,T*.013));
+  float flare=fbm(d*5.5+vec2(T*.018,-T*.011));
+  float rays=pow(flare,2.8)*smoothstep(.72,.16,r)*smoothstep(.1,.3,r);
+  float glow=exp(-r*3.8)*.30+exp(-r*10.)*.16+corona*exp(-r*3.)*.16+rays*.26;
+  vec3 deep=mix(vec3(.62,.27,.07),vec3(.66,.38,.11),W),gold=mix(vec3(.74,.52,.30),vec3(.80,.66,.42),W);
+  vec3 col=mix(deep,gold,smoothstep(.75,0.,r))*glow*K;
+  col+=(h(gl_FragCoord.xy+fract(T))-.5)/160.;
+  gl_FragColor=vec4(max(col,0.),1.);
+}`;
+const sh = (t, s) => { const o = gl.createShader(t); gl.shaderSource(o, s); gl.compileShader(o); return gl.getShaderParameter(o, gl.COMPILE_STATUS) ? o : null; };
+const v = sh(gl.VERTEX_SHADER, vs), f = sh(gl.FRAGMENT_SHADER, fs);
+if (!v || !f) return;
+const pr = gl.createProgram(); gl.attachShader(pr, v); gl.attachShader(pr, f); gl.linkProgram(pr);
+if (!gl.getProgramParameter(pr, gl.LINK_STATUS)) return;
+gl.useProgram(pr);
+gl.bindBuffer(gl.ARRAY_BUFFER, gl.createBuffer());
+gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 3, -1, -1, 3]), gl.STATIC_DRAW);
+const loc = gl.getAttribLocation(pr, 'p'); gl.enableVertexAttribArray(loc); gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
+const U = k => gl.getUniformLocation(pr, k), uR = U('R'), uC = U('C'), uP = U('P'), uT = U('T'), uK = U('K'), uW = U('W');
+const sun = document.querySelector('.sun');
+const SC = MOB ? .42 : .5;                                   // the glow is soft: half resolution is invisible and cheap
+let cx = 0, cy = 0;
+function size(){
+  cv.width = Math.round(innerWidth * SC); cv.height = Math.round(innerHeight * SC);
+  const b = sun.getBoundingClientRect();
+  cx = (b.left + b.width / 2) * SC; cy = cv.height - (b.top + b.height / 2) * SC;
+  gl.viewport(0, 0, cv.width, cv.height);
+}
+size(); addEventListener('resize', size);
+const ptr = {x: .5, y: .5}, at = {x: .5, y: .5};
+addEventListener('pointermove', e => { ptr.x = e.clientX / innerWidth; ptr.y = 1 - e.clientY / innerHeight; }, {passive: true});
+const smooth = (a, b, x) => { const t = Math.max(0, Math.min(1, (x - a) / (b - a))); return t * t * (3 - 2 * t); };
+const t0 = performance.now(); let last = 0;
+function frame(now){
+  if (!RM) requestAnimationFrame(frame);
+  if (document.hidden || now - last < 33) return;             // 30 fps is plenty for a glow
+  last = now;
+  at.x += (ptr.x - at.x) * .04; at.y += (ptr.y - at.y) * .04;
+  const day = smooth(-12, 28, ALT);                           // night: an ember; day: full gold
+  gl.uniform2f(uR, cv.width, cv.height); gl.uniform2f(uC, cx, cy); gl.uniform2f(uP, at.x, at.y);
+  gl.uniform1f(uT, RM ? 40 : 40 + (now - t0) / 1000); gl.uniform1f(uK, .62 + .3 * day); gl.uniform1f(uW, day);
+  gl.drawArrays(gl.TRIANGLES, 0, 3);
+  if (!document.documentElement.classList.contains('gl')) document.documentElement.classList.add('gl');
+}
+requestAnimationFrame(frame);
+})();
 </script>
 </body>
 </html>
