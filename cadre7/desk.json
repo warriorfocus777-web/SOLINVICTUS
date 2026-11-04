@@ -1,0 +1,553 @@
+{
+  "sources": [
+    {
+      "id": "S1",
+      "t": "Powerful Haitian gang leader tells AP he wrote UN seeking dialogue as clashes intensify — statement by the UN Spokesperson (late 02.11)",
+      "pub": "Associated Press (relaying the UN Spokesperson)",
+      "o": "United Nations — Spokesperson for the Secretary-General",
+      "ty": "official",
+      "d": "02.11.2026",
+      "r": "A",
+      "url": "https://www.click2houston.com/news/world/2026/11/02/powerful-haitian-gang-leader-writes-un-seeking-dialogue-as-clashes-intensify/",
+      "c": "03.11.2026",
+      "lang": "en"
+    },
+    {
+      "id": "S2",
+      "t": "Bukele adds a wildcard to Haiti’s fractured security landscape",
+      "pub": "CNN",
+      "o": "CNN — source close to the matter",
+      "ty": "press",
+      "d": "29.10.2026",
+      "r": "B",
+      "url": "https://www.cnn.com/2026/10/29/americas/haiti-bukele-salvador-soldiers-intl-latam",
+      "c": "03.11.2026",
+      "lang": "en"
+    },
+    {
+      "id": "S3",
+      "t": "El Salvador rushes some 1,000 troops to Haiti after gang ambush, source says",
+      "pub": "Reuters (via U.S. News)",
+      "o": "Reuters",
+      "ty": "press",
+      "d": "27.10.2026",
+      "r": "B",
+      "url": "https://www.usnews.com/news/world/articles/2026-10-27/around-1-000-soldiers-from-el-salvador-have-deployed-to-haiti-source-says",
+      "c": "03.11.2026",
+      "lang": "en"
+    },
+    {
+      "id": "S4",
+      "t": "‘Do what you have to do’: Trump backs Bukele’s troop deployment to Haiti",
+      "pub": "The Haitian Times",
+      "o": "The Haitian Times",
+      "ty": "press",
+      "d": "30.10.2026",
+      "r": "B",
+      "url": "https://haitiantimes.com/2026/10/30/do-what-you-have-to-do-trump-backs-bukeles-troop-deployment-to-haiti/",
+      "c": "03.11.2026",
+      "lang": "en"
+    },
+    {
+      "id": "S5",
+      "t": "Bukele afirma que rescatará “por las malas” a cuatro aerotécnicos si no los liberan en Haití (press conference, Casa Presidencial, 29.10)",
+      "pub": "El Diario de Hoy (elsalvador.com)",
+      "o": "President of El Salvador — press conference",
+      "ty": "statement",
+      "d": "30.10.2026",
+      "r": "A",
+      "url": "https://www.elsalvador.com/?p=1301405",
+      "c": "03.11.2026",
+      "lang": "es"
+    },
+    {
+      "id": "S6",
+      "t": "Powerful Haitian gang leader tells AP he wrote UN seeking dialogue as clashes intensify — status of the four technicians",
+      "pub": "Associated Press",
+      "o": "Associated Press",
+      "ty": "press",
+      "d": "02.11.2026",
+      "r": "B",
+      "url": "https://www.click2houston.com/news/world/2026/11/02/powerful-haitian-gang-leader-writes-un-seeking-dialogue-as-clashes-intensify/",
+      "c": "03.11.2026",
+      "lang": "en"
+    },
+    {
+      "id": "S7",
+      "t": "Trump suggests missing Salvadoran personnel in Haiti may have been killed",
+      "pub": "Anadolu Agency",
+      "o": "Anadolu Agency",
+      "ty": "press",
+      "d": "01.11.2026",
+      "r": "B",
+      "url": "https://www.aa.com.tr/en/americas/trump-suggests-missing-salvadoran-personnel-in-haiti-may-have-been-killed/4107806",
+      "c": "03.11.2026",
+      "lang": "en"
+    },
+    {
+      "id": "S8",
+      "t": "President Bukele defends Salvadoran forces in Haiti against allegations of criminal acts",
+      "pub": "Anadolu Agency",
+      "o": "Anadolu Agency",
+      "ty": "press",
+      "d": "01.11.2026",
+      "r": "B",
+      "url": "https://aa.com.tr/en/americas/president-bukele-defends-salvadoran-forces-in-haiti-against-allegations-of-criminal-acts/4107707",
+      "c": "03.11.2026",
+      "lang": "en"
+    },
+    {
+      "id": "S9",
+      "t": "Alix Didier Fils-Aimé s’entretient avec Nayib Bukele sur le renforcement de la coopération sécuritaire (communiqué de la Primature, 28.10)",
+      "pub": "Juno7",
+      "o": "Government of Haiti — Office of the Prime Minister",
+      "ty": "official",
+      "d": "28.10.2026",
+      "r": "A",
+      "url": "https://www.juno7.ht/fils-aime-bukele-cooperation-securitaire-haiti-salvador/",
+      "c": "03.11.2026",
+      "lang": "fr"
+    },
+    {
+      "id": "S10",
+      "t": "Le Salvador confirme le déploiement de plus de 2,000 soldats salvadoriens en Haïti (communiqué du ministère des Affaires étrangères, 28.10)",
+      "pub": "HaïtiLibre",
+      "o": "Government of El Salvador — Ministry of Foreign Affairs",
+      "ty": "official",
+      "d": "28.10.2026",
+      "r": "A",
+      "url": "https://www.haitilibre.com/article-48772-haiti-flash-le-salvador-confirme-le-deploiement-de-plus-de-2-000-soldats-salvadorien-en-haiti.html",
+      "c": "03.11.2026",
+      "lang": "fr"
+    },
+    {
+      "id": "S11",
+      "t": "Vigente ley que autoriza participación militar en fuerza antipandillas de Haití (Ley Especial Transitoria … GSF, Diario Oficial 30.09.2026)",
+      "pub": "Diario El Mundo",
+      "o": "Legislative Assembly of El Salvador — Diario Oficial",
+      "ty": "official",
+      "d": "30.09.2026",
+      "r": "A",
+      "url": "https://diario.elmundo.sv/politica/vigente-ley-que-autoriza-participacion-militar-en-fuerza-antipandillas-de-haiti",
+      "c": "03.11.2026",
+      "lang": "es"
+    },
+    {
+      "id": "S12",
+      "t": "Quatre soldats salvadoriens de la FRG portés disparus dans la plaine du Cul-de-Sac",
+      "pub": "Le Nouvelliste",
+      "o": "Le Nouvelliste — two government sources",
+      "ty": "press",
+      "d": "19.10.2026",
+      "r": "B",
+      "url": "https://lenouvelliste.com/article/273062/quatre-soldats-salvadoriens-de-la-frg-portes-disparus-dans-la-plaine-du-cul-de-sac",
+      "c": "03.11.2026",
+      "lang": "fr"
+    },
+    {
+      "id": "S13",
+      "t": "Soldados salvadoreños lanzan su primera gran operación contra bandas en Haití",
+      "pub": "EFE (via Diario Libre)",
+      "o": "EFE",
+      "ty": "press",
+      "d": "02.11.2026",
+      "r": "B",
+      "url": "https://www.diariolibre.com/mundo/haiti/2026/11/02/soldados-salvadorenos-lanzan-su-primera-gran-operacion-en-haiti/3708640",
+      "c": "03.11.2026",
+      "lang": "es"
+    },
+    {
+      "id": "S14",
+      "t": "Deux années d’action du Conseil électoral provisoire : le processus électoral se poursuit (note de presse, 25.10)",
+      "pub": "Conseil électoral provisoire",
+      "o": "CEP — Provisional Electoral Council",
+      "ty": "official",
+      "d": "25.10.2026",
+      "r": "A",
+      "url": "https://cephaiti.ht/deux-annees-daction-du-conseil-electoral-provisoire-le-processus-electoral-se-poursuit-et-sapprete-a-franchir-de-nouvelles-etapes",
+      "c": "03.11.2026",
+      "lang": "fr"
+    },
+    {
+      "id": "S15",
+      "t": "Haïti. Le 1er tour des élections fixé au 18 juillet 2027 (calendrier électoral actualisé du CEP, 28.10)",
+      "pub": "Karib’Info",
+      "o": "CEP — Provisional Electoral Council",
+      "ty": "official",
+      "d": "28.10.2026",
+      "r": "A",
+      "url": "https://www.karibinfo.com/news/haiti-le-1er-tour-des-elections-fixe-au-18-juillet-2027/",
+      "c": "03.11.2026",
+      "lang": "fr"
+    },
+    {
+      "id": "S16",
+      "t": "Haiti Election Tracker: 2026–2027 Electoral Process",
+      "pub": "Haïti Policy House",
+      "o": "Haïti Policy House",
+      "ty": "monitor",
+      "d": "10.2026",
+      "r": "C",
+      "url": "https://www.haitipolicyhouse.org/haiti-election-tracker",
+      "c": "03.11.2026",
+      "lang": "en",
+      "n": "Tracker; centre counts by commune carry no as-of date. Listed, not counted."
+    },
+    {
+      "id": "S17",
+      "t": "Situation of human rights in Haiti — report of the High Commissioner (A/HRC/61/74, advance version)",
+      "pub": "OHCHR",
+      "o": "OHCHR",
+      "ty": "official",
+      "d": "02.2026",
+      "r": "A",
+      "url": "https://www.ohchr.org/sites/default/files/documents/hrbodies/hrcouncil/sessions-regular/session61/advance-version/a-hrc-61-74-auv.pdf",
+      "c": "03.11.2026",
+      "lang": "en"
+    },
+    {
+      "id": "S18",
+      "t": "Dominican map shows Haiti gang toll roads (briefing by the Dominican Minister of Defence, 26.10)",
+      "pub": "The Rio Times",
+      "o": "Government of the Dominican Republic — Ministry of Defence",
+      "ty": "statement",
+      "d": "27.10.2026",
+      "r": "C",
+      "url": "https://www.riotimesonline.com/dominican-republic-map-haiti-gangs-port-au-prince-tolls/",
+      "c": "03.11.2026",
+      "lang": "en",
+      "n": "Relayed by a secondary outlet; primary transcript not found. Listed, not counted."
+    },
+    {
+      "id": "S19",
+      "t": "Gang-plagued Haiti sets election dates for 2027",
+      "pub": "AFP (via Jamaica Observer)",
+      "o": "AFP",
+      "ty": "press",
+      "d": "29.10.2026",
+      "r": "B",
+      "url": "https://www.jamaicaobserver.com/2026/10/29/gang-plagued-haiti-sets-election-dates-2027/",
+      "c": "03.11.2026",
+      "lang": "en"
+    },
+    {
+      "id": "S20",
+      "t": "Security Council renews Haiti Gang Suppression Force for six months (S/RES/2829)",
+      "pub": "UN Press",
+      "o": "UN Security Council",
+      "ty": "official",
+      "d": "29.09.2026",
+      "r": "A",
+      "url": "https://press.un.org/en/2026/sc16466.doc.htm",
+      "c": "03.11.2026",
+      "lang": "en"
+    },
+    {
+      "id": "S21",
+      "t": "Bukele says military operation launched to rescue Salvadorans held by gangs in Haiti",
+      "pub": "Associated Press (via ClickOnDetroit)",
+      "o": "Associated Press",
+      "ty": "press",
+      "d": "21.10.2026",
+      "r": "B",
+      "url": "https://www.clickondetroit.com/news/world/2026/10/21/bukele-says-military-operation-launched-to-rescue-salvadorans-held-by-gangs-in-haiti/",
+      "c": "03.11.2026",
+      "lang": "en"
+    },
+    {
+      "id": "S22",
+      "t": "El Salvador sends special forces to Haiti to find 4 missing soldiers (GSF confirmation)",
+      "pub": "The Haitian Times",
+      "o": "Gang Suppression Force",
+      "ty": "official",
+      "d": "23.10.2026",
+      "r": "A",
+      "url": "https://haitiantimes.com/2026/10/23/salvadoran-contingent-arrives-haiti-search-four-missing-soldiers/",
+      "c": "03.11.2026",
+      "lang": "en"
+    },
+    {
+      "id": "S23",
+      "t": "Haiti enters second week of voter registration with expansion into West Department",
+      "pub": "The Haitian Times",
+      "o": "The Haitian Times",
+      "ty": "press",
+      "d": "04.08.2026",
+      "r": "B",
+      "url": "https://haitiantimes.com/2026/08/04/haiti-continues-voter-registration-in-accessible-areas/",
+      "c": "03.11.2026",
+      "lang": "en"
+    }
+  ],
+  "boards": [
+    {
+      "period": "11.2026",
+      "status": "draft",
+      "signed": null,
+      "context": {
+        "en": "18.10: four Salvadoran Air Force aviation technicians serving with the GSF went missing after an ambush in Santo, Croix-des-Bouquets; as of 02.11 their fate is unconfirmed. El Salvador says it has deployed more than 2,000 troops; on 02.11 they launched their first ground operation (Santo, Croix-des-Missions) with Haitian police armour in support. El Salvador’s only published legal text covers participation in the GSF (12 months from 02.10; no troop number). Strike allegations (UNA-Haiti, 30.10) and their denial (31.10) are unverified. Elections: first round 18.07.2027, second round 04.10.2027; voter register closes 20.05.2027 (CEP, 28.10). See the chronology for sources.",
+        "fr": "18.10 : quatre techniciens d’aviation salvadoriens servant au sein de la GSF ont disparu après une embuscade à Santo, Croix-des-Bouquets ; au 02.11, leur sort n’est pas confirmé. Le Salvador dit avoir déployé plus de 2 000 soldats ; le 02.11, ils ont lancé leur première opération terrestre (Santo, Croix-des-Missions) avec l’appui de blindés de la police haïtienne. Le seul texte juridique publié par le Salvador porte sur la participation à la GSF (12 mois à compter du 02.10 ; aucun effectif fixé). Les allégations de frappes (UNA-Haïti, 30.10) et leur démenti (31.10) ne sont pas vérifiés. Élections : premier tour le 18.07.2027, second tour le 04.10.2027 ; clôture du registre électoral le 20.05.2027 (CEP, 28.10). Voir la chronologie pour les sources."
+      },
+      "cells": {
+        "command": {
+          "state": "parallel",
+          "conf": "moderate",
+          "src": [
+            "S1",
+            "S2",
+            "S3",
+            "S4",
+            "S9"
+          ],
+          "fals": {
+            "en": "A published command arrangement placing the Salvadoran contingent under GSF command, or a UN or GSF statement that it operates inside the GSF chain of command.",
+            "fr": "Un arrangement de commandement publié plaçant le contingent salvadorien sous le commandement de la GSF, ou une déclaration de l’ONU ou de la GSF indiquant qu’il opère dans la chaîne de commandement de la GSF."
+          }
+        },
+        "endstate": {
+          "state": null,
+          "conf": null,
+          "src": [
+            "S5",
+            "S6",
+            "S7",
+            "S11",
+            "S13"
+          ],
+          "fals": null
+        },
+        "election": {
+          "state": null,
+          "conf": null,
+          "src": [],
+          "fals": null
+        }
+      },
+      "indicators": {
+        "roads": {
+          "value": null,
+          "movement": null,
+          "conf": null,
+          "src": [],
+          "near": {
+            "en": "No originator publishes which main roads are under sustained observation, and the desk has not yet fixed the list of roads. Nearest published: AFP (29.10) reports that gangs often close roads to several parts of the country; Dominican officials (26.10, relayed, not graded) say gangs hold every land route into Port-au-Prince.",
+            "fr": "Aucun émetteur ne publie quelles routes principales sont sous observation soutenue, et le desk n’a pas encore arrêté la liste des routes. Mesure publiée la plus proche : l’AFP (29.10) rapporte que les gangs ferment souvent des routes vers plusieurs régions ; des responsables dominicains (26.10, relayé, non noté) affirment que les gangs tiennent toutes les voies terrestres vers Port-au-Prince.",
+            "src": [
+              "S19",
+              "S18"
+            ]
+          }
+        },
+        "outside": {
+          "value": null,
+          "movement": null,
+          "conf": null,
+          "src": [],
+          "near": {
+            "en": "No originator publishes the share of the electorate outside gang-controlled territory. Nearest published: OHCHR (early 2026) estimates one in four people live in areas controlled by armed gangs — a population share, not an electorate share. The CEP counts 878,217 newly registered voters at 23.10.",
+            "fr": "Aucun émetteur ne publie la part de l’électorat hors des territoires contrôlés par les gangs. Mesure publiée la plus proche : le HCDH (début 2026) estime qu’une personne sur quatre vit dans des zones contrôlées par des gangs armés — une part de la population, non de l’électorat. Le CEP compte 878 217 électeurs nouvellement inscrits au 23.10.",
+            "src": [
+              "S17",
+              "S14"
+            ]
+          }
+        },
+        "stations": {
+          "value": null,
+          "movement": null,
+          "conf": null,
+          "src": [],
+          "near": {
+            "en": "No originator publishes how many polling stations can be supplied without airlift. Nearest published: the CEP reports 1,306 registration-and-voting centres (CIV) operational (25.10); Haïti Policy House lists none in Carrefour, Cité Soleil or Croix-des-Bouquets (undated, not graded); AFP (29.10) reports that several gang-controlled municipalities have no registration centre.",
+            "fr": "Aucun émetteur ne publie combien de bureaux de vote peuvent être approvisionnés sans pont aérien. Mesure publiée la plus proche : le CEP fait état de 1 306 centres d’inscription et de vote (CIV) opérationnels (25.10) ; Haïti Policy House n’en recense aucun à Carrefour, Cité Soleil ou Croix-des-Bouquets (non daté, non noté) ; l’AFP (29.10) rapporte que plusieurs communes contrôlées par des gangs n’ont pas de centre d’inscription.",
+            "src": [
+              "S14",
+              "S16",
+              "S19"
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "errors": [],
+  "chronology": [
+    {
+      "d": "29.09.2026",
+      "en": "UN Security Council renews the GSF mandate to 31.03.2027 (S/RES/2829).",
+      "fr": "Le Conseil de sécurité renouvelle le mandat de la GSF jusqu’au 31.03.2027 (S/RES/2829).",
+      "src": [
+        "S20"
+      ]
+    },
+    {
+      "d": "29.09.2026",
+      "en": "El Salvador’s Legislative Assembly passes the transitional law for participation in the GSF: 12 months from 02.10, extendable; no troop number set.",
+      "fr": "L’Assemblée législative du Salvador adopte la loi transitoire de participation à la GSF : 12 mois à compter du 02.10, prorogeables ; aucun effectif fixé.",
+      "src": [
+        "S11"
+      ]
+    },
+    {
+      "d": "18.10.2026",
+      "en": "Four Salvadoran Air Force aviation technicians serving with the GSF go missing after an ambush in Santo, Croix-des-Bouquets.",
+      "fr": "Quatre techniciens d’aviation de l’armée de l’air salvadorienne servant au sein de la GSF disparaissent après une embuscade à Santo, Croix-des-Bouquets.",
+      "src": [
+        "S12",
+        "S7"
+      ],
+      "place": [
+        "ouest"
+      ]
+    },
+    {
+      "d": "21.10.2026",
+      "en": "President Bukele announces a military operation to rescue them; if they are returned, “everything will go back to the way it was”.",
+      "fr": "Le président Bukele annonce une opération militaire pour les secourir ; s’ils sont rendus, « tout redeviendra comme avant ».",
+      "src": [
+        "S21"
+      ]
+    },
+    {
+      "d": "22.10.2026",
+      "en": "A first Salvadoran contingent arrives to support search and security operations in the Plaine du Cul-de-Sac (GSF confirmation).",
+      "fr": "Un premier contingent salvadorien arrive en appui aux opérations de recherche et de sécurité dans la plaine du Cul-de-Sac (confirmation de la GSF).",
+      "src": [
+        "S22"
+      ],
+      "place": [
+        "ouest"
+      ]
+    },
+    {
+      "d": "27.10.2026",
+      "en": "About 1,000 Salvadoran troops in Haiti, per a Haitian security official; command and duration unclear.",
+      "fr": "Environ 1 000 soldats salvadoriens en Haïti, selon un responsable sécuritaire haïtien ; commandement et durée non précisés.",
+      "src": [
+        "S3"
+      ],
+      "place": [
+        "ouest"
+      ]
+    },
+    {
+      "d": "28.10.2026",
+      "en": "El Salvador’s foreign ministry announces more than 2,000 troops; the Prime Minister’s Office cites cooperation “within the framework of the GSF” and respect for State authority, without operational detail.",
+      "fr": "Le ministère salvadorien des Affaires étrangères annonce plus de 2 000 soldats ; la Primature évoque une coopération « dans le cadre de la FRG » et le respect de l’autorité de l’État, sans détail opérationnel.",
+      "src": [
+        "S10",
+        "S9"
+      ]
+    },
+    {
+      "d": "28.10.2026",
+      "en": "The CEP publishes a revised calendar: first round 18.07.2027, second round 04.10.2027, voter register closes 20.05.2027.",
+      "fr": "Le CEP publie un calendrier actualisé : premier tour le 18.07.2027, second tour le 04.10.2027, clôture du registre électoral le 20.05.2027.",
+      "src": [
+        "S15",
+        "S19"
+      ]
+    },
+    {
+      "d": "29.10.2026",
+      "en": "Bukele says the troops will leave the same day the four are handed over, and otherwise will rescue them by force.",
+      "fr": "Bukele déclare que les troupes partiront le jour même où les quatre seront remis, et qu’à défaut ils seront secourus par la force.",
+      "src": [
+        "S5"
+      ]
+    },
+    {
+      "d": "31.10.2026",
+      "en": "Bukele denies a diaspora group’s allegation of strikes on civilians; President Trump suggests some of the four may have been killed. Neither claim is verified.",
+      "fr": "Bukele dément l’allégation d’un groupe de la diaspora sur des frappes contre des civils ; le président Trump laisse entendre que certains des quatre pourraient avoir été tués. Aucune des deux affirmations n’est vérifiée.",
+      "src": [
+        "S8",
+        "S7"
+      ]
+    },
+    {
+      "d": "02.11.2026",
+      "en": "Salvadoran forces launch their first ground operation, in Santo and Croix-des-Missions, with Haitian police armour in support.",
+      "fr": "Les forces salvadoriennes lancent leur première opération terrestre, à Santo et Croix-des-Missions, avec l’appui de blindés de la police haïtienne.",
+      "src": [
+        "S13"
+      ],
+      "place": [
+        "ouest"
+      ]
+    },
+    {
+      "d": "02.11.2026",
+      "en": "UN spokesperson: “the vast majority” of Salvadoran military personnel are not deployed under the GSF and fall outside the UN mandate. The four remain unaccounted for.",
+      "fr": "Porte-parole de l’ONU : « la grande majorité » du personnel militaire salvadorien n’est pas déployée au sein de la GSF et échappe au mandat de l’ONU. Les quatre restent introuvables.",
+      "src": [
+        "S1",
+        "S6"
+      ]
+    }
+  ],
+  "notes": [
+    {
+      "id": "N-001",
+      "status": "draft",
+      "signed": null,
+      "conf": "moderate",
+      "q": {
+        "en": "Is the Salvadoran surge under any written instrument?",
+        "fr": "Le renfort salvadorien relève-t-il d’un instrument écrit ?"
+      },
+      "a": {
+        "en": "No published instrument covers it.",
+        "fr": "Aucun instrument publié ne le couvre."
+      },
+      "body": [
+        {
+          "en": "El Salvador’s only published legal text on Haiti is the transitional law passed on 29 September (in force 2 October, 12 months, extendable). It authorises the armed forces to take part in the Gang Suppression Force and sets no troop number.",
+          "fr": "Le seul texte juridique publié par le Salvador sur Haïti est la loi transitoire adoptée le 29 septembre (en vigueur le 2 octobre, 12 mois, prorogeable). Elle autorise les forces armées à participer à la Force de répression des gangs et ne fixe aucun effectif.",
+          "src": [
+            "S11"
+          ]
+        },
+        {
+          "en": "On 2 November the UN spokesperson said that “the vast majority” of Salvadoran military personnel are not deployed under the GSF and fall outside the UN mandate. The law that exists therefore does not describe most of the force on the ground.",
+          "fr": "Le 2 novembre, le porte-parole de l’ONU a déclaré que « la grande majorité » du personnel militaire salvadorien n’est pas déployée au sein de la GSF et échappe au mandat de l’ONU. La loi existante ne décrit donc pas l’essentiel de la force présente sur le terrain.",
+          "src": [
+            "S1"
+          ]
+        },
+        {
+          "en": "Haiti’s Prime Minister’s Office has published one communiqué (28 October). It speaks of cooperation “within the framework of the GSF” and of respect for State authority, but gives no agreement, status-of-forces text, duration or rules of engagement. Reporting on 27 and 29 October found command and duration unstated.",
+          "fr": "La Primature a publié un communiqué (28 octobre). Il évoque une coopération « dans le cadre de la FRG » et le respect de l’autorité de l’État, sans accord, statut des forces, durée ni règles d’engagement. Les reportages des 27 et 29 octobre constatent que le commandement et la durée ne sont pas précisés.",
+          "src": [
+            "S9",
+            "S3",
+            "S2"
+          ]
+        },
+        {
+          "en": "The only stated end condition is oral: the President of El Salvador said the troops would leave the day the four technicians are handed over, and otherwise rescue them by force.",
+          "fr": "La seule condition de fin énoncée est orale : le président salvadorien a déclaré que les troupes partiraient le jour où les quatre techniciens seraient remis, et qu’à défaut ils seraient secourus par la force.",
+          "src": [
+            "S5"
+          ]
+        }
+      ],
+      "confwhy": {
+        "en": "Moderate: the absence is documented by several independent originators, but an unpublished bilateral exchange cannot be excluded.",
+        "fr": "Modérée : l’absence est documentée par plusieurs émetteurs indépendants, mais un échange bilatéral non publié ne peut être exclu."
+      },
+      "fals": {
+        "en": "Publication of a decree, bilateral agreement or exchange of letters covering Salvadoran forces in Haiti beyond participation in the GSF.",
+        "fr": "La publication d’un décret, d’un accord bilatéral ou d’un échange de lettres couvrant les forces salvadoriennes en Haïti au-delà de la participation à la GSF."
+      },
+      "src": [
+        "S11",
+        "S1",
+        "S9",
+        "S3",
+        "S2",
+        "S5"
+      ]
+    }
+  ]
+}

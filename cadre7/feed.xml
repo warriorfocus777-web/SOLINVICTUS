@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>https://solinvictus.app/cadre7/</id>
+  <title>Cadre 7 — Parallel force · Monthly</title>
+  <subtitle>Analysis, not news. One board per calendar month.</subtitle>
+  <link href="https://solinvictus.app/cadre7/"/>
+  <link rel="self" href="https://solinvictus.app/cadre7/feed.xml"/>
+  <updated>2026-11-03T09:54:59Z</updated>
+  <author><name>Cadre 7</name></author>
+
+</feed>
