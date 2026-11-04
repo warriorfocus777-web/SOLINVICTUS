@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Matthieu Théard — Humanitarian access, gang governance, early warning · Haiti</title>
+<meta name="color-scheme" content="dark">
+<meta name="description" content="Matthieu Théard — Haitian–French dual national. Humanitarian access, gang governance and early warning in Haiti. OCHA Emergency Response Section. Runs Cadre 22, an independent public desk on Haitian security.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Matthieu Théard — Humanitarian access · Gang governance · Early warning">
+<meta property="og:description" content="Haitian–French dual national. Specialised expertise in gang governance and humanitarian access. Cadre 22 public desk.">
+<meta property="og:image" content="https://solinvictus.app/matthieu/og.png">
+<meta property="og:url" content="https://solinvictus.app/matthieu/">
+<link rel="canonical" href="https://solinvictus.app/matthieu/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/libre-caslon-display-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/libre-caslon-text-latin-400-italic.woff2" as="font" type="font/woff2" crossorigin>
+<script>document.documentElement.classList.add("js")</script>
+<style>
+@font-face{font-family:"Outfit";font-style:normal;font-weight:300;font-display:swap;src:url(fonts/outfit-latin-300-normal.woff2) format("woff2")}
+@font-face{font-family:"Outfit";font-style:normal;font-weight:400;font-display:swap;src:url(fonts/outfit-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:"Outfit";font-style:normal;font-weight:500;font-display:swap;src:url(fonts/outfit-latin-500-normal.woff2) format("woff2")}
+@font-face{font-family:"Libre Caslon Display";font-style:normal;font-weight:400;font-display:swap;src:url(fonts/libre-caslon-display-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:"Libre Caslon Text";font-style:normal;font-weight:400;font-display:swap;src:url(fonts/libre-caslon-text-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:"Libre Caslon Text";font-style:italic;font-weight:400;font-display:swap;src:url(fonts/libre-caslon-text-latin-400-italic.woff2) format("woff2")}
+@font-face{font-family:"Libre Caslon Text";font-style:normal;font-weight:700;font-display:swap;src:url(fonts/libre-caslon-text-latin-700-normal.woff2) format("woff2")}
+
+/* Design system version: 2026-11-03. Locked values. */
+:root{
+  --bg:#000000; --elev:#0c0c0c; --text:#e8e2d4; --muted:#9a958d; --accent:#c9a86c; --border:rgba(232,226,212,0.12);
+  --ui:"Outfit",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --serif:"Libre Caslon Text",Georgia,"Times New Roman",serif;
+  --pad:104px;
+  --ease:cubic-bezier(.2,.7,.2,1);
+  --display:"Libre Caslon Display","Libre Caslon Text",Georgia,serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.js .rv,.js .hero-copy>*{opacity:1!important;transform:none!important;animation:none!important;transition:none!important}.scroll-cue{display:none}.field-label{opacity:1!important;animation:none!important}}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--serif);font-size:18px;line-height:1.65;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}
+a:hover{color:var(--text)}
+a:focus-visible,.btn:focus-visible{outline:1px solid var(--accent);outline-offset:4px}
+::selection{background:var(--accent);color:var(--bg)}
+.container{max-width:760px;margin:0 auto;padding:0 28px}
+h2,h3,.label,nav,.btn,.meta,.status,.sig,.k{font-family:var(--ui)}
+p{margin:0 0 1.1em}
+
+/* Navigation */
+nav{position:fixed;inset:0 0 auto 0;z-index:10;background:transparent;border-bottom:1px solid transparent;transition:background .5s var(--ease),border-color .5s var(--ease)}
+nav.scrolled{background:rgba(0,0,0,.72);-webkit-backdrop-filter:blur(16px) saturate(1.4);backdrop-filter:blur(16px) saturate(1.4);border-bottom-color:var(--border)}
+.progress{position:absolute;left:0;right:0;bottom:-1px;height:1px;background:var(--accent);transform:scaleX(0);transform-origin:left;opacity:.8}
+nav .container{display:flex;align-items:center;justify-content:space-between;height:60px;max-width:1080px}
+nav .name{color:var(--text);font-weight:400;font-size:15px;letter-spacing:.02em}
+nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0}
+nav ul a{position:relative;transition:color .3s;color:var(--muted);font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase}
+nav ul a:hover{color:var(--text)}
+nav ul a::after{content:"";position:absolute;left:0;right:0;bottom:-8px;height:1px;background:var(--accent);transform:scaleX(0);transition:transform .5s var(--ease)}
+nav ul a.active{color:var(--text)}
+nav ul a.active::after{transform:scaleX(1)}
+
+/* Hero */
+.hero{
+  background:radial-gradient(60% 55% at 74% 46%, rgba(201,168,108,0.07), transparent 70%), var(--bg);
+  position:relative;overflow:hidden;
+  min-height:100vh;min-height:100svh;display:flex;align-items:center;padding-top:80px;padding-bottom:48px
+}
+.hero::before{content:"";position:absolute;inset:0;-webkit-mask-image:radial-gradient(80% 70% at 60% 45%,#000 30%,transparent 85%);mask-image:radial-gradient(80% 70% at 60% 45%,#000 30%,transparent 85%);background-image:linear-gradient(rgba(201,168,108,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,108,0.04) 1px,transparent 1px);background-size:40px 40px;pointer-events:none}
+.hero .container{position:relative;z-index:2;max-width:1180px;width:100%}
+.hero-copy{max-width:640px}
+.field-wrap{position:absolute;z-index:1;top:0;bottom:0;right:1.5vw;width:min(46vw,740px);display:flex;align-items:center}
+.field-wrap canvas{width:100%;height:72%;display:block}
+.field-label{position:absolute;right:4%;bottom:9%;font-family:var(--ui);font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);opacity:0;transition:opacity .6s}
+.field-label b{color:var(--accent);font-weight:500}
+.field-label span{display:block;margin-top:6px;font-family:var(--display);font-size:22px;letter-spacing:0;text-transform:none;color:var(--text)}
+.field-label.on{animation:lab 3.4s var(--ease) both}
+@keyframes lab{0%{opacity:0;transform:translateY(6px)}12%,82%{opacity:1;transform:none}100%{opacity:0}}
+.field-cap{position:absolute;right:4%;top:13%;font-family:var(--ui);font-size:10.5px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);opacity:.7}
+.js .hero-copy>*{opacity:0;transform:translateY(18px);animation:enter 1s var(--ease) forwards}
+.js .hero-copy>*:nth-child(1){animation-delay:.1s}.js .hero-copy>*:nth-child(2){animation-delay:.2s}.js .hero-copy>*:nth-child(3){animation-delay:.32s}
+.js .hero-copy>*:nth-child(4){animation-delay:.5s}.js .hero-copy>*:nth-child(5){animation-delay:.6s}.js .hero-copy>*:nth-child(6){animation-delay:.72s}.js .hero-copy>*:nth-child(7){animation-delay:.84s}
+.js .hero-copy>.measure-line{transform:scaleX(0);transform-origin:left;animation-name:grow}
+@keyframes enter{to{opacity:1;transform:none}}
+@keyframes grow{to{opacity:1;transform:scaleX(1)}}
+.scroll-cue{position:absolute;left:50%;bottom:28px;z-index:2;width:1px;height:44px;background:linear-gradient(var(--accent),transparent);opacity:.6;animation:cue 2.4s var(--ease) infinite}
+@keyframes cue{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+/* reveals */
+.js .rv{opacity:0;transform:translateY(24px);transition:opacity 1s var(--ease),transform 1s var(--ease);transition-delay:var(--d,0s)}
+.js .rv.in{opacity:1;transform:none}
+.hero img.mark{display:block;width:56px;height:56px;margin-bottom:28px;filter:none}
+.meta{color:var(--accent);font-size:12px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;margin:0 0 22px}
+h1{font-family:var(--display);font-size:clamp(46px,7vw,72px);font-weight:400;letter-spacing:-0.015em;line-height:1.04;margin:0}
+.measure-line{width:40px;height:1px;background:var(--accent);margin:26px 0 26px}
+.tagline{max-width:540px;font-style:italic;color:var(--text);font-size:18px;margin:0 0 26px}
+.status{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;color:var(--muted);font-size:12.5px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;margin:0 0 36px}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--muted);opacity:.45;flex:none}
+.dot.active{background:var(--accent);opacity:1}
+.status{gap:8px 22px}
+.status .item{display:inline-flex;align-items:center;gap:10px}
+.actions{display:flex;flex-wrap:wrap;align-items:center;gap:28px}
+.btn{display:inline-block;background:var(--accent);color:var(--bg);font-size:14px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;padding:15px 28px;border:1px solid var(--accent)}
+.btn:hover{background:transparent;color:var(--accent)}
+.textlink{font-family:var(--ui);font-size:14px;font-weight:500;letter-spacing:.08em;text-transform:uppercase}
+.link-outline{display:inline-block;font-family:var(--ui);font-size:14px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--text);border:1px solid rgba(232,226,212,0.28);padding:15px 26px}
+.link-outline:hover{border-color:var(--accent);color:var(--accent)}
+
+/* Sections */
+section.block{border-top:1px solid var(--border);padding:var(--pad) 0}
+.section-marker{font-family:var(--ui);color:var(--accent);font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;margin:0 0 14px;display:flex;align-items:center;gap:14px}
+.section-marker::before{content:"";width:28px;height:1px;background:var(--accent);opacity:.6}
+.section-marker b{font-weight:500;color:var(--muted)}
+.label{color:var(--accent);font-size:12px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;margin:0 0 14px;display:block}
+h2{font-size:clamp(30px,4vw,40px);font-weight:300;letter-spacing:-0.02em;line-height:1.15;margin:0 0 36px}
+h3{font-size:20px;font-weight:400;letter-spacing:-0.005em;line-height:1.3;margin:0 0 10px}
+.muted{color:var(--muted)}
+.small{font-size:15px}
+
+/* Value cards */
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:0 0 36px}
+.card{position:relative;padding:28px;border-radius:0;background:var(--elev);border:1px solid var(--border)}
+.card::before{content:"";position:absolute;top:-1px;left:-1px;right:-1px;height:2px;background:var(--accent);transform-origin:left;transition:transform 1.2s var(--ease) calc(var(--d,0s) + .25s)}
+.js .card.rv::before{transform:scaleX(0)}
+.js .card.rv.in::before{transform:scaleX(1)}
+.card{transition:opacity 1s var(--ease),transform 1s var(--ease),border-color .4s,background .4s;transition-delay:var(--d,0s),var(--d,0s),0s,0s}
+.card:hover{border-color:rgba(201,168,108,.35);background:#101010}
+.card .label{margin-bottom:12px}
+.card p{margin:0;font-size:16px;line-height:1.6}
+.roles{font-size:16px;color:var(--muted);margin:0}
+.roles b{font-family:var(--ui);font-weight:500;color:var(--text)}
+
+/* Frame */
+.links{display:flex;flex-wrap:wrap;gap:12px 28px;margin:8px 0 0;padding:0;list-style:none}
+.links a{font-family:var(--ui);font-size:14px;font-weight:500;letter-spacing:.06em}
+
+/* Notes */
+.note{position:relative;padding:2px 0 2px 26px;margin:0 0 44px}
+.note::before{content:"";position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--accent);transform-origin:top;transition:transform 1.4s var(--ease) .2s}
+.js .note.rv::before{transform:scaleY(0)}
+.js .note.rv.in::before{transform:scaleY(1)}
+.note .k{color:var(--muted);font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;margin:0 0 12px}
+.note h3 a{color:var(--text)}
+.note h3 a:hover{color:var(--accent)}
+.note .stand{color:var(--text)}
+.judgement{margin:20px 0 0;padding:16px 0 0;border-top:1px solid var(--border)}
+.judgement p{margin:0 0 8px}
+.sig{display:block;color:var(--muted);font-size:13px;letter-spacing:.04em}
+.archive{margin-top:8px}
+
+/* Profile */
+.profile h3{margin-top:44px;font-family:var(--ui);font-size:12px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+.lede{font-family:var(--ui);font-weight:300;font-size:22px;line-height:1.4;letter-spacing:-0.01em;margin:0 0 8px}
+.role{margin:0 0 4px}
+.role b{font-family:var(--ui);font-weight:500;font-size:17px;letter-spacing:0}
+.when{color:var(--muted);font-family:var(--ui);font-size:14px;margin:0 0 12px}
+ul.bul{margin:0 0 28px;padding:0 0 0 1.1em}
+ul.bul li{margin:0 0 8px;padding-left:4px}
+ul.bul li::marker{color:var(--muted)}
+.inline{margin:0}
+
+/* Contact */
+dl.contact{display:grid;grid-template-columns:120px 1fr;gap:14px 24px;margin:0}
+dl.contact dt{font-family:var(--ui);font-size:12px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);padding-top:5px}
+dl.contact dd{margin:0}
+
+footer{border-top:1px solid var(--border);padding:40px 0 56px;font-family:var(--ui);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+footer p{margin:0 0 6px}
+.footer-mark{width:24px;height:24px;vertical-align:middle;margin-right:12px;opacity:.7}
+
+@media (max-width:900px){
+  .field-wrap{width:120vw;right:-30vw;opacity:.38}
+  .field-meta{display:none}
+}
+@media (max-width:760px){
+  :root{--pad:72px}
+  .container{padding:0 22px}
+  nav .name{font-size:14px}
+  nav ul{gap:14px}
+  nav ul a{font-size:10.5px;letter-spacing:.1em}
+  .cards{grid-template-columns:1fr}
+  dl.contact{grid-template-columns:1fr;gap:4px}
+  dl.contact dd{margin-bottom:14px}
+}
+@media (max-width:560px){
+  nav .name{display:none}
+  nav .container{justify-content:center}
+  .hero img.mark{width:48px;height:48px;margin-bottom:22px}
+  h1{font-size:40px}
+  .tagline{font-size:17px}
+  .actions{gap:12px}
+  .btn,.link-outline{padding:14px 18px;font-size:13px}
+  .measure-line{margin:20px 0}
+  .tagline{margin-bottom:20px}
+  .status{margin-bottom:26px}
+}
+@media print{
+  nav,.hero img.mark,.hero::before{display:none}
+  body{background:#fff;color:#000}
+  .hero{min-height:auto;background:none;padding:0}
+}
+
+/* ===== v6 layout: one grid, one left edge ===== */
+:root{--wide:1180px;--gutter:28px}
+.skip{position:absolute;left:-9999px;top:8px;z-index:20;background:var(--accent);color:#000;padding:8px 14px;font-family:var(--ui);font-size:13px}
+.skip:focus{left:12px}
+nav .container,.hero .container,section.block .container,footer .container{max-width:var(--wide);padding:0 var(--gutter);margin:0 auto}
+nav .container{height:68px}
+.brand{display:flex;align-items:center;gap:12px;color:var(--text);font-family:var(--ui);font-size:15px;font-weight:400;letter-spacing:.02em}
+.brand img{display:block;width:26px;height:26px}
+.brand:hover{color:var(--accent)}
+nav ul{gap:34px}
+html{scroll-padding-top:84px}
+
+/* hero */
+.hero{padding-top:68px}
+.hero-copy{max-width:600px}
+.hero h1{font-size:clamp(54px,7.4vw,96px);line-height:.98;letter-spacing:-.02em}
+.role-line{font-family:var(--ui);font-weight:300;font-size:clamp(19px,1.7vw,23px);line-height:1.35;letter-spacing:-.005em;color:var(--text);margin:0 0 18px}
+.role-line span{color:var(--muted)}
+.tagline{max-width:520px}
+.scroll-cue{display:block}
+
+/* sections: sticky head column + body column */
+section.block{padding:var(--pad) 0}
+section.block .container{display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:0 88px;align-items:start}
+.sec-head{position:sticky;top:112px}
+.sec-head h2{font-family:var(--display);font-weight:400;font-size:clamp(30px,2.7vw,40px);line-height:1.1;letter-spacing:-.01em;margin:0}
+.sec-sub{font-family:var(--ui);font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:22px 0 0;line-height:1.7}
+.sec-body{max-width:760px;min-width:0}
+.lede-text{font-size:20px;line-height:1.6;margin-bottom:36px}
+.section-marker{margin-bottom:20px}
+
+/* Cadre product */
+.statement{font-family:var(--display);font-size:clamp(28px,2.6vw,36px);line-height:1.15;letter-spacing:-.01em;margin:0 0 22px;color:var(--text)}
+.product{display:grid;grid-template-columns:repeat(4,1fr);margin:34px 0 56px;border:1px solid var(--border);background:var(--elev);position:relative}
+.product::before{content:"";position:absolute;top:-1px;left:-1px;right:-1px;height:2px;background:var(--accent)}
+.spec{padding:24px 22px;border-left:1px solid var(--border)}
+.spec:first-child{border-left:0}
+.spec .v{display:block;font-family:var(--display);font-size:34px;line-height:1;color:var(--text);margin-bottom:12px}
+.spec:last-child .v{font-family:var(--ui);font-weight:300;font-size:20px;line-height:1.7;letter-spacing:.04em}
+.spec .k{display:block;font-family:var(--ui);font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);line-height:1.5}
+h3.sub{font-family:var(--ui);font-size:12px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin:0 0 26px}
+.note h4{font-family:var(--ui);font-size:20px;font-weight:400;line-height:1.3;margin:0 0 10px}
+.note h4 a{color:var(--text)}
+.note h4 a:hover{color:var(--accent)}
+.desk-links{display:flex;flex-wrap:wrap;align-items:center;gap:18px 32px;margin-top:28px}
+.desk-links .links{margin:0}
+
+/* Experience timeline */
+.tl{display:grid;grid-template-columns:150px 1fr;gap:0 32px;padding:30px 0;border-top:1px solid var(--border)}
+.tl:first-child{border-top:0;padding-top:0}
+.tl .when{font-family:var(--ui);font-size:13px;color:var(--muted);margin:3px 0 0;line-height:1.5}
+.tl h3{font-family:var(--ui);font-size:18px;font-weight:500;line-height:1.35;letter-spacing:0;margin:0 0 4px;color:var(--text)}
+.tl .org{font-family:var(--ui);font-size:14px;color:var(--accent);margin:0 0 14px}
+.tl .bul{margin-bottom:0}
+.tl .small{margin:0}
+.facts{display:grid;grid-template-columns:1.4fr 1fr;gap:40px;margin-top:22px;padding-top:36px;border-top:1px solid var(--border)}
+.facts .label{margin-bottom:16px}
+.tags{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.tags li{font-family:var(--ui);font-size:13px;line-height:1.35;color:var(--text);border:1px solid var(--border);padding:7px 12px}
+.langs{list-style:none;margin:0;padding:0}
+.langs li{display:flex;justify-content:space-between;gap:16px;padding:9px 0;border-bottom:1px solid var(--border);font-size:16px}
+.langs b{font-family:var(--ui);font-weight:500;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);padding-top:3px}
+
+/* Beyond */
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin:0 0 40px}
+.pillar{padding:30px 24px 30px 0}
+.pillar+.pillar{padding-left:24px;border-left:1px solid var(--border)}
+.pillar .num{display:block;font-family:var(--display);font-size:22px;color:var(--accent);margin-bottom:16px}
+.pillar h3{font-family:var(--ui);font-size:13px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--text);margin:0 0 10px}
+.pillar p{font-size:16px;line-height:1.6;margin:0;color:var(--text)}
+.sol{display:block;position:relative;overflow:hidden;padding:34px 34px 30px;border:1px solid var(--border);background:radial-gradient(90% 140% at 100% 0%,rgba(201,168,108,.10),transparent 60%),var(--elev);color:var(--text);transition:border-color .4s,transform .6s var(--ease)}
+.sol::after{content:"";position:absolute;right:-60px;top:-60px;width:200px;height:200px;border:1px solid rgba(201,168,108,.25);border-radius:50%;box-shadow:0 0 0 28px rgba(201,168,108,.04),0 0 0 56px rgba(201,168,108,.025);transition:transform 1.2s var(--ease)}
+.sol:hover{border-color:rgba(201,168,108,.45);color:var(--text)}
+.sol:hover::after{transform:scale(1.08) rotate(10deg)}
+.sol .label{display:block;margin-bottom:14px}
+.sol-title{display:block;font-family:var(--display);font-size:clamp(28px,2.6vw,36px);line-height:1.1;margin-bottom:12px}
+.sol-desc{display:block;max-width:480px;font-size:16px;line-height:1.6;color:var(--muted);margin-bottom:22px}
+.sol-go{font-family:var(--ui);font-size:13px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.sol-go span{display:inline-block;transition:transform .4s var(--ease)}
+.sol:hover .sol-go span{transform:translateX(6px)}
+
+/* contact & footer */
+dl.contact{grid-template-columns:110px 1fr}
+dl.contact dd{font-size:19px}
+footer .container{display:grid;grid-template-columns:auto 1fr auto;gap:12px 40px;align-items:center}
+footer p{margin:0}
+.f-brand{color:var(--text);display:flex;align-items:center}
+.f-links{display:flex;gap:22px}
+.f-links a{color:var(--muted)}
+.f-links a:hover{color:var(--accent)}
+
+@media (max-width:1020px){
+  section.block .container{grid-template-columns:1fr;gap:0}
+  .sec-head{position:static;margin-bottom:40px}
+  .sec-head h2{max-width:620px}
+  .sec-body{max-width:none}
+  footer .container{grid-template-columns:1fr;gap:10px}
+}
+@media (max-width:760px){
+  :root{--gutter:22px}
+  nav .container{height:60px}
+  nav ul{gap:16px;overflow-x:auto;scrollbar-width:none}
+  .brand span{display:none}
+  .product{grid-template-columns:1fr 1fr}
+  .spec:nth-child(3){border-left:0}
+  .spec:nth-child(n+3){border-top:1px solid var(--border)}
+  .tl{grid-template-columns:1fr;gap:6px}
+  .facts{grid-template-columns:1fr}
+  .pillars{grid-template-columns:1fr}
+  .pillar,.pillar+.pillar{padding:24px 0;border-left:0}
+  .pillar+.pillar{border-top:1px solid var(--border)}
+  .sol{padding:28px 24px}
+  .lede-text{font-size:18px}
+}
+@media (max-width:560px){
+  nav .container{justify-content:space-between}
+  nav .brand{display:flex}
+  nav ul a{font-size:10px;letter-spacing:.08em}
+  nav ul{gap:12px}
+  .hero h1{font-size:50px}
+}
+
+
+/* ===== v7 polish ===== */
+/* material: fine film grain over everything */
+body::after{content:"";position:fixed;inset:-50%;z-index:50;pointer-events:none;opacity:.05;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation:grain 1.2s steps(6) infinite}
+@keyframes grain{0%{transform:translate(0,0)}20%{transform:translate(-3%,2%)}40%{transform:translate(2%,-3%)}60%{transform:translate(-2%,-1%)}80%{transform:translate(3%,3%)}100%{transform:translate(0,0)}}
+
+/* hero: map caption + live label as one unit, tied to the map */
+.field-meta{position:absolute;right:4%;bottom:12%;text-align:right}
+.field-meta .field-cap,.field-meta .field-label{position:static}
+.field-meta .field-cap{margin:0 0 10px;opacity:.75}
+.field-meta .field-label{margin:0;min-height:52px}
+
+/* credentials strip under the hero */
+.strip{border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:linear-gradient(180deg,rgba(201,168,108,.025),transparent)}
+.strip .container{max-width:var(--wide);margin:0 auto;padding:0 var(--gutter);display:grid;grid-template-columns:repeat(4,1fr)}
+.strip .cell{padding:30px 26px 28px;border-left:1px solid var(--border)}
+.strip .cell:first-child{border-left:0;padding-left:0}
+.strip .v{display:block;font-family:var(--display);font-size:clamp(22px,2vw,28px);line-height:1.1;color:var(--text);margin-bottom:8px}
+.strip .k{display:block;font-family:var(--ui);font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);line-height:1.5}
+
+/* headings rise word by word */
+.sec-head h2 .w{display:inline-block;overflow:hidden;vertical-align:bottom;padding-bottom:.06em;margin-bottom:-.06em}
+.sec-head h2 .w>span{display:inline-block;transition:transform 1s var(--ease);transition-delay:calc(var(--i) * 55ms + .1s)}
+.js .sec-head.rv h2 .w>span{transform:translateY(105%)}
+.js .sec-head.rv.in h2 .w>span{transform:none}
+
+/* light that follows the pointer on surfaces */
+.card,.spec,.sol,.strip .cell{--mx:50%;--my:50%}
+.card::after,.product .spec::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .5s;
+  background:radial-gradient(320px circle at var(--mx) var(--my),rgba(201,168,108,.09),transparent 60%)}
+.card:hover::after,.product .spec:hover::after{opacity:1}
+.spec{position:relative}
+.sol{background:radial-gradient(420px circle at var(--mx) var(--my),rgba(201,168,108,.10),transparent 60%),radial-gradient(90% 140% at 100% 0%,rgba(201,168,108,.08),transparent 60%),var(--elev)}
+
+/* profile cards: numbered */
+.card .label{display:flex;justify-content:space-between;align-items:baseline}
+.card .label i{font-style:normal;color:var(--muted);letter-spacing:.1em}
+
+/* experience: rail that fills as you read */
+.timeline{position:relative;--p:0}
+.timeline::before,.timeline::after{content:"";position:absolute;left:166px;top:6px;bottom:0;width:1px}
+.timeline::before{background:var(--border)}
+.timeline::after{background:var(--accent);transform-origin:top;transform:scaleY(var(--p))}
+.tl{position:relative;grid-template-columns:150px 1fr;gap:0 48px}
+.tl::before{content:"";position:absolute;left:163px;top:36px;width:7px;height:7px;border-radius:50%;background:#000;border:1px solid var(--muted);z-index:1;transition:background .5s,border-color .5s,box-shadow .5s}
+.tl:first-child::before{top:6px}
+.tl.passed::before{background:var(--accent);border-color:var(--accent);box-shadow:0 0 0 4px rgba(201,168,108,.12)}
+.tl{border-top:0}
+.tl+.tl{border-top:0}
+
+/* contact as a closing statement */
+.mail{display:inline-flex;align-items:baseline;gap:16px;font-family:var(--display);font-size:clamp(28px,3.6vw,48px);line-height:1.1;color:var(--text);letter-spacing:-.01em;border-bottom:1px solid var(--border);padding-bottom:12px;transition:border-color .4s,color .4s;word-break:break-word}
+.mail:hover{color:var(--accent);border-color:var(--accent)}
+.mail span{font-family:var(--ui);font-size:.5em;color:var(--accent);transition:transform .4s var(--ease)}
+.mail:hover span{transform:translate(4px,-4px)}
+.copy{margin-left:18px;vertical-align:middle;background:none;border:1px solid rgba(232,226,212,.28);color:var(--muted);font-family:var(--ui);font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;padding:8px 12px;cursor:pointer;transition:color .3s,border-color .3s}
+.copy:hover{color:var(--accent);border-color:var(--accent)}
+.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:44px}
+.contact-grid .label{color:var(--muted);margin-bottom:8px}
+.contact-grid p{margin:0;font-size:17px}
+.contact-grid p.label{font-size:11px;margin-bottom:8px}
+
+/* buttons: quiet sheen */
+.btn{position:relative;overflow:hidden;transition:background .4s,color .4s}
+.btn::after{content:"";position:absolute;top:0;bottom:0;width:40%;left:-60%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.35),transparent);transform:skewX(-20deg);transition:left .8s var(--ease)}
+.btn:hover::after{left:130%}
+.link-outline{transition:border-color .3s,color .3s,background .3s}
+.link-outline:hover{background:rgba(201,168,108,.06)}
+
+@media (prefers-reduced-motion:reduce){body::after{animation:none}.js .sec-head.rv h2 .w>span{transform:none!important;transition:none}}
+@media (max-width:1020px){
+  .strip .container{grid-template-columns:1fr 1fr}
+  .strip .cell:nth-child(3){border-left:0;padding-left:0}
+  .strip .cell:nth-child(n+3){border-top:1px solid var(--border)}
+  .contact-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:760px){
+  .hero{min-height:auto;padding:120px 0 72px}
+  .scroll-cue{display:none}
+  .strip .cell{padding:22px 16px}
+  .strip .cell:nth-child(odd){padding-left:0}
+  .timeline::before,.timeline::after{left:3px}
+  .tl{grid-template-columns:1fr;padding-left:28px}
+  .tl::before{left:0;top:34px}
+  .tl:first-child::before{top:4px}
+  .contact-grid{grid-template-columns:1fr}
+  .copy{margin:14px 0 0;display:block}
+  body{font-size:17px}
+  ul.bul li{font-size:16px;line-height:1.6}
+  .tl h3{font-size:17px}
+}
+
+</style>
+</head>
+<body>
+
+<a class="skip" href="#profile">Skip to content</a>
+
+<nav aria-label="Primary">
+  <div class="container">
+    <a class="brand" href="#top" aria-label="Matthieu Théard, back to top"><img src="monogram.svg" alt="" width="26" height="26"><span>Matthieu Théard</span></a>
+    <ul>
+      <li><a href="#profile">Profile</a></li>
+      <li><a href="#cadre">Cadre 22</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#beyond">Beyond</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+  <div class="progress"></div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="field-wrap" aria-hidden="true">
+    <canvas id="field"></canvas>
+    <div class="field-meta">
+      <p class="field-cap">Haïti · 10 départements</p>
+      <p class="field-label" id="field-label"></p>
+    </div>
+  </div>
+  <div class="container">
+    <div class="hero-copy">
+    <p class="meta" data-decode>Port-au-Prince · Geneva · Available for relocation</p>
+    <h1>Matthieu Théard</h1>
+    <div class="measure-line"></div>
+    <p class="role-line">Humanitarian access, gang governance and early warning <span>in Haiti.</span></p>
+    <p class="tagline">Haitian–French dual national. Currently in the OCHA Emergency Response Section. Runs Cadre 22, an independent public desk on Haitian security.</p>
+    <p class="status"><span class="item"><span class="dot active"></span>OCHA ERS · Jul–Dec 2026</span><span class="item"><span class="dot"></span>Available for Port-au-Prince from January 2027</span></p>
+    <div class="actions">
+      <a class="btn" href="Matthieu-Theard-CV.pdf" target="_blank" rel="noopener">Download CV</a>
+      <a class="link-outline" href="#cadre">Explore Cadre 22</a>
+    </div>
+    </div>
+  </div>
+  <a class="scroll-cue" href="#profile" aria-label="Scroll to profile"></a>
+</header>
+
+<main>
+
+<div class="strip" aria-label="At a glance">
+  <div class="container">
+    <div class="cell rv" style="--d:0s"><span class="v">OCHA ERS</span><span class="k">Geneva · Jul – Dec 2026</span></div>
+    <div class="cell rv" style="--d:.08s"><span class="v">MA, IHEID</span><span class="k">Thesis: Gang Governance in Haiti</span></div>
+    <div class="cell rv" style="--d:.16s"><span class="v">3 native languages</span><span class="k">Kreyòl · Français · English</span></div>
+    <div class="cell rv" style="--d:.24s"><span class="v">Cadre 22</span><span class="k">Signed notes · monthly cycle</span></div>
+  </div>
+</div>
+
+<section class="block" id="profile" aria-labelledby="profile-h">
+  <div class="container">
+    <div class="sec-head rv">
+      <span class="section-marker">01<b data-decode>Profile</b></span>
+      <h2 id="profile-h">Native access, analytical depth, UN operational experience.</h2>
+    </div>
+    <div class="sec-body">
+      <p class="rv lede-text">Haitian dual national with specialised expertise in gang governance, community dynamics in conflict-affected areas, and humanitarian access in Haiti. Currently applying this knowledge in the OCHA Emergency Response Section. Combines rigorous analytical skills (MA thesis on Gang Governance in Haiti), UN operational experience (UNHCR + OCHA), and full native fluency in Haitian Creole, French and English. Strong capacity to facilitate dialogue with communities, track perceptions and early-warning signals, and translate local realities into actionable analysis for security and stabilisation actors.</p>
+      <div class="cards">
+        <div class="card rv" style="--d:0s">
+          <span class="label">Access<i>01</i></span>
+          <p>Native Haitian Creole, French and English. Dual national status. Capacity to facilitate dialogue with communities and translate local realities into analysis usable by security and stabilisation actors.</p>
+        </div>
+        <div class="card rv" style="--d:.12s">
+          <span class="label">Analysis<i>02</i></span>
+          <p>MA thesis on Gang Governance in Haiti. Current application of that knowledge inside OCHA ERS. Cadre 22 enforces a two-source floor, signed judgements and a monthly cycle.</p>
+        </div>
+        <div class="card rv" style="--d:.12s">
+          <span class="label">Coordination<i>03</i></span>
+          <p>UNHCR COI synthesis and high-level meeting support. At OCHA ERS: UNDAC operational partners data, Training and Logistics Working Groups, IHP meetings and deployment support, plus analysis for senior leadership on IDPs, armed governance and civil-military coordination in Haiti.</p>
+        </div>
+        <div class="card rv" style="--d:.24s">
+          <span class="label">Availability<i>04</i></span>
+          <p>Available for immediate relocation to Port-au-Prince. The desk continues regardless of location.</p>
+        </div>
+      </div>
+      <p class="rv roles"><b>Roles this combination maps to:</b> Humanitarian Affairs Officer (OCHA / Haiti), humanitarian access and HASS advisory, protection or early-warning functions, security-sector coordination (DCAF-type or equivalent).</p>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="cadre" aria-labelledby="cadre-h">
+  <div class="container">
+    <div class="sec-head rv">
+      <span class="section-marker">02<b data-decode>The desk</b></span>
+      <h2 id="cadre-h">Cadre 22</h2>
+      <p class="sec-sub">Bureau indépendant · Sécurité haïtienne · Révisé chaque mois</p>
+    </div>
+    <div class="sec-body">
+      <p class="rv statement">Who is responsible for what, and who can check the work.</p>
+      <p class="rv">An independent public desk on Haitian security. It reads the instruments that allocate responsibility in Haiti (mandates, resolutions, benchmark frameworks) and publishes signed judgements, each with a confidence level, a check date and what would prove it wrong. The method and the monthly board are published in full on the desk itself.</p>
+      <div class="product rv">
+        <div class="spec"><span class="v" data-n="2">02</span><span class="k">Signed notes published</span></div>
+        <div class="spec"><span class="v" data-n="10">10</span><span class="k">Departments on the board</span></div>
+        <div class="spec"><span class="v" data-n="2">2</span><span class="k">Source floor per status</span></div>
+        <div class="spec"><span class="v">FR · EN · HT</span><span class="k">Interface languages</span></div>
+      </div>
+
+      <h3 class="sub rv">Latest signed notes</h3>
+      <article class="note rv">
+        <p class="k">Note 001 · 04.09.2026 · National · rev. 20.10.2026</p>
+        <h4><a href="https://solinvictus.app/cadre/#/en/archive/le-troisieme-objectif" target="_blank" rel="noopener">The Third Objective</a></h4>
+        <p class="stand">The Gang Suppression Force has an end-state. It was filed on 29 June and it names a recipient that has not existed in the period this desk studies.</p>
+        <div class="judgement">
+          <p>The paragraph 24 framework names the institutions and the measures, so the end-state can now fail on capacity; the transition still goes to “the Government of Haiti”, which holds no electoral mandate.</p>
+          <span class="sig">J-004 · assessment · confidence moderate · signed 20.10.2026 · check 03.2027 · M7</span>
+        </div>
+      </article>
+      <article class="note rv">
+        <p class="k">Note 002 · 16.09.2026 · National · rev. 28.10.2026</p>
+        <h4><a href="https://solinvictus.app/cadre/#/en/archive/chaine-de-garde" target="_blank" rel="noopener">La chaîne de garde — what happens to a person arrested by a foreign force</a></h4>
+        <p class="stand">Resolution 2793 lets the Gang Suppression Force arrest. It tells the force to notify the Haitian police and to update the Security Council. It does not tell anyone to count what happens after that.</p>
+        <div class="judgement">
+          <p>Until a GSF-involved arrest is counted at the point it reaches a Haitian judge, the third objective of Resolution 2793 has no instrument of measurement on the only holder that can prosecute.</p>
+          <span class="sig">J-002 · finding · confidence moderate · signed 16.09.2026 · check 03.2027 · M7</span>
+        </div>
+      </article>
+      <p class="rv small muted">Notes are reproduced as signed. Revisions, struck judgements and sources are kept on the desk.</p>
+      <div class="rv desk-links">
+        <a class="link-outline" href="https://solinvictus.app/cadre/#/fr/" target="_blank" rel="noopener">Enter Cadre 22</a>
+        <ul class="links">
+          <li><a href="https://solinvictus.app/cadre/#/fr/methode" target="_blank" rel="noopener">Méthode</a></li>
+          <li><a href="https://solinvictus.app/cadre/#/fr/situation" target="_blank" rel="noopener">Tableau du mois</a></li>
+          <li><a href="https://solinvictus.app/cadre/#/fr/archive" target="_blank" rel="noopener">Archive</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="experience" aria-labelledby="experience-h">
+  <div class="container">
+    <div class="sec-head rv">
+      <span class="section-marker">03<b data-decode>Experience</b></span>
+      <h2 id="experience-h">Experience &amp; education</h2>
+      <p class="sec-sub"><a class="textlink" href="Matthieu-Theard-CV.pdf" target="_blank" rel="noopener">Download CV</a></p>
+    </div>
+    <div class="sec-body">
+      <div class="timeline">
+      <div class="tl rv">
+        <p class="when">1 Jul – 18 Dec 2026</p>
+        <div>
+          <h3>Intern – Emergency Response Section, Operational Support Unit (Operational Partners)</h3>
+          <p class="org">OCHA · Response Support Branch · Geneva</p>
+          <ul class="bul">
+            <li>Maintain statistics on operational partners’ support to OCHA/UNDAC, keeping data aligned across databases and ready for extraction and analysis.</li>
+            <li>Support UNDAC partnerships work in the UNDAC Training Working Group, producing summary documents and infographics.</li>
+            <li>Act as OSU/Operational Partners communications focal point in the Response Branch Communications Working Group; update and post on the UNDAC LinkedIn page to raise awareness and engagement.</li>
+            <li>Prepare and document meetings of the UNDAC Logistics Working Group and the International Humanitarian Partnership (IHP); during UNDAC deployments, support administrative coordination of partners’ mobilisation.</li>
+            <li>Produced <i>Shadows of Governance</i>, a three-part analytical series for senior leadership on Haiti: the MSS-to-GSF transition, Resolution 2793, armed governance, IDPs, food insecurity and civil-military coordination implications.</li>
+            <li>Built an OCHA-branded, AI-assisted drafting module for the UNDAC End of Mission Report template.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tl rv">
+        <p class="when">2022 – 2023 · 8 months</p>
+        <div>
+          <h3>Intern – Liaison Unit for Regional Bureaux</h3>
+          <p class="org">UNHCR · Geneva</p>
+          <ul class="bul">
+            <li>Compiled and synthesised Country of Origin Information on Haiti, delivering balanced analysis used for protection and operational decision-making.</li>
+            <li>Supported the Working Group on Human Rights and Mobility in Latin America &amp; the Caribbean through research on Access to Territory and Access to Justice, with contextual analyses and recommendations.</li>
+            <li>Organised high-level meetings, prepared agendas and briefing notes, and produced detailed summaries to guide follow-up action.</li>
+            <li>Followed UNHCR’s Executive and Standing Committees: contributed to operational updates on forced recruitment in Sudan and displacement in the East and Horn of Africa, and supported a side event on Colombia’s Truth Commission.</li>
+            <li>Supported preparatory work for the Global Refugee Forum, including contributions from the West Africa region.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tl rv">
+        <p class="when">2023 – 2025</p>
+        <div>
+          <h3>Master’s in International History and Politics</h3>
+          <p class="org">Geneva Graduate Institute (IHEID)</p>
+          <p class="small">Thesis: Gang Governance in Haiti — non-state armed actors, territorial control, state fragility, humanitarian access in gang-controlled zones, and pathways for institutional reconstruction.</p>
+        </div>
+      </div>
+      <div class="tl rv">
+        <p class="when">2015 – 2019</p>
+        <div>
+          <h3>BA, International Security &amp; Diplomacy</h3>
+          <p class="org">Syracuse University · Maxwell School</p>
+        </div>
+      </div>
+      <div class="tl rv">
+        <p class="when">2018 – 2025</p>
+        <div>
+          <h3>Digital Communications &amp; Product Design</h3>
+          <p class="org">Independent &amp; organisational projects</p>
+          <p class="small">Designed websites and outreach materials for community organisations and non-profits; produced clear, accessible content in French and English for diverse audiences.</p>
+        </div>
+      </div>
+      </div>
+
+      <div class="facts rv">
+        <div>
+          <p class="label">Core competencies</p>
+          <ul class="tags">
+            <li>Community-level conflict analysis &amp; early warning</li><li>Perception tracking and feedback mechanisms</li><li>Dialogue facilitation with local communities and civil society</li><li>Protection of vulnerable groups (women, children)</li><li>Civil-military and inter-agency coordination</li><li>Quick Impact Project identification and civil-society partnership</li><li>Information synthesis (COI, policy material)</li><li>Meeting organisation &amp; coordination</li><li>High-quality drafting in French and English</li><li>Information synthesis under pressure</li>
+          </ul>
+        </div>
+        <div>
+          <p class="label">Languages</p>
+          <ul class="langs">
+            <li><span>Haitian Creole</span><b>Native</b></li><li><span>French</span><b>Native</b></li><li><span>English</span><b>Native</b></li><li><span>Spanish</span><b>C1</b></li><li><span>Portuguese</span><b>B1</b></li>
+          </ul>
+          <p class="label" style="margin-top:28px">Volunteer</p>
+          <p class="small">Association Suisse de Kinomichi and Tennis Club de Ferney-Voltaire: content production, event support and community engagement.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="beyond" aria-labelledby="beyond-h">
+  <div class="container">
+    <div class="sec-head rv">
+      <span class="section-marker">04<b data-decode>Beyond the desk</b></span>
+      <h2 id="beyond-h">Psychology, philosophy, practice.</h2>
+    </div>
+    <div class="sec-body">
+      <p class="rv lede-text">The same question, turned inward: what a person, like an institution, declines to see, and what it costs. Away from the desk, a long reading of depth psychology and philosophy, held to a daily practice.</p>
+      <div class="pillars">
+        <div class="pillar rv" style="--d:0s">
+          <span class="num">I</span>
+          <h3>Psychology</h3>
+          <p>C. G. Jung and Edward Edinger: the shadow, projection, individuation.</p>
+        </div>
+        <div class="pillar rv" style="--d:.12s">
+          <span class="num">II</span>
+          <h3>Philosophy</h3>
+          <p>Plotinus and the Neoplatonic tradition, the Gnostic texts, and the Fourth Way of Gurdjieff and Ouspensky.</p>
+        </div>
+        <div class="pillar rv" style="--d:.24s">
+          <span class="num">III</span>
+          <h3>Practice</h3>
+          <p>Kinomichi, meditation, journaling and dream work. Musashi’s <i>Book of Five Rings</i> as a discipline of attention.</p>
+        </div>
+      </div>
+      <a class="sol rv" href="https://solinvictus.app/sol/#top" target="_blank" rel="noopener">
+        <span class="label">Companion project</span>
+        <span class="sol-title">SOL — Seekers of Light</span>
+        <span class="sol-desc">A reading path through Jung, Plotinus, Gurdjieff and Musashi, read in order and slowly.</span>
+        <span class="sol-go">Visit solinvictus.app/sol <span aria-hidden="true">→</span></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="contact" aria-labelledby="contact-h">
+  <div class="container">
+    <div class="sec-head rv">
+      <span class="section-marker">05<b data-decode>Contact</b></span>
+      <h2 id="contact-h">Available from January 2027.</h2>
+    </div>
+    <div class="sec-body">
+      <p class="rv"><a class="mail" href="mailto:matthieutheard@icloud.com">matthieutheard@icloud.com <span aria-hidden="true">↗</span></a><button class="copy" type="button" data-copy="matthieutheard@icloud.com">Copy</button></p>
+      <div class="contact-grid rv">
+        <div><p class="label">Phone</p><p><a href="tel:+41782429167">(+41) 78 242 91 67</a></p></div>
+        <div><p class="label">Based</p><p>Prévessin, France · Geneva area</p></div>
+        <div><p class="label">Next</p><p>Port-au-Prince, from January 2027</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <p class="f-brand"><img class="footer-mark" src="monogram.svg" alt="">Matthieu Théard</p>
+    <p>Cadre 22 · Bureau indépendant · Sécurité haïtienne · Révisé chaque mois</p>
+    <p class="f-links"><a href="https://solinvictus.app/cadre/#/fr/" target="_blank" rel="noopener">Cadre 22</a><a href="https://solinvictus.app/sol/#top" target="_blank" rel="noopener">SOL</a><a href="Matthieu-Theard-CV.pdf" target="_blank" rel="noopener">CV</a><a href="/">solinvictus.app</a><span>© 2026</span></p>
+  </div>
+</footer>
+
+<script>window.HAITI={"w":1000,"h":766,"deps":[{"k":"artibonite","n":"Artibonite","d":"M625.6,424.8L587.9,384.4L586.2,374.9L622.0,365.5L625.2,360.0L623.2,353.1L605.9,343.5L591.5,318.0L603.7,297.7L622.9,295.2L617.8,285.1L603.0,279.3L603.7,259.7L612.2,265.1L619.5,261.7L617.0,245.8L634.8,252.1L628.1,238.6L606.4,235.4L587.5,216.7L534.1,190.6L521.7,180.1L515.9,181.1L480.1,170.5L482.6,149.3L499.1,131.9L512.6,130.6L555.6,137.9L582.0,133.2L603.8,114.6L625.7,103.1L636.3,104.6L640.5,113.6L647.7,119.2L648.7,127.5L656.3,126.5L663.6,131.9L660.3,144.4L664.7,150.8L673.2,154.5L683.8,184.3L693.5,193.9L716.7,207.7L727.2,204.3L727.2,194.7L734.2,195.0L740.7,188.8L746.7,188.2L758.6,194.3L760.3,217.9L773.8,230.4L787.9,237.3L793.8,250.6L793.7,271.5L803.2,292.0L787.1,314.7L785.1,341.5L794.5,351.0L791.2,358.9L794.4,378.9L789.6,397.7L792.7,426.1L786.6,449.7L778.3,454.4L745.2,453.4L727.6,438.0L709.5,430.4L702.2,419.3L636.4,414.2L625.6,424.8Z"},{"k":"centre","n":"Centre","d":"M961.3,300.2L972.8,312.1L1000.0,325.3L998.4,347.5L992.2,360.4L975.0,373.8L949.3,405.4L920.6,417.3L921.6,423.7L944.9,420.0L966.9,447.7L971.5,491.1L967.4,504.3L958.3,515.3L946.4,522.6L930.7,511.6L892.2,499.3L836.2,513.6L809.5,504.3L788.3,483.3L754.4,465.8L745.2,453.4L778.3,454.4L786.6,449.7L792.7,426.1L789.6,397.7L794.4,378.9L791.2,358.9L794.5,351.0L785.1,341.5L787.1,314.7L803.2,292.0L813.5,295.6L824.4,308.2L831.2,307.5L880.8,279.4L912.8,298.3L961.3,300.2Z"},{"k":"grandanse","n":"Grand'Anse","d":"M243.0,541.9L251.4,538.0L262.9,538.9L271.6,543.8L271.8,552.1L263.7,556.9L252.5,556.9L243.8,551.9L243.0,541.9ZM12.8,641.3L9.1,627.5L0.0,615.9L12.2,597.9L9.6,592.9L16.0,588.3L20.1,571.1L26.3,565.3L22.1,549.5L52.3,532.7L70.6,533.4L77.7,526.7L101.5,527.6L115.5,530.6L161.4,551.2L181.6,552.1L185.9,558.9L192.5,557.2L207.2,564.1L226.7,565.5L240.6,575.1L263.1,573.4L254.1,586.5L255.8,591.7L261.6,594.4L247.4,617.6L225.0,623.9L208.8,624.1L203.9,631.4L204.5,640.2L187.8,638.9L141.7,625.5L106.1,628.3L51.7,639.7L12.8,641.3Z"},{"k":"nippes","n":"Nippes","d":"M254.1,586.5L275.3,562.4L304.2,557.2L316.7,560.3L316.9,566.7L309.8,571.5L286.2,568.9L271.8,572.4L285.7,578.5L287.5,586.4L293.7,589.2L304.8,587.5L310.3,590.3L322.6,582.9L337.7,581.0L393.2,585.3L422.1,595.6L463.9,595.8L488.1,606.3L502.9,605.1L505.0,613.7L499.6,623.0L500.4,633.0L509.2,633.3L523.3,655.5L517.4,677.0L518.1,693.3L509.2,681.0L506.4,664.9L481.8,643.5L473.4,641.1L465.4,643.5L410.5,639.2L386.9,647.0L342.4,651.3L324.6,646.8L331.2,632.3L312.2,616.8L291.4,617.5L283.4,624.2L270.4,618.7L247.4,617.6L261.6,594.4L255.8,591.7L254.1,586.5Z"},{"k":"nord","n":"Nord","d":"M675.1,79.0L691.8,94.4L701.5,98.0L706.9,94.5L723.9,102.0L738.3,103.2L740.5,109.1L757.4,124.9L757.4,127.2L750.3,124.9L756.2,137.3L763.8,138.2L762.4,135.0L767.0,129.7L762.4,129.7L764.6,127.2L762.4,119.8L777.0,123.3L783.4,121.3L789.7,112.1L796.7,112.0L801.4,115.9L798.4,124.9L804.3,128.5L825.2,126.7L834.6,133.9L852.9,135.8L856.6,139.8L852.0,160.4L844.5,171.4L834.6,175.4L834.5,193.9L848.8,223.3L844.2,238.6L857.2,242.3L874.9,260.3L880.8,279.4L831.2,307.5L824.4,308.2L813.5,295.6L803.2,292.0L793.7,271.5L793.8,250.6L787.9,237.3L773.8,230.4L760.3,217.9L758.6,194.3L746.7,188.2L740.7,188.8L734.2,195.0L727.2,194.7L727.2,204.3L716.7,207.7L693.5,193.9L683.8,184.3L673.2,154.5L664.7,150.8L660.3,144.4L663.6,131.9L656.3,126.5L648.7,127.5L647.7,119.2L640.5,113.6L636.3,104.6L637.4,97.9L642.3,96.6L655.1,100.7L675.1,79.0Z"},{"k":"nord-est","n":"Nord-Est","d":"M958.5,140.5L962.8,157.3L963.5,181.3L973.3,204.6L977.3,250.2L966.9,272.1L951.8,282.5L961.3,300.2L912.8,298.3L880.8,279.4L874.9,260.3L857.2,242.3L844.2,238.6L848.8,223.3L834.5,193.9L834.6,175.4L844.5,171.4L852.0,160.4L856.6,139.8L866.9,145.2L884.3,132.2L920.8,138.6L923.3,140.5L918.2,147.2L904.2,147.7L907.9,154.5L925.8,152.5L936.0,160.3L938.9,151.4L928.7,147.1L928.0,140.1L930.7,137.8L958.5,140.5Z"},{"k":"nord-ouest","n":"Nord-Ouest","d":"M574.9,0.0L591.8,0.5L653.2,29.8L649.2,38.5L613.8,32.0L577.1,20.1L557.8,21.6L536.4,10.1L574.9,0.0ZM480.1,170.5L470.2,175.8L444.9,162.9L437.8,169.8L422.8,171.8L378.8,168.0L361.9,154.6L358.3,135.0L372.6,110.7L394.4,102.1L394.4,99.3L375.0,99.3L380.7,95.0L401.6,94.5L444.3,74.8L463.9,56.0L472.1,62.4L482.0,61.3L501.3,66.1L525.4,63.6L534.0,68.9L536.5,63.2L543.1,59.6L557.9,61.3L578.5,54.5L601.1,53.7L636.9,62.1L675.1,79.0L655.1,100.7L642.3,96.6L637.4,97.9L636.3,104.6L625.7,103.1L603.8,114.6L582.0,133.2L555.6,137.9L512.6,130.6L499.1,131.9L482.6,149.3L480.1,170.5Z"},{"k":"ouest","n":"Ouest","d":"M946.4,522.6L929.0,545.9L915.4,550.6L889.0,545.7L869.9,553.0L907.0,595.3L907.9,600.9L902.1,608.5L904.2,615.4L923.1,621.8L934.3,635.7L971.4,655.0L975.4,659.0L971.2,666.2L940.2,671.6L922.1,660.2L868.9,658.7L808.1,645.5L749.1,645.6L740.0,634.3L729.9,635.1L714.0,627.1L701.4,626.2L689.7,631.7L677.5,644.9L634.4,655.0L626.4,662.2L614.8,658.2L612.0,668.2L604.9,676.8L581.4,669.8L571.5,677.7L560.0,668.0L532.6,670.4L517.8,648.5L515.2,639.5L509.2,633.3L500.4,633.0L499.6,623.0L505.0,613.7L502.9,605.1L527.6,600.7L557.9,608.1L556.1,614.1L572.2,609.5L608.5,615.9L622.0,612.8L631.5,604.7L652.9,569.6L664.1,567.1L722.6,572.4L727.4,567.3L743.1,580.2L749.2,578.5L752.9,563.7L752.9,536.9L759.3,526.1L757.4,521.6L738.3,511.5L721.3,509.2L701.1,490.0L692.5,491.0L680.6,483.7L656.6,445.2L644.6,434.3L625.6,424.8L636.4,414.2L702.2,419.3L709.5,430.4L737.0,444.9L754.4,465.8L788.3,483.3L809.5,504.3L836.2,513.6L892.2,499.3L930.7,511.6L946.4,522.6ZM447.2,464.7L420.8,439.6L418.6,427.6L436.2,415.8L452.1,415.7L576.5,468.3L586.7,480.9L589.6,507.9L581.8,516.8L573.1,505.2L509.4,493.3L478.4,473.3L447.2,464.7Z"},{"k":"sud","n":"Sud","d":"M290.9,740.3L314.7,742.1L319.7,745.2L319.7,750.4L308.2,753.9L288.4,751.9L274.2,740.3L276.9,735.1L281.2,738.0L285.2,735.2L290.9,740.3ZM519.7,708.1L478.4,704.8L465.2,697.2L418.6,689.6L397.6,691.8L394.4,690.9L396.2,686.1L413.6,684.3L413.6,682.0L390.1,679.5L361.7,679.7L337.9,689.6L329.5,679.2L324.8,682.1L319.7,694.8L305.1,692.9L305.3,682.0L300.3,683.5L290.9,697.2L295.7,679.2L286.2,689.6L278.8,687.7L279.0,692.2L263.6,704.5L238.5,716.2L232.2,722.6L226.1,732.7L240.8,748.6L244.0,764.5L216.1,765.6L206.7,760.8L182.9,722.8L168.8,708.6L134.8,683.4L113.5,676.7L107.3,666.4L86.7,658.8L84.3,661.5L77.7,659.1L55.5,669.1L49.1,667.8L34.2,660.7L28.4,653.4L15.2,646.7L12.8,641.3L51.7,639.7L106.1,628.3L141.7,625.5L187.8,638.9L204.5,640.2L203.9,631.4L208.8,624.1L225.0,623.9L247.4,617.6L270.4,618.7L283.4,624.2L291.4,617.5L312.2,616.8L331.2,632.3L324.6,646.8L342.4,651.3L386.9,647.0L410.5,639.2L481.8,643.5L506.4,664.9L509.2,681.0L518.1,693.3L519.7,708.1Z"},{"k":"sud-est","n":"Sud-Est","d":"M971.2,666.2L952.7,700.5L957.4,743.1L951.9,760.7L910.9,714.9L848.2,687.1L806.5,691.8L718.9,692.2L691.3,697.2L680.1,691.9L680.6,707.6L677.2,711.2L658.2,706.6L608.5,709.9L610.9,717.5L601.1,714.7L591.4,721.0L572.0,719.1L562.5,722.8L540.9,712.5L519.7,708.1L517.4,685.1L523.3,655.5L532.6,670.4L560.0,668.0L571.5,677.7L581.4,669.8L604.9,676.8L612.0,668.2L614.8,658.2L626.4,662.2L634.4,655.0L677.5,644.9L689.7,631.7L701.4,626.2L714.0,627.1L729.9,635.1L740.0,634.3L749.1,645.6L808.1,645.5L868.9,658.7L922.1,660.2L940.2,671.6L971.2,666.2Z"}]};</script>
+<script>
+(() => {
+  const root = document.documentElement;
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const ease = t => 1 - Math.pow(1 - t, 3);
+  const GOLD = [201, 168, 108], CREAM = [232, 226, 212];
+
+  /* ---------------- Haiti particle field ---------------- */
+  const cv = document.getElementById('field');
+  const label = document.getElementById('field-label');
+  if (cv && window.HAITI) {
+    const H = window.HAITI, ctx = cv.getContext('2d');
+    const paths = H.deps.map(d => new Path2D(d.d));
+    // sample points inside departments on an offscreen canvas (map units)
+    const S = 0.5, ow = Math.round(H.w * S), oh = Math.round(H.h * S);
+    const oc = document.createElement('canvas'); oc.width = ow; oc.height = oh;
+    const og = oc.getContext('2d', { willReadFrequently: true });
+    og.setTransform(S, 0, 0, S, 0, 0);
+    paths.forEach((p, i) => { og.fillStyle = `rgb(${i + 1},0,0)`; og.fill(p); });
+    const px = og.getImageData(0, 0, ow, oh).data;
+    const N = innerWidth < 700 ? 2200 : 4200, pts = [];
+    let guard = 0;
+    while (pts.length < N && guard++ < N * 40) {
+      const x = Math.random() * ow, y = Math.random() * oh;
+      const id = px[((y | 0) * ow + (x | 0)) * 4];
+      if (!id) continue;
+      pts.push({
+        hx: x / S, hy: y / S, d: id - 1,
+        sx: Math.random(), sy: Math.random(),
+        delay: Math.random() * 0.9, b: 0.4 + Math.random() * 0.55,
+        ph: Math.random() * 6.283, f: 0.4 + Math.random() * 0.9,
+        r: Math.random() < 0.1 ? 1.9 : 1.2,
+        ox: 0, oy: 0, lit: 0
+      });
+    }
+    let W = 0, Hh = 0, dpr = 1, k = 1, mx = 0, my = 0, mouse = { x: -1e4, y: -1e4 };
+    function layout() {
+      const r = cv.getBoundingClientRect();
+      dpr = Math.min(2, devicePixelRatio || 1);
+      W = r.width; Hh = r.height;
+      cv.width = Math.round(W * dpr); cv.height = Math.round(Hh * dpr);
+      k = Math.min(W / H.w, Hh / H.h) * 0.94;
+      mx = (W - H.w * k) / 2; my = (Hh - H.h * k) / 2;
+    }
+    layout(); addEventListener('resize', () => { layout(); if (reduced) requestAnimationFrame(frame); });
+    cv.parentElement.addEventListener('pointermove', e => {
+      const r = cv.getBoundingClientRect(); mouse.x = e.clientX - r.left; mouse.y = e.clientY - r.top;
+    });
+    cv.parentElement.addEventListener('pointerleave', () => { mouse.x = mouse.y = -1e4; });
+
+    const CYCLE = 3.4; let current = -1, running = true, t0 = performance.now();
+    const order = [7, 0, 4, 1, 5, 6, 3, 2, 8, 9]; // Ouest first, then around the country
+    function setLabel(i) {
+      if (!label) return;
+      const d = H.deps[order[i]];
+      label.innerHTML = `<b>${String(i + 1).padStart(2, '0')}</b>/10<span>${d.n}</span>`;
+      label.classList.remove('on'); void label.offsetWidth; label.classList.add('on');
+    }
+    function frame(now) {
+      if (!running) return;
+      const t = (now - t0) / 1000;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      ctx.clearRect(0, 0, W, Hh);
+      const assembled = reduced ? 1 : Math.min(1, t / 2.9);
+      // department highlight cycle (after assembly)
+      const ci = reduced ? 0 : Math.max(0, Math.floor((t - 2.6) / CYCLE)) % 10;
+      if (ci !== current && (reduced || t > 2.6)) { current = ci; setLabel(ci); }
+      const hd = current >= 0 ? order[current] : -1;
+      // outlines
+      ctx.save(); ctx.setTransform(dpr * k, 0, 0, dpr * k, dpr * mx, dpr * my);
+      ctx.lineWidth = 1 / k;
+      ctx.strokeStyle = `rgba(232,226,212,${0.07 * assembled})`;
+      paths.forEach(p => ctx.stroke(p));
+      if (hd >= 0) {
+        ctx.fillStyle = 'rgba(201,168,108,0.05)'; ctx.fill(paths[hd]);
+        ctx.strokeStyle = 'rgba(201,168,108,0.45)'; ctx.stroke(paths[hd]);
+      }
+      ctx.restore();
+      // scan line ("who can check the work")
+      const sweep = reduced ? -1 : ((t - 3) % 8) / 8;
+      const sx = mx + sweep * H.w * k;
+      if (!reduced && t > 3 && sweep > 0.02 && sweep < 0.98) {
+        const g = ctx.createLinearGradient(sx - 60, 0, sx, 0);
+        g.addColorStop(0, 'rgba(201,168,108,0)'); g.addColorStop(1, 'rgba(201,168,108,0.10)');
+        ctx.fillStyle = g; ctx.fillRect(sx - 60, my, 60, H.h * k);
+        ctx.fillStyle = 'rgba(201,168,108,0.35)'; ctx.fillRect(sx, my, 1, H.h * k);
+      }
+      for (const p of pts) {
+        const tx = mx + p.hx * k, ty = my + p.hy * k;
+        let x, y, a;
+        const local = reduced ? 1 : Math.min(1, Math.max(0, (t - p.delay) / 1.9));
+        const e = ease(local);
+        if (e < 1) {
+          const fx = p.sx * W, fy = p.sy * Hh;
+          x = fx + (tx - fx) * e; y = fy + (ty - fy) * e; a = p.b * (0.25 + 0.75 * e);
+        } else {
+          x = tx + Math.sin(t * p.f + p.ph) * 0.7; y = ty + Math.cos(t * p.f * 0.8 + p.ph) * 0.7;
+          a = p.b * (0.75 + 0.25 * Math.sin(t * p.f * 1.7 + p.ph));
+        }
+        // pointer: gentle repulsion
+        const dx = x + p.ox - mouse.x, dy = y + p.oy - mouse.y, dd = dx * dx + dy * dy;
+        if (dd < 6400 && !reduced) { const f = (1 - Math.sqrt(dd) / 80) * 2.2; const m = Math.sqrt(dd) || 1; p.ox += dx / m * f; p.oy += dy / m * f; }
+        p.ox *= 0.9; p.oy *= 0.9; x += p.ox; y += p.oy;
+        // light: highlighted department + scan line
+        let target = p.d === hd ? 1 : 0;
+        if (sweep >= 0 && Math.abs(x - sx) < 14) target = Math.max(target, 0.8);
+        p.lit = reduced ? target : p.lit + (target - p.lit) * 0.08;
+        const c = p.lit;
+        const r = CREAM[0] + (GOLD[0] - CREAM[0]) * c, g2 = CREAM[1] + (GOLD[1] - CREAM[1]) * c, b = CREAM[2] + (GOLD[2] - CREAM[2]) * c;
+        ctx.fillStyle = `rgba(${r | 0},${g2 | 0},${b | 0},${Math.min(1, a * (0.55 + c * 0.9))})`;
+        const s = p.r * (1 + c * 0.5);
+        ctx.fillRect(x - s / 2, y - s / 2, s, s);
+      }
+      if (!reduced) requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+    if (!reduced) {
+      const io = new IntersectionObserver(([en]) => {
+        const vis = en.isIntersecting && !document.hidden;
+        if (vis && !running) { running = true; requestAnimationFrame(frame); } else if (!vis) running = false;
+      });
+      io.observe(cv);
+      document.addEventListener('visibilitychange', () => {
+        if (!document.hidden && !running) { running = true; requestAnimationFrame(frame); }
+      });
+    }
+  }
+
+  /* ---------------- letters that settle ---------------- */
+  const GLY = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789·';
+  function decode(el) {
+    if (reduced || el.dataset.dec) return; el.dataset.dec = 1;
+    const final = el.textContent, n = final.length, start = performance.now(), dur = 700;
+    el.setAttribute('aria-label', final);
+    (function step(now) {
+      const p = Math.min(1, (now - start) / dur); let out = '';
+      for (let i = 0; i < n; i++) {
+        const ch = final[i];
+        out += (ch === ' ' || i / n < p) ? ch : GLY[(Math.random() * GLY.length) | 0];
+      }
+      el.textContent = out;
+      if (p < 1) requestAnimationFrame(step); else el.textContent = final;
+    })(start);
+  }
+
+  /* ---------------- scroll reveals ---------------- */
+  const rv = document.querySelectorAll('.rv');
+  if (reduced || !('IntersectionObserver' in window)) rv.forEach(e => e.classList.add('in'));
+  else {
+    const io = new IntersectionObserver(es => es.forEach(en => {
+      if (!en.isIntersecting) return;
+      en.target.classList.add('in');
+      en.target.querySelectorAll('[data-decode]').forEach(decode);
+      if (en.target.matches('[data-decode]')) decode(en.target);
+      io.unobserve(en.target);
+    }), { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
+    rv.forEach(e => io.observe(e));
+  }
+
+  /* ---------------- nav: state, active section, progress ---------------- */
+  const nav = document.querySelector('nav'), bar = document.querySelector('.progress');
+  const links = [...document.querySelectorAll('nav ul a')];
+  const secs = links.map(a => document.querySelector(a.getAttribute('href')));
+  function onScroll() {
+    const y = scrollY, max = document.body.scrollHeight - innerHeight;
+    nav.classList.toggle('scrolled', y > 40);
+    if (bar) bar.style.transform = `scaleX(${max > 0 ? y / max : 0})`;
+    let a = -1; secs.forEach((s, i) => { if (s && s.getBoundingClientRect().top < innerHeight * 0.4) a = i; });
+    if (max > 0 && y >= max - 4) a = secs.length - 1;
+    links.forEach((l, i) => l.classList.toggle('active', i === a));
+  }
+  addEventListener('scroll', onScroll, { passive: true }); onScroll();
+})();
+</script>
+<script>
+(() => {
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* headings: split into words so they can rise in sequence */
+  document.querySelectorAll('.sec-head h2').forEach(h => {
+    const text = h.textContent.trim();
+    h.setAttribute('aria-label', text);
+    h.innerHTML = text.split(/\s+/).map((w, i) =>
+      `<span class="w" aria-hidden="true"><span style="--i:${i}">${w.replace(/&/g, '&amp;')}</span></span>`).join(' ');
+  });
+
+  /* light that follows the pointer */
+  document.querySelectorAll('.card, .product .spec, .sol').forEach(el => {
+    el.addEventListener('pointermove', e => {
+      const r = el.getBoundingClientRect();
+      el.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+      el.style.setProperty('--my', (e.clientY - r.top) + 'px');
+    });
+  });
+
+  /* figures count up when the product panel appears */
+  const product = document.querySelector('.product');
+  if (product) {
+    const run = () => product.querySelectorAll('.v[data-n]').forEach(v => {
+      const n = +v.dataset.n, pad = v.textContent.trim().length, t0 = performance.now(), d = 1200;
+      if (reduced) return;
+      (function step(now) {
+        const p = Math.min(1, (now - t0) / d), e = 1 - Math.pow(1 - p, 3);
+        v.textContent = String(Math.round(n * e)).padStart(pad, '0');
+        if (p < 1) requestAnimationFrame(step);
+      })(t0);
+    });
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver(([en]) => { if (en.isIntersecting) { run(); io.disconnect(); } }, { threshold: .4 });
+      io.observe(product);
+    }
+  }
+
+  /* experience rail fills with reading progress */
+  const tlw = document.querySelector('.timeline');
+  if (tlw) {
+    const items = [...tlw.querySelectorAll('.tl')];
+    const upd = () => {
+      const r = tlw.getBoundingClientRect(), mid = innerHeight * 0.55;
+      const p = Math.min(1, Math.max(0, (mid - r.top) / r.height));
+      tlw.style.setProperty('--p', reduced ? 1 : p.toFixed(4));
+      items.forEach(it => it.classList.toggle('passed', reduced || it.getBoundingClientRect().top + 40 < mid));
+    };
+    addEventListener('scroll', upd, { passive: true }); addEventListener('resize', upd); upd();
+  }
+
+  /* copy email */
+  const btn = document.querySelector('.copy');
+  if (btn) btn.addEventListener('click', async () => {
+    try { await navigator.clipboard.writeText(btn.dataset.copy); btn.textContent = 'Copied'; }
+    catch (e) { btn.textContent = 'Select the address'; }
+    setTimeout(() => { btn.textContent = 'Copy'; }, 2200);
+  });
+})();
+</script>
+</body>
+</html>

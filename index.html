@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Sol Invictus</title>
-<meta name="description" content="Four independent projects: Seekers of Light, Cadre 22, SOL / MATRIX, and Juan Montes Enterprises.">
+<meta name="description" content="Four independent projects: Seekers of Light, Cadre 22, SOL / MATRIX, and Juan Montes Enterprises, and the profile of Matthieu Théard.">
 <meta name="theme-color" content="#121213">
 <meta name="color-scheme" content="dark">
 <link rel="canonical" href="https://solinvictus.app/">
@@ -122,6 +122,8 @@
     padding: 0;
     list-style: none;
   }
+  .doors li.wide { grid-column: 1 / -1; }
+  .doors li.wide .door { min-height: 150px; }
   .door {
     --x: 50%;
     --y: 50%;
@@ -287,10 +289,20 @@
         <p class="line">Markets, credit, geopolitics, Venezuela.</p>
       </a>
     </li>
+    <li class="wide">
+      <a class="door" href="/matthieu/" data-glyph="◇">
+        <div class="top">
+          <span class="label">Profile</span>
+          <svg class="mark" viewBox="0 0 20 20" aria-hidden="true"><rect x="2.5" y="2.5" width="15" height="15"/><path d="M6 14V6.5l2.5 4 2.5-4V14M11 6.5h4M13 6.5V14"/></svg>
+        </div>
+        <h2 class="name">Matthieu Théard</h2>
+        <p class="line">Humanitarian access, gang governance and early warning in Haiti.</p>
+      </a>
+    </li>
   </ul>
 </main>
 
-<footer class="shell">Four independent works &middot; 2026</footer>
+<footer class="shell">Four independent works and a profile &middot; 2026</footer>
 
 <script>
 (() => {
