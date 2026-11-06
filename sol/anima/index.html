@@ -3,10 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="robots" content="noindex,nofollow,noarchive">
-<script>/* reachable only through the white ☯ in the SOL letter rain */
-try{if(sessionStorage.getItem("sol-anima")!=="1")location.replace("/sol/");}catch(e){location.replace("/sol/");}
-</script>
-
+<script>try{if(sessionStorage.getItem("sol-anima")!=="1")location.replace("/sol/");}catch(e){location.replace("/sol/");}</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Pierre Willequet — Archive intellectuelle</title>
 <meta name="description" content="Pierre Willequet, docteur en psychologie et psychanalyste jungien : livres, grandes questions, lignée intellectuelle, Kinomichi, biographie et contact. Archive bilingue.">
@@ -148,7 +145,7 @@ button.tag:hover,a.tag:hover{border-color:var(--ink);background:var(--ink);color
 @media (max-width:1560px){.brand small{display:none}}
 .ink-field{position:absolute;inset:0;overflow:hidden}
 .ink-field canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
-.ink-img{position:absolute;opacity:0;transition:opacity 2.2s cubic-bezier(.22,.61,.36,1);pointer-events:none;user-select:none}
+.ink-img{position:absolute;opacity:0;transition:opacity 2.4s cubic-bezier(.33,0,.2,1);pointer-events:none;user-select:none}
 .ink-img.on{opacity:.9}
 #inkHero{pointer-events:none;z-index:0}
 .hero{position:relative;z-index:1}
@@ -164,16 +161,16 @@ button.tag:hover,a.tag:hover{border-color:var(--ink);background:var(--ink);color
 #rain canvas{width:100%;height:100%;display:block}
 #rainGold{position:fixed;top:0;bottom:0;z-index:41;pointer-events:none}
 .gold{position:absolute;left:0;top:0;width:26px;height:26px;margin:-13px 0 0 -13px;display:grid;place-items:center;text-decoration:none;pointer-events:auto;cursor:pointer;opacity:0;will-change:transform,opacity}
-.gold .g{font:18px/1 "Noto Sans Symbols","Noto Sans Symbols 2","Noto Serif",serif;color:#A6803A;text-shadow:0 0 7px rgba(166,128,58,.28);transition:transform .45s cubic-bezier(.22,.61,.36,1),color .3s}
+.gold .g{font:16px/1 "Noto Sans Symbols","Noto Sans Symbols 2","Noto Serif",serif;color:#A6803A;text-shadow:0 0 7px rgba(166,128,58,.28);transition:transform .45s cubic-bezier(.22,.61,.36,1),color .3s}
 .gold:hover .g,.gold:focus-visible .g{transform:scale(1.35);color:#8C6A2C}
-.gold .lbl{position:absolute;right:32px;top:50%;transform:translate(6px,-50%);white-space:nowrap;font:10.5px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:#7A5C26;background:var(--warm);border:1px solid rgba(166,128,58,.55);padding:6px 9px;opacity:0;pointer-events:none;transition:opacity .35s,transform .35s cubic-bezier(.22,.61,.36,1)}
-.gold .lbl small{display:block;margin-top:4px;font-size:9px;letter-spacing:.06em;text-transform:none;color:#8a7a5c}
+.gold .lbl{position:absolute;right:32px;top:50%;transform:translate(6px,-50%);white-space:nowrap;font:11px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:#7A5C26;background:var(--warm);border:1px solid rgba(166,128,58,.55);padding:6px 9px;opacity:0;pointer-events:none;transition:opacity .35s,transform .35s cubic-bezier(.22,.61,.36,1)}
+.gold .lbl small{display:block;margin-top:5px;font-size:10.5px;letter-spacing:.06em;text-transform:none;color:#8a7a5c}
 .gold:hover .lbl,.gold:focus-visible .lbl{opacity:1;transform:translate(0,-50%)}
 /* SYMBOLS */
 section>.wrap{position:relative}
 .sym{position:absolute;top:-6px;right:var(--gut);width:clamp(190px,23vw,320px);margin:0;z-index:1}
 .sym .ink-field{position:relative;inset:auto;aspect-ratio:1;overflow:visible;cursor:pointer}
-.sym .ink-img.on{opacity:.86}
+.sym .ink-img.on{opacity:.94}
 .sym figcaption{text-align:center;margin-top:8px;font-size:10px;opacity:.85}
 @media (max-width:1000px){.sym{width:190px}}
 @media (max-width:760px){.sym{position:relative;right:auto;top:auto;width:150px;margin:0 0 26px auto}}
@@ -507,6 +504,69 @@ figure.photo img{display:block;width:100%;height:auto;background:#eceae5}
 }
 /* section symbols can be switched off: <html data-ink-sections="off"> */
 html[data-ink-sections="off"] .sym{display:none}
+
+/* ===== TYPE SCALE — harmonised sizes (one system for the whole archive) ===== */
+:root{
+  --fs-label:11px;          /* mono labels, kickers, counters */
+  --fs-note:12px;           /* mono editorial notes, sources */
+  --fs-small:14.5px;        /* card descriptions, captions, hints */
+  --fs-body:16px;           /* running text in panels, lists, timeline */
+  --fs-lede:clamp(17px,1.45vw,19.5px);
+  --fs-h4:clamp(19px,1.6vw,22px);
+  --fs-h3:clamp(23px,2.2vw,29px);
+  --fs-h2:clamp(36px,5.2vw,70px);
+}
+body{font-size:17px;line-height:1.7}
+h2{font-size:var(--fs-h2);line-height:1.04;letter-spacing:-.005em}
+h3{font-size:var(--fs-h3);line-height:1.12}
+h4{font-size:var(--fs-h4);line-height:1.2}
+.lede,.bio-prose p{font-size:var(--fs-lede);line-height:1.68}
+/* mono labels: never below 11px */
+.mono,.tag,.chip,.seg button,.flabel,.field label,.cform label,.rights legend,.facts dt,.facts div span:first-child,
+.tp-cols h4,.tp-cols h5,.conn h4,.conn h5,.c-h,.contact h5,.meta-table th,.relbadge,.idx-h,.shelf-h,.tl-title,.pp-in h4,
+.timeline .src,.book .bp,.mini-y,.mini-n,.steps .sn,.path .pcount,.path .pgo,.idx .mono,.cap .mono,.ex-results .mono,
+.f-actions .req,.cover .cb,.sym figcaption,.more-btn,.close,.menu-btn,.lang,.nav-links a span{font-size:var(--fs-label)!important;letter-spacing:.08em}
+.note{font-size:var(--fs-note);line-height:1.7;letter-spacing:.02em}
+.pubs{font-size:var(--fs-note)}
+.ok-pre{font-size:12.5px}
+/* small running text: a touch heavier so Inter 300 stays legible */
+.theme p,.book .bd,.cap,.hint,.steps .why,.path ol li small,.mi p,.facts div,.facts dd,.meta-table,.err{font-size:var(--fs-small);font-weight:400;line-height:1.6}
+.steps .why,.path ol li small{color:var(--meta)}
+.tp-cols ul,.timeline p:not(.src),.contact p:not(.note):not(.mono),.contact li,.contact address,.lin-panel p:not(.note):not(.mono),.form-ok p:not(.mono),.path .pp,.sec-list li,.conn li,
+.ex-results li button,.path ol li,.path-banner,.q .qa-in,.b4 p:not(.note):not(.mono){font-size:var(--fs-body)!important;line-height:1.65}
+.nav-links a{font-size:13px}
+.theme h3{font-size:clamp(23px,2vw,27px)}
+.book .bt,.book h4{font-size:clamp(18px,1.4vw,20px)}
+.timeline h4,.mi h4,.mi .mi-t{font-size:clamp(20px,1.7vw,23px)}
+.path h3{font-size:clamp(27px,2.6vw,33px)}
+.q .qt{font-size:clamp(23px,2.7vw,36px)}
+.words{font-size:clamp(24px,2.7vw,38px)}
+.idx{font-size:clamp(17px,1.4vw,20px)}
+.mini-t{font-size:15px}
+.mini .cover .ct{font-size:12px}
+.cover .ct{font-size:clamp(19px,1.7vw,23px)}
+.step-media{font-size:15.5px}
+.dlg-body .sub{font-size:clamp(18px,1.6vw,21px)}
+.hero .stmt{font-size:clamp(21px,2.2vw,29px)}
+.epi{font-size:clamp(17px,1.4vw,19px)}
+.btn{font-size:12.5px}
+.link,button.link{font-size:13.5px}
+.map .node text{font-size:15px}
+.map .node text.k{font-size:9.5px}
+@media (max-width:760px){
+  body{font-size:16px}
+  :root{--fs-body:15.5px;--fs-small:14.5px}
+  h2{margin-bottom:24px}
+  .hero h1{font-size:clamp(44px,13vw,64px)}
+  .hero .stmt{margin:28px 0 30px}
+  .words{gap:4px 20px}
+  .q .qa-in{padding:0 0 28px 0;grid-template-columns:1fr}
+}
+.sym figcaption{white-space:nowrap}
+@media (max-width:560px){.sym figcaption{font-size:10.5px!important;letter-spacing:.06em}}
+/* second Kinomichi photograph (landscape) */
+.body-grid .b3{grid-column:1/8}
+.photo-wide img{aspect-ratio:1280/855;object-fit:cover}
 </style>
 </head>
 <body>
@@ -667,24 +727,15 @@ html[data-ink-sections="off"] .sym{display:none}
         </figure>
       </div>
       <div class="b3 rv">
-        <!-- Emplacement photographique. Pour remplacer : substituer le bloc .ph-art par un <picture> (480w / 900w, loading="lazy") et conserver la légende. -->
-        <figure class="photo">
-          <div class="ph-art" role="img" data-fr-aria="Emplacement photographique : dojo de Genève ou stage international, image à venir" data-en-aria="Photo placeholder: Geneva dojo or international seminar, image to come" aria-label="Emplacement photographique : dojo de Genève ou stage international, image à venir">
-            <svg viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-              <rect width="800" height="500" fill="#F1EFEA"/>
-              <g stroke="#111" stroke-opacity=".16" stroke-width="1">
-                <line x1="0" y1="64" x2="800" y2="64"/><line x1="0" y1="118" x2="800" y2="118"/><line x1="0" y1="172" x2="800" y2="172"/><line x1="0" y1="226" x2="800" y2="226"/><line x1="0" y1="280" x2="800" y2="280"/>
-              </g>
-              <g stroke="#111" stroke-opacity=".08" stroke-width="1">
-                <line x1="90" y1="0" x2="90" y2="64"/><line x1="180" y1="0" x2="180" y2="64"/><line x1="270" y1="0" x2="270" y2="64"/><line x1="360" y1="0" x2="360" y2="64"/><line x1="450" y1="0" x2="450" y2="64"/><line x1="540" y1="0" x2="540" y2="64"/><line x1="630" y1="0" x2="630" y2="64"/><line x1="720" y1="0" x2="720" y2="64"/>
-              </g>
-              <rect y="330" width="800" height="170" fill="#E7E4DD"/>
-              <g stroke="#111" stroke-opacity=".12"><line x1="0" y1="330" x2="800" y2="330"/><line x1="200" y1="330" x2="120" y2="500"/><line x1="400" y1="330" x2="400" y2="500"/><line x1="600" y1="330" x2="680" y2="500"/><line x1="0" y1="410" x2="800" y2="410"/></g>
-              <circle cx="400" cy="200" r="56" fill="none" stroke="#111" stroke-opacity=".35" stroke-width="2.2" stroke-dasharray="300 52" transform="rotate(-70 400 200)"/>
-            </svg>
-            <span class="ph-label mono"><span class="fr">Photographie à venir</span><span class="en" lang="en">Photograph to come</span></span>
-          </div>
-          <figcaption class="cap"><span><span class="fr">Dojo de Genève ou stage international.</span><span class="en" lang="en">Geneva dojo or international seminar.</span></span><span class="mono"><span class="fr">Emplacement réservé</span><span class="en" lang="en">Reserved slot</span></span></figcaption>
+        <figure class="photo photo-wide">
+          <picture>
+            <source type="image/webp" srcset="images/kinomichi-jo-480.webp 480w, images/kinomichi-jo-900.webp 900w, images/kinomichi-jo-1280.webp 1280w" sizes="(max-width: 860px) 92vw, 50vw">
+            <img src="images/kinomichi-jo-900.webp" width="1280" height="855" loading="lazy" decoding="async"
+              alt="Gros plan sur deux pratiquants en keikogi blanc et hakama rayé : leurs mains se rejoignent sur un même bâton (jō), sur le tatami d’un dojo."
+              data-fr-alt="Gros plan sur deux pratiquants en keikogi blanc et hakama rayé : leurs mains se rejoignent sur un même bâton (jō), sur le tatami d’un dojo."
+              data-en-alt="Close-up of two practitioners in white keikogi and striped hakama: their hands meet on a single staff (jō), on the mat of a dojo.">
+          </picture>
+          <figcaption class="cap"><span><span class="fr">Travail au jō — les mains se rejoignent sur un même bâton.</span><span class="en" lang="en">Work with the jō — hands meeting on a single staff.</span></span><span class="mono"><span class="fr">Photographie transmise pour l’archive</span><span class="en" lang="en">Photograph supplied for the archive</span></span></figcaption>
         </figure>
       </div>
       <div class="b4 rv">
@@ -1659,13 +1710,15 @@ route();
 
 </script>
 <script>
-/* ===== LETTER RAIN ===== */
+/* ===== LETTER RAIN — three streams, one optical size =====
+   Every sign (Greek, Hebrew, kanji, trigram, alchemical) is pre-rendered once into a sprite atlas and
+   scaled to the same visual box, so scripts of very different metrics read as one even column.
+   Seven golden planetary signs (one per vital section) appear, one every 7 s, on the three streams in turn. */
 (function(){
   const el=document.getElementById("rain"),cv=el.querySelector("canvas"),x=cv.getContext("2d");
   const REDUCED=matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const POOL=[...'ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩαβγδθλπσφψωאבגדהוזחטיכלמנסעפצקרשת☉☰☱☲☳☴☵☶☷☽☿♀♂♃♄光円動和地夢天心気水火無生神空道陰陽霊静風魂🜁🜂🜃🜄'];
+  const POOL=[...'ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩαβγδθλπσφψωאבגדהוזחטיכלמנסעפצקרשת☰☷☵☲光円動和地夢天心気水火無生神空道陰陽霊静風魂🜁🜂🜃🜄'];
   const WORDS=["ΨΥΧΗ","ΛΟΓΟΣ","ΣΟΦΙΑ","ΕΡΩΣ","ΑΩ","אור","נשמה","רוח","道","心","気","夢","空","和","陰陽","☰☷","☲☵"].map(w=>[...w]);
-  const PLANETS="☉☽☿♀♂♃♄";for(const c of PLANETS){const k=POOL.indexOf(c);if(k>=0)POOL.splice(k,1)}
   /* the seven golden signs — one per vital section (classical planets) */
   const SEVEN=[
     {c:"☉",id:"univers",n:"I",fr:["L’univers intellectuel","Soleil · le centre"],en:["The intellectual universe","Sun · the centre"]},
@@ -1677,14 +1730,34 @@ route();
     {c:"♃",id:"bibliotheque",n:"VIII",fr:["La bibliothèque","Jupiter · la connaissance"],en:["The library","Jupiter · knowledge"]}];
   const goldBox=document.getElementById("rainGold"),golds=[],GOLD_EVERY=7000,GOLD_LIFE=7000;
   const FONT='"Noto Serif JP","Noto Serif Hebrew","Noto Serif","Noto Sans Symbols 2","Noto Sans Symbols",serif';
-  const LH=21,PITCH=21;let W=0,H=0,d=1,cols=[],on=false,last=0;
+  const LH=22,BOX=12.5,CELL=24;let W=0,H=0,d=1,cols=[],on=false,last=0,ATL=null,IDX=new Map(),ready=false;
   const pick=()=>POOL[(Math.random()*POOL.length)|0];
+
+  /* ---- atlas: each glyph trimmed to its ink box, then fitted to one optical size ---- */
+  function buildAtlas(){
+    const chars=[...new Set([...POOL,...WORDS.flat()])],R=3,src=document.createElement("canvas"),SZ=CELL*R*2;
+    src.width=src.height=SZ;const sx=src.getContext("2d",{willReadFrequently:true});
+    const per=16,rows=Math.ceil(chars.length/per),px=CELL*d;
+    ATL=document.createElement("canvas");ATL.width=per*px;ATL.height=rows*px;const ax=ATL.getContext("2d");
+    chars.forEach((ch,n)=>{
+      sx.clearRect(0,0,SZ,SZ);sx.fillStyle="#fff";sx.textAlign="center";sx.textBaseline="middle";sx.font=(CELL*R)+"px "+FONT;sx.fillText(ch,SZ/2,SZ/2);
+      const im=sx.getImageData(0,0,SZ,SZ).data;let x0=SZ,y0=SZ,x1=-1,y1=-1;
+      for(let y=0;y<SZ;y++)for(let xx=0;xx<SZ;xx++)if(im[(y*SZ+xx)*4+3]>40){if(xx<x0)x0=xx;if(xx>x1)x1=xx;if(y<y0)y0=y;if(y>y1)y1=y}
+      if(x1<0)return;
+      const w=x1-x0+1,h=y1-y0+1;
+      /* optical fit: equal "area" for all signs, but never wider/taller than 1.2 box */
+      let k=(BOX*R)/Math.sqrt(w*h)*0.92;k=Math.min(k,(BOX*1.2*R)/Math.max(w,h));k=Math.max(k,(BOX*0.62*R)/Math.max(w,h));
+      const dw=w*k/R*d,dh=h*k/R*d,cx=(n%per)*px,cy=((n/per)|0)*px;
+      ax.drawImage(src,x0,y0,w,h,cx+(px-dw)/2,cy+(px-dh)/2,dw,dh);
+      IDX.set(ch,[cx,cy]);
+    });
+  }
   function stream(top){
-    const w=Math.random()<0.5?WORDS[(Math.random()*WORDS.length)|0]:[],n=Math.max(w.length+4,9+((Math.random()*15)|0)),g=[];
+    const w=Math.random()<0.5?WORDS[(Math.random()*WORDS.length)|0]:[],n=Math.max(w.length+4,9+((Math.random()*14)|0)),g=[];
     for(let i=0;i<n;i++)g.push(pick());
     const at=2+((Math.random()*Math.max(1,n-w.length-3))|0);        /* word sits near the head, read top→bottom */
     for(let j=0;j<w.length;j++)g[at+w.length-1-j]=w[j];
-    return {y:top?Math.random()*H*1.2:-Math.random()*240,v:10+Math.random()*20,g,w0:at,w1:at+w.length-1,hasW:w.length>0,goldI:-1,hold:false};
+    return {y:top?Math.random()*H*1.2:-Math.random()*200,v:16+Math.random()*12,g,o:g.map(()=>null),m:g.map(()=>0),w0:at,w1:at+w.length-1,hasW:w.length>0,goldI:-1,hold:false};
   }
   function spawnGold(c,now){
     const busy=new Set(golds.map(g=>g.k.c)),free=SEVEN.filter(k=>!busy.has(k.c));if(!free.length)return false;
@@ -1692,8 +1765,8 @@ route();
     if(!cand.length)return false;
     const [s,i]=cand[(Math.random()*cand.length)|0],k=free[(Math.random()*free.length)|0],L=document.documentElement.lang==="en"?k.en:k.fr;
     const a=document.createElement("a");a.className="gold";a.href="#"+k.id;a.setAttribute("aria-label",k.n+" · "+L[0]);
-    a.innerHTML='<span class="g">'+k.c+'\uFE0E</span><span class="lbl">'+k.n+" · "+L[0]+"<small>"+L[1]+"</small></span>";
-    const g={el:a,k,s,i,c,t0:now,hov:false};s.goldI=i;s.g[i]=k.c;
+    a.innerHTML='<span class="g">'+k.c+'︎</span><span class="lbl">'+k.n+" · "+L[0]+"<small>"+L[1]+"</small></span>";
+    const g={el:a,k,s,i,c,t0:now,hov:false};s.goldI=i;
     a.addEventListener("mouseenter",()=>{g.hov=true;s.hold=true});a.addEventListener("mouseleave",()=>{g.hov=false;s.hold=false});
     a.addEventListener("focus",()=>{g.hov=true;s.hold=true});a.addEventListener("blur",()=>{g.hov=false;s.hold=false});
     a.addEventListener("click",()=>{g.t0=Math.min(g.t0,performance.now()-GOLD_LIFE+700)});
@@ -1703,48 +1776,56 @@ route();
     for(let j=golds.length-1;j>=0;j--){
       const g=golds[j];if(g.hov)g.t0+=now-(g.last||now);g.last=now;
       const t=now-g.t0,y=g.s.y-g.i*LH;
-      const op=t<700?t/700:t>GOLD_LIFE-900?Math.max(0,(GOLD_LIFE-t)/900):1;
-      g.el.style.opacity=op.toFixed(3);g.el.style.transform="translate("+g.c.x+"px,"+y+"px)";
-      if(t>=GOLD_LIFE||y>H+30){g.el.remove();g.s.goldI=-1;g.s.hold=false;g.s.g[g.i]=pick();golds.splice(j,1)}
+      const op=t<800?Math.sin(t/800*Math.PI/2):t>GOLD_LIFE-900?Math.max(0,(GOLD_LIFE-t)/900):1;
+      g.el.style.opacity=op.toFixed(3);g.el.style.transform="translate("+g.c.x+"px,"+y.toFixed(1)+"px)";
+      if(t>=GOLD_LIFE||y>H+30){g.el.remove();g.s.goldI=-1;g.s.hold=false;golds.splice(j,1)}
     }
   }
   function layout(){
     const gut=parseFloat(getComputedStyle(document.querySelector(".wrap")).paddingLeft)||40;
-    const free=(innerWidth-Math.min(innerWidth,1240))/2+gut, w=Math.min(66,Math.floor(free-14));
+    const free=(innerWidth-Math.min(innerWidth,1240))/2+gut, w=Math.min(78,Math.floor(free-14));
     if(w<48||innerWidth<900){el.style.display="none";goldBox.style.display="none";golds.splice(0).forEach(g=>g.el.remove());window.RAIN_W=0;on=false;return}
     el.style.display="";el.style.width=w+"px";el.style.right=Math.max(8,Math.floor((free-w)/2-4))+"px";window.RAIN_W=w+Math.max(8,(free-w)/2);
-    d=Math.min(devicePixelRatio||1,2);W=w;H=innerHeight;cv.width=W*d;cv.height=H*d;
-    const n=3;cols=[];const t=performance.now();for(let i=0;i<n;i++)cols.push({x:(i+0.5)*W/n,s:[stream(true)],gNext:t+1400+i*(GOLD_EVERY/3)+Math.random()*600});on=true;
+    const nd=Math.min(devicePixelRatio||1,2);if(ready&&(nd!==d||!ATL)){d=nd;IDX=new Map();buildAtlas()}else d=nd;
+    W=w;H=innerHeight;cv.width=W*d;cv.height=H*d;
+    const n=3;cols=[];const t=performance.now();for(let i=0;i<n;i++)cols.push({x:Math.round((i+0.5)*W/n),s:[stream(true)],gNext:t+1400+i*(GOLD_EVERY/3)+Math.random()*600});on=true;
     goldBox.style.display="";goldBox.style.right=el.style.right;goldBox.style.width=W+"px";golds.splice(0).forEach(g=>g.el.remove());
+  }
+  function glyph(ch,cx,y,sc,a){
+    const p=IDX.get(ch);if(!p)return;const px=CELL*d,s=px*sc;
+    x.globalAlpha=a;x.drawImage(ATL,p[0],p[1],px,px,cx*d-s/2,y*d-s/2,s,s);
   }
   function frame(now){
     if(!on||document.hidden){last=0;golds.forEach(g=>g.t0+=16);if(!REDUCED)requestAnimationFrame(frame);return}
     const dt=last?Math.min(50,now-last)/1000:0.016;last=now;
-    const boost=1+Math.min(2.6,Math.abs((window.INK_WIND||{v:0}).v)*0.05);
-    x.setTransform(d,0,0,d,0,0);x.clearRect(0,0,W,H);x.textAlign="center";x.textBaseline="middle";
+    const boost=1+Math.min(2.4,Math.abs((window.INK_WIND||{v:0}).v)*0.045);
+    x.setTransform(1,0,0,1,0,0);x.clearRect(0,0,cv.width,cv.height);
     for(const c of cols){
       if(now>=c.gNext){if(spawnGold(c,now))c.gNext+=GOLD_EVERY;else c.gNext=now+350;}
       for(const s of c.s){
         if(!s.hold)s.y+=s.v*boost*dt;
-        for(let i=0;i<s.g.length;i++){
+        const n=s.g.length;
+        for(let i=0;i<n;i++){
           const y=s.y-i*LH;if(y<-LH||y>H+LH)continue;
           if(s.goldI===i)continue;
           const inW=s.hasW&&i>=s.w0&&i<=s.w1;
-          if(!inW&&i>0&&Math.random()<0.006)s.g[i]=pick();          /* glyphs mutate quietly */
-          const fall=Math.pow(1-i/s.g.length,1.5);
-          const a=i===0?0.95:inW?0.62+0.25*fall:0.06+0.5*fall;
-          x.globalAlpha=a;x.fillStyle="#fff";x.font=(i===0?"17px ":inW?"16px ":"14px ")+FONT;
-          x.fillText(s.g[i],c.x,y);
+          if(!inW&&i>0&&Math.random()<0.004){s.o[i]=s.g[i];s.m[i]=now;s.g[i]=pick();}   /* glyphs mutate with a soft crossfade */
+          const fall=Math.pow(1-i/n,1.35);
+          const a=i===0?0.96:inW?0.6+0.3*fall:0.08+0.52*fall;
+          const sc=i===0?1.1:inW?1.02:0.92;
+          const mt=s.o[i]?Math.min(1,(now-s.m[i])/320):1;
+          if(mt<1)glyph(s.o[i],c.x,y,sc,a*(1-mt));else s.o[i]=null;
+          glyph(s.g[i],c.x,y,sc,a*mt);
         }
       }
       c.s=c.s.filter(s=>s.y-s.g.length*LH<H+LH);
       const lastS=c.s[c.s.length-1];
-      if(!lastS||lastS.y-lastS.g.length*LH>40+Math.random()*260)c.s.push(stream(false));
+      if(!lastS||lastS.y-lastS.g.length*LH>60+Math.random()*240)c.s.push(stream(false));
     }
     x.globalAlpha=1;updateGolds(now);if(!REDUCED)requestAnimationFrame(frame);
   }
   layout();addEventListener("resize",layout);
-  const start=()=>{if(REDUCED){frame(performance.now());on=false}else requestAnimationFrame(frame)};
+  const start=()=>{ready=true;layout();if(REDUCED){frame(performance.now());on=false}else requestAnimationFrame(frame)};
   (document.fonts&&document.fonts.load?Promise.race([Promise.all(["道","א","Ψ","☰","🜁"].map(c=>document.fonts.load("16px "+FONT,c))),new Promise(r=>setTimeout(r,2500))]):Promise.resolve()).then(start,start);
 })();
 </script>
@@ -1841,8 +1922,8 @@ class InkField{
     this.small=innerWidth<720;
     this.forms=opts.forms.map(f=>{let pts=f.pts; if(this.small) pts=pts.filter((_,i)=>i%5<3); return {...f,pts}});
     const N=Math.max(...this.forms.map(f=>f.pts.length)), r=rng(opts.seed||5);
-    this.p=[];for(let i=0;i<N;i++)this.p.push({x:0,y:0,vx:0,vy:0,a:0,k:pickKind(r),g:Math.floor(r()*PER),rot:r()*6.28,vr:(r()-.5)*0.004,sz:(opts.size||[3.4,6.6])[0]+r()*((opts.size||[3.4,6.6])[1]-(opts.size||[3.4,6.6])[0]),ph:r()*6.28,idle:r()<(opts.idleShare??0.22)?0.16+r()*0.26:0,delay:0,rel:0,kick:false,seed:r()});
-    this.fi=0;this.state="idle";this.t0=performance.now();this.mouse=null;this.visible=false;this.started=false;this.sw=((opts.seed||1)%2?1:-1)*0.85;this.ft=16;
+    this.p=[];for(let i=0;i<N;i++)this.p.push({x:0,y:0,vx:0,vy:0,a:0,ks:0.012,ld:0,k:pickKind(r),g:Math.floor(r()*PER),rot:r()*6.28,vr:(r()-.5)*0.004,sz:(opts.size||[3.4,6.6])[0]+r()*((opts.size||[3.4,6.6])[1]-(opts.size||[3.4,6.6])[0]),ph:r()*6.28,idle:r()<(opts.idleShare??0.22)?0.16+r()*0.26:0,delay:0,rel:0,kick:false,seed:r()});
+    this.calm=0;this.fi=0;this.state="idle";this.t0=performance.now();this.mouse=null;this.visible=false;this.started=false;this.sw=((opts.seed||1)%2?1:-1)*0.85;this.ft=16;
     this.resize();this.p.forEach(p=>{p.x=Math.random()*this.W;p.y=Math.random()*this.H;p.a=p.idle});
     new ResizeObserver(()=>this.resize()).observe(root);
     const tgt=opts.pointerTarget||root;
@@ -1854,14 +1935,14 @@ class InkField{
   }
   resize(){
     const b=this.root.getBoundingClientRect(),d=Math.min(devicePixelRatio||1,2);
-    this.W=b.width;this.H=b.height;this.d=d;this.cv.width=Math.round(b.width*d);this.cv.height=Math.round(b.height*d);
+    this.W=b.width;this.H=b.height;this.d=d;this.zs=Math.max(0.82,Math.min(1.15,Math.sqrt(Math.max(1,b.width)/420)));this.cv.width=Math.round(b.width*d);this.cv.height=Math.round(b.height*d);
     this.forms.forEach(f=>{const box=f.box(this.W,this.H),a=f.aspect;let w=box.w,h=box.h;if(w/h>a)w=h*a;else h=w/a;f.rect={x:box.x+(box.w-w)/2,y:box.y+(box.h-h)/2,w,h};
       if(f.img){Object.assign(f.img.style,{left:f.rect.x+"px",top:f.rect.y+"px",width:f.rect.w+"px",height:f.rect.h+"px"})}});
     if(REDUCED) this.staticRender();
   }
   go(i){ // assemble form i
     this.fi=i;const f=this.forms[i];this.state="assemble";this.t0=performance.now();this.ang=0;this.lastT=null;if(f.img)f.img.style.transform="";
-    const r=rng(99+i);this.p.forEach((p,j)=>{p.ti=j<f.pts.length?j:-1;if(p.ti>=0){const t=f.pts[j];p.delay=(f.order==="angle"?j/f.pts.length:t[1])*1200+r()*700}});
+    const r=rng(99+i);this.p.forEach((p,j)=>{p.ks=0.012;p.ti=j<f.pts.length?j:-1;if(p.ti>=0){const t=f.pts[j];p.delay=(f.order==="angle"?j/f.pts.length:t[1])*1200+r()*700}});
   }
   scatter(){ /* leaving view: return to ink dust, re-write the form on the next visit */
     const f=this.forms[this.fi];this.state="idle";this.t0=performance.now();this.needGo=true;
@@ -1895,7 +1976,7 @@ class InkField{
     const dt=this.lastT?Math.min(64,now-this.lastT):16;this.lastT=now;
     if(f.spin&&(st==="assemble"||st==="hold")){this.ang=(this.ang||0)+f.spin*dt;if(f.img)f.img.style.transform="rotate("+this.ang+"rad)";}
     const ca=Math.cos(this.ang||0),sa=Math.sin(this.ang||0);
-    const imgOn=f.img&&f.img.classList.contains("on");
+    const imgOn=f.img&&f.img.classList.contains("on");this.calm+=((imgOn?1:0)-this.calm)*(imgOn?0.018:0.06);
     const m=this.mouse,MR=this.o.mouseR||80,MR2=MR*MR;
     for(const p of this.p){
       let target=false;
@@ -1908,13 +1989,14 @@ class InkField{
         let tx=R.x+t[0]*R.w,ty=R.y+t[1]*R.h;
         const rx=tx-cx,ry=ty-cy;tx=cx+(rx*ca-ry*sa)*breath+Math.sin(now*0.0011+p.ph)*0.7;ty=cy+(rx*sa+ry*ca)*breath+Math.cos(now*0.0013+p.ph)*0.7;
         if(st==="assemble"){const ddx=tx-p.x,ddy=ty-p.y,dd=Math.hypot(ddx,ddy);if(dd>6){const sw=Math.min(1.5,dd*0.0065)*this.sw;p.vx+=-ddy/dd*sw;p.vy+=ddx/dd*sw}}
-        p.vx=(p.vx+(tx-p.x)*0.045)*0.8;p.vy=(p.vy+(ty-p.y)*0.045)*0.8;
-        const base=(0.5+0.5*t[2])*(f.ink??1);p.ta=imgOn?base*(f.inkWithImage??0.45):base;
+        p.ks+=(0.05-p.ks)*0.035;p.vx=(p.vx+(tx-p.x)*p.ks)*0.81;p.vy=(p.vy+(ty-p.y)*p.ks)*0.81;
+        const dd=Math.abs(tx-p.x)+Math.abs(ty-p.y),landed=dd<3?1:Math.max(0,1-dd/90);p.ld+=(landed-p.ld)*0.12;
+        const base=(0.5+0.5*t[2])*(f.ink??1);p.ta=base*(0.42+0.58*p.ld)*(1-this.calm*(1-(f.inkWithImage??0.45)));
       }else{
         if(st==="dissolve"&&!p.kick&&p.ti>=0&&el>=p.rel){p.kick=true;const dx=p.x-cx,dy=p.y-cy,d=Math.hypot(dx,dy)||1,s=0.45+p.seed*1.2,fa=Math.sin(p.x*0.0036+now*0.00021)*Math.cos(p.y*0.0042-now*0.00017)*Math.PI*2;p.vx+=dx/d*s*0.55+Math.cos(fa)*s;p.vy+=dy/d*s*0.55+Math.sin(fa)*s-0.25}
         const ang=Math.sin(p.x*0.0036+now*0.00021)*Math.cos(p.y*0.0042-now*0.00017)*Math.PI*2;
         p.vx=(p.vx+Math.cos(ang)*0.014)*0.985;p.vy=(p.vy+Math.sin(ang)*0.014-0.0015-WIND.v*0.0028*(0.4+p.seed))*0.985;
-        p.ta=p.idle;
+        p.ta=p.idle;p.ld*=0.9;
         if(p.x<-20)p.x=W+20;else if(p.x>W+20)p.x=-20;if(p.y<-20)p.y=H+20;else if(p.y>H+20)p.y=-20;
       }
       if(m){const dx=p.x-m.x,dy=p.y-m.y,d2=dx*dx+dy*dy;if(d2<MR2&&d2>0.01){const d=Math.sqrt(d2),s=(1-d/MR)*1.5;p.vx+=dx/d*s;p.vy+=dy/d*s}}
@@ -1928,7 +2010,7 @@ class InkField{
     for(const p of this.p){
       i++;if(p.a<0.012)continue;
       const on=live&&p.ti>=0&&p.ti<f.pts.length;if(!on&&thin&&(i&1))continue;
-      const k=on?f.pts[p.ti][2]:0.12,s=(p.sz*(0.75+0.5*k)*(on?1:0.78))/S*d,cs=Math.cos(p.rot)*s,sn=Math.sin(p.rot)*s;
+      const k=on?f.pts[p.ti][2]:0.12,s=(p.sz*this.zs*(0.75+0.5*k)*(on?(0.8+0.2*p.ld)*(1-0.32*this.calm):0.74))/S*d,cs=Math.cos(p.rot)*s,sn=Math.sin(p.rot)*s;
       c.globalAlpha=p.a;c.setTransform(cs,sn,-sn,cs,p.x*d,p.y*d);c.drawImage(A,p.g*S,p.k*S,S,S,-S/2,-S/2,S,S);
     }
     c.globalAlpha=1;
@@ -1946,18 +2028,18 @@ window.InkField=InkField;window.InkDecode=decode;window.InkEnso=enso;
   /* hero: Pierre ↔ the Self (circumpunct) */
   const hero=document.getElementById("inkHero"), sec=document.getElementById("accueil");
   const heroBox=(W,H)=>{ if(W<860) return {x:16,y:14,w:W-32,h:Math.min(innerHeight*0.36,330)}; const h1=document.querySelector(".hero h1").getBoundingClientRect(), s=sec.getBoundingClientRect(); const x=Math.max(W*0.55,h1.right-s.left+64); return {x,y:H*0.07,w:Math.max(260,W-x-Math.max(W*0.05,(window.RAIN_W||0)+48)),h:H*0.74}; };
-  const pf={pts:D("portrait"),aspect:INK_DATA.portrait[0],img:hero.querySelector('[data-f="portrait"]'),hold:12000,inkWithImage:0.26,box:heroBox};
-  const sol={pts:D("circumpunct"),aspect:1,img:hero.querySelector('[data-f="sol"]'),hold:5200,inkWithImage:0.4,order:"angle",box:(W,H)=>{const b=heroBox(W,H),s=Math.min(b.w,b.h)*0.78;return {x:b.x+(b.w-s)/2,y:b.y+(b.h-s)/2,w:s,h:s}}};
+  const pf={pts:D("portrait"),aspect:INK_DATA.portrait[0],img:hero.querySelector('[data-f="portrait"]'),hold:12000,inkWithImage:0.15,box:heroBox};
+  const sol={pts:D("circumpunct"),aspect:1,img:hero.querySelector('[data-f="sol"]'),hold:5200,inkWithImage:0.22,order:"angle",box:(W,H)=>{const b=heroBox(W,H),s=Math.min(b.w,b.h)*0.78;return {x:b.x+(b.w-s)/2,y:b.y+(b.h-s)/2,w:s,h:s}}};
   new InkField(hero,{forms:[pf,sol],pointerTarget:sec,idleShare:0.14,seed:3,gap:1500,startDelay:300,size:[2.6,5.4]});
   /* biography portrait */
   const bp=document.getElementById("inkPortrait");
-  const bio=new InkField(bp,{forms:[{pts:D("portrait2"),aspect:INK_DATA.portrait2[0],img:bp.querySelector(".ink-img"),hold:Infinity,inkWithImage:0.24,box:(W,H)=>({x:0,y:0,w:W,h:H})}],idleShare:0.25,size:[2,4.2],mouseR:55,seed:9,startDelay:500,reform:true});
+  const bio=new InkField(bp,{forms:[{pts:D("portrait2"),aspect:INK_DATA.portrait2[0],img:bp.querySelector(".ink-img"),hold:Infinity,inkWithImage:0.3,box:(W,H)=>({x:0,y:0,w:W,h:H})}],idleShare:0.25,size:[2,4.2],mouseR:55,seed:9,startDelay:500,reform:true});
   bp.parentElement.addEventListener("click",()=>{if(bio.state==="hold"){bio.o.reassemble=true;bio.dissolve()}});
   /* section symbols */
   const SPIN={mandala:0.000014,taiji:0.00003,triskele:-0.000022,cosmos:0.000009,enso:0};
   if(document.documentElement.dataset.inkSections!=="off") document.querySelectorAll(".sym .ink-field").forEach((el,i)=>{
     const k=el.dataset.sym, img=el.querySelector(".ink-img");
-    const form={pts:k==="enso"?InkEnso(2600):D(k),aspect:1,img,hold:Infinity,inkWithImage:0.34,order:"angle",spin:SPIN[k],box:(W,H)=>({x:W*0.05,y:H*0.05,w:W*0.9,h:H*0.9})};
+    const form={pts:k==="enso"?InkEnso(2600):D(k),aspect:1,img,hold:Infinity,inkWithImage:0.12,order:"angle",spin:SPIN[k],box:(W,H)=>({x:W*0.05,y:H*0.05,w:W*0.9,h:H*0.9})};
     const f=new InkField(el,{forms:[form],idleShare:0.2,size:[1.9,3.9],mouseR:46,seed:20+i,startDelay:250,reform:true});
     el.addEventListener("click",()=>{if(f.state==="hold"){f.o.reassemble=true;f.dissolve()}});
   });
