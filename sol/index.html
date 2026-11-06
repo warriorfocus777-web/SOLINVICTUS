@@ -473,8 +473,17 @@ dfn:hover,dfn:focus-visible{color:var(--gold);outline:none}
 @media (max-height:700px){.card .body{display:none}}
 @media (max-width:700px){.card h2{font-size:34px}.card{padding:22px 22px 24px}}
 
-.gl{display:inline-block;width:.82em;height:.95em;vertical-align:-.12em;background:currentColor;-webkit-mask-image:var(--atlas);mask-image:var(--atlas);-webkit-mask-size:1600% 500%;mask-size:1600% 500%;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-position:calc(var(--gx) * 100% / 15) calc(var(--gy) * 100% / 4);mask-position:calc(var(--gx) * 100% / 15) calc(var(--gy) * 100% / 4)}
+.gl{display:inline-block;width:.82em;height:.95em;vertical-align:-.12em;background:currentColor;-webkit-mask-image:var(--atlas);mask-image:var(--atlas);-webkit-mask-size:1600% 1600%;mask-size:1600% 1600%;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-position:calc(var(--gx) * 100% / 15) calc(var(--gy) * 100% / 15);mask-position:calc(var(--gx) * 100% / 15) calc(var(--gy) * 100% / 15)}
 .dec .gl{color:var(--gold-mid)}
+/* letter decode: the glyph sits over the real letter, so the line never reflows */
+.dc{position:relative}
+.dc.on{color:transparent;text-shadow:none}
+.dc.on::after{content:"";position:absolute;left:50%;top:50%;width:.72em;height:.84em;transform:translate(-50%,-50%) scale(var(--sz,1));background:var(--glc,var(--gold-mid));
+  -webkit-mask-image:var(--atlas);mask-image:var(--atlas);-webkit-mask-size:1600% 1600%;mask-size:1600% 1600%;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;
+  -webkit-mask-position:calc(var(--gx) * 100% / 15) calc(var(--gy) * 100% / 15);mask-position:calc(var(--gx) * 100% / 15) calc(var(--gy) * 100% / 15);
+  filter:drop-shadow(0 0 .16em color-mix(in srgb,var(--glc,var(--gold-mid)) 75%,transparent));pointer-events:none}
+.dc.lit{animation:dcLit 1s var(--ease) both}
+@keyframes dcLit{from{color:#fff6d8;text-shadow:0 0 .55em rgba(255,214,92,.95),0 0 .14em #fff}}
 
 .paths .cells{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:64px;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:rgba(0,0,0,.5)}
 .path{padding:30px 28px 34px;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:22px;transition:background .4s}
@@ -966,7 +975,10 @@ footer em{font:italic 400 15px var(--serif);letter-spacing:0;text-transform:none
   /* ---------- glyphs ---------- */
   document.documentElement.style.setProperty('--atlas', 'url("' + RES('glyphs') + '")');
   const LET = []; for (let i = 17; i <= 47; i++) LET.push(i); LET.push(50, 51, 52, 56, 57, 58, 59, 61, 62, 63, 64, 65, 66, 67, 68, 70, 71, 72);
+  for (let i = 89; i <= 141; i++) if (i !== 101) LET.push(i);            // the rest of the glyph sheet
   const rndG = () => LET[(rnd() * LET.length) | 0];
+  // Imperial Aramaic 142–163 · Syriac 164–185 · Nabataean 186–207 · Brahmi 208–229 · Kharoshthi 230–251
+  const rndA = () => 142 + ((rnd() * 110) | 0);
   const GL = { gold: null };
   function glyphAt(ctx, idx, x, y, s, rot) {
     ctx.save(); ctx.translate(x, y); if (rot) ctx.rotate(rot);
@@ -984,27 +996,41 @@ footer em{font:italic 400 15px var(--serif);letter-spacing:0;text-transform:none
     R2.forEach((g, i) => { const th = r2 + i / R2.length * 6.2832; glyphAt(ctx, g, p.cx + Math.cos(th) * k * .405, p.cy + Math.sin(th) * k * .405, k * .017, th + 1.5708); });
     ctx.globalAlpha = 1;
   }
+  /* Each letter falls through the lineage of writing before it settles: first a glyph from the sheet (gold),
+     then one of the old scripts letters descend from — Aramaic, Syriac, Nabataean, Brahmi, Kharoshthi (ivory) —
+     then the letter itself, arriving with a small flash of light. A wave crosses the line, with a little disorder. */
   function decode(el, force) {
-    if (reduced || !el || (el.dataset.dec && !force)) return; el.dataset.dec = 1;
+    if (reduced || !el || el.dataset.run || (el.dataset.dec && !force)) return; el.dataset.dec = 1; el.dataset.run = 1;
     const w = document.createTreeWalker(el, NodeFilter.SHOW_TEXT), nodes = [];
-    while (w.nextNode()) if (w.currentNode.nodeValue.trim() && !w.currentNode.parentElement.closest('.glnum')) nodes.push(w.currentNode);
+    while (w.nextNode()) if (w.currentNode.nodeValue.trim() && !w.currentNode.parentElement.closest('.glnum,.dc')) nodes.push(w.currentNode);
+    let left = nodes.length; if (!left) { delete el.dataset.run; return; }
     nodes.forEach(n => {
-      const txt = n.nodeValue, wrap = document.createElement('span'); wrap.className = 'dec';
-      const spans = [...txt].map(ch => { const s = document.createElement('span'); s.textContent = ch; wrap.appendChild(s); return s; });
+      const txt = n.nodeValue, chars = [...txt], L = chars.length, wrap = document.createElement('span'); wrap.className = 'dec';
+      const spans = chars.map(ch => { const s = document.createElement('span'); s.textContent = ch; if (ch.trim()) s.className = 'dc'; wrap.appendChild(s); return s; });
       n.replaceWith(wrap);
-      const t0 = performance.now(), dur = 600 + txt.length * 30;
+      const big = el.matches('h2, h3'), t0 = performance.now() + (big ? 120 : 0), dur = (big ? 1100 : 650) + Math.min(L, 64) * (big ? 42 : 24);
+      const at = chars.map((_, i) => .14 + .8 * (i / Math.max(1, L - 1)) + (rnd() - .5) * .1);
       const tick = now => {
-        const p = (now - t0) / dur; let done = true;
+        const p = Math.max(0, (now - t0) / dur); let done = true;
         spans.forEach((s, i) => {
-          const ch = txt[i]; if (ch === ' ') return;
-          if (p > .15 + .85 * i / txt.length) { if (s.className) { s.className = ''; s.removeAttribute('style'); s.textContent = ch; } }
-          else { done = false; if (!s.className || rnd() < .25) { const g = rndG(); s.className = 'gl'; s.textContent = ''; s.style.setProperty('--gx', g % 16); s.style.setProperty('--gy', (g / 16) | 0); } }
+          if (!chars[i].trim() || s.dataset.ok) return;
+          if (p >= at[i]) { s.dataset.ok = 1; s.className = 'dc lit'; s.removeAttribute('style'); return; }
+          done = false;
+          const k = p / at[i], old = k > .55;
+          if (!s.classList.contains('on') || rnd() < (old ? .45 : .2)) {
+            const g = old ? rndA() : rndG();
+            s.classList.add('on'); s.style.setProperty('--gx', g % 16); s.style.setProperty('--gy', (g / 16) | 0);
+            s.style.setProperty('--glc', old ? 'var(--ink)' : 'var(--gold-mid)'); s.style.setProperty('--sz', (.84 + rnd() * .3).toFixed(2));
+          }
         });
-        if (!done) requestAnimationFrame(tick); else if (wrap.parentNode) wrap.replaceWith(document.createTextNode(txt));
+        if (!done) return requestAnimationFrame(tick);
+        setTimeout(() => { if (wrap.parentNode) wrap.replaceWith(document.createTextNode(txt)); if (--left === 0) delete el.dataset.run; }, 1000);
       };
       requestAnimationFrame(tick);
     });
   }
+  // the nav replays the descent on hover
+  document.querySelectorAll('#nav .links a:not(.btn)').forEach(a => a.addEventListener('pointerenter', () => decode(a, true)));
   document.querySelectorAll('.label.br').forEach(l => {
     const span = document.createElement('span'); span.className = 'glnum'; span.setAttribute('aria-hidden', 'true');
     [...l.textContent.replace(/\s/g, '')].forEach(ch => {
@@ -1234,7 +1260,7 @@ footer em{font:italic 400 15px var(--serif);letter-spacing:0;text-transform:none
   }
 
   /* ---------- page behaviour ---------- */
-  const rv = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); if (e.target.classList.contains('eyebrow')) decode(e.target); rv.unobserve(e.target); } }), { threshold: .12 });
+  const rv = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); if (e.target.matches('.eyebrow, h2.h2:not(.shadowtype)')) decode(e.target); rv.unobserve(e.target); } }), { threshold: .12 });
   document.querySelectorAll('.rv').forEach(n => rv.observe(n));
   decode(document.getElementById('heroEyebrow'));
   const nav = document.getElementById('nav');
@@ -1427,30 +1453,59 @@ footer em{font:italic 400 15px var(--serif);letter-spacing:0;text-transform:none
 <div id="solRain" aria-hidden="true"><canvas></canvas></div>
 <nav id="solDoor" aria-label="Passage"></nav>
 <script>
+/* SOL · the glyph rain, three lines in the right margin.
+   Streams fall in coherent families — Greek, Hebrew and kanji; the glyph sheet; the old scripts (Imperial Aramaic,
+   Syriac, Nabataean, Brahmi, Kharoshthi) — tinted by the alchemical stage on screen, with a bright head.
+   Scrolling is wind: the rain streaks when you scroll fast and rises when you scroll back up. The pointer parts it.
+   Now and then a vèvè is poured into a line, from its centre out. Every 7 s a white ☯ opens the door to /sol/anima/. */
 (function(){
   const el=document.getElementById("solRain"),cv=el.querySelector("canvas"),x=cv.getContext("2d"),box=document.getElementById("solDoor");
   const REDUCED=matchMedia("(prefers-reduced-motion: reduce)").matches;
   const POOL=[...'ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩαβγδθλπσφψωאבגדהוזחטיכלמנסעפצקרשת☉☰☱☲☳☴☵☶☷☽☿♀♂♃♄光円動和地夢天心気水火無生神空道陰陽霊静風魂🜁🜂🜃🜄'];
   const WORDS=["ΨΥΧΗ","ΛΟΓΟΣ","ΣΟΦΙΑ","ΕΡΩΣ","ΑΩ","אור","נשמה","רוח","道","心","気","夢","空","和","陰陽","☉","☰☷","☲☵"].map(w=>[...w]);
+  /* atlas cells: the glyph sheet, and the old scripts (22 letters each, in abjad order) */
+  const SHEET=[];for(let i=17;i<=47;i++)SHEET.push(i);SHEET.push(50,51,52,56,57,58,59,61,62,63,64,65,66,67,68,70,71,72);for(let i=89;i<=141;i++)if(i!==101)SHEET.push(i);
+  const SCRIPT={aramaic:142,syriac:164,nabataean:186,brahmi:208,kharoshthi:230};
+  /* old words, spelled letter by letter: Aramaic šlm (peace); Syriac nuhrā (light) and ḥubbā (love) */
+  const OLDW=[[20,11,12].map(i=>SCRIPT.aramaic+i),[13,5,4,19,0].map(i=>SCRIPT.syriac+i),[7,5,1,0].map(i=>SCRIPT.syriac+i)];
+  const VEVE=6,VT=160;                                   /* Erzulie Dantor, Simbi, Baron Samedi, Marassa, Papa Legba, Ayizan */
   const FONT='"Noto Serif JP","Noto Serif Hebrew","Noto Serif","Noto Sans Symbols 2","Noto Sans Symbols",serif';
   const LH=21,EVERY=7000,LIFE=5600,DOOR="☯",HREF="/sol/anima/",KEY="sol-anima";
+  const RES=k=>(window.__resources&&window.__resources["sol-"+k])||("media/sol/"+k+".png");
   let W=0,H=0,d=1,cols=[],on=false,last=0,wind=0,ly=scrollY,lt=performance.now(),door=null,nextDoor=0,lineTurn=(Math.random()*3)|0;
-  addEventListener("scroll",()=>{const t=performance.now(),dt=Math.max(8,t-lt);wind=Math.max(-70,Math.min(70,wind*0.55+(scrollY-ly)/dt*16*0.45));ly=scrollY;lt=t},{passive:true});
-  const pick=()=>POOL[(Math.random()*POOL.length)|0];
+  let ATL=null,VV=null,veve=null,nextVeve=performance.now()+6000,left=0,px=-1e4,py=-1e4,tone=[255,200,84],toneT=[255,200,84];
+  const img=src=>new Promise(r=>{const i=new Image();i.onload=()=>r(i);i.onerror=()=>r(null);i.src=src});
+  img(RES("glyphs")).then(i=>{ATL=i;if(REDUCED&&on)frame(performance.now())});
+  img(RES("veve")).then(i=>{VV=i});
+  addEventListener("scroll",()=>{const t=performance.now(),dt=Math.max(8,t-lt);wind=Math.max(-70,Math.min(70,wind*0.55+(scrollY-ly)/dt*16*0.45));ly=scrollY;lt=t;stage()},{passive:true});
+  addEventListener("pointermove",e=>{px=e.clientX;py=e.clientY},{passive:true});
+  /* the stage on screen sets the rain's colour (Sol, Nigredo, Albedo, Citrinitas, Rubedo …) */
+  const scenes=[...document.querySelectorAll("[data-scene][data-tone]")];
+  function stage(){let best=null,bd=1e9;const mid=innerHeight/2;
+    for(const sc of scenes){const r=sc.getBoundingClientRect(),dd=r.top<=mid&&r.bottom>=mid?0:Math.min(Math.abs(r.top-mid),Math.abs(r.bottom-mid));if(dd<bd){bd=dd;best=sc}}
+    if(best)toneT=best.dataset.tone.split(",").map(Number)}
+  const FAM=["uni","sheet","old"];
+  function pick(f){
+    if(f==="sheet")return SHEET[(Math.random()*SHEET.length)|0];
+    if(f==="old"){const k=Object.values(SCRIPT)[(Math.random()*5)|0];return k+((Math.random()*22)|0)}
+    return POOL[(Math.random()*POOL.length)|0];
+  }
   function stream(top){
-    const w=Math.random()<0.5?WORDS[(Math.random()*WORDS.length)|0]:[],n=Math.max(w.length+4,9+((Math.random()*15)|0)),g=[];
-    for(let i=0;i<n;i++)g.push(pick());
+    const f=Math.random()<0.4?"uni":Math.random()<0.5?"sheet":"old";
+    const w=f==="uni"&&Math.random()<0.5?WORDS[(Math.random()*WORDS.length)|0]:f==="old"&&Math.random()<0.4?OLDW[(Math.random()*OLDW.length)|0]:[];
+    const n=Math.max(w.length+4,9+((Math.random()*15)|0)),g=[];
+    for(let i=0;i<n;i++)g.push(pick(f));
     const at=2+((Math.random()*Math.max(1,n-w.length-3))|0);for(let j=0;j<w.length;j++)g[at+w.length-1-j]=w[j];
-    return {y:top?Math.random()*H*1.2:-Math.random()*240,v:10+Math.random()*20,g,w0:at,w1:at+w.length-1,hasW:w.length>0,doorI:-1,hold:false};
+    return {f,y:top?Math.random()*H*1.2:-Math.random()*240,v:10+Math.random()*20,g,w0:at,w1:at+w.length-1,hasW:w.length>0,doorI:-1,hold:false};
   }
   function layout(){
     const pad=parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--pad"))||Math.min(64,Math.max(20,innerWidth*0.04));
     const free=(innerWidth-Math.min(innerWidth,1240))/2+pad,w=Math.min(66,Math.floor(free-14));
     if(door){door.el.remove();door=null}
     if(w<48||innerWidth<900){el.style.display="none";box.style.display="none";on=false;return}
-    el.style.display="";box.style.display="";el.style.width=w+"px";const r=Math.max(8,Math.floor((free-w)/2-4))+"px";el.style.right=r;box.style.right=r;box.style.width=w+"px";
-    d=Math.min(devicePixelRatio||1,2);W=w;H=innerHeight;cv.width=W*d;cv.height=H*d;
-    cols=[0,1,2].map(i=>({x:(i+0.5)*W/3,s:[stream(true)]}));nextDoor=performance.now()+2200;on=true;
+    el.style.display="";box.style.display="";el.style.width=w+"px";const r=Math.max(8,Math.floor((free-w)/2-4));el.style.right=r+"px";box.style.right=r+"px";box.style.width=w+"px";
+    d=Math.min(devicePixelRatio||1,2);W=w;H=innerHeight;cv.width=W*d;cv.height=H*d;left=innerWidth-r-w;
+    cols=[0,1,2].map(i=>({x:(i+0.5)*W/3,s:[stream(true)]}));nextDoor=performance.now()+2200;on=true;stage();
   }
   function spawnDoor(now){
     const c=cols[lineTurn%3];lineTurn+=1+((Math.random()*2)|0);          /* wanders between the three lines */
@@ -1465,36 +1520,61 @@ footer em{font:italic 400 15px var(--serif);letter-spacing:0;text-transform:none
     a.addEventListener("click",()=>{try{sessionStorage.setItem(KEY,"1")}catch(e){}});
     box.appendChild(a);door=g;return true;
   }
+  /* one glyph: a letter from the fonts, or a cell of the atlas; stretched along the fall when the wind is strong */
+  function glyph(g,X,Y,sz,st){
+    if(typeof g==="number"){if(!ATL)return;const h=sz*st;x.drawImage(ATL,(g%16)*64,((g/16)|0)*64,64,64,X-sz/2,Y-h/2,sz,h);return}
+    x.font=sz+"px "+FONT;if(st!==1){x.save();x.translate(X,Y);x.scale(1,st);x.fillText(g,0,0);x.restore()}else x.fillText(g,X,Y);
+  }
+  function spawnVeve(now){
+    const dc=door?cols.indexOf(door.c):-1;let ci=(Math.random()*3)|0;if(ci===dc)ci=(ci+1)%3;
+    veve={k:(Math.random()*VEVE)|0,c:cols[ci],y:150+Math.random()*(H*.35),v:14+Math.random()*8,t0:now};
+  }
   function frame(now){
     if(!on||document.hidden){last=0;if(door)door.t0+=16;if(!REDUCED)requestAnimationFrame(frame);return}
     const dt=last?Math.min(50,now-last)/1000:0.016;last=now;wind*=0.93;
-    const boost=1+Math.min(2.6,Math.abs(wind)*0.05);
+    for(let k=0;k<3;k++)tone[k]+=(toneT[k]-tone[k])*0.05;
+    const flow=Math.max(-1.6,Math.min(3.6,1+wind*0.055)),st=1+Math.min(1.1,Math.abs(wind)*0.016),rising=flow<0;
     if(!door&&now>=nextDoor){if(spawnDoor(now))nextDoor=now+EVERY;else nextDoor=now+350}
-    x.setTransform(d,0,0,d,0,0);x.clearRect(0,0,W,H);x.textAlign="center";x.textBaseline="middle";
+    if(!REDUCED&&VV&&!veve&&now>=nextVeve)spawnVeve(now);
+    x.setTransform(d,0,0,d,0,0);x.clearRect(0,0,W,H);x.textAlign="center";x.textBaseline="middle";x.fillStyle="#fff";
+    const heads=[];
     for(const c of cols){
       for(const s of c.s){
-        if(!s.hold)s.y+=s.v*boost*dt;
+        if(!s.hold)s.y+=s.v*flow*dt;
         for(let i=0;i<s.g.length;i++){
           if(s.doorI===i)continue;
           const y=s.y-i*LH;if(y<-LH||y>H+LH)continue;
           const inW=s.hasW&&i>=s.w0&&i<=s.w1;
-          if(!inW&&i>0&&Math.random()<0.006)s.g[i]=pick();
+          if(!inW&&i>0&&Math.random()<0.006)s.g[i]=pick(s.f);
           const fall=Math.pow(1-i/s.g.length,1.5);
-          x.globalAlpha=i===0?0.85:inW?0.55+0.25*fall:0.05+0.42*fall;x.fillStyle="#fff";
-          x.font=(i===0?"17px ":inW?"16px ":"14px ")+FONT;x.fillText(s.g[i],c.x,y);
+          /* the pointer: glyphs near it brighten and part */
+          const dx=left+c.x-px,dy=y-py,near=Math.max(0,1-Math.hypot(dx,dy)/80),push=near*near*14*(dx<0?-1:1);
+          if(i===0){heads.push([s.g[0],c.x+push,y,near]);continue}
+          x.globalAlpha=Math.min(1,(inW?0.55+0.25*fall:0.05+0.42*fall)+near*0.5);
+          glyph(s.g[i],c.x+push,y,inW?16:typeof s.g[i]==="number"?15:14,st);
         }
       }
-      c.s=c.s.filter(s=>s.y-s.g.length*LH<H+LH||s.doorI>=0);
-      const ls=c.s[c.s.length-1];if(!ls||ls.y-ls.g.length*LH>40+Math.random()*260)c.s.push(stream(false));
+      c.s=c.s.filter(s=>rising?s.y>-LH*2||s.doorI>=0:(s.y-s.g.length*LH<H+LH||s.doorI>=0));
+      if(rising){const lo=c.s.reduce((m,s)=>Math.max(m,s.y),-1e9);if(lo<H-60-Math.random()*200){const n=stream(false);n.y=H+LH+Math.random()*60;c.s.push(n)}}
+      else{const ls=c.s[c.s.length-1];if(!ls||ls.y-ls.g.length*LH>40+Math.random()*260)c.s.push(stream(false))}
     }
-    x.globalAlpha=1;
+    /* a vèvè, poured from its centre outward, drifting with its line */
+    if(veve){const t=(now-veve.t0)/1000,sz=Math.min(46,W*0.72),r=sz*0.75*Math.min(1,t/1.6);veve.y+=veve.v*Math.max(0.2,flow)*dt;
+      x.save();x.globalAlpha=Math.min(0.95,t/0.4)*(veve.y>H-120?Math.max(0,(H-veve.y)/120):1);x.beginPath();x.arc(veve.c.x,veve.y,Math.max(0.1,r),0,6.2832);x.clip();
+      x.drawImage(VV,veve.k*VT,0,VT,VT,veve.c.x-sz/2,veve.y-sz/2,sz,sz);x.restore();
+      if(veve.y>H+sz){veve=null;nextVeve=now+10000+Math.random()*5000}}
+    /* tint everything poured so far with the stage colour; heads stay white-hot */
+    x.globalAlpha=0.88;x.globalCompositeOperation="source-atop";x.fillStyle="rgb("+tone.map(v=>v|0).join(",")+")";x.fillRect(0,0,W,H);
+    x.globalCompositeOperation="source-over";x.fillStyle="#fff";x.shadowColor="rgba("+tone.map(v=>v|0).join(",")+",.9)";x.shadowBlur=9;
+    for(const [g,X,Y,near] of heads){x.globalAlpha=Math.min(1,0.85+near*0.15);glyph(g,X,Y,typeof g==="number"?18:17,st)}
+    x.shadowBlur=0;x.globalAlpha=1;
     if(door){const g=door;if(g.hov)g.t0+=now-g.last;g.last=now;const t=now-g.t0,y=g.s.y-g.i*LH;
       g.el.style.opacity=(t<700?t/700:t>LIFE-900?Math.max(0,(LIFE-t)/900):1).toFixed(3);g.el.style.transform="translate("+g.c.x+"px,"+y+"px)";
-      if(t>=LIFE||y>H+30){g.el.remove();g.s.doorI=-1;g.s.hold=false;door=null;if(nextDoor<now+600)nextDoor=now+600}}
+      if(t>=LIFE||y>H+30||y<-30){g.el.remove();g.s.doorI=-1;g.s.hold=false;door=null;if(nextDoor<now+600)nextDoor=now+600}}
     if(!REDUCED)requestAnimationFrame(frame);
   }
   layout();addEventListener("resize",layout);
-  const start=()=>{if(REDUCED){frame(performance.now());on=false}else requestAnimationFrame(frame)};
+  const start=()=>{if(REDUCED){frame(performance.now())}else requestAnimationFrame(frame)};
   (document.fonts&&document.fonts.load?Promise.race([Promise.all(["道","א","Ψ","☰","☯"].map(c=>document.fonts.load("16px "+FONT,c))),new Promise(r=>setTimeout(r,2500))]):Promise.resolve()).then(start,start);
 })();
 </script>
