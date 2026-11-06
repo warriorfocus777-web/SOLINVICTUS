@@ -1409,6 +1409,95 @@ footer em{font:italic 400 15px var(--serif);letter-spacing:0;text-transform:none
 </script>
 
 
+
+<!-- ===== SOL · letter rain with a single white door (☯) to /sol/anima/ ===== -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP&family=Noto+Serif+Hebrew&family=Noto+Serif&family=Noto+Sans+Symbols&family=Noto+Sans+Symbols+2&text=%CE%91%CE%92%CE%93%CE%94%CE%95%CE%96%CE%97%CE%98%CE%99%CE%9A%CE%9B%CE%9C%CE%9D%CE%9E%CE%9F%CE%A0%CE%A1%CE%A3%CE%A4%CE%A5%CE%A6%CE%A7%CE%A8%CE%A9%CE%B1%CE%B2%CE%B3%CE%B4%CE%B8%CE%BB%CF%80%CF%83%CF%86%CF%88%CF%89%D7%90%D7%91%D7%92%D7%93%D7%94%D7%95%D7%96%D7%97%D7%98%D7%99%D7%9B%D7%9C%D7%9E%D7%A0%D7%A1%D7%A2%D7%A4%D7%A6%D7%A7%D7%A8%D7%A9%D7%AA%E2%98%89%E2%98%AF%E2%98%B0%E2%98%B1%E2%98%B2%E2%98%B3%E2%98%B4%E2%98%B5%E2%98%B6%E2%98%B7%E2%98%BD%E2%98%BF%E2%99%80%E2%99%82%E2%99%83%E2%99%84%E5%85%89%E5%86%86%E5%8B%95%E5%92%8C%E5%9C%B0%E5%A4%A2%E5%A4%A9%E5%BF%83%E6%B0%97%E6%B0%B4%E7%81%AB%E7%84%A1%E7%94%9F%E7%A5%9E%E7%A9%BA%E9%81%93%E9%99%B0%E9%99%BD%E9%9C%8A%E9%9D%99%E9%A2%A8%E9%AD%82%F0%9F%9C%81%F0%9F%9C%82%F0%9F%9C%83%F0%9F%9C%84&display=swap" rel="stylesheet">
+<style>
+#solRain{position:fixed;top:0;bottom:0;right:12px;width:60px;z-index:45;pointer-events:none;mix-blend-mode:difference;
+  -webkit-mask-image:linear-gradient(transparent 0,transparent 70px,#000 180px,#000 calc(100% - 110px),transparent);mask-image:linear-gradient(transparent 0,transparent 70px,#000 180px,#000 calc(100% - 110px),transparent)}
+#solRain canvas{width:100%;height:100%;display:block}
+#solDoor{position:fixed;top:0;bottom:0;z-index:46;pointer-events:none}
+.sol-door{position:absolute;left:0;top:0;width:30px;height:30px;margin:-15px 0 0 -15px;display:grid;place-items:center;pointer-events:auto;cursor:pointer;opacity:0;will-change:transform,opacity;text-decoration:none}
+.sol-door .g{font:21px/1 "Noto Sans Symbols 2","Noto Sans Symbols",serif;color:#fff;text-shadow:0 0 10px rgba(255,255,255,.55),0 0 2px #fff;transition:transform .5s var(--ease,ease)}
+.sol-door:hover .g,.sol-door:focus-visible .g{transform:scale(1.4) rotate(180deg)}
+.sol-door .lbl{position:absolute;right:36px;top:50%;transform:translate(6px,-50%);white-space:nowrap;font:500 10px/1 var(--sans,sans-serif);letter-spacing:.22em;text-transform:uppercase;color:#fff;background:rgba(0,0,0,.82);border:1px solid rgba(255,255,255,.4);padding:8px 11px;opacity:0;pointer-events:none;transition:opacity .35s,transform .35s}
+.sol-door .lbl i{display:block;margin-top:5px;font:italic 400 13px/1 var(--serif,serif);letter-spacing:0;text-transform:none;color:rgba(255,255,255,.7)}
+.sol-door:hover .lbl,.sol-door:focus-visible .lbl{opacity:1;transform:translate(0,-50%)}
+</style>
+<div id="solRain" aria-hidden="true"><canvas></canvas></div>
+<nav id="solDoor" aria-label="Passage"></nav>
+<script>
+(function(){
+  const el=document.getElementById("solRain"),cv=el.querySelector("canvas"),x=cv.getContext("2d"),box=document.getElementById("solDoor");
+  const REDUCED=matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const POOL=[...'ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩαβγδθλπσφψωאבגדהוזחטיכלמנסעפצקרשת☉☰☱☲☳☴☵☶☷☽☿♀♂♃♄光円動和地夢天心気水火無生神空道陰陽霊静風魂🜁🜂🜃🜄'];
+  const WORDS=["ΨΥΧΗ","ΛΟΓΟΣ","ΣΟΦΙΑ","ΕΡΩΣ","ΑΩ","אור","נשמה","רוח","道","心","気","夢","空","和","陰陽","☉","☰☷","☲☵"].map(w=>[...w]);
+  const FONT='"Noto Serif JP","Noto Serif Hebrew","Noto Serif","Noto Sans Symbols 2","Noto Sans Symbols",serif';
+  const LH=21,EVERY=7000,LIFE=5600,DOOR="☯",HREF="/sol/anima/",KEY="sol-anima";
+  let W=0,H=0,d=1,cols=[],on=false,last=0,wind=0,ly=scrollY,lt=performance.now(),door=null,nextDoor=0,lineTurn=(Math.random()*3)|0;
+  addEventListener("scroll",()=>{const t=performance.now(),dt=Math.max(8,t-lt);wind=Math.max(-70,Math.min(70,wind*0.55+(scrollY-ly)/dt*16*0.45));ly=scrollY;lt=t},{passive:true});
+  const pick=()=>POOL[(Math.random()*POOL.length)|0];
+  function stream(top){
+    const w=Math.random()<0.5?WORDS[(Math.random()*WORDS.length)|0]:[],n=Math.max(w.length+4,9+((Math.random()*15)|0)),g=[];
+    for(let i=0;i<n;i++)g.push(pick());
+    const at=2+((Math.random()*Math.max(1,n-w.length-3))|0);for(let j=0;j<w.length;j++)g[at+w.length-1-j]=w[j];
+    return {y:top?Math.random()*H*1.2:-Math.random()*240,v:10+Math.random()*20,g,w0:at,w1:at+w.length-1,hasW:w.length>0,doorI:-1,hold:false};
+  }
+  function layout(){
+    const pad=parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--pad"))||Math.min(64,Math.max(20,innerWidth*0.04));
+    const free=(innerWidth-Math.min(innerWidth,1240))/2+pad,w=Math.min(66,Math.floor(free-14));
+    if(door){door.el.remove();door=null}
+    if(w<48||innerWidth<900){el.style.display="none";box.style.display="none";on=false;return}
+    el.style.display="";box.style.display="";el.style.width=w+"px";const r=Math.max(8,Math.floor((free-w)/2-4))+"px";el.style.right=r;box.style.right=r;box.style.width=w+"px";
+    d=Math.min(devicePixelRatio||1,2);W=w;H=innerHeight;cv.width=W*d;cv.height=H*d;
+    cols=[0,1,2].map(i=>({x:(i+0.5)*W/3,s:[stream(true)]}));nextDoor=performance.now()+2200;on=true;
+  }
+  function spawnDoor(now){
+    const c=cols[lineTurn%3];lineTurn+=1+((Math.random()*2)|0);          /* wanders between the three lines */
+    const cand=[];for(const s of c.s){for(let i=1;i<s.g.length;i++){const y=s.y-i*LH;if(y>210&&y<H-180&&!(s.hasW&&i>=s.w0&&i<=s.w1))cand.push([s,i])}}
+    if(!cand.length)return false;
+    const [s,i]=cand[(Math.random()*cand.length)|0];
+    const a=document.createElement("a");a.className="sol-door";a.href=HREF;a.setAttribute("aria-label","Pierre Willequet — archive");
+    a.innerHTML='<span class="g">'+DOOR+'︎</span><span class="lbl">Pierre Willequet<i>l’archive</i></span>';
+    const g={el:a,s,i,c,t0:now,hov:false,last:now};s.doorI=i;
+    const enter=()=>{g.hov=true;s.hold=true},leave=()=>{g.hov=false;s.hold=false};
+    a.addEventListener("mouseenter",enter);a.addEventListener("mouseleave",leave);a.addEventListener("focus",enter);a.addEventListener("blur",leave);
+    a.addEventListener("click",()=>{try{sessionStorage.setItem(KEY,"1")}catch(e){}});
+    box.appendChild(a);door=g;return true;
+  }
+  function frame(now){
+    if(!on||document.hidden){last=0;if(door)door.t0+=16;if(!REDUCED)requestAnimationFrame(frame);return}
+    const dt=last?Math.min(50,now-last)/1000:0.016;last=now;wind*=0.93;
+    const boost=1+Math.min(2.6,Math.abs(wind)*0.05);
+    if(!door&&now>=nextDoor){if(spawnDoor(now))nextDoor=now+EVERY;else nextDoor=now+350}
+    x.setTransform(d,0,0,d,0,0);x.clearRect(0,0,W,H);x.textAlign="center";x.textBaseline="middle";
+    for(const c of cols){
+      for(const s of c.s){
+        if(!s.hold)s.y+=s.v*boost*dt;
+        for(let i=0;i<s.g.length;i++){
+          if(s.doorI===i)continue;
+          const y=s.y-i*LH;if(y<-LH||y>H+LH)continue;
+          const inW=s.hasW&&i>=s.w0&&i<=s.w1;
+          if(!inW&&i>0&&Math.random()<0.006)s.g[i]=pick();
+          const fall=Math.pow(1-i/s.g.length,1.5);
+          x.globalAlpha=i===0?0.85:inW?0.55+0.25*fall:0.05+0.42*fall;x.fillStyle="#fff";
+          x.font=(i===0?"17px ":inW?"16px ":"14px ")+FONT;x.fillText(s.g[i],c.x,y);
+        }
+      }
+      c.s=c.s.filter(s=>s.y-s.g.length*LH<H+LH||s.doorI>=0);
+      const ls=c.s[c.s.length-1];if(!ls||ls.y-ls.g.length*LH>40+Math.random()*260)c.s.push(stream(false));
+    }
+    x.globalAlpha=1;
+    if(door){const g=door;if(g.hov)g.t0+=now-g.last;g.last=now;const t=now-g.t0,y=g.s.y-g.i*LH;
+      g.el.style.opacity=(t<700?t/700:t>LIFE-900?Math.max(0,(LIFE-t)/900):1).toFixed(3);g.el.style.transform="translate("+g.c.x+"px,"+y+"px)";
+      if(t>=LIFE||y>H+30){g.el.remove();g.s.doorI=-1;g.s.hold=false;door=null;if(nextDoor<now+600)nextDoor=now+600}}
+    if(!REDUCED)requestAnimationFrame(frame);
+  }
+  layout();addEventListener("resize",layout);
+  const start=()=>{if(REDUCED){frame(performance.now());on=false}else requestAnimationFrame(frame)};
+  (document.fonts&&document.fonts.load?Promise.race([Promise.all(["道","א","Ψ","☰","☯"].map(c=>document.fonts.load("16px "+FONT,c))),new Promise(r=>setTimeout(r,2500))]):Promise.resolve()).then(start,start);
+})();
+</script>
 <div id="__claude_design_branding"><style>#__claude_design_branding{position:fixed;right:16px;bottom:16px;z-index:2147483646;display:flex;align-items:center;gap:7px;height:30px;padding:0 5px 0 10px;border-radius:999px;font-family:"Anthropic Sans",-apple-system,BlinkMacSystemFont,system-ui,sans-serif;font-size:12.5px;font-weight:400;line-height:1;letter-spacing:normal;text-transform:none;color:#141413;background:rgba(255,255,255,.86);-webkit-backdrop-filter:blur(24px);backdrop-filter:blur(24px);box-shadow:0 0 0 .5px rgba(31,30,29,.14),0 2px 10px rgba(0,0,0,.09)}
 #__claude_design_branding *{box-sizing:border-box;margin:0}
 #__claude_design_branding a{color:inherit;text-decoration:none;display:inline-flex;align-items:center;gap:7px;white-space:nowrap}
