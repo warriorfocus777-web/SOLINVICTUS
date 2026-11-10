@@ -277,6 +277,107 @@
       "url": "https://haitiantimes.com/2026/08/04/haiti-continues-voter-registration-in-accessible-areas/",
       "c": "03.11.2026",
       "lang": "en"
+    },
+    {
+      "id": "S24",
+      "t": "Haiti's prime minister Fils-Aimé speaks out as concerns over El Salvador's troops deepen — remarks of the Prime Minister (03.11)",
+      "pub": "Associated Press (relaying the Prime Minister)",
+      "o": "Government of Haiti — Office of the Prime Minister",
+      "ty": "official",
+      "d": "03.11.2026",
+      "r": "A",
+      "url": "https://www.wsls.com/news/world/2026/11/03/haitis-prime-minister-fils-aime-speaks-out-as-concerns-over-el-salvadors-troops-deepen/",
+      "c": "05.11.2026",
+      "lang": "en"
+    },
+    {
+      "id": "S25",
+      "t": "Haiti's prime minister Fils-Aimé speaks out as concerns over El Salvador's troops deepen — unnamed source on agreements",
+      "pub": "Associated Press",
+      "o": "Associated Press — unnamed source",
+      "ty": "press",
+      "d": "03.11.2026",
+      "r": "C",
+      "url": "https://www.wsls.com/news/world/2026/11/03/haitis-prime-minister-fils-aime-speaks-out-as-concerns-over-el-salvadors-troops-deepen/",
+      "c": "05.11.2026",
+      "lang": "en",
+      "n": "One unnamed source: before 18.10, no signed agreement with the UN, no protection agreement with the Haitian government, no medevac memorandum with the Dominican Republic. Listed, not counted."
+    },
+    {
+      "id": "S26",
+      "t": "El Salvador’s Bukele touts military intervention in Haiti — UN Spokesperson on GSF jurisdiction",
+      "pub": "Al Jazeera (relaying the UN Spokesperson)",
+      "o": "United Nations — Spokesperson for the Secretary-General",
+      "ty": "official",
+      "d": "05.11.2026",
+      "r": "A",
+      "url": "https://www.aljazeera.com/news/2026/11/5/el-salvadors-bukele-touts-military-intervention-in-haiti",
+      "c": "05.11.2026",
+      "lang": "en",
+      "n": "About 200 Salvadoran soldiers under GSF jurisdiction. Briefing date given only as “this week”; UN transcript not held."
+    },
+    {
+      "id": "S27",
+      "t": "U.N. receives Haiti gang's request for talks amid Salvadoran offensive — UN note of 02.11",
+      "pub": "UPI (relaying the UN Spokesperson)",
+      "o": "United Nations — Spokesperson for the Secretary-General",
+      "ty": "official",
+      "d": "03.11.2026",
+      "r": "A",
+      "url": "https://www.upi.com/Top_News/World-News/2026/11/03/latam-un-haiti-gang-salvadoran/1191793729403/",
+      "c": "05.11.2026",
+      "lang": "en",
+      "n": "The note places the operations of most Salvadoran personnel outside the mandate and reporting framework of UNSOH."
+    },
+    {
+      "id": "S28",
+      "t": "Haiti police: Vehicle in attack discovered",
+      "pub": "Associated Press (relaying the Haitian National Police)",
+      "o": "Haitian National Police",
+      "ty": "official",
+      "d": "05.11.2026",
+      "r": "A",
+      "url": "https://www.nwaonline.com/news/2026/nov/05/haiti-police-vehicle-in-attack-discovered/",
+      "c": "05.11.2026",
+      "lang": "en",
+      "n": "Police statement of late 03.11; operation on 02.11. The statement itself is not held."
+    },
+    {
+      "id": "S29",
+      "t": "El Salvador’s Bukele touts military intervention in Haiti — posts by President Bukele",
+      "pub": "Al Jazeera (relaying posts by President Bukele on X)",
+      "o": "President of El Salvador",
+      "ty": "statement",
+      "d": "05.11.2026",
+      "r": "B",
+      "url": "https://www.aljazeera.com/news/2026/11/5/el-salvadors-bukele-touts-military-intervention-in-haiti",
+      "c": "05.11.2026",
+      "lang": "en"
+    },
+    {
+      "id": "S30",
+      "t": "Bukele warns Haitian gang leaders that his forces will 'finish' them as he did in El Salvador",
+      "pub": "Fox News (relaying posts by President Bukele on X)",
+      "o": "President of El Salvador",
+      "ty": "statement",
+      "d": "11.2026",
+      "r": "B",
+      "url": "https://www.foxnews.com/world/bukeles-warning-haitian-gang-leaders-forces-finish-el-salvador",
+      "c": "05.11.2026",
+      "lang": "en",
+      "n": "Places the engagement in Croix-des-Bouquets. Publication day not shown in the copy consulted."
+    },
+    {
+      "id": "S31",
+      "t": "Haiti Month in Review: October 2026",
+      "pub": "The World Bank — Latin America & the Caribbean, Haiti LCCHT",
+      "o": "World Bank — Haiti Country Office",
+      "ty": "official",
+      "d": "01.11.2026",
+      "r": "C",
+      "c": "10.11.2026",
+      "lang": "en",
+      "n": "Marked Official Use Only; no public URL. Forwarded by personal correspondence received 08.11.2026; not independently verified by the desk. Cited only where a fact below is checked against a named public originator in its own text; otherwise listed and not counted toward corroboration."
     }
   ],
   "boards": [
@@ -285,8 +386,8 @@
       "status": "draft",
       "signed": null,
       "context": {
-        "en": "18.10: four Salvadoran Air Force aviation technicians serving with the GSF went missing after an ambush in Santo, Croix-des-Bouquets; as of 02.11 their fate is unconfirmed. El Salvador says it has deployed more than 2,000 troops; on 02.11 they launched their first ground operation (Santo, Croix-des-Missions) with Haitian police armour in support. El Salvador’s only published legal text covers participation in the GSF (12 months from 02.10; no troop number). Strike allegations (UNA-Haiti, 30.10) and their denial (31.10) are unverified. Elections: first round 18.07.2027, second round 04.10.2027; voter register closes 20.05.2027 (CEP, 28.10). See the chronology for sources.",
-        "fr": "18.10 : quatre techniciens d’aviation salvadoriens servant au sein de la GSF ont disparu après une embuscade à Santo, Croix-des-Bouquets ; au 02.11, leur sort n’est pas confirmé. Le Salvador dit avoir déployé plus de 2 000 soldats ; le 02.11, ils ont lancé leur première opération terrestre (Santo, Croix-des-Missions) avec l’appui de blindés de la police haïtienne. Le seul texte juridique publié par le Salvador porte sur la participation à la GSF (12 mois à compter du 02.10 ; aucun effectif fixé). Les allégations de frappes (UNA-Haïti, 30.10) et leur démenti (31.10) ne sont pas vérifiés. Élections : premier tour le 18.07.2027, second tour le 04.10.2027 ; clôture du registre électoral le 20.05.2027 (CEP, 28.10). Voir la chronologie pour les sources."
+        "en": "18.10: four Salvadoran Air Force aviation technicians serving with the GSF went missing after an ambush in Santo, Croix-des-Bouquets; as of 02.11 their fate is unconfirmed. El Salvador says it has deployed more than 2,000 troops; on 02.11 they launched their first ground operation (Santo, Croix-des-Missions) with Haitian police armour in support. El Salvador’s only published legal text covers participation in the GSF (12 months from 02.10; no troop number). Strike allegations (UNA-Haiti, 30.10) and their denial (31.10) are unverified. Elections: first round 18.07.2027, second round 04.10.2027; voter register closes 20.05.2027 (CEP, 28.10). 02.11: a joint operation found the technicians’ burned vehicle in Santo; the four were not found. 03.11: the Prime Minister said Haiti directs the foreign forces; the UN spokesperson has since put the Salvadoran soldiers under the GSF at about 200 (reported 05.11). 10.11 (restricted World Bank note, not independently confirmed): the GSF — formally launched 08.10 at Vertières with Chadian, Salvadoran, Guatemalan, Jamaican, Mongolian and Sri Lankan contingents — reached about 3,500 of its 5,500 ceiling by 28.10, with U.S. airlift reported for part of the Salvadoran movement. See the chronology for sources.",
+        "fr": "18.10 : quatre techniciens d’aviation salvadoriens servant au sein de la GSF ont disparu après une embuscade à Santo, Croix-des-Bouquets ; au 02.11, leur sort n’est pas confirmé. Le Salvador dit avoir déployé plus de 2 000 soldats ; le 02.11, ils ont lancé leur première opération terrestre (Santo, Croix-des-Missions) avec l’appui de blindés de la police haïtienne. Le seul texte juridique publié par le Salvador porte sur la participation à la GSF (12 mois à compter du 02.10 ; aucun effectif fixé). Les allégations de frappes (UNA-Haïti, 30.10) et leur démenti (31.10) ne sont pas vérifiés. Élections : premier tour le 18.07.2027, second tour le 04.10.2027 ; clôture du registre électoral le 20.05.2027 (CEP, 28.10). 02.11 : une opération conjointe a retrouvé le véhicule incendié des techniciens à Santo ; les quatre n’ont pas été retrouvés. 03.11 : le Premier ministre a affirmé qu’Haïti dirige les forces étrangères ; le porte-parole de l’ONU a depuis évalué à environ 200 les soldats salvadoriens relevant de la GSF (rapporté le 05.11). 10.11 (note restreinte de la Banque mondiale, non confirmée de façon indépendante) : la GSF — lancée officiellement le 08.10 à Vertières avec des contingents tchadien, salvadorien, guatémaltèque, jamaïcain, mongol et sri-lankais — atteint environ 3 500 personnes sur son plafond de 5 500 au 28.10, avec un appui aérien américain signalé pour une partie du mouvement salvadorien. Voir la chronologie pour les sources."
       },
       "cells": {
         "command": {
@@ -297,7 +398,10 @@
             "S2",
             "S3",
             "S4",
-            "S9"
+            "S9",
+            "S24",
+            "S26",
+            "S27"
           ],
           "fals": {
             "en": "A published command arrangement placing the Salvadoran contingent under GSF command, or a UN or GSF statement that it operates inside the GSF chain of command.",
@@ -312,7 +416,9 @@
             "S6",
             "S7",
             "S11",
-            "S13"
+            "S13",
+            "S25",
+            "S28"
           ],
           "fals": null
         },
@@ -344,11 +450,12 @@
           "conf": null,
           "src": [],
           "near": {
-            "en": "No originator publishes the share of the electorate outside gang-controlled territory. Nearest published: OHCHR (early 2026) estimates one in four people live in areas controlled by armed gangs — a population share, not an electorate share. The CEP counts 878,217 newly registered voters at 23.10.",
-            "fr": "Aucun émetteur ne publie la part de l’électorat hors des territoires contrôlés par les gangs. Mesure publiée la plus proche : le HCDH (début 2026) estime qu’une personne sur quatre vit dans des zones contrôlées par des gangs armés — une part de la population, non de l’électorat. Le CEP compte 878 217 électeurs nouvellement inscrits au 23.10.",
+            "en": "No originator publishes the share of the electorate outside gang-controlled territory. Nearest published: OHCHR (early 2026) estimates one in four people live in areas controlled by armed gangs — a population share, not an electorate share. The CEP counts 878,217 newly registered voters at 23.10; a restricted World Bank note puts the register at 892,963 by 29.10 (about 12% of the adult population), with the daily pace of registration slowing through October.",
+            "fr": "Aucun émetteur ne publie la part de l’électorat hors des territoires contrôlés par les gangs. Mesure publiée la plus proche : le HCDH (début 2026) estime qu’une personne sur quatre vit dans des zones contrôlées par des gangs armés — une part de la population, non de l’électorat. Le CEP compte 878 217 électeurs nouvellement inscrits au 23.10 ; une note restreinte de la Banque mondiale situe le registre à 892 963 au 29.10 (environ 12% de la population adulte), avec un ralentissement du rythme quotidien d’inscription en octobre.",
             "src": [
               "S17",
-              "S14"
+              "S14",
+              "S31"
             ]
           }
         },
@@ -389,6 +496,33 @@
       ]
     },
     {
+      "d": "08.10.2026",
+      "en": "The prime minister presides over the formal launch of the GSF at the Vertières base, Tabarre, with contingents from Chad, El Salvador, Guatemala, Jamaica, Mongolia and Sri Lanka.",
+      "fr": "Le Premier ministre préside le lancement officiel de la GSF à la base Vertières, Tabarre, avec des contingents du Tchad, du Salvador, du Guatemala, de la Jamaïque, de la Mongolie et du Sri Lanka.",
+      "src": [
+        "S31"
+      ],
+      "place": [
+        "ouest"
+      ]
+    },
+    {
+      "d": "15.10.2026",
+      "en": "An advance team of 50 Bangladeshi soldiers leaves for Haiti.",
+      "fr": "Une équipe d’avant-garde de 50 soldats bangladais part pour Haïti.",
+      "src": [
+        "S31"
+      ]
+    },
+    {
+      "d": "16.10.2026",
+      "en": "About 500 more Sri Lankan personnel are reported en route.",
+      "fr": "Environ 500 militaires sri-lankais supplémentaires sont signalés en route.",
+      "src": [
+        "S31"
+      ]
+    },
+    {
       "d": "18.10.2026",
       "en": "Four Salvadoran Air Force aviation technicians serving with the GSF go missing after an ambush in Santo, Croix-des-Bouquets.",
       "fr": "Quatre techniciens d’aviation de l’armée de l’air salvadorienne servant au sein de la GSF disparaissent après une embuscade à Santo, Croix-des-Bouquets.",
@@ -417,6 +551,14 @@
       ],
       "place": [
         "ouest"
+      ]
+    },
+    {
+      "d": "25.10.2026",
+      "en": "The electoral council reports more than 4,500 preliminary candidate applications, 27.5% of them women against a 30% constitutional quota; 19 presidential candidates are reported by month’s end.",
+      "fr": "Le conseil électoral fait état de plus de 4 500 candidatures préliminaires, dont 27,5% de femmes contre un quota constitutionnel de 30% ; 19 candidats à la présidence sont recensés à la fin du mois.",
+      "src": [
+        "S31"
       ]
     },
     {
@@ -449,11 +591,27 @@
       ]
     },
     {
+      "d": "28.10.2026",
+      "en": "A restricted World Bank note estimates the force at about 3,500 of its 5,500-person ceiling (64%), up from 1,563 (28%) on 12.10, and says a U.S. military official told Reuters that U.S. Southern Command provided C-130 aircraft for part of the Salvadoran movement.",
+      "fr": "Une note restreinte de la Banque mondiale estime la force à environ 3 500 personnes sur un plafond de 5 500 (64%), contre 1 563 (28%) le 12.10, et indique qu’un responsable militaire américain a déclaré à Reuters que le Commandement Sud des États-Unis a fourni des avions C-130 pour une partie du mouvement salvadorien.",
+      "src": [
+        "S31"
+      ]
+    },
+    {
       "d": "29.10.2026",
       "en": "Bukele says the troops will leave the same day the four are handed over, and otherwise will rescue them by force.",
       "fr": "Bukele déclare que les troupes partiront le jour même où les quatre seront remis, et qu’à défaut ils seront secourus par la force.",
       "src": [
         "S5"
+      ]
+    },
+    {
+      "d": "29.10.2026",
+      "en": "Registered voters reach 892,963, about 12% of the adult population; the pace of registration has slowed to about 6,061 a day in October from 9,278 a day in September.",
+      "fr": "Les électeurs inscrits atteignent 892 963, soit environ 12% de la population adulte ; le rythme d’inscription a ralenti à environ 6 061 par jour en octobre contre 9 278 par jour en septembre.",
+      "src": [
+        "S31"
       ]
     },
     {
@@ -482,7 +640,41 @@
       "fr": "Porte-parole de l’ONU : « la grande majorité » du personnel militaire salvadorien n’est pas déployée au sein de la GSF et échappe au mandat de l’ONU. Les quatre restent introuvables.",
       "src": [
         "S1",
-        "S6"
+        "S6",
+        "S27"
+      ]
+    },
+    {
+      "d": "02.11.2026",
+      "en": "A joint operation by the Haitian police, the GSF and Salvadoran troops finds the burned vehicle of the four technicians in Santo, Croix-des-Bouquets. The four are not found (police statement of 03.11).",
+      "fr": "Une opération conjointe de la police haïtienne, de la GSF et de troupes salvadoriennes retrouve le véhicule incendié des quatre techniciens à Santo, Croix-des-Bouquets. Les quatre ne sont pas retrouvés (communiqué de la police du 03.11).",
+      "src": [
+        "S28"
+      ]
+    },
+    {
+      "d": "03.11.2026",
+      "en": "In his first public remarks since 18.10, the Prime Minister says Haiti directs the foreign forces in the country and that they support the State rather than replace it; a Salvadoran colonel and a GSF officer stand with him. No command arrangement is published.",
+      "fr": "Dans sa première prise de parole publique depuis le 18.10, le Premier ministre affirme qu’Haïti dirige les forces étrangères présentes dans le pays et qu’elles appuient l’État sans le remplacer ; un colonel salvadorien et un officier de la GSF se tiennent à ses côtés. Aucun arrangement de commandement n’est publié.",
+      "src": [
+        "S24"
+      ]
+    },
+    {
+      "d": "03.11.2026",
+      "en": "President Bukele posts video he says shows Salvadoran attack helicopters repelling gangs that were attacking Chadian GSF soldiers in Croix-des-Bouquets. Not verified.",
+      "fr": "Le président Bukele publie une vidéo montrant, selon lui, des hélicoptères d’attaque salvadoriens repoussant des gangs qui attaquaient des soldats tchadiens de la GSF à Croix-des-Bouquets. Non vérifié.",
+      "src": [
+        "S29",
+        "S30"
+      ]
+    },
+    {
+      "d": "05.11.2026",
+      "en": "Reported 05.11: the UN spokesperson says only about 200 of the Salvadoran soldiers fall under the GSF’s jurisdiction. The briefing date is not given; the UN transcript is not held.",
+      "fr": "Rapporté le 05.11 : le porte-parole de l’ONU indique que seuls quelque 200 des soldats salvadoriens relèvent de la GSF. La date du point de presse n’est pas donnée ; la transcription de l’ONU n’est pas détenue.",
+      "src": [
+        "S26"
       ]
     }
   ],
