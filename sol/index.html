@@ -1446,6 +1446,8 @@ footer em{font:italic 400 15px var(--serif);letter-spacing:0;text-transform:none
 .sol-door{position:absolute;left:0;top:0;width:30px;height:30px;margin:-15px 0 0 -15px;display:grid;place-items:center;pointer-events:auto;cursor:pointer;opacity:0;will-change:transform,opacity;text-decoration:none}
 .sol-door .g{font:21px/1 "Noto Sans Symbols 2","Noto Sans Symbols",serif;color:#fff;text-shadow:0 0 10px rgba(255,255,255,.55),0 0 2px #fff;transition:transform .5s var(--ease,ease)}
 .sol-door:hover .g,.sol-door:focus-visible .g{transform:scale(1.4) rotate(180deg)}
+.sol-door--img .g img{display:block;width:16px;height:auto;filter:drop-shadow(0 0 5px rgba(255,255,255,.6)) drop-shadow(0 0 1px #fff)}
+.sol-door--img:hover .g,.sol-door--img:focus-visible .g{transform:scale(1.45)}
 .sol-door .lbl{position:absolute;right:36px;top:50%;transform:translate(6px,-50%);white-space:nowrap;font:500 10px/1 var(--sans,sans-serif);letter-spacing:.22em;text-transform:uppercase;color:#fff;background:rgba(0,0,0,.82);border:1px solid rgba(255,255,255,.4);padding:8px 11px;opacity:0;pointer-events:none;transition:opacity .35s,transform .35s}
 .sol-door .lbl i{display:block;margin-top:5px;font:italic 400 13px/1 var(--serif,serif);letter-spacing:0;text-transform:none;color:rgba(255,255,255,.7)}
 .sol-door:hover .lbl,.sol-door:focus-visible .lbl{opacity:1;transform:translate(0,-50%)}
@@ -1457,7 +1459,8 @@ footer em{font:italic 400 15px var(--serif);letter-spacing:0;text-transform:none
    Streams fall in coherent families — Greek, Hebrew and kanji; the glyph sheet; the old scripts (Imperial Aramaic,
    Syriac, Nabataean, Brahmi, Kharoshthi) — tinted by the alchemical stage on screen, with a bright head.
    Scrolling is wind: the rain streaks when you scroll fast and rises when you scroll back up. The pointer parts it.
-   Now and then a vèvè is poured into a line, from its centre out. Every 7 s a white ☯ opens the door to /sol/anima/. */
+   Now and then a vèvè is poured into a line, from its centre out. Every 7 s a white door opens, turn by turn: ☯ to /sol/anima/ (Pierre Willequet),
+   the white Brand to /sol/fourth-way/ (Guts and the Fourth Way). */
 (function(){
   const el=document.getElementById("solRain"),cv=el.querySelector("canvas"),x=cv.getContext("2d"),box=document.getElementById("solDoor");
   const REDUCED=matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -1470,7 +1473,12 @@ footer em{font:italic 400 15px var(--serif);letter-spacing:0;text-transform:none
   const OLDW=[[20,11,12].map(i=>SCRIPT.aramaic+i),[13,5,4,19,0].map(i=>SCRIPT.syriac+i),[7,5,1,0].map(i=>SCRIPT.syriac+i)];
   const VEVE=6,VT=160;                                   /* Erzulie Dantor, Simbi, Baron Samedi, Marassa, Papa Legba, Ayizan */
   const FONT='"Noto Serif JP","Noto Serif Hebrew","Noto Serif","Noto Sans Symbols 2","Noto Sans Symbols",serif';
-  const LH=21,EVERY=7000,LIFE=5600,DOOR="☯",HREF="/sol/anima/",KEY="sol-anima";
+  const LH=21,EVERY=7000,LIFE=5600;
+  const DOORS=[
+    {g:"☯",href:"/sol/anima/",key:"sol-anima",aria:"Pierre Willequet — archive",lbl:"Pierre Willequet<i>l’archive</i>"},
+    {img:"/sol/assets/images/door-fourth-way.png",href:"/sol/fourth-way/",key:"sol-fourth-way",aria:"Guts and the Fourth Way — Pressure Test 01",lbl:"The Fourth Way<i>Guts · Pressure Test 01</i>"}
+  ];
+  let doorTurn=(Math.random()*2)|0;
   const RES=k=>(window.__resources&&window.__resources["sol-"+k])||("media/sol/"+k+".png");
   let W=0,H=0,d=1,cols=[],on=false,last=0,wind=0,ly=scrollY,lt=performance.now(),door=null,nextDoor=0,lineTurn=(Math.random()*3)|0;
   let ATL=null,VV=null,veve=null,nextVeve=performance.now()+6000,left=0,px=-1e4,py=-1e4,tone=[255,200,84],toneT=[255,200,84];
@@ -1512,12 +1520,13 @@ footer em{font:italic 400 15px var(--serif);letter-spacing:0;text-transform:none
     const cand=[];for(const s of c.s){for(let i=1;i<s.g.length;i++){const y=s.y-i*LH;if(y>210&&y<H-180&&!(s.hasW&&i>=s.w0&&i<=s.w1))cand.push([s,i])}}
     if(!cand.length)return false;
     const [s,i]=cand[(Math.random()*cand.length)|0];
-    const a=document.createElement("a");a.className="sol-door";a.href=HREF;a.setAttribute("aria-label","Pierre Willequet — archive");
-    a.innerHTML='<span class="g">'+DOOR+'︎</span><span class="lbl">Pierre Willequet<i>l’archive</i></span>';
+    const D=DOORS[doorTurn++%DOORS.length];
+    const a=document.createElement("a");a.className="sol-door"+(D.img?" sol-door--img":"");a.href=D.href;a.setAttribute("aria-label",D.aria);
+    a.innerHTML=(D.img?'<span class="g"><img src="'+D.img+'" alt="" width="16" height="25"></span>':'<span class="g">'+D.g+'︎</span>')+'<span class="lbl">'+D.lbl+'</span>';
     const g={el:a,s,i,c,t0:now,hov:false,last:now};s.doorI=i;
     const enter=()=>{g.hov=true;s.hold=true},leave=()=>{g.hov=false;s.hold=false};
     a.addEventListener("mouseenter",enter);a.addEventListener("mouseleave",leave);a.addEventListener("focus",enter);a.addEventListener("blur",leave);
-    a.addEventListener("click",()=>{try{sessionStorage.setItem(KEY,"1")}catch(e){}});
+    a.addEventListener("click",()=>{try{sessionStorage.setItem(D.key,"1")}catch(e){}});
     box.appendChild(a);door=g;return true;
   }
   /* one glyph: a letter from the fonts, or a cell of the atlas; stretched along the fall when the wind is strong */
