@@ -67,7 +67,10 @@
   var stamp = $(".stamp");
   var diag = $(".diagnostic");
   var gold = diag && $(".gold-rule", diag);
-  var minutes = parseInt((railMin && railMin.getAttribute("data-total")) || "0", 10);
+  var minTotal = parseInt((railMin && railMin.getAttribute("data-total")) || "0", 10);
+  var minShort = parseInt((railMin && railMin.getAttribute("data-short")) || "0", 10) || minTotal;
+  var minutes = minTotal;
+  var nums = $$(".stage-num");
   var heatFrom = $("#being-versus-knowledge"), heatPeakA = $("#identification"),
       heatPeakB = $("#negative-emotions"), heatTo = $("#stage-03");
 
@@ -139,6 +142,13 @@
 
     if (bar) bar.classList.toggle("is-solid", window.scrollY > 48);
 
+    // stage numerals: outlined as they enter, filled by the time they reach the reading line
+    if (!reduce) nums.forEach(function (n) {
+      var b = n.getBoundingClientRect();
+      if (b.bottom < -40 || b.top > vh + 40) return;
+      n.style.setProperty("--fill", clamp((vh * 0.96 - b.top) / (vh * 0.46), 0, 1).toFixed(3));
+    });
+
     // continuous temperature
     var bg = null;
     if (id === "02" && heatFrom && heatPeakA && heatPeakB && heatTo) {
@@ -181,6 +191,67 @@
   }, { passive: true });
   window.addEventListener("resize", measure);
   measure();
+
+  /* ---- folds: Berserk readings and whole sections ------------------------
+     Without script everything is open. With it, each reading shows its first
+     paragraph and opens on request; any section can be folded to its title. */
+  var RKEY = "btb:pt01:readings";
+  function setFold(fold, open, instant) {
+    var inner = fold.firstElementChild, btn = document.querySelector('[aria-controls="' + fold.id + '"]');
+    if (open === !fold.classList.contains("is-shut") && !instant) return;
+    if (!instant && !reduce) {
+      fold.classList.add("is-moving");
+      var end = function (e) { if (e.target !== fold) return; fold.classList.remove("is-moving"); fold.removeEventListener("transitionend", end); update(); };
+      fold.addEventListener("transitionend", end);
+    }
+    fold.classList.toggle("is-shut", !open);
+    if (inner) inner.inert = !open;
+    if (btn) {
+      btn.setAttribute("aria-expanded", open ? "true" : "false");
+      var t = $(".fold-txt", btn);
+      if (t) t.textContent = open ? "Fold the reading" : "Continue the reading";
+      if (btn.classList.contains("sec-fold")) btn.setAttribute("aria-label", (open ? "Fold " : "Open ") + "section " + fold.id.replace("fold-s", ""));
+    }
+    var sec = fold.closest(".section"); if (sec && fold.classList.contains("fold--sec")) sec.classList.toggle("is-folded", !open);
+  }
+  var rFolds = $$('.fold[data-fold="reading"]'), sFolds = $$('.fold[data-fold="section"]');
+  var ctlR = $("#ctl-readings"), ctlS = $("#ctl-sections");
+  function syncCtl() {
+    var allR = rFolds.length && rFolds.every(function (f) { return !f.classList.contains("is-shut"); });
+    var allS = sFolds.length && sFolds.every(function (f) { return f.classList.contains("is-shut"); });
+    if (ctlR) { ctlR.setAttribute("aria-pressed", allR ? "true" : "false"); ctlR.textContent = allR ? "Fold the Berserk readings" : "Open every Berserk reading"; }
+    if (ctlS) { ctlS.setAttribute("aria-pressed", allS ? "true" : "false"); ctlS.textContent = allS ? "Open all sections" : "Fold all sections"; }
+    minutes = allR ? minTotal : minShort; lastMin = null;
+  }
+  if (rFolds.length || sFolds.length) {
+    var pref = null; try { pref = localStorage.getItem(RKEY); } catch (e) {}
+    rFolds.forEach(function (f) { setFold(f, pref === "open", true); });
+    $$(".fold-btn, .sec-fold").forEach(function (b) {
+      b.hidden = false;
+      b.addEventListener("click", function () {
+        var f = document.getElementById(b.getAttribute("aria-controls"));
+        setFold(f, f.classList.contains("is-shut")); syncCtl(); update();
+      });
+    });
+    if (ctlR) ctlR.addEventListener("click", function () {
+      var open = ctlR.getAttribute("aria-pressed") !== "true";
+      rFolds.forEach(function (f) { setFold(f, open, true); });
+      try { localStorage.setItem(RKEY, open ? "open" : "shut"); } catch (e) {}
+      syncCtl(); update();
+    });
+    if (ctlS) ctlS.addEventListener("click", function () {
+      var shut = ctlS.getAttribute("aria-pressed") !== "true";
+      sFolds.forEach(function (f) { setFold(f, !shut, true); });
+      syncCtl(); update();
+    });
+    var mc = $(".map-ctl"); if (mc) mc.hidden = false;
+    // a link into a folded section opens it
+    window.addEventListener("hashchange", function () {
+      var t = location.hash && document.querySelector(location.hash), f = t && t.querySelector && t.querySelector(":scope > .fold--sec.is-shut");
+      if (f) { setFold(f, true, true); syncCtl(); }
+    });
+    syncCtl(); update();
+  }
 
   /* ---- reveal: below-the-fold blocks rest dim, draw and sharpen once ---- */
   if (!reduce && "IntersectionObserver" in window) {
@@ -1124,7 +1195,17 @@
   document.addEventListener("visibilitychange", function () { if (!document.hidden) { startAmbient(); startHero(); } });
 
   var ticking = false;
-  function frame() { ticking = false; pulseIfStageChanged(); drawEclipse(); if (reduce || paused) still(); }
+  var arts = $$(".stage-art");
+  function parallax() {
+    if (reduce || window.innerWidth <= 760) return;
+    var vh = window.innerHeight;
+    arts.forEach(function (el) {
+      var b = el.parentElement.getBoundingClientRect();
+      if (b.bottom < -200 || b.top > vh + 200) return;
+      el.style.setProperty("--par", (clamp(((b.top + b.height / 2) - vh / 2) / vh, -1, 1) * -46).toFixed(1) + "px");
+    });
+  }
+  function frame() { ticking = false; pulseIfStageChanged(); drawEclipse(); parallax(); if (reduce || paused) still(); }
   function onScroll() { if (!ticking) { ticking = true; window.requestAnimationFrame(frame); } }
   function onResize() {
     MOB = window.innerWidth < 760;

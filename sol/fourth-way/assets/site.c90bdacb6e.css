@@ -1128,3 +1128,65 @@ html.is-still :is(.field, .rails, .stars) { opacity: 0; }
 :root[data-stage="04"] { --grain-o: 0; }
 .grain { background-size: var(--grain-s, 256px) var(--grain-s, 256px); }
 :root[data-stage="03"] { --rails-o: .7; }
+
+/* ==========================================================================
+   v5.4: numerals, folds, more movement on entry
+   ========================================================================== */
+/* Stage numerals: Plex Sans, drawn in outline, filling from the base as the
+   stage head rises to the reading line. Solid without script or motion. */
+.stage-num {
+  font-family: var(--font-text); font-weight: 500; letter-spacing: -0.055em; line-height: 0.8; padding-top: 0; margin-left: -0.05em;
+  color: transparent; -webkit-text-stroke: 1.25px var(--text-strong);
+  background-image: linear-gradient(0deg, var(--text-strong) calc(var(--fill, 1) * 100%), transparent calc(var(--fill, 1) * 100%));
+  -webkit-background-clip: text; background-clip: text;
+}
+.sm-n, .bar .rail-now { font-family: var(--font-text); font-weight: 500; letter-spacing: -0.03em; }
+.sm-n { color: transparent; -webkit-text-stroke: 1px var(--text-strong); transition: color 320ms var(--ease-cut); }
+.stagemap a:hover .sm-n, .stagemap a:focus-visible .sm-n { color: var(--text-strong); }
+.stagemap a { transition: background-color var(--dur-cut) var(--ease-cut); }
+
+/* Folds */
+.fold { display: grid; grid-template-rows: 1fr; transition: grid-template-rows 520ms var(--ease-cut); }
+.fold > .fold-in { min-height: 0; }
+.fold.is-shut { grid-template-rows: 0fr; }
+.fold.is-shut > .fold-in, .fold.is-moving > .fold-in { overflow: hidden; }
+.fold.is-shut > .fold-in { visibility: hidden; transition: visibility 0s 520ms; }
+@media (prefers-reduced-motion: reduce) { .fold { transition: none; } }
+.fold-btn, .ctl { display: inline-flex; align-items: center; gap: var(--s-3); padding: 8px 0; background: none; border: 0; cursor: pointer;
+  color: var(--text-dim); font-family: var(--font-mono); font-size: var(--t-label); letter-spacing: var(--tracking-label); text-transform: uppercase; }
+.fold-btn { margin-top: var(--s-2); color: var(--text-strong); }
+.fold-btn:hover, .ctl:hover, .sec-fold:hover { color: var(--text-strong); }
+.fold-ico { position: relative; width: 11px; height: 11px; flex: none; }
+.fold-ico::before, .fold-ico::after { content: ""; position: absolute; left: 0; right: 0; top: 5px; height: 1px; background: currentColor;
+  transition: transform 320ms var(--ease-cut); }
+[aria-expanded="false"] > .fold-ico::after { transform: rotate(90deg); }          /* minus becomes plus */
+.block--reading .fold-in { display: grid; gap: var(--s-4); }
+.block--reading .fold-in > * { max-width: var(--measure); }
+.block--reading .fold.is-shut { margin-top: calc(-1 * var(--s-4)); }
+.fold--sec > .fold-in { display: grid; gap: var(--s-6); }
+.section.is-folded { gap: 0; }
+/* Section fold: a small control at the end of the heading row. */
+.sec-head { position: relative; }
+.sec-fold { position: absolute; right: 0; top: -6px; width: 32px; height: 32px; display: grid; place-items: center; background: none; border: 0;
+  color: var(--text-dim); cursor: pointer; }
+.section.is-folded { padding-bottom: 0; }
+.section.is-folded .sec-title { color: var(--text); }
+/* Reading controls under the stage map */
+.map-ctl { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-2) var(--s-6); margin: 0; padding-top: var(--s-2); color: var(--text-dim); }
+.map-ctl-l { color: var(--text-dim); }
+.ctl { color: var(--text-strong); border-bottom: var(--hair) solid var(--rule); padding: 6px 0; }
+.ctl[aria-pressed="true"] { border-bottom-color: var(--text-strong); }
+
+/* Entry: section titles wipe in from the left behind their rule; pull lines draw their rule. */
+.sec-title { transition: clip-path 900ms var(--ease-cut) 80ms, transform 900ms var(--ease-cut) 80ms; clip-path: inset(-10% 0 -10% 0); }
+.sec-head.is-waiting .sec-title { clip-path: inset(-10% 100% -10% 0); transform: translateX(-14px); }
+.sec-head .eyebrow-line { transform-origin: left; transition: transform 700ms var(--ease-cut); }
+.sec-head.is-waiting .eyebrow-line { transform: scaleX(0); }
+.sec-head.reveal.is-waiting { opacity: 1; transform: none; }
+.prose .pull { border-left: 0; position: relative; }
+.prose .pull::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: var(--hair); background: var(--text-strong);
+  transform-origin: top; transition: transform 900ms var(--ease-cut) 200ms; }
+.is-waiting .pull::before { transform: scaleY(0); }
+/* Artwork drifts a little against the scroll. */
+@media (min-width: 761px) { .stage-art { transform: translate3d(0, var(--par, 0px), 0); } }
+@media (prefers-reduced-motion: reduce) { .sec-title { clip-path: none; transform: none; } .stage-num { background-image: none; color: var(--text-strong); -webkit-text-stroke: 0; } }
