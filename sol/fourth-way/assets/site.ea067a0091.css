@@ -1062,3 +1062,69 @@ html.is-still :is(.field, .rails, .stars) { opacity: 0; }
 .tick[aria-pressed="true"] { color: var(--text-strong); }
 .tick[aria-pressed="true"] .tick-box::after { content: ""; position: absolute; inset: 2px; background: currentColor; }
 .block--practice.is-done::before { opacity: .35; }
+
+/* ==========================================================================
+   v5.3: one layout rule per width band, glyphs at readable sizes.
+   Wide (>= 1300): artwork and stage figure stand in the right margin.
+   Middle (761-1299): artwork is a narrow panel at the right of the stage
+     head; the text keeps clear of it. Hero stays two columns.
+   Phone (<= 760): artwork is its own band above the stage number.
+   ========================================================================== */
+/* Bar: nothing wraps; items drop out as the bar narrows. */
+.bar-end > *, .bar-stage > * { white-space: nowrap; }
+@media (max-width: 1180px) { .motion-toggle .mt-txt { display: none; } }
+@media (max-width: 940px) { .bar-end .rail-min { display: none; } }
+
+/* Hero, middle widths: two columns, logo right. */
+@media (min-width: 761px) and (max-width: 1099px) {
+  .hero { min-height: min(100svh, 760px); padding: 120px 0 var(--s-9); gap: var(--s-5); }
+  .hero-text { max-width: min(430px, 54%); }
+  .sigil { position: absolute; top: 46%; right: 0; transform: translateY(-50%); order: 0; justify-self: auto;
+    width: min(320px, 40%); max-width: none !important; }
+  .hero h1 { font-size: clamp(2.6rem, 1rem + 4.4vw, 3.6rem); }
+}
+
+/* Stage artwork, middle widths: a panel the text does not run under. */
+@media (min-width: 761px) and (max-width: 1299px) {
+  .stage-art { opacity: 0.92; max-width: calc(min(260px, max(0px, 100vw - var(--col-left, 0px) - 760px)) + 150px);
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 46%), linear-gradient(180deg, transparent 0%, #000 14%, #000 78%, transparent 100%);
+            mask-image: linear-gradient(90deg, transparent 0%, #000 46%), linear-gradient(180deg, transparent 0%, #000 14%, #000 78%, transparent 100%); }
+  /* The tall painting gets a taller head instead of running down over the first section. */
+  #stage-02 .stage-art { height: calc(100% + var(--s-6)); bottom: 0; }
+  #stage-02 .stage-head { min-height: 470px; display: flex; flex-direction: column; justify-content: flex-end; }
+  .stage-art img { object-position: 100% 50%; }
+  .stage-head.has-art .stage-meta { max-width: 280px; }
+  .stage-head.has-art .stage-script { max-width: 240px; }
+  .stage-art-credit { display: none; }
+}
+@media (min-width: 1300px) { #stage-02 .stage-art { height: calc(100% + var(--s-6) + 300px); bottom: auto; } }
+/* Phones: the artwork is a band of its own, never behind text. */
+@media (max-width: 760px) {
+  .stage-art, #stage-01 .stage-art, #stage-02 .stage-art { position: relative; top: auto; right: auto; bottom: auto; width: 100%; max-width: none;
+    height: min(64vw, 300px); aspect-ratio: auto; opacity: 0.95; margin: 0 0 var(--s-5);
+    -webkit-mask-image: linear-gradient(180deg, #000 70%, transparent 100%); mask-image: linear-gradient(180deg, #000 70%, transparent 100%);
+    -webkit-mask-composite: source-over; mask-composite: add; }
+  .stage-art img { object-fit: cover; object-position: 50% 22%; }
+  .stage-art.is-points img { opacity: 1; }
+  .stage-art canvas.portrait { display: none; }
+}
+
+/* Stage figure as an emblem in the stage head, so the label always has its figure. */
+.stage-script { align-items: center; }
+.emblem { display: none; width: 56px; height: 56px; flex: none; color: var(--text-strong); }
+.emblem.is-drawn { display: block; }
+.stage-script .ss-fig { display: inline-flex; align-items: center; gap: var(--s-3); }
+.stage-script .ss-fig::before { content: none; }
+
+/* Script keys and section letters: large enough to read as letters. */
+.stage-script .ss-g { font-size: 1.3rem; letter-spacing: 0.22em; }
+.sec-glyph { font-size: 1.45rem; min-width: 1.5em; }
+.sec-glyph.ss-02 { font-size: 1.7rem; }
+
+/* Grain: fine, device-pixel noise at low strength (was coarse and too strong). */
+:root { --grain-o: .05; }
+:root[data-stage="02"] { --grain-o: .022; }
+:root[data-stage="03"] { --grain-o: .012; }
+:root[data-stage="04"] { --grain-o: 0; }
+.grain { background-size: var(--grain-s, 256px) var(--grain-s, 256px); }
+:root[data-stage="03"] { --rails-o: .7; }

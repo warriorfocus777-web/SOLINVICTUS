@@ -524,7 +524,8 @@
   /* Film grain: the noise tile is made here instead of being shipped (saves 54 KB). */
   (function () {
     try {
-      var n = 220, c = document.createElement("canvas"); c.width = c.height = n;
+      var gd = Math.min(2, Math.round(window.devicePixelRatio || 1)), n = 256 * gd, c = document.createElement("canvas"); c.width = c.height = n;
+      root.style.setProperty("--grain-s", "256px");
       var g = c.getContext("2d"), d = g.createImageData(n, n), r = rng(9);
       for (var i = 0; i < n * n; i++) { d.data[i * 4] = d.data[i * 4 + 1] = d.data[i * 4 + 2] = 255; d.data[i * 4 + 3] = Math.pow(r(), 3) * 255; }
       g.putImageData(d, 0, 0); root.style.setProperty("--grain", "url(" + c.toDataURL("image/png") + ")");
@@ -603,15 +604,15 @@
     if (!H1) return;
     var b = sigBox.getBoundingClientRect(), S = Math.max(1, Math.round(Math.min(b.width, b.height || b.width)));
     H1.S = S; H1.ctx = sizeCanvas(heroCv, S, S, Math.min(DPR, 2));
-    var k = S / 1.36;
-    if (fontsReady) ringAtlas = { r1: atlas("03", k * 0.034, DPR), r2: atlasSet(k * 0.022, DPR) };
+    var k = S / 1.42;
+    if (fontsReady) ringAtlas = { r1: atlas("03", Math.max(11, k * 0.036), DPR), r2: atlasSet(Math.max(9, k * 0.024), DPR), small: k < 330 };
   }
   function drawHero(t) {
     var h = H1, ctx = h.ctx, S = h.S, lt = t - h.t0;
     ctx.clearRect(0, 0, S, S);
     var leave = hero ? clamp(window.scrollY / Math.max(1, hero.offsetHeight * 0.85), 0, 1) : 0, fade = 1 - leave;
     if (fade <= 0.01) return;
-    var k = S / 1.36 * (reduce ? 1 : 1 + 0.006 * (1 - Math.cos(0.35 * t)));
+    var k = S / 1.42 * (reduce ? 1 : 1 + 0.006 * (1 - Math.cos(0.35 * t)));
     var par = MOB ? 0.4 : 1, cx = S / 2 + PX * 9 * par, cy = S / 2 + PY * 6 * par;
     var spin = reduce ? 0 : t * 0.03, cs = Math.cos(spin), sn = Math.sin(spin);
     var logoA = reduce ? 1 : smooth((lt - 1.9) / 1.4), ptsA = reduce ? 0 : 1 - 0.84 * logoA;
@@ -669,11 +670,11 @@
       }
       var r1 = reduce ? 0 : -t * 0.05, r2 = spin * 0.6;
       ctx.globalAlpha = 0.85 * ringIn * fade;
-      for (var m = 0; m < 22; m++) { var th = r1 + m / 22 * 6.2832; glyphRot(ctx, ringAtlas.r1, h.R1[m], cx + Math.cos(th) * k * 0.555, cy + Math.sin(th) * k * 0.555, th + 1.5708); }
-      ctx.globalAlpha = 0.32 * ringIn * fade;
-      for (m = 0; m < 44; m++) { var q2 = h.R2[m], th3 = r2 + m / 44 * 6.2832; glyphRot(ctx, ringAtlas.r2[q2.sid], q2.g, cx + Math.cos(th3) * k * 0.625, cy + Math.sin(th3) * k * 0.625, th3 + 1.5708, q2.sid === "01"); }
+      for (var m = 0; m < 22; m++) { var th = r1 + m / 22 * 6.2832; glyphRot(ctx, ringAtlas.r1, h.R1[m], cx + Math.cos(th) * k * 0.56, cy + Math.sin(th) * k * 0.56, th + 1.5708); }
+      ctx.globalAlpha = 0.4 * ringIn * fade;
+      for (m = 0; m < 44; m += ringAtlas.small ? 2 : 1) { var q2 = h.R2[m], th3 = r2 + m / 44 * 6.2832; glyphRot(ctx, ringAtlas.r2[q2.sid], q2.g, cx + Math.cos(th3) * k * 0.64, cy + Math.sin(th3) * k * 0.64, th3 + 1.5708, q2.sid === "01"); }
       ctx.globalAlpha = 0.14 * ringIn * fade; ctx.strokeStyle = "#fff"; ctx.lineWidth = 1;
-      ctx.beginPath(); ctx.arc(cx, cy, k * 0.59, 0, 6.2832); ctx.stroke();
+      ctx.beginPath(); ctx.arc(cx, cy, k * 0.6, 0, 6.2832); ctx.stroke();
       ctx.globalAlpha = 1;
     }
   }
@@ -738,7 +739,7 @@
     var f = field, ctx = f.ctx, W = f.W, H = f.H, t = now / 1000;
     function blank() { if (!f.blank) { ctx.clearRect(0, 0, W, H); f.blank = true; } }
     var gutter = W - colR;
-    if (gutter < 250 || W < 1100) { blank(); return; }                       // never under the reading column
+    if (gutter < 200 || W < 1100) { blank(); return; }                       // never under the reading column
     var line = window.scrollY + H * 0.5, T = H * 0.42;
     var ids = stages.map(function (s) { return s.getAttribute("data-stage"); }), tops = stages.map(docTop);
     if (!ids.length) { blank(); return; }
@@ -778,6 +779,19 @@
     ctx.globalAlpha = 1;
   }
 
+  /* Stage emblems: the stage figure drawn small in its stage head, in hairlines. */
+  function drawEmblems() {
+    $$(".emblem").forEach(function (cv) {
+      var segs = FIG[STAGE_FIG[cv.getAttribute("data-stage")]]; if (!segs) return;
+      var S = 56, ctx = sizeCanvas(cv, S, S), r = S / 2 - 2;
+      ctx.clearRect(0, 0, S, S); ctx.strokeStyle = getComputedStyle(cv).color || "#fff"; ctx.lineWidth = 0.7; ctx.globalAlpha = 0.95;
+      ctx.beginPath();
+      segs.forEach(function (g) { ctx.moveTo(S / 2 + g[0] * r, S / 2 + g[1] * r); ctx.lineTo(S / 2 + g[2] * r, S / 2 + g[3] * r); });
+      ctx.stroke(); cv.classList.add("is-drawn");
+    });
+  }
+  drawEmblems();
+
   /* =====================================================================
      4. Rails (after SOL): one column of the stage's letters at each edge
      ===================================================================== */
@@ -794,15 +808,15 @@
     ctx.clearRect(0, 0, W, H);
     if (W < 900) return;
     var st = root.getAttribute("data-stage") || "01", A = railAtlas[st];
-    var step = 26, off = window.scrollY * 0.25;      // the columns move only when the reader does
+    var step = 30, off = window.scrollY * 0.25;      // the columns move only when the reader does
     var pulse = H * 0.5;                              // brightest at the reading line
     var sp = rails.pulse0 > 0 ? (now - rails.pulse0) / 1100 : 2, sweep = sp < 1 ? -120 + (H + 240) * easeOut(sp) : -999;
     for (var y = -step - (off % step); y < H + step; y += step) {
       var row = Math.round((y + off) / step);
       for (var side = 0; side < 2; side++) {
         var yy = side ? H - y : y, pl = Math.exp(-Math.pow((yy - pulse) / 70, 2)), sw = Math.exp(-Math.pow((y - sweep) / 50, 2));
-        ctx.globalAlpha = Math.min(1, 0.09 + 0.38 * pl + 0.7 * sw);
-        glyph(ctx, A, hash(row + (side ? 7 : 1000)) % A.n, side ? W - 20 : 20, y, sw > 0.4);
+        ctx.globalAlpha = Math.min(1, 0.2 + 0.6 * pl + 0.7 * sw);
+        glyph(ctx, A, hash(row + (side ? 7 : 1000)) % A.n, side ? W - 22 : 22, y, sw > 0.4 || pl > 0.85);
       }
     }
     ctx.globalAlpha = 1;
@@ -919,7 +933,7 @@
          The wanderer stands as the one dark shape in a field of points.
      ===================================================================== */
   $$(".stage-art--tone").forEach(function (panel) {
-    if (reduce || !panel.closest("#stage-03")) return;
+    if (reduce || !panel.closest("#stage-03") || window.innerWidth <= 760) return;
     var img = $("img", panel); if (!img) return;
     var cv = document.createElement("canvas"); cv.className = "portrait"; panel.appendChild(cv);
     panel.classList.add("is-points");
@@ -1115,7 +1129,7 @@
   function onResize() {
     MOB = window.innerWidth < 760;
     sizeStars(); sizeField(); sizeRails(); sizeEclipse(); sizeHero();
-    if (fontsReady) railAtlas = atlasSet(10, DPR);
+    if (fontsReady) railAtlas = atlasSet(13, DPR);
     if (sl) { var t = sl.t0; buildSlashes(); sl.t0 = t === null ? null : -1; if (sl.t0 === -1) drawSlashes(0); }
     if (H1 && (reduce || paused)) drawHero(H1.t0 + 99);
     frame(); still();
@@ -1133,7 +1147,7 @@
   }
   whenReady(function () {
     fontsReady = true;
-    railAtlas = atlasSet(10, DPR);
+    railAtlas = atlasSet(13, DPR);
     initHero(); sizeHero();
     $$(".decode[data-pending]").forEach(function (el) { el.removeAttribute("data-pending"); decode(el); });
     if (reduce || paused) still(); else startAmbient();
