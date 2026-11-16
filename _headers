@@ -1,3 +1,6 @@
+/sol/fourth-way/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
 /cadre7/assets/fonts/*
   Cache-Control: public, max-age=31536000, immutable
 
