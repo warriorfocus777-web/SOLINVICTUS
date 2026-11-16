@@ -10,7 +10,7 @@
 <link rel="canonical" href="https://solinvictus.app/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Sol Invictus">
-<meta property="og:description" content="Three instruments and one profile. Choose an instrument.">
+<meta property="og:description" content="Four instruments and one profile. Choose an instrument.">
 <meta property="og:url" content="https://solinvictus.app/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23000'/%3E%3Ccircle cx='16' cy='16' r='7' fill='none' stroke='%23c9a86c' stroke-width='1.5'/%3E%3Ccircle cx='16' cy='16' r='1.8' fill='%23c9a86c'/%3E%3C/svg%3E">
 <link rel="preload" href="/matthieu/fonts/libre-caslon-display-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
@@ -20,7 +20,7 @@
   document.documentElement.classList.add('js');
 </script>
 <!-- the doors open instantly: each instrument is fetched as the pointer moves toward it -->
-<script type="speculationrules">{"prefetch":[{"source":"document","where":{"href_matches":["/sol/","/cadre/","/cadre7/","/matthieu/"]},"eagerness":"moderate"}]}</script>
+<script type="speculationrules">{"prefetch":[{"source":"document","where":{"href_matches":["/sol/","/cadre/","/cadre7/","/cadre509/","/matthieu/"]},"eagerness":"moderate"}]}</script>
 <style>
 @font-face{font-family:"Outfit";font-weight:300;font-display:swap;src:url(/matthieu/fonts/outfit-latin-300-normal.woff2) format("woff2")}
 @font-face{font-family:"Outfit";font-weight:400;font-display:swap;src:url(/matthieu/fonts/outfit-latin-400-normal.woff2) format("woff2")}
@@ -127,7 +127,14 @@ h1::after{content:attr(data-text);position:absolute;inset:0;pointer-events:none;
 .emb-c22 path{transition:fill .5s}
 .door:hover .emb-c22 path{animation:lit 1.6s var(--ease) calc(var(--t) * 1.2) both}
 @keyframes lit{0%{fill:transparent}35%{fill:color-mix(in srgb,var(--tint) 30%,transparent)}100%{fill:color-mix(in srgb,var(--tint) 8%,transparent)}}
-.door-sol{--tint:#ffd65c}.door-c22{--tint:#b9c4c2}.door-c7{--tint:#00d4ff}
+.door-sol{--tint:#ffd65c}.door-c22{--tint:#b9c4c2}.door-c7{--tint:#00d4ff}.door-c509{--tint:#efe6cf}
+.doors{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media (min-width:901px) and (max-width:1100px){
+  .doors{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .doors li:nth-child(3){border-left:0}
+  .doors li:nth-child(3),.doors li:nth-child(4){border-top:1px solid var(--line)}
+}
+@media (min-width:1101px){.door{padding:28px 24px 26px}.line{min-height:4.5em}}
 
 .author .door{min-height:0;flex-direction:row;align-items:center;gap:28px;padding:26px 30px}
 .author .mono{flex:none;width:52px;height:52px;transition:transform 1.2s var(--ease)}
@@ -245,7 +252,17 @@ footer .shell>:last-child{text-align:right}
           <span class="go">Enter <span aria-hidden="true">→</span></span>
         </a>
       </li>
-      <li class="author rise" style="--d:1.36s">
+      <li class="rise" style="--d:1.36s">
+        <a class="door door-c509" href="/cadre509/">
+          <div class="top"><span class="num">IV</span><span class="label">Evidentiary</span></div>
+          <div class="figure"><svg class="emb emb-c509" viewBox="0 0 124 120" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"><path pathLength="1" style="--t:0.00s;--u:0.45s" d="M60 60V22"/><path pathLength="1" style="--t:0.30s;--u:0.45s" d="M60 60V98"/><path pathLength="1" style="--t:0.60s;--u:0.45s" d="M60 60H16"/><path pathLength="1" style="--t:0.90s;--u:0.45s" d="M60 60H104"/><path pathLength="1" style="--t:1.25s;--u:0.5s" d="M60 22c6-5 6-13 0-18c-6 5-6 13 0 18M60 20V8"/><path pathLength="1" style="--t:1.45s;--u:0.5s" d="M60 98c6 5 6 13 0 18c-6-5-6-13 0-18M60 100V112"/><path pathLength="1" style="--t:1.65s;--u:0.4s" d="M60 31c8 0 11-6 17-6a4 4 0 1 1 0 8"/><path pathLength="1" style="--t:1.75s;--u:0.4s" d="M60 31c-8 0-11-6-17-6a4 4 0 1 0 0 8"/><path pathLength="1" style="--t:1.85s;--u:0.4s" d="M60 89c8 0 11 6 17 6a4 4 0 1 0 0-8"/><path pathLength="1" style="--t:1.95s;--u:0.4s" d="M60 89c-8 0-11 6-17 6a4 4 0 1 1 0-8"/><circle class="ln" pathLength="1" style="--t:2.10s;--u:.4s" cx="44" cy="45" r="7"/><path pathLength="1" style="--t:2.35s;--u:0.25s" d="M44 41V49M40 45H48"/><circle class="ln" pathLength="1" style="--t:2.25s;--u:.4s" cx="76" cy="45" r="7"/><path pathLength="1" style="--t:2.50s;--u:0.25s" d="M76 41V49M72 45H80"/><circle class="ln" pathLength="1" style="--t:2.40s;--u:.4s" cx="44" cy="75" r="7"/><path pathLength="1" style="--t:2.65s;--u:0.25s" d="M44 71V79M40 75H48"/><circle class="ln" pathLength="1" style="--t:2.55s;--u:.4s" cx="76" cy="75" r="7"/><path pathLength="1" style="--t:2.80s;--u:0.25s" d="M76 71V79M72 75H80"/><path pathLength="1" style="--t:2.80s;--u:0.35s" d="M30 45L22 60 30 75"/><path pathLength="1" style="--t:2.95s;--u:0.4s" d="M94 80V42c0-5 6-5 6 0"/><path pathLength="1" style="--t:3.15s;--u:0.3s" d="M11 55L17 65M17 55L11 65M9 60H19"/><path pathLength="1" style="--t:3.30s;--u:0.3s" d="M107 55L113 65M113 55L107 65M105 60H115"/></g></svg></div>
+          <h2 class="name">Cadre 509</h2>
+          <p class="line">Haiti by the quarter: seven cells, each filled only on two independent sources.</p>
+          <p class="meta">EN · Q3 2026 · quarterly record</p>
+          <span class="go">Enter <span aria-hidden="true">→</span></span>
+        </a>
+      </li>
+      <li class="author rise" style="--d:1.48s">
         <a class="door" href="/matthieu/">
           <img class="mono" src="/matthieu/monogram.svg" alt="" width="52" height="52">
           <div class="who">
@@ -264,7 +281,7 @@ footer .shell>:last-child{text-align:right}
   <div class="shell">
     <span>Sol Invictus · 2026</span>
     <span class="solar" id="solar" aria-live="off"><svg viewBox="-8 -8 16 16" aria-hidden="true"><line x1="-8" y1="3" x2="8" y2="3" stroke="#9a958d" stroke-width=".8"/><circle class="disc" r="3" cy="3" fill="#c9a86c"/></svg><span>Port-au-Prince</span></span>
-    <span>Three instruments · one profile</span>
+    <span>Four instruments · one profile</span>
   </div>
 </footer>
 

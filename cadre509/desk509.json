@@ -1,0 +1,1591 @@
+{
+ "meta": {
+  "id": "CADRE 509",
+  "title": "Quarterly Record",
+  "place": "Haiti",
+  "quarter": "Q3 2026",
+  "scope": "Security allocation and parallel force",
+  "period": "1 July–30 September 2026",
+  "period_short": "01.07–30.09.2026",
+  "desk": "Independent desk",
+  "sealed": "13.11.2026",
+  "principle": "The record speaks. The desk does not fill its silences.",
+  "basis": "Built from the BINUH quarterly human-rights report for July–September 2026, the Cadre 22 and Cadre 7 records, and a source search on 16.11.2026. The expanded Cadre 509 draft was not supplied; nothing in it is reproduced.",
+  "kicker": "Quarterly evidentiary record",
+  "version": "v1.3 · 16.11.2026",
+  "previous": "v1.2 · 16.11.2026"
+ },
+ "originators": {
+  "UN": "United Nations — BINUH / Secretariat",
+  "UNSC": "UN Security Council",
+  "SCR": "Security Council Report",
+  "REU": "Reuters",
+  "AJ": "Al Jazeera",
+  "LN": "Le Nouvelliste",
+  "SLV": "Legislative Assembly of El Salvador",
+  "HT": "The Haitian Times",
+  "USM": "US Mission to the UN",
+  "CEP": "CEP — Provisional Electoral Council",
+  "AFP": "AFP",
+  "AP": "AP",
+  "OPMCEP": "Office of the Prime Minister & CEP (joint statement)",
+  "KEN": "Mayor of Kenscoff",
+  "RNDDH": "RNDDH — National Human Rights Defense Network",
+  "HRW": "Human Rights Watch",
+  "AI": "Amnesty International",
+  "GSFS": "Gang Suppression Force — spokesperson",
+  "CMC": "CMC — Caribbean Media Corporation"
+ },
+ "sources": [
+  {
+   "id": "S1",
+   "t": "Quarterly Report on the Human Rights Situation in Haiti, July–September 2026",
+   "o": "UN",
+   "pub": "BINUH — Human Rights Service",
+   "d": "11.2026",
+   "r": "A",
+   "ty": "official",
+   "url": "https://binuh.unmissions.org/en/document-library",
+   "n": "Read in full (file dated 11.11.2026, 36 pp.). Page numbers are the report's own. The file's direct URL is not yet held; the BINUH document library is linked.",
+   "cov": "Q3"
+  },
+  {
+   "id": "S2",
+   "t": "Report of the Secretary-General on BINUH, S/2026/800",
+   "o": "UN",
+   "pub": "United Nations Secretary-General",
+   "d": "12.10.2026",
+   "r": "A",
+   "ty": "official",
+   "url": "https://www.unmissions.org/sites/default/files/2026-10/SG%20October%20Report%20on%20BINUH%20-%20En.pdf",
+   "n": "Covers 15 July–12 October 2026. Held in the Cadre 22 record (S29). Same originator as S1."
+  },
+  {
+   "id": "S3",
+   "t": "Report of the Secretary-General on Haiti, S/2026/574",
+   "o": "UN",
+   "pub": "United Nations Secretary-General",
+   "d": "14.07.2026",
+   "r": "A",
+   "ty": "official",
+   "url": "https://unsco.unmissions.org/sites/default/files/2026-07/SG%20Report%20on%20the%20situation%20in%20Haiti%20(14%20July%202026).pdf",
+   "n": "Held in the Cadre 22 record (S1)."
+  },
+  {
+   "id": "S4",
+   "t": "Flash report — intensification of gang violence in La Plaine du Cul-de-Sac and Cité Soleil, 6 March–31 July 2026",
+   "o": "UN",
+   "pub": "BINUH",
+   "d": "08.2026",
+   "r": "A",
+   "ty": "official",
+   "url": "https://binuh.unmissions.org/sites/default/files/2026-08/Flash%20Report%20-%20Intensification%20of%20Gang%20Violence%20in%20the%20Plaine%20du%20Cul-de-Sac%20Area%20and%20Cit%C3%A9%20Soleil%20%28March%20-%20July%202026%29_1.pdf",
+   "n": "Held in the Cadre 22 record (S23)."
+  },
+  {
+   "id": "S5",
+   "t": "Haiti: Elections on hold as gangs adapt to security crackdown, Security Council hears",
+   "o": "UN",
+   "pub": "UN News",
+   "d": "19.10.2026",
+   "r": "A",
+   "ty": "official",
+   "url": "https://news.un.org/en/story/2026/10/1168626",
+   "n": "Held in the Cadre 22 record (S32)."
+  },
+  {
+   "id": "S6",
+   "t": "Statement on the end of the Transitional Presidential Council's mandate",
+   "o": "UN",
+   "pub": "BINUH",
+   "d": "02.2026",
+   "r": "A",
+   "ty": "official",
+   "url": null,
+   "n": "Held in the Cadre 22 record (S4). No URL held."
+  },
+  {
+   "id": "S7",
+   "t": "Le Nouvelliste, 7 February 2026",
+   "o": "LN",
+   "pub": "Le Nouvelliste",
+   "d": "07.02.2026",
+   "r": "B",
+   "ty": "press",
+   "url": null,
+   "n": "Held in the Cadre 22 record (S5). No URL held."
+  },
+  {
+   "id": "S8",
+   "t": "Security Council Resolution 2793 (2025)",
+   "o": "UNSC",
+   "pub": "BINUH document repository",
+   "d": "30.09.2025",
+   "r": "A",
+   "ty": "primary",
+   "url": "https://binuh.unmissions.org/sites/default/files/unsc_resolution_2793_authorizing_the_transition_of_the_mss_mission_to_the_gang_suppression_force_gsf_30_sept_2025.pdf",
+   "n": "Held in the Cadre 22 record (S6)."
+  },
+  {
+   "id": "S9",
+   "t": "Security Council renews Haiti Gang Suppression Force for six months (S/RES/2829)",
+   "o": "UNSC",
+   "pub": "UN Press",
+   "d": "29.09.2026",
+   "r": "A",
+   "ty": "official",
+   "url": "https://press.un.org/en/2026/sc16466.doc.htm",
+   "n": "Held in the Cadre 7 record (S20)."
+  },
+  {
+   "id": "S10",
+   "t": "What's in Blue — Haiti: vote on the renewal of the Gang Suppression Force",
+   "o": "SCR",
+   "pub": "Security Council Report",
+   "d": "28.09.2026",
+   "r": "B",
+   "ty": "secondary",
+   "url": "https://www.securitycouncilreport.org/whatsinblue/2026/09/haiti-vote-on-a-draft-resolution-extending-the-mandate-of-the-gang-suppression-force-and-un-support-office.php",
+   "n": "Held in the Cadre 22 record (S17)."
+  },
+  {
+   "id": "S11",
+   "t": "UN renews Haiti force mandate for six months after fresh gang killings",
+   "o": "REU",
+   "pub": "Reuters (via Internazionale)",
+   "d": "29.09.2026",
+   "r": "B",
+   "ty": "press",
+   "url": "https://www.internazionale.it/ultime-notizie-reuters/2026/09/29/un-renews-haiti-force-mandate-for-six-months-after-fresh-gang-killings",
+   "n": "Held in the Cadre 22 record (S19)."
+  },
+  {
+   "id": "S12",
+   "t": "UN extends mandate of Gang Suppression Force in Haiti for six months",
+   "o": "AJ",
+   "pub": "Al Jazeera",
+   "d": "29.09.2026",
+   "r": "B",
+   "ty": "press",
+   "url": "https://www.aljazeera.com/news/2026/9/29/un-extends-mandate-of-gang-suppression-force-in-haiti-for-six-months",
+   "n": "Held in the Cadre 22 record (S20)."
+  },
+  {
+   "id": "S13",
+   "t": "Report on Haiti, 4 September 2026",
+   "o": "AJ",
+   "pub": "Al Jazeera",
+   "d": "04.09.2026",
+   "r": "B",
+   "ty": "press",
+   "url": null,
+   "n": "Held in the Cadre 22 record (S3). Independence from UN reporting not verified: it may relay the same UN figures. Not counted as a second originator against a UN source."
+  },
+  {
+   "id": "S14",
+   "t": "Vigente ley que autoriza participación militar en fuerza antipandillas de Haití (Ley Especial Transitoria, Diario Oficial 30.09.2026)",
+   "o": "SLV",
+   "pub": "Diario El Mundo",
+   "d": "30.09.2026",
+   "r": "A",
+   "ty": "official",
+   "url": "https://diario.elmundo.sv/politica/vigente-ley-que-autoriza-participacion-militar-en-fuerza-antipandillas-de-haiti",
+   "n": "Held in the Cadre 7 record (S11)."
+  },
+  {
+   "id": "S15",
+   "t": "Haiti enters second week of voter registration with expansion into West Department",
+   "o": "HT",
+   "pub": "The Haitian Times",
+   "d": "04.08.2026",
+   "r": "B",
+   "ty": "press",
+   "url": "https://haitiantimes.com/2026/08/04/haiti-continues-voter-registration-in-accessible-areas/",
+   "n": "Held in the Cadre 7 record (S23)."
+  },
+  {
+   "id": "S16",
+   "t": "Resolution 2814 (2026) — extension of the mandate of BINUH until 31 January 2027",
+   "o": "UNSC",
+   "pub": "UN Digital Library",
+   "d": "29.01.2026",
+   "r": "A",
+   "ty": "official",
+   "url": "https://digitallibrary.un.org/record/4101172",
+   "n": "Held in the Cadre 22 record (S42). Adopted 15–0–0."
+  },
+  {
+   "id": "S17",
+   "t": "Haïti. Le 1er tour des élections fixé au 18 juillet 2027 (calendrier électoral actualisé du CEP, 28.10)",
+   "o": "CEP",
+   "pub": "Karib’Info",
+   "d": "28.10.2026",
+   "r": "A",
+   "ty": "official",
+   "url": "https://www.karibinfo.com/news/haiti-le-1er-tour-des-elections-fixe-au-18-juillet-2027/",
+   "n": "After the period. Used only in the election calendar. Held in the Cadre 7 record (S15)."
+  },
+  {
+   "id": "S18",
+   "t": "Gang-plagued Haiti sets election dates for 2027",
+   "o": "AFP",
+   "pub": "AFP (via Jamaica Observer)",
+   "d": "29.10.2026",
+   "r": "B",
+   "ty": "press",
+   "url": "https://www.jamaicaobserver.com/2026/10/29/gang-plagued-haiti-sets-election-dates-2027/",
+   "n": "After the period. Held in the Cadre 7 record (S19)."
+  },
+  {
+   "id": "S19",
+   "t": "Haiti postpones first presidential election in a decade to July 2027",
+   "o": "REU",
+   "pub": "Reuters (via Internazionale)",
+   "d": "28.10.2026",
+   "r": "B",
+   "ty": "press",
+   "url": "https://www.internazionale.it/ultime-notizie-reuters/2026/10/29/haiti-postpones-first-presidential-election-in-a-decade-to-july-2027",
+   "n": "After the period. Held in the Cadre 22 record (S44)."
+  },
+  {
+   "id": "S20",
+   "t": "Haiti announces new election dates as 2,000 Salvadoran troops help fight gangs",
+   "o": "AP",
+   "pub": "AP (via ABC News)",
+   "d": "29.10.2026",
+   "r": "B",
+   "ty": "press",
+   "url": "https://abcnews.com/International/wireStory/haiti-announces-new-election-dates-2000-salvadoran-troops-137674662",
+   "n": "After the period. Held in the Cadre 22 record (S45)."
+  },
+  {
+   "id": "S21",
+   "t": "Key Changes Introduced in the New Electoral Decree (amendments published in Le Moniteur, 02.07.2026)",
+   "o": "LN",
+   "pub": "Le Nouvelliste",
+   "d": "07.07.2026",
+   "r": "B",
+   "ty": "press",
+   "url": "https://lenouvelliste.com/en/article/269535/key-changes-introduced-in-the-new-electoral-decree",
+   "n": "The 02.07 text amends the decree of 02.06.2026 without republishing it; amendments agreed by the CEP, the government and political parties."
+  },
+  {
+   "id": "S22",
+   "t": "CEP and Government Reach Agreement on $120 Million Electoral Budget",
+   "o": "OPMCEP",
+   "pub": "Le Nouvelliste",
+   "d": "03.07.2026",
+   "r": "A",
+   "ty": "official",
+   "url": "https://lenouvelliste.com/en/article/269389/cep-and-government-reach-agreement-on-120-million-electoral-budget",
+   "n": "Relays a joint statement of the Prime Minister's Office and the CEP. Partly behind a login wall."
+  },
+  {
+   "id": "S23",
+   "t": "Haiti sets Dec. 13 date for first national election in a decade",
+   "o": "HT",
+   "pub": "The Haitian Times (repost, Canada Caribbean Institute)",
+   "d": "28.07.2026",
+   "r": "B",
+   "ty": "press",
+   "url": "https://canadacaribbeaninstitute.org/2026/07/29/haiti-sets-dec-13-date-for-first-national-election-in-a-decade/",
+   "n": "Calendar published 27.07; voter registration began 20.07 in nine of ten departments (West excluded); candidate registration 20.08–02.10; budget not yet approved by Cabinet."
+  },
+  {
+   "id": "S24",
+   "t": "Haiti to hold elections at year-end if security conditions met: authorities",
+   "o": "AFP",
+   "pub": "AFP (via BSS)",
+   "d": "28.07.2026",
+   "r": "B",
+   "ty": "press",
+   "url": "https://www.bssnews.net/international/409517",
+   "n": "First round 13.12.2026, runoff 21.02.2027, final results 07.03.2027, pending an acceptable security environment."
+  },
+  {
+   "id": "S25",
+   "t": "Haitians to vote on December 13",
+   "o": "CMC",
+   "pub": "CMC (via Jamaica Observer)",
+   "d": "28.07.2026",
+   "r": "B",
+   "ty": "press",
+   "url": "https://www.jamaicaobserver.com/2026/07/28/haitians-vote-december-13/",
+   "n": "Also reports that voter registration had begun earlier in July."
+  },
+  {
+   "id": "S26",
+   "t": "Around 40 dead in gang attack near Haiti's capital",
+   "o": "KEN",
+   "pub": "AFP (via Citizen Digital)",
+   "d": "25.08.2026",
+   "r": "B",
+   "ty": "statement",
+   "url": "https://citizen.digital/article/around-40-dead-in-gang-attackear-haitis-capital-n388920",
+   "n": "Mayor Massillon Jean to AFP: about 40 killed in the attack of the night of 23 August; a camp for displaced people in a church was raided."
+  },
+  {
+   "id": "S27",
+   "t": "More than 50 kidnapped as violent gang attack in Haiti leaves 47 dead",
+   "o": "AP",
+   "pub": "Associated Press (via ABC News)",
+   "d": "25.08.2026",
+   "r": "B",
+   "ty": "press",
+   "url": "https://abcnews.com/International/wireStory/50-kidnapped-after-violent-gang-attack-haiti-leaves-135941143",
+   "n": "Relays the UN figure (47 killed, more than 50 kidnapped) and the mayor of Kenscoff."
+  },
+  {
+   "id": "S28",
+   "t": "New human rights report unveils details and blames police for recent massacre in Haiti",
+   "o": "RNDDH",
+   "pub": "Associated Press (via Jamaica Gleaner)",
+   "d": "18.09.2026",
+   "r": "B",
+   "ty": "monitor",
+   "url": "https://jamaica-gleaner.com/article/world-news/20260918/new-human-rights-report-unveils-details-and-blames-police-recent",
+   "n": "RNDDH report on the Kenscoff attacks of July, late August and mid-September: at least 164 killed, more than 70 kidnapped. The report itself is not yet held; read through AP."
+  },
+  {
+   "id": "S29",
+   "t": "Haiti: Drone Strikes Put Residents at Risk",
+   "o": "HRW",
+   "pub": "Human Rights Watch",
+   "d": "10.03.2026",
+   "r": "B",
+   "ty": "monitor",
+   "url": "https://www.hrw.org/news/2026/03/10/haiti-drone-strikes-put-residents-at-risk",
+   "n": "Before the period. Task force created 01.03.2025 by the Prime Minister and the Transitional Presidential Council, coordinated by the Prime Minister's Office (per BINUH), supported by Vectus Global; command structure not made public; contract text not public."
+  },
+  {
+   "id": "S30",
+   "t": "FRG Spokesperson Says Force Will Not Reach 5,500 Members by October",
+   "o": "GSFS",
+   "pub": "Le Nouvelliste",
+   "d": "01.09.2026",
+   "r": "A",
+   "ty": "official",
+   "url": "https://lenouvelliste.com/en/article/271511/frg-spokesperson-says-force-will-not-reach-5500-members-by-october",
+   "n": "Spokesperson Igor Rugwiza (Magik 9, 01.09) declines to give the number deployed “for operational reasons”."
+  },
+  {
+   "id": "S31",
+   "t": "Haiti: Justice and Protection Urgently Needed Following Deadly Armed Gang Attack in Kenscoff",
+   "o": "AI",
+   "pub": "Amnesty International USA",
+   "d": "26.08.2026",
+   "r": "B",
+   "ty": "monitor",
+   "url": "https://www.amnestyusa.org/press-releases/haiti-justice-and-protection-urgently-needed-following-deadly-armed-gang-attack-in-kenscoff/",
+   "n": "Dates the massacre to the night of 23–24 August."
+  },
+  {
+   "id": "S32",
+   "t": "Voter Registration for Elections to Begin on July 16, 2026",
+   "o": "LN",
+   "pub": "Le Nouvelliste",
+   "d": "09.07.2026",
+   "r": "B",
+   "ty": "press",
+   "url": "https://lenouvelliste.com/en/article/269662/voter-registration-for-elections-to-begin-on-july-16-2026",
+   "n": "Planned start, from two sources in the government and the CEP."
+  }
+ ],
+ "cells": [
+  {
+   "n": 1,
+   "id": "casualty",
+   "note": "N-509-001",
+   "label": "Casualty distribution",
+   "state": "Insufficient sourcing",
+   "tone": "gray",
+   "conf": "Not declared",
+   "orig": 1,
+   "orig_names": [
+    "UN"
+   ],
+   "scale": [
+    "Dual-sourced",
+    "Insufficient sourcing"
+   ],
+   "cur": 1,
+   "fill": "A second originator, independent of the UN, publishing a count of people killed and injured between 1 July and 30 September 2026, by actor or context. Independent counts exist for single events (Kenscoff), not for the quarter.",
+   "src": [
+    [
+     "S1",
+     "p. 6"
+    ],
+    [
+     "S2",
+     "different period"
+    ],
+    [
+     "S26",
+     "one event"
+    ],
+    [
+     "S28",
+     "one event"
+    ]
+   ],
+   "status": "held"
+  },
+  {
+   "n": 2,
+   "id": "gsf",
+   "note": "N-509-002",
+   "label": "GSF operational support and strength",
+   "state": "Insufficient sourcing",
+   "tone": "gray",
+   "conf": "Not declared",
+   "orig": 1,
+   "orig_names": [
+    "UN"
+   ],
+   "scale": [
+    "Dual-sourced",
+    "Insufficient sourcing"
+   ],
+   "cur": 1,
+   "fill": "Two originators giving the same GSF strength on a dated day inside the quarter. On 01.09 the GSF spokesperson declined to publish the number deployed.",
+   "src": [
+    [
+     "S1",
+     "pp. 20–21, 32"
+    ],
+    [
+     "S3",
+     ""
+    ],
+    [
+     "S11",
+     "relay"
+    ],
+    [
+     "S12",
+     "relay"
+    ],
+    [
+     "S30",
+     "declines figure"
+    ]
+   ],
+   "status": "held"
+  },
+  {
+   "n": 3,
+   "id": "command",
+   "note": "N-509-003",
+   "label": "Written command clarity",
+   "state": "Parallel",
+   "tone": "candidate",
+   "conf": "To be declared by the desk",
+   "orig": 2,
+   "orig_names": [
+    "UN",
+    "HRW"
+   ],
+   "scale": [
+    "Clear under GSF",
+    "Parallel",
+    "Insufficient sourcing"
+   ],
+   "cur": 1,
+   "fill": "Would change it: a published instrument placing the Prime Minister's task force (with Vectus Global personnel) under GSF command, or a UN or GSF statement that it operates in the GSF chain of command.",
+   "src": [
+    [
+     "S1",
+     "p. 19"
+    ],
+    [
+     "S29",
+     "before period"
+    ],
+    [
+     "S14",
+     ""
+    ]
+   ],
+   "status": "candidate"
+  },
+  {
+   "n": 4,
+   "id": "endstate",
+   "note": "N-509-004",
+   "label": "End-state of any parallel contingent",
+   "state": "Insufficient sourcing",
+   "tone": "gray",
+   "conf": "Not declared",
+   "orig": 0,
+   "orig_names": [],
+   "scale": [
+    "Published and met",
+    "Published, unmet",
+    "Unwritten",
+    "Insufficient sourcing"
+   ],
+   "cur": 3,
+   "fill": "A published end-state (tasks, term, departure criteria) for the task force or any other parallel contingent, from two originators. The contract term was stated only by Vectus Global's owner (one year, via HRW); the text is not public.",
+   "src": [
+    [
+     "S1",
+     "p. 19"
+    ],
+    [
+     "S29",
+     "before period"
+    ],
+    [
+     "S14",
+     ""
+    ]
+   ],
+   "status": "empty"
+  },
+  {
+   "n": 5,
+   "id": "election",
+   "note": "N-509-005",
+   "label": "Election-condition movement",
+   "state": "Insufficient sourcing",
+   "tone": "gray",
+   "conf": "Not declared",
+   "orig": 0,
+   "orig_names": [],
+   "scale": [
+    "Improved",
+    "Unchanged",
+    "Deteriorated",
+    "Insufficient sourcing"
+   ],
+   "cur": 3,
+   "fill": "A reading of each of the three Cadre 7 indicators for the quarter, each from two independent originators, against a previous signed reading. None exists: the definitions date from 03.11.2026.",
+   "src": [
+    [
+     "S1",
+     "p. 17"
+    ],
+    [
+     "S23",
+     ""
+    ],
+    [
+     "S24",
+     ""
+    ],
+    [
+     "S25",
+     ""
+    ]
+   ],
+   "status": "empty"
+  },
+  {
+   "n": 6,
+   "id": "pnh",
+   "note": "N-509-006",
+   "label": "PNH files reaching a judge / custody record",
+   "state": "No record",
+   "tone": "gray",
+   "conf": "Not declared",
+   "orig": 0,
+   "orig_names": [],
+   "scale": [
+    "Count held",
+    "No record"
+   ],
+   "cur": 1,
+   "fill": "Haitian judicial or penitentiary statistics, or two independent originators, giving a number of PNH-related files that reached a judge or a custody record between 1 July and 30 September 2026.",
+   "src": [
+    [
+     "S1",
+     "p. 30"
+    ],
+    [
+     "S2",
+     "¶10"
+    ],
+    [
+     "S28",
+     ""
+    ]
+   ],
+   "status": "empty"
+  },
+  {
+   "n": 7,
+   "id": "authority",
+   "note": "N-509-007",
+   "label": "Political authority instruments in force",
+   "state": "Partly listed",
+   "tone": "candidate",
+   "conf": "To be declared by the desk",
+   "orig": 2,
+   "orig_names": [
+    "UN",
+    "LN"
+   ],
+   "scale": [
+    "Listed and dual-sourced",
+    "Partly listed",
+    "Insufficient sourcing"
+   ],
+   "cur": 1,
+   "fill": "Each remaining instrument read from two originators with a date in the period: the executive's legal basis after 07.02.2026, the electoral budget's publication, the referendum provision. Only the electoral decree as amended on 02.07.2026 meets the test now.",
+   "src": [
+    [
+     "S3",
+     ""
+    ],
+    [
+     "S21",
+     ""
+    ],
+    [
+     "S22",
+     ""
+    ],
+    [
+     "S6",
+     "before period"
+    ],
+    [
+     "S7",
+     "before period"
+    ],
+    [
+     "S9",
+     ""
+    ],
+    [
+     "S16",
+     ""
+    ]
+   ],
+   "status": "candidate"
+  }
+ ],
+ "holders": [
+  {
+   "h": "PNH",
+   "who": "Haitian National Police",
+   "job": "Public order under Haitian law, with arrests that reach a judge.",
+   "not": "Hold people or files outside a judicial or custody record.",
+   "test": "Number of PNH-related files that reached a judge or a custody record in the quarter.",
+   "prov": "Drafted for 509 from Cadre 22 lane “order” and indicator I-1. Desk to confirm."
+  },
+  {
+   "h": "GSF",
+   "who": "UN-authorised",
+   "job": "Temporary gang suppression under stated mandate (current end 31 March 2027 unless renewed).",
+   "not": "Absorbing or being absorbed by a parallel force without a published command arrangement.",
+   "test": "Dual-sourced statement (or documented absence) of whether any parallel contingent is under GSF command.",
+   "prov": "Cadre 7, verbatim; the test widens “the Salvadoran contingent” to “any parallel contingent”."
+  },
+  {
+   "h": "Parallel force",
+   "who": "Salvadoran or other",
+   "job": "Only the tasks set out in a published instrument.",
+   "not": "Open-ended presence or independent operations whose end-state is not written.",
+   "test": "Published end-state and command line, and whether the end-state was met.",
+   "prov": "“Must not” is Cadre 7 verbatim. Job and test drafted for 509. Desk to confirm."
+  },
+  {
+   "h": "Election condition",
+   "who": "July 2027 vote",
+   "job": "Countable measure of usable space for a July 2027 vote.",
+   "not": "Treating troop numbers as a substitute for voter access.",
+   "test": "Movement in three indicators — main roads under sustained observation, % of electorate outside gang-controlled territory, number of polling stations supplyable without airlift.",
+   "prov": "Cadre 7, verbatim."
+  },
+  {
+   "h": "Political authority",
+   "who": "Haitian executive and legislature",
+   "job": "Exercise authority under an instrument legally in force.",
+   "not": "Exercise authority whose legal basis is unwritten or expired.",
+   "test": "Instruments legally in force during the quarter, each dual-sourced.",
+   "prov": "Drafted for 509. Desk to confirm."
+  }
+ ],
+ "notes": [
+  {
+   "id": "N-509-001",
+   "cell": "casualty",
+   "q": "What is the independently verified Q3 casualty distribution?",
+   "ans": "Not independently verified. One originator holds a quarterly count.",
+   "body": [
+    [
+     "The UN (BINUH Human Rights Service) records at least 1,167 people killed and 459 injured between 1 July and 30 September 2026: 45% during gang attacks; 50% during operations by national security forces, including extrajudicial executions involving police officers, actions by a private military company, and GSF patrols; and 5% during violence by self-defense groups and unorganized members of the population (“Bwa Kalé”).",
+     [
+      "S1|p. 6"
+     ]
+    ],
+    [
+     "By place, the report gives 85% for the Port-au-Prince metropolitan area in its text and 85% for the West Department on its map, then 12% Artibonite, 2% Grand Nord, 1% Centre. See D-509-05.",
+     [
+      "S1|p. 6"
+     ]
+    ],
+    [
+     "S/2026/800 counts 1,123 killed and 440 injured between 15 July and 12 October 2026, 52% of them during security operations. It is the same originator, and its period is different: it is neither combined with the quarterly figure nor counted as corroboration.",
+     [
+      "S2"
+     ]
+    ],
+    [
+     "Independent counts exist for one event only. For the attack on Kenscoff on the night of 23–24 August, the mayor of Kenscoff told AFP about 40 were killed; the UN counts at least 47 killed and 52 kidnapped; RNDDH counts at least 164 killed and more than 70 kidnapped across the July, late-August and mid-September attacks. The scopes differ; see D-509-09.",
+     [
+      "S26",
+      "S1|pp. 12–13",
+      "S28"
+     ]
+    ]
+   ],
+   "plate": "casualty"
+  },
+  {
+   "id": "N-509-002",
+   "cell": "gsf",
+   "q": "What operational support and strength are independently established for GSF?",
+   "ans": "Neither is independently established. Each figure rests on one originator.",
+   "body": [
+    [
+     "Strength: 1,083 military and 16 civilian personnel on 8 July 2026 (UN).",
+     [
+      "S3"
+     ]
+    ],
+    [
+     "About 1,500 troops deployed, according to the United States ambassador to the UN, 29 September 2026. One originator, relayed by two outlets.",
+     [
+      "S11",
+      "S12"
+     ]
+    ],
+    [
+     "Ceiling: 5,500 uniformed personnel and 50 civilians.",
+     [
+      "S8"
+     ]
+    ],
+    [
+     "On 1 September the GSF spokesperson said the force would not reach 5,500 by October and declined to give the number deployed, citing operational reasons.",
+     [
+      "S30"
+     ]
+    ],
+    [
+     "Operations: starting in September, the GSF supported at least six operations by HNP specialised units (Croix-des-Bouquets, Kenscoff, Port-au-Prince and Tabarre; Dessalines), continued patrols in Cité Soleil and Tabarre, and conducted at least two independent operations (Port-au-Prince, Gros-Morne). Nine gang members were killed and two injured; about 20 people were arrested.",
+     [
+      "S1|pp. 20–21"
+     ]
+    ],
+    [
+     "The Human Rights Service monitored seven GSF operations during the quarter. See D-509-07.",
+     [
+      "S1|p. 32"
+     ]
+    ],
+    [
+     "804 GSF personnel (767 men, 37 women) attended human-rights sessions. This is a training count, not a strength figure.",
+     [
+      "S1|p. 32"
+     ]
+    ],
+    [
+     "Between 6 March and 31 July 2026 the force did not take part in operations against gangs in La Plaine du Cul-de-Sac and Cité Soleil.",
+     [
+      "S4"
+     ]
+    ]
+   ],
+   "plate": "gsf"
+  },
+  {
+   "id": "N-509-003",
+   "cell": "command",
+   "q": "Does a written instrument place any parallel contingent under GSF command?",
+   "ans": "Candidate: no. The parallel force on record answers to the Prime Minister's Office.",
+   "body": [
+    [
+     "BINUH describes a government-established “task force” of police officers and personnel from a foreign private military company conducting ground and explosive-drone operations, and cites no instrument governing it.",
+     [
+      "S1|p. 19"
+     ]
+    ],
+    [
+     "Human Rights Watch records that the task force was created on 1 March 2025 by the Prime Minister and the Transitional Presidential Council, is coordinated by the Prime Minister's Office according to BINUH, operates with support from Vectus Global, and that its command structure has not been made public.",
+     [
+      "S29"
+     ]
+    ],
+    [
+     "Two originators, one dated in the quarter, describe the force outside the GSF line of command. No written instrument places it under GSF command. The desk has not declared confidence; the judgment is unsigned.",
+     []
+    ],
+    [
+     "El Salvador's transitional law (29 September, in force 2 October) concerns participation in the GSF, not a parallel contingent.",
+     [
+      "S14"
+     ]
+    ]
+   ]
+  },
+  {
+   "id": "N-509-004",
+   "cell": "endstate",
+   "q": "What is the end-state status of any parallel contingent?",
+   "ans": "No published end-state for any parallel contingent is held.",
+   "body": [
+    [
+     "BINUH states no end-state, term or mandate for the private military company personnel in the government task force.",
+     [
+      "S1|p. 19"
+     ]
+    ],
+    [
+     "Vectus Global's owner has said the company signed a one-year contract with the transitional government. One originator, before the period; the contract text is not public.",
+     [
+      "S29"
+     ]
+    ],
+    [
+     "El Salvador’s law sets a 12-month term from 2 October 2026 for participation in the GSF. It is not an end-state for a parallel contingent and is not counted here.",
+     [
+      "S14"
+     ]
+    ]
+   ]
+  },
+  {
+   "id": "N-509-005",
+   "cell": "election",
+   "q": "What movement is independently established across three election indicators?",
+   "ans": "None. No reading of the three indicators exists for the quarter.",
+   "body": [
+    [
+     "The indicator definitions (Cadre 7, v1) date from 03.11.2026, after the period, and remain a draft until the first signed Cadre 7 reading. There is no baseline and no reading.",
+     []
+    ],
+    [
+     "The electoral calendar itself is dual-sourced for the quarter: published by the CEP on 27 July (first round 13.12.2026, runoff 21.02.2027), reported by The Haitian Times, AFP and CMC. It was superseded on 28.10.2026.",
+     [
+      "S23",
+      "S24",
+      "S25"
+     ]
+    ],
+    [
+     "Context, not indicator values: BINUH documents gang interference in the electoral process. The Brooklyn gang leader reportedly drew up a list of candidates for Cité Soleil, and on 29 July shot dead two residents for denouncing it. On the night of 23–24 September former deputy Dupner Clément was found dead in Baradères; no link to his political activities was established. In a statement dated 1 September, the leader of the 400 Mawozo gang proclaimed himself “mayor of Croix-des-Bouquets”.",
+     [
+      "S1|p. 17"
+     ]
+    ]
+   ],
+   "plate": "calendar"
+  },
+  {
+   "id": "N-509-006",
+   "cell": "pnh",
+   "q": "How many PNH-related files reached a judge or custody record?",
+   "ans": "No record. No source held gives this number.",
+   "body": [
+    [
+     "The HRS documented 44 cases of extrajudicial executions and attempted extrajudicial executions involving HNP personnel (37 deaths, 7 injuries). They will be referred to the General Inspectorate (IGPNH) in the fourth quarter of 2026.",
+     [
+      "S1|p. 30"
+     ]
+    ],
+    [
+     "Of 279 cases (308 victims) referred to the IGPNH in 2025 and 2026, 257 remain under investigation and 22 have been finalised but await closure reports. The IGPNH is the police inspectorate, not a judge; none of these figures is counted here.",
+     [
+      "S1|p. 30"
+     ]
+    ],
+    [
+     "The HRS has received no information that the authorities opened investigations into deaths and injuries caused during security force operations.",
+     [
+      "S1|p. 19"
+     ]
+    ],
+    [
+     "Custody: a transfer agreement for people apprehended during operations was signed on 14 July 2026. Its text is not public and it counts no one. The disposition of the roughly 20 people arrested in GSF operations is not reported.",
+     [
+      "S2|¶10",
+      "S1|p. 21"
+     ]
+    ],
+    [
+     "RNDDH's report on the Kenscoff attacks criticises police passivity and the withdrawal of units; as relayed, it mentions no judicial proceedings.",
+     [
+      "S28"
+     ]
+    ]
+   ]
+  },
+  {
+   "id": "N-509-007",
+   "cell": "authority",
+   "q": "Which political authority instruments were legally in force during Q3 2026?",
+   "ans": "Candidate: partly listed. One instrument meets the two-originator test.",
+   "body": [
+    [
+     "Electoral decree. The government published a decree on 2 June 2026; amendments agreed with the CEP and political parties were published in Le Moniteur on 2 July 2026, without republishing the full text. Two originators; dated in the quarter.",
+     [
+      "S3",
+      "S21"
+     ]
+    ],
+    [
+     "Electoral budget. The Prime Minister's Office and the CEP announced agreement on a US$120 million budget on 3 July; on 28 July it had not yet been approved by the Cabinet or published.",
+     [
+      "S22",
+      "S23"
+     ]
+    ],
+    [
+     "Carried, dated before the period: the Transitional Presidential Council's mandate ended on 7 February 2026 with no successor council; authority sits with an unelected prime minister, Alix Didier Fils-Aimé, without a president or parliament. Two originators, both 02.2026; not re-read for the quarter.",
+     [
+      "S6",
+      "S7"
+     ]
+    ],
+    [
+     "International instruments: Resolution 2793 (30.09.2025) authorised the GSF; Resolution 2829 renewed it on 29.09.2026 to 31.03.2027; Resolution 2814 extends BINUH to 31.01.2027; the UN sanctions regime runs to October 2027.",
+     [
+      "S8",
+      "S9",
+      "S16",
+      "S1|p. 29"
+     ]
+    ],
+    [
+     "Not yet in force: the new Criminal Code and Code of Criminal Procedure (decree of March 2020, revised June 2025), expected early 2027.",
+     [
+      "S1|p. 26"
+     ]
+    ],
+    [
+     "Whether international mandates count as political-authority instruments is left to the desk.",
+     []
+    ]
+   ]
+  }
+ ],
+ "plates": {
+  "casualty": {
+   "title": "Killed and injured, by actor or context",
+   "denom": "1,167 killed and 459 injured, combined",
+   "period": "01.07–30.09.2026",
+   "src": "S1|p. 6",
+   "rows": [
+    [
+     "During gang attacks",
+     45
+    ],
+    [
+     "During security force operations (incl. extrajudicial executions, PMC actions, GSF patrols)",
+     50
+    ],
+    [
+     "Self-defense groups and unorganized members of the population (“Bwa Kalé”)",
+     5
+    ]
+   ],
+   "geo_title": "By place",
+   "geo_note": "Text: Port-au-Prince metropolitan area. Map label: West Department. See D-509-05.",
+   "geo": [
+    [
+     "Port-au-Prince metro area / West",
+     85
+    ],
+    [
+     "Artibonite",
+     12
+    ],
+    [
+     "Grand Nord",
+     2
+    ],
+    [
+     "Centre",
+     1
+    ]
+   ],
+   "valnote": "BINUH publishes percentages only for this breakdown. Counts per context are not published and are not derived here."
+  },
+  "gsf": {
+   "title": "GSF personnel figures, in date order",
+   "note": "Figures are not added together. Each is a different category from a different originator.",
+   "ceiling": 5500,
+   "pts": [
+    {
+     "d": "08.07.2026",
+     "x": 0.08,
+     "v": 1083,
+     "lab": "1,083 military (+16 civilian)",
+     "cat": "GSF strength",
+     "o": "UN",
+     "src": "S3",
+     "in": true
+    },
+    {
+     "d": "01.09.2026",
+     "x": 0.67,
+     "v": 0,
+     "lab": "figure withheld",
+     "cat": "Recorded absence (GSF spokesperson)",
+     "o": "GSFS",
+     "src": "S30",
+     "in": true,
+     "absent": true
+    },
+    {
+     "d": "29.09.2026",
+     "x": 0.97,
+     "v": 1500,
+     "lab": "about 1,500 troops deployed",
+     "cat": "Statement (US ambassador to the UN)",
+     "o": "USM",
+     "src": "S11, S12",
+     "in": true
+    },
+    {
+     "d": "12.10.2026",
+     "x": 1.1,
+     "v": 1563,
+     "lab": "1,563 uniformed (+29 civilian)",
+     "cat": "GSF strength — after the period",
+     "o": "UN",
+     "src": "S2",
+     "in": false
+    }
+   ],
+   "aside": "804 GSF personnel attended HRS human-rights sessions during the quarter (S1, p. 32). Training count; not plotted."
+  },
+  "calendar": {
+   "title": "Election calendar as held",
+   "items": [
+    {
+     "d": "02.06.2026",
+     "k": "official",
+     "t": "Electoral decree published by the government (before the period)",
+     "src": "S21",
+     "o": 1
+    },
+    {
+     "d": "02.07.2026",
+     "k": "official",
+     "t": "Amendments to the electoral decree published in Le Moniteur",
+     "src": "S3, S21",
+     "o": 2
+    },
+    {
+     "d": "03.07.2026",
+     "k": "official",
+     "t": "Electoral budget of US$120 million agreed by the CEP and the government",
+     "src": "S3, S22",
+     "o": 2
+    },
+    {
+     "d": "20.07.2026",
+     "k": "unconfirmed",
+     "t": "Voter registration begins in nine of ten departments (West excluded); planned for 16.07",
+     "src": "S23, S32",
+     "o": 1
+    },
+    {
+     "d": "27.07.2026",
+     "k": "official",
+     "t": "CEP publishes the electoral calendar",
+     "src": "S23, S24, S25",
+     "o": 3
+    },
+    {
+     "d": "04.08.2026",
+     "k": "unconfirmed",
+     "t": "Voter registration in its second week, extending into the West",
+     "src": "S15",
+     "o": 1
+    },
+    {
+     "d": "20.08.2026",
+     "k": "unconfirmed",
+     "t": "Candidate registration opens (to 02.10)",
+     "src": "S23",
+     "o": 1
+    },
+    {
+     "d": "28.10.2026",
+     "k": "revised",
+     "t": "Revised calendar published by the CEP (after the period)",
+     "src": "S17, S18, S19, S20",
+     "o": 4
+    },
+    {
+     "d": "13.12.2026",
+     "k": "superseded",
+     "t": "First round, as published 27.07; postponed",
+     "src": "S23, S24, S25",
+     "o": 3
+    },
+    {
+     "d": "21.02.2027",
+     "k": "superseded",
+     "t": "Runoff with local elections, as published 27.07",
+     "src": "S23, S24, S25",
+     "o": 3
+    },
+    {
+     "d": "20.05.2027",
+     "k": "revised",
+     "t": "Voter register closes",
+     "src": "S17, S18",
+     "o": 2
+    },
+    {
+     "d": "18.07.2027",
+     "k": "revised",
+     "t": "First round",
+     "src": "S17, S18, S19, S20",
+     "o": 4
+    },
+    {
+     "d": "04.10.2027",
+     "k": "revised",
+     "t": "Second round",
+     "src": "S17, S18, S19, S20",
+     "o": 4
+    }
+   ],
+   "tentative": "No tentative date is held."
+  },
+  "map": {
+   "title": "Where the record places things",
+   "note": "Coverage, not control. Shading is BINUH's share of people killed and injured by area; markers are places the record names. Positions are approximate, at commune level.",
+   "shares": {
+    "ouest": [
+     85,
+     "West — 85%"
+    ],
+    "artibonite": [
+     12,
+     "Artibonite — 12%"
+    ],
+    "centre": [
+     1,
+     "Centre — 1%"
+    ],
+    "nord": [
+     2,
+     "Grand Nord — 2%"
+    ],
+    "nord-est": [
+     2,
+     null
+    ],
+    "nord-ouest": [
+     2,
+     null
+    ]
+   },
+   "group": "Grand Nord (2%) is reported as one area; the three northern departments share its tint. BINUH's text gives the 85% to the Port-au-Prince metropolitan area and its map to the West Department (D-509-05). No share is reported for the south.",
+   "metro": {
+    "lat": 18.55,
+    "lon": -72.3,
+    "label": "Port-au-Prince metropolitan area"
+   },
+   "places": [
+    {
+     "n": "Kenscoff",
+     "lat": 18.45,
+     "lon": -72.29,
+     "metro": true,
+     "dual": true,
+     "t": "Attack of the night of 23–24 August; GSF-supported police operations from September.",
+     "src": [
+      "S1|pp. 12–13, 20",
+      "S26",
+      "S27",
+      "S31"
+     ]
+    },
+    {
+     "n": "Port-au-Prince",
+     "lat": 18.54,
+     "lon": -72.34,
+     "metro": true,
+     "dual": false,
+     "t": "GSF-supported and independent operations from September.",
+     "src": [
+      "S1|pp. 20–21"
+     ]
+    },
+    {
+     "n": "Cité Soleil",
+     "lat": 18.58,
+     "lon": -72.33,
+     "metro": true,
+     "dual": false,
+     "t": "GSF patrols; gang leader's list of candidates, two residents shot dead 29 July.",
+     "src": [
+      "S1|pp. 17, 20"
+     ]
+    },
+    {
+     "n": "Tabarre",
+     "lat": 18.58,
+     "lon": -72.27,
+     "metro": true,
+     "dual": false,
+     "t": "GSF patrols and supported operations.",
+     "src": [
+      "S1|p. 20"
+     ]
+    },
+    {
+     "n": "Croix-des-Bouquets",
+     "lat": 18.58,
+     "lon": -72.23,
+     "metro": true,
+     "dual": false,
+     "t": "GSF-supported operations; 400 Mawozo leader's statement of 1 September.",
+     "src": [
+      "S1|pp. 17, 20"
+     ]
+    },
+    {
+     "n": "Dessalines",
+     "lat": 19.26,
+     "lon": -72.52,
+     "metro": false,
+     "dual": false,
+     "t": "GSF-supported police operation.",
+     "src": [
+      "S1|p. 20"
+     ],
+     "dx": 14,
+     "dy": 4
+    },
+    {
+     "n": "Gros-Morne",
+     "lat": 19.67,
+     "lon": -72.68,
+     "metro": false,
+     "dual": false,
+     "t": "Independent GSF operation.",
+     "src": [
+      "S1|p. 21"
+     ],
+     "dx": -14,
+     "dy": 4,
+     "anchor": "end"
+    },
+    {
+     "n": "Baradères",
+     "lat": 18.48,
+     "lon": -73.64,
+     "metro": false,
+     "dual": false,
+     "t": "Former deputy Dupner Clément found dead, night of 23–24 September; no political link established.",
+     "src": [
+      "S1|p. 17"
+     ],
+     "dx": 0,
+     "dy": -16
+    }
+   ]
+  },
+  "trend": {
+   "title": "Second and third quarter 2026, as BINUH counts them",
+   "note": "One originator for every figure. Shown as counted; nothing derived.",
+   "src": "S1|pp. 6, 21, fn. 2, 7",
+   "rows": [
+    [
+     "Killed",
+     1408,
+     1167
+    ],
+    [
+     "Injured",
+     656,
+     459
+    ],
+    [
+     "Kidnapped",
+     81,
+     137
+    ]
+   ],
+   "aside": "BINUH describes the kidnapping figure as a 68 percent increase on the previous quarter."
+  }
+ },
+ "registerB": [
+  {
+   "k": "Main roads under sustained observation",
+   "unit": "segments counted, out of 5",
+   "def": "Five segments: RN1 Port-au-Prince–Saint-Marc · RN2 Port-au-Prince–Léogâne · RN3 Port-au-Prince–Mirebalais · RN8 Port-au-Prince–Malpasse · RN5 Gonaïves–Port-de-Paix. A segment counts when two independent originators report it open to civilian traffic for most of the month, or report a standing security presence along it without a closure."
+  },
+  {
+   "k": "% of electorate outside gang-controlled territory",
+   "unit": "percentage",
+   "def": "Share of the voting-age population (IHSI estimates) living in communes that have at least one operational registration-and-voting centre (CEP list) and that no two independent originators describe as gang-controlled that month."
+  },
+  {
+   "k": "Polling stations supplyable without airlift",
+   "unit": "count of centres (movement measured in % of centres)",
+   "def": "Operational registration-and-voting centres (CEP) minus those in communes that two independent originators report as reachable only by air that month."
+  }
+ ],
+ "movement_rule": "Against the previous signed month: improved or deteriorated when at least two indicators move the same way (±1 road segment, ±2 percentage points, ±2 % of centres) and none moves against them; otherwise unchanged.",
+ "chronology": [
+  {
+   "d": "02.07.2026",
+   "e": "Amendments to the electoral decree of 2 June are published in Le Moniteur, agreed by the CEP, the government and political parties.",
+   "src": [
+    "S3",
+    "S21"
+   ],
+   "orig": [
+    "UN",
+    "LN"
+   ]
+  },
+  {
+   "d": "03.07.2026",
+   "e": "The Prime Minister's Office and the CEP announce agreement on a US$120 million electoral budget.",
+   "src": [
+    "S3",
+    "S22"
+   ],
+   "orig": [
+    "UN",
+    "OPMCEP"
+   ]
+  },
+  {
+   "d": "27.07.2026",
+   "e": "The CEP publishes the electoral calendar: first round 13 December 2026, runoff and local elections 21 February 2027. Superseded 28.10.2026.",
+   "src": [
+    "S23",
+    "S24",
+    "S25"
+   ],
+   "orig": [
+    "HT",
+    "AFP",
+    "CMC"
+   ]
+  },
+  {
+   "d": "23–24.08.2026",
+   "e": "Gangs attack Kenscoff overnight, including a church sheltering displaced people. Counts differ: about 40 killed (mayor), at least 47 killed and 52 kidnapped (UN).",
+   "src": [
+    "S1",
+    "S26",
+    "S27",
+    "S31"
+   ],
+   "orig": [
+    "UN",
+    "KEN",
+    "AP",
+    "AI"
+   ]
+  },
+  {
+   "d": "29.09.2026",
+   "e": "The Security Council adopts Resolution 2829 by 12 votes to none, with China, Pakistan and Russia abstaining. The GSF mandate now runs to 31 March 2027.",
+   "src": [
+    "S9",
+    "S10",
+    "S11",
+    "S12"
+   ],
+   "orig": [
+    "UNSC",
+    "SCR",
+    "REU",
+    "AJ"
+   ]
+  }
+ ],
+ "held_single": [
+  {
+   "d": "08.07.2026",
+   "e": "GSF at 1,083 military and 16 civilian personnel.",
+   "src": [
+    "S3"
+   ]
+  },
+  {
+   "d": "14.07.2026",
+   "e": "Transfer agreement for people apprehended during operations signed; text not public.",
+   "src": [
+    "S2"
+   ]
+  },
+  {
+   "d": "20.07.2026",
+   "e": "Voter registration begins in nine of ten departments.",
+   "src": [
+    "S23"
+   ],
+   "why": "Date from one originator; CMC confirms a start in July without a date."
+  },
+  {
+   "d": "01.09.2026",
+   "e": "GSF spokesperson declines to give the number deployed.",
+   "src": [
+    "S30"
+   ]
+  },
+  {
+   "d": "17.09.2026",
+   "e": "RNDDH report: at least 164 killed and more than 70 kidnapped in the Kenscoff attacks of July–September.",
+   "src": [
+    "S28"
+   ]
+  },
+  {
+   "d": "29.09.2026",
+   "e": "About 1,500 GSF troops deployed, per the US ambassador to the UN.",
+   "src": [
+    "S11",
+    "S12"
+   ],
+   "why": "One originator, two channels."
+  },
+  {
+   "d": "29.09.2026",
+   "e": "El Salvador's transitional law on participation in the GSF passed; in force 02.10.",
+   "src": [
+    "S14"
+   ]
+  }
+ ],
+ "discrepancies": [
+  {
+   "id": "D-509-01",
+   "k": "Kidnapping victims, Q3",
+   "a": "137 (100 men, 23 women, 8 boys, 6 girls) — S1, p. 21 and fn. 27",
+   "b": "136 — S1, fn. 28; 136 (99 men, 23 women, 8 boys, 6 girls), 01.07–01.10.2026 — S2",
+   "st": "Not reconciled. Same originator; periods differ by one day."
+  },
+  {
+   "id": "D-509-02",
+   "k": "Date of the second Kenscoff attack",
+   "a": "23–24 August 2026 — S1, pp. 7, 12–13",
+   "b": "“the 23-24 September attack on Kenscoff” — S1, p. 22",
+   "st": "Not reconciled inside S1. AFP, AP and Amnesty International date the attack 23–24 August (S26, S27, S31)."
+  },
+  {
+   "id": "D-509-03",
+   "k": "Kenscoff hostages released",
+   "a": "About 40 released by the end of September — S1, p. 13",
+   "b": "13 of 52 later freed through local initiatives supported by the UN — S5 (19.10.2026)",
+   "st": "Not reconciled. Same originator; different dates and wording."
+  },
+  {
+   "id": "D-509-04",
+   "k": "Share of rape victims not raped during the quarter",
+   "a": "“The other 70 percent” — S1, p. 22",
+   "b": "65 per cent — S1, fn. 4 and fn. 29 (344 of 985 = 35%)",
+   "st": "Not reconciled. Internal to S1."
+  },
+  {
+   "id": "D-509-05",
+   "k": "Geography of the 85%",
+   "a": "Port-au-Prince metropolitan area — S1, p. 6, text",
+   "b": "West Department — S1, p. 6, map label",
+   "st": "Not reconciled. Internal to S1."
+  },
+  {
+   "id": "D-509-06",
+   "k": "Rape victims, July–August",
+   "a": "344 victims raped during the quarter, of 985 documented — S1, p. 22",
+   "b": "689 women and girls reportedly raped in July and August — S5",
+   "st": "Different measures and periods. Not combined."
+  },
+  {
+   "id": "D-509-07",
+   "k": "GSF operations in the quarter",
+   "a": "At least 6 supported + at least 2 independent — S1, p. 20",
+   "b": "7 GSF operations monitored by the HRS — S1, p. 32",
+   "st": "Not reconciled. “At least” and “monitored” may describe different sets."
+  },
+  {
+   "id": "D-509-08",
+   "k": "Killed and injured, Q3",
+   "a": "1,167 killed · 459 injured, 01.07–30.09.2026 — S1",
+   "b": "1,123 killed · 440 injured, 15.07–12.10.2026 — S2",
+   "st": "Different periods. Not a discrepancy, not combined, not corroboration."
+  },
+  {
+   "id": "D-509-09",
+   "k": "Kenscoff toll, attack of 23–24 August",
+   "a": "At least 47 killed, 52 kidnapped — S1, p. 12; about 40 killed — mayor of Kenscoff, S26",
+   "b": "At least 164 killed, more than 70 kidnapped across the July, August and September attacks — RNDDH, S28",
+   "st": "Different scopes and dates. Not combined."
+  },
+  {
+   "id": "D-509-10",
+   "k": "Start of voter registration",
+   "a": "Planned for 16 July — S32 (two sources, 09.07)",
+   "b": "Began 20 July in nine departments — S23",
+   "st": "Plan against report. Not a contradiction; the reported date is single-source."
+  }
+ ],
+ "errors": [
+  {
+   "d": "04.09.2026",
+   "x": "Cadre 509 v1.0, chronology: “A first electoral round is set for 13 December 2026”, dated 04.09.2026.",
+   "why": "Dated by the record, not the event. The CEP published the calendar on 27.07.2026 (S23, S24, S25). Struck 16.11.2026; entry moved to 27.07.2026.",
+   "from": "Cadre 509"
+  },
+  {
+   "d": "04.09.2026",
+   "x": "Cadre 22, indicator I-6: reading “0 of 3” (Note 001).",
+   "why": "Misread: the framework had been public since 15.01.2026 (S/2026/31, Annex II). Struck 20.10.2026.",
+   "from": "Cadre 22"
+  },
+  {
+   "d": "29.09.2026",
+   "x": "Cadre 22, indicator I-6: reading “0 of 3” (S/RES/2829, read from secondary summary).",
+   "why": "Misread: the framework had been public since 15.01.2026 (S/2026/31, Annex II). Struck 20.10.2026.",
+   "from": "Cadre 22"
+  }
+ ],
+ "method": [
+  "Two independent originators or empty.",
+  "A republication of the same report is not corroboration; one originator through two channels counts once.",
+  "Candidate: a cell that meets the originator test but has no declared confidence. It is shown, unsigned, until the desk signs or strikes it.",
+  "Confidence declared before claim; never raised after.",
+  "Sources graded A (official or primary), B (established press or monitor), C (not yet graded: listed, never counted).",
+  "Every judgment marked signed or unsigned.",
+  "Empty is a result. An empty cell is never filled by inference.",
+  "Errors struck through, never deleted.",
+  "Quarterly unit: 1 July–30 September 2026.",
+  "No policy recommendations. No targeting lists. No operational advice.",
+  "One question per note. Objects over narrative."
+ ],
+ "cell_order_note": "Candidate: two independent originators, one dated in the quarter; awaiting the desk's confidence and signature.",
+ "revisions": [
+  "Title: “Elite Intel Report” replaced by “Quarterly Record”. Subtitle shortened to “Security allocation and parallel force”.",
+  "Section names: Objects → Notes; Held, not listed → Single-source events; “What would fill this cell” → “What would complete this cell”.",
+  "New status, Candidate: originator test met, confidence and signature left to the desk. Two cells move from empty to candidate: 03 Written command clarity (Parallel) and 07 Political authority instruments (Partly listed).",
+  "Twelve sources added (S21–S32) from a search on 16.11.2026; every one is linked, dated and graded.",
+  "Chronology: three new dual-sourced entries (02.07, 03.07, 23–24.08); the 13 December entry is re-dated to 27.07, its event date. The v1.0 date is struck in E-509.",
+  "Election calendar rebuilt: 13 dated items with originator counts, including the 02.07 decree, the 03.07 budget, the start of registration and candidate registration.",
+  "Two discrepancies added (D-509-09 Kenscoff toll; D-509-10 start of registration). D-509-02 now notes three outside sources dating the attack 23–24 August.",
+  "GSF plate: the spokesperson's refusal to publish a figure (01.09) is shown as a recorded absence.",
+  "Mark: the Legba vèvè (keeper of the gate) replaces the borrowed Cadre 7 line mark. It is poured on load and used as the seal.",
+  "Interface: board filter, reading progress, section index that follows the reader, reveal on scroll, originator meters that fill in view, expand or collapse all notes, highlighted source on arrival, print button. All static under reduced motion and without JavaScript.",
+  "PDF: same record, A4, running header now reads “Quarterly Record”.",
+  "v1.2 — The vèvè is now poured, not drawn: grains of cornmeal fall from a moving hand, the upright of the crossroads first, then the crossbar, each from the centre outward. The crisp mark settles over the grains and stands in candlelight. “Trace again” repeats it; any tap or key finishes it.",
+  "v1.2 — A rail of eight signs on the left edge finds the sections: crossroads (Board), cane (Holders), leaf (Notes), lattice (Registers), volute (Chronology), gate (Method), star (Sources), eye (Revisions). The same sign heads each section and its entry in the top index. Keys 1–8 jump to a section.",
+  "v1.2 — Interface: the rail shows reading progress; the top index keeps the current section in view on small screens; section headings draw in. No record content changed.",
+  "v1.3 — New section 02, Plates: an evidence matrix (which originator supports which cell, counted or only held), the quarter on one line (dual-sourced against single-source events), a map of the places the record names over BINUH's casualty shares, and BINUH's second- and third-quarter counts side by side.",
+  "v1.3 — Sections renumbered 01–09; a ninth sign (compass) for Plates. Every plate is drawn from the record, carries its originator count, and adds no figure the record does not hold."
+ ]
+}
