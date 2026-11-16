@@ -12,8 +12,8 @@
   "principle": "The record speaks. The desk does not fill its silences.",
   "basis": "Built from the BINUH quarterly human-rights report for July–September 2026, the Cadre 22 and Cadre 7 records, and a source search on 16.11.2026. The expanded Cadre 509 draft was not supplied; nothing in it is reproduced.",
   "kicker": "Quarterly evidentiary record",
-  "version": "v1.3 · 16.11.2026",
-  "previous": "v1.2 · 16.11.2026"
+  "version": "v1.4 · 16.11.2026",
+  "previous": "v1.3 · 16.11.2026"
  },
  "originators": {
   "UN": "United Nations — BINUH / Secretariat",
@@ -1586,6 +1586,7 @@
   "v1.2 — A rail of eight signs on the left edge finds the sections: crossroads (Board), cane (Holders), leaf (Notes), lattice (Registers), volute (Chronology), gate (Method), star (Sources), eye (Revisions). The same sign heads each section and its entry in the top index. Keys 1–8 jump to a section.",
   "v1.2 — Interface: the rail shows reading progress; the top index keeps the current section in view on small screens; section headings draw in. No record content changed.",
   "v1.3 — New section 02, Plates: an evidence matrix (which originator supports which cell, counted or only held), the quarter on one line (dual-sourced against single-source events), a map of the places the record names over BINUH's casualty shares, and BINUH's second- and third-quarter counts side by side.",
-  "v1.3 — Sections renumbered 01–09; a ninth sign (compass) for Plates. Every plate is drawn from the record, carries its originator count, and adds no figure the record does not hold."
+  "v1.3 — Sections renumbered 01–09; a ninth sign (compass) for Plates. Every plate is drawn from the record, carries its originator count, and adds no figure the record does not hold.",
+  "v1.4 — New mark, supplied by the desk: 777, a radiant circle holding a triangle and an inner circle between two crossed rings, 509. It replaces the Legba vèvè on the cover, in the header and as the seal. On load it burns: each line catches from the centre, flares, cools through orange and red, and is left as ash, with sparks lifting off; afterwards it smoulders. “Burn again” repeats it; any tap or key finishes it. The same mark and burn sit on the Cadre 509 door of the hub. No record content changed."
  ]
 }
