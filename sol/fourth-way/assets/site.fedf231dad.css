@@ -83,7 +83,6 @@
 
   /* Continuous temperature endpoints. JS mixes --bg toward these by scroll. */
   --bg-heat:     #000000;   /* stage 02 at its deepest: absolute black       */
-  --bg-warm:     #1A1A1A;   /* stage 04: the ground lifts as the gap opens   */
 
   /* ---- Stage 01 · Mechanical: ash, Matrix kana ---------------------------- */
   --bg:          #0A0A0A;
@@ -143,6 +142,23 @@
   --art-ink:     #B0B0B0;
   --script:      "BTB Enochian";
 }
+
+/* ---- The gap: the one light surface. A cut, not a fade. ------------------ */
+:root.is-gap {
+  --bg:          #F2F2F2;
+  --bg-raised:   #E6E6E6;
+  --text:        #1C1C1C;   /* 15.1:1 */
+  --text-strong: #000000;
+  --text-dim:    #5C5C5C;   /* 5.9:1  */
+  --rule:        #C8C8C8;
+  --mark:        #000000;
+  --accent:      #000000;
+  --accent-text: #000000;
+  --gold:        #000000;
+  --gold-text:   #000000;
+  --glow:        none;
+}
+
 
 @media (prefers-reduced-motion: reduce) {
   :root {
@@ -610,6 +626,7 @@ html.is-still .presence-copy > :not(.text-link):not(.presence-status) { opacity:
 .sigil.is-live .sigil-img { display: none; }
 .sigil.is-live canvas { display: block; }
 @media (max-width: 1099px) { .hero { overflow-x: clip; } .sigil { max-width: 300px !important; } }
+@media (max-width: 560px) { .sigil { max-width: 216px !important; } }
 .sigil.is-live { cursor: crosshair; }
 .descend {
   position: absolute; right: 0; bottom: var(--s-6); display: grid; justify-items: center; gap: var(--s-3);
@@ -896,11 +913,14 @@ dfn:hover, dfn:focus-visible { color: var(--text-strong); border-bottom-color: v
 
 /* ---------- v4 "Ink": glyph layers, grain, decode ------------------------- */
 /* Film grain: a 1-bit noise tile, jittered in steps. HD texture, no hue. */
-.grain { position: fixed; inset: -50%; z-index: 0; pointer-events: none; opacity: .045;
-  background-image: var(--grain); background-size: 220px 220px; animation: grain 0.9s steps(6) infinite; }
+.grain { position: fixed; inset: 0; z-index: 0; pointer-events: none; opacity: var(--grain-o, .045);
+  background-image: var(--grain); background-size: 220px 220px; }
+/* The grain jitters by shifting its tile, never by moving a layer larger than the screen.
+   Pointer devices only: on phones it stays still. */
+@media (hover: hover) and (min-width: 900px) { .grain { animation: grain 0.9s steps(1) infinite; } }
 @keyframes grain {
-  0% { transform: translate(0, 0); } 17% { transform: translate(-3%, 2%); } 33% { transform: translate(2%, -4%); }
-  50% { transform: translate(-1%, 3%); } 67% { transform: translate(4%, 1%); } 83% { transform: translate(-2%, -2%); } 100% { transform: translate(0, 0); } }
+  0% { background-position: 0 0; } 17% { background-position: -37px 61px; } 33% { background-position: 83px -29px; }
+  50% { background-position: -71px -53px; } 67% { background-position: 47px 97px; } 83% { background-position: -13px 19px; } 100% { background-position: 0 0; } }
 @media (prefers-reduced-motion: reduce) { .grain { animation: none; } }
 /* Gap light: the closing line glows white instead of gold. */
 .diag-b { text-shadow: 0 0 calc(12px * var(--draw, 0)) rgba(255,255,255,.28); }
@@ -910,7 +930,7 @@ html { scrollbar-width: thin; scrollbar-color: #3A3A3A #000; }
 body { text-rendering: optimizeLegibility; font-kerning: normal; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
   hanging-punctuation: first last; font-feature-settings: "kern", "liga", "calt"; }
 ::selection { background: #FFFFFF; color: #000000; }
-:focus-visible { outline: 1px solid #FFFFFF; outline-offset: 4px; }
+:focus-visible { outline: 1px solid var(--text-strong); outline-offset: 4px; }
 .prose p, .prose li { text-wrap: pretty; }
 
 /* Script glyphs as type: the scripts are typeset, never images. */
@@ -1006,3 +1026,39 @@ html.is-paused .grain { animation-play-state: paused; }
 @media (max-width: 560px) {
   .fig-svg .fig-t { font-size: 16px; } .fig-svg .fig-t--big { font-size: 17px; } .fig-svg .fig-h { font-size: 13px; letter-spacing: 0.12em; }
 }
+
+/* ---------- v5.2: stage identity without hue ------------------------------- */
+/* 01 heavy grain and stars · 02 pure black, no stars, stark marks · 03 clean and still · 04 empty */
+:root { --grain-o: .085; --stars-o: 1; --rails-o: 1; }
+:root[data-stage="02"] { --grain-o: .04; --stars-o: 0; --rails-o: 1; }
+:root[data-stage="03"] { --grain-o: .012; --stars-o: .55; --rails-o: .4; }
+:root[data-stage="04"] { --grain-o: 0; --stars-o: 0; --rails-o: 0; }
+.stars { opacity: var(--stars-o); } .rails { opacity: var(--rails-o); }
+.stars, .rails, .grain { transition: opacity var(--dur-stage) var(--ease-cut); }
+html.is-still :is(.field, .rails, .stars) { opacity: 0; }
+
+/* The gap cuts; it does not fade. */
+:root[data-stage="04"] :is(body, .bar, .bar *, .diagnostic, .diagnostic *, .site-foot, .site-foot *) { transition-duration: 140ms; }
+:root.is-gap ::selection { background: #000; color: #fff; }
+:root.is-gap { scrollbar-color: #9A9A9A #F2F2F2; }
+:root.is-gap .diag-b { text-shadow: none; }
+.diag-gap-label::after { content: "the gap"; }
+.loupe-x::after { content: "×2.6"; }
+.diag-count { margin: 0; color: var(--text-dim); }
+.diag-count span { color: var(--text-strong); font-variant-numeric: tabular-nums; }
+
+/* Pull line: a section's thesis, set once, in the serif. */
+.prose .pull { margin: var(--s-7) 0; padding: var(--s-5) 0 var(--s-5) var(--s-5); border-left: var(--hair) solid var(--text-strong);
+  font-family: "IBM Plex Serif", Georgia, serif; font-style: italic; font-weight: 400; font-size: clamp(1.45rem, 1.1rem + 1.4vw, 2rem);
+  line-height: 1.28; letter-spacing: -0.01em; color: var(--text-strong); max-width: 26ch; text-wrap: balance; }
+.block--practice .pull { font-size: clamp(1.45rem, 1.1rem + 1.4vw, 2rem); }
+
+/* Practice: mark as done (kept in this browser). */
+.tick { display: inline-flex; align-items: center; gap: var(--s-3); margin-top: var(--s-4); padding: 8px 0; background: none; border: 0;
+  color: var(--text-dim); cursor: pointer; font-family: var(--font-mono); font-size: var(--t-label); letter-spacing: var(--tracking-label);
+  text-transform: uppercase; }
+.tick:hover { color: var(--text-strong); }
+.tick-box { position: relative; width: 11px; height: 11px; border: var(--hair) solid currentColor; }
+.tick[aria-pressed="true"] { color: var(--text-strong); }
+.tick[aria-pressed="true"] .tick-box::after { content: ""; position: absolute; inset: 2px; background: currentColor; }
+.block--practice.is-done::before { opacity: .35; }

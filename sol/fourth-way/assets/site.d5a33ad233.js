@@ -6,7 +6,7 @@
    One scroll loop measures the reading line (the vertical middle of the
    viewport) and derives every state from it:
      stage · section · segment fill · minutes left · stage-02 heat ·
-     diagnostic split · stage-04 warmth
+     diagnostic split · the cut to white at the gap
    Contract with the markup: see build_page.py (every hook is a class or id
    used below).
    ========================================================================== */
@@ -31,7 +31,6 @@
   }
   var BG = { "02": "#050505", "04": "#0A0A0A" };
   var HEAT = token("--bg-heat") || "#000000";
-  var WARM = token("--bg-warm") || "#1A1A1A";
 
   /* ---- counters that roll like a mechanical register -------------------- */
   var forward = true; // scroll direction: forward rolls values upward
@@ -160,7 +159,10 @@
         diag.style.setProperty("--draw", draw.toFixed(4));
         diag.style.setProperty("--tail", tail.toFixed(4));
       }
-      if (id === "04") bg = mix(BG["04"], WARM, sequenced ? draw : 1);
+      // The gap: when the rule is fully drawn the whole page cuts to white, the only light surface
+      // on the site, and holds while the question is on screen. It cuts back as the reader leaves.
+      var inGap = q >= 0.8 && r.top < vh * 0.5 && r.bottom > vh * 0.5;
+      if (inGap !== root.classList.contains("is-gap")) root.classList.toggle("is-gap", inGap);
       if (gold && !pulsed && draw >= 0.999) {
         pulsed = true;
         if (!reduce) gold.classList.add("is-pulsing");
@@ -217,6 +219,30 @@
       });
     });
   }
+
+  /* ---- practices: mark as done, kept in this browser -------------------- */
+  var KEY = "btb:pt01:done", done = {};
+  try { done = JSON.parse(localStorage.getItem(KEY) || "{}") || {}; } catch (e) { done = {}; }
+  var ticks = $$(".tick"), doneN = $("#done-n");
+  function paintTicks() {
+    var n = 0;
+    ticks.forEach(function (b) {
+      var on = !!done[b.getAttribute("data-p")]; if (on) n++;
+      b.setAttribute("aria-pressed", on ? "true" : "false");
+      $(".tick-txt", b).textContent = on ? "Done" : "Mark as done";
+      var blk = b.closest(".block"); if (blk) blk.classList.toggle("is-done", on);
+    });
+    if (doneN) doneN.textContent = String(n);
+  }
+  ticks.forEach(function (b) {
+    b.hidden = false;
+    b.addEventListener("click", function () {
+      var k = b.getAttribute("data-p"); if (done[k]) delete done[k]; else done[k] = 1;
+      try { localStorage.setItem(KEY, JSON.stringify(done)); } catch (e) {}
+      paintTicks();
+    });
+  });
+  if (ticks.length) { paintTicks(); var dc = $(".diag-count"); if (dc) dc.hidden = false; }
 
   /* ---- presence practice: 60 seconds, one pass -------------------------- */
   var pBtn = $("#presence-start"), pField = $("#presence-field"),
@@ -568,6 +594,7 @@
     while (last < 10) { last++; h.starts[last] = N; }
     // rings: 22 Hebrew letters; 44 letters cycling through the four scripts
     h.R1 = []; for (i = 0; i < 22; i++) h.R1.push(i);
+    h.lx = -1.1; h.ly = -0.5; h.lod = 0; h.ema = 16;
     h.R2 = []; for (i = 0; i < 44; i++) h.R2.push({ sid: SIDS[i % 4], g: hash(i * 13 + 5) % 97 });
     H1 = h; sizeHero(); sigBox.classList.add("is-live");
     if (reduce || paused) drawHero(h.t0 + 99); else startHero();
@@ -575,7 +602,7 @@
   function sizeHero() {
     if (!H1) return;
     var b = sigBox.getBoundingClientRect(), S = Math.max(1, Math.round(Math.min(b.width, b.height || b.width)));
-    H1.S = S; H1.ctx = sizeCanvas(heroCv, S, S);
+    H1.S = S; H1.ctx = sizeCanvas(heroCv, S, S, Math.min(DPR, 2));
     var k = S / 1.36;
     if (fontsReady) ringAtlas = { r1: atlas("03", k * 0.034, DPR), r2: atlasSet(k * 0.022, DPR) };
   }
@@ -592,15 +619,36 @@
     if (logoA > 0.002) {
       ctx.save(); ctx.globalAlpha = logoA * clamp(1 - leave * 1.4, 0, 1);
       ctx.translate(cx, cy); ctx.rotate(spin); ctx.drawImage(logoImg, -k / 2, -k / 2, k, k); ctx.restore();
+      // Light. The logo's pixels are untouched; a soft highlight and its shadow are laid over the metal only
+      // (source-atop: nothing but the logo is on the canvas yet). The light rests upper left, sweeps in once,
+      // and follows the pointer while it moves.
+      if (!reduce) {
+        var tx = -0.26, ty = -0.3;
+        if (performance.now() - ptr.t < 4000 && h.box) {
+          tx = clamp((ptr.x - h.box.left - S / 2) / k, -0.62, 0.62); ty = clamp((ptr.y - h.box.top - S / 2) / k, -0.62, 0.62);
+        }
+        h.lx += (tx - h.lx) * 0.07; h.ly += (ty - h.ly) * 0.07;
+        var lx = cx + h.lx * k, ly = cy + h.ly * k, la = logoA * clamp(1 - leave * 1.4, 0, 1);
+        ctx.globalCompositeOperation = "source-atop";
+        var g1 = ctx.createRadialGradient(lx, ly, 0, lx, ly, k * 0.5);
+        g1.addColorStop(0, "rgba(255,255,255," + (0.3 * la).toFixed(3) + ")"); g1.addColorStop(0.35, "rgba(255,255,255," + (0.11 * la).toFixed(3) + ")"); g1.addColorStop(1, "rgba(255,255,255,0)");
+        ctx.fillStyle = g1; ctx.fillRect(0, 0, S, S);
+        var sx = cx - h.lx * k * 1.25, sy = cy - h.ly * k * 1.25, g2 = ctx.createRadialGradient(sx, sy, 0, sx, sy, k * 0.62);
+        g2.addColorStop(0, "rgba(0,0,0," + (0.36 * la).toFixed(3) + ")"); g2.addColorStop(1, "rgba(0,0,0,0)");
+        ctx.fillStyle = g2; ctx.fillRect(0, 0, S, S);
+        ctx.globalCompositeOperation = "source-over";
+      }
     }
     // the points: gather in, then stay as a living shimmer over the steel
     if (ptsA > 0.01) {
       var zk = clamp(S / 520, 0.8, 1.5), spread = leave * k * 0.55;
+      var stride = (logoA > 0.98 ? 3 : 1) * (h.lod > 0 ? 2 : 1);      // settled: a third of the points carry the shimmer
+      if (stride > 1) ptsA = Math.min(1, ptsA * (logoA > 0.98 ? 1.9 : 1.3));
       for (var b = 0; b < 10; b++) {
         var a0 = h.starts[b], e0 = h.starts[b + 1]; if (a0 === e0) continue;
         var tb = (b + 0.5) / 10, z = (0.45 + 1.15 * tb) * zk, hz = z / 2;
         ctx.fillStyle = "rgba(255,255,255," + (ptsA * fade * (0.18 + 0.82 * tb)).toFixed(3) + ")";
-        for (var i = a0; i < e0; i++) {
+        for (var i = a0; i < e0; i += stride) {
           var u = h.U[i], v = h.V[i];
           var x = cx + (u * cs - v * sn) * k, y = cy + (u * sn + v * cs) * k;
           if (!reduce) {
@@ -633,8 +681,11 @@
   function heroLoop(now) {
     if (paused || document.hidden || reduce) { heroOn = false; return; }
     PX += (ptr.nx - PX) * 0.05; PY += (ptr.ny - PY) * 0.05;
-    var b = hero ? hero.getBoundingClientRect() : null;
-    if (!b || b.bottom > 0) drawHero(now / 1000);
+    var b = hero ? hero.getBoundingClientRect() : null, h = H1;
+    // Slow device: measured, not guessed. Step down once to half the points, then to 30 frames a second.
+    if (h.last) { h.ema += (Math.min(100, now - h.last) - h.ema) * 0.08; h.n = (h.n || 0) + 1; if (h.n > 45 && h.ema > 26 && h.lod < 2) { h.lod++; h.n = 0; h.ema = 16; } }
+    h.last = now; h.skip = !h.skip;
+    if ((!b || b.bottom > 0) && !(h.lod > 1 && h.skip)) { h.box = heroCv.getBoundingClientRect(); drawHero(now / 1000); }
     window.requestAnimationFrame(heroLoop);
   }
   function startHero() { if (H1 && !heroOn && !reduce && !paused) { heroOn = true; window.requestAnimationFrame(heroLoop); } }
@@ -678,19 +729,19 @@
   function sizeField() {
     if (!field) return;
     field.W = window.innerWidth; field.H = window.innerHeight;
-    field.ctx = sizeCanvas(fieldCv, field.W, field.H, DPR_BG);
+    field.ctx = sizeCanvas(fieldCv, field.W, field.H, DPR_BG); field.blank = false;
     var pg = $(".page"); colR = pg ? pg.getBoundingClientRect().right - 32 : field.W * 0.7;
     field.arts = $$(".stage-art, .stage-plate");
   }
   function drawField(now) {
     if (!field || !field.ctx) return;
     var f = field, ctx = f.ctx, W = f.W, H = f.H, t = now / 1000;
-    ctx.clearRect(0, 0, W, H);
+    function blank() { if (!f.blank) { ctx.clearRect(0, 0, W, H); f.blank = true; } }
     var gutter = W - colR;
-    if (gutter < 250 || W < 1100) return;                       // never under the reading column
+    if (gutter < 250 || W < 1100) { blank(); return; }                       // never under the reading column
     var line = window.scrollY + H * 0.5, T = H * 0.42;
     var ids = stages.map(function (s) { return s.getAttribute("data-stage"); }), tops = stages.map(docTop);
-    if (!ids.length) return;
+    if (!ids.length) { blank(); return; }
     var A = ids[0], B = ids[0], m = 0;
     for (var k = 0; k < tops.length; k++) if (line >= tops[k] - T) { A = ids[Math.max(0, k - 1)]; B = ids[k]; m = k === 0 ? 1 : smooth((line - (tops[k] - T)) / (2 * T)); }
     if (m >= 1) A = B;
@@ -706,9 +757,10 @@
       vis *= 1 - smooth(ov * 2.2);
     });
     var base = 0.2 * vis;
-    if (base < 0.004) return;
+    if (base < 0.004) { blank(); return; }
     var FA = f.figs[STAGE_FIG[A]], FB = f.figs[STAGE_FIG[B]];
     var push = reduce || paused ? 0 : clamp(1 - (now - ptr.t - 600) / 900, 0, 1);
+    ctx.clearRect(0, 0, W, H); f.blank = false;
     ctx.fillStyle = "#fff";
     for (var i = 0; i < f.N; i++) {
       var e = A === B ? 1 : smooth((m - f.delay[i]) / 0.65);
@@ -734,7 +786,7 @@
     if (!railCv) return;
     rails = rails || { pulse0: -1 };
     rails.W = window.innerWidth; rails.H = window.innerHeight;
-    rails.ctx = sizeCanvas(railCv, rails.W, rails.H);
+    rails.ctx = sizeCanvas(railCv, rails.W, rails.H); rails.y = -1;
   }
   function drawRails(now) {
     if (!rails || !railAtlas) return;
@@ -742,8 +794,8 @@
     ctx.clearRect(0, 0, W, H);
     if (W < 900) return;
     var st = root.getAttribute("data-stage") || "01", A = railAtlas[st];
-    var step = 26, off = window.scrollY * 0.25 + (reduce || paused ? 0 : t * 6);
-    var pulse = reduce ? -999 : (t * 140) % (H + 600) - 300;
+    var step = 26, off = window.scrollY * 0.25;      // the columns move only when the reader does
+    var pulse = H * 0.5;                              // brightest at the reading line
     var sp = rails.pulse0 > 0 ? (now - rails.pulse0) / 1100 : 2, sweep = sp < 1 ? -120 + (H + 240) * easeOut(sp) : -999;
     for (var y = -step - (off % step); y < H + step; y += step) {
       var row = Math.round((y + off) / step);
@@ -754,11 +806,13 @@
       }
     }
     ctx.globalAlpha = 1;
+    rails.y = window.scrollY; rails.st = st; rails.live = sp < 1;
   }
+  function railsDirty() { return rails && (rails.y !== window.scrollY || rails.st !== root.getAttribute("data-stage") || rails.live || rails.pulse0 > rails.seen); }
   var lastStage = root.getAttribute("data-stage");
   function pulseIfStageChanged() {
     var st = root.getAttribute("data-stage");
-    if (st !== lastStage) { lastStage = st; if (rails) rails.pulse0 = performance.now(); }
+    if (st !== lastStage) { lastStage = st; if (rails) { rails.pulse0 = performance.now(); rails.seen = 0; } }
   }
 
   /* =====================================================================
@@ -775,7 +829,7 @@
   function decode(el) {
     if (reduce || el.dataset.dec) return; el.dataset.dec = "1";
     var w = document.createTreeWalker(el, NodeFilter.SHOW_TEXT), nodes = [];
-    while (w.nextNode()) if (w.currentNode.nodeValue.trim()) nodes.push(w.currentNode);
+    while (w.nextNode()) if (w.currentNode.nodeValue.trim() && !w.currentNode.parentElement.closest(".sr-only, svg")) nodes.push(w.currentNode);
     if (!el.hasAttribute("aria-label")) el.setAttribute("aria-label", el.textContent.replace(/\s+/g, " ").trim());
     var sc = scriptsFor(el), early = sc[0], late = sc[1];
     nodes.forEach(function (n) {
@@ -1042,7 +1096,13 @@
   var amb = { last: 0, on: false };
   function ambient(now) {
     if (document.hidden || paused || reduce) { amb.on = false; return; }
-    if (now - amb.last >= 32) { amb.last = now; drawStars(now / 1000); drawField(now); drawRails(now); }
+    if (now - amb.last >= 32) {
+      amb.last = now;
+      var stg = root.getAttribute("data-stage");
+      if (now - (amb.s || 0) >= 80 && stg !== "02" && stg !== "04") { amb.s = now; drawStars(now / 1000); }   // hidden in 02 and 04
+      drawField(now);
+      if (railsDirty()) { drawRails(now); rails.seen = rails.pulse0; }
+    }
     window.requestAnimationFrame(ambient);
   }
   function startAmbient() { if (!amb.on && !reduce && !paused && fontsReady) { amb.on = true; window.requestAnimationFrame(ambient); } }
