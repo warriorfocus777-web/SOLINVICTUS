@@ -75,7 +75,7 @@ a:hover{color:var(--navy-hover)}
 .logo .wm{font-family:var(--f-slab);font-weight:700;font-size:26px;letter-spacing:.04em;line-height:1;padding-right:var(--s3);border-right:1px solid rgba(255,255,255,.4)}
 .logo .tl{font-family:var(--f-cond);font-size:12px;line-height:1.2;letter-spacing:.06em;text-transform:uppercase}
 .mast .bar .tag{color:#fff}
-.hero{--sym:clamp(180px,16vw,220px);display:grid;grid-template-columns:minmax(0,1fr) var(--sym);grid-template-areas:"text sym";gap:var(--s7) clamp(48px,8vw,120px);align-items:center;padding:clamp(40px,7vw,88px) 0 clamp(48px,7vw,88px)}
+.hero{--sym:clamp(220px,21vw,290px);display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);grid-template-areas:"text sym";gap:var(--s7) var(--s8);align-items:center;padding:clamp(40px,7vw,88px) 0 clamp(48px,7vw,88px)}
 .hero .eyebrow{color:var(--on-navy-soft)}
 .hero h1{color:#fff;font-size:clamp(36px,5.4vw,62px);line-height:1.04;letter-spacing:-.01em;margin:var(--s4) 0 var(--s5)}
 .hero h1 span{display:block;color:var(--on-navy-soft);font-weight:400;font-size:.62em;margin-top:var(--s2)}
@@ -88,10 +88,10 @@ a:hover{color:var(--navy-hover)}
 .hero-text{grid-area:text;max-width:700px}
 /* Collective Convergence symbol: right-hand side of the hero, vertically centred on the hero content.
    The static SVG is the accessible logo and the fallback; the particle canvas (added by script) sits over it. */
-.conv-wrap{grid-area:sym;align-self:center;justify-self:end;position:relative;width:var(--sym);aspect-ratio:1/1}
+.conv-wrap{grid-area:sym;align-self:center;justify-self:center;position:relative;width:var(--sym);aspect-ratio:1/1}
 .conv-wrap .convergence{display:block;width:100%;height:100%;overflow:visible}
 .conv-canvas{position:absolute;inset:-20%;pointer-events:none;transition:opacity .4s}
-.conv-toggle{display:none;position:absolute;top:calc(100% + 12px);right:0;width:32px;height:32px;padding:0;border-radius:50%;border:1px solid rgba(255,255,255,.5);background:transparent;color:#fff;cursor:pointer;align-items:center;justify-content:center;transition:background-color .15s,border-color .15s}
+.conv-toggle{display:none;position:absolute;bottom:0;right:-52px;width:32px;height:32px;padding:0;border-radius:50%;border:1px solid rgba(255,255,255,.5);background:transparent;color:#fff;cursor:pointer;align-items:center;justify-content:center;transition:background-color .15s,border-color .15s}
 .conv-toggle:hover{background:var(--navy-hover);border-color:#fff}
 .conv-toggle svg{width:12px;height:12px;fill:currentColor}
 .conv-toggle .i-play,.is-paused .conv-toggle .i-pause{display:none}
@@ -100,12 +100,14 @@ a:hover{color:var(--navy-hover)}
 .particles-on .convergence path{animation:none!important}
 @media (prefers-reduced-motion:no-preference){.js .conv-wrap:not(.particles-off) .convergence{opacity:0}}
 @media (max-width:900px){
-  .hero{--sym:150px;gap:var(--s6)}
+  .hero{--sym:160px;grid-template-columns:minmax(0,1fr) auto;gap:var(--s6)}
+  .conv-wrap{justify-self:end}
+  .conv-toggle{bottom:auto;top:calc(100% + 12px);right:0}
 }
 @media (max-width:600px){
-  .hero{--sym:84px;grid-template-columns:minmax(0,1fr);grid-template-areas:"sym" "text";row-gap:var(--s5)}
-  .conv-wrap{margin-bottom:calc(-1 * var(--s4))}
-  .conv-toggle{top:auto;bottom:0;right:calc(100% + 12px)}
+  .hero{--sym:112px;grid-template-columns:minmax(0,1fr);grid-template-areas:"sym" "text";row-gap:var(--s5)}
+  .conv-wrap{justify-self:start;margin-bottom:0}
+  .conv-toggle{top:auto;bottom:0;right:auto;left:calc(100% + 20px)}
 }
 /* Reach figure (Deliver lead): squares drawn to area */
 .reach-fig svg{display:block;width:100%;max-width:420px;height:auto}
