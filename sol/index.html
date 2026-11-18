@@ -1449,7 +1449,7 @@ footer em{font:italic 400 15px var(--serif);letter-spacing:0;text-transform:none
 .sol-door--img .g img{display:block;width:16px;height:auto;filter:drop-shadow(0 0 5px rgba(255,255,255,.6)) drop-shadow(0 0 1px #fff)}
 .sol-door--img:hover .g,.sol-door--img:focus-visible .g{transform:scale(1.45)}
 /* Where the rain has no room (narrow windows, tablets, phones) the door waits in the lower left corner.
-   The two doors take turns. On touch, the first tap names the door and the second opens it. */
+   The doors take turns. On touch, the first tap names the door and the second opens it. */
 #solDoorMini{position:fixed;left:max(12px,env(safe-area-inset-left));bottom:max(14px,env(safe-area-inset-bottom));z-index:46;width:44px;height:44px;display:none}
 #solDoorMini.on{display:block}
 #solDoorMini .sol-door{position:absolute;inset:0;width:auto;height:auto;margin:0;opacity:1;border-radius:50%;background:rgba(0,0,0,.6);border:1px solid rgba(255,255,255,.16);
@@ -1484,7 +1484,7 @@ footer em{font:italic 400 15px var(--serif);letter-spacing:0;text-transform:none
    Syriac, Nabataean, Brahmi, Kharoshthi) — tinted by the alchemical stage on screen, with a bright head.
    Scrolling is wind: the rain streaks when you scroll fast and rises when you scroll back up. The pointer parts it.
    Now and then a vèvè is poured into a line, from its centre out. Every 7 s a white door opens, turn by turn: ☯ to /sol/anima/ (Pierre Willequet),
-   the white Brand to /sol/fourth-way/ (Guts and the Fourth Way). */
+   the white Brand to /sol/fourth-way/ (Guts and the Fourth Way), the white convergence mark to /sol/reset/ (Humanitarian Reset Stocktake). */
 (function(){
   const el=document.getElementById("solRain"),cv=el.querySelector("canvas"),x=cv.getContext("2d"),box=document.getElementById("solDoor");
   const REDUCED=matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -1500,9 +1500,10 @@ footer em{font:italic 400 15px var(--serif);letter-spacing:0;text-transform:none
   const LH=21,EVERY=7000,LIFE=5600;
   const DOORS=[
     {g:"☯",href:"/sol/anima/",key:"sol-anima",aria:"Pierre Willequet — archive",lbl:"Pierre Willequet<i>l’archive</i>"},
-    {img:"/sol/assets/images/door-fourth-way.png",href:"/sol/fourth-way/",key:"sol-fourth-way",aria:"Guts and the Fourth Way — Pressure Test 01",lbl:"The Fourth Way<i>Guts · Pressure Test 01</i>"}
+    {img:"/sol/assets/images/door-fourth-way.png",href:"/sol/fourth-way/",key:"sol-fourth-way",aria:"Guts and the Fourth Way — Pressure Test 01",lbl:"The Fourth Way<i>Guts · Pressure Test 01</i>"},
+    {img:"/sol/assets/images/door-reset.svg",href:"/sol/reset/",key:"sol-reset",aria:"Humanitarian Reset — Stocktake, October 2026",lbl:"Humanitarian Reset<i>Stocktake · October 2026</i>"}
   ];
-  let doorTurn=(Math.random()*2)|0;
+  let doorTurn=(Math.random()*DOORS.length)|0;
   const RES=k=>(window.__resources&&window.__resources["sol-"+k])||("media/sol/"+k+".png");
   let W=0,H=0,d=1,cols=[],on=false,last=0,wind=0,ly=scrollY,lt=performance.now(),door=null,nextDoor=0,lineTurn=(Math.random()*3)|0;
   let ATL=null,VV=null,veve=null,nextVeve=performance.now()+6000,left=0,px=-1e4,py=-1e4,tone=[255,200,84],toneT=[255,200,84];
