@@ -378,6 +378,106 @@
       "c": "10.11.2026",
       "lang": "en",
       "n": "Marked Official Use Only; no public URL. Forwarded by personal correspondence received 08.11.2026; not independently verified by the desk. Cited only where a fact below is checked against a named public originator in its own text; otherwise listed and not counted toward corroboration."
+    },
+    {
+      "id": "S32",
+      "t": "Haitian leader to visit El Salvador to discuss future of Salvadoran troops' offensive in Haiti",
+      "pub": "Associated Press (via AJC)",
+      "o": "Government of El Salvador — lobbyist Damian Merlo",
+      "ty": "press",
+      "d": "11.2026",
+      "r": "B",
+      "url": "https://www.ajc.com/news/2026/11/haitian-leader-to-visit-el-salvador-to-discuss-future-of-salvadoran-troops-offensive-in-haiti/",
+      "c": "19.11.2026",
+      "lang": "en",
+      "n": "Publication day not shown in the copy consulted; syndicated copies are dated 06–09.11."
+    },
+    {
+      "id": "S33",
+      "t": "Primer ministro de Haití afirma que está recuperando control territorial con ayuda de El Salvador",
+      "pub": "Diario El Mundo (El Salvador), EFE",
+      "o": "Government of Haiti — Office of the Prime Minister",
+      "ty": "press",
+      "d": "10.11.2026",
+      "r": "B",
+      "url": "https://diario.elmundo.sv/politica/primer-ministro-de-haiti-afirma-que-esta-recuperando-control-territorial-con-ayuda-de-el-salvador",
+      "c": "19.11.2026",
+      "lang": "es"
+    },
+    {
+      "id": "S34",
+      "t": "Haitian forces recapture national stadium from gang control",
+      "pub": "Jamaica Observer (wire, relaying a PNH statement)",
+      "o": "Haitian National Police",
+      "ty": "press",
+      "d": "12.11.2026",
+      "r": "B",
+      "url": "https://www.jamaicaobserver.com/2026/11/12/haitian-forces-recapture-national-stadium-gang-control/",
+      "c": "19.11.2026",
+      "lang": "en"
+    },
+    {
+      "id": "S35",
+      "t": "Salvadoran and Haitian forces seize Haiti's national stadium",
+      "pub": "Latin Times (relaying posts by President Bukele and wire reports)",
+      "o": "President of El Salvador",
+      "ty": "press",
+      "d": "12.11.2026",
+      "r": "C",
+      "url": "https://www.latintimes.com/salvadoran-haitian-forces-seize-haiti-stadium-601282",
+      "c": "19.11.2026",
+      "lang": "en",
+      "n": "Not yet graded; inconsistent on the date of the 400 Mawozo strikes."
+    },
+    {
+      "id": "S36",
+      "t": "G7 nations issue Haiti statement, warnings as anti-gang operations intensify",
+      "pub": "Miami Herald (via Tribune News Service)",
+      "o": "Miami Herald",
+      "ty": "press",
+      "d": "13.11.2026",
+      "r": "B",
+      "url": "https://www.newstribune.com/news/2026/nov/13/g7-nations-issue-haiti-statement-warnings-as-anti/",
+      "c": "19.11.2026",
+      "lang": "en",
+      "n": "Relays the G7 statement and CEP figures; neither text is held."
+    },
+    {
+      "id": "S37",
+      "t": "Haitians rally behind Bukele as Salvadoran troops battle gangs",
+      "pub": "France 24 (AFP)",
+      "o": "AFP",
+      "ty": "press",
+      "d": "18.11.2026",
+      "r": "B",
+      "url": "https://france24.com/en/americas/20261118-haitians-rally-behind-bukele-as-salvadoran-troops-battle-gangs",
+      "c": "19.11.2026",
+      "lang": "en"
+    },
+    {
+      "id": "S38",
+      "t": "Haiti Registers 33 Presidential Candidates",
+      "pub": "The Rio Times (reading the CEP registry)",
+      "o": "CEP — Provisional Electoral Council",
+      "ty": "press",
+      "d": "18.11.2026",
+      "r": "C",
+      "url": "https://www.riotimesonline.com/haiti-33-presidential-candidates-registered",
+      "c": "19.11.2026",
+      "lang": "en",
+      "n": "The CEP labels the list preliminary."
+    },
+    {
+      "id": "S39",
+      "t": "Haiti PM says gang leader Mathias Saintil is dead",
+      "pub": "Reuters (via The Star)",
+      "o": "Reuters",
+      "ty": "press",
+      "d": "06.11.2026",
+      "r": "B",
+      "url": "https://www.thestar.com.my/news/world/2026/11/07/haiti-pm-says-gang-leader-mathias-saintil-dead",
+      "c": "19.11.2026",
+      "lang": "en"
     }
   ],
   "boards": [
@@ -386,8 +486,8 @@
       "status": "draft",
       "signed": null,
       "context": {
-        "en": "18.10: four Salvadoran Air Force aviation technicians serving with the GSF went missing after an ambush in Santo, Croix-des-Bouquets; as of 02.11 their fate is unconfirmed. El Salvador says it has deployed more than 2,000 troops; on 02.11 they launched their first ground operation (Santo, Croix-des-Missions) with Haitian police armour in support. El Salvador’s only published legal text covers participation in the GSF (12 months from 02.10; no troop number). Strike allegations (UNA-Haiti, 30.10) and their denial (31.10) are unverified. Elections: first round 18.07.2027, second round 04.10.2027; voter register closes 20.05.2027 (CEP, 28.10). 02.11: a joint operation found the technicians’ burned vehicle in Santo; the four were not found. 03.11: the Prime Minister said Haiti directs the foreign forces; the UN spokesperson has since put the Salvadoran soldiers under the GSF at about 200 (reported 05.11). 10.11 (restricted World Bank note, not independently confirmed): the GSF — formally launched 08.10 at Vertières with Chadian, Salvadoran, Guatemalan, Jamaican, Mongolian and Sri Lankan contingents — reached about 3,500 of its 5,500 ceiling by 28.10, with U.S. airlift reported for part of the Salvadoran movement. See the chronology for sources.",
-        "fr": "18.10 : quatre techniciens d’aviation salvadoriens servant au sein de la GSF ont disparu après une embuscade à Santo, Croix-des-Bouquets ; au 02.11, leur sort n’est pas confirmé. Le Salvador dit avoir déployé plus de 2 000 soldats ; le 02.11, ils ont lancé leur première opération terrestre (Santo, Croix-des-Missions) avec l’appui de blindés de la police haïtienne. Le seul texte juridique publié par le Salvador porte sur la participation à la GSF (12 mois à compter du 02.10 ; aucun effectif fixé). Les allégations de frappes (UNA-Haïti, 30.10) et leur démenti (31.10) ne sont pas vérifiés. Élections : premier tour le 18.07.2027, second tour le 04.10.2027 ; clôture du registre électoral le 20.05.2027 (CEP, 28.10). 02.11 : une opération conjointe a retrouvé le véhicule incendié des techniciens à Santo ; les quatre n’ont pas été retrouvés. 03.11 : le Premier ministre a affirmé qu’Haïti dirige les forces étrangères ; le porte-parole de l’ONU a depuis évalué à environ 200 les soldats salvadoriens relevant de la GSF (rapporté le 05.11). 10.11 (note restreinte de la Banque mondiale, non confirmée de façon indépendante) : la GSF — lancée officiellement le 08.10 à Vertières avec des contingents tchadien, salvadorien, guatémaltèque, jamaïcain, mongol et sri-lankais — atteint environ 3 500 personnes sur son plafond de 5 500 au 28.10, avec un appui aérien américain signalé pour une partie du mouvement salvadorien. Voir la chronologie pour les sources."
+        "en": "18.10: four Salvadoran Air Force aviation technicians serving with the GSF went missing after an ambush in Santo, Croix-des-Bouquets; as of 02.11 their fate is unconfirmed. El Salvador says it has deployed more than 2,000 troops; on 02.11 they launched their first ground operation (Santo, Croix-des-Missions) with Haitian police armour in support. El Salvador’s only published legal text covers participation in the GSF (12 months from 02.10; no troop number). Strike allegations (UNA-Haiti, 30.10) and their denial (31.10) are unverified. Elections: first round 18.07.2027, second round 04.10.2027; voter register closes 20.05.2027 (CEP, 28.10). 02.11: a joint operation found the technicians’ burned vehicle in Santo; the four were not found. 03.11: the Prime Minister said Haiti directs the foreign forces; the UN spokesperson has since put the Salvadoran soldiers under the GSF at about 200 (reported 05.11). 10.11 (restricted World Bank note, not independently confirmed): the GSF — formally launched 08.10 at Vertières with Chadian, Salvadoran, Guatemalan, Jamaican, Mongolian and Sri Lankan contingents — reached about 3,500 of its 5,500 ceiling by 28.10, with U.S. airlift reported for part of the Salvadoran movement. 19.11: El Salvador’s representative says the troops serve under a signed bilateral agreement whose text is unpublished; about 2,500 are reported in Haiti, most outside GSF command. On 12.11 police and the government’s Task Force retook the national stadium and handed it to Salvadoran guard. Candidate registration closed 15.11 with 33 preliminary presidential candidates. See the chronology for sources.",
+        "fr": "18.10 : quatre techniciens d’aviation salvadoriens servant au sein de la GSF ont disparu après une embuscade à Santo, Croix-des-Bouquets ; au 02.11, leur sort n’est pas confirmé. Le Salvador dit avoir déployé plus de 2 000 soldats ; le 02.11, ils ont lancé leur première opération terrestre (Santo, Croix-des-Missions) avec l’appui de blindés de la police haïtienne. Le seul texte juridique publié par le Salvador porte sur la participation à la GSF (12 mois à compter du 02.10 ; aucun effectif fixé). Les allégations de frappes (UNA-Haïti, 30.10) et leur démenti (31.10) ne sont pas vérifiés. Élections : premier tour le 18.07.2027, second tour le 04.10.2027 ; clôture du registre électoral le 20.05.2027 (CEP, 28.10). 02.11 : une opération conjointe a retrouvé le véhicule incendié des techniciens à Santo ; les quatre n’ont pas été retrouvés. 03.11 : le Premier ministre a affirmé qu’Haïti dirige les forces étrangères ; le porte-parole de l’ONU a depuis évalué à environ 200 les soldats salvadoriens relevant de la GSF (rapporté le 05.11). 10.11 (note restreinte de la Banque mondiale, non confirmée de façon indépendante) : la GSF — lancée officiellement le 08.10 à Vertières avec des contingents tchadien, salvadorien, guatémaltèque, jamaïcain, mongol et sri-lankais — atteint environ 3 500 personnes sur son plafond de 5 500 au 28.10, avec un appui aérien américain signalé pour une partie du mouvement salvadorien. 19.11 : le représentant du Salvador affirme que les troupes relèvent d’un accord bilatéral signé dont le texte n’est pas publié ; environ 2 500 soldats seraient en Haïti, pour la plupart hors du commandement de la FRG. Le 12.11, la police et la Task Force du gouvernement ont repris le stade national et en ont confié la garde à des soldats salvadoriens. L’inscription des candidats a fermé le 15.11 avec 33 candidats provisoires à la présidence. Voir la chronologie pour les sources."
       },
       "cells": {
         "command": {
@@ -401,7 +501,11 @@
             "S9",
             "S24",
             "S26",
-            "S27"
+            "S27",
+            "S32",
+            "S33",
+            "S36",
+            "S37"
           ],
           "fals": {
             "en": "A published command arrangement placing the Salvadoran contingent under GSF command, or a UN or GSF statement that it operates inside the GSF chain of command.",
@@ -450,12 +554,13 @@
           "conf": null,
           "src": [],
           "near": {
-            "en": "No originator publishes the share of the electorate outside gang-controlled territory. Nearest published: OHCHR (early 2026) estimates one in four people live in areas controlled by armed gangs — a population share, not an electorate share. The CEP counts 878,217 newly registered voters at 23.10; a restricted World Bank note puts the register at 892,963 by 29.10 (about 12% of the adult population), with the daily pace of registration slowing through October.",
-            "fr": "Aucun émetteur ne publie la part de l’électorat hors des territoires contrôlés par les gangs. Mesure publiée la plus proche : le HCDH (début 2026) estime qu’une personne sur quatre vit dans des zones contrôlées par des gangs armés — une part de la population, non de l’électorat. Le CEP compte 878 217 électeurs nouvellement inscrits au 23.10 ; une note restreinte de la Banque mondiale situe le registre à 892 963 au 29.10 (environ 12% de la population adulte), avec un ralentissement du rythme quotidien d’inscription en octobre.",
+            "en": "No originator publishes the share of the electorate outside gang-controlled territory. Nearest published: OHCHR (early 2026) estimates one in four people live in areas controlled by armed gangs — a population share, not an electorate share. The CEP counts 878,217 newly registered voters at 23.10; a restricted World Bank note puts the register at 892,963 by 29.10 (about 12% of the adult population), with the daily pace of registration slowing through October. A Miami Herald report (13.11) puts registration at 936,279 of about 6.5 million potential voters.",
+            "fr": "Aucun émetteur ne publie la part de l’électorat hors des territoires contrôlés par les gangs. Mesure publiée la plus proche : le HCDH (début 2026) estime qu’une personne sur quatre vit dans des zones contrôlées par des gangs armés — une part de la population, non de l’électorat. Le CEP compte 878 217 électeurs nouvellement inscrits au 23.10 ; une note restreinte de la Banque mondiale situe le registre à 892 963 au 29.10 (environ 12% de la population adulte), avec un ralentissement du rythme quotidien d’inscription en octobre. Selon le Miami Herald (13.11), 936 279 électeurs sont inscrits sur environ 6,5 millions d’électeurs potentiels.",
             "src": [
               "S17",
               "S14",
-              "S31"
+              "S31",
+              "S36"
             ]
           }
         },
@@ -676,6 +781,88 @@
       "src": [
         "S26"
       ]
+    },
+    {
+      "d": "06.11.2026",
+      "en": "Authorities confirm the death of Mathias Saintil, Boston gang leader in Cité Soleil. Police cite gunshot wounds in an operation; RNDDH says a drone struck his vehicle on 05.11. The cause is disputed.",
+      "fr": "Les autorités confirment la mort de Mathias Saintil, chef du gang de Boston à Cité Soleil. La police invoque des blessures par balle lors d’une opération ; le RNDDH affirme qu’un drone a frappé son véhicule le 05.11. La cause est contestée.",
+      "src": [
+        "S39"
+      ],
+      "place": [
+        "ouest"
+      ]
+    },
+    {
+      "d": "10.11.2026",
+      "en": "President Bukele says Salvadoran and Haitian forces destroyed the house of 400 Mawozo leader Wilson Joseph and the gang’s headquarters in Croix-des-Bouquets; the leader was not captured. About 20 reported killed in strikes on 08.11 (not verified).",
+      "fr": "Le président Bukele affirme que les forces salvadoriennes et haïtiennes ont détruit la maison du chef de 400 Mawozo, Wilson Joseph, et le quartier général du gang à Croix-des-Bouquets ; le chef n’a pas été capturé. Une vingtaine de morts signalés lors des frappes du 08.11 (non vérifié).",
+      "src": [
+        "S35"
+      ],
+      "place": [
+        "ouest"
+      ]
+    },
+    {
+      "d": "10.11.2026",
+      "en": "The Prime Minister thanks Bukele on X: “Haiti, El Salvador, GSF: same fight, same determination.” In Kenscoff he describes an alliance with Bukele begun three weeks earlier.",
+      "fr": "Le Premier ministre remercie Bukele sur X : « Haïti, Salvador, FRG : même combat, même détermination. » À Kenscoff, il évoque une alliance avec Bukele entamée trois semaines plus tôt.",
+      "src": [
+        "S33"
+      ]
+    },
+    {
+      "d": "11.2026",
+      "en": "A lobbyist for El Salvador tells AP the troops operate under an agreement signed by the two governments — a status-of-forces agreement or a memorandum of understanding — and declines to give its terms. The text is not published. The PM is to visit El Salvador on 16–17.11 to discuss the troops’ future.",
+      "fr": "Un lobbyiste du Salvador indique à l’AP que les troupes opèrent en vertu d’un accord signé par les deux gouvernements — un accord sur le statut des forces ou un protocole d’accord — sans en donner les termes. Le texte n’est pas publié. Le Premier ministre doit se rendre au Salvador les 16 et 17.11 pour discuter de l’avenir des troupes.",
+      "src": [
+        "S32"
+      ]
+    },
+    {
+      "d": "11.11.2026",
+      "en": "G7 foreign ministers (Paris) back the GSF and its renewal to March 2027, ask all security actors to prioritise civilian protection, and warn that sanctioned candidates could undermine the elections. Amnesty asks Haiti and El Salvador to publish the deployment agreement.",
+      "fr": "Les ministres des Affaires étrangères du G7 (Paris) soutiennent la FRG et son renouvellement jusqu’en mars 2027, demandent à tous les acteurs de sécurité de privilégier la protection des civils et avertissent que des candidats sanctionnés pourraient compromettre les élections. Amnesty demande à Haïti et au Salvador de publier l’accord de déploiement.",
+      "src": [
+        "S36"
+      ]
+    },
+    {
+      "d": "12.11.2026",
+      "en": "Police and the government’s Task Force retake Stade Sylvio Cator, held by gangs since 2024, and hand its guard to Salvadoran soldiers; Bukele says it will be a base for the next offensive.",
+      "fr": "La police et la Task Force du gouvernement reprennent le stade Sylvio Cator, tenu par les gangs depuis 2024, et en confient la garde à des soldats salvadoriens ; Bukele annonce qu’il servira de base à la prochaine offensive.",
+      "src": [
+        "S34",
+        "S35"
+      ],
+      "place": [
+        "ouest"
+      ]
+    },
+    {
+      "d": "13.11.2026",
+      "en": "Reported: about 2,500 Salvadoran soldiers in Haiti, the vast majority outside GSF command and UNSOH monitoring. Voters registered: 936,279 of about 6.5 million.",
+      "fr": "Rapporté : environ 2 500 soldats salvadoriens en Haïti, dont la grande majorité hors du commandement de la FRG et du suivi de l’UNSOH. Électeurs inscrits : 936 279 sur environ 6,5 millions.",
+      "src": [
+        "S36"
+      ]
+    },
+    {
+      "d": "15.11.2026",
+      "en": "Online candidate registration closes. The CEP’s preliminary registry lists 33 presidential candidates; files are due 30.11 and final lists on 11.01.2027.",
+      "fr": "Clôture de l’inscription en ligne des candidats. Le registre provisoire du CEP compte 33 candidats à la présidence ; les dossiers sont attendus le 30.11 et les listes définitives le 11.01.2027.",
+      "src": [
+        "S38"
+      ]
+    },
+    {
+      "d": "18.11.2026",
+      "en": "AFP: some 2,500 Salvadoran troops are fighting gangs largely on their own, beside the police and army, the GSF, vigilantes and Vectus Global.",
+      "fr": "AFP : quelque 2 500 soldats salvadoriens combattent les gangs en grande partie seuls, aux côtés de la police et de l’armée, de la FRG, de groupes d’autodéfense et de Vectus Global.",
+      "src": [
+        "S37"
+      ]
     }
   ],
   "notes": [
@@ -722,6 +909,14 @@
           "src": [
             "S5"
           ]
+        },
+        {
+          "en": "19.11: a lobbyist for El Salvador told AP that the troops operate under an agreement signed by the two governments — a status-of-forces agreement or a memorandum of understanding — and would not give its terms. Amnesty International has asked both governments to publish it. An instrument is now said to exist; none is published, so the answer stands as written.",
+          "fr": "19.11 : un lobbyiste du Salvador a indiqué à l’AP que les troupes opèrent en vertu d’un accord signé par les deux gouvernements — un accord sur le statut des forces ou un protocole d’accord — sans en donner les termes. Amnesty International a demandé aux deux gouvernements de le publier. Un instrument est désormais dit exister ; aucun n’est publié, la réponse reste donc telle qu’écrite.",
+          "src": [
+            "S32",
+            "S36"
+          ]
         }
       ],
       "confwhy": {
@@ -738,7 +933,9 @@
         "S9",
         "S3",
         "S2",
-        "S5"
+        "S5",
+        "S32",
+        "S36"
       ]
     }
   ]

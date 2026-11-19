@@ -12,8 +12,8 @@
   "principle": "The record speaks. The desk does not fill its silences.",
   "basis": "Built from the BINUH quarterly human-rights report for July–September 2026, the Cadre 22 and Cadre 7 records, and a source search on 16.11.2026. The expanded Cadre 509 draft was not supplied; nothing in it is reproduced.",
   "kicker": "Quarterly evidentiary record",
-  "version": "v1.4 · 16.11.2026",
-  "previous": "v1.3 · 16.11.2026"
+  "version": "v1.5 · 19.11.2026",
+  "previous": "v1.4 · 16.11.2026"
  },
  "originators": {
   "UN": "United Nations — BINUH / Secretariat",
@@ -389,6 +389,18 @@
    "ty": "press",
    "url": "https://lenouvelliste.com/en/article/269662/voter-registration-for-elections-to-begin-on-july-16-2026",
    "n": "Planned start, from two sources in the government and the CEP."
+  },
+  {
+   "id": "S33",
+   "t": "Haiti: ‘Atrocious abuses’ continue as UN warns anti-gang operations must prioritise civilian protection",
+   "o": "UN",
+   "pub": "UN News (OHCHR spokesperson, Geneva)",
+   "d": "17.11.2026",
+   "r": "A",
+   "ty": "official",
+   "url": "https://news.un.org/en/story/2026/11/1168823",
+   "n": "Read 19.11.2026, after the seal. Restates the quarter's 1,167 killed and 459 injured and adds a count for operations by national forces. Same originator as S1: not corroboration.",
+   "cov": "Q3"
   }
  ],
  "cells": [
@@ -1534,6 +1546,13 @@
    "a": "Planned for 16 July — S32 (two sources, 09.07)",
    "b": "Began 20 July in nine departments — S23",
    "st": "Plan against report. Not a contradiction; the reported date is single-source."
+  },
+  {
+   "id": "D-509-11",
+   "k": "Killed and injured in security operations, Q3",
+   "a": "50% of 1,626 killed and injured, “during operations by national security forces”, incl. police, a private military company and GSF patrols — S1, p. 6",
+   "b": "At least 514 killed and 235 injured (749, about 46% of 1,626) in security operations by national forces, sometimes with a private military company — S33",
+   "st": "Not reconciled. Same originator; the categories may differ (S33 does not name GSF patrols). Neither figure is adopted."
   }
  ],
  "errors": [
@@ -1587,6 +1606,7 @@
   "v1.2 — Interface: the rail shows reading progress; the top index keeps the current section in view on small screens; section headings draw in. No record content changed.",
   "v1.3 — New section 02, Plates: an evidence matrix (which originator supports which cell, counted or only held), the quarter on one line (dual-sourced against single-source events), a map of the places the record names over BINUH's casualty shares, and BINUH's second- and third-quarter counts side by side.",
   "v1.3 — Sections renumbered 01–09; a ninth sign (compass) for Plates. Every plate is drawn from the record, carries its originator count, and adds no figure the record does not hold.",
-  "v1.4 — New mark, supplied by the desk: 777, a radiant circle holding a triangle and an inner circle between two crossed rings, 509. It replaces the Legba vèvè on the cover, in the header and as the seal. On load it burns: each line catches from the centre, flares, cools through orange and red, and is left as ash, with sparks lifting off; afterwards it smoulders. “Burn again” repeats it; any tap or key finishes it. The same mark and burn sit on the Cadre 509 door of the hub. No record content changed."
+  "v1.4 — New mark, supplied by the desk: 777, a radiant circle holding a triangle and an inner circle between two crossed rings, 509. It replaces the Legba vèvè on the cover, in the header and as the seal. On load it burns: each line catches from the centre, flares, cools through orange and red, and is left as ash, with sparks lifting off; afterwards it smoulders. “Burn again” repeats it; any tap or key finishes it. The same mark and burn sit on the Cadre 509 door of the hub. No record content changed.",
+  "v1.5 — After the seal (19.11.2026): one source added (S33, OHCHR via UN News, 17.11) and one discrepancy (D-509-11). S33 is the same originator as S1, so cell 01 stays at one originator and no cell, state or count changes. Events after 30 September go to the Q4 record, not here."
  ]
 }
