@@ -401,6 +401,23 @@ html:not(.js) .chapters button{cursor:default;pointer-events:none}
 .transcript ol{list-style:decimal;padding-left:20px;display:flex;flex-direction:column;gap:6px;font-size:14px;margin-bottom:var(--s3)}
 .transcript p{font-size:13px;color:var(--muted)}
 
+/* ---------- Extended edition link (v3) ---------- */
+.ext-link{flex:none;display:inline-flex;align-items:center;gap:6px;min-height:36px;padding:4px 12px;border:2px solid var(--navy);color:var(--navy);font-family:var(--f-cond);font-size:14px;font-weight:700;text-decoration:none;white-space:nowrap}
+.ext-link:hover{background:var(--navy);color:#fff}
+.ext-link svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2}
+@media (max-width:640px){.ext-link .x{display:none}}
+.extend{background:var(--surface);border-bottom:1px solid var(--border)}
+.extend .wrap{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:var(--s5) var(--s8);align-items:center;padding-top:clamp(40px,5vw,64px);padding-bottom:clamp(40px,5vw,64px)}
+.extend .eyebrow{color:var(--blue)}
+.extend h2{font-size:clamp(24px,2.6vw,32px);line-height:1.2;margin:var(--s3) 0 var(--s4)}
+.extend ul{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px var(--s5);font-size:15px;color:var(--heading)}
+.extend li{padding-left:14px;position:relative}
+.extend li::before{content:"";position:absolute;left:0;top:.62em;width:6px;height:6px;background:var(--navy)}
+.extend .go{display:flex;flex-direction:column;gap:var(--s3);align-items:flex-start}
+.extend .go p{font-size:14px;color:var(--muted)}
+@media (max-width:860px){.extend .wrap{grid-template-columns:1fr}.extend ul{grid-template-columns:1fr}}
+@media print{.ext-link,.extend{display:none}}
+
 /* ---------- Motion (enhancement only) ---------- */
 @media (prefers-reduced-motion:no-preference){
   .js [data-anim] .cmp .fill,.js [data-anim] .bb .val,.js [data-anim] .srow .bar span,.js [data-anim] .mini .f{transform:scaleX(0);transition:transform .9s var(--ease)}
@@ -490,6 +507,7 @@ html:not(.js) .chapters button{cursor:default;pointer-events:none}
       <li><a class="l" href="#defend"><svg class="glyph" aria-hidden="true"><use href="#g-defend"/></svg>Defend</a></li>
       <li><a class="l" href="#documents">Documents</a></li>
     </ul>
+    <a class="ext-link" href="/sol/reset/v3/"><span>Extended<span class="x"> edition</span></span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
   </div>
   <div class="progress" aria-hidden="true"><span></span></div>
 </nav>
@@ -944,6 +962,29 @@ html:not(.js) .chapters button{cursor:default;pointer-events:none}
   </div>
 </section>
 
+<!-- ============ Extended edition (optional) ============ -->
+<aside class="extend" aria-labelledby="extend-h">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Want the full evidence?</p>
+      <h2 id="extend-h">Read the extended edition of this Stocktake</h2>
+      <ul>
+        <li>Every figure with its base, period, source and caveat</li>
+        <li>Milestones with their status as of 19 November 2026</li>
+        <li>Where the two source documents differ, beside each chart</li>
+        <li>Complementarity, progress and roadmap sections</li>
+        <li>One-click accessible view</li>
+        <li>Same draft sources, same draft status</li>
+      </ul>
+    </div>
+    <div class="go">
+      <a class="btn primary" href="/sol/reset/v3/">Open the extended edition <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      <a class="btn secondary" href="/sol/reset/v3/?view=accessible">Open it in accessible view</a>
+      <p>About twice the length of this page. This page stays as the short edition.</p>
+    </div>
+  </div>
+</aside>
+
 <!-- ============ Documents ============ -->
 <section id="documents" class="docs" aria-labelledby="docs-h">
   <div class="wrap">
@@ -1018,7 +1059,7 @@ html:not(.js) .chapters button{cursor:default;pointer-events:none}
         <li><a href="https://www.facebook.com/FriendsofIASC">Facebook: FriendsofIASC</a></li>
       </ul></nav>
     </div>
-    <p class="fine">Draft for discussion. All figures as reported in the IASC Humanitarian Reset Stocktake (draft, 8 October 2026 revision) and presentation, October 2026.</p>
+    <p class="fine">Draft for discussion. All figures as reported in the IASC Humanitarian Reset Stocktake (draft, 8 October 2026 revision) and presentation, October 2026. <a href="/sol/reset/v3/">Extended edition</a>.</p>
   </div>
 </footer>
 
