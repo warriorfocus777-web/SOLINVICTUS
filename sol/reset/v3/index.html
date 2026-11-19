@@ -3,26 +3,26 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Humanitarian Reset – Stocktake October 2026 | IASC</title>
-<meta name="description" content="IASC Humanitarian Reset Stocktake, October 2026 (draft): key figures and progress across Define, Deliver, Devolve and Defend.">
+<title>Humanitarian Reset – Stocktake October 2026 (draft, v3) | IASC</title>
+<meta name="description" content="IASC Humanitarian Reset Stocktake, October 2026 (draft): key figures, caveats, roadmap and sources across Define, Deliver, Devolve and Defend.">
 <meta name="theme-color" content="#272E67">
 <meta name="robots" content="noindex,nofollow,noarchive">
-<link rel="canonical" href="https://solinvictus.app/sol/reset/">
+<link rel="canonical" href="https://solinvictus.app/sol/reset/v3/">
 <link rel="icon" type="image/svg+xml" href="/sol/reset/favicon.svg">
 <link rel="preload" as="font" type="font/woff2" href="/sol/reset/fonts/roboto-latin-wght-normal.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="/sol/reset/fonts/roboto-slab-latin-wght-normal.woff2" crossorigin>
 <meta property="og:type" content="article">
 <meta property="og:title" content="Humanitarian Reset – Stocktake October 2026">
 <meta property="og:description" content="Key figures and progress across Define, Deliver, Devolve and Defend (draft).">
-<meta property="og:url" content="https://solinvictus.app/sol/reset/">
+<meta property="og:url" content="https://solinvictus.app/sol/reset/v3/">
 <meta property="og:image" content="https://solinvictus.app/sol/reset/media/stocktake-intro-poster.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<script>document.documentElement.classList.add('js')</script>
+<script>(function(d){d.classList.add('js');var on=false;try{var q=location.search+location.hash;if(/[?&]view=accessible|#accessible/.test(q))on=true;else if(/[?&]view=standard/.test(q))on=false;else on=localStorage.getItem('reset-view')==='accessible';}catch(e){}if(on)d.classList.add('a11y');})(document.documentElement)</script>
 <style>
 /* ---------- Fonts: self-hosted Roboto, Roboto Condensed and Roboto Slab (SIL OFL, see fonts/OFL.txt) ---------- */
-@font-face{font-family:"Roboto";font-style:normal;font-weight:100 900;font-display:swap;src:url("fonts/roboto-latin-wght-normal.woff2") format("woff2")}
-@font-face{font-family:"Roboto Condensed";font-style:normal;font-weight:100 900;font-display:swap;src:url("fonts/roboto-condensed-latin-wght-normal.woff2") format("woff2")}
-@font-face{font-family:"Roboto Slab";font-style:normal;font-weight:100 900;font-display:swap;src:url("fonts/roboto-slab-latin-wght-normal.woff2") format("woff2")}
+@font-face{font-family:"Roboto";font-style:normal;font-weight:100 900;font-display:swap;src:url("../fonts/roboto-latin-wght-normal.woff2") format("woff2")}
+@font-face{font-family:"Roboto Condensed";font-style:normal;font-weight:100 900;font-display:swap;src:url("../fonts/roboto-condensed-latin-wght-normal.woff2") format("woff2")}
+@font-face{font-family:"Roboto Slab";font-style:normal;font-weight:100 900;font-display:swap;src:url("../fonts/roboto-slab-latin-wght-normal.woff2") format("woff2")}
 
 :root{
   /* Colour */
@@ -401,23 +401,6 @@ html:not(.js) .chapters button{cursor:default;pointer-events:none}
 .transcript ol{list-style:decimal;padding-left:20px;display:flex;flex-direction:column;gap:6px;font-size:14px;margin-bottom:var(--s3)}
 .transcript p{font-size:13px;color:var(--muted)}
 
-/* ---------- Extended edition link (v3) ---------- */
-.ext-link{flex:none;display:inline-flex;align-items:center;gap:6px;min-height:36px;padding:4px 12px;border:2px solid var(--navy);color:var(--navy);font-family:var(--f-cond);font-size:14px;font-weight:700;text-decoration:none;white-space:nowrap}
-.ext-link:hover{background:var(--navy);color:#fff}
-.ext-link svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2}
-@media (max-width:640px){.ext-link .x{display:none}}
-.extend{background:var(--surface);border-bottom:1px solid var(--border)}
-.extend .wrap{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:var(--s5) var(--s8);align-items:center;padding-top:clamp(40px,5vw,64px);padding-bottom:clamp(40px,5vw,64px)}
-.extend .eyebrow{color:var(--blue)}
-.extend h2{font-size:clamp(24px,2.6vw,32px);line-height:1.2;margin:var(--s3) 0 var(--s4)}
-.extend ul{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px var(--s5);font-size:15px;color:var(--heading)}
-.extend li{padding-left:14px;position:relative}
-.extend li::before{content:"";position:absolute;left:0;top:.62em;width:6px;height:6px;background:var(--navy)}
-.extend .go{display:flex;flex-direction:column;gap:var(--s3);align-items:flex-start}
-.extend .go p{font-size:14px;color:var(--muted)}
-@media (max-width:860px){.extend .wrap{grid-template-columns:1fr}.extend ul{grid-template-columns:1fr}}
-@media print{.ext-link,.extend{display:none}}
-
 /* ---------- Motion (enhancement only) ---------- */
 @media (prefers-reduced-motion:no-preference){
   .js [data-anim] .cmp .fill,.js [data-anim] .bb .val,.js [data-anim] .srow .bar span,.js [data-anim] .mini .f{transform:scaleX(0);transition:transform .9s var(--ease)}
@@ -447,18 +430,379 @@ html:not(.js) .chapters button{cursor:default;pointer-events:none}
   .js [data-anim] .ring .arc{stroke-dasharray:var(--dash) 326.73!important}
   .foot a::after{content:" – " attr(href);font-size:9pt}
 }
+
+/* ==========================================================================
+   v3 additions (parallel version). Everything above is the live /sol/reset/ system, unchanged
+   apart from font and media paths. New rules reuse the same tokens.
+   ========================================================================== */
+:root{
+  /* Status vocabulary: each status has text + icon; colour is never the only cue */
+  --st-completed:#1E6B3A;--st-ongoing:#1f69b3;--st-planned:#595959;--st-pending:#8A4B00;--st-notassessed:#6B4C9A;--st-superseded:#5E6670;
+  --define:#1f69b3;--deliver:#272E67;--devolve:#1E6B3A;--defend:#8A4B00;
+  --measure:68ch;
+}
+/* Persistent draft ribbon */
+.ribbon{background:#FFF4D6;color:#3D2E00;border-bottom:1px solid #E4C877;font-size:14px}
+.ribbon .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:4px var(--s4);padding-top:8px;padding-bottom:8px}
+.ribbon b{font-family:var(--f-cond);letter-spacing:.08em;text-transform:uppercase}
+.ribbon a{color:#3D2E00}
+.subnav ul{min-width:0}
+.subnav .dft{flex:none;color:#8A4B00;border-color:#8A4B00}
+@media (max-width:640px){.subnav .dft{display:none}}
+
+/* Hero (v3) */
+.hero .kicker{display:flex;flex-wrap:wrap;gap:var(--s2) var(--s4);align-items:baseline}
+.hero .official{font-family:var(--f-slab);font-size:clamp(18px,1.8vw,22px);color:#fff;margin-top:var(--s2)}
+.hero .official span{color:var(--on-navy-soft);font-weight:400}
+.hero h1.v3{font-size:clamp(34px,4.6vw,56px);margin:var(--s4) 0 var(--s4)}
+.hero .subline{font-family:var(--f-cond);font-size:17px;letter-spacing:.02em;color:var(--on-navy-soft);margin-top:var(--s4)}
+.cta{display:flex;flex-wrap:wrap;gap:var(--s3);margin-top:var(--s6)}
+.btn.onnavy{border-color:#fff;color:#fff}
+.btn.onnavy.primary{background:#fff;color:var(--navy)}
+.btn.onnavy:hover{background:var(--navy-hover);border-color:var(--navy-hover);color:#fff}
+.hero .watch{margin-top:0}
+.edl{font-size:12px;color:var(--on-navy-soft);margin-top:var(--s5);max-width:62ch}
+
+/* Generic section heads */
+.sec{padding-top:var(--sec)}
+.sh{max-width:880px;margin-bottom:var(--s7)}
+.sh .eyebrow{color:var(--blue);display:flex;align-items:center;gap:var(--s3)}
+.sh .eyebrow .sn{font-family:var(--f-slab);color:var(--muted);letter-spacing:0}
+.sh h2{font-size:clamp(28px,3.4vw,42px);line-height:1.12;margin-top:var(--s3)}
+.sh p.intro{font-size:18px;margin-top:var(--s4);max-width:var(--measure);color:var(--heading)}
+.prose p{max-width:var(--measure)}
+.prose p+p{margin-top:var(--s3)}
+
+/* Executive overview: grouped KPIs */
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:var(--s3)}
+.kpi{background:var(--surface);padding:var(--s5) var(--s4) var(--s4);display:flex;flex-direction:column;gap:var(--s2)}
+.kpi .kt{font-size:14px;line-height:1.35;color:var(--heading);font-weight:700}
+.kpi .v{font-size:clamp(30px,2.8vw,38px);line-height:1;color:var(--heading)}
+.kpi .pl{font-family:var(--f-cond);font-size:13px;line-height:1.25;color:var(--heading)}
+.kc{font-size:13px;line-height:1.45;color:var(--body);padding-top:var(--s2);border-top:1px solid var(--border)}
+.kpi .src{margin-top:auto;display:flex;flex-wrap:wrap;gap:4px 8px;align-items:center}
+.kpi .src .tag{font-size:10px;color:#8A4B00;padding:0 5px}
+
+/* 100 / 66 / 41 explainer */
+.counts{margin-top:var(--s7);background:var(--surface);border-top:4px solid var(--red);padding:clamp(20px,3vw,32px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:var(--s6) var(--s8);align-items:center}
+.counts h3{font-family:var(--f-slab);font-size:clamp(20px,2vw,26px);line-height:1.2}
+.counts ul{display:flex;flex-direction:column;gap:var(--s3)}
+.counts li{display:grid;grid-template-columns:76px minmax(0,1fr);gap:var(--s3);font-size:15px;align-items:baseline}
+.counts li b{font-family:var(--f-cond);font-size:26px;color:var(--heading)}
+.counts .not{font-family:var(--f-cond);font-weight:700;color:var(--red-text);font-size:15px;margin-top:var(--s3)}
+@media (max-width:860px){.counts{grid-template-columns:1fr}}
+
+/* Guiding principle */
+.principle{background:var(--navy);color:#fff;margin-top:var(--sec);padding:var(--sec) 0}
+.principle .wrap{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:var(--s7) var(--s8);align-items:end}
+.principle .eyebrow{color:var(--on-navy-soft)}
+.principle .big-p{font-family:var(--f-slab);font-weight:700;font-size:clamp(30px,4vw,52px);line-height:1.1;color:#fff;margin-top:var(--s3)}
+.principle .lab{display:inline-block;margin-top:var(--s4);font-family:var(--f-cond);font-size:13px;color:var(--on-navy-soft)}
+.principle .lab a{color:var(--on-navy-soft)}
+.principle .gap{border-left:4px solid var(--red);padding-left:var(--s5)}
+.principle .gap p{font-family:var(--f-slab);font-size:18px;line-height:1.5}
+.principle .gap cite{display:block;margin-top:var(--s2);font-style:normal;font-family:var(--f-cond);font-size:13px;color:var(--on-navy-soft)}
+@media (max-width:900px){.principle .wrap{grid-template-columns:1fr}}
+
+/* Four imperatives: static band (primary) */
+.imps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--border)}
+.imp{display:flex;flex-direction:column;gap:var(--s3);padding:var(--s5) var(--s5) var(--s6);border-right:1px solid var(--border);border-bottom:1px solid var(--border);text-decoration:none;color:var(--body);background:var(--surface);position:relative;transition:background-color .15s}
+.imps>li{display:flex}.imps>li>.imp{flex:1}.imps>li:last-child>.imp{border-right:0}
+.imp::before{content:"";position:absolute;left:0;right:0;top:0;height:4px;background:var(--pc)}
+.imp:hover{background:#F1F0FA;color:var(--body)}
+.imp .ih{display:flex;align-items:center;gap:var(--s2);font-family:var(--f-cond);font-weight:700;font-size:20px;letter-spacing:.06em;text-transform:uppercase;color:var(--heading)}
+.imp .ih .glyph{color:var(--pc)}
+.imp .iq{font-family:var(--f-slab);font-size:19px;line-height:1.35;color:var(--heading)}
+.imp .im{font-size:14px}
+.imp .go{margin-top:auto;font-family:var(--f-cond);font-size:14px;font-weight:700;color:var(--navy)}
+.imp-note{display:flex;flex-wrap:wrap;gap:var(--s2) var(--s5);justify-content:space-between;margin-top:var(--s4);font-size:13px;color:var(--muted)}
+.imp-note a{color:var(--muted)}
+@media (max-width:980px){.imps{grid-template-columns:repeat(2,minmax(0,1fr))}.imps>li:nth-child(2)>.imp{border-right:0}}
+@media (max-width:540px){.imps{grid-template-columns:1fr}.imp{border-right:0}}
+
+/* Optional marquee: decorative, aria-hidden, pausable, off under reduced motion */
+.mq{margin-top:var(--s6);display:flex;align-items:center;gap:var(--s3);border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--surface)}
+.mq-view{overflow:hidden;flex:1;min-width:0;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.mq-track{display:flex;width:max-content;animation:mq 46s linear infinite}
+.mq-track span{white-space:nowrap;padding:14px 28px;font-family:var(--f-cond);font-size:16px;color:var(--heading)}
+.mq-track b{letter-spacing:.08em;margin-right:8px}
+.mq.paused .mq-track,.mq:hover .mq-track,.mq:focus-within .mq-track{animation-play-state:paused}
+.mq-btn{flex:none;margin-right:var(--s3);min-height:44px;min-width:44px;padding:0 12px;border:1.5px solid var(--navy);background:transparent;color:var(--navy);font:inherit;font-family:var(--f-cond);font-weight:700;font-size:14px;cursor:pointer}
+.mq-btn:hover{background:var(--navy);color:#fff}
+@keyframes mq{to{transform:translateX(-50%)}}
+html:not(.js) .mq{display:none}
+@media (prefers-reduced-motion:reduce){.mq{display:none}}
+
+/* Pillar chapter scaffolding (v3) */
+.d .pc{--pc:var(--blue)}
+.commit{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:var(--s5) var(--s8);align-items:start;margin:calc(-1 * var(--s4)) 0 var(--s7);padding:var(--s5) 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.commit .cq{font-family:var(--f-slab);font-size:clamp(20px,2vw,26px);line-height:1.3;color:var(--heading)}
+.commit .cm{font-size:16px;color:var(--heading)}
+.commit .cm b{display:block;font-family:var(--f-cond);font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+@media (max-width:860px){.commit{grid-template-columns:1fr}}
+.steps{font-family:var(--f-cond);font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:var(--s3);display:flex;align-items:center;gap:var(--s2)}
+.steps::before{content:"";width:20px;height:2px;background:var(--muted)}
+.close3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s5) var(--s6);margin-top:var(--s7)}
+.close3>div{border-top:2px solid var(--navy);padding-top:var(--s4);display:flex;flex-direction:column;gap:var(--s2);font-size:15px}
+.close3 h3{font-family:var(--f-cond);font-size:14px;letter-spacing:.1em;text-transform:uppercase}
+.close3 .aq{font-family:var(--f-slab);font-size:18px;line-height:1.4;color:var(--heading)}
+.close3 ul{display:flex;flex-direction:column;gap:6px}
+.close3 li{padding-left:14px;position:relative}
+.close3 li::before{content:"";position:absolute;left:0;top:.62em;width:6px;height:6px;background:var(--navy)}
+@media (max-width:900px){.close3{grid-template-columns:1fr}}
+.caveat ul{display:flex;flex-direction:column;gap:6px;color:var(--heading)}
+.caveat ul li{padding-left:14px;position:relative}
+.caveat ul li::before{content:"";position:absolute;left:0;top:.6em;width:6px;height:2px;background:var(--red)}
+.caveat details{margin-top:var(--s3);grid-column:2}
+.caveat summary{cursor:pointer;font-weight:700;color:var(--heading);min-height:32px}
+@media (max-width:640px){.caveat details{grid-column:1}}
+.interp{margin-top:var(--s7);display:grid;grid-template-columns:170px minmax(0,1fr);gap:var(--s2) var(--s6);padding-top:var(--s4);border-top:2px solid var(--navy)}
+.interp>p:first-child{font-family:var(--f-cond);font-size:14px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--heading)}
+.interp>p+p{color:var(--heading);max-width:var(--measure)}
+@media (max-width:640px){.interp{grid-template-columns:1fr}}
+
+/* Discrepancy marker on a comparison bar */
+.cmp .track{position:relative}
+.cmp .alt{position:absolute;top:-4px;bottom:-4px;left:var(--a);width:0;border-left:3px dashed var(--red)}
+.disc{display:flex;gap:var(--s3);align-items:flex-start;font-size:14px;color:var(--heading);background:#FDECEE;padding:var(--s3) var(--s4);border-left:4px solid var(--red)}
+.disc b{font-family:var(--f-cond)}
+/* Hyper-prioritized vs full appeal (replaces rings: bars carry no false precision) */
+.fund{display:flex;flex-direction:column;gap:var(--s5)}
+
+/* Devolve: two side-by-side measures */
+.ab{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s4);margin-top:var(--s4)}
+.ab>div{border:1.5px solid var(--navy);padding:var(--s4);display:flex;flex-direction:column;gap:var(--s2);background:var(--surface)}
+.ab>div.inc{border-style:dashed}
+.ab .abh{font-family:var(--f-cond);font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--heading)}
+.ab .abv{font-family:var(--f-cond);font-size:40px;font-weight:700;line-height:1;color:var(--heading)}
+.ab .abb{display:flex;height:20px;background:var(--track)}
+.ab .abb span{display:block;height:100%}
+.ab p{font-size:14px}
+.base24{display:grid;grid-template-columns:minmax(0,1fr);gap:6px;font-size:14px;padding-bottom:var(--s4);border-bottom:1px solid var(--border)}
+@media (max-width:560px){.ab{grid-template-columns:1fr}}
+.ptag{display:inline-block;margin-left:6px;font-family:var(--f-cond);font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#8A4B00;border:1px solid #8A4B00;padding:0 4px;vertical-align:middle}
+
+/* Defend: qualitative evidence map */
+.emap{width:100%;border-collapse:collapse;font-size:14px;background:var(--surface)}
+.emap th,.emap td{text-align:left;vertical-align:top;padding:12px 14px;border-bottom:1px solid var(--border)}
+.emap thead th{font-family:var(--f-cond);font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--navy);background:var(--bg)}
+.emap tbody th{color:var(--heading);font-family:var(--f-cond);font-size:16px}
+.emap td.gap{color:#6B4C9A}
+
+/* Status vocabulary */
+.st{display:inline-flex;align-items:center;gap:5px;font-family:var(--f-cond);font-size:13px;font-weight:700;letter-spacing:.02em;white-space:nowrap;padding:1px 8px 1px 5px;border:1.5px solid currentColor;line-height:1.5}
+.sti{width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.st-completed{color:var(--st-completed)}.st-ongoing{color:var(--st-ongoing)}.st-planned{color:var(--st-planned)}
+.st-pending{color:var(--st-pending);border-style:dashed}.st-notassessed{color:var(--st-notassessed);border-style:dotted}.st-superseded{color:var(--st-superseded)}
+.dark .st{background:#fff}
+.vocab{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:var(--s3) var(--s5);margin-bottom:var(--s6)}
+.vocab li{display:flex;flex-direction:column;gap:4px;font-size:14px}
+
+/* Results chain: activity ≠ outcome */
+.chain{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:2px;margin:var(--s6) 0;background:var(--border)}
+.chain li{background:var(--surface);padding:var(--s4);display:flex;flex-direction:column;gap:6px;font-size:14px}
+.chain li b{font-family:var(--f-cond);font-size:15px;letter-spacing:.06em;text-transform:uppercase;color:var(--heading)}
+.chain li.na{background:repeating-linear-gradient(135deg,#fff 0 8px,#F3F0F8 8px 16px)}
+@media (max-width:900px){.chain{grid-template-columns:1fr}}
+
+/* Roadmap */
+.road{display:flex;flex-direction:column;border-top:2px solid var(--navy)}
+.ms{display:grid;grid-template-columns:200px minmax(0,1fr);gap:var(--s3) var(--s6);padding:var(--s5) 0;border-bottom:1px solid var(--border)}
+.msd{display:flex;flex-direction:column;gap:var(--s2);align-items:flex-start}
+.msd b{font-size:20px;color:var(--heading)}
+.msw{font-weight:700;color:var(--heading);font-size:17px;margin-bottom:var(--s2)}
+.msb dl{display:grid;gap:4px;font-size:14px}
+.msb dl div{display:grid;grid-template-columns:110px minmax(0,1fr);gap:var(--s3)}
+.msb dt{font-family:var(--f-cond);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding-top:2px}
+.ms-completed .msd b,.ms-pending .msd b{color:var(--muted)}
+@media (max-width:700px){.ms{grid-template-columns:1fr}.msd{flex-direction:row;align-items:center;gap:var(--s3)}.msb dl div{grid-template-columns:1fr;gap:0}}
+
+/* Tables (register, workstreams) */
+.tscroll{position:relative;overflow-x:auto;background:var(--surface)}
+.tscroll:focus-visible{outline-offset:-3px}
+.reg{width:100%;border-collapse:collapse;font-size:13.5px;min-width:900px}
+.reg.ws{min-width:640px}
+.reg th,.reg td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px solid var(--border)}
+.reg thead th{font-family:var(--f-cond);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--navy);position:sticky;top:0;background:var(--surface)}
+.reg tbody th{color:var(--heading);min-width:180px}
+.reg td.num{font-family:var(--f-cond);font-weight:700;font-size:16px;color:var(--heading);white-space:nowrap}
+details.regd{margin-top:var(--s6)}
+details.regd>summary{cursor:pointer;min-height:44px;display:flex;align-items:center;gap:var(--s2);font-weight:700;color:var(--heading);font-size:17px}
+
+/* Complementarity diagram */
+.comp{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--s7) var(--s8);align-items:center}
+.comp svg{width:100%;max-width:520px;height:auto;display:block;margin:0 auto}
+.comp .ctext{display:flex;flex-direction:column;gap:var(--s4)}
+.comp .q{font-family:var(--f-slab);font-size:clamp(18px,1.7vw,21px);line-height:1.45;color:var(--heading);border-left:4px solid var(--navy);padding-left:var(--s5)}
+.diag-note{font-size:13px;color:var(--muted);padding:var(--s3) var(--s4);border:1px dashed var(--border);background:var(--surface)}
+@media (max-width:900px){.comp{grid-template-columns:1fr}}
+
+/* Voices: evidence-gap panel */
+.voices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s5)}
+.voices>div{background:var(--surface);padding:var(--s5);display:flex;flex-direction:column;gap:var(--s3);font-size:15px}
+.voices h3{font-size:18px}
+.voices .gap{border-top:4px solid #6B4C9A}
+.voices .have{border-top:4px solid var(--navy)}
+@media (max-width:900px){.voices{grid-template-columns:1fr}}
+
+/* Document library (v3) */
+.lib{width:100%;border-collapse:collapse;font-size:14px;margin-top:var(--s6);background:var(--surface)}
+.lib th,.lib td{text-align:left;vertical-align:top;padding:12px;border-bottom:1px solid var(--border)}
+.lib thead th{font-family:var(--f-cond);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--navy)}
+.lib tbody th{color:var(--heading)}
+.lib .tag.dr{color:#8A4B00}
+.lib .tag.pb{color:var(--st-completed)}
+
+/* Closing */
+.closing{background:var(--heading);color:#fff;padding:var(--sec) 0}
+.closing .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--s7) var(--s8);align-items:end}
+.closing .eyebrow{color:var(--on-navy-soft)}
+.closing h2{color:#fff;font-size:clamp(34px,4.6vw,58px);line-height:1.05;margin-top:var(--s3)}
+.closing p{font-size:18px;max-width:58ch}
+.closing .att{font-family:var(--f-cond);font-size:13px;color:var(--on-navy-soft);margin-top:var(--s3)}
+.closing .att a{color:var(--on-navy-soft)}
+.closing .prop{font-family:var(--f-slab);font-size:clamp(20px,2vw,26px);line-height:1.35;border-top:1px solid rgba(255,255,255,.3);padding-top:var(--s5)}
+@media (max-width:900px){.closing .wrap{grid-template-columns:1fr}}
+.back{display:inline-flex;margin-top:var(--s5);font-family:var(--f-cond);font-weight:700;font-size:14px}
+
+
+/* v3.1 trimmed overview */
+.kpis{grid-template-columns:repeat(5,minmax(0,1fr))}
+.kpi .kcat{font-family:var(--f-cond);font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue)}
+.kpi{border-top:4px solid var(--navy)}
+.kpi .vs{color:var(--context);font-weight:400}
+.kpi .pl2{font-family:var(--f-cond);font-size:12px;color:var(--muted)}
+.kpi .kl2{font-size:14px;line-height:1.4;color:var(--heading);font-weight:500}
+.kpi .src a{color:var(--muted);font-size:12px}
+.kpi .src span:first-child{width:100%}
+@media (max-width:1100px){.kpis{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:700px){.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:420px){.kpis{grid-template-columns:1fr}}
+.reg tbody tr:target{background:#FFF4D6}
+.reg tbody tr{scroll-margin-top:calc(var(--subnav) + 64px)}
+.band{margin-top:0}
+details.more{margin-top:var(--s6)}
+details.more>summary{cursor:pointer;min-height:44px;display:flex;align-items:center;font-weight:700;color:var(--heading);border-top:1px solid var(--border)}
+details.more[open]>summary{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+details.more[open]>.close3{margin-top:0}
+@media print{details.more>summary{display:none}}
+
+/* ==========================================================================
+   Accessible view (one click; also ?view=accessible). Same content, same order:
+   larger text, WCAG 1.4.12 spacing, high contrast, single column, no motion,
+   everything expanded, chart descriptions shown as text.
+   ========================================================================== */
+.a11y-btn{display:inline-flex;align-items:center;gap:6px;min-height:36px;padding:4px 12px;margin-left:auto;border:2px solid #3D2E00;background:#fff;color:#3D2E00;font:inherit;font-weight:700;font-size:14px;cursor:pointer;border-radius:0}
+.a11y-btn .sti{width:16px;height:16px}
+.a11y-btn:hover{background:#3D2E00;color:#fff}
+.a11y-btn.sm{margin-left:0;min-height:36px;border-color:var(--navy);color:var(--navy);flex:none}
+.a11y-btn.sm:hover{background:var(--navy);color:#fff}
+.a11y-btn[aria-pressed="true"],.a11y-btn.sm[aria-pressed="true"]{background:#000;color:#fff;border-color:#000}
+@media (max-width:640px){.a11y-btn.sm .a11y-lbl{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}.a11y-btn.sm{min-width:44px;min-height:44px;justify-content:center}}
+html:not(.js) .a11y-btn{display:none}
+.a11y-alt{display:none}
+
+html.a11y{--body:#111;--muted:#333;--heading:#000;--navy:#14185A;--blue:#0B4F8F;--red-text:#9E1B26;--context:#555B66;--bg:#fff;--surface:#fff;--border:#767676;--track:#E0E0E0;--on-navy-soft:#fff;
+  --f-cond:Roboto,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;--sec:56px;--measure:70ch;scroll-behavior:auto}
+html.a11y body{font-size:19px;line-height:1.7;letter-spacing:.012em;word-spacing:.08em}
+html.a11y p,html.a11y li,html.a11y dd,html.a11y td,html.a11y th,html.a11y figcaption,html.a11y summary{line-height:1.7!important}
+html.a11y p+p{margin-top:.9em}
+/* No text smaller than 16px; no all-caps; no condensed type */
+html.a11y .src,html.a11y .fs,html.a11y .kc,html.a11y .pl2,html.a11y .kpi .src a,html.a11y small,html.a11y .tag,html.a11y .st,html.a11y .eyebrow,html.a11y .kcat,html.a11y .steps,html.a11y cite,html.a11y .qcite,html.a11y .edl,html.a11y .lab,html.a11y .att,html.a11y .diag-note,html.a11y .reg,html.a11y .lib,html.a11y .emap,html.a11y .notes table,html.a11y thead th,html.a11y .msb dt,html.a11y .hero .meta dt,html.a11y .imp-note,html.a11y .chapters .tc,html.a11y .transcript p,html.a11y .transcript ol,html.a11y .legend,html.a11y .cmp .y small,html.a11y .ptag,html.a11y .flag,html.a11y .doc-status,html.a11y .kind,html.a11y .card .cov p,html.a11y .fine{font-size:16px!important;letter-spacing:.01em!important}
+html.a11y *{text-transform:none!important}
+html.a11y .eyebrow,html.a11y .kcat,html.a11y .steps{font-weight:700}
+/* Links always underlined; strong focus ring */
+html.a11y a{text-decoration:underline!important;text-decoration-thickness:2px!important;text-underline-offset:4px}
+html.a11y .btn,html.a11y .subnav a.l,html.a11y .imp,html.a11y .watch a,html.a11y .logo{text-decoration:none!important}
+html.a11y :focus-visible{outline:4px solid #000!important;outline-offset:3px!important;box-shadow:0 0 0 7px #FFD400!important}
+html.a11y .dark :focus-visible{outline-color:#FFD400!important;box-shadow:0 0 0 7px #000!important}
+/* Higher-contrast surfaces */
+html.a11y .mast,html.a11y .principle,html.a11y .next,html.a11y .closing,html.a11y .foot{background:#0A0D33}
+html.a11y .kpi,html.a11y .lead,html.a11y .mcard,html.a11y .card,html.a11y .panel,html.a11y .counts,html.a11y .voices>div,html.a11y .imp,html.a11y .chain li,html.a11y .tscroll,html.a11y .band,html.a11y .notes{border:1px solid #767676}
+html.a11y .chain li.na{background:#fff}
+html.a11y .ribbon{background:#FFE9A8;color:#000}
+html.a11y .disc,html.a11y .flag{background:#fff;border:2px solid var(--red-text)}
+html.a11y .d-mark .n,html.a11y .prio span{display:none}
+/* Motion off */
+html.a11y *,html.a11y *::before,html.a11y *::after{animation:none!important;transition:none!important}
+html.a11y .mq,html.a11y .conv-canvas,html.a11y .conv-toggle,html.a11y .progress{display:none!important}
+html.a11y .convergence{opacity:1!important}
+html.a11y [data-anim] .cmp .fill,html.a11y [data-anim] .bb .val,html.a11y [data-anim] .srow .bar span,html.a11y [data-anim] .mini .f{transform:none!important}
+/* One column, comfortable measure */
+html.a11y .wrap{max-width:860px}
+html.a11y .hero,html.a11y .band .wrap,html.a11y .d-head,html.a11y .lead,html.a11y .split,html.a11y .sub,html.a11y .commit,html.a11y .close3,html.a11y .comp,html.a11y .voices,html.a11y .principle .wrap,html.a11y .closing .wrap,html.a11y .counts,html.a11y .notes .wrap,html.a11y .kpis,html.a11y .imps,html.a11y .prio,html.a11y .chain,html.a11y .vocab,html.a11y .cards,html.a11y .ab,html.a11y .caveat,html.a11y .interp,html.a11y .ms,html.a11y .chapters,html.a11y .rings{grid-template-columns:minmax(0,1fr)!important;grid-template-areas:none!important}
+html.a11y .hero{display:block}
+html.a11y .conv-wrap{display:none}
+html.a11y .caveat details{grid-column:1}
+html.a11y .imp{border-right:0!important}
+html.a11y .signals li,html.a11y .press li,html.a11y .kl li,html.a11y .counts li,html.a11y .msb dl div{grid-template-columns:minmax(0,1fr)!important;gap:2px!important}
+html.a11y .cmp li,html.a11y .cmp.wide li,html.a11y .cmp.xl li{grid-template-columns:minmax(0,1fr) 72px!important;row-gap:4px}
+html.a11y .cmp li .y{grid-column:1 / -1}
+html.a11y .cmp li.break{display:flex}
+html.a11y .d-head .sum{border-left-width:4px}
+html.a11y .sub>.fig,html.a11y .close3>div{border-top-width:3px}
+/* Static navigation (no sticky bar covering zoomed content) */
+html.a11y .subnav{position:static;backdrop-filter:none;background:#fff}
+html.a11y{scroll-padding-top:16px}
+html.a11y .subnav .wrap{flex-wrap:wrap;row-gap:0;padding-top:6px}
+html.a11y .subnav .home{border-right:0}
+html.a11y .subnav .a11y-btn.sm{margin-left:auto}
+html.a11y .subnav ul{flex-wrap:wrap;overflow:visible;order:3;flex-basis:100%;border-top:1px solid #767676}
+html.a11y .subnav a.l{height:auto;min-height:44px;padding:6px 12px}
+/* Tables reflow instead of scrolling sideways */
+html.a11y .reg,html.a11y .lib,html.a11y .emap{min-width:0!important}
+html.a11y .reg thead,html.a11y .lib thead,html.a11y .emap thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+html.a11y .reg tr,html.a11y .lib tr,html.a11y .emap tr{display:block;padding:12px 0;border-bottom:2px solid #767676}
+html.a11y .reg th,html.a11y .reg td,html.a11y .lib th,html.a11y .lib td,html.a11y .emap th,html.a11y .emap td{display:block;border:0;padding:2px 12px}
+html.a11y .reg td[data-h]::before,html.a11y .lib td[data-h]::before,html.a11y .emap td[data-h]::before{content:attr(data-h) ": ";font-weight:700}
+/* Chart descriptions shown as text */
+html.a11y .a11y-alt{display:block;margin-top:8px;padding:10px 14px;border-left:4px solid #000;background:#F2F2F2;font-size:17px;color:#000}
+html.a11y .a11y-alt::before{content:"Chart in words: ";font-weight:700}
+html.a11y .dark .a11y-alt{background:#fff}
+/* Larger touch targets */
+html.a11y .chapters button,html.a11y details>summary,html.a11y .btn,html.a11y .mq-btn{min-height:48px}
+
+/* System settings honoured without the toggle */
+@media (prefers-contrast:more){:root{--muted:#333;--body:#111;--context:#555B66;--border:#767676}a{text-decoration-thickness:2px}}
+@media (forced-colors:active){
+  .cmp .fill,.bb .val,.srow .bar span,.mini .f,.ab .abb span,.dots i.on,.reach-fig rect,.sev li,.legend i,.reach-key i{forced-color-adjust:none}
+  .tag,.st,.btn,.a11y-btn{border:2px solid ButtonText}
+}
+/* Print additions */
+@media print{
+  .ribbon{background:#fff;border:1px solid #999}
+  .mq,.cta,.mq-btn{display:none!important}
+  .principle,.closing{background:#fff!important;color:#000!important}
+  .principle *,.closing *{color:#000!important}
+  details.regd{display:block}details.regd>*{display:block}
+  .tscroll{overflow:visible}
+}
+
+.cmp .alt{top:0;bottom:0}
 </style>
 </head>
 <body>
-<!-- Four-D glyph system: one geometric mark per D, reused in nav, section headers and document cards -->
+<!-- Four-D glyph system (unchanged from the live page) + v3 status icons -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
   <symbol id="g-define" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3.5" fill="currentColor"/></symbol>
   <symbol id="g-deliver" viewBox="0 0 24 24"><path d="M5 4l14 8-14 8z"/></symbol>
   <symbol id="g-devolve" viewBox="0 0 24 24"><path d="M6 12l12-7M6 12h12M6 12l12 7"/><circle cx="5" cy="12" r="2.5" fill="currentColor"/><circle cx="19" cy="5" r="2"/><circle cx="19" cy="12" r="2"/><circle cx="19" cy="19" r="2"/></symbol>
   <symbol id="g-defend" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 4.5-3.5 7.5-8 9-4.5-1.5-8-4.5-8-9V6z"/></symbol>
+  <symbol id="s-completed" viewBox="0 0 16 16"><path d="M3 8.5l3.2 3L13 4.5"/></symbol>
+  <symbol id="s-ongoing" viewBox="0 0 16 16"><circle cx="8" cy="8" r="5.5"/><path d="M8 2.5A5.5 5.5 0 0 1 8 13.5z" fill="currentColor"/></symbol>
+  <symbol id="s-planned" viewBox="0 0 16 16"><circle cx="8" cy="8" r="5.5"/></symbol>
+  <symbol id="s-pending" viewBox="0 0 16 16"><circle cx="8" cy="8" r="5.5"/><path d="M8 5v3.5l2 1.5"/></symbol>
+  <symbol id="s-notassessed" viewBox="0 0 16 16"><path d="M4 8h8"/></symbol>
+  <symbol id="s-superseded" viewBox="0 0 16 16"><path d="M3 8h9M9 5l3 3-3 3"/></symbol>
 </svg>
 
 <a class="skip" href="#main">Skip to main content</a>
+<p class="sr-only" role="status" aria-live="polite" id="a11y-status"></p>
+
+<!-- Persistent status: never hidden, softened or removed until formal clearance -->
+<aside class="ribbon" aria-label="Publication status and view options">
+  <div class="wrap"><b>Draft for discussion</b><span>Figures are reported from the Stocktake draft (8 October 2026 revision) and the October 2026 presentation, both pending clearance and not yet published.</span><a href="#documents">Sources and status</a><a href="/sol/reset/">Short edition</a><button class="a11y-btn" type="button" aria-pressed="false" data-a11y-toggle><svg class="sti" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="3" r="1.6" fill="currentColor" stroke="none"/><path d="M3 6h10M8 6v4M8 10l-2.5 4.5M8 10l2.5 4.5"/></svg><span class="a11y-lbl">Accessible view</span></button></div>
+</aside>
 
 <header class="mast dark" id="top">
   <div class="wrap">
@@ -472,15 +816,23 @@ html:not(.js) .chapters button{cursor:default;pointer-events:none}
     </div>
     <div class="hero">
       <div class="hero-text">
-        <p class="eyebrow">Humanitarian Reset · Stocktake</p>
-        <h1>Humanitarian Reset<span>Stocktake, October 2026</span></h1>
-        <p class="lede">Nineteen months after launch, the IASC has delivered collective results for 100 million people, including 41 million with life-saving support, and has advanced sector reform across the four Ds, including in planning, coordination and financing.</p>
-        <p class="watch"><a href="#overview"><span class="pl" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M2 1l9 5-9 5z"/></svg></span>Watch the overview <small>0:50</small></a></p>
+        <div class="kicker"><p class="eyebrow">Humanitarian Reset · Stocktake</p></div>
+        <p class="official">Humanitarian Reset Stocktake, October 2026 <span>· draft for discussion</span></p>
+        <h1 class="v3">A humanitarian system fit for the realities of today.</h1>
+        <p class="lede">The Humanitarian Reset brings the humanitarian community together around four imperatives: prioritize the most urgent needs, deliver more effectively, move resources and decision-making closer to affected communities, and defend the principles that make humanitarian action possible.</p>
+        <p class="subline">Four imperatives. One collective responsibility. A system measured by the difference it makes.</p>
+        <div class="cta">
+          <a class="btn onnavy primary" href="#imperatives">Explore the four imperatives</a>
+          <a class="btn onnavy" href="#documents">View source documents</a>
+          <p class="watch"><a href="#overview"><span class="pl" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M2 1l9 5-9 5z"/></svg></span>Watch the overview <small>0:50</small></a></p>
+        </div>
         <dl class="meta">
           <div><dt>Adopted</dt><dd><b>Feb 2025</b></dd></div>
           <div><dt>Funding, 2024 → 2025</dt><dd><b>$37 bn → $28 bn</b> (−24%)</dd></div>
           <div><dt>Appeal 2026</dt><dd><b>$35.07 bn</b> for 148M people</dd></div>
+          <div><dt>Reporting cut-off</dt><dd><b>Sep–Oct 2026</b></dd></div>
         </dl>
+        <p class="edl">The headline, the paragraph below it and the sub-line are proposed editorial copy for this page, not IASC wording. Direct quotations always appear in quotation marks with a named, linked source.</p>
       </div>
       <div class="conv-wrap">
         <svg class="convergence" viewBox="0 0 100 100" role="img" aria-labelledby="convergence-title convergence-desc">
@@ -501,61 +853,45 @@ html:not(.js) .chapters button{cursor:default;pointer-events:none}
   <div class="wrap">
     <a class="home" href="#top">Stocktake</a>
     <ul>
+      <li><a class="l" href="#glance">Overview</a></li>
       <li><a class="l" href="#define"><svg class="glyph" aria-hidden="true"><use href="#g-define"/></svg>Define</a></li>
       <li><a class="l" href="#deliver"><svg class="glyph" aria-hidden="true"><use href="#g-deliver"/></svg>Deliver</a></li>
       <li><a class="l" href="#devolve"><svg class="glyph" aria-hidden="true"><use href="#g-devolve"/></svg>Devolve</a></li>
       <li><a class="l" href="#defend"><svg class="glyph" aria-hidden="true"><use href="#g-defend"/></svg>Defend</a></li>
-      <li><a class="l" href="#documents">Documents</a></li>
+      <li><a class="l" href="#complementarity">Complementarity</a></li>
+      <li><a class="l" href="#progress">Progress</a></li>
+      <li><a class="l" href="#roadmap">Roadmap</a></li>
+      <li><a class="l" href="#documents">Sources</a></li>
     </ul>
-    <a class="ext-link" href="/sol/reset/v3/"><span>Extended<span class="x"> edition</span></span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    <button class="a11y-btn sm" type="button" aria-pressed="false" data-a11y-toggle><svg class="sti" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="3" r="1.6" fill="currentColor" stroke="none"/><path d="M3 6h10M8 6v4M8 10l-2.5 4.5M8 10l2.5 4.5"/></svg><span class="a11y-lbl">Accessible view</span></button>
+    <span class="tag dft">DRAFT</span>
   </div>
   <div class="progress" aria-hidden="true"><span></span></div>
 </nav>
 
 <main id="main" tabindex="-1">
 
-<!-- Six headline figures, each with a micro-visual -->
-<section class="metrics" aria-labelledby="metrics-h" data-anim>
-  <div class="wrap">
-    <h2 id="metrics-h" class="sr-only">Key figures</h2>
-    <ul>
-      <li class="mcard"><span class="v num">66M</span><span class="l">people reached of 148M targeted, by October 2026</span>
-        <span class="viz"><span class="mini" aria-hidden="true"><span class="f" style="--v:44.6%"></span></span><span class="cap"><b>45%</b> of people targeted</span></span><span class="src">Stocktake · Deliver</span></li>
-      <li class="mcard hl"><span class="v num">62%</span><span class="l">of people assisted are in severity 4–5 areas</span>
-        <span class="viz"><svg class="spark" viewBox="0 0 120 30" role="img" aria-label="36% in 2024, 43% in 2025, 62% in 2026"><polyline points="4,22.2 60,17.8 116,5.9" fill="none" stroke="#272E67" stroke-width="2"/><circle cx="4" cy="22.2" r="2.5" fill="#7C8490"/><circle cx="60" cy="17.8" r="2.5" fill="#7C8490"/><circle cx="116" cy="5.9" r="3.5" fill="#E63946"/></svg><span class="chip">+26 pts since 2024</span></span><span class="src">Stocktake · Define</span></li>
-      <li class="mcard"><span class="v num">$14.49bn</span><span class="l">raised against the GHO 2026, end September</span>
-        <span class="viz"><span class="mini" aria-hidden="true"><span class="f" style="--v:41.3%"></span></span><span class="cap"><b>41%</b> of $35.07 bn</span></span><span class="src">Stocktake · Define</span></li>
-      <li class="mcard"><span class="v num">$4.53bn</span><span class="l">in country-based pooled funds, as of 2 October 2026</span>
-        <span class="viz"><span class="cols" role="img" aria-label="1.05 billion in 2024 compared with 4.53 billion in 2026"><span style="height:7px;background:var(--context)"></span><span style="height:30px;background:var(--navy)"></span></span><span class="chip">×4.3 vs $1.05 bn in 2024</span></span><span class="src">Stocktake · Deliver</span></li>
-      <li class="mcard"><span class="v num">79%</span><span class="l">of operations have started or completed cluster simplification</span>
-        <span class="viz"><span class="mini" aria-hidden="true"><span class="f" style="--v:79%"></span></span><span class="cap">As of <b>October 2026</b></span></span><span class="src">Stocktake · Deliver</span></li>
-      <li class="mcard"><span class="v num">75%</span><span class="l">of HNRPs outline steps towards responsible transition</span>
-        <span class="viz"><span class="dots" role="img" aria-label="15 of 20 plans"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i></span><span class="cap"><b>15 of 20</b> plans, 2026</span></span><span class="src">Stocktake · Define</span></li>
-    </ul>
-  </div>
-</section>
-
-<!-- Overall assessment + overview video: one full-bleed band -->
+<!-- 01b Why the Reset, and the overall assessment + overview video -->
 <section class="band" aria-labelledby="uneven-h">
   <div class="wrap">
     <div class="band-text">
-      <p class="eyebrow">Overall assessment</p>
+      <p class="eyebrow">Why the Reset · overall assessment</p>
       <h2 id="uneven-h">Progress is real but uneven</h2>
       <blockquote>
         <p>“The Humanitarian Reset drives tangible change as reform translates into operational decisions led by strong country leadership. Progress remains uneven and pressures on the sector continue to grow.”</p>
         <cite>Stocktake, conclusion</cite>
       </blockquote>
       <blockquote class="second">
-        <p>“However, progress remains uneven and the IASC is yet to assess outcomes of the Humanitarian Reset for the lives of vulnerable people.”</p>
-        <cite>Stocktake, introduction</cite>
+        <p>“With constrained resources, strained trust and a fragmented political environment, there is a real risk of losing core humanitarian capacities, leaving more needs unmet and reducing preparedness for escalating crises.”</p>
+        <cite>Stocktake, next phase</cite>
       </blockquote>
       <div class="signals">
-        <h3>Where the unevenness shows</h3>
+        <h3>Pressure and unevenness</h3>
         <ul>
+          <li><b class="num down">▼ 24%</b><span>fall in humanitarian funding, from $37 bn in 2024 to $28 bn in 2025.</span></li>
           <li><b class="num">41%</b><span>of the GHO 2026 funded at end September ($14.49 bn of $35.07 bn).</span></li>
           <li><b class="num down">▼ 65→52%</b><span>HNRP countries where feedback trends are regularly discussed in HCTs, 2024 to 2025.</span></li>
-          <li><b class="num">20%</b><span>local and national share of 2026 pooled fund allocations when US Award Tranche I is included.</span></li>
-          <li><b class="num">5%</b><span>2026 share to women-led organizations as of 11 September, against a 15% annual target.</span></li>
+          <li><b class="num">5%</b><span>2026 share to women-led organizations as of 11 September (partial year), against a 15% annual target.</span></li>
         </ul>
       </div>
     </div>
@@ -563,12 +899,14 @@ html:not(.js) .chapters button{cursor:default;pointer-events:none}
       <p class="eyebrow">Overview · 0:50</p>
       <h3 id="intro-h">The Stocktake in 50 seconds</h3>
       <div class="intro-player">
-        <video id="intro-video" controls preload="metadata" playsinline poster="media/stocktake-intro-poster.jpg" aria-describedby="intro-desc">
-          <source src="media/stocktake-intro-50s.mp4" type="video/mp4">
-          <p>Your browser cannot play this video. <a href="media/stocktake-intro-50s.mp4">Download the overview video (MP4, 50 seconds)</a>.</p>
+        <video id="intro-video" controls preload="metadata" playsinline poster="../media/stocktake-intro-poster.jpg" width="1920" height="1080" aria-describedby="intro-desc">
+          <source src="../media/stocktake-intro-50s.mp4" type="video/mp4">
+          <track kind="captions" src="captions.vtt" srclang="en" label="English (on-screen text)">
+          <track kind="chapters" src="chapters.vtt" srclang="en" label="Chapters">
+          <p>Your browser cannot play this video. <a href="../media/stocktake-intro-50s.mp4">Download the overview video (MP4, 50 seconds)</a>.</p>
         </video>
       </div>
-      <p id="intro-desc">A short film of the headline findings across Define, Deliver, Devolve and Defend, closing on the overall assessment.</p>
+      <p id="intro-desc">A short film of the headline findings across Define, Deliver, Devolve and Defend, closing on the overall assessment. Captions show the on-screen text. <a href="../media/stocktake-intro-50s.mp4">Download the MP4</a>.</p>
       <ol class="chapters" aria-label="Video chapters">
         <li><button type="button" data-t="0"><span class="tc">0:00</span><span>The Humanitarian Reset</span></button></li>
         <li><button type="button" data-t="4"><span class="tc">0:04</span><span>The four Ds</span></button></li>
@@ -592,32 +930,115 @@ html:not(.js) .chapters button{cursor:default;pointer-events:none}
           <li>Progress is real but uneven.</li>
           <li>IASC, Inter-Agency Standing Committee. www.interagencystandingcommittee.org</li>
         </ol>
-        <p>Scenes are illustrated with navy-toned photographs of humanitarian staff and community members. Source of all figures: Humanitarian Reset Stocktake, October 2026.</p>
+        <p>Scenes are illustrated with navy-toned photographs of humanitarian staff and community members. Source of all figures: Humanitarian Reset Stocktake, October 2026. Note: the film's “include transition plans” is a shortened form; the Stocktake measure is HNRPs that outline steps towards responsible transition (15 of 20).</p>
       </details>
     </div>
   </div>
 </section>
 
-<!-- ============ 01 DEFINE ============ -->
+<!-- ============ 02 The Reset at a glance ============ -->
+<section id="glance" class="sec" aria-labelledby="glance-h" data-anim>
+  <div class="wrap">
+    <header class="sh">
+      <p class="eyebrow"><span class="sn">02</span>The Reset at a glance</p>
+      <h2 id="glance-h">Five headline figures, one per area of reform</h2>
+      <p class="intro">Each measures something different; they are not one index. Every figure links to its full definition, base and source in the register.</p>
+    </header>
+
+    <h3 class="sr-only">Headline indicators by category</h3>
+        <!-- gen:kpis --><ul class="kpis"><li class="kpi"><p class="kcat">Humanitarian reach</p><span class="v num">66M</span><span class="mini" aria-hidden="true"><span class="f" style="--v:44.6%"></span></span><p class="kl2">people reached of 148M targeted, by October 2026</p><p class="kc">Reach is not proof of quality or outcome.</p><p class="src"><span>Stocktake, Deliver</span><span class="tag">DRAFT</span><a href="#reg-reached">Definition and base</a></p></li><li class="kpi"><p class="kcat">Prioritization of needs</p><span class="v num">62%</span><p class="kl2">of people assisted are in severity 4–5 areas, 2026</p><p class="kc">The presentation reports 55%; not yet reconciled.</p><p class="src"><span>Stocktake, Define</span><span class="tag">DRAFT · DISCREPANCY OPEN</span><a href="#reg-severity45">Definition and base</a></p></li><li class="kpi"><p class="kcat">Operational reform</p><span class="v num">79%</span><span class="mini" aria-hidden="true"><span class="f" style="--v:79%"></span></span><p class="kl2">of operations have started or completed cluster simplification, Oct 2026</p><p class="kc">Started or completed, not completed. No trend reported.</p><p class="src"><span>Stocktake, Deliver</span><span class="tag">DRAFT</span><a href="#reg-clusters">Definition and base</a></p></li><li class="kpi"><p class="kcat">Financing</p><span class="v num">$4.53bn</span><p class="kl2">in country-based pooled funds, as of 2 Oct 2026 (×4.3 on 2024)</p><p class="kc">Presentation: nearly $4.49bn at end September.</p><p class="src"><span>Stocktake, Deliver</span><span class="tag">DRAFT · TWO DATES</span><a href="#reg-cbpf">Definition and base</a></p></li><li class="kpi"><p class="kcat">Localization</p><span class="v num">55% <span class="vs">|</span> 20%</span><span class="pl2">excl. | incl. US Award Tranche I</span><p class="kl2">local and national share of 2026 pooled-fund allocations, 28 Sep</p><p class="kc">Same portfolio counted two ways; not a trend.</p><p class="src"><span>Stocktake, Devolve</span><span class="tag">DRAFT · VERIFICATION H1 2027</span><a href="#reg-local">Definition and base</a></p></li></ul><!-- /gen:kpis -->
+    
+
+    <!-- 100M / 66M / 41M: explained, never added -->
+    <div class="counts" id="counts">
+      <div>
+        <p class="eyebrow" style="color:var(--red-text)">Three people counts</p>
+        <h3>100 million, 66 million and 41 million are different measures</h3>
+        <p class="not">Do not add them together.</p>
+      </div>
+      <ul>
+        <li><b class="num">100M</b><span><strong>Collective results.</strong> The Stocktake introduction reports collective results for 100 million people, “including 41 million with life-saving support”. The sources used for this page do not set out how the 100 million is counted or how it overlaps with people reached.</span></li>
+        <li><b class="num">66M</b><span><strong>People reached</strong> with some form of assistance and protection by October 2026: 45% of 148 million targeted in the GHO 2026 (Stocktake, Deliver).</span></li>
+        <li><b class="num">41M</b><span><strong>A subset of the 66 million</strong>, in locations with the most severe needs across 24 operations (Stocktake, Deliver). The introduction pairs the same 41 million with the 100 million figure; the relationship is listed as an open question in the <a href="#notes">data notes</a>.</span></li>
+      </ul>
+    </div>
+
+    <details class="regd">
+      <summary>Open the full indicator register (definitions, bases and caveats in one table)</summary>
+<!-- gen:register --><div class="tscroll" tabindex="0" role="region" aria-label="Indicator register, scrollable"><table class="reg"><caption class="sr-only">Indicator register: every headline figure with its base, period, definition, caveat and source</caption><thead><tr><th scope="col">Indicator</th><th scope="col">Value</th><th scope="col">Base</th><th scope="col">Period</th><th scope="col">Definition</th><th scope="col">Read with care</th><th scope="col">Pillar</th><th scope="col">Source</th></tr></thead><tbody><tr id="reg-targeted"><th scope="row">People targeted in the GHO 2026</th><td class="num">148M</td><td>—</td><td>2026 appeal</td><td>People targeted for assistance and protection in the Global Humanitarian Overview 2026.</td><td>A planning figure, not a count of people assisted.</td><td>Deliver</td><td>Stocktake, Deliver · Draft, 8 October 2026 revision</td></tr><tr id="reg-reached"><th scope="row">People reached with some form of assistance and protection</th><td class="num">66M</td><td>148M targeted (45%)</td><td>By October 2026</td><td>People reached with some form of assistance and protection.</td><td>Reach is not proof of quality, sufficiency or sustained outcome. Not the same measure as the 100M collective-results figure.</td><td>Deliver</td><td>Stocktake, Deliver · Draft, 8 October 2026 revision</td></tr><tr id="reg-severe41"><th scope="row">People reached in locations with the most severe needs</th><td class="num">41M</td><td>66M reached (62%)</td><td>By October 2026</td><td>Subset of people reached who were in locations with the most severe needs.</td><td>Nested within the 66M; do not add.</td><td>Deliver</td><td>Stocktake, Deliver · Draft, 8 October 2026 revision</td></tr><tr id="reg-collective100"><th scope="row">People with collective results</th><td class="num">100M</td><td>Not stated</td><td>Nineteen months after launch</td><td>Referred to in the Stocktake introduction. The counting method and its overlap with the 66M reached are not set out in the sources used for this page.</td><td>Not interchangeable with the 66M reached; not additive with 66M or 41M.</td><td>Overview</td><td>Stocktake, Introduction · Draft, 8 October 2026 revision</td></tr><tr id="reg-severity45"><th scope="row">People assisted who are in intersectoral severity 4–5 areas</th><td class="num">62%</td><td>People receiving assistance and protection</td><td>2026 (36% in 2024; 43% in 2025)</td><td>Share of people receiving assistance and protection who are in areas of intersectoral severity 4 and 5 (JIAF scale).</td><td>The presentation reports 55% for 2026. Both values are shown until the sources are reconciled. Serious protection risks may also exist in severity 3 locations.</td><td>Define</td><td>Stocktake, Define · Draft, 8 October 2026 revision</td></tr><tr id="reg-transition"><th scope="row">2026 HNRPs outlining steps towards responsible transition</th><td class="num">75%</td><td>15 of 20 HNRPs</td><td>2026 cycle</td><td>Humanitarian Needs and Response Plans with steps, milestones and timelines towards responsible transition.</td><td>Earlier figures (17%, 40%) refer to cluster plans, reported separately; not a continuous series.</td><td>Define</td><td>Stocktake, Define · Draft, 8 October 2026 revision</td></tr><tr id="reg-clusters"><th scope="row">Operations that have started or completed cluster simplification</th><td class="num">79%</td><td>Operations (count not stated)</td><td>As of October 2026</td><td>Operations that have started or completed simplification of cluster arrangements.</td><td>Started or completed, not 79% completed. No earlier figure is reported, so no trend is shown.</td><td>Deliver</td><td>Stocktake, Deliver · Draft, 8 October 2026 revision</td></tr><tr id="reg-hpc"><th scope="row">Median days to complete the Humanitarian Programme Cycle</th><td class="num">171</td><td>Median across operations</td><td>2026 cycle (179 in 2024)</td><td>Median planning time for the Humanitarian Programme Cycle.</td><td>Down 8 days since 2024; 11 days above the 160-day target set for end-2027. The target is not an achieved result.</td><td>Define</td><td>Stocktake, Define · Draft, 8 October 2026 revision</td></tr><tr id="reg-gho"><th scope="row">Funding raised against the GHO 2026</th><td class="num">$14.49bn</td><td>$35.07bn required (41%)</td><td>End September 2026</td><td>Funds raised against total GHO 2026 requirements, from 61 Member States and public and private sources.</td><td>The hyper-prioritized plan is 55% funded ($13.63bn of $24.94bn); the two denominators differ.</td><td>Define</td><td>Stocktake, Define · Draft, 8 October 2026 revision</td></tr><tr id="reg-cbpf"><th scope="row">Country-based pooled funds</th><td class="num">$4.53bn</td><td>—</td><td>As of 2 October 2026 ($1.05bn in 2024)</td><td>Contributions to OCHA country-based pooled funds; $3.75bn of the 2026 total is US awards.</td><td>The presentation reports nearly $4.49bn at end September; the gap reflects the different cut-off dates. Contributions are not disbursements.</td><td>Deliver</td><td>Stocktake, Deliver · Draft, 8 October 2026 revision</td></tr><tr id="reg-local"><th scope="row">Local and national share of 2026 pooled-fund allocations</th><td class="num">55% / 20%</td><td>Excluding | including US Award Tranche I</td><td>As of 28 September 2026</td><td>Share of CBPF allocations to local and national actors, direct and indirect. Excluding US Award Tranche I: 55% ($182M), 44% direct. Including it: 20% ($409M).</td><td>Same 2026 portfolio counted two ways; not a trend. 2024 baseline was 47% ($435M).</td><td>Devolve</td><td>Stocktake, Devolve · Draft, 8 October 2026 revision</td></tr><tr id="reg-wlo"><th scope="row">Allocations to women-led and women&#x27;s rights organizations</th><td class="num">5%</td><td>Allocations to 11 September 2026</td><td>Partial year to 11 Sep 2026 (12% 2024; 17% / $173M 2025)</td><td>Share of allocations to women-led and women&#x27;s rights organizations against a 15% annual target.</td><td>Partial-year position; not comparable with full-year 2024 or 2025 results.</td><td>Devolve</td><td>Stocktake, Devolve · Draft, 8 October 2026 revision</td></tr><tr id="reg-feedback"><th scope="row">HNRP countries where HCTs regularly discuss feedback trends</th><td class="num">52%</td><td>HNRP countries</td><td>2025 (65% in 2024)</td><td>Humanitarian Country Teams that regularly discuss community feedback trends.</td><td>A decrease of 13 points. Not all Devolve indicators are improving.</td><td>Devolve</td><td>Stocktake, Devolve · Draft, 8 October 2026 revision</td></tr><tr id="reg-perception"><th scope="row">Respondents who see coordination as more inclusive of local actors</th><td class="num">56%</td><td>HCT Perception Survey respondents</td><td>Preliminary, September 2026</td><td>Perception Survey respondents perceiving coordination as more inclusive of local actors. 26% consider financial, operational and compliance risks equitably shared.</td><td>Perceptions of respondents; not representative of the wider humanitarian community. Delayed country responses may change the findings.</td><td>Devolve</td><td>Stocktake, Devolve · Draft, 8 October 2026 revision</td></tr></tbody></table></div><!-- /gen:register -->
+    </details>
+  </div>
+</section>
+
+<!-- ============ 03 Guiding principle ============ -->
+<section class="principle dark" aria-labelledby="principle-h">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">03 · The guiding principle</p>
+      <h2 id="principle-h" class="big-p">The Reset must be felt by the people it exists to serve.</h2>
+      <span class="lab">Editorial paraphrase, not a quotation. It restates the people-first intent Tom Fletcher sets out <a href="https://www.undp.org/crisis/beyond-crisis-series/9" rel="noopener" target="_blank">in conversation with UNDP's Beyond Crisis series<span class="sr-only"> (opens in a new tab)</span></a>.</span>
+    </div>
+    <div class="gap">
+      <p>The test is the difference made in the lives of people affected by crises. By the Stocktake's own account, that test has not yet been applied:</p>
+      <p style="margin-top:var(--s3)">“…the IASC is yet to assess outcomes of the Humanitarian Reset for the lives of vulnerable people.”</p>
+      <cite>Stocktake, introduction</cite>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 04 The four imperatives ============ -->
+<section id="imperatives" class="sec" aria-labelledby="imp-h">
+  <div class="wrap">
+    <header class="sh">
+      <p class="eyebrow"><span class="sn">04</span>The four imperatives</p>
+      <h2 id="imp-h">Define, Deliver, Devolve, Defend: four connected imperatives, not four steps</h2>
+      <p class="intro">Each imperative depends on the others. Prioritization means little without delivery; delivery is not sustainable without local agency; none of it is possible without the principles that protect humanitarian space.</p>
+    </header>
+    <ul class="imps">
+      <li><a class="imp" href="#define" style="--pc:var(--define)"><span class="ih"><svg class="glyph" aria-hidden="true"><use href="#g-define"/></svg>Define</span><span class="iq">“…priorities that truly save lives”</span><span class="im">Focus the response where needs are most severe.</span><span class="go">Evidence for Define →</span></a></li>
+      <li><a class="imp" href="#deliver" style="--pc:var(--deliver)"><span class="ih"><svg class="glyph" aria-hidden="true"><use href="#g-deliver"/></svg>Deliver</span><span class="iq">“…humanity and accountability”</span><span class="im">Turn collective capability into effective assistance.</span><span class="go">Evidence for Deliver →</span></a></li>
+      <li><a class="imp" href="#devolve" style="--pc:var(--devolve)"><span class="ih"><svg class="glyph" aria-hidden="true"><use href="#g-devolve"/></svg>Devolve</span><span class="iq">“…local partners who know best”</span><span class="im">Put resources, decisions and agency closer to the frontlines.</span><span class="go">Evidence for Devolve →</span></a></li>
+      <li><a class="imp" href="#defend" style="--pc:var(--defend)"><span class="ih"><svg class="glyph" aria-hidden="true"><use href="#g-defend"/></svg>Defend</span><span class="iq">“…humanitarian law and principles”</span><span class="im">Protect the principles that make humanitarian action possible.</span><span class="go">Evidence for Defend →</span></a></li>
+    </ul>
+    <p class="imp-note"><span>Excerpts: Tom Fletcher, <a href="https://www.undp.org/crisis/beyond-crisis-series/9" rel="noopener" target="_blank">in conversation with UNDP's Beyond Crisis series<span class="sr-only"> (opens in a new tab)</span></a>. Checked against the source on 19 November 2026; editorial clearance pending.</span><span>Complementarity connects the four. It is not a fifth pillar. <a href="#complementarity">How they connect</a></span></p>
+
+    <!-- Optional moving accent. Decorative duplicate of the list above: hidden from assistive tech, pausable, absent under reduced motion. -->
+    <div class="mq">
+      <div class="mq-view" aria-hidden="true"><div class="mq-track">
+        <span><b>DEFINE</b>priorities that truly save lives</span><span><b>DELIVER</b>humanity and accountability</span><span><b>DEVOLVE</b>local partners who know best</span><span><b>DEFEND</b>humanitarian law and principles</span>
+        <span><b>DEFINE</b>priorities that truly save lives</span><span><b>DELIVER</b>humanity and accountability</span><span><b>DEVOLVE</b>local partners who know best</span><span><b>DEFEND</b>humanitarian law and principles</span>
+      </div></div>
+      <button class="mq-btn" type="button" aria-pressed="false" aria-label="Pause moving quotes">Pause</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 05.1 DEFINE ============ -->
 <section id="define" class="d" aria-labelledby="define-h">
   <div class="wrap">
     <header class="d-head">
       <div>
-        <div class="d-mark"><span class="n" aria-hidden="true">01</span><span class="k"><svg class="glyph" aria-hidden="true"><use href="#g-define"/></svg><span class="eyebrow">Define</span></span></div>
+        <div class="d-mark"><span class="n" aria-hidden="true">01</span><span class="k"><svg class="glyph" aria-hidden="true"><use href="#g-define"/></svg><span class="eyebrow">Define · prioritize what matters most</span></span></div>
         <h2 id="define-h">Response is concentrating where needs are most severe</h2>
       </div>
-      <p class="sum">Prioritization and planning have become more focused, with some reduction in the time required for collective planning.</p>
+      <p class="sum"><b class="sr-only">What is changing: </b>Prioritization and planning have become more focused, with some reduction in the time required for collective planning.</p>
     </header>
+    <div class="commit">
+      <div><p class="cq">“…priorities that truly save lives”</p><p class="qcite"><a href="https://www.undp.org/crisis/beyond-crisis-series/9" rel="noopener" target="_blank">Tom Fletcher, UNDP Beyond Crisis<span class="sr-only"> (opens in a new tab)</span></a></p></div>
+      <p class="cm"><b>Strategic commitment</b>Sharpen priorities around the most severe humanitarian needs, while staying alert to serious needs and protection risks outside the highest severity categories.</p>
+    </div>
 
+    <p class="steps">Evidence and indicators</p>
     <figure class="lead" data-anim>
       <div class="fig">
         <figcaption><span class="ft">Nearly two thirds of people assisted are in severity 4–5 areas</span><span class="fs">Share of people receiving assistance and protection in areas of intersectoral severity 4 and 5</span></figcaption>
         <ol class="cmp xl">
           <li><span class="y">2024</span><span class="track"><span class="fill" style="--v:36%"></span></span><b>36%</b></li>
           <li><span class="y">2025</span><span class="track"><span class="fill" style="--v:43%"></span></span><b>43%</b></li>
-          <li class="now"><span class="y">2026</span><span class="track"><span class="fill" style="--v:62%"></span></span><b>62%</b></li>
+          <li class="now"><span class="y">2026</span><span class="track"><span class="fill" style="--v:62%"></span><span class="alt" style="--a:55%" title="Presentation: 55%"></span></span><b>62%</b></li>
         </ol>
-        <p class="delta"><b>+26 pts</b> since 2024</p>
+        <p class="delta"><b>+26 pts</b> since 2024 (Stocktake series)</p>
+        <p class="disc"><span><b>Open discrepancy.</b> The presentation gives <b>55%</b> for 2026 (dashed line); the Stocktake gives <b>62%</b>. This page follows the more detailed Stocktake and shows both until the sources are formally reconciled.</span></p>
       </div>
       <div class="aside">
         <div>
@@ -630,8 +1051,8 @@ html:not(.js) .chapters button{cursor:default;pointer-events:none}
           </ol>
           <p class="sev-bracket"><span>62% of people assisted</span></p>
         </div>
-        <p style="font-size:15px">Response is concentrating at the top of the scale. Serious protection risks may also be present in severity 3 locations.</p>
-        <p class="src">Source: Stocktake, Define. Level labels follow the JIAF scale. The presentation gives 55% for 2026; see Data notes.</p>
+        <p style="font-size:15px"><strong>Severity 3 still matters.</strong> Response is concentrating at the top of the scale, but serious protection risks may also be present in severity 3 locations.</p>
+        <p class="src">Source: Stocktake, Define. Level labels follow the JIAF scale. See <a href="#notes">data notes</a>.</p>
       </div>
     </figure>
 
@@ -644,66 +1065,78 @@ html:not(.js) .chapters button{cursor:default;pointer-events:none}
           <li class="break">Measure changes</li>
           <li class="now"><span class="y">2026<small>HNRPs</small></span><span class="track"><span class="fill" style="--v:75%"></span></span><b>75%</b></li>
         </ol>
-        <p class="src">Source: Stocktake. Cluster plans and HNRPs are reported "separately"; 2026 = 15 of 20 HNRPs.</p>
+        <p class="src">Source: Stocktake. Cluster plans and HNRPs are reported separately; not a continuous series. 2026 = 15 of 20 HNRPs.</p>
       </figure>
       <figure class="fig" data-anim>
-        <figcaption><span class="ft">The GHO 2026 is 41% funded; the hyper-prioritized plan 55%</span><span class="fs">Raised against requirements, end September 2026</span></figcaption>
-        <div class="rings">
-          <div class="ring">
-            <svg viewBox="0 0 140 140" role="img" aria-labelledby="r1t"><title id="r1t">Full appeal: 14.49 of 35.07 billion dollars raised, 41 percent</title>
-              <circle cx="70" cy="70" r="52" fill="none" stroke="#E9E7E3" stroke-width="14"/>
-              <circle class="arc" style="--dash:135" cx="70" cy="70" r="52" fill="none" stroke="#272E67" stroke-width="14" stroke-dasharray="135 326.73" transform="rotate(-90 70 70)"/>
-              <text x="70" y="79" text-anchor="middle" font-size="28" font-weight="700" fill="#1C2149" font-family="Roboto Condensed,Arial Narrow,Roboto,sans-serif">41%</text>
-            </svg>
-            <span class="rl">Full appeal</span><span class="rv">$14.49 bn of $35.07 bn</span>
+        <figcaption><span class="ft">The GHO 2026 is 41% funded; the hyper-prioritized plan 55%</span><span class="fs">Raised against requirements, end September 2026 · two different denominators</span></figcaption>
+        <div class="fund">
+          <div class="bb">
+            <div class="hd"><span>Full appeal</span><span><strong>41%</strong> · $14.49 bn of $35.07 bn</span></div>
+            <div class="t" style="--v:41.3%;--p:0%;--g:100%" role="img" aria-label="Full appeal: 14.49 of 35.07 billion dollars raised, 41 percent"><span class="val"></span></div>
           </div>
-          <div class="ring">
-            <svg viewBox="0 0 140 140" role="img" aria-labelledby="r2t"><title id="r2t">Hyper-prioritized plan: 13.63 of 24.94 billion dollars raised, 55 percent</title>
-              <circle cx="70" cy="70" r="52" fill="none" stroke="#E9E7E3" stroke-width="14"/>
-              <circle class="arc" style="--dash:178.56" cx="70" cy="70" r="52" fill="none" stroke="#1f69b3" stroke-width="14" stroke-dasharray="178.56 326.73" transform="rotate(-90 70 70)"/>
-              <text x="70" y="79" text-anchor="middle" font-size="28" font-weight="700" fill="#1C2149" font-family="Roboto Condensed,Arial Narrow,Roboto,sans-serif">55%</text>
-            </svg>
-            <span class="rl">Hyper-prioritized</span><span class="rv">$13.63 bn of $24.94 bn</span>
+          <div class="bb">
+            <div class="hd"><span>Hyper-prioritized plan</span><span><strong>55%</strong> · $13.63 bn of $24.94 bn</span></div>
+            <div class="t" style="--v:54.7%;--p:0%;--g:100%" role="img" aria-label="Hyper-prioritized plan: 13.63 of 24.94 billion dollars raised, 55 percent"><span class="val" style="background:var(--blue)"></span></div>
           </div>
         </div>
-        <p class="src">Source: Stocktake. Raised from 61 Member States and public and private sources.</p>
+        <p class="src">Source: Stocktake. Raised from 61 Member States and public and private sources. The plans overlap; the percentages are not additive.</p>
       </figure>
       <figure class="fig">
         <figcaption><span class="ft">Planning time is down 8 days, 11 short of target</span><span class="fs">Median days to complete the Humanitarian Programme Cycle (HPC)</span></figcaption>
-        <div class="days" role="img" aria-label="179 days in 2024, 171 days for the 2026 cycle, target 160 days by end-2027">
+        <div class="days" role="img" aria-label="179 days in 2024, 171 days for the 2026 cycle, target 160 days by end-2027, not yet achieved">
           <span class="line"></span>
-          <span class="pt tg" style="left:25%"><b>Target 160</b><i></i></span>
+          <span class="pt tg" style="left:25%"><b>Target 160 · end-2027</b><i></i></span>
           <span class="pt now" style="left:52.5%"><i></i><b>171</b><span>2026 cycle</span></span>
           <span class="pt" style="left:72.5%"><i></i><b>179</b><span>2024</span></span>
         </div>
-        <p class="src">Source: Stocktake. Target: 160 days by end-2027. Axis 150–190 days.</p>
+        <p class="src">Source: Stocktake. The 160-day figure is a target, not a result. Axis 150–190 days.</p>
       </figure>
     </div>
 
-    <aside class="caveat" aria-label="Define caveat">
+    <div class="interp"><p>What the evidence means</p><p>Prioritization is becoming more concentrated on people in the most severe locations. That does not mean serious needs in severity 3 locations have disappeared, and a smaller appeal footprint is not evidence that needs have fallen.</p></div>
+    <aside class="caveat" aria-label="Define: read with care">
       <p>Read with care</p>
-      <p>“A smaller appeal footprint is a change in planning arrangements, rather than evidence of reduced needs.” Eight operations have planned transitions, five already accelerated; 20 country plans were reprioritized in April 2025.</p>
+      <div>
+        <ul>
+          <li>“A smaller appeal footprint is a change in planning arrangements, rather than evidence of reduced needs.” (Stocktake)</li>
+          <li>The 62% (Stocktake) and 55% (presentation) values for 2026 are not yet reconciled.</li>
+          <li>Cluster plans (2024–2025) and HNRPs (2026) are separate measures.</li>
+          <li>Eight operations have planned transitions, five already accelerated; 20 country plans were reprioritized in April 2025.</li>
+        </ul>
+      </div>
     </aside>
+    <details class="more" open><summary>Open questions, next steps and sources</summary>
+    <div class="close3">
+      <div><h3>What remains unresolved</h3><p class="aq">How does the system prioritize the most severe needs without overlooking serious protection risks and needs in other locations?</p></div>
+      <div><h3>Next steps</h3><ul><li>Continued prioritization (next phase).</li><li>HPC median of 160 days by end-2027 (target).</li><li>Reconcile the 2026 severity share across the two documents.</li></ul></div>
+      <div><h3>Sources</h3><ul><li>Stocktake, Define (draft, 8 Oct 2026 rev.)</li><li>Presentation, October 2026 (draft)</li><li><a href="#notes">Data notes</a> · <a href="#imperatives">Back to the four imperatives</a></li></ul></div>
+    </div>
+    </details>
   </div>
 </section>
 
-<!-- ============ 02 DELIVER ============ -->
+<!-- ============ 05.2 DELIVER ============ -->
 <section id="deliver" class="d" aria-labelledby="deliver-h">
   <div class="wrap">
     <header class="d-head">
       <div>
-        <div class="d-mark"><span class="n" aria-hidden="true">02</span><span class="k"><svg class="glyph" aria-hidden="true"><use href="#g-deliver"/></svg><span class="eyebrow">Deliver</span></span></div>
+        <div class="d-mark"><span class="n" aria-hidden="true">02</span><span class="k"><svg class="glyph" aria-hidden="true"><use href="#g-deliver"/></svg><span class="eyebrow">Deliver · make collective action work</span></span></div>
         <h2 id="deliver-h">Coordinated action reached 66 million of the 148 million people targeted</h2>
       </div>
-      <p class="sum">Coordination arrangements are being streamlined, pooled funding has expanded and reported shares of cash assistance have increased.</p>
+      <p class="sum"><b class="sr-only">What is changing: </b>Coordination arrangements are being streamlined, pooled funding has expanded and reported shares of cash assistance have increased.</p>
     </header>
+    <div class="commit">
+      <div><p class="cq">“…humanity and accountability”</p><p class="qcite"><a href="https://www.undp.org/crisis/beyond-crisis-series/9" rel="noopener" target="_blank">Tom Fletcher, UNDP Beyond Crisis<span class="sr-only"> (opens in a new tab)</span></a></p></div>
+      <p class="cm"><b>Strategic commitment</b>Improve the speed, quality, coordination and reach of humanitarian delivery while maintaining humanity and accountability.</p>
+    </div>
 
+    <p class="steps">Evidence and indicators</p>
     <figure class="lead" aria-labelledby="reach-h">
       <div class="fig reach-fig">
         <figcaption><span class="ft" id="reach-h">45% of the people targeted have been reached, most of them where needs are most severe</span><span class="fs">People targeted, reached, and reached in the most severe locations, by October 2026</span></figcaption>
         <svg viewBox="0 0 340 340" role="img" aria-labelledby="reach-t reach-d">
           <title id="reach-t">People targeted, reached, and reached in the most severe locations</title>
-          <desc id="reach-d">Of 148 million people targeted, 66 million (45%) had been reached by October 2026, including 41 million in locations with the most severe needs across 24 operations. Squares are drawn to scale by area.</desc>
+          <desc id="reach-d">Of 148 million people targeted, 66 million (45%) had been reached by October 2026, including 41 million in locations with the most severe needs across 24 operations. Each square sits inside the one before it. Squares are drawn to scale by area.</desc>
           <rect x="10" y="10" width="320" height="320" fill="#ECEEF2" stroke="#272E67" stroke-width="1.5"/>
           <rect x="10" y="116.3" width="213.7" height="213.7" fill="#272E67"/>
           <rect x="10" y="161.6" width="168.4" height="168.4" fill="#E63946"/>
@@ -720,6 +1153,7 @@ html:not(.js) .chapters button{cursor:default;pointer-events:none}
           <li><i style="background:#272E67"></i><span><b>66M</b> reached with some form of assistance and protection (45%)</span></li>
           <li><i style="background:#E63946"></i><span><b>41M</b> of them (62%) in locations with the most severe needs, across 24 operations</span></li>
         </ul>
+        <p style="font-size:15px;color:var(--heading)"><strong>Nested, not added:</strong> 41M is inside 66M, which is inside 148M. The separate 100M collective-results figure is <a href="#counts">explained in the overview</a>.</p>
         <p class="src">Squares drawn to area. Source: Stocktake, Deliver.</p>
       </div>
     </figure>
@@ -753,7 +1187,8 @@ html:not(.js) .chapters button{cursor:default;pointer-events:none}
           <div class="split-aside">
             <p class="big num">×4.3</p>
             <p>$4.53 bn as of 2 October 2026, against $1.05 bn in 2024, expanding resources for HC-led prioritization. $3.75 bn of the 2026 total is US awards.</p>
-            <p class="src">Source: Stocktake, Deliver. The presentation reports "nearly $4.49 billion" at end September.</p>
+            <p class="disc"><span><b>Two dates, two values.</b> Stocktake: $4.53 bn as of 2 October. Presentation: “nearly $4.49 billion” at end September. The difference reflects the cut-off date.</span></p>
+            <p class="src">Source: Stocktake, Deliver. Contributions and allocations are not the same as disbursements or services delivered.</p>
           </div>
         </div>
       </figure>
@@ -763,9 +1198,9 @@ html:not(.js) .chapters button{cursor:default;pointer-events:none}
           <li><span class="y">2024<small>HCT review</small></span><span class="track"><span class="fill" style="--v:45%"></span></span><b>45%</b></li>
           <li><span class="y">2025<small>HCT review</small></span><span class="track"><span class="fill" style="--v:81%"></span></span><b>81%</b></li>
           <li class="break">Measure changes</li>
-          <li class="now"><span class="y">Oct 2026<small>Clusters</small></span><span class="track"><span class="fill" style="--v:79%"></span></span><b>79%</b></li>
+          <li class="now"><span class="y">Oct 2026<small>Started or completed</small></span><span class="track"><span class="fill" style="--v:79%"></span></span><b>79%</b></li>
         </ol>
-        <p class="src">Source: Stocktake. No earlier cluster-simplification figure is reported. 14 operations have sub-national area-based coordination.</p>
+        <p class="src">Source: Stocktake. 79% have started <em>or</em> completed cluster simplification; no earlier cluster-simplification figure is reported, so there is no trend. 14 operations have sub-national area-based coordination.</p>
       </figure>
       <figure class="fig" data-anim>
         <figcaption><span class="ft">Cash is growing, still short of envisaged targets</span><span class="fs">Cash and voucher assistance (CVA), 2024 → 2025</span></figcaption>
@@ -779,67 +1214,97 @@ html:not(.js) .chapters button{cursor:default;pointer-events:none}
           <div class="t" style="--v:60%;--p:46.5%;--g:85%" role="img" aria-label="46.5 percent in 2024, 60 percent in 2025, envisaged target 85 percent"><span class="val"></span><span class="pri"></span><span class="tgt"></span></div>
           <span class="tl" style="--g:85%">Target 85%</span>
         </div>
-        <p class="src">Source: Stocktake. White tick = 2024. Presentation adds: CVA allocations of $702M, or 32% of CBPF funding.</p>
+        <p class="src">Source: Stocktake. White tick = 2024. Targets are envisaged, not achieved. Presentation adds: CVA allocations of $702M, or 32% of CBPF funding.</p>
       </figure>
       <div class="fig">
-        <h3 class="ft">Also delivered</h3>
+        <h3 class="ft">Also delivered or in train</h3>
         <ul class="kl">
           <li><b>$303M</b><span>allocated through CERF's Rapid Response Window in 2026, plus $9M through the Underfunded Emergencies Window.</span></li>
           <li><b>5</b><span>pilot countries integrating supply chains under UN80 reforms: Afghanistan, Haiti, the Occupied Palestinian Territory, Somalia and Sudan.</span></li>
           <li><b>$10M</b><span>CERF envelope for disability and inclusion.</span></li>
-          <li><b>AI</b><span>Framework for the Responsible Use of AI in Humanitarian Action, for HWG endorsement in October 2026.</span></li>
+          <li><b>AI</b><span>Framework for the Responsible Use of AI in Humanitarian Action, listed for HWG endorsement in October 2026. <span class="st st-pending"><svg class="sti" aria-hidden="true"><use href="#s-pending"/></svg>Pending verification</span><small>No record of endorsement located as of 19 November 2026.</small></span></li>
         </ul>
       </div>
     </div>
 
-    <aside class="caveat" aria-label="Deliver caveat">
+    <div class="interp"><p>What the evidence means</p><p>The Stocktake documents reach, pooled-fund growth and coordination reform. These describe different dimensions of delivery and stay separate here. An allocation is not a disbursement, and a person reached is not in itself evidence of the quality or durability of assistance.</p></div>
+    <aside class="caveat" aria-label="Deliver: read with care">
       <p>Read with care</p>
-      <p>“Operational contributions depend on award conditions, timely disbursement and access for the better placed actors.” CVA targets of 35% and 85% are envisaged; endorsement status and operational application will be clarified through HWG review.</p>
+      <div>
+        <ul>
+          <li>“Operational contributions depend on award conditions, timely disbursement and access for the better placed actors.” (Stocktake)</li>
+          <li>66M reached is 45% of 148M targeted; it is not the 100M collective-results figure.</li>
+          <li>CVA targets of 35% and 85% are envisaged; endorsement status and operational application will be clarified through HWG review.</li>
+        </ul>
+      </div>
     </aside>
+    <details class="more" open><summary>Open questions, next steps and sources</summary>
+    <div class="close3">
+      <div><h3>What remains unresolved</h3><p class="aq">Does a more streamlined system translate into faster, safer, better-quality assistance for people affected by crises?</p></div>
+      <div><h3>Next steps</h3><ul><li>Confirm HWG endorsement status of the AI framework.</li><li>Clarify CVA targets through HWG review.</li><li>Simpler ways of working (next phase).</li></ul></div>
+      <div><h3>Sources</h3><ul><li>Stocktake, Deliver (draft, 8 Oct 2026 rev.)</li><li>Presentation, October 2026 (draft)</li><li><a href="#notes">Data notes</a> · <a href="#imperatives">Back to the four imperatives</a></li></ul></div>
+    </div>
+    </details>
   </div>
 </section>
 
-<!-- ============ 03 DEVOLVE ============ -->
+<!-- ============ 05.3 DEVOLVE ============ -->
 <section id="devolve" class="d" aria-labelledby="devolve-h">
   <div class="wrap">
     <header class="d-head">
       <div>
-        <div class="d-mark"><span class="n" aria-hidden="true">03</span><span class="k"><svg class="glyph" aria-hidden="true"><use href="#g-devolve"/></svg><span class="eyebrow">Devolve</span></span></div>
+        <div class="d-mark"><span class="n" aria-hidden="true">03</span><span class="k"><svg class="glyph" aria-hidden="true"><use href="#g-devolve"/></svg><span class="eyebrow">Devolve · move power and resources closer</span></span></div>
         <h2 id="devolve-h">Local participation is broadening; access to resources and decisions has further to go</h2>
       </div>
-      <p class="sum">Steps are being taken to broaden local actors' participation and strengthen country-level accountability mechanisms, with further work needed on access to resources and decision-making.</p>
+      <p class="sum"><b class="sr-only">What is changing: </b>Steps are being taken to broaden local actors' participation and strengthen country-level accountability mechanisms, with further work needed on access to resources and decision-making.</p>
     </header>
+    <div class="commit">
+      <div><p class="cq">“…local partners who know best”</p><p class="qcite"><a href="https://www.undp.org/crisis/beyond-crisis-series/9" rel="noopener" target="_blank">Tom Fletcher, UNDP Beyond Crisis<span class="sr-only"> (opens in a new tab)</span></a></p></div>
+      <p class="cm"><b>Strategic commitment</b>Strengthen local and national actors' participation, access to resources, decision-making authority and accountability, while addressing inequitable transfer of risk.</p>
+    </div>
 
+    <p class="steps">Evidence and indicators</p>
     <figure class="lead" data-anim>
       <div class="fig">
         <figcaption><span class="ft">The local share of pooled funds depends on what is counted</span><span class="fs">Share of CBPF allocations to local and national actors</span></figcaption>
         <div class="srows">
-          <div class="srow"><div class="hd"><span>2024</span><span><strong>47%</strong> · $435M</span></div>
+          <div class="srow"><div class="hd"><span>2024 baseline</span><span><strong>47%</strong> · $435M</span></div>
             <div class="bar" role="img" aria-label="2024: 47 percent, of which 36 percent direct"><span style="width:36%;background:var(--navy)"></span><span style="width:11%;background:var(--blue)"></span></div></div>
-          <div class="srow"><div class="hd"><span>2026, excl. US Award Tranche I</span><span><strong>55%</strong> · $182M</span></div>
-            <div class="bar" role="img" aria-label="2026 excluding US Award Tranche I: 55 percent, of which 44 percent direct"><span style="width:44%;background:var(--navy)"></span><span style="width:11%;background:var(--blue)"></span></div></div>
-          <div class="srow"><div class="hd"><span>2026, incl. US Award Tranche I</span><span><strong class="down">20%</strong> · $409M</span></div>
-            <div class="bar" role="img" aria-label="2026 including US Award Tranche I: 20 percent, of which 12 percent direct"><span style="width:12%;background:var(--navy)"></span><span style="width:8%;background:var(--blue)"></span></div></div>
         </div>
-        <p class="legend"><span><i style="background:var(--navy)"></i>Direct</span><span><i style="background:var(--blue)"></i>Indirect</span></p>
+        <p class="fs" style="margin-top:var(--s5);font-weight:700;color:var(--heading)">The same 2026 portfolio, counted two ways · as of 28 September 2026</p>
+        <div class="ab">
+          <div>
+            <span class="abh">Excluding US Award Tranche I</span>
+            <span class="abv">55%</span>
+            <span class="abb" role="img" aria-label="55 percent, of which 44 percent direct"><span style="width:44%;background:var(--navy)"></span><span style="width:11%;background:var(--blue)"></span></span>
+            <p>$182M · 44% direct</p>
+          </div>
+          <div class="inc">
+            <span class="abh">Including US Award Tranche I</span>
+            <span class="abv">20%</span>
+            <span class="abb" role="img" aria-label="20 percent, of which 12 percent direct"><span style="width:12%;background:var(--navy)"></span><span style="width:8%;background:var(--blue)"></span></span>
+            <p>$409M · 12% direct</p>
+          </div>
+        </div>
+        <p class="legend" style="margin-top:var(--s3)"><span><i style="background:var(--navy)"></i>Direct</span><span><i style="background:var(--blue)"></i>Indirect (derived as total minus direct)</span></p>
       </div>
       <div class="aside">
         <p class="flag">Not a like-for-like trend</p>
         <div class="pull"><p>“These figures are not a like-to-like trend.”</p><cite>Stocktake, Devolve</cite></div>
-        <p style="font-size:15px">The same 2026 portfolio reads as 55% or 20% depending on whether US Award Tranche I is counted. The presentation notes that lessons from the first US award are being applied to the second round.</p>
-        <p class="src">Source: Stocktake. 2026 as of 28 Sep, subject to verification in H1 2027. Indirect derived as total minus direct.</p>
+        <p style="font-size:15px">The same 2026 portfolio reads as 55% or 20% depending on whether US Award Tranche I is counted. Neither replaces the other, and neither is directly comparable with 2024. The presentation notes that lessons from the first US award are being applied to the second round.</p>
+        <p class="src">Source: Stocktake. 2026 as of 28 Sep, subject to verification in H1 2027. The presentation gives 53% (40% direct, 13% indirect) outside the US award; see data notes.</p>
       </div>
     </figure>
 
     <div class="sub">
       <figure class="fig" data-anim>
-        <figcaption><span class="ft">Women-led organizations: 2025 beat the target; 2026 is behind so far</span><span class="fs">Share of allocations to women-led and women's rights organizations · target 15%</span></figcaption>
+        <figcaption><span class="ft">Women-led organizations: 2025 beat the target; 2026 is a partial year</span><span class="fs">Share of allocations to women-led and women's rights organizations · annual target 15%</span></figcaption>
         <ol class="cmp">
-          <li><span class="y">2024<small>Baseline</small></span><span class="track"><span class="fill" style="--v:12%"></span></span><b>12%</b></li>
+          <li><span class="y">2024<small>Full year</small></span><span class="track"><span class="fill" style="--v:12%"></span></span><b>12%</b></li>
           <li class="now"><span class="y">2025<small>$173M</small></span><span class="track"><span class="fill" style="--v:17%"></span></span><b>17%</b></li>
           <li><span class="y">2026<small>to 11 Sep</small></span><span class="track"><span class="fill" style="--v:5%;background:#fff;box-shadow:inset 0 0 0 2px var(--navy)"></span></span><b>5%</b></li>
         </ol>
-        <p class="src">Source: Stocktake. 2026 is a partial-year position (outlined bar).</p>
+        <p class="src">Source: Stocktake. 2026 is a partial-year position (outlined bar) <span class="ptag">Partial year</span> and is not comparable with full-year results.</p>
       </figure>
       <figure class="fig" data-anim>
         <figcaption><span class="ft">Leadership accountability rose; use of community feedback fell</span><span class="fs">Selected indicators, 2024 → latest</span></figcaption>
@@ -848,12 +1313,12 @@ html:not(.js) .chapters button{cursor:default;pointer-events:none}
           <li class="now"><span class="y">Local cluster leads<small>31% in 2024</small></span><span class="track"><span class="fill" style="--v:33%"></span></span><b>33%</b></li>
           <li class="now"><span class="y">Feedback in HCTs<small>65% in 2024</small></span><span class="track"><span class="fill" style="--v:52%;background:var(--red)"></span></span><b class="down">▼ 52%</b></li>
         </ol>
-        <p class="src">Source: Stocktake. Compacts vs 2024; cluster leadership and feedback 2024 → 2025.</p>
+        <p class="src">Source: Stocktake. Compacts vs 2024 (latest reported); cluster leadership and feedback 2024 → 2025. Not every Devolve indicator is improving.</p>
       </figure>
       <div class="fig">
         <h3 class="ft">Perception and representation</h3>
         <ul class="kl">
-          <li><b>56%</b><span>of Perception Survey respondents see coordination as more inclusive of local actors.<small>Preliminary, September 2026</small></span></li>
+          <li><b>56%</b><span>of Perception Survey respondents see coordination as more inclusive of local actors.<small>Preliminary, September 2026 · respondents' perceptions, not representative</small></span></li>
           <li><b>26%</b><span>consider financial, operational and compliance risks equitably shared.</span></li>
           <li><b>~½</b><span>of operations reported at least 15% local and national representation in HCTs, 2024 and 2025.</span></li>
         </ul>
@@ -867,28 +1332,48 @@ html:not(.js) .chapters button{cursor:default;pointer-events:none}
           <li class="now"><span class="y">Sudan<small>2025</small></span><span class="track"><span class="fill" style="--v:35%"></span></span><b>35%</b></li>
           <li class="now"><span class="y">CAR<small>2025</small></span><span class="track"><span class="fill" style="--v:30%"></span></span><b>30%</b></li>
         </ol>
-        <p class="src">Source: Stocktake, Devolve.</p>
+        <p class="src">Source: Stocktake, Devolve. Shown as reported; not a ranking.</p>
       </figure>
     </div>
 
-    <aside class="caveat" aria-label="Devolve caveat">
+    <div class="interp"><p>What the evidence means</p><p>Localization is not only about who implements projects. It is about who controls resources, sets priorities, takes part in decisions, bears risk and answers to communities. Broader participation does not by itself establish equitable authority or financing: only 26% of survey respondents consider risk equitably shared.</p></div>
+    <aside class="caveat" aria-label="Devolve: read with care">
       <p>Read with care</p>
-      <p>Perception Survey results “reflect respondents' perceptions and cannot be treated as representative of the wider humanitarian community; delayed country responses may also change the findings.” A mutual accountability mechanism has been piloted and will be institutionalized in 2027.</p>
+      <div>
+        <ul>
+          <li>Perception Survey results “reflect respondents' perceptions and cannot be treated as representative of the wider humanitarian community; delayed country responses may also change the findings.” (Stocktake)</li>
+          <li>55% and 20% are the same 2026 portfolio with different inclusion criteria; data as of 28 September, to be verified in H1 2027.</li>
+          <li>The 2026 women-led share runs to 11 September only.</li>
+          <li>Selected country fund shares are from different years and are not comparable across funds.</li>
+        </ul>
+      </div>
     </aside>
+    <details class="more" open><summary>Open questions, next steps and sources</summary>
+    <div class="close3">
+      <div><h3>What remains unresolved</h3><p class="aq">Are local and national organizations gaining genuine authority, predictable resources and equitable sharing of financial, operational and compliance risks?</p></div>
+      <div><h3>Next steps</h3><ul><li>Verification of 2026 pooled-fund data, H1 2027.</li><li>Mutual accountability mechanism, piloted, to be institutionalized in 2027.</li><li>Lessons from the first US award applied to the second round.</li></ul></div>
+      <div><h3>Sources</h3><ul><li>Stocktake, Devolve (draft, 8 Oct 2026 rev.)</li><li>HCT Perception Survey, preliminary, Sep 2026 (as reported)</li><li><a href="#notes">Data notes</a> · <a href="#imperatives">Back to the four imperatives</a></li></ul></div>
+    </div>
+    </details>
   </div>
 </section>
 
-<!-- ============ 04 DEFEND ============ -->
+<!-- ============ 05.4 DEFEND ============ -->
 <section id="defend" class="d" aria-labelledby="defend-h">
   <div class="wrap">
     <header class="d-head">
       <div>
-        <div class="d-mark"><span class="n" aria-hidden="true">04</span><span class="k"><svg class="glyph" aria-hidden="true"><use href="#g-defend"/></svg><span class="eyebrow">Defend</span></span></div>
+        <div class="d-mark"><span class="n" aria-hidden="true">04</span><span class="k"><svg class="glyph" aria-hidden="true"><use href="#g-defend"/></svg><span class="eyebrow">Defend · protect principles and humanitarian space</span></span></div>
         <h2 id="defend-h">The IASC has stood visibly with frontline colleagues under sustained pressure on norms</h2>
       </div>
-      <p class="sum">Collective advocacy and humanitarian diplomacy have continued, alongside efforts to uphold protection, gender equality and PSEAH commitments.</p>
+      <p class="sum"><b class="sr-only">What is changing: </b>Collective advocacy and humanitarian diplomacy have continued, alongside efforts to uphold protection, gender equality and PSEAH commitments.</p>
     </header>
+    <div class="commit">
+      <div><p class="cq">“…humanitarian law and principles”</p><p class="qcite"><a href="https://www.undp.org/crisis/beyond-crisis-series/9" rel="noopener" target="_blank">Tom Fletcher, UNDP Beyond Crisis<span class="sr-only"> (opens in a new tab)</span></a></p></div>
+      <p class="cm"><b>Strategic commitment</b>Defend international humanitarian law, principled humanitarian action, the protection of civilians, humanitarian access and the conditions for impartial assistance.</p>
+    </div>
 
+    <p class="steps">Evidence · qualitative only</p>
     <div class="lead">
       <blockquote class="pull">
         <p>“In highly politicized crises, including Sudan, OPT, DRC and Ukraine, the IASC has stood visibly and consistently with frontline colleagues.”</p>
@@ -897,98 +1382,169 @@ html:not(.js) .chapters button{cursor:default;pointer-events:none}
       <ul class="ctx" aria-label="Highly politicized crises named in the Stocktake"><li>Sudan</li><li>Occupied Palestinian Territory</li><li>Democratic Republic of the Congo</li><li>Ukraine</li></ul>
     </div>
 
+    <figure class="fig" style="margin-top:var(--s7)">
+      <figcaption><span class="ft">Qualitative evidence map</span><span class="fs">What the Stocktake documents, who acts where recorded, and what is still to be assessed. No score is calculated.</span></figcaption>
+      <div class="tscroll" tabindex="0" role="region" aria-label="Defend evidence map, scrollable">
+      <table class="emap" style="min-width:760px">
+        <caption class="sr-only">Defend: themes, documented actions, responsible level, source and assessment status</caption>
+        <thead><tr><th scope="col">Theme</th><th scope="col">Documented action</th><th scope="col">Level, where recorded</th><th scope="col">Outcome assessment</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Humanitarian diplomacy</th><td>Collective advocacy and humanitarian diplomacy in highly politicized crises, including Sudan, OPT, DRC and Ukraine.</td><td>IASC (collective)</td><td class="gap"><span class="st st-notassessed"><svg class="sti" aria-hidden="true"><use href="#s-notassessed"/></svg>Not assessed</span><br>Effect on access and protection not measured.</td></tr>
+          <tr><th scope="row">IHL and IHRL</th><td>Principled humanitarian action and consistent application of international humanitarian law and international human rights law.</td><td>ERC, Principals, HCs and HCTs</td><td class="gap"><span class="st st-notassessed"><svg class="sti" aria-hidden="true"><use href="#s-notassessed"/></svg>Not assessed</span></td></tr>
+          <tr><th scope="row">Gender-based violence</th><td>Advocacy on the life-saving nature of GBV response and risk mitigation.</td><td>Not recorded</td><td class="gap"><span class="st st-notassessed"><svg class="sti" aria-hidden="true"><use href="#s-notassessed"/></svg>Not assessed</span></td></tr>
+          <tr><th scope="row">PSEAH</th><td>PSEAH commitments upheld; kept distinct from, and complementary to, efforts on conflict-related sexual violence.</td><td>Not recorded</td><td class="gap"><span class="st st-notassessed"><svg class="sti" aria-hidden="true"><use href="#s-notassessed"/></svg>Not assessed</span></td></tr>
+          <tr><th scope="row">Principals' recommendation</th><td>Further work will document implementation of the Principals' humanitarian diplomacy recommendation.</td><td>IASC Principals</td><td class="gap"><span class="st st-planned"><svg class="sti" aria-hidden="true"><use href="#s-planned"/></svg>Planned</span></td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p class="src">Source: Stocktake, Defend (draft). Country examples are as named in the Stocktake and have not been independently verified for this page.</p>
+    </figure>
+
     <div class="sub">
       <div class="fig">
-        <h3 class="ft">What collective advocacy covers</h3>
-        <ul class="kl">
-          <li><b>IHL</b><span>Principled humanitarian action and consistent application of IHL and International Human Rights Law, by the ERC, Principals and HCs/HCTs.</span></li>
-          <li><b>GBV</b><span>The life-saving nature of gender-based violence response and risk mitigation.</span></li>
-          <li><b>PSEAH</b><span>Kept distinct from, and complementary to, efforts on conflict-related sexual violence.</span></li>
-        </ul>
+        <h3 class="ft">Principals – Donor Engagement</h3>
+        <div class="chip-date"><b>27</b><span><strong style="color:var(--heading)">October 2026 · held</strong><br>IASC Principals – Donor Engagement, New York</span></div>
+        <p style="font-size:15px">Planned focus (Stocktake): complementarity, quality financing and proportionate approaches to risk and due diligence, to agree concrete donor and IASC actions with measurable follow-up.</p>
+        <p style="font-size:15px"><span class="st st-completed"><svg class="sti" aria-hidden="true"><use href="#s-completed"/></svg>Held</span> <span class="st st-pending"><svg class="sti" aria-hidden="true"><use href="#s-pending"/></svg>Outcomes pending verification</span></p>
+        <p class="src">Meeting date and venue confirmed by the <a href="https://www.eeas.europa.eu/delegations/un-new-york/eu-statement-un-inter-agency-standing-committee-principals-donor-engagement-humanitarian-reset_en" rel="noopener" target="_blank">EU statement delivered at it<span class="sr-only"> (opens in a new tab)</span></a>. Agreed actions not yet confirmed against an IASC record.</p>
       </div>
       <div class="fig">
-        <h3 class="ft">Next engagement</h3>
-        <div class="chip-date"><b>27</b><span><strong style="color:var(--heading)">October 2026</strong><br>IASC Principals – Donor Engagement</span></div>
-        <p style="font-size:15px">Focus on complementarity, quality financing and proportionate approaches to risk and due diligence, to agree concrete donor and IASC actions with measurable follow-up.</p>
+        <h3 class="ft">Why there is no Defend scorecard</h3>
+        <p style="font-size:15px">The Stocktake reports Defend progress qualitatively and gives no quantitative indicators. Advocacy, diplomatic engagement and policy commitments are activities; whether they produce practical protection for civilians, principled access or safety for humanitarian personnel has not been measured. This page does not create a proxy number to fill that gap.</p>
       </div>
     </div>
 
-    <aside class="caveat" aria-label="Defend caveat">
+    <div class="interp"><p>What the evidence means</p><p>Defend is a qualitative, principled pillar in the current Stocktake. The evidence shows sustained collective advocacy; it does not yet show its effect on protection and access outcomes.</p></div>
+    <aside class="caveat" aria-label="Defend: read with care">
       <p>Read with care</p>
-      <p>The Stocktake reports Defend progress qualitatively; it gives no quantitative indicators, so none are charted. Further work will document implementation of the Principals' humanitarian diplomacy recommendation.</p>
+      <div><ul>
+        <li>No quantitative indicators are reported, so none are charted.</li>
+        <li>PSEAH and conflict-related sexual violence are distinct areas of work.</li>
+      </ul></div>
     </aside>
+    <details class="more" open><summary>Open questions, next steps and sources</summary>
+    <div class="close3">
+      <div><h3>What remains unresolved</h3><p class="aq">How does collective advocacy translate into practical protection for civilians, principled access and safety for humanitarian personnel?</p></div>
+      <div><h3>Next steps</h3><ul><li>Document implementation of the Principals' humanitarian diplomacy recommendation.</li><li>Confirm follow-up actions from the 27 October donor engagement.</li></ul></div>
+      <div><h3>Sources</h3><ul><li>Stocktake, Defend (draft, 8 Oct 2026 rev.)</li><li>EU statement, 27 October 2026</li><li><a href="#imperatives">Back to the four imperatives</a></li></ul></div>
+    </div>
+    </details>
   </div>
 </section>
 
-<!-- ============ Next phase ============ -->
+<!-- ============ 06 Complementarity ============ -->
+<section id="complementarity" class="sec" aria-labelledby="comp-h" style="padding-bottom:0">
+  <div class="wrap">
+    <header class="sh">
+      <p class="eyebrow"><span class="sn">06</span>Complementarity · the connective principle</p>
+      <h2 id="comp-h">The right combination of actors and capabilities, working towards shared outcomes</h2>
+    </header>
+    <div class="comp">
+      <figure>
+        <svg viewBox="0 0 520 520" role="img" aria-labelledby="cd-t cd-d">
+          <title id="cd-t">Conceptual diagram: complementarity connects the four imperatives around people affected by crises</title>
+          <desc id="cd-d">People affected by crises, with dignity, safety, agency and protection, sit at the centre. Define, Deliver, Devolve and Defend sit around them, each linked to the centre and to its two neighbours on a ring labelled complementarity. The links run both ways, showing interdependence rather than a sequence. Below, the shared outcome reads: more consistent improvements in assistance and protection. Conceptual illustration for this page; not an IASC governance chart.</desc>
+          <circle cx="260" cy="260" r="180" fill="none" stroke="#272E67" stroke-width="2" stroke-dasharray="2 7" stroke-linecap="round"/>
+          <rect x="178" y="68" width="164" height="24" fill="#F7F6F4"/><text x="260" y="85" text-anchor="middle" font-family="Roboto Condensed,Arial Narrow,sans-serif" font-size="14" font-weight="700" letter-spacing="3" fill="#1C2149">COMPLEMENTARITY</text>
+          <g stroke="#B8BEE6" stroke-width="2"><line x1="260" y1="260" x2="133" y2="133"/><line x1="260" y1="260" x2="387" y2="133"/><line x1="260" y1="260" x2="133" y2="387"/><line x1="260" y1="260" x2="387" y2="387"/></g>
+          <circle cx="260" cy="260" r="86" fill="#272E67"/>
+          <g font-family="Roboto Slab,Georgia,serif" font-weight="700" fill="#fff" text-anchor="middle"><text x="260" y="246" font-size="17">People affected</text><text x="260" y="268" font-size="17">by crises</text></g>
+          <g font-family="Roboto Condensed,Arial Narrow,sans-serif" fill="#B8BEE6" text-anchor="middle" font-size="12"><text x="260" y="292">dignity · safety</text><text x="260" y="308">agency · protection</text></g>
+          <g font-family="Roboto Condensed,Arial Narrow,sans-serif" font-weight="700" font-size="16" letter-spacing="1.5" text-anchor="middle">
+            <g transform="translate(133 133)"><circle r="44" fill="#fff" stroke="#1f69b3" stroke-width="3"/><text y="6" fill="#1C2149">DEFINE</text></g>
+            <g transform="translate(387 133)"><circle r="44" fill="#fff" stroke="#272E67" stroke-width="3"/><text y="6" fill="#1C2149">DELIVER</text></g>
+            <g transform="translate(387 387)"><circle r="44" fill="#fff" stroke="#1E6B3A" stroke-width="3"/><text y="6" fill="#1C2149">DEVOLVE</text></g>
+            <g transform="translate(133 387)"><circle r="44" fill="#fff" stroke="#8A4B00" stroke-width="3"/><text y="6" fill="#1C2149">DEFEND</text></g>
+          </g>
+          <g font-family="Roboto Condensed,Arial Narrow,sans-serif" font-size="12" fill="#4A4A4A" text-anchor="middle"><text x="260" y="500">Shared outcome: more consistent improvements in assistance and protection</text></g>
+        </svg>
+        <figcaption class="diag-note">Conceptual diagram prepared for this page. It shows interdependence, not a sequence, and is not an IASC governance or organization chart.</figcaption>
+      </figure>
+      <div class="ctext">
+        <p class="eyebrow" style="color:var(--blue)">Adopted June 2026 (presentation)</p>
+        <p class="q">“Seeking complementarity means shifting the system from institutional competition to the right mix of incentives and discipline to ensure that the best mix of actors achieve shared collective outcomes.”</p>
+        <p class="src" style="margin-top:0">Source: Presentation, slide 14 (draft).</p>
+        <p class="prose" style="font-size:16px"><span>Complementarity lets different humanitarian actors contribute their distinct capabilities towards shared outcomes. It should reduce institutional competition and duplication while strengthening collective responsibility, country-level leadership and accountability to people affected by crises.</span></p>
+        <p class="src" style="margin-top:0">Explanatory copy prepared for this page; not IASC wording.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 07 Voices and frontline perspective ============ -->
+<section id="voices" class="sec" aria-labelledby="voices-h">
+  <div class="wrap">
+    <header class="sh">
+      <p class="eyebrow"><span class="sn">07</span>Voices and frontline perspective</p>
+      <h2 id="voices-h">The perspective of people affected is the evidence still missing</h2>
+      <p class="intro">This page carries no testimony from people affected by crises or from local responders, because none has been cleared for use. It does not substitute invented or illustrative voices.</p>
+    </header>
+    <div class="voices">
+      <div class="have"><h3>What the Stocktake has</h3><ul class="kl"><li><b class="num down">52%</b><span>of HNRP countries' HCTs regularly discuss community feedback trends, down from 65%.</span></li><li><b class="num">56%</b><span>of Perception Survey respondents, who are coordination actors rather than affected people, see coordination as more inclusive of local actors.</span></li></ul></div>
+      <div class="gap"><h3>What is missing</h3><p>An assessment of outcomes for people affected by crises; the Stocktake states it has not yet been done. Community consultations are an ongoing workstream with no results reported yet.</p><p><span class="st st-notassessed"><svg class="sti" aria-hidden="true"><use href="#s-notassessed"/></svg>Not assessed</span></p></div>
+      <div><h3>How voices will be added</h3><p>Only verified, cleared and attributed material, with documented consent, safeguarding and security review, date, context and translation notes. Individual accounts will be presented as individual accounts, not as representative of all affected people.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 08 Progress and accountability ============ -->
+<section id="progress" class="sec" aria-labelledby="prog-h">
+  <div class="wrap">
+    <header class="sh">
+      <p class="eyebrow"><span class="sn">08</span>Progress and accountability</p>
+      <h2 id="prog-h">Activity is not the same as results</h2>
+      <p class="intro">Each status on this page is grounded in a source and carries a label and an icon as well as a colour.</p>
+    </header>
+    <ul class="vocab" aria-label="Status vocabulary">
+      <li><span class="st st-completed"><svg class="sti" aria-hidden="true"><use href="#s-completed"/></svg>Completed</span>Evidence confirms completion.</li>
+      <li><span class="st st-ongoing"><svg class="sti" aria-hidden="true"><use href="#s-ongoing"/></svg>Ongoing</span>Implementation is under way.</li>
+      <li><span class="st st-planned"><svg class="sti" aria-hidden="true"><use href="#s-planned"/></svg>Planned</span>Formally scheduled; not yet started or not yet due.</li>
+      <li><span class="st st-pending"><svg class="sti" aria-hidden="true"><use href="#s-pending"/></svg>Pending verification</span>Reported status requires confirmation.</li>
+      <li><span class="st st-notassessed"><svg class="sti" aria-hidden="true"><use href="#s-notassessed"/></svg>Not assessed</span>No valid outcome assessment is available.</li>
+      <li><span class="st st-superseded"><svg class="sti" aria-hidden="true"><use href="#s-superseded"/></svg>Superseded</span>Replaced by a newer approved action. None on this page.</li>
+    </ul>
+    <ol class="chain" aria-label="From commitments to impact, with examples from the Stocktake">
+      <li><b>Commitments</b><span>Four imperatives; ERC–HC compacts in 100% of operations (latest).</span></li>
+      <li><b>Activities</b><span>Cluster simplification started or completed in 79% of operations; collective advocacy.</span></li>
+      <li><b>Outputs</b><span>66M people reached; $4.53 bn in pooled funds; $303M CERF rapid response.</span></li>
+      <li class="na"><b>Outcomes</b><span class="st st-notassessed" style="align-self:flex-start"><svg class="sti" aria-hidden="true"><use href="#s-notassessed"/></svg>Not assessed</span><span>Quality, sufficiency and protection effects not yet measured.</span></li>
+      <li class="na"><b>Impact</b><span class="st st-notassessed" style="align-self:flex-start"><svg class="sti" aria-hidden="true"><use href="#s-notassessed"/></svg>Not assessed</span><span>Difference made in people's lives.</span></li>
+    </ol>
+    <h3 class="ft" style="margin-bottom:var(--s3)">HWG workstreams</h3>
+<!-- gen:workstreams --><div class="tscroll" tabindex="0" role="region" aria-label="HWG workstreams, scrollable"><table class="reg ws"><caption class="sr-only">HWG workstreams: status reported in the presentation and status on this page</caption><thead><tr><th scope="col">Workstream</th><th scope="col">Reported (presentation, slide 13)</th><th scope="col">Status on this page</th><th scope="col">Note</th></tr></thead><tbody><tr><th scope="row">Simplified clusters</th><td>Completed</td><td><span class="st st-completed"><svg class="sti" aria-hidden="true"><use href="#s-completed"/></svg>Completed</span></td><td>Workstream reported complete; 79% of operations have started or completed simplification, so roll-out continues.</td></tr><tr><th scope="row">Area-based coordination</th><td>Completed</td><td><span class="st st-completed"><svg class="sti" aria-hidden="true"><use href="#s-completed"/></svg>Completed</span></td><td>Workstream reported complete; 14 operations have sub-national area-based coordination.</td></tr><tr><th scope="row">Tracking Reset progress (HCT Perception Survey)</th><td>Completed</td><td><span class="st st-completed"><svg class="sti" aria-hidden="true"><use href="#s-completed"/></svg>Completed</span></td><td>Survey results are preliminary (September 2026).</td></tr><tr><th scope="row">Complementarity</th><td>Completed</td><td><span class="st st-completed"><svg class="sti" aria-hidden="true"><use href="#s-completed"/></svg>Completed</span></td><td>Approach adopted June 2026 (presentation, slide 14); application is ongoing.</td></tr><tr><th scope="row">HPC simplification</th><td>Ongoing</td><td><span class="st st-ongoing"><svg class="sti" aria-hidden="true"><use href="#s-ongoing"/></svg>Ongoing</span></td><td>171-day median against a 160-day end-2027 target.</td></tr><tr><th scope="row">Responsible use of AI</th><td>Ongoing</td><td><span class="st st-pending"><svg class="sti" aria-hidden="true"><use href="#s-pending"/></svg>Pending verification</span></td><td>October 2026 endorsement not confirmed.</td></tr><tr><th scope="row">Scaling the use of cash</th><td>Ongoing</td><td><span class="st st-ongoing"><svg class="sti" aria-hidden="true"><use href="#s-ongoing"/></svg>Ongoing</span></td><td>CVA 23% of funding (2025) against an envisaged 35%.</td></tr><tr><th scope="row">Climate-sensitive, anticipatory Reset</th><td>Ongoing</td><td><span class="st st-ongoing"><svg class="sti" aria-hidden="true"><use href="#s-ongoing"/></svg>Ongoing</span></td><td>No indicators reported.</td></tr><tr><th scope="row">Data collaboration</th><td>Ongoing</td><td><span class="st st-ongoing"><svg class="sti" aria-hidden="true"><use href="#s-ongoing"/></svg>Ongoing</span></td><td>Recommendations due end 2026.</td></tr><tr><th scope="row">Community consultations</th><td>Ongoing</td><td><span class="st st-ongoing"><svg class="sti" aria-hidden="true"><use href="#s-ongoing"/></svg>Ongoing</span></td><td>No results reported yet.</td></tr></tbody></table></div><!-- /gen:workstreams -->
+    <p class="src" style="margin-top:var(--s3)">A workstream reported as completed does not mean every related activity or operation is complete. Status reviewed against available sources as of <!-- gen:asof -->19 November 2026<!-- /gen:asof -->.</p>
+  </div>
+</section>
+
+<!-- ============ 09 Next phase and roadmap ============ -->
 <section class="next dark" aria-labelledby="next-h">
   <div class="wrap">
-    <p class="eyebrow">Next phase</p>
+    <p class="eyebrow">09 · Next phase</p>
     <h2 id="next-h">Turning implementation steps into more consistent improvements in assistance and protection</h2>
-    <p class="lead-q">“With constrained resources, strained trust and a fragmented political environment, there is a real risk of losing core humanitarian capacities, leaving more needs unmet and reducing preparedness for escalating crises.”</p>
     <ol class="prio">
       <li><span aria-hidden="true">01</span><b>Continued prioritization</b></li>
       <li><span aria-hidden="true">02</span><b>Simpler ways of working</b></li>
       <li><span aria-hidden="true">03</span><b>Stronger accountability</b></li>
       <li><span aria-hidden="true">04</span><b>Greater proximity of resources to the front lines</b></li>
     </ol>
-    <div class="panels">
-      <div class="panel">
-        <h3>HWG workstreams</h3>
-        <div class="two">
-          <div><p>Completed</p><ul><li>Simplified clusters</li><li>Area-based coordination</li><li>Tracking Reset progress (HCT Perception Survey)</li><li>Complementarity</li></ul></div>
-          <div><p class="og">Ongoing</p><ul><li>HPC simplification</li><li>Responsible use of AI</li><li>Scaling the use of cash</li><li>Climate-sensitive, anticipatory Reset</li><li>Data collaboration</li><li>Community consultations</li></ul></div>
-        </div>
-        <p class="src">Source: Presentation, slide 13.</p>
-      </div>
-      <div class="panel">
-        <h3>Milestones</h3>
-        <ol class="miles">
-          <li><b>Oct 2026</b><span>HWG endorses the AI framework</span></li>
-          <li><b>27 Oct 2026</b><span>Principals – Donor Engagement</span></li>
-          <li><b>End 2026</b><span>Data Collaborative recommendations</span></li>
-          <li><b>H1 2027</b><span>Verification of 2026 pooled fund data</span></li>
-          <li><b>2027</b><span>Mutual accountability mechanism institutionalized</span></li>
-          <li class="tg"><b>End 2027</b><span>HPC median of 160 days</span></li>
-        </ol>
-        <p class="src">Source: Stocktake.</p>
-      </div>
-      <div class="panel">
-        <h3>Complementarity, adopted June 2026</h3>
-        <p class="q">“Seeking complementarity means shifting the system from institutional competition to the right mix of incentives and discipline to ensure that the best mix of actors achieve shared collective outcomes.”</p>
-        <p class="src">Source: Presentation, slide 14.</p>
-      </div>
-    </div>
+    <p class="src" style="color:var(--on-navy-soft);margin-top:calc(-1 * var(--s5))">Source: Stocktake and presentation, next phase.</p>
+  </div>
+</section>
+<section id="roadmap" class="sec" aria-labelledby="road-h">
+  <div class="wrap">
+    <header class="sh">
+      <p class="eyebrow"><span class="sn">09</span>Roadmap</p>
+      <h2 id="road-h">Milestones, with their status as of <!-- gen:asof -->19 November 2026<!-- /gen:asof --></h2>
+      <p class="intro">Past dates are shown with what is known about them, not as upcoming events. Owners appear only where a source documents them.</p>
+    </header>
+<!-- gen:roadmap --><ol class="road"><li class="ms ms-pending"><div class="msd"><b class="num">October 2026</b><span class="st st-pending"><svg class="sti" aria-hidden="true"><use href="#s-pending"/></svg>Pending verification</span></div><div class="msb"><p class="msw">Humanitarian Working Group endorsement of the Framework for the Responsible Use of AI in Humanitarian Action</p><dl><div><dt>Owner</dt><dd>Humanitarian Working Group (HWG)</dd></div><div><dt>Evidence</dt><dd>Listed for endorsement in the Stocktake. No public record of endorsement located as of 19 November 2026.</dd></div><div><dt>Qualification</dt><dd>Past due date. Do not present as endorsed until confirmed by the IASC secretariat.</dd></div></dl></div></li><li class="ms ms-completed"><div class="msd"><b class="num">27 October 2026</b><span class="st st-completed"><svg class="sti" aria-hidden="true"><use href="#s-completed"/></svg>Completed</span></div><div class="msb"><p class="msw">IASC Principals – Donor Engagement on the Humanitarian Reset</p><dl><div><dt>Owner</dt><dd>IASC Principals and donors</dd></div><div><dt>Evidence</dt><dd>Meeting held in New York on 27 October 2026, per the published EU statement delivered at it. <a href="https://www.eeas.europa.eu/delegations/un-new-york/eu-statement-un-inter-agency-standing-committee-principals-donor-engagement-humanitarian-reset_en" rel="noopener" target="_blank">EU statement<span class="sr-only"> (opens in a new tab)</span></a></dd></div><div><dt>Qualification</dt><dd>Agreed actions and follow-up not yet verified against an IASC record. The EU statement welcomes an IASC commitment to convene regular meetings with donors.</dd></div></dl></div></li><li class="ms ms-ongoing"><div class="msd"><b class="num">End 2026</b><span class="st st-ongoing"><svg class="sti" aria-hidden="true"><use href="#s-ongoing"/></svg>Ongoing</span></div><div class="msb"><p class="msw">Data Collaborative recommendations</p><dl><div><dt>Owner</dt><dd>Not specified in source</dd></div><div><dt>Evidence</dt><dd>Data collaboration is listed as an ongoing HWG workstream (presentation, slide 13).</dd></div><div><dt>Qualification</dt><dd>Precise deliverable and owner not documented in the sources used.</dd></div></dl></div></li><li class="ms ms-planned"><div class="msd"><b class="num">H1 2027</b><span class="st st-planned"><svg class="sti" aria-hidden="true"><use href="#s-planned"/></svg>Planned</span></div><div class="msb"><p class="msw">Verification of 2026 pooled-fund data</p><dl><div><dt>Owner</dt><dd>Not specified in source</dd></div><div><dt>Evidence</dt><dd>Stocktake, Devolve: 2026 values are subject to verification in H1 2027.</dd></div><div><dt>Qualification</dt><dd>2026 local-share figures remain provisional until then.</dd></div></dl></div></li><li class="ms ms-planned"><div class="msd"><b class="num">2027</b><span class="st st-planned"><svg class="sti" aria-hidden="true"><use href="#s-planned"/></svg>Planned</span></div><div class="msb"><p class="msw">Mutual accountability mechanism institutionalized</p><dl><div><dt>Owner</dt><dd>Not specified in source</dd></div><div><dt>Evidence</dt><dd>Stocktake: mechanism piloted; to be institutionalized in 2027.</dd></div><div><dt>Qualification</dt><dd>Pilot completed status and results not detailed.</dd></div></dl></div></li><li class="ms ms-planned"><div class="msd"><b class="num">End 2027</b><span class="st st-planned"><svg class="sti" aria-hidden="true"><use href="#s-planned"/></svg>Planned</span></div><div class="msb"><p class="msw">HPC median planning time of 160 days</p><dl><div><dt>Owner</dt><dd>Not specified in source</dd></div><div><dt>Evidence</dt><dd>Stocktake, Define: 171 days in the 2026 cycle against a 160-day target.</dd></div><div><dt>Qualification</dt><dd>A target, not an achievement. Current gap: 11 days.</dd></div></dl></div></li></ol><!-- /gen:roadmap -->
   </div>
 </section>
 
-<!-- ============ Extended edition (optional) ============ -->
-<aside class="extend" aria-labelledby="extend-h">
-  <div class="wrap">
-    <div>
-      <p class="eyebrow">Want the full evidence?</p>
-      <h2 id="extend-h">Read the extended edition of this Stocktake</h2>
-      <ul>
-        <li>Every figure with its base, period, source and caveat</li>
-        <li>Milestones with their status as of 19 November 2026</li>
-        <li>Where the two source documents differ, beside each chart</li>
-        <li>Complementarity, progress and roadmap sections</li>
-        <li>One-click accessible view</li>
-        <li>Same draft sources, same draft status</li>
-      </ul>
-    </div>
-    <div class="go">
-      <a class="btn primary" href="/sol/reset/v3/">Open the extended edition <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-      <a class="btn secondary" href="/sol/reset/v3/?view=accessible">Open it in accessible view</a>
-      <p>About twice the length of this page. This page stays as the short edition.</p>
-    </div>
-  </div>
-</aside>
-
-<!-- ============ Documents ============ -->
+<!-- ============ 10 Sources and documentation ============ -->
 <section id="documents" class="docs" aria-labelledby="docs-h">
   <div class="wrap">
-    <p class="eyebrow">Documents</p>
+    <p class="eyebrow">10 · Documents</p>
     <h2 id="docs-h">Source documents</h2>
     <div class="cards">
       <article class="card" aria-labelledby="doc1-h">
@@ -1009,27 +1565,49 @@ html:not(.js) .chapters button{cursor:default;pointer-events:none}
           <p>17 slides · 16:9</p><h3 id="doc2-h">The Humanitarian Reset</h3>
         </div>
         <div class="bd">
-          <p class="kind"><span>Presentation · October 2026 · PowerPoint</span></p>
+          <p class="kind"><span>Presentation · October 2026 · PowerPoint</span><span class="tag">DRAFT</span></p>
           <blockquote>“Progress has been achieved against all workstreams outlined in the Roadmap for the Humanitarian Reset, but it continues to be uneven and requires further adaptation and acceleration.”</blockquote>
           <p>Part 1: Stocktake highlights by D. Part 2: Next phase, with key actions for HCs and HCTs, IASC structures, complementarity and donor engagement.</p>
           <p class="act doc-status">Draft pending clearance · not yet published</p>
         </div>
       </article>
     </div>
+
+    <div class="tscroll" tabindex="0" role="region" aria-label="Source library, scrollable" style="margin-top:var(--s6)">
+    <table class="lib" style="margin-top:0;min-width:820px">
+      <caption class="sr-only">Source library: title, issuer, date, version, format, status and access</caption>
+      <thead><tr><th scope="col">Title</th><th scope="col">Issuer</th><th scope="col">Date</th><th scope="col">Version</th><th scope="col">Format</th><th scope="col">Status</th><th scope="col">Access</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Humanitarian Reset: Stock-take</th><td>IASC</td><td>October 2026</td><td>Draft, 8 October 2026 revision</td><td>Report (Word)</td><td><span class="tag dr">DRAFT</span> pending clearance</td><td>Not publicly available</td></tr>
+        <tr><th scope="row">The Humanitarian Reset</th><td>IASC</td><td>October 2026</td><td>Draft, 17 slides</td><td>Presentation (PowerPoint)</td><td><span class="tag dr">DRAFT</span> pending clearance</td><td>Not publicly available</td></tr>
+        <tr><th scope="row">Humanitarian reset: in conversation with Tom Fletcher</th><td>UNDP, Beyond Crisis series</td><td>Undated on page</td><td>Web page</td><td>Web page</td><td><span class="tag pb">PUBLISHED</span></td><td><a href="https://www.undp.org/crisis/beyond-crisis-series/9" rel="noopener" target="_blank">undp.org<span class="sr-only"> (opens in a new tab)</span></a></td></tr>
+        <tr><th scope="row">EU Statement: IASC Principals – Donor Engagement on the Humanitarian Reset</th><td>EU Delegation to the UN, New York</td><td>27 October 2026</td><td>Check against delivery</td><td>Web page</td><td><span class="tag pb">PUBLISHED</span></td><td><a href="https://www.eeas.europa.eu/delegations/un-new-york/eu-statement-un-inter-agency-standing-committee-principals-donor-engagement-humanitarian-reset_en" rel="noopener" target="_blank">eeas.europa.eu<span class="sr-only"> (opens in a new tab)</span></a></td></tr>
+        <tr><th scope="row">IASC institutional website</th><td>IASC</td><td>—</td><td>—</td><td>Website</td><td><span class="tag pb">PUBLISHED</span></td><td><a href="https://interagencystandingcommittee.org/" rel="noopener" target="_blank">interagencystandingcommittee.org<span class="sr-only"> (opens in a new tab)</span></a></td></tr>
+        <tr><th scope="row">The Stocktake in 50 seconds</th><td>Prepared for this page</td><td>October 2026</td><td>v1</td><td>Video (MP4, 50 s)</td><td>Figures from draft sources</td><td><a href="../media/stocktake-intro-50s.mp4">Download MP4</a></td></tr>
+      </tbody>
+    </table>
+    </div>
   </div>
 </section>
 
-<!-- ============ Data notes ============ -->
+<!-- ============ Data notes (preserved and extended) ============ -->
 <section id="notes" class="notes" aria-labelledby="notes-h">
   <div class="wrap">
     <div>
       <p class="eyebrow">Data notes</p>
       <h2 id="notes-h">Where the documents differ, this page follows the Stocktake</h2>
-      <p style="font-size:15px">The Stocktake is the more detailed source. Both documents are drafts pending clearance.</p>
+      <p style="font-size:15px">The Stocktake is the more detailed source. Both documents are drafts pending clearance. Differences are shown, not silently reconciled.</p>
+      <h3 class="ft" style="margin-top:var(--s6);font-size:16px">Method notes</h3>
+      <ul class="kl" style="font-size:14px">
+        <li><b style="font-size:15px">Base</b><span>Every percentage on this page states its denominator or base.</span></li>
+        <li><b style="font-size:15px">Dates</b><span>Every time-sensitive figure carries its reporting cut-off.</span></li>
+        <li><b style="font-size:15px">Trends</b><span>Values from different measures, populations or periods are separated by a “Measure changes” break and are never joined into one line.</span></li>
+        <li><b style="font-size:15px">Money</b><span>A contribution or allocation is not a disbursement or a service delivered.</span></li>
+      </ul>
     </div>
     <table>
-      <caption class="sr-only">Differences between the Stocktake and the presentation</caption>
-      <thead><tr><th scope="col">Figure</th><th scope="col">Stocktake</th><th scope="col">Presentation</th></tr></thead>
+      <caption class="sr-only">Differences between the Stocktake and the presentation, and open questions</caption>
+      <thead><tr><th scope="col">Figure</th><th scope="col">Stocktake</th><th scope="col">Presentation / other</th></tr></thead>
       <tbody>
         <tr><th scope="row">People assisted in severity 4–5, 2026</th><td>62%</td><td>55%</td></tr>
         <tr><th scope="row">Country-based pooled funds</th><td>$4.53 bn, 2 Oct 2026</td><td>“nearly $4.49 billion”, end Sep</td></tr>
@@ -1037,8 +1615,29 @@ html:not(.js) .chapters button{cursor:default;pointer-events:none}
         <tr><th scope="row">Local share outside US award</th><td>55% (44% direct), 28 Sep</td><td>53% (40% direct, 13% indirect)</td></tr>
         <tr><th scope="row">Area-based coordination</th><td>14 operations; 7 named</td><td>Not quantified</td></tr>
         <tr><th scope="row">People with collective results</th><td>100M (intro); 66M reached of 148M targeted (Deliver)</td><td>66M reached</td></tr>
+        <tr><th scope="row">The 41M figure</th><td>Paired with 100M in the introduction; a subset of 66M in Deliver</td><td>Open: counting method and overlap to be confirmed</td></tr>
+        <tr><th scope="row">Transition-plan wording</th><td>HNRPs that outline steps towards responsible transition</td><td>Overview film: “include transition plans”</td></tr>
+        <tr><th scope="row">AI framework, Oct 2026</th><td>For HWG endorsement</td><td>No endorsement record located (19 Nov 2026)</td></tr>
+        <tr><th scope="row">Donor engagement, 27 Oct 2026</th><td>Next engagement</td><td>Held; EU statement published 27 Oct 2026</td></tr>
       </tbody>
     </table>
+  </div>
+</section>
+
+<!-- ============ Closing ============ -->
+<section class="closing dark" aria-labelledby="close-h">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Looking ahead</p>
+      <h2 id="close-h">From agencies to agency.</h2>
+      <p class="att">“From Agencies to Agency” is Tom Fletcher's proposed title for a future chapter of humanitarian and development cooperation, <a href="https://www.undp.org/crisis/beyond-crisis-series/9" rel="noopener" target="_blank">in conversation with UNDP<span class="sr-only"> (opens in a new tab)</span></a>. It is not an IASC programme title.</p>
+    </div>
+    <div>
+      <p>The purpose of reform is not simply to reorganize institutions. It is to strengthen the agency of people and communities, improve the way organizations work together, and connect immediate relief with recovery, preparedness and longer-term development.</p>
+      <p class="prop" style="margin-top:var(--s5)">From institutional commitments to collective outcomes: a humanitarian system that is not merely reorganized, but demonstrably more capable of serving the people affected by crises.</p>
+      <p class="att">Proposed editorial copy for this page; not an IASC quotation or adopted slogan.</p>
+      <a class="back" href="#top" style="color:#fff">Back to top ↑</a>
+    </div>
   </div>
 </section>
 
@@ -1059,10 +1658,9 @@ html:not(.js) .chapters button{cursor:default;pointer-events:none}
         <li><a href="https://www.facebook.com/FriendsofIASC">Facebook: FriendsofIASC</a></li>
       </ul></nav>
     </div>
-    <p class="fine">Draft for discussion. All figures as reported in the IASC Humanitarian Reset Stocktake (draft, 8 October 2026 revision) and presentation, October 2026. <a href="/sol/reset/v3/">Extended edition</a>.</p>
+    <p class="fine">Draft for discussion. All figures as reported in the IASC Humanitarian Reset Stocktake (draft, 8 October 2026 revision) and presentation, October 2026. Version 3 (parallel edition, status reviewed <!-- gen:asof -->19 November 2026<!-- /gen:asof -->). <a href="/sol/reset/">Short edition</a>.</p>
   </div>
 </footer>
-
 <script>
 (function(){
   /* 1. Section in view → aria-current on the sub-nav link */
@@ -1262,6 +1860,59 @@ html:not(.js) .chapters button{cursor:default;pointer-events:none}
     window.addEventListener('afterprint',function(){canvas.style.visibility='';});
     update();
   }catch(err){running=false;if(canvas.parentNode)canvas.parentNode.removeChild(canvas);showStatic();}
+})();
+</script>
+<script>
+/* v3: keep the current section's link visible in the scrollable bar */
+(function(){var ul=document.querySelector('.subnav ul');if(!ul||!window.MutationObserver)return;new MutationObserver(function(ms){ms.forEach(function(m){var a=m.target;if(a.getAttribute('aria-current')){var l=a.offsetLeft,r=l+a.offsetWidth;if(l<ul.scrollLeft||r>ul.scrollLeft+ul.clientWidth)ul.scrollLeft=l-16;}});}).observe(ul,{attributes:true,subtree:true,attributeFilter:['aria-current']});})();
+/* v3: pause/play for the optional quote marquee (the static list above it carries the content) */
+(function(){var m=document.querySelector('.mq'),b=m&&m.querySelector('.mq-btn');if(!b)return;
+  b.addEventListener('click',function(){var p=!m.classList.contains('paused');m.classList.toggle('paused',p);b.setAttribute('aria-pressed',p?'true':'false');b.textContent=p?'Play':'Pause';b.setAttribute('aria-label',p?'Play moving quotes':'Pause moving quotes');});
+})();
+</script>
+<script>
+/* v3.1: pillar endings collapse on small screens; definition links open the register */
+(function(){
+  if(window.matchMedia&&matchMedia('(max-width:700px)').matches){[].forEach.call(document.querySelectorAll('details.more'),function(d){d.open=false;});}
+  function openReg(){var h=location.hash;if(h.indexOf('#reg-')===0){var d=document.querySelector('details.regd');if(d)d.open=true;var r=document.getElementById(h.slice(1));if(r)r.scrollIntoView();}}
+  window.addEventListener('hashchange',openReg);openReg();
+  window.addEventListener('beforeprint',function(){[].forEach.call(document.querySelectorAll('details'),function(d){d.open=true;});});
+})();
+</script>
+<script>
+/* Accessible view: one-click toggle, remembered per browser, shareable as ?view=accessible */
+(function(){
+  var root=document.documentElement,btns=[].slice.call(document.querySelectorAll('[data-a11y-toggle]')),live=document.getElementById('a11y-status');
+  /* Text equivalents for every chart (built once; shown only in accessible view) */
+  [].forEach.call(document.querySelectorAll('[role="img"]'),function(el){
+    var t='';var lb=el.getAttribute('aria-labelledby');
+    if(lb){t=lb.split(/\s+/).map(function(id){var n=document.getElementById(id);return n?n.textContent.trim():'';}).filter(Boolean).join('. ');}
+    if(!t)t=el.getAttribute('aria-label')||'';
+    if(!t||el.closest('.conv-wrap'))return;
+    var p=document.createElement('p');p.className='a11y-alt';p.setAttribute('aria-hidden','true');p.textContent=t;
+    el.insertAdjacentElement('afterend',p);
+  });
+  /* Column labels for reflowed tables */
+  [].forEach.call(document.querySelectorAll('table.reg,table.lib,table.emap'),function(t){
+    var hs=[].map.call(t.querySelectorAll('thead th'),function(h){return h.textContent.trim();});
+    [].forEach.call(t.querySelectorAll('tbody tr'),function(r){[].forEach.call(r.children,function(c,i){if(c.tagName==='TD'&&hs[i])c.setAttribute('data-h',hs[i]);});});
+  });
+  var opened=[],pausedLogo=false,bumped=[];
+  function floorText(on){bumped.forEach(function(e){e.style.fontSize='';});bumped=[];if(!on)return;
+    [].forEach.call(document.querySelectorAll('body *'),function(e){if(e.closest('svg,script,style')||!e.firstChild)return;var has=false;for(var n=e.firstChild;n;n=n.nextSibling){if(n.nodeType===3&&n.nodeValue.trim()){has=true;break;}}if(!has)return;if(parseFloat(getComputedStyle(e).fontSize)<16){e.style.fontSize='16px';bumped.push(e);}});}
+  function apply(on,announce){
+    root.classList.toggle('a11y',on);
+    btns.forEach(function(b){b.setAttribute('aria-pressed',on?'true':'false');var l=b.querySelector('.a11y-lbl');if(l)l.textContent=on?'Standard view':'Accessible view';b.setAttribute('aria-label',on?'Accessible view is on. Switch to standard view':'Switch to accessible view');});
+    if(on){[].forEach.call(document.querySelectorAll('details:not([open]):not(.regd)'),function(d){d.open=true;opened.push(d);});
+      var c=document.querySelector('.conv-toggle');if(c&&c.getAttribute('aria-pressed')==='false'&&c.offsetParent!==null){c.click();pausedLogo=true;}
+      var m=document.querySelector('.mq');if(m)m.classList.add('paused');}
+    else{opened.forEach(function(d){d.open=false;});opened=[];if(pausedLogo){var c2=document.querySelector('.conv-toggle');if(c2)c2.click();pausedLogo=false;}}
+    floorText(on);
+    try{localStorage.setItem('reset-view',on?'accessible':'standard');}catch(e){}
+    if(announce&&live)live.textContent=on?'Accessible view on: larger text, high contrast, one column, no motion, sections expanded and charts described in words.':'Standard view on.';
+  }
+  btns.forEach(function(b){b.addEventListener('click',function(){var on=!root.classList.contains('a11y');var y=b.getBoundingClientRect().top;apply(on,true);var y2=b.getBoundingClientRect().top;window.scrollBy(0,y2-y);b.focus();});});
+  apply(root.classList.contains('a11y'),false);
 })();
 </script>
 </body>
