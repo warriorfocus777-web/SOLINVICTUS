@@ -1,0 +1,439 @@
+{
+  "_about": "Single source for the headline indicators, the indicator register and the roadmap on /sol/reset/v3/. Edit here, then run: python3 sol/reset/v3/build.py. Values are as reported in draft sources; do not change a value without a cleared source.",
+  "as_of": "19 November 2026",
+  "sources": {
+    "stocktake": {
+      "title": "Humanitarian Reset: Stock-take",
+      "short": "Stocktake",
+      "issuer": "Inter-Agency Standing Committee (IASC)",
+      "date": "October 2026",
+      "version": "Draft, 8 October 2026 revision",
+      "format": "Report (Word)",
+      "status": "Draft pending clearance · not yet published",
+      "url": null
+    },
+    "presentation": {
+      "title": "The Humanitarian Reset",
+      "short": "Presentation",
+      "issuer": "Inter-Agency Standing Committee (IASC)",
+      "date": "October 2026",
+      "version": "Draft, 17 slides",
+      "format": "Presentation (PowerPoint)",
+      "status": "Draft pending clearance · not yet published",
+      "url": null
+    },
+    "undp": {
+      "title": "Humanitarian reset — in conversation with Tom Fletcher",
+      "short": "UNDP Beyond Crisis",
+      "issuer": "UNDP, Beyond Crisis series",
+      "date": "Undated on page",
+      "version": "Web page",
+      "format": "Web page",
+      "status": "Published",
+      "url": "https://www.undp.org/crisis/beyond-crisis-series/9"
+    },
+    "eu": {
+      "title": "EU Statement – IASC Principals – Donor Engagement on the Humanitarian Reset",
+      "short": "EU statement",
+      "issuer": "Delegation of the European Union to the UN, New York",
+      "date": "27 October 2026",
+      "version": "Check against delivery",
+      "format": "Web page",
+      "status": "Published",
+      "url": "https://www.eeas.europa.eu/delegations/un-new-york/eu-statement-un-inter-agency-standing-committee-principals-donor-engagement-humanitarian-reset_en"
+    }
+  },
+  "kpi_groups": [
+    {
+      "id": "reach",
+      "title": "Humanitarian reach",
+      "ids": [
+        "reached"
+      ]
+    },
+    {
+      "id": "priority",
+      "title": "Prioritization of needs",
+      "ids": [
+        "severity45"
+      ]
+    },
+    {
+      "id": "ops",
+      "title": "Operational reform",
+      "ids": [
+        "clusters"
+      ]
+    },
+    {
+      "id": "finance",
+      "title": "Financing",
+      "ids": [
+        "cbpf"
+      ]
+    },
+    {
+      "id": "local",
+      "title": "Localization",
+      "ids": [
+        "local"
+      ]
+    }
+  ],
+  "indicators": [
+    {
+      "id": "targeted",
+      "pillar": "deliver",
+      "title": "People targeted in the GHO 2026",
+      "value": "148M",
+      "unit": "people",
+      "denominator": "—",
+      "period": "2026 appeal",
+      "geographic_scope": "GHO 2026 operations",
+      "definition": "People targeted for assistance and protection in the Global Humanitarian Overview 2026.",
+      "source": "stocktake",
+      "source_section": "Deliver",
+      "status": "Draft",
+      "caveat": "A planning figure, not a count of people assisted.",
+      "comparison_basis": "Denominator for the 66M reached."
+    },
+    {
+      "id": "reached",
+      "pillar": "deliver",
+      "title": "People reached with some form of assistance and protection",
+      "value": "66M",
+      "unit": "people",
+      "share": 44.6,
+      "denominator": "148M targeted (45%)",
+      "period": "By October 2026",
+      "geographic_scope": "GHO 2026 operations",
+      "definition": "People reached with some form of assistance and protection.",
+      "source": "stocktake",
+      "source_section": "Deliver",
+      "status": "Draft",
+      "caveat": "Reach is not proof of quality, sufficiency or sustained outcome. Not the same measure as the 100M collective-results figure.",
+      "comparison_basis": "41M of the 66M were in the most severe locations (nested, not additional).",
+      "label": "people reached of 148M targeted, by October 2026",
+      "note": "Reach is not proof of quality or outcome."
+    },
+    {
+      "id": "severe41",
+      "pillar": "deliver",
+      "title": "People reached in locations with the most severe needs",
+      "value": "41M",
+      "unit": "people",
+      "denominator": "66M reached (62%)",
+      "period": "By October 2026",
+      "geographic_scope": "24 operations",
+      "definition": "Subset of people reached who were in locations with the most severe needs.",
+      "source": "stocktake",
+      "source_section": "Deliver",
+      "status": "Draft",
+      "caveat": "Nested within the 66M; do not add.",
+      "comparison_basis": "Subset of 66M."
+    },
+    {
+      "id": "collective100",
+      "pillar": "overview",
+      "title": "People with collective results",
+      "value": "100M",
+      "unit": "people",
+      "denominator": "Not stated",
+      "period": "Nineteen months after launch",
+      "geographic_scope": "Not stated",
+      "definition": "Referred to in the Stocktake introduction. The counting method and its overlap with the 66M reached are not set out in the sources used for this page.",
+      "source": "stocktake",
+      "source_section": "Introduction",
+      "status": "Draft · definition pending",
+      "caveat": "Not interchangeable with the 66M reached; not additive with 66M or 41M.",
+      "comparison_basis": "None established."
+    },
+    {
+      "id": "severity45",
+      "pillar": "define",
+      "title": "People assisted who are in intersectoral severity 4–5 areas",
+      "value": "62%",
+      "unit": "share of people assisted",
+      "denominator": "People receiving assistance and protection",
+      "period": "2026 (36% in 2024; 43% in 2025)",
+      "geographic_scope": "Operations reporting severity",
+      "definition": "Share of people receiving assistance and protection who are in areas of intersectoral severity 4 and 5 (JIAF scale).",
+      "source": "stocktake",
+      "source_section": "Define",
+      "status": "Draft · discrepancy open",
+      "caveat": "The presentation reports 55% for 2026. Both values are shown until the sources are reconciled. Serious protection risks may also exist in severity 3 locations.",
+      "comparison_basis": "Same measure 2024–2026 as reported in the Stocktake.",
+      "label": "of people assisted are in severity 4–5 areas, 2026",
+      "note": "The presentation reports 55%; not yet reconciled."
+    },
+    {
+      "id": "transition",
+      "pillar": "define",
+      "title": "2026 HNRPs outlining steps towards responsible transition",
+      "value": "75%",
+      "unit": "of HNRPs",
+      "dots": [
+        15,
+        20
+      ],
+      "denominator": "15 of 20 HNRPs",
+      "period": "2026 cycle",
+      "geographic_scope": "HNRP countries",
+      "definition": "Humanitarian Needs and Response Plans with steps, milestones and timelines towards responsible transition.",
+      "source": "stocktake",
+      "source_section": "Define",
+      "status": "Draft",
+      "caveat": "Earlier figures (17%, 40%) refer to cluster plans, reported separately; not a continuous series.",
+      "comparison_basis": "No like-for-like earlier value."
+    },
+    {
+      "id": "clusters",
+      "pillar": "deliver",
+      "title": "Operations that have started or completed cluster simplification",
+      "value": "79%",
+      "unit": "of operations",
+      "share": 79,
+      "denominator": "Operations (count not stated)",
+      "period": "As of October 2026",
+      "geographic_scope": "Humanitarian operations",
+      "definition": "Operations that have started or completed simplification of cluster arrangements.",
+      "source": "stocktake",
+      "source_section": "Deliver",
+      "status": "Draft",
+      "caveat": "Started or completed, not 79% completed. No earlier figure is reported, so no trend is shown.",
+      "comparison_basis": "None.",
+      "label": "of operations have started or completed cluster simplification, Oct 2026",
+      "note": "Started or completed, not completed. No trend reported."
+    },
+    {
+      "id": "hpc",
+      "pillar": "define",
+      "title": "Median days to complete the Humanitarian Programme Cycle",
+      "value": "171",
+      "unit": "days",
+      "denominator": "Median across operations",
+      "period": "2026 cycle (179 in 2024)",
+      "geographic_scope": "HPC operations",
+      "definition": "Median planning time for the Humanitarian Programme Cycle.",
+      "source": "stocktake",
+      "source_section": "Define",
+      "status": "Draft",
+      "caveat": "Down 8 days since 2024; 11 days above the 160-day target set for end-2027. The target is not an achieved result.",
+      "comparison_basis": "2024 baseline, end-2027 target."
+    },
+    {
+      "id": "gho",
+      "pillar": "define",
+      "title": "Funding raised against the GHO 2026",
+      "value": "$14.49bn",
+      "unit": "US$",
+      "share": 41.3,
+      "denominator": "$35.07bn required (41%)",
+      "period": "End September 2026",
+      "geographic_scope": "GHO 2026",
+      "definition": "Funds raised against total GHO 2026 requirements, from 61 Member States and public and private sources.",
+      "source": "stocktake",
+      "source_section": "Define",
+      "status": "Draft",
+      "caveat": "The hyper-prioritized plan is 55% funded ($13.63bn of $24.94bn); the two denominators differ.",
+      "comparison_basis": "Separate from hyper-prioritized plan."
+    },
+    {
+      "id": "cbpf",
+      "pillar": "deliver",
+      "title": "Country-based pooled funds",
+      "value": "$4.53bn",
+      "unit": "US$",
+      "denominator": "—",
+      "period": "As of 2 October 2026 ($1.05bn in 2024)",
+      "geographic_scope": "OCHA country-based pooled funds",
+      "definition": "Contributions to OCHA country-based pooled funds; $3.75bn of the 2026 total is US awards.",
+      "source": "stocktake",
+      "source_section": "Deliver",
+      "status": "Draft · two dates",
+      "caveat": "The presentation reports nearly $4.49bn at end September; the gap reflects the different cut-off dates. Contributions are not disbursements.",
+      "comparison_basis": "4.3 times the 2024 amount; no 2025 figure reported.",
+      "label": "in country-based pooled funds, as of 2 Oct 2026 (×4.3 on 2024)",
+      "note": "Presentation: nearly $4.49bn at end September."
+    },
+    {
+      "id": "local",
+      "pillar": "devolve",
+      "title": "Local and national share of 2026 pooled-fund allocations",
+      "value": "55% | 20%",
+      "unit": "share of CBPF allocations",
+      "denominator": "Excluding | including US Award Tranche I",
+      "period": "As of 28 September 2026",
+      "geographic_scope": "Country-based pooled funds",
+      "definition": "Share of CBPF allocations to local and national actors, direct and indirect. Excluding US Award Tranche I: 55% ($182M), 44% direct. Including it: 20% ($409M).",
+      "source": "stocktake",
+      "source_section": "Devolve",
+      "status": "Draft · verification H1 2027",
+      "caveat": "Same 2026 portfolio counted two ways; not a trend. 2024 baseline was 47% ($435M).",
+      "comparison_basis": "Not like-for-like with 2024.",
+      "label": "local and national share of 2026 pooled-fund allocations, 28 Sep",
+      "note": "Same portfolio counted two ways; not a trend."
+    },
+    {
+      "id": "wlo",
+      "pillar": "devolve",
+      "title": "Allocations to women-led and women's rights organizations",
+      "value": "5%",
+      "unit": "share of allocations",
+      "denominator": "Allocations to 11 September 2026",
+      "period": "Partial year to 11 Sep 2026 (12% 2024; 17% / $173M 2025)",
+      "geographic_scope": "Pooled funds",
+      "definition": "Share of allocations to women-led and women's rights organizations against a 15% annual target.",
+      "source": "stocktake",
+      "source_section": "Devolve",
+      "status": "Draft · partial year",
+      "caveat": "Partial-year position; not comparable with full-year 2024 or 2025 results.",
+      "comparison_basis": "Annual target 15%."
+    },
+    {
+      "id": "feedback",
+      "pillar": "devolve",
+      "title": "HNRP countries where HCTs regularly discuss feedback trends",
+      "value": "52%",
+      "unit": "of HNRP countries",
+      "denominator": "HNRP countries",
+      "period": "2025 (65% in 2024)",
+      "geographic_scope": "HNRP countries",
+      "definition": "Humanitarian Country Teams that regularly discuss community feedback trends.",
+      "source": "stocktake",
+      "source_section": "Devolve",
+      "status": "Draft",
+      "caveat": "A decrease of 13 points. Not all Devolve indicators are improving.",
+      "comparison_basis": "2024 → 2025."
+    },
+    {
+      "id": "perception",
+      "pillar": "devolve",
+      "title": "Respondents who see coordination as more inclusive of local actors",
+      "value": "56%",
+      "unit": "of respondents",
+      "denominator": "HCT Perception Survey respondents",
+      "period": "Preliminary, September 2026",
+      "geographic_scope": "Survey respondents",
+      "definition": "Perception Survey respondents perceiving coordination as more inclusive of local actors. 26% consider financial, operational and compliance risks equitably shared.",
+      "source": "stocktake",
+      "source_section": "Devolve",
+      "status": "Draft · preliminary",
+      "caveat": "Perceptions of respondents; not representative of the wider humanitarian community. Delayed country responses may change the findings.",
+      "comparison_basis": "None."
+    }
+  ],
+  "milestones": [
+    {
+      "date": "October 2026",
+      "what": "Humanitarian Working Group endorsement of the Framework for the Responsible Use of AI in Humanitarian Action",
+      "owner": "Humanitarian Working Group (HWG)",
+      "status": "pending",
+      "evidence": "Listed for endorsement in the Stocktake. No public record of endorsement located as of 19 November 2026.",
+      "qualification": "Past due date. Do not present as endorsed until confirmed by the IASC secretariat."
+    },
+    {
+      "date": "27 October 2026",
+      "what": "IASC Principals – Donor Engagement on the Humanitarian Reset",
+      "owner": "IASC Principals and donors",
+      "status": "completed",
+      "evidence": "Meeting held in New York on 27 October 2026, per the published EU statement delivered at it.",
+      "evidence_source": "eu",
+      "qualification": "Agreed actions and follow-up not yet verified against an IASC record. The EU statement welcomes an IASC commitment to convene regular meetings with donors."
+    },
+    {
+      "date": "End 2026",
+      "what": "Data Collaborative recommendations",
+      "owner": "Not specified in source",
+      "status": "ongoing",
+      "evidence": "Data collaboration is listed as an ongoing HWG workstream (presentation, slide 13).",
+      "qualification": "Precise deliverable and owner not documented in the sources used."
+    },
+    {
+      "date": "H1 2027",
+      "what": "Verification of 2026 pooled-fund data",
+      "owner": "Not specified in source",
+      "status": "planned",
+      "evidence": "Stocktake, Devolve: 2026 values are subject to verification in H1 2027.",
+      "qualification": "2026 local-share figures remain provisional until then."
+    },
+    {
+      "date": "2027",
+      "what": "Mutual accountability mechanism institutionalized",
+      "owner": "Not specified in source",
+      "status": "planned",
+      "evidence": "Stocktake: mechanism piloted; to be institutionalized in 2027.",
+      "qualification": "Pilot completed status and results not detailed."
+    },
+    {
+      "date": "End 2027",
+      "what": "HPC median planning time of 160 days",
+      "owner": "Not specified in source",
+      "status": "planned",
+      "evidence": "Stocktake, Define: 171 days in the 2026 cycle against a 160-day target.",
+      "qualification": "A target, not an achievement. Current gap: 11 days."
+    }
+  ],
+  "workstreams": [
+    {
+      "name": "Simplified clusters",
+      "reported": "Completed",
+      "status": "completed",
+      "note": "Workstream reported complete; 79% of operations have started or completed simplification, so roll-out continues."
+    },
+    {
+      "name": "Area-based coordination",
+      "reported": "Completed",
+      "status": "completed",
+      "note": "Workstream reported complete; 14 operations have sub-national area-based coordination."
+    },
+    {
+      "name": "Tracking Reset progress (HCT Perception Survey)",
+      "reported": "Completed",
+      "status": "completed",
+      "note": "Survey results are preliminary (September 2026)."
+    },
+    {
+      "name": "Complementarity",
+      "reported": "Completed",
+      "status": "completed",
+      "note": "Approach adopted June 2026 (presentation, slide 14); application is ongoing."
+    },
+    {
+      "name": "HPC simplification",
+      "reported": "Ongoing",
+      "status": "ongoing",
+      "note": "171-day median against a 160-day end-2027 target."
+    },
+    {
+      "name": "Responsible use of AI",
+      "reported": "Ongoing",
+      "status": "pending",
+      "note": "October 2026 endorsement not confirmed."
+    },
+    {
+      "name": "Scaling the use of cash",
+      "reported": "Ongoing",
+      "status": "ongoing",
+      "note": "CVA 23% of funding (2025) against an envisaged 35%."
+    },
+    {
+      "name": "Climate-sensitive, anticipatory Reset",
+      "reported": "Ongoing",
+      "status": "ongoing",
+      "note": "No indicators reported."
+    },
+    {
+      "name": "Data collaboration",
+      "reported": "Ongoing",
+      "status": "ongoing",
+      "note": "Recommendations due end 2026."
+    },
+    {
+      "name": "Community consultations",
+      "reported": "Ongoing",
+      "status": "ongoing",
+      "note": "No results reported yet."
+    }
+  ]
+}
