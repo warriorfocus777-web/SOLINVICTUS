@@ -1,0 +1,9 @@
+<svg viewBox="-32 -32 64 64" xmlns="http://www.w3.org/2000/svg">
+<rect x="-32" y="-32" width="64" height="64" rx="14" fill="#061A40"/>
+<defs><radialGradient id="cm-g" cx="0" cy="0" r="8" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fff"/><stop offset=".45" stop-color="#48D8FF"/><stop offset="1" stop-color="#168BFF" stop-opacity="0"/></radialGradient></defs>
+<g fill="#168BFF"><path d="M-4.6 -17L0 -30.5L4.6 -17Z"/><path d="M9.48 -14.57L18.74 -18.74L14.57 -9.48Z"/><path d="M17 -4.6L30.5 0L17 4.6Z"/><path d="M14.57 9.48L18.74 18.74L9.48 14.57Z"/><path d="M4.6 17L0 30.5L-4.6 17Z"/><path d="M-9.48 14.57L-18.74 18.74L-14.57 9.48Z"/><path d="M-17 4.6L-30.5 0L-17 -4.6Z"/><path d="M-14.57 -9.48L-18.74 -18.74L-9.48 -14.57Z"/></g>
+<circle r="16.5" fill="#061A40" stroke="#48D8FF" stroke-width="1.8"/>
+<path d="M-4.5 -9.5L-4.5 -13M0 -9.5L0 -13M4.5 -9.5L4.5 -13M9.5 -4.5L13 -4.5M9.5 0L13 0M9.5 4.5L13 4.5M4.5 9.5L4.5 13M0 9.5L0 13M-4.5 9.5L-4.5 13M-9.5 4.5L-13 4.5M-9.5 0L-13 0M-9.5 -4.5L-13 -4.5" stroke="#168BFF" stroke-width="2.2"/>
+<rect x="-9.5" y="-9.5" width="19" height="19" rx="2.6" fill="#061A40" stroke="#168BFF" stroke-width="1.9"/>
+<circle r="7.5" fill="url(#cm-g)"/><circle r="2.3" fill="#fff"/>
+</svg>
