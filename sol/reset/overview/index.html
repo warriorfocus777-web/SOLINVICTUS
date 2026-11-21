@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IASC Overview – Inter-Agency Standing Committee</title>
+<meta name="description" content="What the Inter-Agency Standing Committee is, who is in it, what it does and how it is structured — companion page to the Humanitarian Reset stocktake.">
+<meta name="theme-color" content="#272E67">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<link rel="canonical" href="https://solinvictus.app/sol/reset/overview/">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="preload" as="font" type="font/woff2" href="../fonts/roboto-latin-wght-normal.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="../fonts/roboto-slab-latin-wght-normal.woff2" crossorigin>
+<meta property="og:type" content="article">
+<meta property="og:title" content="IASC Overview – Inter-Agency Standing Committee">
+<meta property="og:description" content="Who the IASC is, what it does and how it works.">
+<meta property="og:url" content="https://solinvictus.app/sol/reset/overview/">
+<meta property="og:image" content="https://solinvictus.app/sol/reset/overview/media/iasc-explainer-poster.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<script>document.documentElement.classList.add('js')</script>
+<style>
+/* ======================================================================
+   This stylesheet is copied verbatim from /sol/reset/index.html (the
+   Humanitarian Reset page) so the two pages share one design system.
+   Only the font @font-face src paths are adjusted (one level deeper).
+   New, page-specific component styles are appended at the very end,
+   under "OVERVIEW-ONLY ADDITIONS".
+   ====================================================================== */
+@font-face{font-family:"Roboto";font-style:normal;font-weight:100 900;font-display:swap;src:url("../fonts/roboto-latin-wght-normal.woff2") format("woff2")}
+@font-face{font-family:"Roboto Condensed";font-style:normal;font-weight:100 900;font-display:swap;src:url("../fonts/roboto-condensed-latin-wght-normal.woff2") format("woff2")}
+@font-face{font-family:"Roboto Slab";font-style:normal;font-weight:100 900;font-display:swap;src:url("../fonts/roboto-slab-latin-wght-normal.woff2") format("woff2")}
+
+:root{
+  --navy:#272E67;--navy-hover:#3D2A7A;--heading:#1C2149;--body:#4A4A4A;--muted:#595959;
+  --red:#E63946;--red-text:#C62F3C;--sev4:#cd3a1f;--blue:#1f69b3;
+  --context:#7C8490;--bg:#F7F6F4;--surface:#fff;--track:#E9E7E3;--border:#DEDAD3;--on-navy-soft:#B8BEE6;
+  --sev-1:#f7f8d3;--sev-2:#d5de26;--sev-3:#db7b18;--sev-5:#1C2149;--sev-edge:#7A7F12;
+  --f-body:Roboto,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+  --f-cond:"Roboto Condensed","Arial Narrow",Roboto,system-ui,sans-serif;
+  --f-slab:"Roboto Slab",Rockwell,"Roboto",Georgia,serif;
+  --s1:4px;--s2:8px;--s3:12px;--s4:16px;--s5:24px;--s6:32px;--s7:48px;--s8:64px;--s9:96px;
+  --sec:clamp(64px,8vw,96px);
+  --wrap:1200px;--gutter:clamp(16px,4vw,40px);--subnav:56px;
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--subnav) + 24px);-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--body);font-family:var(--f-body);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+h1,h2,h3,p,ol,ul,figure,blockquote,dl,dd{margin:0}
+ol,ul{list-style:none;padding:0}
+h1,h2{font-family:var(--f-slab);font-weight:700;color:var(--heading);text-wrap:balance}
+h3{color:var(--heading);text-wrap:balance}
+p{text-wrap:pretty}
+a{color:var(--heading);text-underline-offset:3px}
+a:hover{color:var(--navy-hover)}
+:focus-visible{outline:3px solid var(--heading);outline-offset:2px}
+.dark :focus-visible{outline-color:#fff}
+.sr-only{position:absolute!important;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--gutter)}
+.eyebrow{font-family:var(--f-cond);font-size:14px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.num{font-family:var(--f-cond);font-variant-numeric:tabular-nums;font-weight:700}
+.src{font-size:12px;color:var(--muted);line-height:1.45;margin-top:auto}
+.tag{display:inline-block;padding:2px 8px;border:1.5px solid currentColor;font-family:var(--f-cond);font-size:12px;font-weight:700;letter-spacing:.08em;line-height:1.4}
+.down{color:var(--red-text)}
+.glyph{width:22px;height:22px;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.skip{position:absolute;left:12px;top:-80px;z-index:100;background:var(--heading);color:#fff;padding:10px 16px;font-weight:700;text-decoration:none}
+.skip:focus{top:12px;color:#fff}
+
+/* ---------- Masthead & hero ---------- */
+.mast{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+.mast .bar{display:flex;align-items:center;justify-content:space-between;gap:var(--s4);padding:var(--s4) 0;border-bottom:1px solid rgba(255,255,255,.16)}
+.logo{display:flex;align-items:center;gap:var(--s3);color:#fff;text-decoration:none}
+.logo:hover{color:#fff}
+.logo .wm{font-family:var(--f-slab);font-weight:700;font-size:26px;letter-spacing:.04em;line-height:1;padding-right:var(--s3);border-right:1px solid rgba(255,255,255,.4)}
+.logo .tl{font-family:var(--f-cond);font-size:12px;line-height:1.2;letter-spacing:.06em;text-transform:uppercase}
+.mast .bar .tag{color:#fff}
+.hero{--sym:clamp(220px,21vw,290px);display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);grid-template-areas:"text sym";gap:var(--s7) var(--s8);align-items:center;padding:clamp(40px,7vw,88px) 0 clamp(48px,7vw,88px)}
+.hero .eyebrow{color:var(--on-navy-soft)}
+.hero h1{color:#fff;font-size:clamp(36px,5.4vw,62px);line-height:1.04;letter-spacing:-.01em;margin:var(--s4) 0 var(--s5)}
+.hero h1 span{display:block;color:var(--on-navy-soft);font-weight:400;font-size:.62em;margin-top:var(--s2)}
+.hero .lede{font-size:clamp(17px,1.5vw,19px);max-width:60ch}
+.hero .meta{display:flex;flex-wrap:wrap;gap:var(--s2) var(--s5);margin-top:var(--s6);padding-top:var(--s4);border-top:1px solid rgba(255,255,255,.22)}
+.hero .meta div{display:flex;flex-direction:column}
+.hero .meta dt{font-family:var(--f-cond);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--on-navy-soft)}
+.hero .meta dd{font-size:15px}
+.hero .meta dd b{font-family:var(--f-cond);font-size:22px}
+.hero-text{grid-area:text;max-width:700px}
+.conv-wrap{grid-area:sym;align-self:center;justify-self:center;position:relative;width:var(--sym);aspect-ratio:1/1}
+.conv-wrap .convergence{display:block;width:100%;height:100%;overflow:visible}
+.conv-canvas{position:absolute;inset:-20%;pointer-events:none;transition:opacity .4s}
+.conv-toggle{display:none;position:absolute;bottom:0;right:-52px;width:32px;height:32px;padding:0;border-radius:50%;border:1px solid rgba(255,255,255,.5);background:transparent;color:#fff;cursor:pointer;align-items:center;justify-content:center;transition:background-color .15s,border-color .15s}
+.conv-toggle:hover{background:var(--navy-hover);border-color:#fff}
+.conv-toggle svg{width:12px;height:12px;fill:currentColor}
+.conv-toggle .i-play,.is-paused .conv-toggle .i-pause{display:none}
+.is-paused .conv-toggle .i-play{display:block}
+.particles-on .conv-toggle{display:inline-flex}
+.particles-on .convergence path{animation:none!important}
+@media (prefers-reduced-motion:no-preference){.js .conv-wrap:not(.particles-off) .convergence{opacity:0}}
+@media (max-width:900px){
+  .hero{--sym:160px;grid-template-columns:minmax(0,1fr) auto;gap:var(--s6)}
+  .conv-wrap{justify-self:end}
+  .conv-toggle{bottom:auto;top:calc(100% + 12px);right:0}
+}
+@media (max-width:600px){
+  .hero{--sym:112px;grid-template-columns:minmax(0,1fr);grid-template-areas:"sym" "text";row-gap:var(--s5)}
+  .conv-wrap{justify-self:start;margin-bottom:0}
+  .conv-toggle{top:auto;bottom:0;right:auto;left:calc(100% + 20px)}
+}
+@media (prefers-reduced-motion:no-preference){
+  .convergence path{animation:converge 3.2s cubic-bezier(.22,.61,.36,1) .2s both}
+  .convergence .c-tl{--dx:-9px;--dy:-9px}
+  .convergence .c-tr{--dx:9px;--dy:-9px}
+  .convergence .c-bl{--dx:-9px;--dy:9px}
+  .convergence .c-br{--dx:9px;--dy:9px}
+}
+@keyframes converge{from{opacity:0;transform:translate(var(--dx),var(--dy))}35%{opacity:1}to{opacity:1;transform:translate(0,0)}}
+
+/* ---------- Sticky section bar + reading progress ---------- */
+.subnav{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.97);border-bottom:1px solid var(--border);backdrop-filter:saturate(1.2) blur(6px)}
+.subnav .wrap{display:flex;align-items:center;gap:var(--s4)}
+.subnav .home{font-family:var(--f-slab);font-weight:700;color:var(--navy);text-decoration:none;font-size:16px;padding-right:var(--s4);border-right:1px solid var(--border);white-space:nowrap}
+.subnav ul{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;flex:1}
+.subnav ul::-webkit-scrollbar{display:none}
+.subnav a.l{display:flex;align-items:center;gap:var(--s2);height:var(--subnav);padding:0 12px;color:var(--heading);font-family:var(--f-cond);font-size:15px;font-weight:700;letter-spacing:.02em;text-decoration:none;white-space:nowrap;border-bottom:3px solid transparent;transition:color .15s,background-color .15s}
+.subnav a.l .glyph{width:18px;height:18px;color:var(--navy)}
+.subnav a.l:hover{color:var(--navy-hover);background:#F1F0FA}
+.subnav a.l[aria-current="location"]{border-bottom-color:var(--navy)}
+.progress{position:absolute;left:0;right:0;bottom:-1px;height:3px;background:transparent}
+.progress span{display:block;height:100%;background:var(--navy);transform-origin:left;transform:scaleX(0)}
+@media (max-width:640px){.subnav .home{display:none}}
+
+/* ---------- D-style sections (reused for Overview chapters) ---------- */
+.d{padding-top:var(--sec)}
+.d-head{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:var(--s5) var(--s8);align-items:end;margin-bottom:var(--s7)}
+.d-mark{display:flex;align-items:center;gap:var(--s4);margin-bottom:var(--s3)}
+.d-mark .n{font-family:var(--f-slab);font-weight:700;font-size:clamp(56px,7vw,88px);line-height:.8;color:transparent;-webkit-text-stroke:1.5px var(--navy);letter-spacing:-.02em}
+@supports not (-webkit-text-stroke:1px black){.d-mark .n{color:var(--track)}}
+.d-mark .k{display:flex;flex-direction:column;gap:6px}
+.d-mark .glyph{width:28px;height:28px;color:var(--blue)}
+.d-mark .eyebrow{color:var(--blue)}
+.d-head h2{font-size:clamp(28px,3.4vw,42px);line-height:1.12;letter-spacing:-.01em}
+.d-head .sum{font-size:18px;line-height:1.55;padding-left:var(--s5);border-left:3px solid var(--navy)}
+@media (max-width:900px){.d-head{grid-template-columns:1fr}.d-head .sum{padding-left:var(--s4)}}
+
+.lead{background:var(--surface);border-top:4px solid var(--navy);padding:clamp(24px,4vw,44px);display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:var(--s7) var(--s8);align-items:start;--track:#ECEEF2}
+.lead .ft{font-size:clamp(20px,2vw,24px)}
+.lead .aside{display:flex;flex-direction:column;gap:var(--s5)}
+.lead .big{font-size:clamp(48px,5vw,68px);line-height:.95;color:var(--heading)}
+.lead .big + p{font-size:16px;color:var(--heading)}
+@media (max-width:900px){.lead{grid-template-columns:1fr}}
+
+.sub{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:var(--s7) var(--s6);margin-top:var(--s7);align-items:start}
+.sub .wide{grid-column:1/-1}
+.fig{display:flex;flex-direction:column;gap:var(--s5)}
+.sub>.fig{border-top:2px solid var(--navy);padding-top:var(--s4)}
+.fig figcaption{display:flex;flex-direction:column;gap:var(--s1)}
+.ft{font-size:18px;font-weight:700;color:var(--heading);line-height:1.3}
+.fs{font-size:14px;color:var(--muted)}
+
+/* ---------- Full-bleed band (video / assessment) ---------- */
+.band{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-top:var(--s7)}
+.band .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:var(--s7) var(--s8);align-items:start;padding-top:var(--sec);padding-bottom:var(--sec)}
+.band-text .eyebrow{color:var(--red-text);display:flex;align-items:center;gap:var(--s3)}
+.band-text .eyebrow::before{content:"";width:32px;height:4px;background:var(--red)}
+.band h2{font-size:clamp(30px,3.6vw,46px);line-height:1.1;margin:var(--s3) 0 var(--s6)}
+.band blockquote{border-left:4px solid var(--navy);padding-left:var(--s5);display:flex;flex-direction:column;gap:var(--s2)}
+.band blockquote p{font-family:var(--f-slab);font-size:clamp(19px,1.8vw,23px);line-height:1.45;color:var(--heading)}
+@media (max-width:900px){.band .wrap{grid-template-columns:1fr}}
+
+/* ---------- Next-phase style navy band (reused for closing / What we do) ---------- */
+.next{background:var(--navy);color:#fff;padding:var(--sec) 0;margin-top:var(--sec)}
+.next .eyebrow{color:var(--on-navy-soft)}
+.next h2{color:#fff;font-size:clamp(28px,3.4vw,42px);line-height:1.12;max-width:28ch;margin-top:var(--s3)}
+.next .lead-q{font-family:var(--f-slab);font-size:clamp(17px,1.6vw,20px);max-width:66ch;margin-top:var(--s5);padding-left:var(--s5);border-left:4px solid var(--red)}
+.prio{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid rgba(255,255,255,.24);margin:var(--s7) 0}
+.prio li{padding:var(--s5) var(--s5) var(--s5) 0;border-bottom:1px solid rgba(255,255,255,.24);display:flex;flex-direction:column;gap:var(--s2)}
+.prio span{font-family:var(--f-slab);font-size:30px;line-height:1;color:transparent;-webkit-text-stroke:1px #fff}
+.prio b{font-size:20px;line-height:1.25}
+@media (max-width:860px){.prio{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.panels{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:var(--s5)}
+.panel{background:var(--surface);color:var(--body);padding:clamp(20px,3vw,28px);display:flex;flex-direction:column;gap:var(--s4)}
+.panel h3{font-size:19px}
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s5)}
+.two p{font-family:var(--f-cond);font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding-bottom:6px;border-bottom:3px solid var(--navy);color:var(--heading)}
+.two p.og{border-bottom-color:var(--context);color:var(--muted)}
+.two li{padding:8px 0;border-bottom:1px solid var(--border);font-size:15px}
+.panel .q{font-family:var(--f-slab);font-size:18px;line-height:1.45;color:var(--heading)}
+
+/* ---------- Documents / cards ---------- */
+.docs{padding:var(--sec) 0}
+.docs .eyebrow{color:var(--blue)}
+.docs h2{font-size:clamp(28px,3.4vw,42px);margin:var(--s3) 0 var(--s6)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:var(--s5)}
+.card{display:flex;flex-direction:column;background:var(--surface)}
+.card .cov{position:relative;padding:var(--s6);min-height:140px;display:flex;flex-direction:column;justify-content:flex-end;gap:var(--s2);border-bottom:4px solid var(--blue);overflow:hidden}
+.card .cov.light{background:#ECEEF2;color:var(--heading)}
+.card .cov.dark{background:var(--navy);color:#fff}
+.card .cov p{font-family:var(--f-cond);font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.card h3{font-family:var(--f-slab);font-size:24px;line-height:1.15;color:inherit}
+.card .bd{padding:var(--s5) var(--s6) var(--s6);display:flex;flex-direction:column;gap:var(--s4);flex:1}
+.card .kind{display:flex;flex-wrap:wrap;gap:var(--s3);align-items:center;font-family:var(--f-cond);font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue)}
+.card blockquote{font-family:var(--f-slab);font-size:16px;line-height:1.5;color:var(--heading)}
+.card .bd>p{font-size:14px;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;gap:var(--s2);min-height:44px;padding:10px 20px;font-weight:700;font-size:15px;text-decoration:none;border:2px solid var(--navy);transition:background-color .15s,color .15s,border-color .15s}
+.btn.primary{background:var(--navy);color:#fff}
+.btn.secondary{color:var(--navy)}
+.btn:hover{background:var(--navy-hover);border-color:var(--navy-hover);color:#fff}
+.btn svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2}
+.card .act{margin-top:auto;padding-top:var(--s2)}
+.doc-status{font-family:var(--f-cond);font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)!important;padding-top:var(--s3);border-top:1px solid var(--border)}
+
+/* ---------- Overview video ---------- */
+.watch{margin-top:var(--s5)}
+.watch a{display:inline-flex;align-items:center;gap:var(--s3);min-height:44px;padding:10px 18px 10px 12px;border:2px solid #fff;color:#fff;font-weight:700;font-size:15px;text-decoration:none;transition:background-color .15s,border-color .15s}
+.watch a:hover{background:var(--navy-hover);border-color:var(--navy-hover);color:#fff}
+.watch .pl{width:28px;height:28px;border-radius:50%;background:#fff;display:inline-flex;align-items:center;justify-content:center}
+.watch .pl svg{width:12px;height:12px;fill:var(--navy);margin-left:2px}
+.watch small{font-family:var(--f-cond);font-weight:400;font-size:14px;color:var(--on-navy-soft)}
+.band-media{display:flex;flex-direction:column;gap:var(--s4)}
+.band-media .eyebrow{color:var(--blue)}
+.band-media h3{font-family:var(--f-slab);font-size:clamp(22px,2.2vw,28px);line-height:1.15;margin-top:calc(-1 * var(--s2))}
+.band-media>p{font-size:15px}
+.intro-player{background:var(--heading);border-top:4px solid var(--navy)}
+.intro-player video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:var(--heading)}
+
+/* ---------- Cross-page link (reused pattern from v3 "extended edition" link) ---------- */
+.ext-link{flex:none;display:inline-flex;align-items:center;gap:6px;min-height:36px;padding:4px 12px;border:2px solid var(--navy);color:var(--navy);font-family:var(--f-cond);font-size:14px;font-weight:700;text-decoration:none;white-space:nowrap}
+.ext-link:hover{background:var(--navy);color:#fff}
+.ext-link svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2}
+@media (max-width:640px){.ext-link .x{display:none}}
+.extend{background:var(--surface);border-bottom:1px solid var(--border)}
+.extend .wrap{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:var(--s5) var(--s8);align-items:center;padding-top:clamp(40px,5vw,64px);padding-bottom:clamp(40px,5vw,64px)}
+.extend .eyebrow{color:var(--blue)}
+.extend h2{font-size:clamp(24px,2.6vw,32px);line-height:1.2;margin:var(--s3) 0 var(--s4)}
+.extend ul{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px var(--s5);font-size:15px;color:var(--heading)}
+.extend li{padding-left:14px;position:relative}
+.extend li::before{content:"";position:absolute;left:0;top:.62em;width:6px;height:6px;background:var(--navy)}
+.extend .go{display:flex;flex-direction:column;gap:var(--s3);align-items:flex-start}
+.extend .go p{font-size:14px;color:var(--muted)}
+@media (max-width:860px){.extend .wrap{grid-template-columns:1fr}.extend ul{grid-template-columns:1fr}}
+@media print{.ext-link,.extend{display:none}}
+
+/* ---------- Data notes / key list ---------- */
+.notes{background:var(--surface);padding:clamp(48px,6vw,72px) 0;border-top:1px solid var(--border)}
+.notes .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:var(--s5) var(--s8)}
+.notes .eyebrow{color:var(--red-text)}
+.notes h2{font-size:clamp(22px,2.4vw,28px);line-height:1.25;margin:var(--s3) 0}
+.notes table{width:100%;border-collapse:collapse;font-size:14px}
+.notes th,.notes td{text-align:left;vertical-align:top;padding:10px 12px 10px 0;border-bottom:1px solid var(--border)}
+.notes thead th{font-family:var(--f-cond);font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--navy)}
+.notes tbody th{color:var(--heading)}
+@media (max-width:860px){.notes .wrap{grid-template-columns:1fr}}
+
+/* ---------- Footer ---------- */
+.foot{background:var(--heading);color:#fff}
+.foot .wrap{padding-top:var(--s7);padding-bottom:var(--s6);display:flex;flex-direction:column;gap:var(--s5)}
+.foot a{color:#fff}
+.foot a:hover{color:#fff;text-decoration:none}
+.foot .row{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:var(--s6)}
+.foot ul{display:flex;flex-direction:column;gap:var(--s2);font-size:15px}
+.foot .fine{font-size:13px;padding-top:var(--s4);border-top:1px solid rgba(255,255,255,.22)}
+
+/* ---------- Motion (enhancement only) ---------- */
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+
+/* ---------- Print ---------- */
+@media print{
+  @page{margin:15mm}
+  body{background:#fff;font-size:10.5pt;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .skip,.subnav,.watch,.intro-player,.pagesnav{display:none!important}
+  .hero{padding:24px 0}
+  .d,.docs,.next{padding-top:24px;margin-top:0}
+  .band{margin-top:24px}
+  .lead,.fig,.band blockquote,.card,.panel{break-inside:avoid}
+  .lead,.card{border:1px solid #ccc}
+  .d{break-before:page}
+  .foot a::after{content:" – " attr(href);font-size:9pt}
+}
+
+/* ======================================================================
+   OVERVIEW-ONLY ADDITIONS
+   New component styles, for content this page needs that the Reset page
+   doesn't have. Named distinctly so they never collide with the shared
+   rules above. Built from the same tokens (colour, type, spacing).
+   ====================================================================== */
+
+/* Shared two-page strip, present (identically) on both pages */
+.pagesnav{background:var(--heading)}
+.pagesnav .wrap{display:flex;gap:var(--s2);align-items:center;min-height:40px}
+.pagesnav a{display:flex;align-items:center;height:40px;padding:0 var(--s3);font-family:var(--f-cond);font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--on-navy-soft);text-decoration:none;border-bottom:3px solid transparent}
+.pagesnav a:hover{color:#fff}
+.pagesnav a[aria-current="page"]{color:#fff;border-bottom-color:var(--red)}
+.pagesnav .sep{color:rgba(255,255,255,.3)}
+
+/* Community: members / standing invitees */
+.community-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:var(--s3)}
+.org-chip{background:var(--surface);border-top:3px solid var(--navy);padding:var(--s4) var(--s3);display:flex;flex-direction:column;gap:4px;min-height:84px;justify-content:center}
+.org-chip.invitee{border-top-color:var(--blue)}
+.org-chip b{font-family:var(--f-cond);font-size:19px;color:var(--heading);letter-spacing:.01em}
+.org-chip span{font-size:12.5px;color:var(--muted);line-height:1.3}
+.community-key{display:flex;gap:var(--s5);margin-top:var(--s5);font-family:var(--f-cond);font-size:13px;color:var(--heading)}
+.community-key span{display:inline-flex;align-items:center;gap:var(--s2)}
+.community-key i{width:14px;height:4px;display:inline-block;background:var(--navy)}
+.community-key i.invitee{background:var(--blue)}
+
+/* Principles */
+.principles{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:var(--s5)}
+.principle{background:var(--surface);padding:clamp(20px,3vw,28px);display:flex;flex-direction:column;gap:var(--s3);border-top:4px solid var(--navy)}
+.principle h3{font-family:var(--f-slab);font-size:21px}
+.principle p{font-size:15px;color:var(--heading)}
+
+/* Structure diagram: simple layered org chart, built from CSS only */
+.org-chart{display:flex;flex-direction:column;gap:var(--s4)}
+.org-tier{display:flex;flex-direction:column;gap:6px}
+.org-tier .tier-label{font-family:var(--f-cond);font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.org-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:var(--s3)}
+.org-node{background:var(--surface);border:1.5px solid var(--border);border-left:4px solid var(--navy);padding:var(--s4);display:flex;flex-direction:column;gap:4px}
+.org-node.top{border-left-color:var(--red)}
+.org-node.side{border-left-color:var(--blue)}
+.org-node b{font-size:16px;color:var(--heading);font-family:var(--f-cond)}
+.org-node span{font-size:13px;color:var(--muted);line-height:1.35}
+.org-link{display:flex;align-items:center;justify-content:center;height:18px}
+.org-link::before{content:"";width:2px;height:100%;background:var(--border)}
+
+/* Secretariat pull-quote-style block, built on existing .band blockquote look */
+.secretariat-fig{border-left:4px solid var(--blue);padding-left:var(--s5)}
+.secretariat-fig p{font-family:var(--f-slab);font-size:clamp(18px,1.8vw,21px);line-height:1.5;color:var(--heading)}
+
+/* Closing statement */
+.closing{text-align:left}
+.closing .line{font-family:var(--f-slab);font-weight:700;color:#fff;font-size:clamp(22px,2.6vw,30px);line-height:1.3}
+.closing .line.dim{color:var(--on-navy-soft);font-weight:400}
+
+/* Verification note (fact-check transparency) */
+.verify-note{margin-top:var(--s5);padding:var(--s4);background:#F1F0FA;border-left:3px solid var(--navy);font-size:13.5px;color:var(--heading)}
+
+/* ----------------------------------------------------------------------
+   Inverted masthead/hero for this page only: same tokens, same layout,
+   same components as the Reset page's header — just light instead of
+   navy, so the two pages read as one family without opening on an
+   identical screen. Nothing below the hero changes.
+   ---------------------------------------------------------------------- */
+.mast{background:var(--surface);color:var(--heading);border-bottom:1px solid var(--border)}
+.mast .bar{border-bottom:1px solid var(--border)}
+.logo{color:var(--heading)}
+.logo:hover{color:var(--navy-hover)}
+.logo .wm{border-right-color:var(--border)}
+.mast .bar .tag{color:var(--heading);border-color:var(--heading)}
+.hero .eyebrow{color:var(--blue)}
+.hero h1{color:var(--heading)}
+.hero h1 span{color:var(--muted)}
+.hero .meta{border-top:1px solid var(--border)}
+.hero .meta dt{color:var(--muted)}
+.hero .meta dd{color:var(--heading)}
+.watch a{border-color:var(--navy);color:var(--navy)}
+.watch a:hover{background:var(--navy);border-color:var(--navy);color:#fff}
+.watch .pl{background:var(--navy)}
+.watch .pl svg{fill:#fff}
+.watch small{color:var(--muted)}
+.conv-toggle{border-color:var(--border);color:var(--heading)}
+.conv-toggle:hover{background:var(--navy);border-color:var(--navy);color:#fff}
+</style>
+</head>
+<body>
+<!-- Icon sprite: four-D glyphs reused where useful, plus new Overview-specific glyphs -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="g-who" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3.5" fill="currentColor"/></symbol>
+  <symbol id="g-community" viewBox="0 0 24 24"><circle cx="8" cy="9" r="3.4"/><circle cx="16" cy="9" r="3.4"/><path d="M3 20c.8-3.6 3-5.5 5-5.5s4.2 1.9 5 5.5M11 20c.8-3.6 3-5.5 5-5.5s4.2 1.9 5 5.5"/></symbol>
+  <symbol id="g-do" viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 12h6M9 15h6M9 18h4"/></symbol>
+  <symbol id="g-principles" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 4.5-3.5 7.5-8 9-4.5-1.5-8-4.5-8-9V6z"/></symbol>
+  <symbol id="g-structure" viewBox="0 0 24 24"><path d="M6 12l12-7M6 12h12M6 12l12 7"/><circle cx="5" cy="12" r="2.5" fill="currentColor"/><circle cx="19" cy="5" r="2"/><circle cx="19" cy="12" r="2"/><circle cx="19" cy="19" r="2"/></symbol>
+  <symbol id="g-secretariat" viewBox="0 0 24 24"><circle cx="9" cy="10" r="3.2"/><circle cx="16" cy="7" r="2.3"/><circle cx="16" cy="14" r="2.3"/><path d="M11.8 9l2.6-1.5M11.8 11l2.6 1.5"/></symbol>
+</svg>
+
+<a class="skip" href="#main">Skip to main content</a>
+
+<!-- Shared dual-page strip: identical markup is added to /sol/reset/index.html -->
+<nav class="pagesnav" aria-label="IASC digital experience">
+  <div class="wrap">
+    <a href="/sol/reset/overview/" aria-current="page">IASC Overview</a>
+    <span class="sep" aria-hidden="true">/</span>
+    <a href="/sol/reset/">Humanitarian Reset</a>
+  </div>
+</nav>
+
+<header class="mast" id="top">
+  <div class="wrap">
+    <div class="bar">
+      <!-- Logo slot: replace the .wm span with the official IASC logo SVG from IASC brand assets (keep the aria-label). -->
+      <a class="logo" href="#top" aria-label="IASC, Inter-Agency Standing Committee">
+        <span class="wm" aria-hidden="true">IASC</span>
+        <span class="tl" aria-hidden="true">Inter-Agency<br>Standing Committee</span>
+      </a>
+      <span class="tag">OVERVIEW</span>
+    </div>
+    <div class="hero">
+      <div class="hero-text">
+        <p class="eyebrow">Institutional overview</p>
+        <h1>Inter-Agency Standing Committee<span>Who we are, and how the humanitarian system coordinates</span></h1>
+        <p class="lede">The IASC is the primary global mechanism for inter-agency humanitarian coordination: a forum, not an operational agency, that brings UN and non-UN humanitarian organizations together to set policy, agree priorities and coordinate response.</p>
+        <p class="watch"><a href="#film"><span class="pl" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M2 1l9 5-9 5z"/></svg></span>Watch the explainer film <small>1:28 · review cut</small></a></p>
+        <dl class="meta">
+          <div><dt>Established</dt><dd><b>June 1992</b></dd></div>
+          <div><dt>Following</dt><dd><b>UNGA Res. 46/182</b> (1991)</dd></div>
+          <div><dt>Chaired by</dt><dd><b>The ERC</b></dd></div>
+          <div><dt>Community</dt><dd><b>12 members</b> + 7 standing invitees</dd></div>
+        </dl>
+      </div>
+      <div class="conv-wrap">
+        <svg class="convergence" viewBox="0 0 100 100" role="img" aria-labelledby="convergence-title convergence-desc">
+          <title id="convergence-title">IASC — Collective Convergence</title>
+          <desc id="convergence-desc">Four independent geometric pathways converge around a shared central axis, representing coordinated humanitarian action.</desc>
+          <path class="c-tl" d="M10 8 H38 L47 38 L43 44 L35 40 Z" fill="#1C2149"/>
+          <path class="c-tr" d="M62 8 H90 L65 40 L57 44 L53 38 Z" fill="#1F69B3"/>
+          <path class="c-bl" d="M10 92 H38 L47 62 L43 56 L35 60 Z" fill="#1F69B3"/>
+          <path class="c-br" d="M62 92 H90 L65 60 L57 56 L53 62 Z" fill="#82B5E9"/>
+        </svg>
+        <button class="conv-toggle" type="button" aria-pressed="false" aria-label="Pause logo animation"><svg class="i-pause" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 1h3v10H2zM7 1h3v10H7z"/></svg><svg class="i-play" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 1l9 5-9 5z"/></svg></button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<nav class="subnav" aria-label="Overview sections">
+  <div class="wrap">
+    <a class="home" href="#top">Overview</a>
+    <ul>
+      <li><a class="l" href="#who"><svg class="glyph" aria-hidden="true"><use href="#g-who"/></svg>Who we are</a></li>
+      <li><a class="l" href="#community"><svg class="glyph" aria-hidden="true"><use href="#g-community"/></svg>Community</a></li>
+      <li><a class="l" href="#what"><svg class="glyph" aria-hidden="true"><use href="#g-do"/></svg>What we do</a></li>
+      <li><a class="l" href="#principles"><svg class="glyph" aria-hidden="true"><use href="#g-principles"/></svg>Principles</a></li>
+      <li><a class="l" href="#structure"><svg class="glyph" aria-hidden="true"><use href="#g-structure"/></svg>Structure</a></li>
+      <li><a class="l" href="#secretariat"><svg class="glyph" aria-hidden="true"><use href="#g-secretariat"/></svg>Secretariat</a></li>
+    </ul>
+    <a class="ext-link" href="/sol/reset/"><span>Humanitarian<span class="x"> Reset</span></span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+  </div>
+  <div class="progress" aria-hidden="true"><span></span></div>
+</nav>
+
+<main id="main" tabindex="-1">
+
+<!-- Explainer film -->
+<section class="band" aria-labelledby="film-h">
+  <div class="wrap">
+    <div class="band-text">
+      <p class="eyebrow">In their own words</p>
+      <h2 id="film-h">One forum, many actors, a shared system</h2>
+      <blockquote>
+        <p>“Many actors. One coordinated system.” The IASC exists so that the largest humanitarian organizations plan, fund and respond together rather than in parallel.</p>
+      </blockquote>
+      <p style="margin-top:var(--s5);font-size:15px">This page is an independent explainer, not an official IASC publication. Facts below are checked against the IASC Secretariat's own site and UN sources as of November 2026 — see <a href="#sources">sources</a>.</p>
+    </div>
+    <div class="band-media" id="film">
+      <p class="eyebrow">Explainer film · 1:28</p>
+      <h3 id="film-desc-h">IASC Explainer Film</h3>
+      <div class="intro-player">
+        <video id="film-video" controls preload="metadata" playsinline poster="media/iasc-explainer-poster.jpg" aria-describedby="film-desc">
+          <source src="media/iasc-explainer-v5-review.mp4" type="video/mp4">
+          <p>Your browser cannot play this video. <a href="media/iasc-explainer-v5-review.mp4">Download the explainer film (MP4)</a>.</p>
+        </video>
+      </div>
+      <p id="film-desc">A short explainer covering who the IASC is, what it does and how it works. <strong>This is the "v5 REVIEW" cut</strong> — treat it as a working draft, not a final, cleared version, until the Secretariat signs off.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 01 WHO WE ARE ============ -->
+<section id="who" class="d" aria-labelledby="who-h">
+  <div class="wrap">
+    <header class="d-head">
+      <div>
+        <div class="d-mark"><span class="n" aria-hidden="true">01</span><span class="k"><svg class="glyph" aria-hidden="true"><use href="#g-who"/></svg><span class="eyebrow">Who we are</span></span></div>
+        <h2 id="who-h">The primary mechanism for inter-agency humanitarian coordination</h2>
+      </div>
+      <p class="sum">A forum of equals, not a new agency: the IASC coordinates how existing humanitarian organizations plan and work together.</p>
+    </header>
+
+    <figure class="lead">
+      <div class="fig">
+        <figcaption><span class="ft">Established in June 1992, following UN General Assembly Resolution 46/182</span><span class="fs">Resolution 46/182, adopted by the General Assembly in December 1991, called for a forum of this kind; the Committee itself was convened the following year. Its role as the primary coordination mechanism was reaffirmed by Resolution 48/57.</span></figcaption>
+        <p style="font-size:15px;color:var(--heading)">In practice, the IASC does not deliver aid directly. It is a coordination body: it brings the heads of the major humanitarian organizations together to agree policy, set shared priorities and coordinate how the system responds to a crisis, so the response is collective rather than fragmented.</p>
+      </div>
+      <div class="aside">
+        <div class="verify-note">To verify: full institutional mandate language, and any changes to the 1992/1991 chronology, against the IASC Secretariat's own "About" pages before publication.</div>
+      </div>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ 02 THE IASC COMMUNITY ============ -->
+<section id="community" class="d" aria-labelledby="community-h">
+  <div class="wrap">
+    <header class="d-head">
+      <div>
+        <div class="d-mark"><span class="n" aria-hidden="true">02</span><span class="k"><svg class="glyph" aria-hidden="true"><use href="#g-community"/></svg><span class="eyebrow">The IASC community</span></span></div>
+        <h2 id="community-h">Twelve members, seven standing invitees</h2>
+      </div>
+      <p class="sum">The IASC Secretariat itself notes that, in practice, no operational distinction is made between the two categories — both sit at the same table.</p>
+    </header>
+
+    <div class="fig">
+      <figcaption><span class="ft">Members</span><span class="fs">Heads, or designated Principals, of UN operational agencies</span></figcaption>
+      <div class="community-grid">
+        <div class="org-chip"><b>FAO</b><span>Food and Agriculture Organization</span></div>
+        <div class="org-chip"><b>IOM</b><span>International Organization for Migration</span></div>
+        <div class="org-chip"><b>OCHA</b><span>UN Office for the Coordination of Humanitarian Affairs</span></div>
+        <div class="org-chip"><b>OHCHR</b><span>UN Human Rights Office</span></div>
+        <div class="org-chip"><b>UNDP</b><span>UN Development Programme</span></div>
+        <div class="org-chip"><b>UNFPA</b><span>UN Population Fund</span></div>
+        <div class="org-chip"><b>UN-Habitat</b><span>UN Human Settlements Programme</span></div>
+        <div class="org-chip"><b>UNHCR</b><span>UN Refugee Agency</span></div>
+        <div class="org-chip"><b>UNICEF</b><span>UN Children's Fund</span></div>
+        <div class="org-chip"><b>UN Women</b><span>UN gender equality entity</span></div>
+        <div class="org-chip"><b>WFP</b><span>World Food Programme</span></div>
+        <div class="org-chip"><b>WHO</b><span>World Health Organization</span></div>
+      </div>
+    </div>
+
+    <div class="fig" style="margin-top:var(--s7)">
+      <figcaption><span class="ft">Standing invitees</span><span class="fs">Permanently invited, non-UN and inter-governmental partners, plus a UN special-procedures mandate holder</span></figcaption>
+      <div class="community-grid">
+        <div class="org-chip invitee"><b>ICRC</b><span>International Committee of the Red Cross</span></div>
+        <div class="org-chip invitee"><b>IFRC</b><span>International Federation of Red Cross and Red Crescent Societies</span></div>
+        <div class="org-chip invitee"><b>ICVA</b><span>International Council of Voluntary Agencies</span></div>
+        <div class="org-chip invitee"><b>InterAction</b><span>US-based NGO consortium</span></div>
+        <div class="org-chip invitee"><b>SCHR</b><span>Steering Committee for Humanitarian Response</span></div>
+        <div class="org-chip invitee"><b>World Bank</b><span>Standing invitee</span></div>
+        <div class="org-chip invitee"><b>RSG on IDPs</b><span>UN Special Rapporteur on the Human Rights of IDPs</span></div>
+      </div>
+      <div class="community-key" aria-hidden="true"><span><i></i>Member</span><span><i class="invitee"></i>Standing invitee</span></div>
+    </div>
+    <div class="verify-note">Logos shown here are typographic placeholders, not the organizations' official marks. Before this page goes live, replace these chips with each organization's official logo, sized and cleared per its own brand guidelines — do not substitute unofficial or low-resolution versions.</div>
+  </div>
+</section>
+
+<!-- ============ 03 WHAT WE DO ============ -->
+<section id="what" class="next" aria-labelledby="what-h">
+  <div class="wrap">
+    <p class="eyebrow">What we do</p>
+    <h2 id="what-h">Four functions, one coordinated system</h2>
+    <p class="lead-q">The IASC itself does not run field operations. Its functions are about aligning the organizations that do.</p>
+    <ol class="prio">
+      <li><span aria-hidden="true">01</span><b>Formulate humanitarian policy and guidance</b></li>
+      <li><span aria-hidden="true">02</span><b>Agree strategic priorities for the sector</b></li>
+      <li><span aria-hidden="true">03</span><b>Coordinate collective response to crises</b></li>
+      <li><span aria-hidden="true">04</span><b>Advance protection, accountability and principled action</b></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ 04 HUMANITARIAN PRINCIPLES ============ -->
+<section id="principles" class="d" aria-labelledby="principles-h">
+  <div class="wrap">
+    <header class="d-head">
+      <div>
+        <div class="d-mark"><span class="n" aria-hidden="true">03</span><span class="k"><svg class="glyph" aria-hidden="true"><use href="#g-principles"/></svg><span class="eyebrow">Humanitarian principles</span></span></div>
+        <h2 id="principles-h">The four principles that guide humanitarian action</h2>
+      </div>
+      <p class="sum">These underpin every IASC function and every humanitarian operation coordinated through it.</p>
+    </header>
+    <div class="principles">
+      <div class="principle"><h3>Humanity</h3><p>Human suffering must be addressed wherever it is found. The purpose of humanitarian action is to protect life and health and ensure respect for human beings.</p></div>
+      <div class="principle"><h3>Impartiality</h3><p>Humanitarian action must be carried out on the basis of need alone, giving priority to the most urgent cases, without discrimination.</p></div>
+      <div class="principle"><h3>Neutrality</h3><p>Humanitarian actors must not take sides in hostilities or engage in controversies of a political, racial, religious or ideological nature.</p></div>
+      <div class="principle"><h3>Independence</h3><p>Humanitarian action must remain autonomous from the political, economic, military or other objectives that any actor may hold.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 06 HOW THE IASC WORKS ============ -->
+<section id="structure" class="d" aria-labelledby="structure-h">
+  <div class="wrap">
+    <header class="d-head">
+      <div>
+        <div class="d-mark"><span class="n" aria-hidden="true">04</span><span class="k"><svg class="glyph" aria-hidden="true"><use href="#g-structure"/></svg><span class="eyebrow">How the IASC works</span></span></div>
+        <h2 id="structure-h">Institutional architecture</h2>
+      </div>
+      <p class="sum">Per the IASC Secretariat's own structure page, current as of this writing — re-verify before publication, since subsidiary-body names and mandates are periodically revised.</p>
+    </header>
+
+    <div class="org-chart">
+      <div class="org-tier">
+        <p class="tier-label">Top</p>
+        <div class="org-row">
+          <div class="org-node top"><b>IASC Principals</b><span>Heads of the 12 member organizations, chaired by the Emergency Relief Coordinator (ERC)</span></div>
+        </div>
+      </div>
+      <div class="org-link" aria-hidden="true"></div>
+      <div class="org-tier">
+        <p class="tier-label">Reporting to the Principals</p>
+        <div class="org-row">
+          <div class="org-node"><b>Deputies Forum</b><span>Senior executives, usually second-in-command — informal dialogue on strategic issues</span></div>
+          <div class="org-node"><b>Emergency Directors Group (EDG)</b><span>Chaired by OCHA's Director of Operations — current crises and urgent operational needs</span></div>
+          <div class="org-node"><b>Operational Policy &amp; Advocacy Group (OPAG)</b><span>Co-chaired by two Deputies Forum members — normative and strategic policy work</span></div>
+        </div>
+      </div>
+      <div class="org-link" aria-hidden="true"></div>
+      <div class="org-tier">
+        <p class="tier-label">Below OPAG</p>
+        <div class="org-row">
+          <div class="org-node"><b>Results Groups</b><span>Technical experts across member organizations, each working one IASC Strategic Priority</span></div>
+        </div>
+      </div>
+      <div class="org-row" style="margin-top:var(--s4)">
+        <div class="org-node side"><b>IASC Secretariat</b><span>Connects every structure above to the Principals and to each other — see next section</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 07 THE SECRETARIAT ============ -->
+<section id="secretariat" class="d" aria-labelledby="secretariat-h">
+  <div class="wrap">
+    <header class="d-head">
+      <div>
+        <div class="d-mark"><span class="n" aria-hidden="true">05</span><span class="k"><svg class="glyph" aria-hidden="true"><use href="#g-secretariat"/></svg><span class="eyebrow">The Secretariat</span></span></div>
+        <h2 id="secretariat-h">Keeping the system connected</h2>
+      </div>
+      <p class="sum">The Secretariat does not set policy itself; it makes sure the Principals' decisions are followed through.</p>
+    </header>
+    <div class="secretariat-fig">
+      <p>The IASC Secretariat supports the IASC Principals in their deliberations, helps ensure their decisions are acted upon, and builds connectivity and synergies between the Principals, the Emergency Directors Group, the Operational Policy and Advocacy Group, the Results Groups and the wider network of entities associated with the IASC.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 08 CLOSING ============ -->
+<section class="next closing" aria-labelledby="closing-h">
+  <div class="wrap">
+    <p class="eyebrow">Closing</p>
+    <h2 id="closing-h" class="sr-only">Different mandates, shared priorities, collective action</h2>
+    <p class="line">Different mandates.</p>
+    <p class="line">Shared priorities.</p>
+    <p class="line">Collective action.</p>
+    <p class="lead-q" style="margin-top:var(--s6)">IASC — Inter-Agency Standing Committee. That coordination is what today's Humanitarian Reset is reforming.</p>
+    <p style="margin-top:var(--s6)"><a class="btn primary" href="/sol/reset/">Read the Humanitarian Reset stocktake <svg viewBox="0 0 16 16" aria-hidden="true" style="fill:none;stroke:currentColor;stroke-width:2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></p>
+  </div>
+</section>
+
+<!-- ============ Sources ============ -->
+<section id="sources" class="notes" aria-labelledby="sources-h">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Sources</p>
+      <h2 id="sources-h">Checked against official sources, November 2026</h2>
+      <p style="font-size:15px">This is a secondary, independent summary. For anything load-bearing, go to the primary source.</p>
+    </div>
+    <table>
+      <caption class="sr-only">Sources used for this page</caption>
+      <thead><tr><th scope="col">Claim</th><th scope="col">Source</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Establishment, June 1992, following Resolution 46/182</th><td><a href="https://interagencystandingcommittee.org/iasc-about/iasc-membership">IASC Secretariat — Membership page</a></td></tr>
+        <tr><th scope="row">Members and standing invitees</th><td><a href="https://interagencystandingcommittee.org/iasc-about/iasc-membership">IASC Secretariat — Membership page</a></td></tr>
+        <tr><th scope="row">Structure: Principals, Deputies Forum, EDG, OPAG, Results Groups, Secretariat</th><td><a href="https://interagencystandingcommittee.org/node/39708">IASC Secretariat — Structure page</a></td></tr>
+        <tr><th scope="row">Chaired by the Emergency Relief Coordinator</th><td>IASC Secretariat — Membership and Structure pages</td></tr>
+        <tr><th scope="row">Humanitarian principles (humanity, impartiality, neutrality, independence)</th><td>OCHA — standard formulation used across UN humanitarian guidance</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot dark">
+  <div class="wrap">
+    <div class="row">
+      <div>
+        <!-- Logo slot: official IASC logo (reversed/white version) goes here -->
+        <p class="logo" style="margin-bottom:12px"><span class="wm">IASC</span><span class="tl">Inter-Agency<br>Standing Committee</span></p>
+        <p style="font-size:14px;max-width:340px">The longest-standing and highest-level humanitarian coordination forum of the UN system.</p>
+      </div>
+      <nav aria-label="IASC online"><ul>
+        <li><a href="https://interagencystandingcommittee.org/">interagencystandingcommittee.org</a></li>
+        <li><a href="https://x.com/iascch">X: @iascch</a></li>
+        <li><a href="https://www.linkedin.com/company/inter-agency-standing-committee-iasc">LinkedIn: inter-agency-standing-committee-iasc</a></li>
+        <li><a href="https://www.facebook.com/FriendsofIASC">Facebook: FriendsofIASC</a></li>
+      </ul></nav>
+    </div>
+    <p class="fine">Independent explainer, not an official IASC publication. Facts checked against interagencystandingcommittee.org, November 2026; verify before external use. <a href="/sol/reset/">Humanitarian Reset stocktake</a>.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var links=[].slice.call(document.querySelectorAll('.subnav a.l'));
+  var map={};links.forEach(function(a){map[a.getAttribute('href').slice(1)]=a;});
+  if('IntersectionObserver' in window){
+    var nav=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(e.isIntersecting){links.forEach(function(a){a.removeAttribute('aria-current');});var a=map[e.target.id];if(a)a.setAttribute('aria-current','location');}
+    });},{rootMargin:'-40% 0px -55% 0px'});
+    Object.keys(map).forEach(function(id){var s=document.getElementById(id);if(s)nav.observe(s);});
+  }
+  var bar=document.querySelector('.progress span'),ticking=false;
+  function upd(){var h=document.documentElement,max=h.scrollHeight-h.clientHeight;bar.style.transform='scaleX('+(max>0?Math.min(1,h.scrollTop/max):0)+')';ticking=false;}
+  window.addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(upd);}},{passive:true});upd();
+})();
+</script>
+<script>
+/* IASC Collective Convergence — particle assembly (canvas, no dependencies).
+   Identical to the version on /sol/reset/index.html, for visual parity. */
+(function(){
+  var wrap=document.querySelector('.conv-wrap'); if(!wrap) return;
+  var svg=wrap.querySelector('.convergence'), btn=wrap.querySelector('.conv-toggle');
+  var mq=window.matchMedia?window.matchMedia('(prefers-reduced-motion: reduce)'):null;
+  function showStatic(){wrap.classList.remove('particles-on');wrap.classList.add('particles-off');svg.style.opacity='';}
+  if(mq&&mq.matches){showStatic();return;}
+  var canvas=document.createElement('canvas');canvas.className='conv-canvas';canvas.setAttribute('aria-hidden','true');
+  var ctx=canvas.getContext&&canvas.getContext('2d');
+  if(!ctx){showStatic();return;}
+
+  var POLYS=[
+    {c:0,p:[[10,8],[38,8],[47,38],[43,44],[35,40]]},
+    {c:1,p:[[62,8],[90,8],[65,40],[57,44],[53,38]]},
+    {c:1,p:[[10,92],[38,92],[47,62],[43,56],[35,60]]},
+    {c:2,p:[[62,92],[90,92],[65,60],[57,56],[53,62]]}
+  ];
+  /* Inverted palette for this page's light hero: the first swatch (used for the
+     upper-left quadrant) is navy instead of white, so it stays visible against
+     a white background — everything else matches the Reset page exactly. */
+  var COLORS=['#1C2149','#1F69B3','#82B5E9','#144372','#1C2149'];
+  var BLEED=20;
+  var CYCLE=8.5;
+
+  var seed=20261018;
+  function rnd(){seed|=0;seed=seed+0x6D2B79F5|0;var t=Math.imul(seed^seed>>>15,1|seed);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;}
+  function inside(x,y,p){var r=false;for(var i=0,j=p.length-1;i<p.length;j=i++){var xi=p[i][0],yi=p[i][1],xj=p[j][0],yj=p[j][1];if(((yi>y)!==(yj>y))&&(x<(xj-xi)*(y-yi)/(yj-yi)+xi))r=!r;}return r;}
+  function region(x,y){for(var k=0;k<4;k++)if(inside(x,y,POLYS[k].p))return k;return -1;}
+  function area(p){var a=0;for(var i=0,j=p.length-1;i<p.length;j=i++)a+=(p[j][0]+p[i][0])*(p[j][1]-p[i][1]);return Math.abs(a/2);}
+  function smooth(x){x=x<0?0:x>1?1:x;return x*x*(3-2*x);}
+  function win(t,a,b){return smooth((t-a)/(b-a));}
+
+  function sample(target){
+    var A=0;POLYS.forEach(function(o){A+=area(o.p);});
+    var r=Math.sqrt(A*0.62/target);
+    function rad(x,y){var dx=x-50,dy=y-50;return (dx*dx+dy*dy<196)?r*0.82:r;}
+    var cs=r*0.82/Math.SQRT2,gw=Math.ceil(100/cs),gh=gw,grid=new Int32Array(gw*gh).fill(-1);
+    var px=[],py=[],pr=[],active=[];
+    function fits(x,y){var rr=rad(x,y),gx=(x/cs)|0,gy=(y/cs)|0,n=Math.ceil(rr/cs)+1;
+      for(var j=Math.max(0,gy-n);j<=Math.min(gh-1,gy+n);j++)for(var i=Math.max(0,gx-n);i<=Math.min(gw-1,gx+n);i++){var q=grid[j*gw+i];if(q>=0){var dx=px[q]-x,dy=py[q]-y;if(dx*dx+dy*dy<rr*rr)return false;}}return true;}
+    function add(x,y,k){var id=px.length;px.push(x);py.push(y);pr.push(k);var g=((y/cs)|0)*gw+((x/cs)|0);if(grid[g]<0)grid[g]=id;active.push(id);}
+    POLYS.forEach(function(o,k){var p=o.p,cx=0,cy=0;p.forEach(function(v){cx+=v[0];cy+=v[1];});cx/=p.length;cy/=p.length;
+      for(var i=0;i<p.length;i++){var a=p[i],b=p[(i+1)%p.length],len=Math.hypot(b[0]-a[0],b[1]-a[1]),n=Math.max(2,Math.round(len/(r*0.78)));
+        for(var s=0;s<n;s++){var t=(s+0.5)/n,x=a[0]+(b[0]-a[0])*t,y=a[1]+(b[1]-a[1])*t,dx=cx-x,dy=cy-y,d=Math.hypot(dx,dy)||1;x+=dx/d*0.6;y+=dy/d*0.6;
+          if(region(x,y)===k&&fits(x,y))add(x,y,k);}}});
+    while(active.length){var ai=(rnd()*active.length)|0,id=active[ai],ok=false,rr=rad(px[id],py[id]);
+      for(var t=0;t<24;t++){var ang=rnd()*6.2832,d=rr*(1+rnd()),x=px[id]+Math.cos(ang)*d,y=py[id]+Math.sin(ang)*d,k=region(x,y);
+        if(k>=0&&fits(x,y)){add(x,y,k);ok=true;break;}}
+      if(!ok){active[ai]=active[active.length-1];active.pop();}}
+    return {x:px,y:py,k:pr};
+  }
+
+  var CELL=16,MOTIF=10,atlas=document.createElement('canvas');atlas.width=CELL*20;atlas.height=CELL;
+  (function(){var a=atlas.getContext('2d');for(var c=0;c<5;c++)for(var m=0;m<4;m++){var ox=(c*4+m)*CELL+CELL/2,oy=CELL/2;a.fillStyle=COLORS[c];a.beginPath();
+    if(m===0)a.rect(ox-4,oy-4,8,8);
+    else if(m===1)a.rect(ox-5,oy-2.5,10,5);
+    else if(m===2){a.moveTo(ox-5,oy+2);a.lineTo(ox+1,oy-3);a.lineTo(ox+5,oy-3);a.lineTo(ox-1,oy+2);}
+    else {a.moveTo(ox-5,oy-4);a.lineTo(ox+1,oy-4);a.lineTo(ox+4,oy+3);a.lineTo(ox-2,oy+4);}
+    a.closePath();a.fill();}})();
+
+  var N=0,NA=0,TX,TY,S0X,S0Y,S1X,S1Y,DX,DY,DEL,DUR,CUR,SZ,AL,ROT,SPIN,PH,SPR,OX,OY,AMB;
+  var cssW=0,dpr=1,scale=1,bucket=-1,cycle=0,tau0=0,t=0;
+  function countFor(w){var lowEnd=(navigator.hardwareConcurrency||8)<=4;var n=w>=160?3000:w>=120?2200:1600;return lowEnd?Math.round(n*0.7):n;}
+  function scatter(i,outX,outY){var x=TX[i]-50,y=TY[i]-50,r=Math.hypot(x,y),a=Math.atan2(y,x);
+    if(r<1){a=rnd()*6.2832;}
+    var nr=Math.min(64,r+(8+rnd()*14)*(1-r/80)),na=a+(rnd()-0.5)*0.7;
+    outX[i]=50+Math.cos(na)*nr+(rnd()-0.5)*4;outY[i]=50+Math.sin(na)*nr+(rnd()-0.5)*4;}
+  function build(){
+    var n=countFor(cssW),s=sample(n*0.95);
+    NA=Math.round(n*0.05);N=s.x.length+NA;
+    function f(){return new Float32Array(N);}
+    TX=f();TY=f();S0X=f();S0Y=f();S1X=f();S1Y=f();DX=f();DY=f();DEL=f();DUR=f();CUR=f();SZ=f();AL=f();ROT=f();SPIN=f();PH=f();OX=f();OY=f();
+    SPR=new Uint8Array(N);AMB=new Uint8Array(N);
+    for(var i=0;i<N;i++){
+      var amb=i>=s.x.length;AMB[i]=amb?1:0;
+      if(!amb){TX[i]=s.x[i];TY[i]=s.y[i];}else{TX[i]=-BLEED+rnd()*(100+2*BLEED);TY[i]=-BLEED+rnd()*(100+2*BLEED);}
+      var col=amb?(rnd()<0.5?3:4):POLYS[s.k[i]].c;
+      var mr=rnd(),motif=mr<0.4?0:mr<0.65?1:mr<0.85?2:3;
+      SPR[i]=col*4+motif;
+      SZ[i]=0.7+rnd()*0.6;AL[i]=amb?0.25+rnd()*0.25:0.78+rnd()*0.22;
+      ROT[i]=rnd()*6.2832;SPIN[i]=(rnd()-0.5)*1.6;PH[i]=rnd()*6.2832;
+      DEL[i]=rnd()*0.7;DUR[i]=1.45+rnd()*0.3;CUR[i]=(rnd()-0.5)*0.36;
+      var rx=TX[i]-50,ry=TY[i]-50,rl=Math.hypot(rx,ry)||1,sg=(TX[i]<50)===(TY[i]<50)?1:-1,sp=0.6+rnd()*1.2;
+      DX[i]=(-ry/rl*sg*0.8+(rnd()-0.5)*0.6)*sp;DY[i]=(rx/rl*sg*0.8+(rnd()-0.5)*0.6)*sp;
+      if(!amb){scatter(i,S0X,S0Y);scatter(i,S1X,S1Y);}else{S0X[i]=S1X[i]=TX[i];S0Y[i]=S1Y[i]=TY[i];}
+    }
+    wrap.setAttribute('data-particles',String(N));
+  }
+  function resize(){
+    var w=wrap.clientWidth;if(!w)return;cssW=w;dpr=Math.min(2,window.devicePixelRatio||1);
+    var cw=w*(1+2*BLEED/100);canvas.style.width=cw+'px';canvas.style.height=cw+'px';
+    canvas.width=Math.round(cw*dpr);canvas.height=Math.round(cw*dpr);scale=w/100;
+    var b=countFor(w);if(b!==bucket){bucket=b;build();}
+  }
+
+  var pX=-1e4,pY=-1e4,pOn=false;
+  var host=wrap.closest('.mast')||wrap;
+  host.addEventListener('pointermove',function(e){var r=canvas.getBoundingClientRect();pX=(e.clientX-r.left)/scale-BLEED;pY=(e.clientY-r.top)/scale-BLEED;pOn=true;},{passive:true});
+  host.addEventListener('pointerleave',function(){pOn=false;},{passive:true});
+
+  function draw(dt){
+    t+=dt;if(t>=CYCLE){t-=CYCLE;cycle++;tau0=CYCLE-8.0;var swX=S0X,swY=S0Y;S0X=S1X;S0Y=S1Y;S1X=swX;S1Y=swY;for(var q=0;q<N;q++)if(!AMB[q])scatter(q,S1X,S1Y);}
+    var fadeIn=cycle===0?win(t,0,0.8):1;
+    var L=fadeIn*(1-0.87*win(t,4.2,4.8)+0.87*win(t,6.2,6.8));
+    var La=fadeIn*(1-0.6*win(t,4.2,4.8)+0.6*win(t,6.2,6.8));
+    var svgA=win(t,4.0,4.6)*(1-win(t,6.2,6.8));
+    svg.style.opacity=svgA.toFixed(3);
+    var shimmer=0.25*win(t,4.2,4.8)*(1-win(t,5.6,6.2));
+    var R=60/scale,R2=R*R,push=(pOn?6:0)*dt,decay=Math.pow(0.02,dt);
+    var k=scale*dpr,B=BLEED,size=Math.max(1,Math.min(3,scale*1.1))*dpr/MOTIF;
+    ctx.setTransform(1,0,0,1,0,0);ctx.clearRect(0,0,canvas.width,canvas.height);
+    for(var i=0;i<N;i++){
+      var x,y,act=1;
+      if(AMB[i]){x=TX[i]+=DX[i]*dt*0.6;y=TY[i]+=DY[i]*dt*0.6;
+        if(x<-B)TX[i]+=100+2*B;else if(x>100+B)TX[i]-=100+2*B;if(y<-B)TY[i]+=100+2*B;else if(y>100+B)TY[i]-=100+2*B;x=TX[i];y=TY[i];}
+      else{
+        var tc=1+DEL[i];
+        if(t<tc){var tau=tau0+t;x=S0X[i]+DX[i]*tau;y=S0Y[i]+DY[i]*tau;}
+        else if(t<6.2){var p=(t-tc)/DUR[i];
+          if(p<1){var e=smooth(p);e=1-(1-e)*(1-e);var sx=S0X[i]+DX[i]*(tau0+tc),sy=S0Y[i]+DY[i]*(tau0+tc),mx=(sx+TX[i])/2-(TY[i]-sy)*CUR[i],my=(sy+TY[i])/2+(TX[i]-sx)*CUR[i],u=1-e;
+            x=u*u*sx+2*u*e*mx+e*e*TX[i];y=u*u*sy+2*u*e*my+e*e*TY[i];act=1-e;}
+          else{x=TX[i]+Math.sin(t*1.3+PH[i])*shimmer;y=TY[i]+Math.cos(t*1.1+PH[i])*shimmer;act=0;}}
+        else if(t<8.0){var q2=smooth((t-6.2)/1.8),cx=(TX[i]+S1X[i])/2+(S1Y[i]-TY[i])*CUR[i]*0.6,cy=(TY[i]+S1Y[i])/2-(S1X[i]-TX[i])*CUR[i]*0.6,v=1-q2;
+          x=v*v*TX[i]+2*v*q2*cx+q2*q2*S1X[i];y=v*v*TY[i]+2*v*q2*cy+q2*q2*S1Y[i];act=q2;}
+        else{var tf=t-8.0;x=S1X[i]+DX[i]*tf;y=S1Y[i]+DY[i]*tf;}
+        if(push){var ddx=x+OX[i]-pX,ddy=y+OY[i]-pY,d2=ddx*ddx+ddy*ddy;if(d2<R2&&d2>0.01){var d=Math.sqrt(d2),f=(1-d/R);f*=f*push;OX[i]+=ddx/d*f;OY[i]+=ddy/d*f;}}
+        OX[i]*=decay;OY[i]*=decay;x+=OX[i];y+=OY[i];
+      }
+      ROT[i]+=SPIN[i]*act*dt;
+      var a=AL[i]*(AMB[i]?La:L);if(a<0.01)continue;
+      var sc=size*SZ[i],c=Math.cos(ROT[i])*sc,s=Math.sin(ROT[i])*sc;
+      ctx.globalAlpha=a;ctx.setTransform(c,s,-s,c,(x+B)*k,(y+B)*k);
+      ctx.drawImage(atlas,SPR[i]*CELL,0,CELL,CELL,-CELL/2,-CELL/2,CELL,CELL);
+    }
+    ctx.globalAlpha=1;
+  }
+
+  var running=false,visible=true,paused=false,last=0,raf=0;
+  function loop(ts){if(!running)return;var dt=last?Math.min(0.05,(ts-last)/1000):0;last=ts;draw(dt);raf=requestAnimationFrame(loop);}
+  function update(){var go=visible&&!paused&&!document.hidden;if(go&&!running){running=true;last=0;raf=requestAnimationFrame(loop);}else if(!go&&running){running=false;cancelAnimationFrame(raf);}}
+  function setPaused(p){paused=p;wrap.classList.toggle('is-paused',p);
+    if(p){svg.style.opacity='1';canvas.style.opacity='0';}else{canvas.style.opacity='';}
+    if(btn){btn.setAttribute('aria-pressed',p?'true':'false');btn.setAttribute('aria-label',p?'Play logo animation':'Pause logo animation');}
+    update();}
+
+  try{
+    wrap.insertBefore(canvas,btn||null);
+    wrap.classList.add('particles-on');svg.style.opacity='0';
+    resize();
+    if(window.ResizeObserver)new ResizeObserver(function(){resize();}).observe(wrap);else window.addEventListener('resize',resize);
+    if(window.IntersectionObserver)new IntersectionObserver(function(es){visible=es[0].isIntersecting;update();}).observe(wrap);
+    document.addEventListener('visibilitychange',update);
+    if(btn)btn.addEventListener('click',function(){setPaused(!paused);});
+    if(mq){var onChange=function(e){if(e.matches){running=false;cancelAnimationFrame(raf);canvas.remove();showStatic();}};if(mq.addEventListener)mq.addEventListener('change',onChange);else if(mq.addListener)mq.addListener(onChange);}
+    window.addEventListener('beforeprint',function(){svg.style.opacity='1';canvas.style.visibility='hidden';});
+    window.addEventListener('afterprint',function(){canvas.style.visibility='';});
+    update();
+  }catch(err){running=false;if(canvas.parentNode)canvas.parentNode.removeChild(canvas);showStatic();}
+})();
+</script>
+</body>
+</html>

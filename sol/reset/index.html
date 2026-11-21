@@ -401,6 +401,15 @@ html:not(.js) .chapters button{cursor:default;pointer-events:none}
 .transcript ol{list-style:decimal;padding-left:20px;display:flex;flex-direction:column;gap:6px;font-size:14px;margin-bottom:var(--s3)}
 .transcript p{font-size:13px;color:var(--muted)}
 
+/* ---------- Shared two-page strip (added for the IASC Overview companion page) ---------- */
+.pagesnav{background:var(--heading)}
+.pagesnav .wrap{display:flex;gap:var(--s2);align-items:center;min-height:40px}
+.pagesnav a{display:flex;align-items:center;height:40px;padding:0 var(--s3);font-family:var(--f-cond);font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--on-navy-soft);text-decoration:none;border-bottom:3px solid transparent}
+.pagesnav a:hover{color:#fff}
+.pagesnav a[aria-current="page"]{color:#fff;border-bottom-color:var(--red)}
+.pagesnav .sep{color:rgba(255,255,255,.3)}
+@media print{.pagesnav{display:none!important}}
+
 /* ---------- Extended edition link (v3) ---------- */
 .ext-link{flex:none;display:inline-flex;align-items:center;gap:6px;min-height:36px;padding:4px 12px;border:2px solid var(--navy);color:var(--navy);font-family:var(--f-cond);font-size:14px;font-weight:700;text-decoration:none;white-space:nowrap}
 .ext-link:hover{background:var(--navy);color:#fff}
@@ -459,6 +468,15 @@ html:not(.js) .chapters button{cursor:default;pointer-events:none}
 </svg>
 
 <a class="skip" href="#main">Skip to main content</a>
+
+<!-- Shared dual-page strip: identical markup is on /sol/reset/overview/ -->
+<nav class="pagesnav" aria-label="IASC digital experience">
+  <div class="wrap">
+    <a href="/sol/reset/overview/">IASC Overview</a>
+    <span class="sep" aria-hidden="true">/</span>
+    <a href="/sol/reset/" aria-current="page">Humanitarian Reset</a>
+  </div>
+</nav>
 
 <header class="mast dark" id="top">
   <div class="wrap">
@@ -1059,7 +1077,7 @@ html:not(.js) .chapters button{cursor:default;pointer-events:none}
         <li><a href="https://www.facebook.com/FriendsofIASC">Facebook: FriendsofIASC</a></li>
       </ul></nav>
     </div>
-    <p class="fine">Draft for discussion. All figures as reported in the IASC Humanitarian Reset Stocktake (draft, 8 October 2026 revision) and presentation, October 2026. <a href="/sol/reset/v3/">Extended edition</a>.</p>
+    <p class="fine">Draft for discussion. All figures as reported in the IASC Humanitarian Reset Stocktake (draft, 8 October 2026 revision) and presentation, October 2026. <a href="/sol/reset/v3/">Extended edition</a> · <a href="/sol/reset/overview/">What is the IASC?</a></p>
   </div>
 </footer>
 
