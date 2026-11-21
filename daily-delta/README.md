@@ -60,7 +60,7 @@ days are reported in the scheduled task's own output, not written here.)
 
 ## Promoting a candidate into a desk
 
-Entirely manual, by design. The desk (Matt/Juan) reads a staged candidate,
+Entirely manual, by design. The desk (Matt) reads a staged candidate,
 grades it, decides which cell(s)/note(s) it bears on, and adds it to the real
 ledger (`cadre7/desk.json` / `cadre509/desk509.json` / `cadre/index.html`)
 through the normal editorial process — exactly as the existing
