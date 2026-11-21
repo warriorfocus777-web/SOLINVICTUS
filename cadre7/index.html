@@ -54,6 +54,9 @@ h1,h2,h3,p,ul,ol,dl,dd,figure{margin:0}
 .wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
 .mono{font-family:var(--mono);letter-spacing:.06em;text-transform:uppercase;font-size:12px;font-feature-settings:"tnum","zero"}
 .muted{color:var(--gray)}
+.fam{text-decoration:none;padding:10px 0}.fam:hover{color:var(--text)}
+.meta .fam:not(:last-child){display:none}
+@media (min-width:560px){.meta .fam{display:inline}}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
 
 /* Both languages live in the markup; one is shown. */
@@ -372,6 +375,7 @@ html.motion .hero-copy>:nth-child(4){animation-delay:.3s} html.motion .hero-copy
     </a>
     <div class="meta">
       <span class="kicker mono muted"><span lang="en">Parallel force · Monthly</span><span lang="fr">Force parallèle · Mensuel</span></span>
+      <a class="mono muted fam" href="/cadre/">Cadre 22</a><a class="mono muted fam" href="/cadre509/">Cadre 509</a><a class="mono muted fam" href="/glossary/">Glossary</a>
       <div class="lang" role="group" aria-label="Language / Langue">
         <button type="button" data-set-lang="en" aria-pressed="true">EN</button>
         <button type="button" data-set-lang="fr" aria-pressed="false">FR</button>
