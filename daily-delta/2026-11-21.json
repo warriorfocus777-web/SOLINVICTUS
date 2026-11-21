@@ -1,0 +1,38 @@
+{
+  "date": "2026-11-21",
+  "candidates": [
+    {
+      "title": "Heavy fighting erupts in Haiti as armed forces fight gangs to regain control of key corridor",
+      "originator": "Haitian National Police (PNH), via Associated Press",
+      "publisher": "AP (carried by wcax.com)",
+      "date": "19.11.2026",
+      "url": "https://www.wcax.com/2026/11/19/heavy-fighting-erupts-haiti-armed-forces-fight-gangs-regain-control-key-corridor/",
+      "lang": "en",
+      "desk_hint": ["cadre22", "cadre7"],
+      "cell_hint": ["command", null],
+      "why_new": "PNH says at least 34 suspected gang members killed 19.11 in a Martissant operation run with a 'task force' that includes personnel from Vectus Global, a private security firm -- first significant operation in 5 years to contest that corridor. Names the same private-contractor / parallel-command question Cadre 7's N-001 and Cadre 509 cell 03 already track, in a new incident. Corroborating but not independently verified here: Juno7 (riotimesonline.com/haiti-martissant-drone-offensive-reported, 19.11, drone use, no official toll) and Spanish-language wire pickups (primicias.ec, elcomercio.com, noticiasrcn.com, democrata.es) that all appear to relay the same PNH/AP account rather than add an independent originator."
+    },
+    {
+      "title": "Haiti formalizes security agreement with El Salvador following troop deployment",
+      "originator": "Government of Haiti -- Council of Ministers (Facebook announcement)",
+      "publisher": "Jamaica Observer",
+      "date": "18.11.2026",
+      "url": "https://www.jamaicaobserver.com/2026/11/18/haiti-formalizes-security-agreement-el-salvador-following-troop-deployment/",
+      "lang": "en",
+      "desk_hint": ["cadre7"],
+      "cell_hint": ["command"],
+      "why_new": "Haiti's Council of Ministers announced 18.11 that it approved a 'cooperation agreement' with El Salvador, called a new stage in bilateral security cooperation. Directly on-topic for Cadre 7 N-001 ('Is the Salvadoran surge under any written instrument?') and its falsifier (publication of a decree/bilateral agreement/exchange of letters) -- but NOTE: this is an announcement that an agreement was approved, not a published text. No duration, command structure, or troop number is given in this report. Whether this counts as movement toward the falsifier, short of it, or something else is a desk call, not made here."
+    },
+    {
+      "title": "A model for future peace operations? Lessons from the Gang Suppression Force in Haiti",
+      "originator": "Sophie Rutenbar / Global Initiative Against Transnational Organized Crime (GI-TOC)",
+      "publisher": "GI-TOC",
+      "date": "11.2026",
+      "url": "https://globalinitiative.net/wp-content/uploads/2026/11/Sophie-Rutenbar-A-model-for-peace-operations-Lessons-from-the-Gang-Suppression-Force-in-Haiti-GI-TOC-November-2026.pdf",
+      "lang": "en",
+      "desk_hint": ["cadre7", "cadre509"],
+      "cell_hint": ["command", "endstate"],
+      "why_new": "Full-length NGO analytical report on GSF performance since the 18.10 ambush, not previously in any ledger. Snippet seen mentions a Gros Morne incident ('gang members massacred around a dozen civilians only hours after a GSF operation killed three') that is not dated precisely in what was retrieved and may itself be a distinct candidate worth checking once the desk reads the full PDF. Worth a read for Cadre 7's end-state cell and Cadre 509's command/end-state cells -- this engine has not attempted to extract or verify its specific claims."
+    }
+  ]
+}
