@@ -1,0 +1,82 @@
+{
+  "date": "2026-11-22",
+  "candidates": [
+    {
+      "title": "Two Salvadorans killed in Haiti handling explosives in first official deaths since deployment",
+      "originator": "El Salvador's Ministry of Defense, via Reuters",
+      "publisher": "Reuters (carried by NBC News)",
+      "date": "20.11.2026",
+      "url": "https://www.nbcnews.com/world/haiti/two-salvadorans-killed-haiti-handling-explosives-first-official-deaths-rcna610493",
+      "lang": "en",
+      "desk_hint": ["cadre7", "cadre509"],
+      "cell_hint": ["command", null],
+      "why_new": "First official Salvadoran fatalities since the contingent's deployment (an explosives-handling accident at a Haiti base, not combat), with two injured. Direct bearing on Cadre 509's casualty-count and GSF-strength cells and Cadre 7's tracking of the foreign-force commitment's costs. A third soldier later died of his injuries per a follow-up (riotimesonline.com/third-salvadoran-soldier-dies-haiti-blast, not independently verified here) -- desk should confirm the current toll before logging a number."
+    },
+    {
+      "title": "Haiti strikes deal with El Salvador to build new prisons after minister visit",
+      "originator": "Government of Haiti / Government of El Salvador (Haitian Justice Minister's visit)",
+      "publisher": "The Haitian Times",
+      "date": "21.11.2026",
+      "url": "https://haitiantimes.com/2026/11/21/haiti-el-salvador-deal-build-three-new-prisons/",
+      "lang": "en",
+      "desk_hint": ["cadre509", "cadre7"],
+      "cell_hint": ["political-authority", "command"],
+      "why_new": "A new, specific bilateral deal (corrections/justice-sector construction) following the Haitian Justice Minister's visit to El Salvador. Distinct subject matter from the 18.11 Council-of-Ministers 'security cooperation agreement' already staged on 21.11 -- may be a sectoral annex to that same instrument or a separate one; a desk call on whether/how it bears on Cadre 509's political-authority-instruments cell and Cadre 7's N-001."
+    },
+    {
+      "title": "She asked El Salvador's president for help. Days later, a gang leader's house was destroyed",
+      "originator": "CNN reporting on statements by Nayib Bukele (El Salvador presidency)",
+      "publisher": "CNN",
+      "date": "21.11.2026",
+      "url": "https://www.cnn.com/2026/11/21/americas/bukele-haiti-el-salvador-videos-intl-latam",
+      "lang": "en",
+      "desk_hint": ["cadre7", "cadre22"],
+      "cell_hint": ["command", null],
+      "why_new": "Deep-dive reporting describing a specific targeting decision (destruction of a Haitian gang leader's house, originally reported mid-November) as driven personally by Bukele after seeing a photo on social media, rather than through a described joint/formal command channel. The underlying strike itself is not new, but this command-process detail is and bears directly on Cadre 7's N-001 command-clarity question and Cadre 22's foreign-force-role cell."
+    },
+    {
+      "title": "Why are Bukele's Salvadoran troops in Haiti and what have they achieved?",
+      "originator": "Al Jazeera editorial/analysis desk",
+      "publisher": "Al Jazeera",
+      "date": "19.11.2026",
+      "url": "https://www.aljazeera.com/news/2026/11/19/why-are-bukeles-salvadoran-troops-in-haiti-and-what-have-they-achieved",
+      "lang": "en",
+      "desk_hint": ["cadre7", "cadre509"],
+      "cell_hint": ["endstate", null],
+      "why_new": "Standalone assessment piece on the Salvadoran contingent's results and limits to date; largely synthesizes already-reported operational facts rather than breaking new ones, but it is a dedicated mid-course review not previously staged -- useful backgrounder for Cadre 7/509 end-state cells if the desk wants a single citable overview source."
+    },
+    {
+      "title": "6,284 irregular promotions in 14 months within the Haitian National Police",
+      "originator": "Not stated in retrieved snippet -- appears to be an internal/oversight finding on PNH personnel practices; desk should confirm originating body from the full article",
+      "publisher": "HaitiLibre (also carried by Caribbean National Weekly)",
+      "date": "approx. mid-November 2026 (exact date not confirmed here -- see note)",
+      "url": "https://www.haitilibre.com/en/news-46170-haiti-flash-6-284-irregular-promotions-in-14-months-within-the-haitian-national-police.html",
+      "lang": "en",
+      "desk_hint": ["cadre509"],
+      "cell_hint": ["pnh-accountability"],
+      "why_new": "Directly on-topic finding for Cadre 509's PNH-accountability cell (large-scale irregular promotions inside the police force) and not present in any ledger. This engine could not independently confirm the exact publication date from search snippets alone (placed, by HaitiLibre's article-numbering sequence, in roughly the same window as other mid-November items already on the desk) -- desk should verify the date and originating body before use."
+    },
+    {
+      "title": "A Force in Pieces: The Security Complex Fighting Haiti's Gangs",
+      "originator": "International Crisis Group",
+      "publisher": "International Crisis Group",
+      "date": "not confirmed here -- report #113 in ICG's Haiti series; desk should check the report page for its exact publication date",
+      "url": "https://www.crisisgroup.org/rpt/latin-america-caribbean/haiti/113-force-pieces-security-complex-fighting-haitis-gangs",
+      "lang": "en",
+      "desk_hint": ["cadre7", "cadre509", "cadre22"],
+      "cell_hint": ["command", "endstate"],
+      "why_new": "Full-length ICG report mapping the fractured set of actors fighting Haiti's gangs (PNH, FAdH, GSF, foreign contingents, private contractors) -- squarely on-topic for all three desks' command-clarity and role-allocation questions, and not in any ledger. This engine has not read the full report or confirmed its publication date; flagged for the desk to assess directly, similar to the GI-TOC report staged on 21.11."
+    },
+    {
+      "title": "Experts warn Haiti needs to prepare for exit of foreign forces as gangs persist",
+      "originator": "La Nación reporting on outside experts/analysts",
+      "publisher": "La Nación (Argentina)",
+      "date": "17.11.2026",
+      "url": "https://www.lanacion.com.ar/usa/experts-warn-haiti-needs-to-prepare-for-exit-of-foreign-forces-as-gangs-persist-nid17112026/",
+      "lang": "es",
+      "desk_hint": ["cadre7"],
+      "cell_hint": ["endstate"],
+      "why_new": "Expert commentary specifically addressing what happens if/when the GSF and Salvadoran contingent eventually withdraw while gangs are not dismantled -- directly on-topic for Cadre 7's end-state cell (exit conditions) and not previously staged."
+    }
+  ]
+}
