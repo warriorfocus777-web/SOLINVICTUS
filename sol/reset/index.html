@@ -10,7 +10,7 @@
 <link rel="canonical" href="https://solinvictus.app/sol/reset/">
 <link rel="icon" type="image/svg+xml" href="/sol/reset/favicon.svg">
 <link rel="preload" as="font" type="font/woff2" href="/sol/reset/fonts/roboto-latin-wght-normal.woff2" crossorigin>
-<link rel="preload" as="font" type="font/woff2" href="/sol/reset/fonts/roboto-slab-latin-wght-normal.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/sol/assistant/fonts/montserrat-latin-wght-normal.woff2" crossorigin>
 <meta property="og:type" content="article">
 <meta property="og:title" content="Humanitarian Reset – Stocktake October 2026">
 <meta property="og:description" content="Key figures and progress across Define, Deliver, Devolve and Defend (draft).">
@@ -21,24 +21,23 @@
 <script>document.documentElement.classList.add('js')</script>
 <style>
 /* ---------- Fonts: self-hosted Roboto, Roboto Condensed and Roboto Slab (SIL OFL, see fonts/OFL.txt) ---------- */
-@font-face{font-family:"Roboto";font-style:normal;font-weight:100 900;font-display:swap;src:url("fonts/roboto-latin-wght-normal.woff2") format("woff2")}
-@font-face{font-family:"Roboto Condensed";font-style:normal;font-weight:100 900;font-display:swap;src:url("fonts/roboto-condensed-latin-wght-normal.woff2") format("woff2")}
-@font-face{font-family:"Roboto Slab";font-style:normal;font-weight:100 900;font-display:swap;src:url("fonts/roboto-slab-latin-wght-normal.woff2") format("woff2")}
+@font-face{font-family:"Roboto";font-style:normal;font-weight:100 900;font-display:swap;src:url("/sol/reset/fonts/roboto-latin-wght-normal.woff2") format("woff2")}
+@font-face{font-family:"IASC Montserrat";font-style:normal;font-weight:100 900;font-display:swap;src:url("/sol/assistant/fonts/montserrat-latin-wght-normal.woff2") format("woff2")}
 
 :root{
   /* Colour */
   --navy:#272E67;--navy-hover:#3D2A7A;--heading:#1C2149;--body:#4A4A4A;--muted:#595959;
-  --red:#E63946;        /* marks, rules, large figures only */
+  --red:#FF4D59;        /* marks, rules, large figures only */
   --red-text:#C62F3C;   /* small red text: 5.0:1 on page */
   --sev4:#cd3a1f;       /* severity 4 only */
-  --blue:#1f69b3;
+  --blue:#00709C;--blue-accent:#009EDB;
   --context:#7C8490;    /* baselines: 3.5:1 on page, 3.8:1 on white */
   --bg:#F7F6F4;--surface:#fff;--track:#E9E7E3;--border:#DEDAD3;--on-navy-soft:#B8BEE6;
   --sev-1:#f7f8d3;--sev-2:#d5de26;--sev-3:#db7b18;--sev-5:#1C2149;--sev-edge:#7A7F12;
   /* Type */
   --f-body:Roboto,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
-  --f-cond:"Roboto Condensed","Arial Narrow",Roboto,system-ui,sans-serif;
-  --f-slab:"Roboto Slab",Rockwell,"Roboto",Georgia,serif;
+  --f-cond:Roboto,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+  --f-head:"IASC Montserrat",Montserrat,system-ui,sans-serif;
   /* Space */
   --s1:4px;--s2:8px;--s3:12px;--s4:16px;--s5:24px;--s6:32px;--s7:48px;--s8:64px;--s9:96px;
   --sec:clamp(64px,8vw,96px);   /* between sections; blocks 48px; items 24px */
@@ -50,7 +49,7 @@ html{scroll-behavior:smooth;scroll-padding-top:calc(var(--subnav) + 24px);-webki
 body{margin:0;background:var(--bg);color:var(--body);font-family:var(--f-body);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
 h1,h2,h3,p,ol,ul,figure,blockquote,dl,dd{margin:0}
 ol,ul{list-style:none;padding:0}
-h1,h2{font-family:var(--f-slab);font-weight:700;color:var(--heading);text-wrap:balance}
+h1,h2{font-family:var(--f-head);font-weight:700;color:var(--heading);text-wrap:balance}
 h3{color:var(--heading);text-wrap:balance}
 p{text-wrap:pretty}
 a{color:var(--heading);text-underline-offset:3px}
@@ -73,7 +72,7 @@ a:hover{color:var(--navy-hover)}
 .mast .bar{display:flex;align-items:center;justify-content:space-between;gap:var(--s4);padding:var(--s4) 0;border-bottom:1px solid rgba(255,255,255,.16)}
 .logo{display:flex;align-items:center;gap:var(--s3);color:#fff;text-decoration:none}
 .logo:hover{color:#fff}
-.logo .wm{font-family:var(--f-slab);font-weight:700;font-size:26px;letter-spacing:.04em;line-height:1;padding-right:var(--s3);border-right:1px solid rgba(255,255,255,.4)}
+.logo .wm{font-family:var(--f-head);font-weight:700;font-size:26px;letter-spacing:.04em;line-height:1;padding-right:var(--s3);border-right:1px solid rgba(255,255,255,.4)}
 .logo .tl{font-family:var(--f-cond);font-size:12px;line-height:1.2;letter-spacing:.06em;text-transform:uppercase}
 .mast .bar .tag{color:#fff}
 .hero{--sym:clamp(220px,21vw,290px);display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);grid-template-areas:"text sym";gap:var(--s7) var(--s8);align-items:center;padding:clamp(40px,7vw,88px) 0 clamp(48px,7vw,88px)}
@@ -128,7 +127,7 @@ a:hover{color:var(--navy-hover)}
 /* ---------- Sticky section bar + reading progress ---------- */
 .subnav{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.97);border-bottom:1px solid var(--border);backdrop-filter:saturate(1.2) blur(6px)}
 .subnav .wrap{display:flex;align-items:center;gap:var(--s4)}
-.subnav .home{font-family:var(--f-slab);font-weight:700;color:var(--navy);text-decoration:none;font-size:16px;padding-right:var(--s4);border-right:1px solid var(--border);white-space:nowrap}
+.subnav .home{font-family:var(--f-head);font-weight:700;color:var(--navy);text-decoration:none;font-size:16px;padding-right:var(--s4);border-right:1px solid var(--border);white-space:nowrap}
 .subnav ul{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;flex:1}
 .subnav ul::-webkit-scrollbar{display:none}
 .subnav a.l{display:flex;align-items:center;gap:var(--s2);height:var(--subnav);padding:0 12px;color:var(--heading);font-family:var(--f-cond);font-size:15px;font-weight:700;letter-spacing:.02em;text-decoration:none;white-space:nowrap;border-bottom:3px solid transparent;transition:color .15s,background-color .15s}
@@ -169,7 +168,7 @@ a:hover{color:var(--navy-hover)}
 .band-text .eyebrow::before{content:"";width:32px;height:4px;background:var(--red)}
 .band h2{font-size:clamp(30px,3.6vw,46px);line-height:1.1;margin:var(--s3) 0 var(--s6)}
 .band blockquote{border-left:4px solid var(--navy);padding-left:var(--s5);display:flex;flex-direction:column;gap:var(--s2)}
-.band blockquote p{font-family:var(--f-slab);font-size:clamp(19px,1.8vw,23px);line-height:1.45;color:var(--heading)}
+.band blockquote p{font-family:var(--f-head);font-size:clamp(19px,1.8vw,23px);line-height:1.45;color:var(--heading)}
 .band blockquote.second{border-left-color:var(--border);margin-top:var(--s5)}
 .band blockquote.second p{font-size:17px}
 .band cite{font-style:normal;font-family:var(--f-cond);font-size:13px;letter-spacing:.04em;color:var(--muted)}
@@ -185,7 +184,7 @@ a:hover{color:var(--navy-hover)}
 .d{padding-top:var(--sec)}
 .d-head{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:var(--s5) var(--s8);align-items:end;margin-bottom:var(--s7)}
 .d-mark{display:flex;align-items:center;gap:var(--s4);margin-bottom:var(--s3)}
-.d-mark .n{font-family:var(--f-slab);font-weight:700;font-size:clamp(56px,7vw,88px);line-height:.8;color:transparent;-webkit-text-stroke:1.5px var(--navy);letter-spacing:-.02em}
+.d-mark .n{font-family:var(--f-head);font-weight:700;font-size:clamp(56px,7vw,88px);line-height:.8;color:transparent;-webkit-text-stroke:1.5px var(--navy);letter-spacing:-.02em}
 @supports not (-webkit-text-stroke:1px black){.d-mark .n{color:var(--track)}}
 .d-mark .k{display:flex;flex-direction:column;gap:6px}
 .d-mark .glyph{width:28px;height:28px;color:var(--blue)}
@@ -304,19 +303,19 @@ a:hover{color:var(--navy-hover)}
 /* Defend */
 .ctx{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2px;background:var(--border)}
 .ctx li{background:var(--navy);color:#fff;padding:var(--s4);font-family:var(--f-cond);font-size:20px;font-weight:700;line-height:1.2;min-height:96px;display:flex;align-items:flex-end}
-.pull p{font-family:var(--f-slab);font-size:clamp(22px,2.4vw,30px);line-height:1.35;color:var(--heading)}
+.pull p{font-family:var(--f-head);font-size:clamp(22px,2.4vw,30px);line-height:1.35;color:var(--heading)}
 .pull cite{display:block;margin-top:var(--s3);font-style:normal;font-family:var(--f-cond);font-size:13px;color:var(--muted)}
 .chip-date{display:flex;gap:var(--s4);align-items:center;padding:var(--s4);background:var(--surface);border-left:4px solid var(--navy)}
-.chip-date b{font-family:var(--f-slab);font-size:44px;line-height:1;color:var(--heading)}
+.chip-date b{font-family:var(--f-head);font-size:44px;line-height:1;color:var(--heading)}
 
 /* ---------- Next phase ---------- */
 .next{background:var(--navy);color:#fff;padding:var(--sec) 0;margin-top:var(--sec)}
 .next .eyebrow{color:var(--on-navy-soft)}
 .next h2{color:#fff;font-size:clamp(28px,3.4vw,42px);line-height:1.12;max-width:24ch;margin-top:var(--s3)}
-.next .lead-q{font-family:var(--f-slab);font-size:clamp(17px,1.6vw,20px);max-width:66ch;margin-top:var(--s5);padding-left:var(--s5);border-left:4px solid var(--red)}
+.next .lead-q{font-family:var(--f-head);font-size:clamp(17px,1.6vw,20px);max-width:66ch;margin-top:var(--s5);padding-left:var(--s5);border-left:4px solid var(--red)}
 .prio{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid rgba(255,255,255,.24);margin:var(--s7) 0}
 .prio li{padding:var(--s5) var(--s5) var(--s5) 0;border-bottom:1px solid rgba(255,255,255,.24);display:flex;flex-direction:column;gap:var(--s2)}
-.prio span{font-family:var(--f-slab);font-size:30px;line-height:1;color:transparent;-webkit-text-stroke:1px #fff}
+.prio span{font-family:var(--f-head);font-size:30px;line-height:1;color:transparent;-webkit-text-stroke:1px #fff}
 .prio b{font-size:20px;line-height:1.25}
 @media (max-width:860px){.prio{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .panels{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:var(--s5)}
@@ -329,7 +328,7 @@ a:hover{color:var(--navy-hover)}
 .miles li{display:grid;grid-template-columns:100px minmax(0,1fr);gap:var(--s4);padding:10px 0;border-bottom:1px solid var(--border);font-size:15px}
 .miles b{font-family:var(--f-cond);font-size:15px;color:var(--heading)}
 .miles .tg b{color:var(--red-text)}
-.panel .q{font-family:var(--f-slab);font-size:18px;line-height:1.45;color:var(--heading)}
+.panel .q{font-family:var(--f-head);font-size:18px;line-height:1.45;color:var(--heading)}
 
 /* ---------- Documents ---------- */
 .docs{padding:var(--sec) 0}
@@ -337,16 +336,16 @@ a:hover{color:var(--navy-hover)}
 .docs h2{font-size:clamp(28px,3.4vw,42px);margin:var(--s3) 0 var(--s6)}
 .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:var(--s5)}
 .card{display:flex;flex-direction:column;background:var(--surface)}
-.card .cov{position:relative;padding:var(--s6);min-height:180px;display:flex;flex-direction:column;justify-content:flex-end;gap:var(--s2);border-bottom:4px solid var(--blue);overflow:hidden}
+.card .cov{position:relative;padding:var(--s6);min-height:180px;display:flex;flex-direction:column;justify-content:flex-end;gap:var(--s2);border-bottom:4px solid var(--blue-accent);overflow:hidden}
 .card .cov.light{background:#ECEEF2;color:var(--heading)}
 .card .cov.dark{background:var(--navy);color:#fff}
 .card .cov .glyphs{position:absolute;top:var(--s5);right:var(--s5);display:flex;gap:var(--s2);opacity:.9}
 .card .cov p{font-family:var(--f-cond);font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
-.card h3{font-family:var(--f-slab);font-size:26px;line-height:1.15;color:inherit}
+.card h3{font-family:var(--f-head);font-size:26px;line-height:1.15;color:inherit}
 .card .bd{padding:var(--s5) var(--s6) var(--s6);display:flex;flex-direction:column;gap:var(--s4);flex:1}
 .card .kind{display:flex;flex-wrap:wrap;gap:var(--s3);align-items:center;font-family:var(--f-cond);font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue)}
 .card .kind .tag{color:var(--red-text)}
-.card blockquote{font-family:var(--f-slab);font-size:16px;line-height:1.5;color:var(--heading)}
+.card blockquote{font-family:var(--f-head);font-size:16px;line-height:1.5;color:var(--heading)}
 .card .bd>p{font-size:14px;color:var(--muted)}
 .btn{display:inline-flex;align-items:center;gap:var(--s2);min-height:44px;padding:10px 20px;font-weight:700;font-size:15px;text-decoration:none;border:2px solid var(--navy);transition:background-color .15s,color .15s,border-color .15s}
 .btn.primary{background:var(--navy);color:#fff}
@@ -386,7 +385,7 @@ a:hover{color:var(--navy-hover)}
 .watch small{font-family:var(--f-cond);font-weight:400;font-size:14px;color:var(--on-navy-soft)}
 .band-media{display:flex;flex-direction:column;gap:var(--s4)}
 .band-media .eyebrow{color:var(--blue)}
-.band-media h3{font-family:var(--f-slab);font-size:clamp(22px,2.2vw,28px);line-height:1.15;margin-top:calc(-1 * var(--s2))}
+.band-media h3{font-family:var(--f-head);font-size:clamp(22px,2.2vw,28px);line-height:1.15;margin-top:calc(-1 * var(--s2))}
 .band-media>p{font-size:15px}
 .intro-player{background:var(--heading);border-top:4px solid var(--navy)}
 .intro-player video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:var(--heading)}
@@ -541,7 +540,7 @@ html:not(.js) .chapters button{cursor:default;pointer-events:none}
       <li class="mcard"><span class="v num">66M</span><span class="l">people reached of 148M targeted, by October 2026</span>
         <span class="viz"><span class="mini" aria-hidden="true"><span class="f" style="--v:44.6%"></span></span><span class="cap"><b>45%</b> of people targeted</span></span><span class="src">Stocktake · Deliver</span></li>
       <li class="mcard hl"><span class="v num">62%</span><span class="l">of people assisted are in severity 4–5 areas</span>
-        <span class="viz"><svg class="spark" viewBox="0 0 120 30" role="img" aria-label="36% in 2024, 43% in 2025, 62% in 2026"><polyline points="4,22.2 60,17.8 116,5.9" fill="none" stroke="#272E67" stroke-width="2"/><circle cx="4" cy="22.2" r="2.5" fill="#7C8490"/><circle cx="60" cy="17.8" r="2.5" fill="#7C8490"/><circle cx="116" cy="5.9" r="3.5" fill="#E63946"/></svg><span class="chip">+26 pts since 2024</span></span><span class="src">Stocktake · Define</span></li>
+        <span class="viz"><svg class="spark" viewBox="0 0 120 30" role="img" aria-label="36% in 2024, 43% in 2025, 62% in 2026"><polyline points="4,22.2 60,17.8 116,5.9" fill="none" stroke="#272E67" stroke-width="2"/><circle cx="4" cy="22.2" r="2.5" fill="#7C8490"/><circle cx="60" cy="17.8" r="2.5" fill="#7C8490"/><circle cx="116" cy="5.9" r="3.5" fill="#FF4D59"/></svg><span class="chip">+26 pts since 2024</span></span><span class="src">Stocktake · Define</span></li>
       <li class="mcard"><span class="v num">$14.49bn</span><span class="l">raised against the GHO 2026, end September</span>
         <span class="viz"><span class="mini" aria-hidden="true"><span class="f" style="--v:41.3%"></span></span><span class="cap"><b>41%</b> of $35.07 bn</span></span><span class="src">Stocktake · Define</span></li>
       <li class="mcard"><span class="v num">$4.53bn</span><span class="l">in country-based pooled funds, as of 2 October 2026</span>
@@ -725,7 +724,7 @@ html:not(.js) .chapters button{cursor:default;pointer-events:none}
           <desc id="reach-d">Of 148 million people targeted, 66 million (45%) had been reached by October 2026, including 41 million in locations with the most severe needs across 24 operations. Squares are drawn to scale by area.</desc>
           <rect x="10" y="10" width="320" height="320" fill="#ECEEF2" stroke="#272E67" stroke-width="1.5"/>
           <rect x="10" y="116.3" width="213.7" height="213.7" fill="#272E67"/>
-          <rect x="10" y="161.6" width="168.4" height="168.4" fill="#E63946"/>
+          <rect x="10" y="161.6" width="168.4" height="168.4" fill="#FF4D59"/>
           <g font-family="Roboto Condensed,Arial Narrow,Roboto,sans-serif" font-weight="700" aria-hidden="true">
             <text x="26" y="58" font-size="36" fill="#1C2149">148M</text>
             <text x="26" y="151" font-size="28" fill="#fff">66M</text>
@@ -737,7 +736,7 @@ html:not(.js) .chapters button{cursor:default;pointer-events:none}
         <ul class="reach-key">
           <li><i style="background:#ECEEF2;box-shadow:inset 0 0 0 1.5px #272E67"></i><span><b>148M</b> people targeted in the GHO 2026</span></li>
           <li><i style="background:#272E67"></i><span><b>66M</b> reached with some form of assistance and protection (45%)</span></li>
-          <li><i style="background:#E63946"></i><span><b>41M</b> of them (62%) in locations with the most severe needs, across 24 operations</span></li>
+          <li><i style="background:#FF4D59"></i><span><b>41M</b> of them (62%) in locations with the most severe needs, across 24 operations</span></li>
         </ul>
         <p class="src">Squares drawn to area. Source: Stocktake, Deliver.</p>
       </div>
@@ -767,7 +766,7 @@ html:not(.js) .chapters button{cursor:default;pointer-events:none}
               <text x="108" y="221" text-anchor="middle" font-size="13" fill="#595959">2024</text><text x="216" y="221" text-anchor="middle" font-size="13" fill="#595959">2025</text><text x="324" y="221" text-anchor="middle" font-size="13" font-weight="700" fill="#1C2149">2 Oct 2026</text>
             </g>
           </svg>
-            <p class="legend"><span><i style="background:var(--navy)"></i>US awards</span><span><i style="background:var(--blue)"></i>Other (total minus US awards)</span><span><i style="background:var(--context)"></i>2024</span></p>
+            <p class="legend"><span><i style="background:var(--navy)"></i>US awards</span><span><i style="background:var(--blue-accent)"></i>Other (total minus US awards)</span><span><i style="background:var(--context)"></i>2024</span></p>
           </div>
           <div class="split-aside">
             <p class="big num">×4.3</p>
@@ -840,7 +839,7 @@ html:not(.js) .chapters button{cursor:default;pointer-events:none}
           <div class="srow"><div class="hd"><span>2026, incl. US Award Tranche I</span><span><strong class="down">20%</strong> · $409M</span></div>
             <div class="bar" role="img" aria-label="2026 including US Award Tranche I: 20 percent, of which 12 percent direct"><span style="width:12%;background:var(--navy)"></span><span style="width:8%;background:var(--blue)"></span></div></div>
         </div>
-        <p class="legend"><span><i style="background:var(--navy)"></i>Direct</span><span><i style="background:var(--blue)"></i>Indirect</span></p>
+        <p class="legend"><span><i style="background:var(--navy)"></i>Direct</span><span><i style="background:var(--blue-accent)"></i>Indirect</span></p>
       </div>
       <div class="aside">
         <p class="flag">Not a like-for-like trend</p>
