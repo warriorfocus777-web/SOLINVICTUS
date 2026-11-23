@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#272E67">
+<meta name="robots" content="noindex">
+<title>Four Ds Explorer – Humanitarian Reset | Independent explainer</title>
+<meta name="description" content="Independent explorer of the Humanitarian Reset's four pillars — Define, Deliver, Devolve, Defend — with figures, caveats and sources from the draft October 2026 Stocktake.">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/sol/assistant/assistant.css">
+<style>
+@font-face{font-family:"Roboto";font-style:normal;font-weight:100 900;font-display:swap;src:url("../fonts/roboto-latin-wght-normal.woff2") format("woff2")}
+@font-face{font-family:"IASC Montserrat";font-style:normal;font-weight:100 900;font-display:swap;src:url("/sol/assistant/fonts/montserrat-latin-wght-normal.woff2") format("woff2")}
+:root{--navy:#272E67;--navy-25:#5D628D;--navy-50:#9397B3;--navy-75:#C9CBD9;--navy-90:#E9EAF0;--blue:#009EDB;--blue-text:#00709C;--pink:#FF4D59;--pink-90:#FFEDEE;--pink-text:#B3212C;--ink:#1C2149;--body:#33364D;--muted:#5A5E78;--bg:#F7F7FA;--line:#DADCE6;
+  --head:"IASC Montserrat",Montserrat,system-ui,sans-serif;--text:Roboto,system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--body);font:400 16px/1.6 var(--text)}
+a{color:var(--blue-text)}
+:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+.skip{position:absolute;left:-999px;top:8px;background:#fff;padding:8px 12px;z-index:10}.skip:focus{left:8px}
+.ribbon{background:var(--navy);color:#fff;font:600 12px/1.4 var(--head);letter-spacing:.06em;text-align:center;padding:6px 12px}
+.mast{background:#fff;border-bottom:1px solid var(--line)}
+.mast .in{max-width:1120px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.mast img{display:block;height:40px;width:auto} /* exact supplied asset; aspect ratio preserved; white background matches */
+.crumb{font-size:14px;color:var(--muted)}.crumb a{color:var(--navy)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px 56px}
+.eyebrow{font:700 12px/1 var(--head);letter-spacing:.14em;text-transform:uppercase;color:var(--navy-25);margin-bottom:10px}
+h1,h2,h3{font-family:var(--head);color:var(--ink);line-height:1.15}
+h1{font-size:clamp(32px,5vw,52px);font-weight:800;margin:40px 0 14px;letter-spacing:-.02em}
+h1 span{color:var(--navy-25);font-weight:600}
+h2{font-size:clamp(24px,3vw,32px);margin:0 0 10px}
+h3{font-size:16px;margin:18px 0 8px}
+.lede{font-size:18px;max-width:760px;margin:0 0 16px}
+.notice{border-left:4px solid var(--pink);background:#fff;padding:12px 16px;max-width:860px;font-size:14.5px;margin:0 0 28px}
+.tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:8px 0 18px}
+.tab{appearance:none;text-align:left;background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy-75);border-radius:10px;padding:14px 16px;cursor:pointer;font:700 20px/1.1 var(--head);color:var(--navy)}
+.tab .n{display:block;font:700 11px/1 var(--head);letter-spacing:.12em;color:var(--navy-25);margin-bottom:8px}
+.tab .s{display:block;font:400 13px/1.35 var(--text);color:var(--muted);margin-top:6px}
+.tab[aria-selected="true"]{border-top-color:var(--navy);background:var(--navy);color:#fff}
+.tab[aria-selected="true"] .n,.tab[aria-selected="true"] .s{color:var(--navy-75)}
+.panel{background:#fff;border:1px solid var(--line);border-radius:14px;padding:clamp(18px,3vw,32px)}
+.phead{display:flex;justify-content:space-between;gap:20px;align-items:flex-start}
+.mark::before{content:attr(data-n);font:800 72px/1 var(--head);color:var(--navy-90)}
+.status{display:inline-block;font:700 11px/1 var(--head);letter-spacing:.08em;text-transform:uppercase;background:var(--pink-90);color:var(--pink-text);border-radius:4px;padding:5px 7px}
+.cols{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;margin-top:10px}
+.card{border:1px solid var(--line);border-radius:10px;padding:16px 18px;background:#fff}
+ul.clean{margin:0;padding-left:18px}ul.clean li{margin:4px 0}
+.tbl{width:100%;border-collapse:collapse;font-size:14px}
+.tbl th,.tbl td{text-align:left;vertical-align:top;border-bottom:1px solid var(--line);padding:8px 6px}
+.tbl th{font:700 11px/1.2 var(--head);letter-spacing:.06em;text-transform:uppercase;color:var(--navy-25)}
+.tbl td.v{font:700 18px/1.2 var(--head);color:var(--navy);white-space:nowrap}
+.tbl .c{display:block;font-size:12.5px;color:var(--muted);margin-top:3px}
+.scroll{overflow-x:auto}
+.caveat{background:var(--pink-90);border-left:4px solid var(--pink);padding:10px 14px;border-radius:4px;font-size:14.5px;margin:14px 0}
+.conf{border:1px dashed var(--navy-50);border-radius:8px;padding:10px 12px;margin:8px 0;font-size:14px}
+.conf b{font-family:var(--head);color:var(--ink)}
+.src{font-size:13.5px;border-bottom:1px dashed var(--line);padding:8px 0}.src:last-child{border:0}
+.src small{display:block;color:var(--muted)}
+.tier{font:700 10px/1 var(--head);background:var(--navy-90);color:var(--navy);border-radius:4px;padding:3px 5px;margin-left:6px}
+.tier.t1{background:var(--navy);color:#fff}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.cmp{background:#fff;border:1px solid var(--line);border-radius:10px;padding:16px}
+.cmp p{font-size:14px;margin:6px 0 10px}
+.linkbtn{background:none;border:0;padding:0;font:600 14px var(--head);color:var(--blue-text);cursor:pointer;text-decoration:underline}
+section.block{margin-top:44px}
+.ia-sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.method{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.method div{background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px}
+.method strong{font-family:var(--head);color:var(--navy)}
+.method p{margin:4px 0 0;font-size:14px}
+footer{border-top:1px solid var(--line);background:#fff}
+footer .in{max-width:1120px;margin:0 auto;padding:22px 20px;display:flex;gap:20px;align-items:center;flex-wrap:wrap;font-size:13.5px;color:var(--muted)}
+footer img{height:28px;width:auto}
+@media (max-width:900px){.tabs,.grid4{grid-template-columns:1fr 1fr}.cols{grid-template-columns:1fr}.method{grid-template-columns:1fr}.mark{display:none}}
+@media (max-width:480px){.tabs,.grid4{grid-template-columns:1fr}}
+@media (forced-colors:active){.tab[aria-selected="true"]{outline:3px solid Highlight}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<div class="ribbon">DRAFT FIGURES · INDEPENDENT EXPLAINER · NOT AN OFFICIAL IASC PUBLICATION</div>
+<header class="mast"><div class="in">
+  <img src="/sol/assistant/media/IASC_Logo_Blue.png" width="203" height="40" alt="Inter-Agency Standing Committee (IASC)">
+  <nav class="crumb" aria-label="Breadcrumb"><a href="/sol/reset/overview/">IASC Overview</a> / <a href="/sol/reset/">Humanitarian Reset</a> / Four Ds Explorer</nav>
+</div></header>
+<main id="main" class="wrap">
+  <section>
+    <h1>Four pillars.<br><span>One evolving reform effort.</span></h1>
+    <p class="lede">Explore the Humanitarian Reset's four Ds. Select a pillar to see its framing, the figures reported for it, the questions to ask of them, and where the sources disagree.</p>
+    <p class="notice"><strong>Reading note:</strong> an independent learning interface, not an official IASC publication or operational guidance. Figures come from the IASC Stocktake and presentation of October 2026, both <strong>drafts pending clearance</strong>, as reproduced on the <a href="/sol/reset/">Reset page</a>. Differences between the documents are shown, not resolved.</p>
+  </section>
+  <div class="tabs" role="tablist" aria-label="Select a pillar" id="tabs"></div>
+  <div id="panelHost"><noscript><p class="panel">This explorer needs JavaScript. The same content is on the <a href="/sol/reset/#define">Reset page</a>: <a href="/sol/reset/#define">Define</a>, <a href="/sol/reset/#deliver">Deliver</a>, <a href="/sol/reset/#devolve">Devolve</a>, <a href="/sol/reset/#defend">Defend</a>.</p></noscript></div>
+
+  <section class="block" aria-labelledby="cmp-h">
+    <div class="eyebrow">At a glance</div>
+    <h2 id="cmp-h">Compare the four pillars</h2>
+    <p>Pillars are measured differently — process, outputs, reach, perception, or qualitatively. Don't rank them by their numbers.</p>
+    <div class="grid4" id="compare"></div>
+  </section>
+
+  <section class="block" aria-labelledby="m-h">
+    <h2 id="m-h">How to read this explorer</h2>
+    <p>Keep reported facts, synthesis and interpretation distinct. Indicators may describe inputs, activities, outputs, reach or perceptions; they are not automatically evidence of outcomes or causality. The Stocktake itself says outcomes for people have not yet been assessed.</p>
+    <div class="method">
+      <div><strong>Evidence</strong><p>Each figure is traceable to a named source, version and status.</p></div>
+      <div><strong>Interpretation</strong><p>Headlines and questions are labelled synthesis, not source quotations.</p></div>
+      <div><strong>Uncertainty</strong><p>Draft, partial-year and conflicting figures are shown rather than hidden.</p></div>
+    </div>
+  </section>
+</main>
+<footer><div class="in">
+  <img src="/sol/assistant/media/IASC_Logo_Blue.png" width="142" height="28" alt="Inter-Agency Standing Committee (IASC)">
+  <p>Independent explainer, not an official IASC publication or endorsed product. Data: <a href="/sol/assistant/registry.json">source registry</a>, as of <span id="asof">—</span>. <a href="/sol/reset/">Back to the Reset stocktake</a>.</p>
+</div></footer>
+
+<script>
+(function(){
+  "use strict";
+  var tabs=document.getElementById("tabs"),host=document.getElementById("panelHost"),cmp=document.getElementById("compare");
+  var R,sel="define";
+  function h(t,a,k){var n=document.createElement(t);if(a)for(var x in a){var v=a[x];if(v==null)continue;if(x==="text")n.textContent=v;else if(x==="class")n.className=v;else if(x.slice(0,2)==="on")n.addEventListener(x.slice(2),v);else n.setAttribute(x,v)}(k||[]).forEach(function(c){if(c!=null)n.appendChild(typeof c==="string"?document.createTextNode(c):c)});return n}
+  function by(l,id){for(var i=0;i<l.length;i++)if(l[i].id===id)return l[i];return null}
+  function src(id){return by(R.sources,id)}
+  function renderTabs(){
+    tabs.textContent="";
+    R.pillars.forEach(function(p,i){
+      var on=p.id===sel;
+      tabs.appendChild(h("button",{type:"button",role:"tab",class:"tab",id:"tab-"+p.id,"aria-selected":String(on),"aria-controls":"panel-"+p.id,tabindex:on?"0":"-1",onclick:function(){select(p.id,true)},onkeydown:function(e){
+        var k=e.key,j=i;if(k==="ArrowRight"||k==="ArrowDown")j=(i+1)%4;else if(k==="ArrowLeft"||k==="ArrowUp")j=(i+3)%4;else if(k==="Home")j=0;else if(k==="End")j=3;else return;
+        e.preventDefault();select(R.pillars[j].id,true);document.getElementById("tab-"+R.pillars[j].id).focus()}},
+        [h("span",{class:"n",text:p.number+" / PILLAR"}),p.title,h("span",{class:"s",text:p.short})]));
+    });
+  }
+  function renderPanel(){
+    var p=by(R.pillars,sel);host.textContent="";
+    var panel=h("section",{class:"panel",role:"tabpanel",id:"panel-"+p.id,"aria-labelledby":"tab-"+p.id,tabindex:"0"});
+    panel.appendChild(h("div",{class:"phead"},[h("div",null,[h("div",{class:"eyebrow",text:p.number+" · Humanitarian Reset"}),h("h2",{text:p.title+": "+p.headline}),h("span",{class:"status",text:p.status})]),h("div",{class:"mark","aria-hidden":"true","data-n":p.number})]));
+    panel.appendChild(h("p",{text:p.what}));
+    var left=h("div",{class:"card"}),right=h("div",{class:"card"});
+    left.appendChild(h("h3",{text:"Key areas"}));left.appendChild(h("ul",{class:"clean"},p.areas.map(function(a){return h("li",{text:a})})));
+    left.appendChild(h("h3",{text:"Figures reported"}));
+    if(p.indicators.length){
+      var tb=h("tbody");
+      p.indicators.forEach(function(id){var x=by(R.indicators,id);tb.appendChild(h("tr",null,[h("td",{class:"v",text:x.value}),h("td",null,[x.title,h("span",{class:"c",text:"Base: "+x.denominator+" · "+x.period+" · "+x.status}),h("span",{class:"c",text:"Caveat: "+x.caveat})])]))});
+      left.appendChild(h("div",{class:"scroll"},[h("table",{class:"tbl"},[h("caption",{class:"ia-sr",text:"Figures for "+p.title}),h("thead",null,[h("tr",null,[h("th",{scope:"col",text:"Value"}),h("th",{scope:"col",text:"Indicator, base, period, status, caveat"})])]),tb])]));
+    } else left.appendChild(h("p",{text:"None. The Stocktake reports this pillar qualitatively, so no figures are shown or invented."}));
+    left.appendChild(h("h3",{text:"Questions to ask"}));left.appendChild(h("ul",{class:"clean"},p.questions.map(function(a){return h("li",{text:a})})));
+    right.appendChild(h("h3",{text:"Read with care"}));right.appendChild(h("div",{class:"caveat",text:p.caveat}));
+    if(p.discrepancies.length){
+      right.appendChild(h("h3",{text:"Where the sources differ"}));
+      p.discrepancies.forEach(function(id){var d=by(R.discrepancies,id);
+        right.appendChild(h("div",{class:"conf"},[h("b",{text:d.label}),h("ul",{class:"clean"},d.values.map(function(v){return h("li",{text:src(v.source).title.replace("Humanitarian Reset: ","")+": "+v.value})})),h("span",{text:d.explanation})]))});
+    }
+    right.appendChild(h("h3",{text:"Sources"}));
+    p.sources.forEach(function(id){var s=src(id);
+      right.appendChild(h("div",{class:"src"},[h("strong",{text:s.title}),h("span",{class:"tier t"+s.tier,text:"Tier "+s.tier}),h("small",{text:[s.issuer,s.date,s.version].join(" · ")}),h("small",{text:"Status: "+s.status+(s.clearance?" — "+s.clearance:"")}),s.url?h("a",{href:s.url,text:/^http/.test(s.url)?"Open source ↗":"Read this section on the Reset page"}):h("small",{text:"Original not publicly available."})]))});
+    panel.appendChild(h("div",{class:"cols"},[left,right]));
+    panel.appendChild(h("p",null,[h("button",{type:"button",class:"linkbtn",text:"Ask the assistant about "+p.title,onclick:function(){var l=document.querySelector(".ia-launcher");if(l&&!l.disabled){l.click();setTimeout(function(){var t=document.querySelector(".ia-form textarea");if(t){t.value=p.title+"?";t.form.requestSubmit?t.form.requestSubmit():null}},80)}}})]));
+    host.appendChild(panel);
+  }
+  function renderCompare(){
+    cmp.textContent="";
+    R.pillars.forEach(function(p){
+      var x=p.indicators[0]&&by(R.indicators,p.indicators[0]);
+      cmp.appendChild(h("article",{class:"cmp"},[h("div",{class:"eyebrow",text:p.number}),h("h3",{text:p.title}),h("p",{text:p.short}),h("p",{text:x?("e.g. "+x.value+" — "+x.title+" ("+x.period+")"):"Qualitative only — no indicators reported."}),
+        h("button",{type:"button",class:"linkbtn",text:"Explore "+p.title+" →",onclick:function(){select(p.id,true);document.getElementById("tab-"+p.id).focus();document.getElementById("tabs").scrollIntoView({block:"start"})}})]));
+    });
+  }
+  window.addEventListener("hashchange",function(){var x=location.hash.slice(1);if(R&&by(R.pillars,x)&&x!==sel)select(x,false)});
+  function select(id,push){sel=id;renderTabs();renderPanel();if(push)history.replaceState(null,"","#"+id)}
+  fetch("/sol/assistant/registry.json",{credentials:"omit"}).then(function(r){if(!r.ok)throw new Error("HTTP "+r.status);return r.json()}).then(function(j){
+    R=j;var hash=location.hash.slice(1);if(by(R.pillars,hash))sel=hash;
+    document.getElementById("asof").textContent=R.content_as_of;
+    renderTabs();renderPanel();renderCompare();
+  }).catch(function(e){host.appendChild(h("p",{class:"panel",role:"alert",text:"The explorer's data could not be loaded. The same content is on the Reset page."}));console.error(e)});
+})();
+</script>
+<!-- IASC Humanitarian Reset & Coordination Intelligence Assistant (see /sol/assistant/) -->
+<div id="iasc-assistant-root"></div>
+<script src="/sol/assistant/assistant.js" defer></script>
+</body>
+</html>
