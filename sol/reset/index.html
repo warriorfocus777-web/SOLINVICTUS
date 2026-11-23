@@ -30,7 +30,7 @@
   --red:#FF4D59;        /* marks, rules, large figures only */
   --red-text:#C62F3C;   /* small red text: 5.0:1 on page */
   --sev4:#cd3a1f;       /* severity 4 only */
-  --blue:#00709C;--blue-accent:#009EDB;
+  --blue:#009EDB;--blue-text:#00709C;--blue-accent:#009EDB;
   --context:#7C8490;    /* baselines: 3.5:1 on page, 3.8:1 on white */
   --bg:#F7F6F4;--surface:#fff;--track:#E9E7E3;--border:#DEDAD3;--on-navy-soft:#B8BEE6;
   --sev-1:#f7f8d3;--sev-2:#d5de26;--sev-3:#db7b18;--sev-5:#1C2149;--sev-edge:#7A7F12;
@@ -457,6 +457,7 @@ html:not(.js) .chapters button{cursor:default;pointer-events:none}
   .js [data-anim] .ring .arc{stroke-dasharray:var(--dash) 326.73!important}
   .foot a::after{content:" – " attr(href);font-size:9pt}
 }
+ .mcard .metric-note{display:block;margin-top:5px;color:var(--muted);font-size:11px;line-height:1.4}.notes td ul.note-sources{padding-left:18px;margin:0;display:flex;flex-direction:column;gap:6px}.notes td p{margin:0 0 8px}
 </style>
 </head>
 <body>
@@ -492,7 +493,7 @@ html:not(.js) .chapters button{cursor:default;pointer-events:none}
       <div class="hero-text">
         <p class="eyebrow">Humanitarian Reset · Stocktake</p>
         <h1>Humanitarian Reset<span>Stocktake, October 2026</span></h1>
-        <p class="lede">The draft sources report several distinct measures that should not be conflated: 100 million people with “collective results” in the Stocktake introduction (method and overlap not specified); 66 million reached with some form of assistance and protection out of 148 million targeted; and 41 million of those 66 million reached in locations with the most severe needs. The 41 million is a subset of the 66 million, not an additional group. The page tracks reform across Define, Deliver, Devolve and Defend.</p>
+        <p class="lede">The accessible October Stocktake introduction reports 100 million people with collective results, including 40 million with life-saving support. Deliver separately reports 66 million of 148 million people targeted reached with some form of assistance and protection, including 41 million in the most severe locations across 24 operations. The counting method and overlap between the introductory figures and Deliver reach are not specified. These are distinct measures, not an additive total.</p>
         <p class="watch"><a href="#overview"><span class="pl" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M2 1l9 5-9 5z"/></svg></span>Watch the overview <small>0:50</small></a></p>
         <dl class="meta">
           <div><dt>Adopted</dt><dd><b>Feb 2025</b></dd></div>
@@ -588,7 +589,7 @@ html:not(.js) .chapters button{cursor:default;pointer-events:none}
         <ol>
           <li>IASC. The Humanitarian Reset. Stocktake, October 2026.</li>
           <li>The Humanitarian Reset: Define, Deliver, Devolve, Defend.</li>
-          <li>Define. 62% of people assisted were in severity 4–5 areas: 36% in 2024, 43% in 2025, 62% in 2026, up 26 points since 2024.</li>
+          <li>Define. The site-cited 8 October record gives 62% for 2026; accessible October draft copies give 63%. The 2024 and 2025 values are 36% and 43%. This source-version difference remains open.</li>
           <li>Define. 75% of Humanitarian Needs and Response Plans include transition plans.</li>
           <li>Deliver. 66 million people reached, including 41 million in the most severe locations, by October 2026.</li>
           <li>Deliver. $4.53 billion in country-based pooled funds (as of 2 October 2026); 79% of operations have started or completed cluster simplification.</li>
@@ -620,7 +621,7 @@ html:not(.js) .chapters button{cursor:default;pointer-events:none}
         <ol class="cmp xl">
           <li><span class="y">2024</span><span class="track"><span class="fill" style="--v:36%"></span></span><b>36%</b></li>
           <li><span class="y">2025</span><span class="track"><span class="fill" style="--v:43%"></span></span><b>43%</b></li>
-          <li class="now"><span class="y">2026</span><span class="track"><span class="fill" style="--v:62%"></span></span><b>62%</b></li>
+          <li class="now"><span class="y">2026</span><span class="track"><span class="fill" style="--v:62%"></span></span><b>62%*</b></li>
         </ol>
         <p class="delta"><b>+26 pts</b> since 2024</p>
       </div>
@@ -633,10 +634,10 @@ html:not(.js) .chapters button{cursor:default;pointer-events:none}
             <li style="background:var(--sev4);color:#fff"><b>4</b>Extreme</li>
             <li style="background:var(--sev-5);color:#fff"><b>5</b>Catastrophic</li>
           </ol>
-          <p class="sev-bracket"><span>62% of people assisted</span></p>
+          <p class="sev-bracket"><span>62%* of people assisted</span></p>
         </div>
         <p style="font-size:15px">Response is concentrating at the top of the scale. Serious protection risks may also be present in severity 3 locations.</p>
-        <p class="src">Source: Stocktake, Define. Level labels follow the JIAF scale. The presentation gives 55% for 2026; see Data notes.</p>
+        <p class="src">*Site-cited 8 October record. Accessible October draft copies report 63%; exact cited file and unrounded counts are needed to reconcile.</p>
       </div>
     </figure>
 
@@ -723,7 +724,7 @@ html:not(.js) .chapters button{cursor:default;pointer-events:none}
         <ul class="reach-key">
           <li><i style="background:#ECEEF2;box-shadow:inset 0 0 0 1.5px #272E67"></i><span><b>148M</b> people targeted in the GHO 2026</span></li>
           <li><i style="background:#272E67"></i><span><b>66M</b> reached with some form of assistance and protection (45%)</span></li>
-          <li><i style="background:#FF4D59"></i><span><b>41M</b> of them (62%) in locations with the most severe needs, across 24 operations</span></li>
+          <li><i style="background:#FF4D59"></i><span><b>41M</b> of them (63% as reported in accessible source copies) in locations with the most severe needs, across 24 operations; rounded 41M / 66M is approximately 62%</span></li>
         </ul>
         <p class="src">Squares drawn to area. Source: Stocktake, Deliver.</p>
       </div>
@@ -800,7 +801,7 @@ html:not(.js) .chapters button{cursor:default;pointer-events:none}
     <aside class="caveat" aria-label="Deliver caveat">
       <p>Read with care</p>
       <p>“Operational contributions depend on award conditions, timely disbursement and access for the better placed actors.” CVA targets of 35% and 85% are envisaged; endorsement status and operational application will be clarified through HWG review.</p>
-      <p><strong>Reach-definition caveat:</strong> the 100M “collective results” figure in the Stocktake introduction has no counting method or overlap explanation in the supplied draft. The 66M is the reported reach measure against 148M targeted; 41M is a nested subset of those reached. Do not add these figures or present them as interchangeable.</p>
+      <p><strong>Reach-definition caveat:</strong> the accessible introduction reports 100M collective results, including 40M with life-saving support. Deliver separately reports 66M of 148M targeted reached, including 41M in the most severe locations. The method and overlap of the 100M / 40M introductory measures with Deliver reach are not stated. Do not add or equate these figures.</p>
     </aside>
   </div>
 </section>
@@ -1031,15 +1032,15 @@ html:not(.js) .chapters button{cursor:default;pointer-events:none}
   <div class="wrap">
     <div>
       <p class="eyebrow">Data notes</p>
-      <h2 id="notes-h">Where the documents differ, the evidence and uncertainty stay visible</h2>
-      <p style="font-size:15px">The Stocktake is the more detailed source, but both documents are drafts pending clearance. Discrepancies and undefined measures are not reconciled by inference.</p>
+      <h2 id="notes-h">Source versions, definitions and unresolved differences</h2>
+      <p style="font-size:15px">The October 2026 Stocktake and presentation copies reviewed are drafts pending clearance. The website also cites an 8 October Stocktake revision whose exact file was not available in the review archive. Values attributed to that revision are therefore site-reported, not independently re-verified.</p>
     </div>
     <table>
       <caption class="sr-only">Differences between the Stocktake and the presentation</caption>
       <thead><tr><th scope="col">Issue</th><th scope="col">Source-version evidence</th><th scope="col">Interpretation / limits</th></tr></thead>
       <tbody><!-- gen:short-notes --><!-- /gen:short-notes --></tbody>
     </table>
-    <p class="src">Reading rule: do not add 100M, 66M and 41M. The sources do not define the 100M counting method or its overlap with the 66M reached; the 41M figure is nested within the 66M.</p>
+    <p class="src">Reading rule: do not add 100M, 40M, 66M or 41M. Their definitions and relationships are not fully reconciled; 41M is nested within the 66M.</p>
   </div>
 </section>
 
@@ -1060,7 +1061,7 @@ html:not(.js) .chapters button{cursor:default;pointer-events:none}
         <li><a href="https://www.facebook.com/FriendsofIASC">Facebook: FriendsofIASC</a></li>
       </ul></nav>
     </div>
-    <p class="fine">Draft for discussion. All figures as reported in the IASC Humanitarian Reset Stocktake (draft, 8 October 2026 revision) and presentation, October 2026. <a href="/sol/reset/v3/">Extended edition</a> · <a href="/sol/reset/four-ds/">Four Ds Explorer</a> · <a href="/sol/reset/overview/">What is the IASC?</a></p>
+    <p class="fine">Independent explainer and draft for discussion. The exact Stocktake 8 October 2026 revision cited by this page was not available in the review archive; accessible October source copies and unresolved version differences are identified in Data notes. <a href="/sol/reset/v3/">Extended edition</a> · <a href="/sol/reset/four-ds/">Four Ds Explorer</a> · <a href="/sol/reset/overview/">What is the IASC?</a></p>
   </div>
 </footer>
 
