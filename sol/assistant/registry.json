@@ -63,7 +63,7 @@
       "url": "https://interagencystandingcommittee.org/iasc-about/iasc-membership",
       "last_checked": "2026-11-23",
       "context": "overview",
-      "note": "Rechecked 23 Nov 2026: lists the same 12 members and 7 standing invitees as the Overview page; establishment June 1992 in response to Resolution 46/182; in practice no distinction is made between members and standing invitees. Gives no total count."
+      "note": "IASC Secretariat's primary membership directory. The IASC host returned HTTP 403 during this review, so the roster and categories are not claimed as freshly re-verified. Cross-check against the 2025–26 UN Handbook (information stated as accurate at 1 July 2025) and confirm subsequent changes directly with the Secretariat."
     },
     {
       "id": "iasc-structure",
@@ -77,9 +77,9 @@
       "clearance": null,
       "tier": 1,
       "url": "https://interagencystandingcommittee.org/node/39708",
-      "last_checked": "2026-11-21",
+      "last_checked": "2026-11-23",
       "context": "overview",
-      "note": "Source for Principals, Deputies Forum, EDG, OPAG, Results Groups and Secretariat. Subsidiary-body names and mandates are periodically revised: re-verify before relying on it."
+      "note": "IASC Secretariat's primary structure page. Direct retrieval returned HTTP 403 during this review; the accessible 2025–26 UN Handbook (pp. 224–225; information stated as accurate at 1 July 2025) is used to date the core structure, subsidiary bodies and associated entities."
     },
     {
       "id": "ocha-principles",
@@ -159,7 +159,7 @@
       "url": "/sol/reset/overview/#community",
       "last_checked": "2026-11-23",
       "context": "overview",
-      "note": "Organization 'logos' there are typographic placeholders, not official marks."
+      "note": "The independent page lists full members and standing invitees based on the IASC membership directory. The 2025–26 UN Handbook describes 19 Principals. The Handbook's narrative names OHCHR among standing invitees while also including it in the full-member roster; the classification is flagged for Secretariat confirmation."
     },
     {
       "id": "ov-what",
@@ -207,7 +207,7 @@
       "url": "/sol/reset/overview/#structure",
       "last_checked": "2026-11-23",
       "context": "overview",
-      "note": "Labelled 'current as of this writing — re-verify before publication'."
+      "note": "The independent page now presents the 2025–26 UN Handbook's dated structure: Principals, Deputies Group, EDG, OPAG, time-bound technical structures and five associated entities. The Handbook states information is accurate as at 1 July 2025; verify later changes with the IASC Secretariat."
     },
     {
       "id": "ov-secretariat",
@@ -400,6 +400,54 @@
       "last_checked": "2026-11-23",
       "context": "reset",
       "note": "Every figure with base, period, source and caveat."
+    },
+    {
+      "id": "un-handbook-2025-26",
+      "kind": "document",
+      "title": "United Nations Handbook 2025–26",
+      "issuer": "Australian Department of Foreign Affairs and Trade and New Zealand Ministry of Foreign Affairs and Trade",
+      "date": "2025–26",
+      "version": "62nd edition; information stated as accurate at 1 July 2025",
+      "format": "PDF handbook",
+      "status": "published",
+      "clearance": null,
+      "tier": 2,
+      "url": "https://www.dfat.gov.au/sites/default/files/united-nations-handbook-2025-26.pdf",
+      "last_checked": "2026-11-23",
+      "context": "overview",
+      "note": "Pages 224–225: 19 Principals; ERC chair; Deputies Group, EDG and OPAG; technical structures are time-bound and regularly reviewed; five entities associated with the IASC. The Handbook itself states its information is accurate as at 1 July 2025."
+    },
+    {
+      "id": "un-res-46-182",
+      "kind": "web",
+      "title": "A/RES/46/182 — Strengthening of the coordination of humanitarian emergency assistance of the United Nations",
+      "issuer": "United Nations General Assembly",
+      "date": "19 December 1991",
+      "version": "46th session, resolution adopted without vote",
+      "format": "Resolution record",
+      "status": "official",
+      "clearance": null,
+      "tier": 2,
+      "url": "https://digitallibrary.un.org/record/135197?ln=en",
+      "last_checked": "2026-11-23",
+      "context": "overview",
+      "note": "UN Digital Library record confirms adoption at the 78th plenary meeting on 19 December 1991."
+    },
+    {
+      "id": "un-res-48-57",
+      "kind": "web",
+      "title": "A/RES/48/57 — Strengthening of the coordination of humanitarian emergency assistance of the United Nations",
+      "issuer": "United Nations General Assembly",
+      "date": "1994",
+      "version": "48th session",
+      "format": "Mandate registry record",
+      "status": "official",
+      "clearance": null,
+      "tier": 2,
+      "url": "https://mandates.un.org/mandate/A/RES/48/57",
+      "last_checked": "2026-11-23",
+      "context": "overview",
+      "note": "Referenced for the reaffirmation of the IASC's primary role in inter-agency humanitarian coordination."
     }
   ],
   "topics": [
@@ -421,8 +469,8 @@
         "46/182"
       ],
       "plain": "The Inter-Agency Standing Committee (IASC) is where the big humanitarian organizations agree how to work together. It is a forum, not an aid agency: it does not run field operations itself.",
-      "detail": "The IASC is the primary global mechanism for inter-agency humanitarian coordination. It was established in June 1992, following UN General Assembly Resolution 46/182 (adopted December 1991), and is chaired by the Emergency Relief Coordinator (ERC). It brings the heads of UN and non-UN humanitarian organizations together to agree policy, set shared priorities and coordinate how the system responds to a crisis, so that response is collective rather than fragmented.",
-      "technical": "Resolution 46/182 (Dec 1991) called for a forum of this kind; the Committee was convened in June 1992. Per the Overview page, its role as the primary coordination mechanism was reaffirmed by Resolution 48/57. Composition today: 12 members (UN operational entities) and 7 standing invitees; the Secretariat's own page says no distinction is made between the two in practice. The Overview page flags the full mandate language and the 1991/1992 chronology as 'to verify' against the Secretariat's About pages.",
+      "detail": "The IASC is the longest-standing and highest-level humanitarian coordination forum of the UN system. It was established in response to UN General Assembly Resolution 46/182 (adopted on 19 December 1991); the IASC Membership page dates the Committee's establishment to June 1992. The 2025–26 UN Handbook describes 19 Principals of UN and non-UN entities. The IASC is chaired by the Emergency Relief Coordinator (ERC).",
+      "technical": "Keep the chronology precise: Resolution 46/182 was adopted on 19 December 1991; the IASC Membership page gives June 1992 as the Committee's establishment date. Resolution 48/57 (1994) is cited as reaffirming the IASC's role as the primary mechanism for inter-agency coordination. The 2025–26 UN Handbook describes 19 Principals and says its information is accurate as at 1 July 2025.",
       "points": [
         "A forum, not an operational agency",
         "Established June 1992 after Resolution 46/182",
@@ -431,9 +479,11 @@
       ],
       "sources": [
         "iasc-membership",
-        "ov-who"
+        "un-handbook-2025-26",
+        "un-res-46-182",
+        "un-res-48-57"
       ],
-      "caveat": "The Overview page marks mandate wording and chronology 'to verify'. The Resolution 48/57 reference appears on the page but is not in its source table.",
+      "caveat": "Do not collapse the date of Resolution 46/182 (1991) and the Committee's establishment date (June 1992) into one event. The IASC Membership page was not retrievable in this review; verify subsequent changes directly with the Secretariat.",
       "followups": [
         "What does the IASC do and not do?",
         "Members vs standing invitees?",
@@ -497,8 +547,8 @@
         "unhcr"
       ],
       "plain": "Twelve UN bodies are members and seven others are permanently invited. In practice they sit at the same table.",
-      "detail": "Members (12): FAO, IOM, OCHA, OHCHR, UNDP, UNFPA, UN-Habitat, UNHCR, UNICEF, UN Women, WFP, WHO. Standing invitees (7): ICRC, IFRC, ICVA, InterAction, SCHR, the World Bank, and the UN Special Rapporteur on the Human Rights of IDPs. The Secretariat notes that in practice no distinction is made between members and standing invitees.",
-      "technical": "Rechecked on 23 Nov 2026 against the Secretariat's membership page, which lists the same organizations, describes ICVA, InterAction and SCHR as NGO consortia invited on a permanent basis, and quotes Resolution 46/182 on composition ('all operational organizations', with a standing invitation to the ICRC). The membership page states no total; '12 + 7' is a count of the listed names. Note: the IASC visual-identity guide's intro text says the IASC brings together '18 organizations' — a different count, unexplained in the sources here.",
+      "detail": "The 2025–26 UN Handbook describes 19 Principals from UN and non-UN entities. It distinguishes full members from standing invitees and notes that NGO consortia ICVA, InterAction and SCHR are invited on a permanent basis. The IASC Membership page provides the Secretariat's own directory and should be checked for later changes.",
+      "technical": "The Overview page's displayed directory groups 12 organizations as members and seven as standing invitees. The 2025–26 UN Handbook reports 19 Principals, and states that its information is accurate as at 1 July 2025. Its membership narrative names OHCHR among standing invitees while its full-member roster also includes OHCHR; the assistant therefore flags the category rather than silently resolving the discrepancy.",
       "points": [
         "12 members (UN operational entities)",
         "7 standing invitees (incl. Red Cross/Red Crescent, NGO consortia, World Bank, IDP Special Rapporteur)",
@@ -506,9 +556,10 @@
       ],
       "sources": [
         "iasc-membership",
+        "un-handbook-2025-26",
         "ov-community"
       ],
-      "caveat": "Membership changes over time; check the Secretariat's page for anything current. Logos on the Overview page are placeholders, not official marks.",
+      "caveat": "Membership and participation categories can change. The IASC Membership page could not be retrieved during this review. Confirm the current roster and OHCHR's formal category with the Secretariat before external use.",
       "table": {
         "headers": [
           "Members (12)",
@@ -621,8 +672,8 @@
         "erc"
       ],
       "plain": "Agency heads (the Principals) decide. Three groups below them handle strategy, emergencies and policy. Expert Results Groups do technical work. The Secretariat keeps everyone connected.",
-      "detail": "IASC Principals (heads of the 12 member organizations, chaired by the ERC) sit at the top. Reporting to them: the Deputies Forum (senior executives, informal dialogue on strategic issues); the Emergency Directors Group, EDG (chaired by OCHA's Director of Operations — current crises and urgent operational needs); and the Operational Policy & Advocacy Group, OPAG (co-chaired by two Deputies Forum members — normative and strategic policy). Below OPAG: Results Groups (technical experts, each working one IASC Strategic Priority). The IASC Secretariat connects every structure to the Principals and to each other.",
-      "technical": "This is the Overview page's reading of the Secretariat's structure page, labelled 'current as of this writing — re-verify before publication'. The assistant does not add any body, reporting line or mandate beyond what that section shows.",
+      "detail": "The 2025–26 UN Handbook describes the IASC Principals, supported by three core subsidiary bodies: the Deputies Group, the Emergency Directors Group (EDG) and the Operational Policy and Advocacy Group (OPAG). The technical structures created for specific workstreams are time-bound and regularly reviewed. The Handbook lists five entities associated with the IASC.",
+      "technical": "The Deputies Group provides dialogue and decision-making on strategic issues tasked by the Principals. The EDG advises and follows up on urgent collective operational action, system-wide resource mobilization and targeted field support. OPAG drives normative and strategic policy work on system-wide matters with a direct bearing on humanitarian operations. The five associated entities listed in the 2025–26 Handbook are the Inter-Agency Humanitarian Evaluation Steering Group, Global Cluster Coordination Group, Humanitarian Programme Cycle Steering Group, Reference Group on Gender and Humanitarian Action, and Reference Group on Mental Health and Psychosocial Support.",
       "points": [
         "Principals → Deputies Forum, EDG, OPAG",
         "Results Groups below OPAG",
@@ -631,9 +682,10 @@
       "diagram": "structure",
       "sources": [
         "iasc-structure",
+        "un-handbook-2025-26",
         "ov-structure"
       ],
-      "caveat": "Subsidiary-body names and mandates are periodically revised. Re-verify against the Secretariat's structure page before relying on this.",
+      "caveat": "The UN Handbook states that its information is accurate as at 1 July 2025. Technical structures are time-bound and regularly reviewed. Do not present the 2022–23 Task Force list or older Results Groups as a permanent current organigram.",
       "followups": [
         "What does the Secretariat do?",
         "Explain global vs country coordination.",
@@ -651,18 +703,19 @@
         "follow through"
       ],
       "plain": "The Secretariat is the support team. It doesn't make policy; it helps make sure the Principals' decisions get acted on and keeps the different groups linked up.",
-      "detail": "Per the Overview page, the IASC Secretariat supports the Principals in their deliberations, helps ensure their decisions are acted upon, and builds connectivity and synergies between the Principals, the EDG, OPAG, the Results Groups and the wider network of entities associated with the IASC. It does not set policy itself.",
-      "technical": "Same caveat as the structure section: wording reflects the Secretariat's own description as summarized on the independent page.",
+      "detail": "The IASC Secretariat supports the Principals' deliberations, helps ensure decisions are followed through and builds connectivity across the IASC's formal structures and associated entities. It does not replace the mandates or accountability of participating organizations.",
+      "technical": "The Secretariat sits within OCHA's support architecture and provides connective and follow-up functions across the Principals, Deputies Group, EDG, OPAG and associated entities. Refer to the current Secretariat description before making claims about staffing, internal reporting or detailed responsibilities.",
       "points": [
         "Supports Principals' deliberations",
         "Follows through on decisions",
         "Connects EDG, OPAG, Results Groups and the wider network"
       ],
       "sources": [
-        "ov-secretariat",
-        "iasc-structure"
+        "iasc-structure",
+        "un-handbook-2025-26",
+        "ov-secretariat"
       ],
-      "caveat": null,
+      "caveat": "Do not describe the Secretariat as the policy-making authority or as an operational agency delivering humanitarian assistance.",
       "followups": [
         "How are Principals, EDG, OPAG, Results Groups and Secretariat related?",
         "What is the Humanitarian Reset?"
@@ -1100,32 +1153,33 @@
   "structure": {
     "top": {
       "name": "IASC Principals",
-      "note": "Heads of the 12 member organizations; chaired by the ERC"
+      "note": "19 Principals from UN and non-UN entities; chaired by the ERC (UN Handbook 2025–26; information stated as accurate at 1 July 2025)"
     },
     "reporting": [
       {
-        "name": "Deputies Forum",
-        "note": "Informal dialogue on strategic issues"
+        "name": "Deputies Group",
+        "note": "Strategic dialogue and decision-making on issues tasked by the IASC Principals"
       },
       {
         "name": "Emergency Directors Group (EDG)",
-        "note": "Chaired by OCHA's Director of Operations; current crises"
+        "note": "Urgent collective operational action, system-wide resource mobilization and targeted field support"
       },
       {
-        "name": "Operational Policy & Advocacy Group (OPAG)",
-        "note": "Co-chaired by two Deputies Forum members; policy"
+        "name": "Operational Policy and Advocacy Group (OPAG)",
+        "note": "Normative and strategic policy work on system-wide matters affecting humanitarian operations"
       }
     ],
     "below_opag": {
-      "name": "Results Groups",
-      "note": "Technical experts, one IASC Strategic Priority each"
+      "name": "Time-bound technical structures and associated entities",
+      "note": "Structures are created for specific workstreams and regularly reviewed. The 2025–26 UN Handbook lists five associated entities: IAHE Steering Group, Global Cluster Coordination Group, Humanitarian Programme Cycle Steering Group, Reference Group on Gender and Humanitarian Action, and Reference Group on Mental Health and Psychosocial Support."
     },
     "secretariat": {
       "name": "IASC Secretariat",
-      "note": "Connects every structure to the Principals and each other"
+      "note": "Supports Principals' deliberations and follow-up, and connectivity across IASC structures"
     },
     "sources": [
       "iasc-structure",
+      "un-handbook-2025-26",
       "ov-structure"
     ]
   },

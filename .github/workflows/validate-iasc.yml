@@ -1,0 +1,32 @@
+name: Validate IASC content and build integrity
+
+on:
+  pull_request:
+    paths:
+      - "sol/assistant/**"
+      - "sol/reset/**"
+      - ".github/workflows/validate-iasc.yml"
+  push:
+    branches: [main]
+    paths:
+      - "sol/assistant/**"
+      - "sol/reset/**"
+      - ".github/workflows/validate-iasc.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - name: Validate source registry and references
+        run: python3 sol/assistant/check_registry.py
+      - name: Check extended Reset edition is generated from current data
+        run: python3 sol/reset/v3/build.py --check

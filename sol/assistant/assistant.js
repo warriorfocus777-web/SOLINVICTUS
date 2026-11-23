@@ -362,16 +362,16 @@
   function structureDiagram() {
     var st = R.structure;
     function node(n, cls) { return h("div", { class: "ia-node " + (cls || "") }, [h("b", { text: n.name }), h("span", { text: n.note })]); }
-    return h("div", { role: "figure", "aria-label": "IASC structure diagram, from the Secretariat's structure page as summarized on the Overview page" }, [
+    return h("div", { role: "figure", "aria-label": "IASC structure diagram based on the 2025–26 UN Handbook; technical structures are time-bound and reviewed regularly" }, [
       h("ul", { class: "ia-org" }, [
         h("li", null, [node(st.top, "ia-top")]), h("li", { class: "ia-link", "aria-hidden": "true" }),
-        h("li", null, [h("span", { class: "ia-sr", text: "Reporting to the Principals:" }), h("ul", { class: "ia-three" }, st.reporting.map(function (n) { return h("li", null, [node(n)]); }))]),
+        h("li", null, [h("span", { class: "ia-sr", text: "Core subsidiary bodies:" }), h("ul", { class: "ia-three" }, st.reporting.map(function (n) { return h("li", null, [node(n)]); }))]),
         h("li", { class: "ia-link", "aria-hidden": "true" }),
-        h("li", null, [h("span", { class: "ia-sr", text: "Below OPAG:" }), node(st.below_opag)]),
+        h("li", null, [h("span", { class: "ia-sr", text: "Time-bound technical structures and associated entities:" }), node(st.below_opag)]),
         h("li", { class: "ia-link", "aria-hidden": "true" }),
         h("li", null, [node(st.secretariat, "ia-sec")])
       ]),
-      h("p", { class: "ia-note", text: "Lines show the order on the Overview page, not formal reporting lines beyond what it states. The Secretariat connects all bodies." })
+      h("p", { class: "ia-note", text: "Functional grouping based on the 2025–26 UN Handbook (information stated as accurate at 1 July 2025), not a formal command or reporting-line chart. Technical structures are time-bound and reviewed regularly." })
     ]);
   }
   function fourDsDiagram() {

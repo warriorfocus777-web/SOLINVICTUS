@@ -75,6 +75,7 @@ a:hover{color:var(--navy-hover)}
 .logo:hover{color:#fff}
 .logo .wm{font-family:var(--f-slab);font-weight:700;font-size:26px;letter-spacing:.04em;line-height:1;padding-right:var(--s3);border-right:1px solid rgba(255,255,255,.4)}
 .logo .tl{font-family:var(--f-cond);font-size:12px;line-height:1.2;letter-spacing:.06em;text-transform:uppercase}
+.logo img{display:block;width:196px;max-width:45vw;height:auto;padding:12px 14px;background:#fff}
 .mast .bar .tag{color:#fff}
 .hero{--sym:clamp(220px,21vw,290px);display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);grid-template-areas:"text sym";gap:var(--s7) var(--s8);align-items:center;padding:clamp(40px,7vw,88px) 0 clamp(48px,7vw,88px)}
 .hero .eyebrow{color:var(--on-navy-soft)}
@@ -484,8 +485,7 @@ html:not(.js) .chapters button{cursor:default;pointer-events:none}
     <div class="bar">
       <!-- Logo slot: replace the .wm span with the official IASC logo SVG from IASC brand assets (keep the aria-label). -->
       <a class="logo" href="#top" aria-label="IASC, Inter-Agency Standing Committee">
-        <span class="wm" aria-hidden="true">IASC</span>
-        <span class="tl" aria-hidden="true">Inter-Agency<br>Standing Committee</span>
+        <img src="/sol/assistant/media/IASC_Logo_Blue.png" width="800" height="158" alt="Inter-Agency Standing Committee (IASC)">
       </a>
       <span class="tag">DRAFT</span>
     </div>
@@ -493,7 +493,7 @@ html:not(.js) .chapters button{cursor:default;pointer-events:none}
       <div class="hero-text">
         <p class="eyebrow">Humanitarian Reset · Stocktake</p>
         <h1>Humanitarian Reset<span>Stocktake, October 2026</span></h1>
-        <p class="lede">Nineteen months after launch, the IASC has delivered collective results for 100 million people, including 41 million with life-saving support, and has advanced sector reform across the four Ds, including in planning, coordination and financing.</p>
+        <p class="lede">The draft sources report several distinct measures that should not be conflated: 100 million people with “collective results” in the Stocktake introduction (method and overlap not specified); 66 million reached with some form of assistance and protection out of 148 million targeted; and 41 million of those 66 million reached in locations with the most severe needs. The 41 million is a subset of the 66 million, not an additional group. The page tracks reform across Define, Deliver, Devolve and Defend.</p>
         <p class="watch"><a href="#overview"><span class="pl" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M2 1l9 5-9 5z"/></svg></span>Watch the overview <small>0:50</small></a></p>
         <dl class="meta">
           <div><dt>Adopted</dt><dd><b>Feb 2025</b></dd></div>
@@ -814,6 +814,7 @@ html:not(.js) .chapters button{cursor:default;pointer-events:none}
     <aside class="caveat" aria-label="Deliver caveat">
       <p>Read with care</p>
       <p>“Operational contributions depend on award conditions, timely disbursement and access for the better placed actors.” CVA targets of 35% and 85% are envisaged; endorsement status and operational application will be clarified through HWG review.</p>
+      <p><strong>Reach-definition caveat:</strong> the 100M “collective results” figure in the Stocktake introduction has no counting method or overlap explanation in the supplied draft. The 66M is the reported reach measure against 148M targeted; 41M is a nested subset of those reached. Do not add these figures or present them as interchangeable.</p>
     </aside>
   </div>
 </section>
@@ -1044,8 +1045,8 @@ html:not(.js) .chapters button{cursor:default;pointer-events:none}
   <div class="wrap">
     <div>
       <p class="eyebrow">Data notes</p>
-      <h2 id="notes-h">Where the documents differ, this page follows the Stocktake</h2>
-      <p style="font-size:15px">The Stocktake is the more detailed source. Both documents are drafts pending clearance.</p>
+      <h2 id="notes-h">Where the documents differ, the evidence and uncertainty stay visible</h2>
+      <p style="font-size:15px">The Stocktake is the more detailed source, but both documents are drafts pending clearance. Discrepancies and undefined measures are not reconciled by inference.</p>
     </div>
     <table>
       <caption class="sr-only">Differences between the Stocktake and the presentation</caption>
@@ -1056,9 +1057,10 @@ html:not(.js) .chapters button{cursor:default;pointer-events:none}
         <tr><th scope="row">Transition plans 17% → 40%</th><td>Clusters, reported separately from HNRPs</td><td>Presented as HNRPs, one series to 75%</td></tr>
         <tr><th scope="row">Local share outside US award</th><td>55% (44% direct), 28 Sep</td><td>53% (40% direct, 13% indirect)</td></tr>
         <tr><th scope="row">Area-based coordination</th><td>14 operations; 7 named</td><td>Not quantified</td></tr>
-        <tr><th scope="row">People with collective results</th><td>100M (intro); 66M reached of 148M targeted (Deliver)</td><td>66M reached</td></tr>
+        <tr><th scope="row">Collective results and reach</th><td>100M “collective results” (intro; method and overlap with reach not specified); 66M reached of 148M targeted (Deliver); 41M is a subset of 66M</td><td>66M reached; no explanation of the 100M measure's overlap</td></tr>
       </tbody>
     </table>
+    <p class="src">Reading rule: do not add 100M, 66M and 41M. The sources do not define the 100M counting method or its overlap with the 66M reached; the 41M figure is nested within the 66M.</p>
   </div>
 </section>
 
@@ -1069,7 +1071,7 @@ html:not(.js) .chapters button{cursor:default;pointer-events:none}
     <div class="row">
       <div>
         <!-- Logo slot: official IASC logo (reversed/white version) goes here -->
-        <p class="logo" style="margin-bottom:12px"><span class="wm">IASC</span><span class="tl">Inter-Agency<br>Standing Committee</span></p>
+        <p class="logo" style="margin-bottom:12px"><img src="/sol/assistant/media/IASC_Logo_Blue.png" width="800" height="158" alt="Inter-Agency Standing Committee (IASC)"></p>
         <p style="font-size:14px;max-width:340px">The longest-standing and highest-level humanitarian coordination forum of the UN system.</p>
       </div>
       <nav aria-label="IASC online"><ul>
