@@ -48,7 +48,7 @@ html{scroll-behavior:smooth;scroll-padding-top:calc(var(--subnav) + 24px);-webki
 body{margin:0;background:var(--bg);color:var(--body);font-family:var(--f-body);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
 h1,h2,h3,p,ol,ul,figure,blockquote,dl,dd{margin:0}
 ol,ul{list-style:none;padding:0}
-h1,h2{font-family:var(--f-head);font-weight:700;color:var(--heading);text-wrap:balance}
+h1,h2,h3{font-family:var(--f-head);font-weight:700;color:var(--heading);text-wrap:balance}
 h3{color:var(--heading);text-wrap:balance}
 p{text-wrap:pretty}
 a{color:var(--heading);text-underline-offset:3px}
@@ -295,6 +295,7 @@ a:hover{color:var(--navy-hover)}
 .pagesnav .sep{color:rgba(255,255,255,.3)}
 
 /* Community: members / standing invitees */
+.community-note{margin:var(--s4) 0;color:var(--muted);font-size:13px;max-width:78ch}
 .community-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:var(--s3)}
 .org-chip{background:var(--surface);border-top:3px solid var(--navy);padding:var(--s4) var(--s3);display:flex;flex-direction:column;gap:4px;min-height:84px;justify-content:center}
 .org-chip.invitee{border-top-color:var(--blue-accent)}
@@ -405,7 +406,7 @@ a:hover{color:var(--navy-hover)}
           <div><dt>Established</dt><dd><b>June 1992</b></dd></div>
           <div><dt>Following</dt><dd><b>UNGA Res. 46/182</b> (1991)</dd></div>
           <div><dt>Chaired by</dt><dd><b>The ERC</b></dd></div>
-          <div><dt>Community</dt><dd><b>12 members</b> + 7 standing invitees</dd></div>
+          <div><dt>Community</dt><dd><a href="https://interagencystandingcommittee.org/iasc-about/iasc-membership" target="_blank" rel="noopener noreferrer"><b>Current IASC roster ↗</b></a><small>Members and standing invitees</small></dd></div>
         </dl>
       </div>
       <div class="conv-wrap">
@@ -496,13 +497,13 @@ a:hover{color:var(--navy-hover)}
     <header class="d-head">
       <div>
         <div class="d-mark"><span class="n" aria-hidden="true">02</span><span class="k"><svg class="glyph" aria-hidden="true"><use href="#g-community"/></svg><span class="eyebrow">The IASC community</span></span></div>
-        <h2 id="community-h">Twelve members, seven standing invitees</h2>
+        <h2 id="community-h">Members and standing invitees at the table</h2>
       </div>
-      <p class="sum">The IASC Secretariat itself notes that, in practice, no operational distinction is made between the two categories — both sit at the same table.</p>
+      <p class="sum">The two categories participate at the same table. The roster below is an explainer snapshot, not a substitute for the Secretariat’s live membership page; check that page for current participants and classifications.</p>
     </header>
 
     <div class="fig">
-      <figcaption><span class="ft">Members</span><span class="fs">Heads, or designated Principals, of UN operational agencies</span></figcaption>
+      <figcaption><span class="ft">Members · roster snapshot</span><span class="fs">Heads, or designated Principals, of UN operational agencies</span></figcaption>
       <div class="community-grid">
         <div class="org-chip"><b>FAO</b><span>Food and Agriculture Organization</span></div>
         <div class="org-chip"><b>IOM</b><span>International Organization for Migration</span></div>
@@ -532,6 +533,7 @@ a:hover{color:var(--navy-hover)}
       </div>
       <div class="community-key" aria-hidden="true"><span><i></i>Member</span><span><i class="invitee"></i>Standing invitee</span></div>
     </div>
+    <p class="community-note">The organization chips are an illustrative roster snapshot. Participation and category labels can change; use the <a href="https://interagencystandingcommittee.org/iasc-about/iasc-membership" target="_blank" rel="noopener noreferrer">IASC Secretariat’s live membership page</a> to confirm the current list.</p>
     <div class="verify-note">Logos shown here are typographic placeholders, not the organizations' official marks. Before this page goes live, replace these chips with each organization's official logo, sized and cleared per its own brand guidelines — do not substitute unofficial or low-resolution versions.</div>
   </div>
 </section>
