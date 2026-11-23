@@ -1,0 +1,27 @@
+{
+  "date": "2026-11-23",
+  "candidates": [
+    {
+      "title": "Three Salvadoran Soldiers Die in Haiti Explosives Accident",
+      "originator": "El Salvador's Armed Forces, via The Tico Times",
+      "publisher": "The Tico Times (Costa Rica)",
+      "date": "21.11.2026",
+      "url": "https://ticotimes.net/2026/11/21/salvadoran-soldiers-killed-haiti-explosion",
+      "lang": "en",
+      "desk_hint": ["cadre509", "cadre7"],
+      "cell_hint": ["casualty", "command"],
+      "why_new": "Independently confirms (with a timestamp, not just an unverified rumor) that a third Salvadoran soldier died of injuries from the 20.11 explosives-handling accident, raising the toll from the two deaths already staged on 22.11 (which flagged a third death as unconfirmed, citing riotimesonline). Article states: two died at the scene, a third died later in a Dominican Republic hospital, a fourth was wounded but is out of danger. Directly updates Cadre 509's casualty-count cell; also notes the deployment causing the deaths operates separately from the Gang Suppression Force (the four missing Salvadoran airmen from 18.10 'remain missing' and belonged to the GSF), a command-structure distinction relevant to Cadre 7's command-clarity cell."
+    },
+    {
+      "title": "Salvadoran Troops Killed in Haiti Blast Amid Rescue Mission",
+      "originator": "Not confirmed here -- appears to report the same 20.11 explosives incident as the Tico Times item above",
+      "publisher": "Bloomberg",
+      "date": "20.11.2026",
+      "url": "https://www.bloomberg.com/news/articles/2026-11-20/el-salvador-troops-killed-in-haiti-blast-after-rescue-deployment",
+      "lang": "en",
+      "desk_hint": ["cadre509", "cadre7"],
+      "cell_hint": ["casualty", null],
+      "why_new": "A major-wire alternate source on what is very likely the same Salvadoran-soldier blast fatality reported by the Tico Times item above (same date window, same subject). This engine could not fetch the article body (site blocked automated retrieval), so content beyond the headline/dek is not verified here -- staged as a second citable source for the desk to check directly, same as the paywalled/blocked items staged on prior days."
+    }
+  ]
+}
