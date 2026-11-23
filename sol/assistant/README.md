@@ -20,7 +20,7 @@ Independent. **Not** an official IASC spokesperson, policy authority, operationa
 
 | File | Role |
 |---|---|
-| `registry.json` | Single source of truth: sources (tier, status, clearance, version, last checked, on-page anchor), topics with plain/detail/technical levels, indicators (value, base, period, definition, status, caveat), the six preserved source conflicts, reading rules, milestones with ISO due dates, glossary (each term cited to its own source), lessons with knowledge checks, the fictional simulation, and the Four Ds pillar data. **Edit this, not the JS.** |
+| `registry.json` | Assistant runtime registry: sources, topics, reading rules, milestones, glossary, lessons, simulation and Four Ds pillar data. **Indicator facts and the discrepancy ledger are generated from `/sol/reset/v3/data/indicators.json`; edit the canonical data file, not this registry section.** |
 | `check_registry.py` | `python3 sol/assistant/check_registry.py` — fails if any citation, on-page anchor, lesson answer key, simulation link or pillar reference is broken, or if an external URL isn't on the vetted list. Run after every edit. |
 | `assistant.js` / `assistant.css` | Widget (vanilla JS, no dependencies). Registry text is only ever inserted with `textContent`. |
 | `media/IASC_Logo_Blue.png` | The supplied logo, byte-identical (SHA-256 `1135b6ab…3a030d23`). Shown on white, height-scaled only. |
@@ -56,3 +56,8 @@ API contract — request `{query, mode, context}`; response `{answer, citations:
 ## Rollback
 
 Everything is additive except `assistant.js`, `assistant.css`, `registry.json` (same paths, so the page hooks didn't change) and two links on `/sol/reset/`. Revert the merge commit, or restore those three files from the commit before it. Deleting `/functions/` removes the backend entirely.
+
+
+## Canonical indicator source
+
+Indicator values, definitions, denominators, periods, caveats and the discrepancy ledger are maintained in `/sol/reset/v3/data/indicators.json`. Run `python3 sol/reset/v3/build.py` to rebuild the extended Stocktake and synchronize the assistant registry. Run `python3 sol/reset/v3/build.py --check` to fail if either generated output has drifted. Run `python3 sol/assistant/check_registry.py` for source-reference and canonical-data integrity checks.
