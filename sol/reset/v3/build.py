@@ -57,6 +57,56 @@ def kpi(i,cat):
             f'<p class="src"><span>{E(SRC[i["source"]]["short"])}, {E(i["source_section"])}</span>'
             f'<span class="tag">{E(i["status"]).upper()}</span><a href="#reg-{i["id"]}">Definition and base</a></p></li>')
 
+
+SHORT_PAGE = ROOT / "sol" / "reset" / "index.html"
+
+def gen_short_metrics():
+    parts = []
+    for card in DATA["short_metrics"]:
+        i = IND[card["id"]]
+        viz_data = card["viz"]
+        if viz_data["type"] == "bar":
+            viz_html = (f'<span class="mini" aria-hidden="true"><span class="f" style="--v:{viz_data["share"]}%"></span></span>'
+                        f'<span class="cap">{E(viz_data["caption"])}</span>')
+        elif viz_data["type"] == "spark":
+            viz_html = ('<svg class="spark" viewBox="0 0 120 30" role="img" '
+                        'aria-label="36% in 2024, 43% in 2025, 63% in accessible October source copies; 62% in site-cited 8 October record">'
+                        '<polyline points="4,22.2 60,17.8 116,5.9" fill="none" stroke="#272E67" stroke-width="2"/>'
+                        '<circle cx="4" cy="22.2" r="2.5" fill="#7C8490"/><circle cx="60" cy="17.8" r="2.5" fill="#7C8490"/>'
+                        '<circle cx="116" cy="5.9" r="3.5" fill="#FF4D59"/></svg>'
+                        f'<span class="chip">{E(viz_data["caption"])}</span>')
+        elif viz_data["type"] == "comparison":
+            viz_html = ('<span class="cols" role="img" aria-label="1.05 billion in 2024 compared with 4.53 billion in the site-cited 8 October source record">'
+                        '<span style="height:7px;background:var(--context)"></span><span style="height:30px;background:var(--navy)"></span></span>'
+                        f'<span class="chip">{E(viz_data["caption"])}</span>')
+        elif viz_data["type"] == "dots":
+            cells = "".join('<i class="on"></i>' if n < viz_data["on"] else "<i></i>" for n in range(viz_data["total"]))
+            viz_html = f'<span class="dots" role="img" aria-label="{viz_data["on"]} of {viz_data["total"]} plans">{cells}</span><span class="cap">{E(viz_data["caption"])}</span>'
+        else:
+            raise ValueError("unknown short metric visualization: " + viz_data["type"])
+        cls = "mcard hl" if card["id"] == "severity45" else "mcard"
+        parts.append(
+            f'<li class="{cls}"><span class="v num">{E(card["value"])}</span>'
+            f'<span class="l">{E(card["label"])}</span><span class="viz">{viz_html}</span>'
+            f'<span class="src">{E(card["source"])}</span></li>'
+        )
+    return "".join(parts)
+
+def gen_short_notes():
+    rows = []
+    for discrepancy in DATA["discrepancies"]:
+        source_items = []
+        for item in discrepancy["values"]:
+            source = SRC[item["source"]]
+            source_items.append(f'<li><b>{E(source["short"])}</b>: {E(item["value"])}</li>')
+        rows.append(
+            f'<tr><th scope="row">{E(discrepancy["label"])}</th>'
+            f'<td><ul class="note-sources">{"".join(source_items)}</ul></td>'
+            f'<td><p>{E(discrepancy["explanation"])}</p>'
+            f'<p><b>Do not infer:</b> {E(discrepancy["do_not"])}</p></td></tr>'
+        )
+    return "".join(rows)
+
 def gen_kpis():
     return '<ul class="kpis">'+"".join(kpi(IND[k],g["title"]) for g in DATA["kpi_groups"] for k in g["ids"])+"</ul>"
 
@@ -98,7 +148,7 @@ def gen_workstreams():
 def gen_asof():
     return E(DATA["as_of"])
 
-GENERATORS={"kpis":gen_kpis,"register":gen_register,"roadmap":gen_roadmap,"workstreams":gen_workstreams,"asof":gen_asof}
+GENERATORS={"kpis":gen_kpis,"register":gen_register,"roadmap":gen_roadmap,"workstreams":gen_workstreams,"asof":gen_asof,"short-metrics":gen_short_metrics,"short-notes":gen_short_notes}
 
 def render_page(source):
     for name,generator in GENERATORS.items():
@@ -139,12 +189,15 @@ def project_registry(registry):
 
 def main():
     current_page=PAGE.read_text(encoding="utf-8")
+    current_short=SHORT_PAGE.read_text(encoding="utf-8")
     rendered_page=render_page(current_page)
+    rendered_short=render_page(current_short)
     current_registry=json.loads(REGISTRY.read_text(encoding="utf-8"))
     rendered_registry=project_registry(current_registry)
     if "--check" in sys.argv:
         stale=[]
         if rendered_page!=current_page: stale.append("extended Stocktake generated HTML")
+        if rendered_short!=current_short: stale.append("short Stocktake generated metrics / source notes")
         if rendered_registry!=current_registry: stale.append("assistant registry indicators/discrepancies")
         if stale:
             print("STALE: "+", ".join(stale)+". Run python3 sol/reset/v3/build.py.")
@@ -152,6 +205,7 @@ def main():
         print(f"OK: {len(DATA['indicators'])} canonical indicators and {len(DATA.get('discrepancies',[]))} discrepancies synchronized.")
         return 0
     PAGE.write_text(rendered_page,encoding="utf-8")
+    SHORT_PAGE.write_text(rendered_short,encoding="utf-8")
     REGISTRY.write_text(json.dumps(rendered_registry,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     print("Updated extended Stocktake and assistant registry from canonical data.")
     return 0
