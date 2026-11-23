@@ -63,7 +63,7 @@ SHORT_PAGE = ROOT / "sol" / "reset" / "index.html"
 def gen_short_metrics():
     parts = []
     for card in DATA["short_metrics"]:
-        i = IND[card["id"]]
+        indicator = IND[card["id"]]
         viz_data = card["viz"]
         if viz_data["type"] == "bar":
             viz_html = (f'<span class="mini" aria-hidden="true"><span class="f" style="--v:{viz_data["share"]}%"></span></span>'
@@ -84,11 +84,17 @@ def gen_short_metrics():
             viz_html = f'<span class="dots" role="img" aria-label="{viz_data["on"]} of {viz_data["total"]} plans">{cells}</span><span class="cap">{E(viz_data["caption"])}</span>'
         else:
             raise ValueError("unknown short metric visualization: " + viz_data["type"])
+        value = card.get("display_value", indicator["value"])
+        label = indicator.get("short_label", indicator["title"])
+        note = indicator.get("short_note", indicator.get("note", ""))
+        source = SRC[indicator["source"]]
+        source_label = f'{source["short"]} · {indicator["source_section"]}'
         cls = "mcard hl" if card["id"] == "severity45" else "mcard"
         parts.append(
-            f'<li class="{cls}"><span class="v num">{E(card["value"])}</span>'
-            f'<span class="l">{E(card["label"])}</span><span class="viz">{viz_html}</span>'
-            f'<span class="src">{E(card["source"])}</span></li>'
+            f'<li class="{cls}"><span class="v num">{E(value)}</span>'
+            f'<span class="l">{E(label)}</span><span class="viz">{viz_html}</span>'
+            f'<span class="src">{E(source_label)}</span>'
+            f'<span class="metric-note">{E(note)}</span></li>'
         )
     return "".join(parts)
 
