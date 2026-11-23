@@ -10,7 +10,7 @@
 <link rel="canonical" href="https://solinvictus.app/sol/reset/overview/">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="preload" as="font" type="font/woff2" href="../fonts/roboto-latin-wght-normal.woff2" crossorigin>
-<link rel="preload" as="font" type="font/woff2" href="../fonts/roboto-slab-latin-wght-normal.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/sol/assistant/fonts/montserrat-latin-wght-normal.woff2" crossorigin>
 <meta property="og:type" content="article">
 <meta property="og:title" content="IASC Overview – Inter-Agency Standing Committee">
 <meta property="og:description" content="Who the IASC is, what it does and how it works.">
@@ -28,17 +28,16 @@
    under "OVERVIEW-ONLY ADDITIONS".
    ====================================================================== */
 @font-face{font-family:"Roboto";font-style:normal;font-weight:100 900;font-display:swap;src:url("../fonts/roboto-latin-wght-normal.woff2") format("woff2")}
-@font-face{font-family:"Roboto Condensed";font-style:normal;font-weight:100 900;font-display:swap;src:url("../fonts/roboto-condensed-latin-wght-normal.woff2") format("woff2")}
-@font-face{font-family:"Roboto Slab";font-style:normal;font-weight:100 900;font-display:swap;src:url("../fonts/roboto-slab-latin-wght-normal.woff2") format("woff2")}
+@font-face{font-family:"IASC Montserrat";font-style:normal;font-weight:100 900;font-display:swap;src:url("/sol/assistant/fonts/montserrat-latin-wght-normal.woff2") format("woff2")}
 
 :root{
-  --navy:#272E67;--navy-hover:#3D2A7A;--heading:#1C2149;--body:#4A4A4A;--muted:#595959;
-  --red:#E63946;--red-text:#C62F3C;--sev4:#cd3a1f;--blue:#1f69b3;
+  --navy:#272E67;--navy-hover:#009EDB;--heading:#1C2149;--body:#4A4A4A;--muted:#595959;
+  --red:#FF4D59;--red-text:#C62F3C;--sev4:#cd3a1f;--blue:#00709C;--blue-accent:#009EDB;
   --context:#7C8490;--bg:#F7F6F4;--surface:#fff;--track:#E9E7E3;--border:#DEDAD3;--on-navy-soft:#B8BEE6;
   --sev-1:#f7f8d3;--sev-2:#d5de26;--sev-3:#db7b18;--sev-5:#1C2149;--sev-edge:#7A7F12;
   --f-body:Roboto,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
-  --f-cond:"Roboto Condensed","Arial Narrow",Roboto,system-ui,sans-serif;
-  --f-slab:"Roboto Slab",Rockwell,"Roboto",Georgia,serif;
+  --f-cond:Roboto,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+  --f-head:"IASC Montserrat",Montserrat,system-ui,sans-serif;
   --s1:4px;--s2:8px;--s3:12px;--s4:16px;--s5:24px;--s6:32px;--s7:48px;--s8:64px;--s9:96px;
   --sec:clamp(64px,8vw,96px);
   --wrap:1200px;--gutter:clamp(16px,4vw,40px);--subnav:56px;
@@ -49,7 +48,7 @@ html{scroll-behavior:smooth;scroll-padding-top:calc(var(--subnav) + 24px);-webki
 body{margin:0;background:var(--bg);color:var(--body);font-family:var(--f-body);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
 h1,h2,h3,p,ol,ul,figure,blockquote,dl,dd{margin:0}
 ol,ul{list-style:none;padding:0}
-h1,h2{font-family:var(--f-slab);font-weight:700;color:var(--heading);text-wrap:balance}
+h1,h2,h3{font-family:var(--f-head);font-weight:700;color:var(--heading);text-wrap:balance}
 h3{color:var(--heading);text-wrap:balance}
 p{text-wrap:pretty}
 a{color:var(--heading);text-underline-offset:3px}
@@ -196,7 +195,7 @@ a:hover{color:var(--navy-hover)}
 .docs h2{font-size:clamp(28px,3.4vw,42px);margin:var(--s3) 0 var(--s6)}
 .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:var(--s5)}
 .card{display:flex;flex-direction:column;background:var(--surface)}
-.card .cov{position:relative;padding:var(--s6);min-height:140px;display:flex;flex-direction:column;justify-content:flex-end;gap:var(--s2);border-bottom:4px solid var(--blue);overflow:hidden}
+.card .cov{position:relative;padding:var(--s6);min-height:140px;display:flex;flex-direction:column;justify-content:flex-end;gap:var(--s2);border-bottom:4px solid var(--blue-accent);overflow:hidden}
 .card .cov.light{background:#ECEEF2;color:var(--heading)}
 .card .cov.dark{background:var(--navy);color:#fff}
 .card .cov p{font-family:var(--f-cond);font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
@@ -299,13 +298,13 @@ a:hover{color:var(--navy-hover)}
 /* Community: members / standing invitees */
 .community-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:var(--s3)}
 .org-chip{background:var(--surface);border-top:3px solid var(--navy);padding:var(--s4) var(--s3);display:flex;flex-direction:column;gap:4px;min-height:84px;justify-content:center}
-.org-chip.invitee{border-top-color:var(--blue)}
+.org-chip.invitee{border-top-color:var(--blue-accent)}
 .org-chip b{font-family:var(--f-cond);font-size:19px;color:var(--heading);letter-spacing:.01em}
 .org-chip span{font-size:12.5px;color:var(--muted);line-height:1.3}
 .community-key{display:flex;gap:var(--s5);margin-top:var(--s5);font-family:var(--f-cond);font-size:13px;color:var(--heading)}
 .community-key span{display:inline-flex;align-items:center;gap:var(--s2)}
 .community-key i{width:14px;height:4px;display:inline-block;background:var(--navy)}
-.community-key i.invitee{background:var(--blue)}
+.community-key i.invitee{background:var(--blue-accent)}
 
 /* Principles */
 .principles{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:var(--s5)}
@@ -320,14 +319,14 @@ a:hover{color:var(--navy-hover)}
 .org-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:var(--s3)}
 .org-node{background:var(--surface);border:1.5px solid var(--border);border-left:4px solid var(--navy);padding:var(--s4);display:flex;flex-direction:column;gap:4px}
 .org-node.top{border-left-color:var(--red)}
-.org-node.side{border-left-color:var(--blue)}
+.org-node.side{border-left-color:var(--blue-accent)}
 .org-node b{font-size:16px;color:var(--heading);font-family:var(--f-cond)}
 .org-node span{font-size:13px;color:var(--muted);line-height:1.35}
 .org-link{display:flex;align-items:center;justify-content:center;height:18px}
 .org-link::before{content:"";width:2px;height:100%;background:var(--border)}
 
 /* Secretariat pull-quote-style block, built on existing .band blockquote look */
-.secretariat-fig{border-left:4px solid var(--blue);padding-left:var(--s5)}
+.secretariat-fig{border-left:4px solid var(--blue-accent);padding-left:var(--s5)}
 .secretariat-fig p{font-family:var(--f-slab);font-size:clamp(18px,1.8vw,21px);line-height:1.5;color:var(--heading)}
 
 /* Closing statement */
@@ -414,10 +413,10 @@ a:hover{color:var(--navy-hover)}
           <title id="convergence-title">IASC — Shared Centre</title>
           <desc id="convergence-desc">The four pathways of the Humanitarian Reset mark meet at a red centre: the IASC as the shared table where different mandates coordinate.</desc>
           <path class="c-tl" d="M10 8 H38 L47 38 L43 44 L35 40 Z" fill="#1C2149"/>
-          <path class="c-tr" d="M62 8 H90 L65 40 L57 44 L53 38 Z" fill="#1F69B3"/>
-          <path class="c-bl" d="M10 92 H38 L47 62 L43 56 L35 60 Z" fill="#1F69B3"/>
+          <path class="c-tr" d="M62 8 H90 L65 40 L57 44 L53 38 Z" fill="#009EDB"/>
+          <path class="c-bl" d="M10 92 H38 L47 62 L43 56 L35 60 Z" fill="#009EDB"/>
           <path class="c-br" d="M62 92 H90 L65 60 L57 56 L53 62 Z" fill="#82B5E9"/>
-          <circle class="c-core" cx="50" cy="50" r="6" fill="#E63946"/>
+          <circle class="c-core" cx="50" cy="50" r="6" fill="#FF4D59"/>
         </svg>
         <button class="conv-toggle" type="button" aria-pressed="false" aria-label="Pause logo animation"><svg class="i-pause" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 1h3v10H2zM7 1h3v10H7z"/></svg><svg class="i-play" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 1l9 5-9 5z"/></svg></button>
       </div>
@@ -499,7 +498,7 @@ a:hover{color:var(--navy-hover)}
         <div class="d-mark"><span class="n" aria-hidden="true">02</span><span class="k"><svg class="glyph" aria-hidden="true"><use href="#g-community"/></svg><span class="eyebrow">The IASC community</span></span></div>
         <h2 id="community-h">19 Principals across UN and non-UN entities</h2>
       </div>
-      <p class="sum">The 2025–26 UN Handbook describes 19 Principals and distinguishes full members, standing invitees and permanently invited NGO consortia. The roster below follows the IASC Membership page's listed categories; the formal designation of individual participants should be checked against the Secretariat's live directory.</p>
+      <p class="sum">The 2025–26 UN Handbook describes 19 Principals and distinguishes full members, standing invitees and permanently invited NGO consortia. The roster below follows the IASC Membership page's listed categories; the formal designation of individual participants should be checked against the Secretariat's live directory. <a href="https://interagencystandingcommittee.org/iasc-about/iasc-membership" target="_blank" rel="noopener noreferrer">Open the IASC Secretariat membership directory ↗</a>.</p>
     </header>
 
     <div class="fig">
@@ -729,7 +728,7 @@ a:hover{color:var(--navy-hover)}
   /* Inverted palette for this page's light hero: the first swatch (used for the
      upper-left quadrant) is navy instead of white, so it stays visible against
      a white background — everything else matches the Reset page exactly. */
-  var COLORS=['#1C2149','#1F69B3','#82B5E9','#144372','#1C2149','#E63946'];
+  var COLORS=['#1C2149','#009EDB','#82B5E9','#144372','#1C2149','#FF4D59'];
   var BLEED=20;
   var CYCLE=8.5;
 
@@ -852,7 +851,7 @@ a:hover{color:var(--navy-hover)}
       ctx.drawImage(atlas,SPR[i]*CELL,0,CELL,CELL,-CELL/2,-CELL/2,CELL,CELL);
     }
     /* the signal: two thin red rings travel out from the core and fade before the edge of the mark */
-    ctx.setTransform(k,0,0,k,B*k,B*k);ctx.strokeStyle='#E63946';
+    ctx.setTransform(k,0,0,k,B*k,B*k);ctx.strokeStyle='#FF4D59';
     for(var rg=0;rg<2;rg++){var rp=(t-TP-rg*0.3)/1.25;if(rp<=0||rp>=1)continue;
       var re=1-(1-rp)*(1-rp)*(1-rp);
       ctx.globalAlpha=(rg?0.32:0.55)*(1-rp)*(1-rp)*fadeIn;ctx.lineWidth=(rg?1:1.5)/scale;
