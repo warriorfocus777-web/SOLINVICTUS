@@ -10,7 +10,7 @@
 <link rel="canonical" href="https://solinvictus.app/sol/reset/v3/">
 <link rel="icon" type="image/svg+xml" href="/sol/reset/favicon.svg">
 <link rel="preload" as="font" type="font/woff2" href="/sol/reset/fonts/roboto-latin-wght-normal.woff2" crossorigin>
-<link rel="preload" as="font" type="font/woff2" href="/sol/reset/fonts/roboto-slab-latin-wght-normal.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/sol/assistant/fonts/montserrat-latin-wght-normal.woff2" crossorigin>
 <meta property="og:type" content="article">
 <meta property="og:title" content="Humanitarian Reset – Stocktake October 2026">
 <meta property="og:description" content="Key figures and progress across Define, Deliver, Devolve and Defend (draft).">
@@ -19,25 +19,25 @@
 <meta name="twitter:card" content="summary_large_image">
 <script>(function(d){d.classList.add('js');var on=false;try{var q=location.search+location.hash;if(/[?&]view=accessible|#accessible/.test(q))on=true;else if(/[?&]view=standard/.test(q))on=false;else on=localStorage.getItem('reset-view')==='accessible';}catch(e){}if(on)d.classList.add('a11y');})(document.documentElement)</script>
 <style>
-/* ---------- Fonts: self-hosted Roboto, Roboto Condensed and Roboto Slab (SIL OFL, see fonts/OFL.txt) ---------- */
+/* IASC identity: Montserrat headings, Roboto body, Roboto Condensed for compact data labels. */
 @font-face{font-family:"Roboto";font-style:normal;font-weight:100 900;font-display:swap;src:url("../fonts/roboto-latin-wght-normal.woff2") format("woff2")}
 @font-face{font-family:"Roboto Condensed";font-style:normal;font-weight:100 900;font-display:swap;src:url("../fonts/roboto-condensed-latin-wght-normal.woff2") format("woff2")}
-@font-face{font-family:"Roboto Slab";font-style:normal;font-weight:100 900;font-display:swap;src:url("../fonts/roboto-slab-latin-wght-normal.woff2") format("woff2")}
+@font-face{font-family:"IASC Montserrat";font-style:normal;font-weight:100 900;font-display:swap;src:url("/sol/assistant/fonts/montserrat-latin-wght-normal.woff2") format("woff2")}
 
 :root{
   /* Colour */
-  --navy:#272E67;--navy-hover:#3D2A7A;--heading:#1C2149;--body:#4A4A4A;--muted:#595959;
-  --red:#E63946;        /* marks, rules, large figures only */
+  --navy:#272E67;--navy-hover:#009EDB;--heading:#1C2149;--body:#4A4A4A;--muted:#595959;
+  --red:#FF4D59;        /* marks, rules, large figures only */
   --red-text:#C62F3C;   /* small red text: 5.0:1 on page */
   --sev4:#cd3a1f;       /* severity 4 only */
-  --blue:#1f69b3;
+  --blue:#009EDB;
   --context:#7C8490;    /* baselines: 3.5:1 on page, 3.8:1 on white */
   --bg:#F7F6F4;--surface:#fff;--track:#E9E7E3;--border:#DEDAD3;--on-navy-soft:#B8BEE6;
   --sev-1:#f7f8d3;--sev-2:#d5de26;--sev-3:#db7b18;--sev-5:#1C2149;--sev-edge:#7A7F12;
   /* Type */
   --f-body:Roboto,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
   --f-cond:"Roboto Condensed","Arial Narrow",Roboto,system-ui,sans-serif;
-  --f-slab:"Roboto Slab",Rockwell,"Roboto",Georgia,serif;
+  --f-slab:"IASC Montserrat",Montserrat,system-ui,sans-serif;
   /* Space */
   --s1:4px;--s2:8px;--s3:12px;--s4:16px;--s5:24px;--s6:32px;--s7:48px;--s8:64px;--s9:96px;
   --sec:clamp(64px,8vw,96px);   /* between sections; blocks 48px; items 24px */
@@ -72,6 +72,7 @@ a:hover{color:var(--navy-hover)}
 .mast .bar{display:flex;align-items:center;justify-content:space-between;gap:var(--s4);padding:var(--s4) 0;border-bottom:1px solid rgba(255,255,255,.16)}
 .logo{display:flex;align-items:center;gap:var(--s3);color:#fff;text-decoration:none}
 .logo:hover{color:#fff}
+.logo .iasc-logo{display:block;width:min(196px,38vw);height:auto;max-height:52px;object-fit:contain;padding:8px 10px;background:#fff}
 .logo .wm{font-family:var(--f-slab);font-weight:700;font-size:26px;letter-spacing:.04em;line-height:1;padding-right:var(--s3);border-right:1px solid rgba(255,255,255,.4)}
 .logo .tl{font-family:var(--f-cond);font-size:12px;line-height:1.2;letter-spacing:.06em;text-transform:uppercase}
 .mast .bar .tag{color:#fff}
@@ -437,8 +438,8 @@ html:not(.js) .chapters button{cursor:default;pointer-events:none}
    ========================================================================== */
 :root{
   /* Status vocabulary: each status has text + icon; colour is never the only cue */
-  --st-completed:#1E6B3A;--st-ongoing:#1f69b3;--st-planned:#595959;--st-pending:#8A4B00;--st-notassessed:#6B4C9A;--st-superseded:#5E6670;
-  --define:#1f69b3;--deliver:#272E67;--devolve:#1E6B3A;--defend:#8A4B00;
+  --st-completed:#1E6B3A;--st-ongoing:#009EDB;--st-planned:#595959;--st-pending:#8A4B00;--st-notassessed:#6B4C9A;--st-superseded:#5E6670;
+  --define:#009EDB;--deliver:#272E67;--devolve:#1E6B3A;--defend:#8A4B00;
   --measure:68ch;
 }
 /* Persistent draft ribbon */
@@ -801,17 +802,14 @@ html.a11y .chapters button,html.a11y details>summary,html.a11y .btn,html.a11y .m
 
 <!-- Persistent status: never hidden, softened or removed until formal clearance -->
 <aside class="ribbon" aria-label="Publication status and view options">
-  <div class="wrap"><b>Draft for discussion</b><span>Figures are reported from the Stocktake draft (8 October 2026 revision) and the October 2026 presentation, both pending clearance and not yet published.</span><a href="#documents">Sources and status</a><a href="/sol/reset/">Short edition</a><button class="a11y-btn" type="button" aria-pressed="false" data-a11y-toggle><svg class="sti" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="3" r="1.6" fill="currentColor" stroke="none"/><path d="M3 6h10M8 6v4M8 10l-2.5 4.5M8 10l2.5 4.5"/></svg><span class="a11y-lbl">Accessible view</span></button></div>
+  <div class="wrap"><b>Draft for discussion</b><span>The site cites a Stocktake draft dated 8 October 2026; that exact file was not available in the review archive. Accessible October draft copies report some different values. All source documents remain pending clearance.</span><a href="#documents">Sources and status</a><a href="/sol/reset/">Short edition</a><button class="a11y-btn" type="button" aria-pressed="false" data-a11y-toggle><svg class="sti" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="3" r="1.6" fill="currentColor" stroke="none"/><path d="M3 6h10M8 6v4M8 10l-2.5 4.5M8 10l2.5 4.5"/></svg><span class="a11y-lbl">Accessible view</span></button></div>
 </aside>
 
 <header class="mast dark" id="top">
   <div class="wrap">
     <div class="bar">
       <!-- Logo slot: replace the .wm span with the official IASC logo SVG from IASC brand assets (keep the aria-label). -->
-      <a class="logo" href="#top" aria-label="IASC, Inter-Agency Standing Committee">
-        <span class="wm" aria-hidden="true">IASC</span>
-        <span class="tl" aria-hidden="true">Inter-Agency<br>Standing Committee</span>
-      </a>
+      <a class="logo" href="#top" aria-label="IASC, Inter-Agency Standing Committee"><img class="iasc-logo" src="/sol/assistant/media/IASC_Logo_Blue.png" width="800" height="158" alt="Inter-Agency Standing Committee (IASC)"></a>
       <span class="tag">DRAFT</span>
     </div>
     <div class="hero">
@@ -839,9 +837,9 @@ html.a11y .chapters button,html.a11y details>summary,html.a11y .btn,html.a11y .m
           <title id="convergence-title">IASC Humanitarian Reset — Collective Convergence</title>
           <desc id="convergence-desc">Four independent geometric pathways converge around a shared central axis, representing coordinated humanitarian action.</desc>
           <path class="c-tl" d="M10 8 H38 L47 38 L43 44 L35 40 Z" fill="#FFFFFF"/>
-          <path class="c-tr" d="M62 8 H90 L65 40 L57 44 L53 38 Z" fill="#1F69B3"/>
-          <path class="c-bl" d="M10 92 H38 L47 62 L43 56 L35 60 Z" fill="#1F69B3"/>
-          <path class="c-br" d="M62 92 H90 L65 60 L57 56 L53 62 Z" fill="#82B5E9"/>
+          <path class="c-tr" d="M62 8 H90 L65 40 L57 44 L53 38 Z" fill="#009EDB"/>
+          <path class="c-bl" d="M10 92 H38 L47 62 L43 56 L35 60 Z" fill="#009EDB"/>
+          <path class="c-br" d="M62 92 H90 L65 60 L57 56 L53 62 Z" fill="#40B6E4"/>
         </svg>
         <button class="conv-toggle" type="button" aria-pressed="false" aria-label="Pause logo animation"><svg class="i-pause" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 1h3v10H2zM7 1h3v10H7z"/></svg><svg class="i-play" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 1l9 5-9 5z"/></svg></button>
       </div>
@@ -921,9 +919,9 @@ html.a11y .chapters button,html.a11y details>summary,html.a11y .btn,html.a11y .m
         <ol>
           <li>IASC. The Humanitarian Reset. Stocktake, October 2026.</li>
           <li>The Humanitarian Reset: Define, Deliver, Devolve, Defend.</li>
-          <li>Define. 62% of people assisted were in severity 4–5 areas: 36% in 2024, 43% in 2025, 62% in 2026, up 26 points since 2024.</li>
+          <li>Define. The site-cited 8 October record gives 62% for 2026; accessible October draft copies give 63%. The 2024 and 2025 values are 36% and 43%. This source-version difference remains open.</li>
           <li>Define. 75% of Humanitarian Needs and Response Plans include transition plans.</li>
-          <li>Deliver. 66 million people reached, including 41 million in the most severe locations, by October 2026.</li>
+          <li>Deliver. 66 million people reached by October 2026, including 41 million in the most severe locations across 24 operations. The introduction separately reports 40 million with life-saving support; overlap is not stated.</li>
           <li>Deliver. $4.53 billion in country-based pooled funds (as of 2 October 2026); 79% of operations have started or completed cluster simplification.</li>
           <li>Devolve. Broader local participation. Stronger country-level accountability.</li>
           <li>Defend. Principled humanitarian action. International humanitarian law. Human rights.</li>
@@ -952,14 +950,15 @@ html.a11y .chapters button,html.a11y details>summary,html.a11y .btn,html.a11y .m
     <!-- 100M / 66M / 41M: explained, never added -->
     <div class="counts" id="counts">
       <div>
-        <p class="eyebrow" style="color:var(--red-text)">Three people counts</p>
-        <h3>100 million, 66 million and 41 million are different measures</h3>
-        <p class="not">Do not add them together.</p>
+        <p class="eyebrow" style="color:var(--red-text)">Four reported measures</p>
+        <h3>Four figures, different definitions and denominators</h3>
+        <p class="not">Do not add or equate them.</p>
       </div>
       <ul>
-        <li><b class="num">100M</b><span><strong>Collective results.</strong> The Stocktake introduction reports collective results for 100 million people, “including 41 million with life-saving support”. The sources used for this page do not set out how the 100 million is counted or how it overlaps with people reached.</span></li>
-        <li><b class="num">66M</b><span><strong>People reached</strong> with some form of assistance and protection by October 2026: 45% of 148 million targeted in the GHO 2026 (Stocktake, Deliver).</span></li>
-        <li><b class="num">41M</b><span><strong>A subset of the 66 million</strong>, in locations with the most severe needs across 24 operations (Stocktake, Deliver). The introduction pairs the same 41 million with the 100 million figure; the relationship is listed as an open question in the <a href="#notes">data notes</a>.</span></li>
+        <li><b class="num">100M</b><span><strong>Collective results.</strong> The accessible Stocktake introduction reports results for 100 million people; its counting method and overlap with Deliver reach are not set out.</span></li>
+        <li><b class="num">40M</b><span><strong>Life-saving support.</strong> The same introduction says the 100M figure includes 40 million with life-saving support. Whether this group overlaps with the 41M severe-location figure is not stated.</span></li>
+        <li><b class="num">66M</b><span><strong>People reached.</strong> By October 2026, 66M of 148M targeted (45%) had received some form of assistance and protection.</span></li>
+        <li><b class="num">41M</b><span><strong>A subset of the 66M</strong> reached in locations with the most severe needs across 24 operations. Accessible October source copies report 63%; rounded 41M / 66M is approximately 62%.</span></li>
       </ul>
     </div>
 
@@ -1035,10 +1034,10 @@ html.a11y .chapters button,html.a11y details>summary,html.a11y .btn,html.a11y .m
         <ol class="cmp xl">
           <li><span class="y">2024</span><span class="track"><span class="fill" style="--v:36%"></span></span><b>36%</b></li>
           <li><span class="y">2025</span><span class="track"><span class="fill" style="--v:43%"></span></span><b>43%</b></li>
-          <li class="now"><span class="y">2026</span><span class="track"><span class="fill" style="--v:62%"></span><span class="alt" style="--a:55%" title="Presentation: 55%"></span></span><b>62%</b></li>
+          <li class="now"><span class="y">2026</span><span class="track"><span class="fill" style="--v:62%"></span><span class="alt" style="--a:63%" title="Accessible October source copies: 63%"></span></span><b>62%*</b></li>
         </ol>
         <p class="delta"><b>+26 pts</b> since 2024 (Stocktake series)</p>
-        <p class="disc"><span><b>Open discrepancy.</b> The presentation gives <b>55%</b> for 2026 (dashed line); the Stocktake gives <b>62%</b>. This page follows the more detailed Stocktake and shows both until the sources are formally reconciled.</span></p>
+        <p class="disc"><span><b>Source-version difference.</b> The site-cited 8 October record gives <b>62%</b>; the accessible four-page Stocktake draft and 17-slide presentation give <b>63%</b>. Rounded 41M / 66M values yield approximately 62%, but unrounded counts and the exact 8 October file are needed. The previously listed 55% presentation value is not supported by the accessible presentation reviewed.</span></p>
       </div>
       <div class="aside">
         <div>
@@ -1049,7 +1048,7 @@ html.a11y .chapters button,html.a11y details>summary,html.a11y .btn,html.a11y .m
             <li style="background:var(--sev4);color:#fff"><b>4</b>Extreme</li>
             <li style="background:var(--sev-5);color:#fff"><b>5</b>Catastrophic</li>
           </ol>
-          <p class="sev-bracket"><span>62% of people assisted</span></p>
+          <p class="sev-bracket"><span>62%* of people assisted</span></p>
         </div>
         <p style="font-size:15px"><strong>Severity 3 still matters.</strong> Response is concentrating at the top of the scale, but serious protection risks may also be present in severity 3 locations.</p>
         <p class="src">Source: Stocktake, Define. Level labels follow the JIAF scale. See <a href="#notes">data notes</a>.</p>
@@ -1099,7 +1098,7 @@ html.a11y .chapters button,html.a11y details>summary,html.a11y .btn,html.a11y .m
       <div>
         <ul>
           <li>“A smaller appeal footprint is a change in planning arrangements, rather than evidence of reduced needs.” (Stocktake)</li>
-          <li>The 62% (Stocktake) and 55% (presentation) values for 2026 are not yet reconciled.</li>
+          <li>The site-cited 8 October record reports 62%; accessible October draft copies report 63%. The exact 8 October file and unrounded counts are needed to reconcile the source-version difference.</li>
           <li>Cluster plans (2024–2025) and HNRPs (2026) are separate measures.</li>
           <li>Eight operations have planned transitions, five already accelerated; 20 country plans were reprioritized in April 2025.</li>
         </ul>
@@ -1139,7 +1138,7 @@ html.a11y .chapters button,html.a11y details>summary,html.a11y .btn,html.a11y .m
           <desc id="reach-d">Of 148 million people targeted, 66 million (45%) had been reached by October 2026, including 41 million in locations with the most severe needs across 24 operations. Each square sits inside the one before it. Squares are drawn to scale by area.</desc>
           <rect x="10" y="10" width="320" height="320" fill="#ECEEF2" stroke="#272E67" stroke-width="1.5"/>
           <rect x="10" y="116.3" width="213.7" height="213.7" fill="#272E67"/>
-          <rect x="10" y="161.6" width="168.4" height="168.4" fill="#E63946"/>
+          <rect x="10" y="161.6" width="168.4" height="168.4" fill="#FF4D59"/>
           <g font-family="Roboto Condensed,Arial Narrow,Roboto,sans-serif" font-weight="700" aria-hidden="true">
             <text x="26" y="58" font-size="36" fill="#1C2149">148M</text>
             <text x="26" y="151" font-size="28" fill="#fff">66M</text>
@@ -1151,7 +1150,7 @@ html.a11y .chapters button,html.a11y details>summary,html.a11y .btn,html.a11y .m
         <ul class="reach-key">
           <li><i style="background:#ECEEF2;box-shadow:inset 0 0 0 1.5px #272E67"></i><span><b>148M</b> people targeted in the GHO 2026</span></li>
           <li><i style="background:#272E67"></i><span><b>66M</b> reached with some form of assistance and protection (45%)</span></li>
-          <li><i style="background:#E63946"></i><span><b>41M</b> of them (62%) in locations with the most severe needs, across 24 operations</span></li>
+          <li><i style="background:#FF4D59"></i><span><b>41M</b> of them (62%) in locations with the most severe needs, across 24 operations</span></li>
         </ul>
         <p style="font-size:15px;color:var(--heading)"><strong>Nested, not added:</strong> 41M is inside 66M, which is inside 148M. The separate 100M collective-results figure is <a href="#counts">explained in the overview</a>.</p>
         <p class="src">Squares drawn to area. Source: Stocktake, Deliver.</p>
@@ -1175,7 +1174,7 @@ html.a11y .chapters button,html.a11y details>summary,html.a11y .btn,html.a11y .m
               <rect x="180" y="150" width="72" height="50" fill="none" stroke="#B9B4AB" stroke-width="1.5" stroke-dasharray="4 4"/>
               <text x="216" y="172" text-anchor="middle" font-size="12" fill="#595959">Not</text><text x="216" y="186" text-anchor="middle" font-size="12" fill="#595959">reported</text>
               <rect x="288" y="80" width="72" height="120" fill="#272E67"/>
-              <rect x="288" y="55" width="72" height="25" fill="#1f69b3"/>
+              <rect x="288" y="55" width="72" height="25" fill="#009EDB"/>
               <text x="324" y="45" text-anchor="middle" font-size="19" font-weight="700" fill="#1C2149">4.53</text>
               <text x="324" y="145" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">3.75</text>
               <text x="324" y="72" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">0.78</text>
@@ -1448,10 +1447,10 @@ html.a11y .chapters button,html.a11y details>summary,html.a11y .btn,html.a11y .m
           <rect x="178" y="68" width="164" height="24" fill="#F7F6F4"/><text x="260" y="85" text-anchor="middle" font-family="Roboto Condensed,Arial Narrow,sans-serif" font-size="14" font-weight="700" letter-spacing="3" fill="#1C2149">COMPLEMENTARITY</text>
           <g stroke="#B8BEE6" stroke-width="2"><line x1="260" y1="260" x2="133" y2="133"/><line x1="260" y1="260" x2="387" y2="133"/><line x1="260" y1="260" x2="133" y2="387"/><line x1="260" y1="260" x2="387" y2="387"/></g>
           <circle cx="260" cy="260" r="86" fill="#272E67"/>
-          <g font-family="Roboto Slab,Georgia,serif" font-weight="700" fill="#fff" text-anchor="middle"><text x="260" y="246" font-size="17">People affected</text><text x="260" y="268" font-size="17">by crises</text></g>
+          <g font-family="IASC Montserrat,Montserrat,sans-serif" font-weight="700" fill="#fff" text-anchor="middle"><text x="260" y="246" font-size="17">People affected</text><text x="260" y="268" font-size="17">by crises</text></g>
           <g font-family="Roboto Condensed,Arial Narrow,sans-serif" fill="#B8BEE6" text-anchor="middle" font-size="12"><text x="260" y="292">dignity · safety</text><text x="260" y="308">agency · protection</text></g>
           <g font-family="Roboto Condensed,Arial Narrow,sans-serif" font-weight="700" font-size="16" letter-spacing="1.5" text-anchor="middle">
-            <g transform="translate(133 133)"><circle r="44" fill="#fff" stroke="#1f69b3" stroke-width="3"/><text y="6" fill="#1C2149">DEFINE</text></g>
+            <g transform="translate(133 133)"><circle r="44" fill="#fff" stroke="#009EDB" stroke-width="3"/><text y="6" fill="#1C2149">DEFINE</text></g>
             <g transform="translate(387 133)"><circle r="44" fill="#fff" stroke="#272E67" stroke-width="3"/><text y="6" fill="#1C2149">DELIVER</text></g>
             <g transform="translate(387 387)"><circle r="44" fill="#fff" stroke="#1E6B3A" stroke-width="3"/><text y="6" fill="#1C2149">DEVOLVE</text></g>
             <g transform="translate(133 387)"><circle r="44" fill="#fff" stroke="#8A4B00" stroke-width="3"/><text y="6" fill="#1C2149">DEFEND</text></g>
@@ -1609,13 +1608,13 @@ html.a11y .chapters button,html.a11y details>summary,html.a11y .btn,html.a11y .m
       <caption class="sr-only">Differences between the Stocktake and the presentation, and open questions</caption>
       <thead><tr><th scope="col">Figure</th><th scope="col">Stocktake</th><th scope="col">Presentation / other</th></tr></thead>
       <tbody>
-        <tr><th scope="row">People assisted in severity 4–5, 2026</th><td>62%</td><td>55%</td></tr>
+        <tr><th scope="row">Severity 4–5 share, 2026</th><td>62% in site-cited 8 October record (exact file unavailable for this review)</td><td>63% in accessible four-page draft and 17-slide presentation; rounded 41M/66M is ~62%</td></tr>
         <tr><th scope="row">Country-based pooled funds</th><td>$4.53 bn, 2 Oct 2026</td><td>“nearly $4.49 billion”, end Sep</td></tr>
-        <tr><th scope="row">Transition plans 17% → 40%</th><td>Clusters, reported separately from HNRPs</td><td>Presented as HNRPs, one series to 75%</td></tr>
-        <tr><th scope="row">Local share outside US award</th><td>55% (44% direct), 28 Sep</td><td>53% (40% direct, 13% indirect)</td></tr>
+        <tr><th scope="row">Responsible transition planning</th><td>Website notes classify 17% and 40% as cluster-plan measures</td><td>Accessible four-page draft says 75% (15/20) HNRPs in 2026, following 17% and 40%; plan-level table needed</td></tr>
+        <tr><th scope="row">Local share</th><td>Site-cited 8 October record: 55% excluding / 20% including US Award Tranche I</td><td>Accessible 2026 copies: 53% outside initial US Award (40% direct, 13% indirect); presentation 55% is 2025</td></tr>
         <tr><th scope="row">Area-based coordination</th><td>14 operations; 7 named</td><td>Not quantified</td></tr>
-        <tr><th scope="row">People with collective results</th><td>100M (intro); 66M reached of 148M targeted (Deliver)</td><td>66M reached</td></tr>
-        <tr><th scope="row">The 41M figure</th><td>Paired with 100M in the introduction; a subset of 66M in Deliver</td><td>Open: counting method and overlap to be confirmed</td></tr>
+        <tr><th scope="row">Collective results and reach</th><td>100M collective results, including 40M with life-saving support (intro); 66M reached of 148M targeted, including 41M in severe locations (Deliver)</td><td>Different framings; method and overlap are not stated</td></tr>
+        <tr><th scope="row">The 40M and 41M figures</th><td>40M with life-saving support in the introduction; 41M in severe locations in Deliver</td><td>Different descriptions; overlap is not stated</td></tr>
         <tr><th scope="row">Transition-plan wording</th><td>HNRPs that outline steps towards responsible transition</td><td>Overview film: “include transition plans”</td></tr>
         <tr><th scope="row">AI framework, Oct 2026</th><td>For HWG endorsement</td><td>No endorsement record located (19 Nov 2026)</td></tr>
         <tr><th scope="row">Donor engagement, 27 Oct 2026</th><td>Next engagement</td><td>Held; EU statement published 27 Oct 2026</td></tr>
@@ -1648,7 +1647,7 @@ html.a11y .chapters button,html.a11y details>summary,html.a11y .btn,html.a11y .m
     <div class="row">
       <div>
         <!-- Logo slot: official IASC logo (reversed/white version) goes here -->
-        <p class="logo" style="margin-bottom:12px"><span class="wm">IASC</span><span class="tl">Inter-Agency<br>Standing Committee</span></p>
+        <p class="logo" style="margin-bottom:12px"><img class="iasc-logo" src="/sol/assistant/media/IASC_Logo_Blue.png" width="800" height="158" alt="Inter-Agency Standing Committee (IASC)"></p>
         <p style="font-size:14px;max-width:340px">The longest-standing and highest-level humanitarian coordination forum of the UN system.</p>
       </div>
       <nav aria-label="IASC online"><ul>
@@ -1658,7 +1657,7 @@ html.a11y .chapters button,html.a11y details>summary,html.a11y .btn,html.a11y .m
         <li><a href="https://www.facebook.com/FriendsofIASC">Facebook: FriendsofIASC</a></li>
       </ul></nav>
     </div>
-    <p class="fine">Draft for discussion. All figures as reported in the IASC Humanitarian Reset Stocktake (draft, 8 October 2026 revision) and presentation, October 2026. Version 3 (parallel edition, status reviewed <!-- gen:asof -->19 November 2026<!-- /gen:asof -->). <a href="/sol/reset/">Short edition</a>.</p>
+    <p class="fine">Draft for discussion. All figures as reported in the IASC Humanitarian Reset Stocktake (draft, 8 October 2026 revision) and presentation, October 2026. Version 3 (extended edition; source and status review <!-- gen:asof -->23 November 2026<!-- /gen:asof -->). <a href="/sol/reset/">Short edition</a>.</p>
   </div>
 </footer>
 <script>
@@ -1710,7 +1709,7 @@ html.a11y .chapters button,html.a11y details>summary,html.a11y .btn,html.a11y .m
     {c:1,p:[[10,92],[38,92],[47,62],[43,56],[35,60]]}, /* lower-left  · OCHA blue  */
     {c:2,p:[[62,92],[90,92],[65,60],[57,56],[53,62]]}  /* lower-right · light blue */
   ];
-  var COLORS=['#FFFFFF','#1F69B3','#82B5E9','#144372','#1C2149'];
+  var COLORS=['#FFFFFF','#009EDB','#40B6E4','#144372','#1C2149'];
   var BLEED=20;           /* canvas extends 20 viewBox units (20%) beyond the logo on every side */
   var CYCLE=8.5;          /* seconds per loop */
 
