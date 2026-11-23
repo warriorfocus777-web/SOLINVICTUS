@@ -156,12 +156,13 @@ def gen_asof():
 
 GENERATORS={"kpis":gen_kpis,"register":gen_register,"roadmap":gen_roadmap,"workstreams":gen_workstreams,"asof":gen_asof,"short-metrics":gen_short_metrics,"short-notes":gen_short_notes}
 
-def render_page(source):
-    for name,generator in GENERATORS.items():
-        pattern=re.compile(r"(<!-- gen:%s -->)(.*?)(<!-- /gen:%s -->)"%(name,name),re.S)
+def render_page(source, marker_names):
+    for name in marker_names:
+        generator = GENERATORS[name]
+        pattern = re.compile(r"(<!-- gen:%s -->)(.*?)(<!-- /gen:%s -->)" % (name, name), re.S)
         if not pattern.search(source):
             raise ValueError(f"required generated marker gen:{name} is missing")
-        source=pattern.sub(lambda m:m.group(1)+generator()+m.group(3),source)
+        source = pattern.sub(lambda match: match.group(1) + generator() + match.group(3), source)
     return source
 
 def project_registry(registry):
@@ -196,8 +197,8 @@ def project_registry(registry):
 def main():
     current_page=PAGE.read_text(encoding="utf-8")
     current_short=SHORT_PAGE.read_text(encoding="utf-8")
-    rendered_page=render_page(current_page)
-    rendered_short=render_page(current_short)
+    rendered_page=render_page(current_page, ("kpis", "register", "roadmap", "workstreams", "asof"))
+    rendered_short=render_page(current_short, ("short-metrics", "short-notes"))
     current_registry=json.loads(REGISTRY.read_text(encoding="utf-8"))
     rendered_registry=project_registry(current_registry)
     if "--check" in sys.argv:
