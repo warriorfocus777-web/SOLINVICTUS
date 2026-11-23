@@ -7,6 +7,7 @@ correct answer, simulation steps link up, and no URL is fabricated
 import json, sys, os, re
 HERE = os.path.dirname(os.path.abspath(__file__))
 R = json.load(open(os.path.join(HERE, "registry.json"), encoding="utf-8"))
+DATA = json.load(open(os.path.join(HERE, "..", "reset", "v3", "data", "indicators.json"), encoding="utf-8"))
 errs = []
 src = {s["id"]: s for s in R["sources"]}
 if len(src) != len(R["sources"]): errs.append("duplicate source id")
@@ -34,7 +35,14 @@ def cite(where, ids):
         if i not in src: errs.append(f"{where}: unknown source '{i}'")
 for t in R["topics"]: cite("topic "+t["id"], t["sources"])
 ind = {i["id"] for i in R["indicators"]}
-for i in R["indicators"]: cite("indicator "+i["id"], i["sources"])
+canonical = {i["id"]: i for i in DATA["indicators"]}
+if ind != set(canonical): errs.append("assistant indicators do not match canonical indicators.json ids")
+for i in R["indicators"]:
+    cite("indicator "+i["id"], i["sources"])
+    c = canonical.get(i["id"])
+    if c and any(i.get(k) != c.get(k) for k in ["value","denominator","period","definition","status","caveat"]):
+        errs.append("indicator mismatch with canonical data: "+i["id"])
+if R.get("discrepancies") != DATA.get("discrepancies"): errs.append("assistant discrepancy ledger does not match canonical data")
 dis = {d["id"] for d in R["discrepancies"]}
 for d in R["discrepancies"]:
     cite("disc "+d["id"], d["sources"]); cite("disc values "+d["id"], [v["source"] for v in d["values"]])

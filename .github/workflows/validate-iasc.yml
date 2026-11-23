@@ -28,5 +28,7 @@ jobs:
           python-version: "3.x"
       - name: Validate source registry and references
         run: python3 sol/assistant/check_registry.py
-      - name: Check extended Reset edition is generated from current data
+      - name: Check extended Reset and assistant data are generated from canonical data
         run: python3 sol/reset/v3/build.py --check
+      - name: Validate IASC page structure and brand tokens
+        run: python3 sol/reset/quality_check.py

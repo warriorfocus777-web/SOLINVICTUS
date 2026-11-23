@@ -1,26 +1,28 @@
 {
-  "_about": "Single source for the headline indicators, the indicator register and the roadmap on /sol/reset/v3/. Edit here, then run: python3 sol/reset/v3/build.py. Values are as reported in draft sources; do not change a value without a cleared source.",
-  "as_of": "19 November 2026",
+  "_about": "Canonical source for IASC Reset indicators, reporting metadata, source-version notes and the reconciliation ledger. The extended Stocktake and assistant registry are generated from this file. Never change a value without recording the exact source version, denominator, reporting period and caveat.",
+  "as_of": "23 November 2026",
   "sources": {
     "stocktake": {
       "title": "Humanitarian Reset: Stock-take",
       "short": "Stocktake",
       "issuer": "Inter-Agency Standing Committee (IASC)",
       "date": "October 2026",
-      "version": "Draft, 8 October 2026 revision",
+      "version": "Draft, 8 October 2026 revision (referenced by the website; exact file unavailable in this review archive)",
       "format": "Report (Word)",
-      "status": "Draft pending clearance · not yet published",
-      "url": null
+      "status": "Draft pending clearance · exact revision not re-verified in this review",
+      "url": null,
+      "note": "The website attributes several figures to this 8 October revision. The exact file was not available in the repository or project source archive for this review; figures attributed to it are site-reported and not independently re-verified."
     },
     "presentation": {
       "title": "The Humanitarian Reset",
       "short": "Presentation",
       "issuer": "Inter-Agency Standing Committee (IASC)",
       "date": "October 2026",
-      "version": "Draft, 17 slides",
+      "version": "Draft, 17 slides (accessible copy reviewed; October 2026)",
       "format": "Presentation (PowerPoint)",
       "status": "Draft pending clearance · not yet published",
-      "url": null
+      "url": null,
+      "note": "Accessible 17-slide copy reviewed. Reports 63% for severity 4–5 prioritization; 66M reached including 41M in the most severe locations; nearly $4.49bn CBPF at end-September; and 53% local/national share outside the initial US Award (40% direct + 13% indirect). Draft pending clearance."
     },
     "undp": {
       "title": "Humanitarian reset — in conversation with Tom Fletcher",
@@ -41,6 +43,40 @@
       "format": "Web page",
       "status": "Published",
       "url": "https://www.eeas.europa.eu/delegations/un-new-york/eu-statement-un-inter-agency-standing-committee-principals-donor-engagement-humanitarian-reset_en"
+    },
+    "stocktake-accessible-4page": {
+      "id": "stocktake-accessible-4page",
+      "kind": "document",
+      "title": "Humanitarian Reset: Stock-take",
+      "short": "Accessible Stocktake draft",
+      "issuer": "Inter-Agency Standing Committee (IASC)",
+      "date": "October 2026",
+      "version": "Accessible four-page draft copy; filename includes 25 September 2026",
+      "format": "Report (PDF)",
+      "status": "draft",
+      "clearance": "Pending clearance · not yet published",
+      "tier": 1,
+      "url": null,
+      "last_checked": "2026-11-23",
+      "context": "reset",
+      "note": "Accessible copy reports 63% in severity 4–5 areas; 100M collective results including 40M with life-saving support; and 66M reached, including 41M in the most severe locations across 24 operations."
+    },
+    "stocktake-summary-1page": {
+      "id": "stocktake-summary-1page",
+      "kind": "document",
+      "title": "Humanitarian Reset / Stock-take, October 2026",
+      "short": "One-page Stocktake summary",
+      "issuer": "Inter-Agency Standing Committee (IASC)",
+      "date": "October 2026",
+      "version": "Accessible one-page draft summary",
+      "format": "Briefing PDF",
+      "status": "draft",
+      "clearance": "Pending clearance · not yet published",
+      "tier": 1,
+      "url": null,
+      "last_checked": "2026-11-23",
+      "context": "reset",
+      "note": "Accessible one-page draft summary. Retains 100M/40M and 66M/41M framings and labels reach figures as not yet reconciled."
     }
   },
   "kpi_groups": [
@@ -114,7 +150,9 @@
       "caveat": "Reach is not proof of quality, sufficiency or sustained outcome. Not the same measure as the 100M collective-results figure.",
       "comparison_basis": "41M of the 66M were in the most severe locations (nested, not additional).",
       "label": "people reached of 148M targeted, by October 2026",
-      "note": "Reach is not proof of quality or outcome."
+      "note": "Reach is not proof of quality or outcome.",
+      "short_label": "people reached of 148M targeted, by October 2026",
+      "short_note": "Reach is not proof of quality, sufficiency or outcome."
     },
     {
       "id": "severe41",
@@ -122,15 +160,22 @@
       "title": "People reached in locations with the most severe needs",
       "value": "41M",
       "unit": "people",
-      "denominator": "66M reached (62%)",
+      "denominator": "66M reached (63% as reported in accessible draft sources; 41M / 66M rounded figures yield approximately 62%)",
       "period": "By October 2026",
       "geographic_scope": "24 operations",
       "definition": "Subset of people reached who were in locations with the most severe needs.",
       "source": "stocktake",
       "source_section": "Deliver",
       "status": "Draft",
-      "caveat": "Nested within the 66M; do not add.",
-      "comparison_basis": "Subset of 66M."
+      "caveat": "The accessible four-page Stocktake draft and 17-slide presentation report 41M as 63% of those reached. Dividing rounded headline values (41M / 66M) gives approximately 62%; unrounded counts are not supplied. This is a source/calculation qualification, not a separate population. The 41M is nested within the 66M; do not add.",
+      "comparison_basis": "Subset of 66M.",
+      "assistant_sources": [
+        "stocktake",
+        "stocktake-accessible-4page",
+        "stocktake-summary-1page",
+        "presentation"
+      ],
+      "note": "41M in most severe locations; 63% as reported in accessible sources. Rounded 41M / 66M gives approximately 62%."
     },
     {
       "id": "collective100",
@@ -141,12 +186,46 @@
       "denominator": "Not stated",
       "period": "Nineteen months after launch",
       "geographic_scope": "Not stated",
-      "definition": "Referred to in the Stocktake introduction. The counting method and its overlap with the 66M reached are not set out in the sources used for this page.",
+      "definition": "The accessible October Stocktake introduction reports collective results for 100 million people, including 40 million with life-saving support. The counting method, denominator and overlap with the 66M Deliver reach measure are not set out.",
       "source": "stocktake",
       "source_section": "Introduction",
       "status": "Draft · definition pending",
-      "caveat": "Not interchangeable with the 66M reached; not additive with 66M or 41M.",
-      "comparison_basis": "None established."
+      "caveat": "Do not treat the 100M collective-results figure as the same measure as 66M reached. The accessible introduction says 40M had life-saving support; Deliver separately reports 41M in the most severe locations. The relationship and overlap of the 40M and 41M groups are not documented.",
+      "comparison_basis": "None established.",
+      "assistant_sources": [
+        "stocktake",
+        "stocktake-accessible-4page",
+        "stocktake-summary-1page"
+      ],
+      "note": "100M collective results; introduction separately says 40M with life-saving support. Method and overlap with Deliver reach not stated."
+    },
+    {
+      "id": "lifeSaving40",
+      "pillar": "overview",
+      "title": "People with life-saving support in the introductory collective-results framing",
+      "value": "40M",
+      "unit": "people",
+      "denominator": "100M collective-results framing (method and base not stated)",
+      "period": "2026 · nineteen months after launch",
+      "geographic_scope": "Not stated",
+      "definition": "The accessible October Stocktake introduction reports collective results for 100 million people, including 40 million with life-saving support.",
+      "source": "stocktake",
+      "source_section": "Introduction",
+      "status": "Draft · method not stated",
+      "caveat": "This 40M figure is distinct from the 41M reported in Deliver as people reached in locations with the most severe needs. The sources do not establish whether the groups overlap.",
+      "comparison_basis": "Do not add to or equate with the 66M reached or 41M severe-location subset.",
+      "assistant_kind": "reach",
+      "assistant_aliases": [
+        "40 million",
+        "40m",
+        "life-saving support",
+        "life saving support"
+      ],
+      "assistant_sources": [
+        "stocktake",
+        "stocktake-accessible-4page",
+        "stocktake-summary-1page"
+      ]
     },
     {
       "id": "severity45",
@@ -160,11 +239,18 @@
       "definition": "Share of people receiving assistance and protection who are in areas of intersectoral severity 4 and 5 (JIAF scale).",
       "source": "stocktake",
       "source_section": "Define",
-      "status": "Draft · discrepancy open",
-      "caveat": "The presentation reports 55% for 2026. Both values are shown until the sources are reconciled. Serious protection risks may also exist in severity 3 locations.",
-      "comparison_basis": "Same measure 2024–2026 as reported in the Stocktake.",
+      "status": "Draft · source-version verification required",
+      "caveat": "The website's cited 8 October revision records 62%, but that exact file was not available for this review. The accessible four-page October draft and 17-slide presentation both report 63%; neither provides unrounded underlying counts. The accessible documents reviewed do not support the previously listed 55% presentation value. Keep the version difference visible pending the exact 8 October file and calculation base.",
+      "comparison_basis": "2024 36%; 2025 43%; 2026 value requires exact-version reconciliation (62% in the site-cited 8 October record; 63% in accessible October source copies).",
       "label": "of people assisted are in severity 4–5 areas, 2026",
-      "note": "The presentation reports 55%; not yet reconciled."
+      "note": "Site-cited 8 Oct record: 62%; accessible October source copies: 63%. Exact 8 Oct file and unrounded counts required to reconcile.",
+      "assistant_sources": [
+        "stocktake",
+        "stocktake-accessible-4page",
+        "presentation"
+      ],
+      "short_label": "of people assisted are in severity 4–5 areas",
+      "short_note": "The site-cited 8 October record gives 62%; accessible October draft copies report 63%. Exact file and unrounded counts needed."
     },
     {
       "id": "transition",
@@ -183,8 +269,15 @@
       "source": "stocktake",
       "source_section": "Define",
       "status": "Draft",
-      "caveat": "Earlier figures (17%, 40%) refer to cluster plans, reported separately; not a continuous series.",
-      "comparison_basis": "No like-for-like earlier value."
+      "caveat": "The accessible four-page October draft says 75% (15 of 20) HNRPs in 2026, up from 40% in 2025 and 17% in 2024. The project implementation brief separately classifies the earlier 17% and 40% figures as cluster-plan measures. The underlying plan-level table is not supplied here; comparability of the three values must be verified before presenting them as a continuous trend.",
+      "comparison_basis": "No like-for-like earlier value.",
+      "assistant_sources": [
+        "stocktake",
+        "stocktake-accessible-4page",
+        "presentation"
+      ],
+      "short_label": "of HNRPs outline steps towards responsible transition",
+      "short_note": "15 of 20 plans, 2026. The comparison with earlier plan series needs verification."
     },
     {
       "id": "clusters",
@@ -203,7 +296,9 @@
       "caveat": "Started or completed, not 79% completed. No earlier figure is reported, so no trend is shown.",
       "comparison_basis": "None.",
       "label": "of operations have started or completed cluster simplification, Oct 2026",
-      "note": "Started or completed, not completed. No trend reported."
+      "note": "Started or completed, not completed. No trend reported.",
+      "short_label": "of operations have started or completed cluster simplification",
+      "short_note": "Started or completed; not 79% completed."
     },
     {
       "id": "hpc",
@@ -236,7 +331,9 @@
       "source_section": "Define",
       "status": "Draft",
       "caveat": "The hyper-prioritized plan is 55% funded ($13.63bn of $24.94bn); the two denominators differ.",
-      "comparison_basis": "Separate from hyper-prioritized plan."
+      "comparison_basis": "Separate from hyper-prioritized plan.",
+      "short_label": "raised against the GHO 2026, end September",
+      "short_note": "Raised funding is not the same as disbursement."
     },
     {
       "id": "cbpf",
@@ -251,10 +348,45 @@
       "source": "stocktake",
       "source_section": "Deliver",
       "status": "Draft · two dates",
-      "caveat": "The presentation reports nearly $4.49bn at end September; the gap reflects the different cut-off dates. Contributions are not disbursements.",
+      "caveat": "The site-cited 8 October revision reports $4.53bn as of 2 October; the accessible four-page draft and 17-slide presentation report nearly $4.49bn at end-September. The different cut-off dates may matter, but the records do not prove the cause of the difference. Contributions are not disbursements.",
       "comparison_basis": "4.3 times the 2024 amount; no 2025 figure reported.",
       "label": "in country-based pooled funds, as of 2 Oct 2026 (×4.3 on 2024)",
-      "note": "Presentation: nearly $4.49bn at end September."
+      "note": "$4.53bn as of 2 Oct in site-cited 8 Oct record; nearly $4.49bn at end-September in accessible copies.",
+      "assistant_sources": [
+        "stocktake",
+        "stocktake-accessible-4page",
+        "presentation"
+      ],
+      "short_label": "in country-based pooled funds, as of 2 October 2026",
+      "short_note": "Site-cited 8 October record: $4.53bn as of 2 Oct; accessible October copies: nearly $4.49bn at end-September."
+    },
+    {
+      "id": "cva",
+      "pillar": "deliver",
+      "title": "Cash and voucher assistance share of total funding",
+      "value": "23%",
+      "unit": "share",
+      "denominator": "Total humanitarian funding",
+      "period": "2025 (19.6% in 2024)",
+      "geographic_scope": "Reported at global level",
+      "definition": "Cash and voucher assistance as a share of total funding. The source material describes an envisaged target of 35%; it separately reports a 2026 CBPF allocation of $702M (32% of CBPF funding).",
+      "source": "stocktake",
+      "source_section": "Deliver",
+      "status": "Draft · target status requires confirmation",
+      "caveat": "Do not confuse CVA as a share of total humanitarian funding with CVA as a share of CBPF allocations. The 35% and 85% targets are described as envisaged, not achieved results.",
+      "comparison_basis": "2024 19.6%; 2025 23%; separate 2026 CBPF allocation share: $702M / 32%.",
+      "assistant_kind": "output",
+      "assistant_aliases": [
+        "cash",
+        "cva",
+        "voucher",
+        "cash and voucher"
+      ],
+      "assistant_sources": [
+        "stocktake",
+        "presentation",
+        "rs-deliver"
+      ]
     },
     {
       "id": "local",
@@ -269,10 +401,44 @@
       "source": "stocktake",
       "source_section": "Devolve",
       "status": "Draft · verification H1 2027",
-      "caveat": "Same 2026 portfolio counted two ways; not a trend. 2024 baseline was 47% ($435M).",
+      "caveat": "The site-cited 8 October revision reports 55% excluding and 20% including US Award Tranche I as of 28 September. The accessible four-page draft and presentation separately report 53% outside the initial US Award (40% direct + 13% indirect); the accessible presentation reports 55% for 2025. These values have different versions, bases and/or periods and are not a continuous trend. 2026 data remain subject to verification in H1 2027.",
       "comparison_basis": "Not like-for-like with 2024.",
       "label": "local and national share of 2026 pooled-fund allocations, 28 Sep",
-      "note": "Same portfolio counted two ways; not a trend."
+      "note": "55% / 20% in site-cited 8 Oct revision; accessible October source copies separately report 53% outside the initial US Award. Not like-for-like.",
+      "assistant_sources": [
+        "stocktake",
+        "stocktake-accessible-4page",
+        "presentation"
+      ]
+    },
+    {
+      "id": "local-hct-seats",
+      "pillar": "devolve",
+      "title": "HCT seats held by local and national organizations",
+      "value": "14%",
+      "unit": "share",
+      "denominator": "Humanitarian Country Team seats; seat count not stated",
+      "period": "October 2026 source reporting",
+      "geographic_scope": "Country-level HCTs",
+      "definition": "Share of HCT seats held by local and national organizations, described in the one-page Stocktake summary as the primary authority indicator.",
+      "source": "stocktake-summary-1page",
+      "source_section": "Devolve",
+      "status": "Draft",
+      "caveat": "Representation is not the same as decision-making authority, influence or control over resources. The source does not provide the underlying count or a disaggregated country roster.",
+      "comparison_basis": "No comparison series supplied in the accessible one-page summary.",
+      "assistant_kind": "representation",
+      "assistant_aliases": [
+        "14%",
+        "local seats",
+        "hct seats",
+        "representation",
+        "local representation"
+      ],
+      "assistant_sources": [
+        "stocktake",
+        "stocktake-accessible-4page",
+        "stocktake-summary-1page"
+      ]
     },
     {
       "id": "wlo",
@@ -289,6 +455,32 @@
       "status": "Draft · partial year",
       "caveat": "Partial-year position; not comparable with full-year 2024 or 2025 results.",
       "comparison_basis": "Annual target 15%."
+    },
+    {
+      "id": "compacts",
+      "pillar": "devolve",
+      "title": "ERC–HC compacts",
+      "value": "100%",
+      "unit": "share",
+      "denominator": "Number of ERC–HC compacts; count not stated",
+      "period": "Latest reported (70% in 2024)",
+      "geographic_scope": "Country leadership arrangements",
+      "definition": "Reported uptake of ERC–HC leadership accountability compacts.",
+      "source": "stocktake",
+      "source_section": "Devolve",
+      "status": "Draft",
+      "caveat": "A process/coverage measure of accountability arrangements; it does not establish the quality or effect of the compacts.",
+      "comparison_basis": "70% in 2024; latest reported value 100%.",
+      "assistant_kind": "process",
+      "assistant_aliases": [
+        "compacts",
+        "erc hc compacts",
+        "hc compacts"
+      ],
+      "assistant_sources": [
+        "stocktake",
+        "rs-devolve"
+      ]
     },
     {
       "id": "feedback",
@@ -321,6 +513,34 @@
       "status": "Draft · preliminary",
       "caveat": "Perceptions of respondents; not representative of the wider humanitarian community. Delayed country responses may change the findings.",
       "comparison_basis": "None."
+    },
+    {
+      "id": "risk-sharing",
+      "pillar": "devolve",
+      "title": "Respondents who consider financial, operational and compliance risks equitably shared",
+      "value": "26%",
+      "unit": "share",
+      "denominator": "HCT Perception Survey respondents",
+      "period": "Preliminary, September 2026",
+      "geographic_scope": "Respondents in participating HCT contexts",
+      "definition": "Share of Perception Survey respondents who consider financial, operational and compliance risks equitably shared.",
+      "source": "stocktake",
+      "source_section": "Devolve",
+      "status": "Draft · preliminary",
+      "caveat": "Perception Survey respondents are coordination actors, not a representative sample of all humanitarian actors or people affected by crises. Delayed country responses may change findings.",
+      "comparison_basis": "Related but separate from the 56% perceiving more inclusive coordination.",
+      "assistant_kind": "perception",
+      "assistant_aliases": [
+        "risk sharing",
+        "equitable risk",
+        "26%",
+        "financial operational compliance risk"
+      ],
+      "assistant_sources": [
+        "stocktake",
+        "stocktake-accessible-4page",
+        "rs-devolve"
+      ]
     }
   ],
   "milestones": [
@@ -434,6 +654,324 @@
       "reported": "Ongoing",
       "status": "ongoing",
       "note": "No results reported yet."
+    }
+  ],
+  "reviewed_at": "2026-11-23",
+  "publication_status": "Independent explainer · underlying October 2026 IASC source materials remain drafts pending clearance",
+  "source_review": {
+    "reviewed_at": "2026-11-23",
+    "method": "Compared the repository's cited 8 October 2026 Stocktake revision with the accessible four-page October Stocktake draft, one-page October Stocktake summary and 17-slide October presentation in the project source archive.",
+    "limitation": "The exact Stocktake file identified by the website as the 8 October 2026 revision was not present in the repository or accessible source archive used for this review. Values attributed to it are site-reported and have not been independently re-verified against that exact file.",
+    "accessible_documents": [
+      {
+        "id": "stocktake-accessible-4page",
+        "title": "Draft - Humanitarian_Reset_Stocktake_Oct2026_25092026-2.pdf",
+        "description": "Four-page October 2026 Stocktake draft. Reports 63% for severity 4–5 prioritization; 100M collective results including 40M with life-saving support; 66M of 148M reached, including 41M in the most severe locations."
+      },
+      {
+        "id": "stocktake-summary-1page",
+        "title": "IASC_Humanitarian_Reset_Stocktake_Oct2026_DRAFT.pdf",
+        "description": "One-page October 2026 Stocktake summary. Retains the 100M / 40M and 66M / 41M framing and labels the reach figures as not yet reconciled."
+      },
+      {
+        "id": "presentation",
+        "title": "Humanitarian Reset Presentation_October 2026-2.pdf",
+        "description": "17-slide October 2026 draft presentation. Reports 63% for severity 4–5 prioritization; 66M reached including 41M in the most severe locations; nearly $4.49bn CBPF at end-September; and 53% local/national share outside the initial US Award (40% direct + 13% indirect)."
+      }
+    ]
+  },
+  "discrepancies": [
+    {
+      "id": "severity-45",
+      "label": "People assisted in severity 4–5 areas, 2026",
+      "keywords": [
+        "62",
+        "63",
+        "55",
+        "severity",
+        "4-5",
+        "4–5"
+      ],
+      "values": [
+        {
+          "source": "stocktake",
+          "value": "62% in the 8 October 2026 revision referenced by the website; exact file not available in the review archive"
+        },
+        {
+          "source": "stocktake-accessible-4page",
+          "value": "63% in the accessible four-page October Stocktake draft"
+        },
+        {
+          "source": "presentation",
+          "value": "63% in the accessible 17-slide October presentation"
+        }
+      ],
+      "explanation": "The site-cited 8 October revision records 62%, while the accessible four-page draft and 17-slide presentation both report 63%. Dividing rounded headline values 41M by 66M gives approximately 62%, but unrounded counts are not supplied. The accessible source copies reviewed do not support the previously listed 55% presentation value. The exact 8 October file and calculation base are required to resolve this.",
+      "do_not": "Describe 62% as independently verified against the 8 October file, retain 55% as the presentation value without a supporting file, or substitute a derived percentage for the source-reported value.",
+      "sources": [
+        "stocktake",
+        "stocktake-accessible-4page",
+        "presentation"
+      ]
+    },
+    {
+      "id": "reach-framing",
+      "label": "100M collective results, 40M life-saving support, 66M reached and 41M severe-location reach",
+      "keywords": [
+        "100",
+        "40",
+        "66",
+        "41",
+        "148",
+        "life-saving",
+        "reached",
+        "collective"
+      ],
+      "values": [
+        {
+          "source": "stocktake-accessible-4page",
+          "value": "Introduction: 100M collective results, including 40M with life-saving support"
+        },
+        {
+          "source": "stocktake-accessible-4page",
+          "value": "Deliver: 66M of 148M targeted reached; 41M of those in the most severe locations across 24 operations"
+        },
+        {
+          "source": "stocktake-summary-1page",
+          "value": "Retains 100M / 40M and 66M / 41M framings; labels reach figures unreconciled"
+        },
+        {
+          "source": "presentation",
+          "value": "66M reached, including 41M in the most severe locations"
+        }
+      ],
+      "explanation": "These are not interchangeable measures. The accessible introduction describes 100M collective results including 40M with life-saving support. Deliver separately reports 66M reached out of 148M targeted, including 41M in the most severe locations. The sources do not specify the counting method or overlap for 100M, nor whether the 40M life-saving-support group overlaps with the 41M severe-location group.",
+      "do_not": "Add the figures, equate 40M with 41M, or describe 100M as the same people-reached measure as 66M.",
+      "sources": [
+        "stocktake-accessible-4page",
+        "stocktake-summary-1page",
+        "presentation"
+      ]
+    },
+    {
+      "id": "cbpf-date",
+      "label": "Country-based pooled funds, 2026",
+      "keywords": [
+        "4.53",
+        "4.49",
+        "cbpf",
+        "pooled"
+      ],
+      "values": [
+        {
+          "source": "stocktake",
+          "value": "$4.53bn as of 2 October 2026 (8 October revision referenced by the site)"
+        },
+        {
+          "source": "stocktake-accessible-4page",
+          "value": "Nearly $4.49bn at end-September 2026"
+        },
+        {
+          "source": "presentation",
+          "value": "Nearly $4.49bn at end-September 2026"
+        }
+      ],
+      "explanation": "The reporting cut-off dates differ. The available records do not include the underlying contribution register needed to determine whether the difference is fully explained by timing. Contributions are not disbursements.",
+      "do_not": "Describe the gap as verified growth, a correction or an accounting error without the underlying fund contribution records.",
+      "sources": [
+        "stocktake",
+        "stocktake-accessible-4page",
+        "presentation"
+      ]
+    },
+    {
+      "id": "local-share",
+      "label": "Local and national share of pooled-fund allocations",
+      "keywords": [
+        "55",
+        "20",
+        "53",
+        "44",
+        "local",
+        "tranche",
+        "direct",
+        "indirect"
+      ],
+      "values": [
+        {
+          "source": "stocktake",
+          "value": "55% excluding US Award Tranche I; 20% including it, as of 28 September 2026 (8 October revision referenced by the site)"
+        },
+        {
+          "source": "stocktake-accessible-4page",
+          "value": "53% outside the initial US Award, including 40% direct and 13% indirect"
+        },
+        {
+          "source": "presentation",
+          "value": "53% outside the initial US Award, including 40% direct and 13% indirect; 55% is the 2025 figure"
+        }
+      ],
+      "explanation": "The accessible draft and presentation report a 53% 2026 share outside the initial US Award, while the site-cited 8 October version records 55% excluding and 20% including US Award Tranche I. The presentation's 55% is separately a 2025 figure. Definitions, inclusion criteria and cut-offs must be reconciled against the exact 8 October file and underlying allocation data. 2026 values remain subject to verification in H1 2027.",
+      "do_not": "Treat 55%, 20% and 53% as a single series, compare them as like-for-like trend values, or infer a change in authority from allocation shares alone.",
+      "sources": [
+        "stocktake",
+        "stocktake-accessible-4page",
+        "presentation"
+      ]
+    },
+    {
+      "id": "transition-series",
+      "label": "Responsible transition planning, 2024–2026",
+      "keywords": [
+        "17",
+        "40",
+        "75",
+        "transition",
+        "hnrp",
+        "cluster",
+        "series"
+      ],
+      "values": [
+        {
+          "source": "stocktake-accessible-4page",
+          "value": "75% (15 of 20) 2026 HNRPs; draft text says up from 40% in 2025 and 17% in 2024"
+        },
+        {
+          "source": "stocktake",
+          "value": "The site's implementation brief classifies the 17% and 40% earlier values as cluster-plan measures, separate from 2026 HNRPs"
+        }
+      ],
+      "explanation": "The accessible four-page draft's prose presents 17%, 40% and 75% as a transition-planning comparison. The implementation brief and current site notes classify the earlier 17% and 40% as cluster-plan measures. The plan-level source table is not available in the reviewed archive, so the measurement unit and comparability cannot be settled.",
+      "do_not": "Draw one continuous trend or claim a 58-point improvement until the plan types and denominator for each year are confirmed.",
+      "sources": [
+        "stocktake",
+        "stocktake-accessible-4page",
+        "presentation"
+      ]
+    },
+    {
+      "id": "area-based",
+      "label": "Area-based coordination",
+      "keywords": [
+        "area-based",
+        "area based",
+        "14 operations"
+      ],
+      "values": [
+        {
+          "source": "stocktake-accessible-4page",
+          "value": "14 operations; seven country names are listed in the accessible four-page draft"
+        },
+        {
+          "source": "presentation",
+          "value": "Workstream reported as completed; not quantified on the slide"
+        }
+      ],
+      "explanation": "The accessible Stocktake gives a count of 14 operations but names seven in the list. The presentation reports the workstream as completed without quantifying it. Confirm whether the seven names are examples or the full list.",
+      "do_not": "Infer that 14 is a complete country roster or that workstream completion means area-based coordination is operating everywhere.",
+      "sources": [
+        "stocktake-accessible-4page",
+        "presentation"
+      ]
+    },
+    {
+      "id": "transition-status",
+      "label": "Completed workstreams versus operation-level rollout",
+      "keywords": [
+        "79",
+        "simplified clusters",
+        "completed",
+        "workstream",
+        "rollout"
+      ],
+      "values": [
+        {
+          "source": "presentation",
+          "value": "Simplified Clusters listed under workstreams completed"
+        },
+        {
+          "source": "stocktake-accessible-4page",
+          "value": "79% of operations had started or completed cluster simplification by October 2026"
+        }
+      ],
+      "explanation": "The presentation's 'completed' label refers to the workstream milestone; the Stocktake's 79% refers to operation-level rollout, combining operations that started or completed simplification. These statements describe different levels of completion.",
+      "do_not": "Rewrite the 79% figure as '79% completed' or imply that every operation has completed simplification.",
+      "sources": [
+        "stocktake-accessible-4page",
+        "presentation"
+      ]
+    },
+    {
+      "id": "defend-evidence",
+      "label": "Defend evidence and measurement",
+      "keywords": [
+        "defend",
+        "qualitative",
+        "score",
+        "indicator"
+      ],
+      "values": [
+        {
+          "source": "stocktake-accessible-4page",
+          "value": "Qualitative reporting; no numerical Defend indicator supplied"
+        }
+      ],
+      "explanation": "The accessible Stocktake describes advocacy, support for frontline leadership, protection, IHL/IHRL and PSEAH qualitatively. It does not supply a quantitative Defend score.",
+      "do_not": "Invent a score, proxy KPI or numerical progress bar for Defend.",
+      "sources": [
+        "stocktake-accessible-4page",
+        "presentation"
+      ]
+    }
+  ],
+  "short_metrics": [
+    {
+      "id": "reached",
+      "viz": {
+        "type": "bar",
+        "share": 44.6,
+        "caption": "45% of people targeted"
+      }
+    },
+    {
+      "id": "severity45",
+      "display_value": "62%*",
+      "viz": {
+        "type": "spark",
+        "caption": "36% in 2024 · 43% in 2025 · 63% in accessible copies"
+      }
+    },
+    {
+      "id": "gho",
+      "viz": {
+        "type": "bar",
+        "share": 41.3,
+        "caption": "41% of $35.07bn"
+      }
+    },
+    {
+      "id": "cbpf",
+      "viz": {
+        "type": "comparison",
+        "caption": "×4.3 vs $1.05bn in 2024"
+      }
+    },
+    {
+      "id": "clusters",
+      "viz": {
+        "type": "bar",
+        "share": 79,
+        "caption": "As of October 2026"
+      }
+    },
+    {
+      "id": "transition",
+      "viz": {
+        "type": "dots",
+        "on": 15,
+        "total": 20,
+        "caption": "15 of 20 plans, 2026"
+      }
     }
   ]
 }

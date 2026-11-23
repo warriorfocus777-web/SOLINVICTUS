@@ -512,7 +512,7 @@
       card({ kind: "Reset · figures with caveats", title: "Headline stocktake figures",
         text: "Each figure keeps its period, base and status. All are from draft documents pending clearance.",
         table: indicatorRows(["reached", "severe41", "severity45", "gho", "cbpf", "clusters", "transition", "local"]),
-        caveat: "62% (Stocktake) vs 55% (presentation); $4.53bn (2 Oct) vs ~$4.49bn (end Sept); local share 55% or 20% depending on the US award. Reach and allocations are not outcomes.",
+        caveat: "The site-cited 8 October record reports 62% for severity 4–5; accessible October draft copies report 63%. The exact 8 October file and unrounded counts were not available for this review. Accessible introductory text separately reports 100M collective results including 40M with life-saving support; Deliver reports 66M reached including 41M in the most severe locations. Do not equate or add these measures. CBPF and local-allocation values also vary by source version, date and inclusion basis. Reach and allocations are not outcomes.",
         sources: ["stocktake", "presentation", "rs-key", "rs-notes"], followups: ["Explain the source differences.", "Outcomes vs implementation — what's the evidence?", "Compare 100M vs 66M vs 41M."] });
       return true;
     }
