@@ -1,118 +1,58 @@
-# IASC Humanitarian Reset & Coordination Intelligence Assistant
+# IASC Humanitarian Reset & Coordination Intelligence Assistant — v2
 
-A contextual, source-aware chat companion for the two live pages:
+A contextual, source-aware learning companion on three pages:
 
-- `/sol/reset/overview/` — the IASC Overview explainer
-- `/sol/reset/` — the Humanitarian Reset stocktake
+| Page | Path | Assistant context |
+|---|---|---|
+| IASC Overview | `/sol/reset/overview/` | `overview` |
+| Humanitarian Reset stocktake | `/sol/reset/` | `reset` |
+| Four Ds Explorer (new) | `/sol/reset/four-ds/` | `reset` |
 
-Not an official IASC spokesperson, policy authority, operational decision-maker or
-endorsed product. Neither page's content or functionality was changed beyond adding
-a stylesheet link and a script tag before `</body>`.
+Independent. **Not** an official IASC spokesperson, policy authority, operational decision-maker or endorsed product — the UI says so on open and on every exported answer.
 
-## What's actually running (read this before assuming it's "AI")
+## What is actually running
 
-**There is no live AI backend.** No API key, no server, no RAG pipeline, no model
-call. `assistant.js` matches the visitor's question against `registry.json` — a
-hand-built registry of exactly what's published on these two pages plus the richer
-indicator set already maintained in `../reset/v3/data/indicators.json` — and renders
-a templated, cited answer. The UI says **"DEMO MODE · no live AI backend"** on every
-message footer and in the launcher's own copy, for this reason. This matches the
-brief's own instruction for this situation: *"If credentials/backend are unavailable:
-implement UI and modular API contract, label demo mode, never claim live."*
+**Demo mode (default, live today).** No language model. `assistant.js` routes each question to an entry in `registry.json` and renders a cited answer. The footer badge reads "Demo mode · no AI connected" and every answer card says "registry answer, no AI". Off-registry questions get an explicit *No evidence found* card, never a guess.
 
-Files:
-- `assistant.js` — all logic: retrieval, rendering, modes, keyboard/focus handling.
-- `assistant.css` — brand-restrained styling (IASC dark blue #272E67, UN blue
-  #009EDB, IASC pink #FF4D59 used only for caveats/alerts, matching the existing
-  Reset page's own caveat styling).
-- `registry.json` — the source registry. **Edit this, not assistant.js**, when a
-  figure, document or discrepancy changes. Each entry carries an evidence tier
-  (1–4, as defined in the master brief), issuer, date, status and URL where one
-  exists; nothing is invented, and nothing is upgraded from Tier 3/4 to official
-  IASC policy.
+**Live mode (optional, built but off).** `functions/api/assistant.js` is a Cloudflare Pages Function that retrieves from the same registry, calls the Claude API server-side, and strips any citation id that isn't in the registry before returning. The browser only calls it when `registry.json → backend.enabled` is `true`; if it fails, the widget says so and falls back to the registry answer.
 
-## Known limitations (honest, not hidden)
+## Files
 
-1. **No live model.** Free-text questions outside the registry's coverage get an
-   explicit "no evidence found" response, not a guess. The seven modes (Ask,
-   Explore, Learn, Simulate, Find, Compare, Brief) are implemented as templated
-   renderers over the same registry, not as separate AI skills.
-2. **Montserrat is not self-hosted in this repo.** The brief specifies Montserrat
-   for headings; no Montserrat `.woff2` exists under `/sol/reset/fonts/` or
-   elsewhere in the repository, and this change does not fetch fonts from Google
-   Fonts or any other external host (that would add an external network
-   dependency and a privacy/CSP question the rest of the site avoids). Widget
-   headings fall back to the page's own self-hosted Roboto Slab. Drop a licensed
-   Montserrat `.woff2` into `/sol/reset/fonts/` and add an `@font-face` in
-   `assistant.css` to close this gap.
-3. **History is not persisted.** Per the brief ("Persistent history only if
-   secure, consented and disclosed"), nothing is saved across page loads or sent
-   anywhere — the safer default given there is no backend to secure it on.
-4. **No live rate limiting.** There's no server to rate-limit. The widget guards
-   against double-submits client-side (disables Send while a reply is rendering)
-   — a real, not simulated, safeguard — but this is not a substitute for
-   server-side throttling if a live backend is added later.
-5. **v3 (`/sol/reset/v3/`) does not yet have the widget.** It wasn't in the brief's
-   "LIVE PAGES" list, so it was left untouched. Adding it is a two-line change
-   (same `<link>` + `<script>` pair) once v3 is ready to go live.
-6. **Simulation has one scenario.** `registry.json → simulation` currently defines
-   a single branching step for "FICTIONAL LEARNING SCENARIO — NOT OPERATIONAL
-   GUIDANCE." Add further `steps` entries (each with `choices`) to extend it;
-   `assistant.js → resolveSimChoice` does not yet chain to a second step
-   automatically — that's the next piece of real logic to add, not just data.
+| File | Role |
+|---|---|
+| `registry.json` | Single source of truth: sources (tier, status, clearance, version, last checked, on-page anchor), topics with plain/detail/technical levels, indicators (value, base, period, definition, status, caveat), the six preserved source conflicts, reading rules, milestones with ISO due dates, glossary (each term cited to its own source), lessons with knowledge checks, the fictional simulation, and the Four Ds pillar data. **Edit this, not the JS.** |
+| `check_registry.py` | `python3 sol/assistant/check_registry.py` — fails if any citation, on-page anchor, lesson answer key, simulation link or pillar reference is broken, or if an external URL isn't on the vetted list. Run after every edit. |
+| `assistant.js` / `assistant.css` | Widget (vanilla JS, no dependencies). Registry text is only ever inserted with `textContent`. |
+| `media/IASC_Logo_Blue.png` | The supplied logo, byte-identical (SHA-256 `1135b6ab…3a030d23`). Shown on white, height-scaled only. |
+| `fonts/montserrat-latin-wght-normal.woff2` | Self-hosted Montserrat (SIL OFL, `fonts/OFL.txt`). Roboto comes from the Reset page's own self-hosted copy. |
+| `../reset/four-ds/index.html` | Four Ds Explorer, reading the same `registry.json`. |
+| `/functions/api/assistant.js` | Optional live backend. |
 
-## API contract for a future live backend
+## Behaviour mapped to the brief
 
-If a real backend/RAG pipeline is added later, keep the frontend unaware of any
-secret. Suggested contract (not implemented — there is no server here):
+- **Context**: detected from the URL; switch with the *IASC Overview / Humanitarian Reset* toggle. Switching keeps the conversation and posts context-specific starters.
+- **Modes**: Ask · Explore (accessible HTML diagrams of the IASC structure and the four Ds) · Learn (4 lessons + checks + glossary) · Simulate (3-step branching fictional scenario, evolving information, reasoning feedback, rubric debrief) · Find (sources ranked by tier, then relevance, with the reason shown) · Compare (conflicts, pillars, members/invitees) · Brief (study note, FAQ, timeline — labelled "not a cleared official communication").
+- **Answer controls**: Explain simply / More detail / Technical / Show evidence / Compare; follow-up chips; Copy with citations; Download .md (citations kept); Helpful/Not helpful (local only).
+- **Evidence**: source drawer per answer with title, tier, issuer, date, version, status/clearance, last-checked date, and a link to the original or the exact page section. When the originals are unpublished drafts the drawer says the answer relies on the secondary page.
+- **Conflicts preserved**: 62% vs 55%; $4.53bn (2 Oct) vs ~$4.49bn (end Sept); 17→40→75% not one series; local share 55% / 20% / 53%; area-based coordination; 100M vs 66M vs 41M. Plus rules for the non-representative perception survey, qualitative-only Defend, outputs ≠ outcomes.
+- **Dates**: milestone status is computed against today's date. Past-due items without evidence read "Past due — status unconfirmed".
+- **States**: loading, no evidence, retrieval error, registry unavailable (launcher disabled), offline, client rate limit (30/min demo, 10/min live), live-service failure with fallback.
+- **Privacy**: warning above the input; heuristic nudge if a message looks like it contains an ID/email/phone; nothing stored or sent in demo mode; no analytics.
+- **Accessibility**: closed panel is `hidden` (not just off-screen), Esc closes and returns focus, visible focus, `role="log"` live region, reduced motion, forced-colours support, 0 axe violations (WCAG 2.1 AA rules) on all three pages at desktop/tablet/mobile.
 
-```
-POST https://<your-backend>/api/assistant/query
-Content-Type: application/json
+## Turning on live mode
 
-{
-  "query": "string, the visitor's message",
-  "mode": "ask|explore|learn|simulate|find|compare|brief",
-  "context": "overview|reset",
-  "history": [{"role":"user|assistant","text":"..."}]   // only if persistence is
-                                                          // implemented, disclosed
-                                                          // and consented to
-}
-```
+1. Cloudflare dashboard → Pages → this project → *Settings → Variables and secrets*:
+   - `ANTHROPIC_API_KEY` — **Secret**. Never commit it or put it under `sol/`.
+   - `ASSISTANT_MODEL` — optional, default `claude-sonnet-5-5` (check current model ids at docs.claude.com before changing).
+   - `ASSISTANT_ALLOWED_ORIGINS` — optional, default `https://solinvictus.app`.
+2. Add a WAF rate-limiting rule for `/api/assistant` (the function's own limiter is per-isolate, best effort).
+3. Deploy, then test: `curl -X POST https://solinvictus.app/api/assistant -H 'content-type: application/json' -H 'origin: https://solinvictus.app' -d '{"query":"Why 62% vs 55%?","context":"reset"}'`
+4. Only then set `"backend": {"enabled": true, ...}` in `registry.json`.
+5. The privacy note switches automatically to say questions are sent to a third-party AI service. Review that wording (and the provider's data terms) before enabling.
 
-Expected response shape (so `assistant.js`'s render functions — `addBotCard`,
-`renderSources`, the table/kv/caveat helpers — can be reused almost as-is):
+API contract — request `{query, mode, context}`; response `{answer, citations: [registry source ids], caveat, no_evidence}`.
 
-```
-{
-  "answer": "string, plain text or limited HTML",
-  "citations": [
-    {"id": "registry-id-or-new-id", "title": "...", "issuer": "...", "date": "...",
-     "tier": 1, "status": "...", "url": "..."}
-  ],
-  "caveat": "string or null",
-  "no_evidence": false
-}
-```
+## Rollback
 
-Environment variables a live deployment would need (never in frontend code,
-never committed):
-
-- `ANTHROPIC_API_KEY` — server-side only, injected via the hosting platform's
-  secret store (e.g. a Cloudflare Pages Function / Worker secret), never in any
-  file under `sol/`.
-- `ASSISTANT_ALLOWED_ORIGINS` — CORS allow-list restricted to
-  `https://solinvictus.app`.
-
-Before wiring real Claude API calls, check the current Anthropic API docs for
-streaming, retrieval and tool-use features rather than relying on this note,
-which will go stale.
-
-## Updating the registry
-
-1. Edit `registry.json` (figures, statuses, new documents, new discrepancies).
-2. If the figure also lives in `../reset/v3/data/indicators.json`, update both —
-   they are not currently code-linked (the v3 build has its own
-   `build.py` / `--check` pipeline; this registry is a separate, simpler copy
-   scoped to what the two live pages actually show).
-3. No build step: `registry.json` is fetched at runtime by `assistant.js`.
+Everything is additive except `assistant.js`, `assistant.css`, `registry.json` (same paths, so the page hooks didn't change) and two links on `/sol/reset/`. Revert the merge commit, or restore those three files from the commit before it. Deleting `/functions/` removes the backend entirely.
