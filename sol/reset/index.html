@@ -17,6 +17,7 @@
 <meta property="og:url" content="https://solinvictus.app/sol/reset/">
 <meta property="og:image" content="https://solinvictus.app/sol/reset/media/stocktake-intro-poster.jpg">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="/sol/assistant/assistant.css">
 <script>document.documentElement.classList.add('js')</script>
 <style>
 /* ---------- Fonts: self-hosted Roboto, Roboto Condensed and Roboto Slab (SIL OFL, see fonts/OFL.txt) ---------- */
@@ -1282,5 +1283,9 @@ html:not(.js) .chapters button{cursor:default;pointer-events:none}
   }catch(err){running=false;if(canvas.parentNode)canvas.parentNode.removeChild(canvas);showStatic();}
 })();
 </script>
+
+<!-- IASC Humanitarian Reset & Coordination Intelligence Assistant (demo mode; see /sol/assistant/) -->
+<div id="iasc-assistant-root"></div>
+<script src="/sol/assistant/assistant.js" defer></script>
 </body>
 </html>

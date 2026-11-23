@@ -1,0 +1,137 @@
+/* IASC Humanitarian Reset & Coordination Intelligence Assistant — widget styles.
+   Brand: IASC dark blue #272E67, UN blue #009EDB, IASC pink #FF4D59 (caveats/alerts only).
+   Heading font falls back to the Reset page's self-hosted Roboto Slab: Montserrat is the
+   brief's spec but no Montserrat asset is self-hosted in this repo yet (see assistant/README.md). */
+:root{
+  --iasc-navy:#272E67;
+  --iasc-navy-hover:#1C2149;
+  --iasc-blue:#009EDB;
+  --iasc-pink:#FF4D59;
+  --iasc-ink:#1C2149;
+  --iasc-body:#33364d;
+  --iasc-bg:#ffffff;
+  --iasc-surface:#F7F6F4;
+  --iasc-border:#DEDAD3;
+  --iasc-radius:10px;
+  --iasc-f-head:"Roboto Slab",Montserrat,Georgia,serif;
+  --iasc-f-body:Roboto,Montserrat,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+}
+#iasc-assistant-root{all:initial}
+#iasc-assistant-root *{box-sizing:border-box;font-family:var(--iasc-f-body)}
+#iasc-assistant-root :focus-visible{outline:3px solid var(--iasc-blue);outline-offset:2px}
+
+.iasc-a-launcher{
+  position:fixed;right:20px;bottom:20px;z-index:2147483000;
+  display:flex;align-items:center;gap:10px;
+  background:var(--iasc-navy);color:#fff;border:1px solid var(--iasc-navy);
+  border-radius:999px;padding:12px 18px 12px 14px;
+  font:600 14.5px/1.2 var(--iasc-f-body);letter-spacing:.01em;cursor:pointer;
+  box-shadow:0 6px 20px rgba(28,33,73,.28);
+  transition:transform .15s ease,box-shadow .15s ease,background .15s ease;
+}
+.iasc-a-launcher:hover{background:var(--iasc-navy-hover);transform:translateY(-1px);box-shadow:0 10px 24px rgba(28,33,73,.34)}
+.iasc-a-launcher .dot{width:9px;height:9px;border-radius:50%;background:var(--iasc-blue);box-shadow:0 0 0 3px rgba(0,158,219,.25)}
+.iasc-a-launcher.is-hidden{display:none}
+@media (prefers-reduced-motion:reduce){.iasc-a-launcher{transition:none}}
+
+.iasc-a-panel{
+  position:fixed;top:0;right:0;height:100%;width:min(420px,100vw);
+  background:var(--iasc-bg);color:var(--iasc-body);z-index:2147483001;
+  box-shadow:-8px 0 32px rgba(28,33,73,.18);
+  display:flex;flex-direction:column;
+  transform:translateX(100%);transition:transform .22s cubic-bezier(.2,.7,.2,1);
+  border-left:1px solid var(--iasc-border);
+}
+.iasc-a-panel.is-open{transform:translateX(0)}
+@media (prefers-reduced-motion:reduce){.iasc-a-panel{transition:none}}
+@media (max-width:480px){.iasc-a-panel{width:100vw}}
+
+.iasc-a-head{
+  flex:0 0 auto;background:var(--iasc-navy);color:#fff;padding:14px 14px 10px;
+}
+.iasc-a-head .top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+.iasc-a-head h2{font:700 16.5px/1.25 var(--iasc-f-head);margin:0 0 2px;color:#fff}
+.iasc-a-head p.sub{margin:0;font-size:12.5px;color:#B8BEE6}
+.iasc-a-close{
+  background:transparent;border:1px solid rgba(255,255,255,.35);color:#fff;border-radius:8px;
+  width:32px;height:32px;flex:0 0 auto;cursor:pointer;font-size:16px;line-height:1;
+}
+.iasc-a-close:hover{background:rgba(255,255,255,.12)}
+.iasc-a-ctx{display:flex;gap:6px;margin-top:10px;flex-wrap:wrap}
+.iasc-a-ctx button{
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.3);color:#fff;
+  border-radius:999px;padding:5px 11px;font-size:12px;font-weight:600;cursor:pointer;
+}
+.iasc-a-ctx button[aria-pressed="true"]{background:var(--iasc-blue);border-color:var(--iasc-blue)}
+
+.iasc-a-modes{display:flex;gap:6px;overflow-x:auto;padding:10px 12px;border-bottom:1px solid var(--iasc-border);flex:0 0 auto;scrollbar-width:thin}
+.iasc-a-modes button{
+  flex:0 0 auto;background:var(--iasc-surface);border:1px solid var(--iasc-border);color:var(--iasc-ink);
+  border-radius:999px;padding:6px 12px;font-size:12.5px;font-weight:600;cursor:pointer;white-space:nowrap;
+}
+.iasc-a-modes button[aria-pressed="true"]{background:var(--iasc-navy);border-color:var(--iasc-navy);color:#fff}
+
+.iasc-a-body{flex:1 1 auto;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:12px}
+.iasc-a-welcome h3{font:700 15px/1.3 var(--iasc-f-head);color:var(--iasc-ink);margin:0 0 6px}
+.iasc-a-welcome p{font-size:13.5px;line-height:1.5;margin:0 0 12px;color:var(--iasc-body)}
+.iasc-a-starters{display:flex;flex-direction:column;gap:6px}
+.iasc-a-starters button{
+  text-align:left;background:var(--iasc-surface);border:1px solid var(--iasc-border);color:var(--iasc-ink);
+  border-radius:var(--iasc-radius);padding:9px 12px;font-size:13px;cursor:pointer;line-height:1.35;
+}
+.iasc-a-starters button:hover{border-color:var(--iasc-navy)}
+
+.iasc-a-msg{max-width:92%;font-size:13.5px;line-height:1.5}
+.iasc-a-msg.user{align-self:flex-end;background:var(--iasc-navy);color:#fff;border-radius:var(--iasc-radius);padding:9px 12px}
+.iasc-a-msg.bot{align-self:flex-start;width:100%}
+.iasc-a-bot-card{background:var(--iasc-surface);border:1px solid var(--iasc-border);border-radius:var(--iasc-radius);padding:11px 12px}
+.iasc-a-bot-card .answer{color:var(--iasc-ink);margin:0 0 6px}
+.iasc-a-bot-card .answer strong{color:var(--iasc-navy)}
+.iasc-a-kv{display:grid;grid-template-columns:auto 1fr;gap:3px 10px;font-size:12.5px;margin:6px 0}
+.iasc-a-kv dt{color:#6b6f82;font-weight:600}
+.iasc-a-kv dd{margin:0;color:var(--iasc-body)}
+.iasc-a-caveat{display:flex;gap:7px;align-items:flex-start;background:#FFF1F2;border-left:3px solid var(--iasc-pink);border-radius:6px;padding:7px 9px;font-size:12.5px;color:#7A2430;margin:8px 0}
+.iasc-a-caveat b{color:#7A2430}
+.iasc-a-tbl{width:100%;border-collapse:collapse;font-size:12.5px;margin:8px 0}
+.iasc-a-tbl th,.iasc-a-tbl td{border:1px solid var(--iasc-border);padding:5px 7px;text-align:left}
+.iasc-a-tbl th{background:#F1F0FA;color:var(--iasc-ink)}
+.iasc-a-fiction{display:inline-block;background:var(--iasc-pink);color:#fff;font-weight:700;font-size:10.5px;letter-spacing:.04em;text-transform:uppercase;border-radius:4px;padding:3px 7px;margin-bottom:7px}
+
+.iasc-a-sources{margin-top:8px}
+.iasc-a-sources>summary{cursor:pointer;font-size:12px;font-weight:700;color:var(--iasc-navy);list-style:none}
+.iasc-a-sources>summary::before{content:"▸ ";font-size:10px}
+.iasc-a-sources[open]>summary::before{content:"▾ "}
+.iasc-a-source-item{border-top:1px solid var(--iasc-border);padding:7px 0;font-size:12px}
+.iasc-a-source-item .t{font-weight:700;color:var(--iasc-ink)}
+.iasc-a-source-item .m{color:#6b6f82}
+.iasc-a-tier{display:inline-block;font-size:10.5px;font-weight:700;border-radius:4px;padding:1px 6px;margin-left:6px;background:#E9EAF0;color:var(--iasc-navy)}
+.iasc-a-source-item a{color:var(--iasc-blue)}
+
+.iasc-a-choices{display:flex;flex-direction:column;gap:6px;margin-top:8px}
+.iasc-a-choices button{text-align:left;background:#fff;border:1px solid var(--iasc-border);border-radius:8px;padding:8px 10px;font-size:12.5px;cursor:pointer}
+.iasc-a-choices button:hover{border-color:var(--iasc-blue)}
+
+.iasc-a-row-actions{display:flex;gap:10px;margin-top:8px}
+.iasc-a-row-actions button{background:none;border:none;color:#6b6f82;font-size:11.5px;cursor:pointer;padding:0;text-decoration:underline}
+
+.iasc-a-status{align-self:flex-start;font-size:12.5px;color:#6b6f82;font-style:italic}
+
+.iasc-a-inputwrap{flex:0 0 auto;border-top:1px solid var(--iasc-border);padding:10px 12px;background:#fff}
+.iasc-a-privacy{font-size:11px;color:#6b6f82;margin:0 0 7px}
+.iasc-a-form{display:flex;gap:8px}
+.iasc-a-form textarea{
+  flex:1 1 auto;resize:none;border:1px solid var(--iasc-border);border-radius:8px;padding:9px 10px;
+  font-size:13px;font-family:var(--iasc-f-body);min-height:40px;max-height:120px;color:var(--iasc-ink);
+}
+.iasc-a-form button{
+  background:var(--iasc-navy);color:#fff;border:none;border-radius:8px;padding:0 16px;font-weight:700;
+  font-size:13px;cursor:pointer;flex:0 0 auto;
+}
+.iasc-a-form button:disabled{opacity:.5;cursor:not-allowed}
+.iasc-a-footer-row{display:flex;justify-content:space-between;align-items:center;margin-top:7px}
+.iasc-a-demo-badge{font-size:10.5px;font-weight:700;letter-spacing:.03em;color:#7A2430;background:#FFF1F2;border-radius:4px;padding:2px 6px}
+.iasc-a-linklike{background:none;border:none;color:var(--iasc-blue);font-size:11.5px;cursor:pointer;text-decoration:underline;padding:0}
+
+.iasc-a-sr-only{position:absolute!important;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+.iasc-a-scrim{position:fixed;inset:0;background:transparent;z-index:2147483000}
