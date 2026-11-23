@@ -15,6 +15,9 @@ ALLOWED = {
  "https://interagencystandingcommittee.org/node/39708",
  "https://www.undp.org/crisis/beyond-crisis-series/9",
  "https://www.eeas.europa.eu/delegations/un-new-york/eu-statement-un-inter-agency-standing-committee-principals-donor-engagement-humanitarian-reset_en",
+ "https://www.dfat.gov.au/sites/default/files/united-nations-handbook-2025-26.pdf",
+ "https://digitallibrary.un.org/record/135197?ln=en",
+ "https://mandates.un.org/mandate/A/RES/48/57",
 }
 for s in R["sources"]:
     for k in ("title","issuer","date","status","tier"):
