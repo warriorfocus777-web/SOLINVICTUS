@@ -20,8 +20,42 @@
  *  - Nothing about the conversation is logged or stored.
  */
 const MAX_INPUT = 600;
+const MAX_BODY_BYTES = 8192;
 const RATE = { n: 10, ms: 60_000 };
 const hits = new Map();
+
+async function readJsonLimited(request) {
+  const declared = request.headers.get("content-length");
+  if (declared && Number(declared) > MAX_BODY_BYTES) throw new RangeError("request body too large");
+  if (!request.body) throw new SyntaxError("missing request body");
+
+  const reader = request.body.getReader();
+  const decoder = new TextDecoder("utf-8", { fatal: true });
+  let total = 0;
+  let raw = "";
+  try {
+    while (true) {
+      const part = await reader.read();
+      if (part.done) break;
+      total += part.value.byteLength;
+      if (total > MAX_BODY_BYTES) {
+        await reader.cancel();
+        throw new RangeError("request body too large");
+      }
+      raw += decoder.decode(part.value, { stream: true });
+    }
+    raw += decoder.decode();
+  } finally {
+    reader.releaseLock();
+  }
+  return JSON.parse(raw);
+}
+
+function escapeXml(value) {
+  return String(value).replace(/[&<>"']/g, (ch) => ({
+    "&": "&amp;", "<": "&lt;", ">": "&gt;", "\"": "&quot;", "'": "&apos;",
+  })[ch]);
+}
 
 const SYSTEM = `You are an independent learning assistant about the Inter-Agency Standing Committee (IASC) and the Humanitarian Reset, embedded in two independent explainer pages. You are NOT an official IASC spokesperson, policy authority, operational decision-maker or endorsed product, and must never imply clearance or endorsement.
 
@@ -40,7 +74,7 @@ Rules:
 Reply with ONLY a JSON object: {"answer": string, "citations": [source ids], "caveat": string or null, "no_evidence": boolean}`;
 
 function json(body, status = 200, extra = {}) {
-  return new Response(JSON.stringify(body), { status, headers: { "content-type": "application/json; charset=utf-8", "cache-control": "no-store", ...extra } });
+  return new Response(JSON.stringify(body), { status, headers: { "content-type": "application/json; charset=utf-8", "cache-control": "no-store", "x-content-type-options": "nosniff", "referrer-policy": "no-referrer", ...extra } });
 }
 function words(s) {
   return String(s || "").toLowerCase().replace(/[^a-z0-9%$.\s-]/g, " ").split(/\s+/).filter((w) => w.length > 2);
@@ -66,7 +100,7 @@ function retrieve(reg, query, context) {
 export async function onRequestPost({ request, env }) {
   const allowed = (env.ASSISTANT_ALLOWED_ORIGINS || "https://solinvictus.app").split(",").map((s) => s.trim());
   const origin = request.headers.get("origin");
-  if (origin && !allowed.includes(origin)) return json({ error: "origin not allowed" }, 403);
+  if (!origin || !allowed.includes(origin)) return json({ error: "origin not allowed" }, 403);
   if (!env.ANTHROPIC_API_KEY) return json({ error: "live backend not configured" }, 503);
 
   const ip = request.headers.get("cf-connecting-ip") || "anon";
@@ -76,8 +110,15 @@ export async function onRequestPost({ request, env }) {
   recent.push(now); hits.set(ip, recent);
   if (hits.size > 5000) hits.clear();
 
+  const contentType = request.headers.get("content-type") || "";
+  if (!/^application\/json(?:\s*;|$)/i.test(contentType)) return json({ error: "content type must be application/json" }, 415);
   let body;
-  try { body = await request.json(); } catch { return json({ error: "invalid JSON" }, 400); }
+  try { body = await readJsonLimited(request); }
+  catch (error) {
+    if (error instanceof RangeError) return json({ error: "request body too large" }, 413);
+    return json({ error: "invalid JSON" }, 400);
+  }
+  if (!body || typeof body !== "object" || Array.isArray(body)) return json({ error: "invalid JSON object" }, 400);
   const query = typeof body.query === "string" ? body.query.trim().slice(0, MAX_INPUT) : "";
   const context = body.context === "overview" ? "overview" : "reset";
   const mode = ["ask", "explore", "learn", "simulate", "find", "compare", "brief"].includes(body.mode) ? body.mode : "ask";
@@ -95,16 +136,21 @@ export async function onRequestPost({ request, env }) {
   const sources = found.map((f, n) => `<source n="${n + 1}" kind="${f.kind}" cite_as="${f.cites.join(",")}">\n${f.body}\n</source>`).join("\n");
   const today = new Date().toISOString().slice(0, 10);
 
-  const apiRes = await fetch("https://api.anthropic.com/v1/messages", {
-    method: "POST",
-    headers: { "x-api-key": env.ANTHROPIC_API_KEY, "anthropic-version": "2023-06-01", "content-type": "application/json" },
-    body: JSON.stringify({
-      model: env.ASSISTANT_MODEL || "claude-sonnet-5-5",
-      max_tokens: 900,
-      system: SYSTEM.replace("{TODAY}", today),
-      messages: [{ role: "user", content: `Page context: ${context}. Mode: ${mode}.\n\n${sourceMeta}\n\n${sources}\n\n<question>${query}</question>` }],
-    }),
-  });
+  let apiRes;
+  try {
+    apiRes = await fetch("https://api.anthropic.com/v1/messages", {
+      method: "POST",
+      headers: { "x-api-key": env.ANTHROPIC_API_KEY, "anthropic-version": "2023-06-01", "content-type": "application/json" },
+      body: JSON.stringify({
+        model: env.ASSISTANT_MODEL || "claude-sonnet-5-5",
+        max_tokens: 900,
+        system: SYSTEM.replace("{TODAY}", today),
+        messages: [{ role: "user", content: `Page context: ${context}. Mode: ${mode}.\n\n${sourceMeta}\n\n${sources}\n\n<question>${escapeXml(query)}</question>` }],
+      }),
+    });
+  } catch {
+    return json({ error: "upstream unavailable" }, 502);
+  }
   if (apiRes.status === 429) return json({ error: "rate limited upstream" }, 429, { "retry-after": "30" });
   if (!apiRes.ok) return json({ error: "upstream error" }, 502);
   const out = await apiRes.json();
