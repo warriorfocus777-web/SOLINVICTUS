@@ -1,0 +1,265 @@
+{
+  "_about": "Source registry for the IASC Humanitarian Reset & Coordination Intelligence Assistant (demo mode). Hand-built from the content actually published on /sol/reset/ and /sol/reset/overview/ on 23 November 2026, plus the richer indicator set already maintained in /sol/reset/v3/data/indicators.json. Nothing here is invented: every citation points at a document, URL or on-page table that exists in this repository or at the linked URL. Edit this file, not assistant.js, when a figure or source changes.",
+  "generated": "2026-11-23",
+  "evidence_tiers": {
+    "1": "Official IASC / endorsed sources and official institutional material (the Stocktake report and presentation, the IASC Secretariat's own site).",
+    "2": "Authoritative official UN, humanitarian-organization or standard-setting sources (OCHA, UNDP, EU statements on behalf of IASC donors).",
+    "3": "Credible scholarly or independent analysis.",
+    "4": "General knowledge, inference or hypothetical content — includes anything this assistant synthesizes itself, and the whole Simulate mode."
+  },
+  "secondary_pages": [
+    {
+      "id": "page-overview",
+      "title": "IASC Overview",
+      "url": "/sol/reset/overview/",
+      "note": "Independent, unofficial explainer, not an official IASC publication. Its own footer: facts checked against interagencystandingcommittee.org, November 2026; verify before external use."
+    },
+    {
+      "id": "page-reset",
+      "title": "Humanitarian Reset – Stocktake October 2026",
+      "url": "/sol/reset/",
+      "note": "Draft for discussion. All figures as reported in the IASC Humanitarian Reset Stocktake (draft, 8 October 2026 revision) and presentation, October 2026."
+    }
+  ],
+  "documents": [
+    {
+      "id": "stocktake",
+      "title": "Humanitarian Reset: Stock-take",
+      "issuer": "Inter-Agency Standing Committee (IASC)",
+      "date": "October 2026",
+      "version": "Draft, 8 October 2026 revision",
+      "format": "Report (Word)",
+      "status": "Draft pending clearance · not yet published",
+      "tier": 1,
+      "url": null,
+      "section": "documents",
+      "page": "reset",
+      "note": "The primary source for every figure on the Reset stocktake page. Covers the Introduction, the four Ds (Define, Deliver, Devolve, Defend) and a forward-looking conclusion."
+    },
+    {
+      "id": "presentation",
+      "title": "The Humanitarian Reset",
+      "issuer": "Inter-Agency Standing Committee (IASC)",
+      "date": "October 2026",
+      "version": "Draft, 17 slides",
+      "format": "Presentation (PowerPoint)",
+      "status": "Draft pending clearance · not yet published",
+      "tier": 1,
+      "url": null,
+      "section": "documents",
+      "page": "reset",
+      "note": "Part 1: stocktake highlights by D. Part 2: next phase, key actions for HCs/HCTs, IASC structures, complementarity and donor engagement."
+    },
+    {
+      "id": "undp",
+      "title": "Humanitarian reset — in conversation with Tom Fletcher",
+      "issuer": "UNDP, Beyond Crisis series",
+      "date": "Undated on page",
+      "version": "Web page",
+      "format": "Web page",
+      "status": "Published",
+      "tier": 2,
+      "url": "https://www.undp.org/crisis/beyond-crisis-series/9",
+      "section": "v3-sources",
+      "page": "reset",
+      "note": "Carried in the v3 extended edition's source list; the standard Reset page does not currently cite it."
+    },
+    {
+      "id": "eu-statement",
+      "title": "EU Statement – IASC Principals – Donor Engagement on the Humanitarian Reset",
+      "issuer": "Delegation of the European Union to the UN, New York",
+      "date": "27 October 2026",
+      "version": "Check against delivery",
+      "format": "Web page",
+      "status": "Published",
+      "tier": 2,
+      "url": "https://www.eeas.europa.eu/delegations/un-new-york/eu-statement-un-inter-agency-standing-committee-principals-donor-engagement-humanitarian-reset_en",
+      "section": "v3-sources",
+      "page": "reset",
+      "note": "Evidence for the 27 October 2026 donor-engagement milestone. Carried in the v3 extended edition's source list."
+    },
+    {
+      "id": "iasc-membership",
+      "title": "IASC Secretariat — Membership page",
+      "issuer": "Inter-Agency Standing Committee Secretariat",
+      "date": "Checked November 2026",
+      "version": "Live institutional web page",
+      "format": "Web page",
+      "status": "Published",
+      "tier": 1,
+      "url": "https://interagencystandingcommittee.org/iasc-about/iasc-membership",
+      "section": "sources",
+      "page": "overview",
+      "note": "Source for establishment (June 1992, following Resolution 46/182) and for members/standing invitees."
+    },
+    {
+      "id": "iasc-structure",
+      "title": "IASC Secretariat — Structure page",
+      "issuer": "Inter-Agency Standing Committee Secretariat",
+      "date": "Checked November 2026",
+      "version": "Live institutional web page",
+      "format": "Web page",
+      "status": "Published",
+      "tier": 1,
+      "url": "https://interagencystandingcommittee.org/node/39708",
+      "section": "sources",
+      "page": "overview",
+      "note": "Source for structure: Principals, Deputies Forum, EDG, OPAG, Results Groups, Secretariat. Re-verify before publication; subsidiary-body names and mandates are periodically revised."
+    },
+    {
+      "id": "ocha-principles",
+      "title": "OCHA — standard formulation of the humanitarian principles",
+      "issuer": "OCHA",
+      "date": "Checked November 2026",
+      "version": "Standard UN guidance",
+      "format": "Guidance",
+      "status": "Published",
+      "tier": 2,
+      "url": null,
+      "section": "sources",
+      "page": "overview",
+      "note": "Source for humanity, impartiality, neutrality, independence as used across UN humanitarian guidance."
+    }
+  ],
+  "overview_claims": [
+    { "claim": "Establishment, June 1992, following Resolution 46/182", "source": "iasc-membership" },
+    { "claim": "Members and standing invitees", "source": "iasc-membership" },
+    { "claim": "Structure: Principals, Deputies Forum, EDG, OPAG, Results Groups, Secretariat", "source": "iasc-structure" },
+    { "claim": "Chaired by the Emergency Relief Coordinator", "source": "iasc-membership" },
+    { "claim": "Humanitarian principles (humanity, impartiality, neutrality, independence)", "source": "ocha-principles" }
+  ],
+  "overview_validation_flags": [
+    "Full institutional mandate language, and any changes to the 1992/1991 chronology, are marked 'to verify' against the IASC Secretariat's own About pages before publication.",
+    "Organization logos on the overview page are typographic placeholders, not official marks — flagged on the page itself as not yet cleared.",
+    "The structure section is explicitly 'current as of this writing — re-verify before publication', since subsidiary-body names and mandates are periodically revised.",
+    "The explainer film is labelled a 'v5 REVIEW' cut — a working draft, not a Secretariat-cleared final version."
+  ],
+  "discrepancies": [
+    {
+      "id": "severity-45",
+      "label": "People assisted in intersectoral severity 4–5 areas, 2026",
+      "values": [
+        { "source": "stocktake", "value": "62%" },
+        { "source": "presentation", "value": "55%" }
+      ],
+      "note": "Both values are shown until the sources are reconciled. Serious protection risks may also exist in severity 3 locations.",
+      "resolve": false
+    },
+    {
+      "id": "cbpf-date",
+      "label": "Country-based pooled funds",
+      "values": [
+        { "source": "stocktake", "value": "$4.53bn, as of 2 October 2026" },
+        { "source": "presentation", "value": "“nearly $4.49 billion”, end September" }
+      ],
+      "note": "The gap reflects different cut-off dates, not a correction. Contributions are not disbursements.",
+      "resolve": false
+    },
+    {
+      "id": "transition-series",
+      "label": "Transition-planning series (17% → 40% → 75%)",
+      "values": [
+        { "source": "stocktake", "value": "Clusters and HNRPs reported separately" },
+        { "source": "presentation", "value": "Presented as one HNRP series rising to 75%" }
+      ],
+      "note": "Cluster indicators and HNRP indicators are separate measures; treating them as one continuous trend is not supported by the Stocktake.",
+      "resolve": false
+    },
+    {
+      "id": "local-share",
+      "label": "Local and national share of 2026 pooled-fund allocations",
+      "values": [
+        { "source": "stocktake", "value": "55% excl. US Award Tranche I (44% direct) · 20% incl. it, 28 Sep 2026" },
+        { "source": "presentation", "value": "53% (40% direct, 13% indirect)" }
+      ],
+      "note": "Depends on whether the US Award Tranche I is included, and on direct/indirect definitions and periods. These are not the same measure.",
+      "resolve": false
+    },
+    {
+      "id": "area-based",
+      "label": "Area-based coordination",
+      "values": [
+        { "source": "stocktake", "value": "14 operations; 7 named" },
+        { "source": "presentation", "value": "Not quantified" }
+      ],
+      "note": "The presentation reports the workstream as complete without the Stocktake's operation count.",
+      "resolve": false
+    },
+    {
+      "id": "reach-framing",
+      "label": "People reached / with collective results",
+      "values": [
+        { "source": "stocktake-intro", "value": "100M (collective results, ~19 months after launch; counting method not set out)" },
+        { "source": "stocktake-deliver", "value": "66M reached of 148M targeted, by October 2026" },
+        { "source": "presentation", "value": "66M reached" }
+      ],
+      "note": "The introductory 100M figure and the detailed 66M of 148M are not interchangeable definitions; don't assume they are additive or describe the same measure. 41M of the 66M were in the most severe locations (nested within 66M, not additional).",
+      "resolve": false
+    }
+  ],
+  "indicators": [
+    { "id": "targeted", "pillar": "deliver", "title": "People targeted in the GHO 2026", "value": "148M", "unit": "people", "denominator": "—", "period": "2026 appeal", "source": "stocktake", "status": "Draft", "caveat": "A planning figure, not a count of people assisted." },
+    { "id": "reached", "pillar": "deliver", "title": "People reached with some form of assistance and protection", "value": "66M", "unit": "people", "denominator": "148M targeted (45%)", "period": "By October 2026", "source": "stocktake", "status": "Draft", "caveat": "Reach is not proof of quality, sufficiency or sustained outcome. Not the same measure as the 100M collective-results figure." },
+    { "id": "severe41", "pillar": "deliver", "title": "People reached in locations with the most severe needs", "value": "41M", "unit": "people", "denominator": "66M reached (62%)", "period": "By October 2026", "source": "stocktake", "status": "Draft", "caveat": "Nested within the 66M; do not add to it." },
+    { "id": "collective100", "pillar": "overview", "title": "People with collective results", "value": "100M", "unit": "people", "denominator": "Not stated", "period": "Nineteen months after launch", "source": "stocktake", "status": "Draft · definition pending", "caveat": "Not interchangeable with the 66M reached; not additive with 66M or 41M." },
+    { "id": "severity45", "pillar": "define", "title": "People assisted who are in intersectoral severity 4–5 areas", "value": "62%", "unit": "share of people assisted", "denominator": "People receiving assistance and protection", "period": "2026 (36% in 2024; 43% in 2025)", "source": "stocktake", "status": "Draft · discrepancy open", "caveat": "The presentation reports 55% for 2026. Both values are shown until reconciled." },
+    { "id": "transition", "pillar": "define", "title": "2026 HNRPs outlining steps towards responsible transition", "value": "75%", "unit": "of HNRPs", "denominator": "15 of 20 HNRPs", "period": "2026 cycle", "source": "stocktake", "status": "Draft", "caveat": "Earlier figures (17%, 40%) refer to cluster plans, reported separately; not a continuous series." },
+    { "id": "clusters", "pillar": "deliver", "title": "Operations that have started or completed cluster simplification", "value": "79%", "unit": "of operations", "denominator": "Operations (count not stated)", "period": "As of October 2026", "source": "stocktake", "status": "Draft", "caveat": "Started or completed, not 79% completed. No earlier figure reported, so no trend is shown." },
+    { "id": "hpc", "pillar": "define", "title": "Median days to complete the Humanitarian Programme Cycle", "value": "171", "unit": "days", "denominator": "Median across operations", "period": "2026 cycle (179 in 2024)", "source": "stocktake", "status": "Draft", "caveat": "Down 8 days since 2024; 11 days above the 160-day target set for end-2027. The target is not an achieved result." },
+    { "id": "gho", "pillar": "define", "title": "Funding raised against the GHO 2026", "value": "$14.49bn", "unit": "US$", "denominator": "$35.07bn required (41%)", "period": "End September 2026", "source": "stocktake", "status": "Draft", "caveat": "The hyper-prioritized plan is 55% funded ($13.63bn of $24.94bn); the two denominators differ." },
+    { "id": "cbpf", "pillar": "deliver", "title": "Country-based pooled funds", "value": "$4.53bn", "unit": "US$", "denominator": "—", "period": "As of 2 October 2026 ($1.05bn in 2024)", "source": "stocktake", "status": "Draft · two dates", "caveat": "The presentation reports nearly $4.49bn at end September; the gap reflects different cut-off dates. Contributions are not disbursements." },
+    { "id": "local", "pillar": "devolve", "title": "Local and national share of 2026 pooled-fund allocations", "value": "55% | 20%", "unit": "share of CBPF allocations", "denominator": "Excluding | including US Award Tranche I", "period": "As of 28 September 2026", "source": "stocktake", "status": "Draft · verification H1 2027", "caveat": "Same 2026 portfolio counted two ways; not a trend. 2024 baseline was 47% ($435M)." },
+    { "id": "wlo", "pillar": "devolve", "title": "Allocations to women-led and women's rights organizations", "value": "5%", "unit": "share of allocations", "denominator": "Allocations to 11 September 2026", "period": "Partial year to 11 Sep 2026 (12% 2024; 17%/$173M 2025)", "source": "stocktake", "status": "Draft · partial year", "caveat": "Partial-year position; not comparable with full-year 2024 or 2025 results. Annual target is 15%." },
+    { "id": "feedback", "pillar": "devolve", "title": "HNRP countries where HCTs regularly discuss feedback trends", "value": "52%", "unit": "of HNRP countries", "denominator": "HNRP countries", "period": "2025 (65% in 2024)", "source": "stocktake", "status": "Draft", "caveat": "A decrease of 13 points. Not all Devolve indicators are improving." },
+    { "id": "perception", "pillar": "devolve", "title": "Respondents who see coordination as more inclusive of local actors", "value": "56%", "unit": "of respondents", "denominator": "HCT Perception Survey respondents", "period": "Preliminary, September 2026", "source": "stocktake", "status": "Draft · preliminary", "caveat": "Perceptions of respondents; not representative of the wider humanitarian community. Delayed country responses may change the findings." }
+  ],
+  "defend_note": "Defend is treated qualitatively on the Reset page (standing with frontline colleagues under sustained pressure on norms). It carries no quantitative indicators on the page, and this assistant does not fabricate any.",
+  "milestones": [
+    { "date": "October 2026", "what": "Humanitarian Working Group endorsement of the Framework for the Responsible Use of AI in Humanitarian Action", "status": "pending", "source": "stocktake", "qualification": "Past due date. No public record of endorsement located; do not present as endorsed until confirmed by the IASC secretariat." },
+    { "date": "27 October 2026", "what": "IASC Principals – Donor Engagement on the Humanitarian Reset", "status": "completed", "source": "eu-statement", "qualification": "Meeting held in New York, per the published EU statement. Agreed actions/follow-up not yet verified against an IASC record." },
+    { "date": "End 2026", "what": "Data Collaborative recommendations", "status": "ongoing", "source": "presentation", "qualification": "Precise deliverable and owner not documented in the sources used." },
+    { "date": "H1 2027", "what": "Verification of 2026 pooled-fund data", "status": "planned", "source": "stocktake", "qualification": "2026 local-share figures remain provisional until then." },
+    { "date": "2027", "what": "Mutual accountability mechanism institutionalized", "status": "planned", "source": "stocktake", "qualification": "Pilot completed status and results not detailed in the sources used." },
+    { "date": "End 2027", "what": "HPC median planning time of 160 days", "status": "planned", "source": "stocktake", "qualification": "A target, not an achievement. Current gap: 11 days (171 vs 160)." }
+  ],
+  "glossary": [
+    { "term": "IASC", "def": "Inter-Agency Standing Committee — the primary mechanism for inter-agency humanitarian coordination, established June 1992 following UN General Assembly Resolution 46/182.", "tier": 1 },
+    { "term": "Humanitarian Reset", "def": "The IASC's current reform and stocktake effort, organized around four pillars: Define, Deliver, Devolve, Defend.", "tier": 1 },
+    { "term": "Define", "def": "Pillar of the Reset concerned with prioritizing needs — e.g. concentrating response where severity is highest, and simplifying planning cycles.", "tier": 1 },
+    { "term": "Deliver", "def": "Pillar of the Reset concerned with operational reform and reach — e.g. cluster simplification, pooled funding, people reached.", "tier": 1 },
+    { "term": "Devolve", "def": "Pillar of the Reset concerned with localization — shifting resources, decisions and participation toward local and national actors.", "tier": 1 },
+    { "term": "Defend", "def": "Pillar of the Reset concerned with standing by humanitarian principles and frontline colleagues under pressure. Treated qualitatively; no quantitative indicators are reported on the page.", "tier": 1 },
+    { "term": "HNRP", "def": "Humanitarian Needs and Response Plan — a country-level plan; 20 existed in the 2026 cycle per the Stocktake.", "tier": 1 },
+    { "term": "HPC", "def": "Humanitarian Programme Cycle — the planning cycle whose median completion time the Stocktake tracks (171 days in 2026, against a 160-day end-2027 target).", "tier": 1 },
+    { "term": "CBPF", "def": "Country-Based Pooled Fund — OCHA-managed pooled funding mechanism; $4.53bn in contributions as of 2 October 2026 per the Stocktake.", "tier": 1 },
+    { "term": "GHO", "def": "Global Humanitarian Overview — the annual appeal document; GHO 2026 targeted 148M people and required $35.07bn.", "tier": 1 },
+    { "term": "Severity 4–5 (JIAF)", "def": "The two highest bands on the Joint Intersectoral Analysis Framework severity scale, used to identify the most severe humanitarian needs.", "tier": 1 },
+    { "term": "EDG", "def": "Emergency Directors Group — part of the IASC structure, per the Secretariat's structure page.", "tier": 1 },
+    { "term": "OPAG", "def": "Operational Policy and Advocacy Group — part of the IASC structure, per the Secretariat's structure page.", "tier": 1 },
+    { "term": "ERC", "def": "Emergency Relief Coordinator — chairs the IASC, per the Secretariat's membership and structure pages.", "tier": 1 }
+  ],
+  "simulation": {
+    "id": "sim-cluster-overlap",
+    "label": "FICTIONAL LEARNING SCENARIO — NOT OPERATIONAL GUIDANCE",
+    "title": "A coordination gap after a rapid-onset flood",
+    "setting": "A fictional country, Rivarno. No real beneficiary data, sensitive locations or operational instructions are used. This scenario and all names in it are invented for training purposes only.",
+    "objectives": [
+      "Practice weighing incomplete, conflicting information before acting.",
+      "Connect a coordination decision to humanitarian principles and inclusion of local actors.",
+      "See how an early choice changes what information becomes available next, without a single 'correct' path."
+    ],
+    "role_limits": "You are role-playing a fictional Humanitarian Coordination Officer. This is a training exercise: it carries no real authority, and nothing in it is operational guidance for an actual response.",
+    "steps": [
+      {
+        "id": "s1",
+        "prompt": "Three days after a flood in fictional Rivarno, two cluster leads give you different severity estimates for the same district, and a local NGO network says it was not consulted on either. You must recommend how the next 48 hours of coordination meetings are run.",
+        "choices": [
+          { "id": "a", "text": "Go with the higher severity estimate to be safe, and proceed to planning.", "consequence": "Faster planning, but the unreconciled numbers resurface later, and the local network's exclusion is not addressed — a transparency and inclusion cost." },
+          { "id": "b", "text": "Pause 24 hours to reconcile the two estimates and bring the local network into the next meeting.", "consequence": "Slower start, but the next round of information is more reliable and more representative — at the cost of a day's delay in a fast-moving situation." },
+          { "id": "c", "text": "Run both estimates in parallel without reconciling, and decide later.", "consequence": "Avoids an immediate choice, but downstream plans end up built on two incompatible baselines, which surfaces as confusion in step 2." }
+        ]
+      }
+    ],
+    "debrief_rubric": ["Evidence use", "Coordination", "Inclusion/participation", "Principles", "Risk/uncertainty", "Reasoning"]
+  }
+}
