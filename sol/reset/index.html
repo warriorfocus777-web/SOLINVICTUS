@@ -22,7 +22,7 @@
 <style>
 /* ---------- Fonts: self-hosted Roboto, Roboto Condensed and Roboto Slab (SIL OFL, see fonts/OFL.txt) ---------- */
 @font-face{font-family:"Roboto";font-style:normal;font-weight:100 900;font-display:swap;src:url("/sol/reset/fonts/roboto-latin-wght-normal.woff2") format("woff2")}
-@font-face{font-family:"IASC Montserrat";font-style:normal;font-weight:100 900;font-display:swap;src:url("/sol/assistant/fonts/montserrat-latin-wght-normal.woff2") format("woff2")}
+@font-face{font-family:"IASC Montserrat";font-style:normal;font-weight:100 900;font-display:swap;src:url("/sol/reset/fonts/montserrat-latin-wght-normal.woff2") format("woff2")}
 
 :root{
   /* Colour */
@@ -583,6 +583,8 @@ html:not(.js) .chapters button{cursor:default;pointer-events:none}
       <div class="intro-player">
         <video id="intro-video" controls preload="metadata" playsinline poster="media/stocktake-intro-poster.jpg" aria-describedby="intro-desc">
           <source src="media/stocktake-intro-50s.mp4" type="video/mp4">
+          <track kind="captions" src="v3/captions.vtt" srclang="en" label="English (on-screen text)">
+          <track kind="chapters" src="v3/chapters.vtt" srclang="en" label="Chapters">
           <p>Your browser cannot play this video. <a href="media/stocktake-intro-50s.mp4">Download the overview video (MP4, 50 seconds)</a>.</p>
         </video>
       </div>

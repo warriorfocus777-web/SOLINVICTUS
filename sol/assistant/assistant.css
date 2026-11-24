@@ -28,6 +28,13 @@
 .ia-launcher .ia-dot{width:10px;height:10px;border-radius:50%;background:var(--ia-blue);flex:none}
 .ia-launcher[disabled]{background:#6b6f86;cursor:not-allowed;box-shadow:none}
 .ia-launcher[hidden]{display:none}
+.ia-launcher .ia-short{display:none}
+/* Small screens: a compact "Ask" pill so the launcher does not cover page CTAs; the full label stays as the accessible name. */
+@media (max-width:520px){
+  .ia-launcher{right:12px;bottom:12px;gap:8px;padding:10px 14px 10px 12px;font-size:13px;min-height:44px}
+  .ia-launcher .ia-long{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .ia-launcher .ia-short{display:inline}
+}
 
 /* Panel: a non-modal side sheet. Closed = [hidden], so nothing inside is focusable or announced. */
 .ia-panel{position:fixed;top:0;right:0;bottom:0;width:min(460px,100vw);z-index:2147483001;background:var(--ia-bg);
