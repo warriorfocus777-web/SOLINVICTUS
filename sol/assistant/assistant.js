@@ -684,7 +684,7 @@
     ]);
     panelEl = h("div", { class: "ia-panel", role: "dialog", "aria-modal": "false", "aria-labelledby": titleId, hidden: true }, [brand, head, modes, modeHintEl, logEl, input]);
     launcherEl = h("button", { type: "button", class: "ia-launcher", "aria-haspopup": "dialog", onclick: openPanel }, [
-      h("span", { class: "ia-dot", "aria-hidden": "true" }), h("span", { text: "Ask about the IASC & the Reset" })]);
+      h("span", { class: "ia-dot", "aria-hidden": "true" }), h("span", { class: "ia-long", text: "Ask about the IASC & the Reset" }), h("span", { class: "ia-short", "aria-hidden": "true", text: "Ask" })]);
     root.appendChild(launcherEl); root.appendChild(panelEl);
     setContext(S.context, false);
     setMode("ask");

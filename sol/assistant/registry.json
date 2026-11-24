@@ -487,7 +487,7 @@
       "followups": [
         "What does the IASC do and not do?",
         "Members vs standing invitees?",
-        "How are Principals, EDG, OPAG, Results Groups and Secretariat related?"
+        "How are the Principals, Deputies Group, EDG, OPAG and Secretariat related?"
       ]
     },
     {
@@ -617,7 +617,7 @@
         ]
       },
       "followups": [
-        "How are Principals, EDG, OPAG, Results Groups and Secretariat related?",
+        "How are the Principals, Deputies Group, EDG, OPAG and Secretariat related?",
         "Where can I verify membership?"
       ]
     },
@@ -671,12 +671,12 @@
         "related",
         "erc"
       ],
-      "plain": "Agency heads (the Principals) decide. Three groups below them handle strategy, emergencies and policy. Expert Results Groups do technical work. The Secretariat keeps everyone connected.",
+      "plain": "Agency heads (the Principals) decide. Three core groups handle strategy, emergencies and policy. Time-bound expert groups do technical work. The Secretariat keeps everyone connected.",
       "detail": "The 2025–26 UN Handbook describes the IASC Principals, supported by three core subsidiary bodies: the Deputies Group, the Emergency Directors Group (EDG) and the Operational Policy and Advocacy Group (OPAG). The technical structures created for specific workstreams are time-bound and regularly reviewed. The Handbook lists five entities associated with the IASC.",
       "technical": "The Deputies Group provides dialogue and decision-making on strategic issues tasked by the Principals. The EDG advises and follows up on urgent collective operational action, system-wide resource mobilization and targeted field support. OPAG drives normative and strategic policy work on system-wide matters with a direct bearing on humanitarian operations. The five associated entities listed in the 2025–26 Handbook are the Inter-Agency Humanitarian Evaluation Steering Group, Global Cluster Coordination Group, Humanitarian Programme Cycle Steering Group, Reference Group on Gender and Humanitarian Action, and Reference Group on Mental Health and Psychosocial Support.",
       "points": [
-        "Principals → Deputies Forum, EDG, OPAG",
-        "Results Groups below OPAG",
+        "Principals → Deputies Group, EDG, OPAG",
+        "Time-bound technical structures, reviewed regularly",
         "Secretariat connects all of them"
       ],
       "diagram": "structure",
@@ -708,7 +708,7 @@
       "points": [
         "Supports Principals' deliberations",
         "Follows through on decisions",
-        "Connects EDG, OPAG, Results Groups and the wider network"
+        "Connects the Deputies Group, EDG, OPAG, time-bound technical structures and the wider network"
       ],
       "sources": [
         "iasc-structure",
@@ -717,7 +717,7 @@
       ],
       "caveat": "Do not describe the Secretariat as the policy-making authority or as an operational agency delivering humanitarian assistance.",
       "followups": [
-        "How are Principals, EDG, OPAG, Results Groups and Secretariat related?",
+        "How are the Principals, Deputies Group, EDG, OPAG and Secretariat related?",
         "What is the Humanitarian Reset?"
       ]
     },
@@ -739,7 +739,7 @@
       "detail": "Global: the IASC Principals and their subsidiary bodies agree policy and priorities (Overview page). Country: the Reset page refers to Humanitarian Coordinators (HCs), Humanitarian Country Teams (HCTs), ERC–HC compacts, clusters and HNRPs — for example, 100% ERC–HC compacts (from 70% in 2024) and 79% of operations starting or completing cluster simplification. Neither page sets out the formal country-level architecture or how HCs are appointed.",
       "technical": "Anything beyond the HC/HCT/cluster terms used on the Reset page — e.g. cluster lead agency roles or HC appointment procedures — would be Tier 4 general knowledge here and is not presented as sourced.",
       "points": [
-        "Global: Principals, EDG, OPAG, Results Groups",
+        "Global: Principals, Deputies Group, EDG, OPAG, time-bound technical structures",
         "Country: HCs, HCTs, clusters, HNRPs (named on the Reset page)",
         "Formal country architecture is not documented on either page"
       ],
@@ -750,7 +750,7 @@
       ],
       "caveat": "This is a gap in the available sources, not a full answer. For country-level arrangements, consult current IASC guidance directly.",
       "followups": [
-        "How are Principals, EDG, OPAG, Results Groups and Secretariat related?",
+        "How are the Principals, Deputies Group, EDG, OPAG and Secretariat related?",
         "Explain the Reset in two minutes."
       ]
     },
@@ -1826,15 +1826,15 @@
     },
     {
       "term": "Principals",
-      "def": "Heads of the 12 IASC member organizations, chaired by the ERC.",
+      "def": "Executive heads of the 19 IASC organizations (12 members, 7 standing invitees), chaired by the ERC.",
       "sources": [
         "iasc-structure",
         "ov-structure"
       ]
     },
     {
-      "term": "Deputies Forum",
-      "def": "Senior executives, usually second-in-command; informal dialogue on strategic issues.",
+      "term": "Deputies Group",
+      "def": "Senior deputies of IASC organizations; strategic dialogue and decision-making on issues tasked by the Principals. Renamed from the Deputies Forum in 2021.",
       "sources": [
         "iasc-structure",
         "ov-structure"
@@ -1850,15 +1850,15 @@
     },
     {
       "term": "OPAG",
-      "def": "Operational Policy and Advocacy Group — co-chaired by two Deputies Forum members; normative and strategic policy work.",
+      "def": "Operational Policy and Advocacy Group — normative and strategic policy work on system-wide matters affecting humanitarian operations.",
       "sources": [
         "iasc-structure",
         "ov-structure"
       ]
     },
     {
-      "term": "Results Groups",
-      "def": "Technical experts across member organizations, each working one IASC Strategic Priority.",
+      "term": "Time-bound technical structures",
+      "def": "Groups created for specific IASC workstreams and reviewed regularly. Earlier Results Groups (2019–2021) and Task Forces are not a permanent current structure.",
       "sources": [
         "iasc-structure",
         "ov-structure"
@@ -1969,7 +1969,7 @@
         "The IASC is a forum, not an agency: it coordinates organizations that deliver aid.",
         "It was established in June 1992 following UNGA Resolution 46/182 and is chaired by the Emergency Relief Coordinator.",
         "12 members and 7 standing invitees take part; in practice they are treated alike.",
-        "Principals decide; the Deputies Forum, EDG and OPAG report to them; Results Groups do technical work; the Secretariat connects everything.",
+        "Principals set direction; the Deputies Group, EDG and OPAG take work forward; time-bound technical structures handle specific workstreams; the Secretariat connects everything. This is a functional overview, not a reporting-line chart.",
         "Four principles guide the work: humanity, impartiality, neutrality, independence."
       ],
       "check": {
