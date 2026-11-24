@@ -1,0 +1,49 @@
+{
+  "date": "2026-11-24",
+  "candidates": [
+    {
+      "title": "Bukele Names Three Salvadoran Soldiers Killed in Haiti Mission",
+      "originator": "Nayib Bukele (El Salvador presidency), via social media post",
+      "publisher": "NewsCord (aggregating Al Jazeera, The Guardian, CBN, DW and others)",
+      "date": "24.11.2026",
+      "url": "https://newscord.org/article/nayib-bukele-names-three-el-salvador-soldiers-killed-on-anti-gang-mission-in-hai--Story_20261123_BukeleviraherinoHaitf824ca1a",
+      "lang": "en",
+      "desk_hint": ["cadre509", "cadre7"],
+      "cell_hint": ["casualty", "command"],
+      "why_new": "Published today: Bukele named, for the first time, the three Salvadoran soldiers killed (Lt. Cristian Daniel Palacios Santos; Cpls. Emerson Alexander Zepeda Zelada and Wilber Manuel Serrano Medina), with an account involving a grenade lodged in a drone and contractors reportedly retreating during the operation -- adds identity and circumstantial detail beyond the unnamed/unconfirmed casualty count already staged on 22-23.11, and the contractor-conduct detail may also bear on Cadre 7's command-clarity cell."
+    },
+    {
+      "title": "El Salvador to Withdraw from Haiti Once Missing Airmen Rescued: Minister",
+      "originator": "Gustavo Villatoro, El Salvador Security Minister, via AFP",
+      "publisher": "Citizen Digital (AFP wire)",
+      "date": "17.11.2026",
+      "url": "https://citizen.digital/article/el-salvador-to-withdraw-from-haiti-once-airmen-rescued-minister-1-n394051",
+      "lang": "en",
+      "desk_hint": ["cadre7"],
+      "cell_hint": ["endstate"],
+      "why_new": "On-record statement from El Salvador's security minister tying troop withdrawal explicitly to recovery of the four missing Salvadoran soldiers ('if they reappear tomorrow ... we will leave'), set against Haiti's security minister at the same event saying Haiti wants the deployment extended -- a direct, named-official articulation of end-state conditions, and of friction over them, not matched in the known-URL corpus. Event is dated 16-17.11, older than the usual 36-48h sweep window but not previously staged or found among desk sources."
+    },
+    {
+      "title": "El Salvador Says It Hit a Haitian Gang House (Jeff Gwo Lwa)",
+      "originator": "Nayib Bukele via X post; unnamed Haitian press cited for the ownership claim",
+      "publisher": "The Rio Times",
+      "date": "18.11.2026",
+      "url": "https://www.riotimesonline.com/el-salvador-says-it-hit-haitian-gang-house-jeff-gwo-lwa/",
+      "lang": "en",
+      "desk_hint": ["cadre7"],
+      "cell_hint": ["command", null],
+      "why_new": "A second unilateral Salvadoran helicopter strike (after the 10.11 strike on Wilson Joseph/400 Mawozo) on a named gang leader's property, confirmed only by Bukele's own post, with no Haitian government, PNH, or GSF confirmation and no casualty figures given -- relevant to whether Salvadoran strikes run inside or outside GSF/joint command. Dated 18.11; may relate to the already-known 21.11 CNN piece on Bukele's video posts, but this specific URL and target name were not in the known-URL corpus."
+    },
+    {
+      "title": "Haiti Revs Up for Elections as Enrollment Closes for Presidential and Parliamentary Candidates",
+      "originator": "Dánica Coto / Evens Sanon, Associated Press",
+      "publisher": "AP, via The Atlanta Journal-Constitution",
+      "date": "16.11.2026",
+      "url": "https://www.ajc.com/news/2026/11/haiti-revs-up-for-elections-as-enrollment-closes-for-presidential-and-parliamentary-candidates/",
+      "lang": "en",
+      "desk_hint": ["cadre509", "cadre7", "cadre22"],
+      "cell_hint": ["casualty", "election", null],
+      "why_new": "Post-deadline AP wire citing ACLED data not seen in already-known candidate-count sources: clashes/drone strikes against gangs reportedly up 46% versus the 21 days before the Salvadoran deployment, estimated fatalities over 100 with more than two dozen identified as civilians, plus the named list of the 33 registered presidential candidates (including the first women candidates) and voter-registration figures (~1M registered against a 3-6M target). Dated 16.11; largely overlaps already-known candidate-count coverage, but the ACLED casualty/clash figures appear new to the corpus."
+    }
+  ]
+}
