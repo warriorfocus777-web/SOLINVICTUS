@@ -1,0 +1,49 @@
+{
+  "date": "2026-11-25",
+  "candidates": [
+    {
+      "title": "Six security forces, one crisis: The numbers behind Haiti's fight against gangs",
+      "originator": "The Haitian Times (staff reporting)",
+      "publisher": "The Haitian Times",
+      "date": "23.11.2026",
+      "url": "https://haitiantimes.com/2026/11/23/what-are-haiti-security-forces/",
+      "lang": "en",
+      "desk_hint": ["cadre22"],
+      "cell_hint": [null],
+      "why_new": "Headline and URL (haitiantimes.com, 23.11.2026) indicate a piece specifically enumerating and comparing Haiti's six security forces (PNH, FAdH, GSF, Salvadoran contingent, intelligence services, PM's contractor task force) with figures -- squarely Cadre 22's subject. Page content could not be retrieved (robots.txt disallows automated fetching), so this entry is staged from the search snippet/title/URL only, not a read of the full article; a human reviewer should open it directly."
+    },
+    {
+      "title": "Haiti's Foreign Anti-Gang Forces Cannot Deliver Lasting Security Without Police Reforms, Report Warns",
+      "originator": "International Crisis Group (report), reported by Pedro Camacho",
+      "publisher": "Latin Times",
+      "date": "18.11.2026",
+      "url": "https://www.latintimes.com/haiti-police-reform-security-gang-operations-report-601504",
+      "lang": "en",
+      "desk_hint": ["cadre7", "cadre509"],
+      "cell_hint": ["command", "endstate"],
+      "why_new": "Covers a new International Crisis Group report (released 17.11, ~110 interviews March-Nov 2026) not yet in the known-URL corpus: states GSF strength at ~2,000 (planned 5,500 by early 2027) with ~2,500 Salvadoran troops deployed separately, 'most operating outside the force's command structure' -- a direct command-clarity data point -- and quotes the mission's aim as 'to weaken, not dismantle' gangs, bearing on end-state. Also flags police recruit training cut from 7 months to under 4, and criticizes the PM-office contractor task force (Vectus Global/Erik Prince-linked) drone operations as killing bystanders without achieving key goals."
+    },
+    {
+      "title": "Bukele's Troops in Haiti: The Frontlines of an Eroding Rules-Based Global Order?",
+      "originator": "Beatrice Lindstrom and Eli Cooper (Harvard Law School Int'l Human Rights Clinic / Harvard Int'l Law Journal)",
+      "publisher": "Just Security (NYU School of Law, Reiss Center on Law and Security)",
+      "date": "19.11.2026",
+      "url": "https://www.justsecurity.org/165102/bukeles-troops-haiti-eroding-rules-based-order/",
+      "lang": "en",
+      "desk_hint": ["cadre7", "cadre509"],
+      "cell_hint": ["command"],
+      "why_new": "Gives a specific, sourced breakdown not previously staged: of ~2,500 Salvadoran troops in the new offensive, only ~200 sit inside the GSF; the rest are described as outside the GSF's legal/oversight structure, operating under an undisclosed bilateral arrangement with the Haitian government. Calls for the Haitian government to publish the agreement, mandate, command structure and rules of engagement, and for UNSC pressure ahead of the March 2027 GSF mandate renewal. Also notes an ACLED-reported ~46% rise in clashes/drone strikes since the deployment and testing of armed 'robot dogs.'"
+    },
+    {
+      "title": "Foreign troops offer Haiti temporary fix, but security reforms needed, report finds",
+      "originator": "International Crisis Group (report) / UN Human Rights Office statement, reported by Jacqueline Charles",
+      "publisher": "Miami Herald (via Yahoo News)",
+      "date": "17.11.2026",
+      "url": "https://www.yahoo.com/news/world/articles/foreign-troops-offer-haiti-temporary-150000563.html",
+      "lang": "en",
+      "desk_hint": ["cadre509"],
+      "cell_hint": ["casualty", "pnh"],
+      "why_new": "Separate outlet's coverage of the same Crisis Group report as the Latin Times item above, but carries additional UN human-rights-office figures not yet in the known-URL corpus: at least 4,595 killed and 2,050 injured as of 31.10.2026, 514 killed in security operations July-September, and 44 extrajudicial killings specifically implicating police -- bears directly on the casualty-distribution and PNH-accountability cells."
+    }
+  ]
+}
