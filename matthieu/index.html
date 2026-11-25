@@ -427,6 +427,14 @@ body::after{content:"";position:fixed;inset:-50%;z-index:50;pointer-events:none;
 .tl .org a{color:inherit;border-bottom:1px solid rgba(201,168,108,.35);transition:border-color .3s}
 .tl .org a:hover{border-color:var(--accent)}
 @media (max-width:760px){.tl-group{margin-left:28px}.tl-group::before{left:-29px}}
+
+/* UN training */
+.training{margin-top:40px;padding-top:32px;border-top:1px solid var(--border)}
+.training .label{margin-bottom:16px}
+.trainings{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:0 32px}
+.trainings li{position:relative;padding:9px 0 9px 18px;border-bottom:1px solid var(--border);font-size:15.5px;line-height:1.45}
+.trainings li::before{content:"";position:absolute;left:0;top:17px;width:6px;height:6px;border:1px solid var(--accent);transform:rotate(45deg)}
+@media (max-width:760px){.trainings{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -490,7 +498,7 @@ body::after{content:"";position:fixed;inset:-50%;z-index:50;pointer-events:none;
       <h2 id="profile-h">Between headquarters and the field.</h2>
     </div>
     <div class="sec-body">
-      <p class="rv lede-text">Humanitarian professional working on coordination, policy and analysis. At OCHA’s Emergency Response Section: operational partnerships, UNDAC working groups, emergency deployment support and analysis for senior leadership. At UNHCR: Country of Origin Information, regional policy dialogue and high-level meetings. A Haitian–French dual national with an MA from the Geneva Graduate Institute and specialised expertise in governance and humanitarian access in fragile settings.</p>
+      <p class="rv lede-text">Humanitarian professional working across coordination, policy and analysis. Currently supporting operational partnerships, UNDAC working groups and emergency deployments at OCHA’s Emergency Response Section, and writing analysis for senior leadership. Previously at UNHCR, working on Country of Origin Information, regional policy dialogue and high-level meetings. Haitian–French dual national with an MA from the Geneva Graduate Institute and specialised expertise in governance and humanitarian access in fragile settings.</p>
       <div class="cards">
         <div class="card rv" style="--d:0s">
           <span class="label">Coordination<i>01</i></span>
@@ -530,12 +538,12 @@ body::after{content:"";position:fixed;inset:-50%;z-index:50;pointer-events:none;
           <h3>Intern – Emergency Response Section, Operational Support Unit (Operational Partners)</h3>
           <p class="org">OCHA · Response Support Branch · Geneva</p>
           <ul class="bul">
-            <li>Maintain statistics on operational partners’ support to OCHA/UNDAC, keeping data aligned across databases and ready for extraction and analysis.</li>
-            <li>Support UNDAC partnerships work in the UNDAC Training Working Group, producing summary documents and infographics.</li>
-            <li>Act as OSU/Operational Partners communications focal point in the Response Branch Communications Working Group; update and post on the UNDAC LinkedIn page to raise awareness and engagement.</li>
-            <li>Prepare and document meetings of the UNDAC Logistics Working Group and the International Humanitarian Partnership (IHP); during UNDAC deployments, support administrative coordination of partners’ mobilisation.</li>
-            <li>Produced <i>Shadows of Governance</i>, a three-part analytical series for senior leadership on Haiti: the MSS-to-GSF transition, Resolution 2793, armed governance, IDPs, food insecurity and civil-military coordination implications.</li>
-            <li>Built an OCHA-branded, AI-assisted drafting module for the UNDAC End of Mission Report template.</li>
+            <li>Maintain data on operational partners’ support to UNDAC, a global roster of more than 300 emergency responders, keeping records consistent across databases and ready for analysis and reporting.</li>
+            <li>Prepare and minute working-group meetings, at least one a week, including the UNDAC Logistics Working Group and the International Humanitarian Partnership (IHP).</li>
+            <li>Support the UNDAC Training Working Group with summary documents and infographics.</li>
+            <li>Serve as communications focal point for Operational Partners in the Response Branch Communications Working Group and manage content for the UNDAC LinkedIn page.</li>
+            <li>Support the administrative coordination of partners’ mobilisation during UNDAC deployments.</li>
+            <li>Wrote <i>Shadows of Governance</i>, an internal three-part analytical series for senior leadership on Haiti: the transition from the MSS to the Gang Suppression Force, Resolution 2793, armed governance, displacement, food insecurity and civil-military coordination.</li>
           </ul>
         </div>
       </div>
@@ -545,11 +553,11 @@ body::after{content:"";position:fixed;inset:-50%;z-index:50;pointer-events:none;
           <h3>Intern – Liaison Unit for Regional Bureaux</h3>
           <p class="org">UNHCR · Geneva</p>
           <ul class="bul">
-            <li>Compiled and synthesised Country of Origin Information on Haiti, delivering balanced analysis used for protection and operational decision-making.</li>
-            <li>Supported the Working Group on Human Rights and Mobility in Latin America &amp; the Caribbean through research on Access to Territory and Access to Justice, with contextual analyses and recommendations.</li>
-            <li>Organised high-level meetings, prepared agendas and briefing notes, and produced detailed summaries to guide follow-up action.</li>
-            <li>Followed UNHCR’s Executive and Standing Committees: contributed to operational updates on forced recruitment in Sudan and displacement in the East and Horn of Africa, and supported a side event on Colombia’s Truth Commission.</li>
-            <li>Supported preparatory work for the Global Refugee Forum, including contributions from the West Africa region.</li>
+            <li>Compiled and synthesised Country of Origin Information on Haiti to inform protection and operational decisions.</li>
+            <li>Supported the Working Group on Human Rights and Mobility in Latin America &amp; the Caribbean with research and recommendations on access to territory and access to justice.</li>
+            <li>Organised high-level meetings, prepared agendas and briefing notes, and wrote summaries to guide follow-up.</li>
+            <li>Followed the Executive and Standing Committees, contributing to operational updates on forced recruitment in Sudan and displacement in the East and Horn of Africa; supported a side event on Colombia’s Truth Commission.</li>
+            <li>Supported preparations for the Global Refugee Forum, including contributions from the West Africa region.</li>
           </ul>
         </div>
       </div>
@@ -558,7 +566,11 @@ body::after{content:"";position:fixed;inset:-50%;z-index:50;pointer-events:none;
         <div>
           <h3>Logistics &amp; Business Operations Assistant</h3>
           <p class="org"><a href="https://www.linkedin.com/in/brokerage-logistics-trade-sa-%F0%9F%87%AD%F0%9F%87%B9-b209692b3/" target="_blank" rel="noopener">Brokerage Logistics Trade S.A. (BLT)</a> · Port-au-Prince, Haiti</p>
-          <p class="small">Assisted with logistics and business operations at a Port-au-Prince trade and logistics company during the COVID-19 period, gaining practical exposure to the Haitian commercial environment.</p>
+          <ul class="bul">
+            <li>Assisted with day-to-day logistics: following up shipments and coordinating schedules with clients, suppliers and transport providers.</li>
+            <li>Prepared and tracked commercial and shipping documents and kept operational records up to date.</li>
+            <li>Supported general administration during the COVID-19 period, gaining practical exposure to the Haitian commercial environment.</li>
+          </ul>
         </div>
       </div>
       <p class="tl-group">Education</p>
@@ -583,7 +595,7 @@ body::after{content:"";position:fixed;inset:-50%;z-index:50;pointer-events:none;
         <div>
           <h3>Tennis Coaching &amp; Community Development</h3>
           <p class="org">Tennis Club de Ferney-Voltaire · France</p>
-          <p class="small">Substitute coach for club sessions. As volunteer Head of Marketing: club communications, content production, event support and community engagement.</p>
+          <p class="small">Substitute coach for club sessions. As volunteer Head of Marketing, running club communications and content, and supporting events and member engagement.</p>
         </div>
       </div>
       <div class="tl rv">
@@ -591,7 +603,7 @@ body::after{content:"";position:fixed;inset:-50%;z-index:50;pointer-events:none;
         <div>
           <h3>Digital Communications &amp; Product Design</h3>
           <p class="org">Independent &amp; organisational projects</p>
-          <p class="small">Designed websites and outreach materials for community organisations and non-profits; produced clear, accessible content in French and English for diverse audiences.</p>
+          <p class="small">Designed websites and outreach materials for community organisations and non-profits, writing clear, accessible content in French and English.</p>
         </div>
       </div>
       </div>
@@ -600,7 +612,7 @@ body::after{content:"";position:fixed;inset:-50%;z-index:50;pointer-events:none;
         <div>
           <p class="label">Core competencies</p>
           <ul class="tags">
-            <li>Civil-military and inter-agency coordination</li><li>Operational partner data &amp; reporting</li><li>Meeting organisation &amp; coordination</li><li>Information synthesis (COI, policy material)</li><li>High-quality drafting in French and English</li><li>Communications &amp; outreach</li><li>Information synthesis under pressure</li><li>Protection of vulnerable groups (women, children)</li><li>Dialogue facilitation with local communities and civil society</li><li>Quick Impact Project identification and civil-society partnership</li><li>Community-level conflict analysis &amp; early warning</li><li>Perception tracking and feedback mechanisms</li>
+            <li>Inter-agency &amp; civil-military coordination</li><li>Operational partner data and reporting</li><li>Meeting organisation and minute-taking</li><li>Policy research and information synthesis</li><li>Drafting in French and English</li><li>Communications and outreach</li><li>Protection of vulnerable groups</li><li>Dialogue with communities and civil society</li><li>Conflict analysis and early warning</li><li>Perception tracking and feedback mechanisms</li>
           </ul>
         </div>
         <div>
@@ -611,6 +623,20 @@ body::after{content:"";position:fixed;inset:-50%;z-index:50;pointer-events:none;
           <p class="label" style="margin-top:28px">Volunteering</p>
           <p class="small">Association Suisse de Kinomichi: content production, event support and community engagement.</p>
         </div>
+      </div>
+
+      <div class="training rv">
+        <p class="label">UN training completed</p>
+        <ul class="trainings">
+          <li>BSAFE (UN security awareness)</li>
+          <li>Ethics and Integrity at the United Nations</li>
+          <li>United to Respect: Preventing Sexual Harassment and Other Prohibited Conduct (managers’ edition)</li>
+          <li>Addressing Racism and Racial Discrimination in the Workplace</li>
+          <li>I Know Gender: An Introduction to Gender Equality for UN Staff</li>
+          <li>UN Disability Inclusion Strategy: Putting Words into Action</li>
+          <li>Information Security Awareness: Foundational (certification 2026–2027)</li>
+          <li>Records and Information Management</li>
+        </ul>
       </div>
     </div>
   </div>
