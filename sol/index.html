@@ -624,7 +624,6 @@ footer em{font:italic 400 15px var(--serif);letter-spacing:0;text-transform:none
       <a href="#paths">Four Paths</a>
       <a href="#stage-test">Your Stage</a>
       <a href="#library">Library</a>
-      <a class="resource-link" href="/sol/reset/overview/">IASC</a>
       <a class="btn btn-line" href="#join">Begin</a>
     </nav>
     <details class="nav-menu" id="siteMenu">
@@ -639,9 +638,6 @@ footer em{font:italic 400 15px var(--serif);letter-spacing:0;text-transform:none
         <a href="#paths">Four Paths</a>
         <a href="#stage-test">Your Stage</a>
         <a href="#library">Library</a>
-        <p class="nav-menu-label">HUMANITARIAN COORDINATION</p>
-        <a href="/sol/reset/overview/">IASC Overview</a>
-        <a href="/sol/reset/">Humanitarian Reset</a>
         <a class="btn btn-line" href="#join">Begin the 40-Day Opus</a>
       </nav>
     </details>
@@ -1514,7 +1510,7 @@ footer em{font:italic 400 15px var(--serif);letter-spacing:0;text-transform:none
    Syriac, Nabataean, Brahmi, Kharoshthi) — tinted by the alchemical stage on screen, with a bright head.
    Scrolling is wind: the rain streaks when you scroll fast and rises when you scroll back up. The pointer parts it.
    Now and then a vèvè is poured into a line, from its centre out. Every 7 s a white door opens, turn by turn: ☯ to /sol/anima/ (Pierre Willequet),
-   the white Brand to /sol/fourth-way/ (Guts and the Fourth Way), the white convergence mark to /sol/reset/ (Humanitarian Reset Stocktake), and the same mark with a red centre to /sol/reset/overview/ (IASC Overview). */
+   the white Brand to /sol/fourth-way/ (Guts and the Fourth Way). */
 (function(){
   const el=document.getElementById("solRain"),cv=el.querySelector("canvas"),x=cv.getContext("2d"),box=document.getElementById("solDoor");
   const REDUCED=matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -1530,9 +1526,7 @@ footer em{font:italic 400 15px var(--serif);letter-spacing:0;text-transform:none
   const LH=21,EVERY=7000,LIFE=5600;
   const DOORS=[
     {g:"☯",href:"/sol/anima/",key:"sol-anima",aria:"Pierre Willequet — archive",lbl:"Pierre Willequet<i>l’archive</i>"},
-    {img:"/sol/assets/images/door-fourth-way.png",href:"/sol/fourth-way/",key:"sol-fourth-way",aria:"Guts and the Fourth Way — Pressure Test 01",lbl:"The Fourth Way<i>Guts · Pressure Test 01</i>"},
-    {img:"/sol/assets/images/door-reset.svg",href:"/sol/reset/",key:"sol-reset",aria:"Humanitarian Reset — Stocktake, October 2026",lbl:"Humanitarian Reset<i>Stocktake · October 2026</i>"},
-    {img:"/sol/assets/images/door-iasc.svg",href:"/sol/reset/overview/",key:"sol-iasc",aria:"IASC Overview — Inter-Agency Standing Committee",lbl:"IASC Overview<i>Inter-Agency Standing Committee</i>"}
+    {img:"/sol/assets/images/door-fourth-way.png",href:"/sol/fourth-way/",key:"sol-fourth-way",aria:"Guts and the Fourth Way — Pressure Test 01",lbl:"The Fourth Way<i>Guts · Pressure Test 01</i>"}
   ];
   let doorTurn=(Math.random()*DOORS.length)|0;
   const RES=k=>(window.__resources&&window.__resources["sol-"+k])||("media/sol/"+k+".png");

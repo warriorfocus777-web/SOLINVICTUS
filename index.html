@@ -191,19 +191,14 @@ footer .shell>:last-child{text-align:right}
   .door:hover .emb-c22 path{animation:none}
 }
 
-/* IASC companion portal — secondary resource, not a sixth core instrument */
-.institutional{margin:42px 0 8px;padding:clamp(22px,3vw,34px);display:grid;grid-template-columns:minmax(0,1fr) minmax(360px,.9fr);gap:28px;align-items:center;border:1px solid var(--line);background:linear-gradient(115deg,rgba(201,168,108,.07),rgba(11,11,11,.3))}
-.institutional-kicker{color:var(--accent);font:500 10px/1.4 var(--ui);letter-spacing:.2em;text-transform:uppercase}
-.institutional h2{margin:10px 0 9px;font:400 clamp(25px,3vw,38px)/1.05 var(--display);letter-spacing:-.015em;color:var(--text)}
-.institutional-copy>p:last-child{max-width:58ch;color:var(--muted);font-size:13.5px;line-height:1.6}
-.institutional-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-.institutional-links a{min-width:0;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px 12px;align-items:start;padding:16px;border:1px solid var(--line);background:rgba(0,0,0,.22);transition:border-color .3s,background .3s;text-decoration:none}
-.institutional-links a:hover,.institutional-links a:focus-visible{border-color:var(--line-strong);background:rgba(201,168,108,.055)}
-.institutional-links a>span{font:500 10.5px/1.4 var(--ui);letter-spacing:.15em;text-transform:uppercase;color:var(--text)}
-.institutional-links a>small{grid-column:1/-1;color:var(--muted);font:400 11px/1.5 var(--ui)}
-.institutional-links a>b{color:var(--accent);font:400 15px/1 var(--ui)}
-@media (max-width:800px){.institutional{grid-template-columns:1fr;gap:20px}}
-@media (max-width:520px){.institutional{margin-top:30px;padding:20px}.institutional-links{grid-template-columns:1fr}}
+/* IASC — one quiet door, the logo is the button */
+.iasc-door{display:flex;justify-content:center;margin:46px 0 8px}
+.iasc-btn{display:inline-flex;flex-direction:column;align-items:center;gap:12px;padding:20px 26px 16px;border:1px solid var(--line);background:rgba(0,0,0,.22);text-decoration:none;transition:border-color .3s,background .3s,transform .5s var(--ease)}
+.iasc-btn:hover,.iasc-btn:focus-visible{border-color:var(--line-strong);background:rgba(201,168,108,.055);transform:translateY(-2px)}
+.iasc-btn img{display:block;width:168px;max-width:62vw;height:auto;padding:10px 12px;background:#fff}
+.iasc-btn small{display:flex;align-items:center;gap:7px;color:var(--muted);font:500 10px/1.4 var(--ui);letter-spacing:.18em;text-transform:uppercase;transition:color .3s}
+.iasc-btn:hover small,.iasc-btn:focus-visible small{color:var(--accent)}
+@media (max-width:520px){.iasc-door{margin-top:34px}.iasc-btn{padding:16px 18px 13px}}
 :focus-visible{outline:2px solid var(--accent);outline-offset:4px}
 
 /* M7 — metal mark, opens the profile */
@@ -315,16 +310,11 @@ footer .shell>:last-child{text-align:right}
       </li>
     </ul>
 
-    <section class="institutional rise" style="--d:1.48s" aria-labelledby="institutional-heading">
-      <div class="institutional-copy">
-        <p class="institutional-kicker">INDEPENDENT HUMANITARIAN EXPLAINERS</p>
-        <h2 id="institutional-heading">Humanitarian coordination, made legible.</h2>
-        <p>Explore the Inter-Agency Standing Committee and the Humanitarian Reset through independent, source-aware explainers — not official IASC publications.</p>
-      </div>
-      <nav class="institutional-links" aria-label="IASC learning resources">
-        <a href="/sol/reset/overview/"><span>IASC Overview</span><small>Mandate · membership · structure</small><b aria-hidden="true">↗</b></a>
-        <a href="/sol/reset/"><span>Humanitarian Reset</span><small>Four Ds · stocktake · evidence</small><b aria-hidden="true">↗</b></a>
-      </nav>
+    <section class="iasc-door rise" style="--d:1.48s" aria-label="Humanitarian coordination">
+      <a class="iasc-btn" href="/sol/reset/overview/">
+        <img src="/sol/assistant/media/IASC_Logo_Blue.png" width="800" height="158" alt="Inter-Agency Standing Committee (IASC)">
+        <small>Independent explainers <b aria-hidden="true">↗</b></small>
+      </a>
     </section>
 
     <section class="m7 rise" style="--d:1.6s" aria-label="M7 and J6">
