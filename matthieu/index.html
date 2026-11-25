@@ -417,6 +417,16 @@ body::after{content:"";position:fixed;inset:-50%;z-index:50;pointer-events:none;
   .tl h3{font-size:17px}
 }
 
+
+/* timeline groups */
+.tl-group{position:relative;margin:44px 0 22px 198px;font-family:var(--ui);font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--accent)}
+.tl-group:first-child{margin-top:0}
+.tl-group::before{content:"";position:absolute;left:-36px;top:50%;width:9px;height:9px;transform:translateY(-50%) rotate(45deg);background:#000;border:1px solid var(--accent)}
+.tl-group+.tl{padding-top:0}
+.tl-group+.tl::before{top:6px}
+.tl .org a{color:inherit;border-bottom:1px solid rgba(201,168,108,.35);transition:border-color .3s}
+.tl .org a:hover{border-color:var(--accent)}
+@media (max-width:760px){.tl-group{margin-left:28px}.tl-group::before{left:-29px}}
 </style>
 </head>
 <body>
@@ -513,6 +523,7 @@ body::after{content:"";position:fixed;inset:-50%;z-index:50;pointer-events:none;
     </div>
     <div class="sec-body">
       <div class="timeline">
+      <p class="tl-group">Professional experience</p>
       <div class="tl rv">
         <p class="when">1 Jul – 18 Dec 2026</p>
         <div>
@@ -543,6 +554,15 @@ body::after{content:"";position:fixed;inset:-50%;z-index:50;pointer-events:none;
         </div>
       </div>
       <div class="tl rv">
+        <p class="when">2020 – 2021</p>
+        <div>
+          <h3>Logistics &amp; Business Operations Assistant</h3>
+          <p class="org"><a href="https://www.linkedin.com/in/brokerage-logistics-trade-sa-%F0%9F%87%AD%F0%9F%87%B9-b209692b3/" target="_blank" rel="noopener">Brokerage Logistics Trade S.A. (BLT)</a> · Port-au-Prince, Haiti</p>
+          <p class="small">Assisted with logistics and business operations at a Port-au-Prince trade and logistics company during the COVID-19 period, gaining practical exposure to the Haitian commercial environment.</p>
+        </div>
+      </div>
+      <p class="tl-group">Education</p>
+      <div class="tl rv">
         <p class="when">2023 – 2025</p>
         <div>
           <h3>Master’s in International History and Politics</h3>
@@ -555,6 +575,15 @@ body::after{content:"";position:fixed;inset:-50%;z-index:50;pointer-events:none;
         <div>
           <h3>BA, International Security &amp; Diplomacy</h3>
           <p class="org">Syracuse University · Maxwell School</p>
+        </div>
+      </div>
+      <p class="tl-group">Additional experience</p>
+      <div class="tl rv">
+        <p class="when">2024 – Present</p>
+        <div>
+          <h3>Tennis Coaching &amp; Community Development</h3>
+          <p class="org">Tennis Club de Ferney-Voltaire · France</p>
+          <p class="small">Substitute coach for club sessions. As volunteer Head of Marketing: club communications, content production, event support and community engagement.</p>
         </div>
       </div>
       <div class="tl rv">
@@ -579,8 +608,8 @@ body::after{content:"";position:fixed;inset:-50%;z-index:50;pointer-events:none;
           <ul class="langs">
             <li><span>Haitian Creole</span><b>Native</b></li><li><span>French</span><b>Native</b></li><li><span>English</span><b>Native</b></li><li><span>Spanish</span><b>C1</b></li><li><span>Portuguese</span><b>B1</b></li>
           </ul>
-          <p class="label" style="margin-top:28px">Volunteer</p>
-          <p class="small">Association Suisse de Kinomichi and Tennis Club de Ferney-Voltaire: content production, event support and community engagement.</p>
+          <p class="label" style="margin-top:28px">Volunteering</p>
+          <p class="small">Association Suisse de Kinomichi: content production, event support and community engagement.</p>
         </div>
       </div>
     </div>
