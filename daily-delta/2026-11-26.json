@@ -1,0 +1,27 @@
+{
+  "date": "2026-11-26",
+  "candidates": [
+    {
+      "title": "54 gang members killed in Haiti police raids, authorities say",
+      "originator": "Haitian National Police (PNH) statement, reported by The Haitian Times",
+      "publisher": "The Haitian Times",
+      "date": "24.11.2026",
+      "url": "https://haitiantimes.com/2026/11/24/haiti-police-kill-50-gang-members-martissant-operations/",
+      "lang": "en",
+      "desk_hint": ["cadre509", "cadre22"],
+      "cell_hint": ["casualty", "pnh"],
+      "why_new": "Reports a specific, dated PNH operation in Martissant putting the toll at 54 gang members killed -- a discrete casualty figure not yet in the known-URL corpus, falling in the window since the most recent staged casualty data points (UN human-rights-office Oct 31 tallies staged 2026-11-25). Bears on cadre509's casualty-count cell and on PNH operational tempo for cadre22."
+    },
+    {
+      "title": "Primer ministro haitiano defiende acuerdo con El Salvador: \"La poblacion tiene derecho a un pais sin miedo\"",
+      "originator": "PM Alix Didier Fils-Aime (statement), reported by Infobae",
+      "publisher": "Infobae",
+      "date": "25.11.2026",
+      "url": "https://infobae.com/el-salvador/2026/11/25/primer-ministro-haitiano-defiende-acuerdo-con-el-salvador-contra-las-pandillas-la-poblacion-tiene-derecho-a-un-pais-sin-miedo",
+      "lang": "es",
+      "desk_hint": ["cadre7", "cadre509"],
+      "cell_hint": ["command", null],
+      "why_new": "Haiti's PM goes on record defending the Haiti-El Salvador security agreement roughly two weeks after Amnesty International's Nov 10 call (already-dated, not itself staged as stale) for both governments to guarantee Salvadoran forces comply with international human rights law -- a new, dated statement from the Haitian political authority on the legitimacy/accountability of the parallel foreign-force arrangement, relevant to cadre7's command-clarity cell and cadre509's political-authority-instruments cell. Same event also covered in English by riotimesonline.com/haiti-pm-answers-amnesty-gang-fight (undated in that source; staging the dated Infobae piece instead) and by elsalvador.com."
+    }
+  ]
+}
