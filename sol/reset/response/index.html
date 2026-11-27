@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="theme-color" content="#272E67">
+<title>Anatomy of a Response</title>
+<link rel="icon" type="image/svg+xml" href="/sol/reset/favicon.svg">
+<link rel="canonical" href="https://solinvictus.app/sol/reset/response/">
+<meta name="description" content="Follow one crisis through the IASC system, step by step, and see what the Humanitarian Reset changed. Independent explainer, sourced and dated.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Anatomy of a Response – IASC and the Humanitarian Reset">
+<meta property="og:description" content="One crisis, eight steps, before and after the Reset. Independent explainer, as of 27 November 2026.">
+<meta property="og:url" content="https://solinvictus.app/sol/reset/response/">
+<meta property="og:image" content="https://solinvictus.app/sol/reset/response/media/og-anatomy.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Anatomy of a Response: a map of the IASC system, with clusters going from 11 plus 4 to 8.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" as="font" type="font/woff2" href="/sol/reset/fonts/roboto-latin-wght-normal.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/sol/reset/fonts/montserrat-latin-wght-normal.woff2" crossorigin>
+<style>
+@font-face{font-family:"Montserrat";font-weight:100 900;font-display:swap;src:url("/sol/reset/fonts/montserrat-latin-wght-normal.woff2") format("woff2")}
+@font-face{font-family:"Roboto";font-weight:100 900;font-display:swap;src:url("/sol/reset/fonts/roboto-latin-wght-normal.woff2") format("woff2")}
+@font-face{font-family:"Roboto Condensed";font-weight:100 900;font-display:swap;src:url("/sol/reset/fonts/roboto-condensed-latin-wght-normal.woff2") format("woff2")}
+/* VOICE: formal, calm, institutional — an explainer an Emergency Director would forward.
+   IDEA: a response protocol sheet — the scale-up timeline, read as a sequence of decisions.
+   PICTURE: one functional map of the system that lights up step by step; the cluster grid shrinks 11+4 → 8.
+   COLOUR and TYPE: IASC navy #272E67 identity, one UN blue #009EDB accent, white stage, tint #E9EAF0. Montserrat / Roboto / Roboto Condensed.
+   LAYOUT: steps scroll on the left, the map stays fixed on the right; on phones the map pins to the top. */
+:root{color-scheme:light dark;
+  --bg:light-dark(#ffffff,#141838);--ink:light-dark(#1b2050,#f2f3f8);--navy:light-dark(#272E67,#c9cdf0);
+  --mute:light-dark(#545a86,#a9aed3);--tint:light-dark(#E9EAF0,#232a5c);--line:light-dark(#c9ccdb,#3a417a);
+  --blue:#009EDB;--card:light-dark(#ffffff,#1a1f47);--nodeOn:light-dark(#272E67,#e9eaf0);--nodeOnInk:light-dark(#ffffff,#141838)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-padding-top:80px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Roboto,system-ui,sans-serif;overflow-x:clip}
+a{color:var(--navy)}
+:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+.skip{position:absolute;left:-999px;top:8px}.skip:focus{left:16px;background:var(--bg);padding:8px;z-index:9}
+header{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+.bar{max-width:1240px;margin:0 auto;padding:10px max(4vw,16px);display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.logo{font:600 15px 'Roboto Condensed',sans-serif;color:var(--navy);text-decoration:none;padding-right:16px;border-right:1px solid var(--line);flex:none;min-height:44px;display:flex;align-items:center}
+.crumb{font:400 14px 'Roboto Condensed',sans-serif;color:var(--mute);flex:1}
+.crumb a{color:var(--mute)}
+.seg{display:inline-flex;border:1px solid var(--navy);border-radius:4px;overflow:hidden}
+.seg button{font:600 14px 'Roboto Condensed',sans-serif;min-height:44px;min-width:44px;padding:0 14px;border:0;background:transparent;color:var(--navy);cursor:pointer}
+.seg button[aria-pressed=true]{background:var(--navy);color:var(--bg)}
+.seg.mode button[aria-pressed=true][data-mode=after]{background:var(--blue);color:#fff}
+.hero{padding:clamp(28px,5vw,56px) 0 8px}
+.kicker{font:600 14px 'Roboto Condensed',sans-serif;color:var(--mute);margin:0 0 8px}
+h1{font:700 clamp(32px,5vw,50px)/1.05 Montserrat,sans-serif;color:var(--navy);margin:0 0 16px;text-wrap:balance;max-width:20ch}
+.lede{font-size:17px;max-width:64ch;margin:0 0 20px}
+.controls{display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center}
+.scope{font-size:15px;color:var(--mute);border-top:1px solid var(--line);padding-top:12px;margin:20px 0 0;max-width:64ch}
+.controls p{margin:0;font:400 14px 'Roboto Condensed',sans-serif;color:var(--mute)}
+.story{max-width:1240px;margin:0 auto;padding:0 max(4vw,16px) 48px;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(24px,4vw,56px)}
+.steps{padding-bottom:30vh}
+.step{min-height:78vh;padding:24px 0;display:flex;flex-direction:column;justify-content:center;opacity:.45;transition:opacity .3s}
+.step.on{opacity:1}
+.when{font:600 14px 'Roboto Condensed',sans-serif;color:var(--mute);margin:0 0 6px}
+.step h2{font:700 clamp(24px,2.6vw,30px)/1.15 Montserrat,sans-serif;color:var(--navy);margin:0 0 12px;text-wrap:balance}
+.step p{margin:0 0 12px;max-width:60ch}
+.change{border-left:3px solid var(--blue);padding:4px 0 4px 14px;margin:6px 0 12px}
+.change b{display:block;font:600 14px 'Roboto Condensed',sans-serif;color:var(--blue);margin-bottom:2px}
+.haiti{background:var(--tint);padding:10px 14px;border-radius:4px;font-size:15px;margin:0 0 12px}
+.haiti b{font:600 14px 'Roboto Condensed',sans-serif}
+.conf{font:400 14px 'Roboto Condensed',sans-serif;color:var(--mute)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
+.chips a{font:400 13px 'Roboto Condensed',sans-serif;color:var(--mute);background:var(--tint);padding:3px 8px;border-radius:3px;text-decoration:none}
+.chips a:hover{color:var(--navy);text-decoration:underline}
+.mapwrap{position:sticky;top:76px;height:calc(100vh - 96px);display:flex;flex-direction:column;gap:10px;padding:16px 0}
+.rail{position:relative;height:44px;flex:none}
+.rail .track{position:absolute;left:0;right:0;top:12px;height:2px;background:var(--line)}
+.rail .fill{position:absolute;left:0;top:12px;height:2px;background:var(--navy);transition:width .5s}
+.rail span{position:absolute;top:22px;transform:translateX(-50%);font:400 13px 'Roboto Condensed',sans-serif;color:var(--mute);white-space:nowrap}
+.rail span:first-of-type{transform:none}.rail span:last-of-type{transform:translateX(-100%)}
+.rail .dot{position:absolute;top:-3px;width:32px;height:32px;padding:0;border:0;background:transparent;transform:translateX(-50%);cursor:pointer}
+.rail .dot::after{content:'';position:absolute;left:10px;top:10px;width:12px;height:12px;border-radius:50%;background:var(--bg);border:2px solid var(--line);box-sizing:border-box}
+.rail .dot.past::after{border-color:var(--navy);background:var(--navy)}
+.rail .dot[aria-current=step]::after{outline:3px solid var(--blue);outline-offset:2px}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.fig{position:relative;flex:1;min-height:300px}
+.fig>svg{position:absolute;inset:0;width:100%;height:100%}
+.cap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font:400 13px 'Roboto Condensed',sans-serif;color:var(--mute);flex:none}
+.nd rect{fill:var(--tint);stroke:var(--line);transition:fill .35s}
+.nd text{fill:var(--ink);font:600 15px 'Roboto Condensed',sans-serif;text-anchor:middle;transition:fill .35s}
+.nd .sub{font:400 13px 'Roboto Condensed',sans-serif;fill:var(--mute)}
+.nd.on rect{fill:var(--nodeOn);stroke:var(--nodeOn)}
+.nd.on text,.nd.on .sub{fill:var(--nodeOnInk)}
+.ln{stroke:var(--line);stroke-width:2;fill:none;transition:stroke .35s}
+.ln.on{stroke:var(--navy)}
+.tier{font:600 13px 'Roboto Condensed',sans-serif;fill:var(--mute)}
+.cl{transition:opacity .45s,transform .45s;transform-box:fill-box;transform-origin:center}
+.cl.gone{opacity:0;transform:scale(.4)}
+.cl rect{fill:var(--bg);stroke:var(--navy);stroke-width:1.5;transition:x .45s,y .45s,fill .35s}
+.nar .nd text{font-size:13px}
+.clOn .cl rect{fill:var(--navy)}
+.badge rect{fill:var(--blue)}.badge text{fill:#fff;font:600 13px 'Roboto Condensed',sans-serif;text-anchor:middle}
+.badge{transition:opacity .35s}
+.band{background:var(--tint);padding:clamp(28px,4vw,56px) max(4vw,16px)}
+.band>div{max-width:1240px;margin:0 auto}
+.band h2{font:700 28px/1.15 Montserrat,sans-serif;color:var(--navy);margin:0 0 16px}
+table{width:100%;border-collapse:collapse;font-size:15px;background:var(--card)}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font:600 14px 'Roboto Condensed',sans-serif;color:var(--mute)}
+.sum{padding:clamp(28px,4vw,56px) max(4vw,16px)}.sum>div{max-width:1240px;margin:0 auto}.sum h2{font:700 28px/1.15 Montserrat,sans-serif;color:var(--navy);margin:0 0 16px}
+.sum td:nth-child(3){color:var(--navy);font-weight:500}.keep{margin:16px 0;max-width:70ch}
+.cta{display:flex;flex-wrap:wrap;gap:12px}.cta a{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border:1px solid var(--navy);border-radius:4px;font:600 15px 'Roboto Condensed',sans-serif;text-decoration:none}.cta a:first-child{background:var(--navy);color:var(--bg)}
+footer{padding:28px max(4vw,16px);font-size:14px;color:var(--mute)}
+footer div{max-width:1240px;margin:0 auto}
+@media(max-width:900px){
+  .story{grid-template-columns:minmax(0,1fr)}
+  .story>div{display:contents}.hero{order:-2}
+  .mapwrap{order:-1;top:0;height:410px;z-index:3;background:var(--bg);padding:8px 0;border-bottom:1px solid var(--line)}
+  .step{min-height:70vh}
+  .crumb{flex-basis:100%;order:3}
+  header{position:static}html{scroll-padding-top:420px}
+}
+@media(max-width:600px){.cap [data-t=cap2]{display:none}.fig{min-height:0}table{font-size:13px}.stack thead{display:none}.stack tr{display:grid;padding-block:10px}.stack td{display:flow-root;border:0;padding:3px 0;padding-inline-start:8em;text-align:start}.stack td::before{content:attr(data-l);float:inline-start;width:7.5em;margin-inline-start:-8em;white-space:normal;font-weight:500}.stack td:empty{display:none}}
+body:not([data-mode=after]) .after{display:none}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#story" data-t="skip">Skip to content</a>
+<header><div class="bar">
+  <a class="logo" href="/sol/reset/overview/" data-t="logo">Independent IASC explainer</a>
+  <nav class="crumb" aria-label="Breadcrumb"><a href="/sol/reset/overview/" data-t="c1">IASC Overview</a> / <a href="/sol/reset/" data-t="c2">Humanitarian Reset</a> / <span data-t="c3">Anatomy of a Response</span></nav>
+  <div class="seg lang" role="group" aria-label="Language"><button data-lang="en" aria-pressed="true">EN</button><button data-lang="fr" aria-pressed="false">FR</button></div>
+</div></header>
+
+<main>
+
+
+<div class="story" id="story">
+  <div><section class="hero">
+  <p class="kicker" data-t="kick">Interactive explainer · as of 27 November 2026</p>
+  <h1 data-t="h1">Anatomy of a response</h1>
+  <p class="lede" data-t="lede">Follow one sudden-onset crisis through the IASC system, from the first hours to the exit. Then switch to “After Reset” to see what the Humanitarian Reset, launched by the Emergency Relief Coordinator on 10 March 2025, has changed at each step.</p>
+  <div class="controls">
+    <div class="seg mode" role="group" aria-label="View"><button data-mode="before" aria-pressed="true" data-t="mB">Before Reset</button><button data-mode="after" aria-pressed="false" data-t="mA">After Reset</button></div>
+    <p data-t="hint">The scenario is generic. Times follow the IASC scale-up protocol (2018). Use the timeline dots, or the j and k keys, to move between steps.</p>
+  </div>
+  <p class="scope" data-t="scopeN">Scope: the scale-up protocol covers sudden-onset crises and substantial deteriorations. It does not apply to refugee emergencies, which UNHCR leads under the Refugee Coordination Model.</p>
+</section><div class="steps" id="steps"></div></div>
+  <aside class="mapwrap" aria-label="System map">
+    <div class="rail" id="rail" role="group" aria-label="Timeline"></div><p class="vh" id="live" aria-live="polite"></p>
+    <div class="fig"><svg id="map" viewBox="0 0 600 560" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="mapT"><title id="mapT">Functional map of the IASC response system</title></svg></div>
+    <div class="cap"><span data-t="cap1">Functional overview, not reporting lines</span><span data-t="cap2">Timeline not to scale</span></div>
+  </aside>
+</div>
+
+<section class="sum" aria-labelledby="sumH"><div>
+  <h2 id="sumH" data-t="sumH">What the Reset changed, at a glance</h2>
+  <table class="stack"><thead><tr><th data-t="sh1">Topic</th><th data-t="mB">Before Reset</th><th data-t="mA">After Reset</th></tr></thead><tbody id="sumT"></tbody></table>
+  <p class="keep" data-t="keep">The Defend pillar covers humanitarian principles and humanitarian space.</p>
+  <p class="cta"><a href="/sol/reset/" data-t="cta1">Read the Humanitarian Reset stocktake</a><a href="/sol/reset/overview/" data-t="cta2">Back to the IASC Overview</a></p>
+</div></section>
+<section class="band" aria-labelledby="srcH"><div>
+  <h2 id="srcH" data-t="srcH">Sources</h2>
+  <table class="stack"><thead><tr><th data-t="th1">Claim</th><th data-t="th2">Source</th><th data-t="th3">Date</th></tr></thead><tbody id="srcT"></tbody></table>
+  <p class="conf" data-t="scope">Every figure on this page comes from the source shown. Status of Reset measures changes often: verify with the IASC Secretariat before external use.</p>
+</div></section>
+</main>
+
+<footer><div>
+  <p data-t="disc"><strong>Independent explainer. Not an official IASC publication.</strong> Facts checked 27 November 2026. Companion to the IASC Overview and the Humanitarian Reset stocktake.</p>
+</div></footer>
+
+<script>
+{
+const S={
+ p1:{t:'IASC Protocol 1: System-Wide Scale-Up Activation',u:'https://interagencystandingcommittee.org/iasc-protocol-1-humanitarian-system-wide-scale-activation-definition-and-procedures-2018',d:'Nov 2018'},
+ su:{t:'IASC: Humanitarian System-Wide Scale-Up Activations',u:'https://interagencystandingcommittee.org/node/43145',d:'Accessed 27 Nov 2026'},
+ kog:{t:'IASC: Key Operational Guidance (Protocols 1 and 2)',u:'https://interagencystandingcommittee.org/node/43446',d:'Accessed 27 Nov 2026'},
+ tl:{t:'IASC Scale-Up Activation Timeline (copy hosted by the Nutrition Cluster)',u:'https://nutritioncluster.net/sites/nutritioncluster.com/files/2020-03/Scale-Up%20Activation_Timeline_FINAL.PDF',d:'Nov 2018'},
+ unhcr:{t:'UNHCR Emergency Handbook: IASC Scale-Up Activation',u:'https://emergency.unhcr.org/node/568',d:'Jan 2018, under revision'},
+ iahe:{t:'IAHE learning paper: IASC System-Wide Scale-Up mechanism',u:'https://interagencystandingcommittee.org/sites/default/files/2024-06/IAHE%20Learning%20Paper%20IASC%20System-Wide%20Scale-Up%20Full%20Report.pdf',d:'2 Feb 2024'},
+ gpc:{t:'Global Protection Cluster: The Humanitarian Reset',u:'https://globalprotectioncluster.org/node/2196',d:'2025'},
+ alnap1:{t:'ALNAP SOHS 2026: Prioritisation at system level',u:'https://alnap.org/help-library/resources/sohs-2026/chapter-1-prioritisation-under-pressure/1-3-prioritisation-processes-at-the-system-level/',d:'2026'},
+ eu:{t:'EU statement, IASC Principals and donor engagement',u:'https://www.eeas.europa.eu/delegations/un-new-york/eu-statement-un-inter-agency-standing-committee-principals-donor-engagement-humanitarian-reset_en',d:'27 Oct 2026'},
+ lead:{t:'Humanitarian Reset: Empowering Humanitarian Leadership',u:'https://www.nutritioncluster.net/sites/nutritioncluster.com/files/2025-07/Humanitarian%20Reset%20-%20Empowering%20Humanitarian%20Leadership.pdf',d:'Undated (2025)'},
+ hc:{t:'Global Health Cluster: HPC 2026 and the Reset',u:'https://healthcluster.who.int/resources/2023-humanitarian-programme-cycle-implementation-package',d:'Accessed 27 Nov 2026'},
+ clg:{t:'IASC guidance on cluster transition and deactivation',u:'https://healthcluster.who.int/publications/m/item/iasc-guidance-on-cluster-transition-and-deactivation',d:'20 Jan 2025'},
+ prop:{t:'OPAG co-chairs: Cluster Simplification, final proposal to Principals',u:'https://www.nutritioncluster.net/sites/nutritioncluster.com/files/2025-07/Humanitarian%20Reset%20-%20Cluster%20Simplification%20final%20proposal.pdf',d:'9 Jun 2025'},
+ gpc2:{t:'Global Protection Cluster: Reset and protection',u:'https://globalprotectioncluster.org/node/4697',d:'2026'},
+ alnap2:{t:'ALNAP SOHS 2026: Coordination',u:'https://alnap.org/help-library/resources/sohs-2026/chapter-2-what-works-and-at-what-cost/2-2-coordination/',d:'2026'},
+ wfp:{t:'WFP Executive Board, WFP/EB.A/2026/5-A',u:'https://executiveboard.wfp.org/document_download/WFP-0000173466',d:'28 May 2026'},
+ alnap3:{t:'ALNAP SOHS 2026: Implications for the Reset',u:'https://alnap.org/help-library/resources/sohs-2026/chapter-5-learning-and-adapting-to-change/5-2-implications-for-the-humanitarian-reset/',d:'2026'},
+ who:{t:'WHO briefing: The Humanitarian Reset and its impact on health care',u:'https://apps.who.int/gb/MSPI/pdf_files/2026/08/Item1_21-08.pdf',d:'21 Aug 2026'},
+ un80:{t:'ALNAP: UN80 Initiative progress and next steps',u:'https://alnap.org/help-library/resources/un80-initiative-progress-and-next-steps-a-comprehensive-guide-to-un80-initiative-work-packages/',d:'27 Apr 2026'},
+ nrc:{t:'NRC: Protection in the Reset',u:'https://www.nrc.no/globalassets/pdf/position-papers/protection-in-the-humanitarian-reset/nrc---protection-in-the-reset---nrc-priorities.pdf',d:'1 Sep 2025'}
+};
+const CL={en:['Education','Food Security','Health','Nutrition','Protection','Land and Shelter','Services','WASH'],fr:['Éducation','Sécurité alimentaire','Santé','Nutrition','Protection','Terre et abri','Services','EAH']};
+const STEPS=[
+{id:'crisis',at:0,nodes:['crisis','erc'],lines:[],
+ en:{w:'Hours 0–24',h:'A crisis hits',b:'Within 24 hours of a sudden-onset event, or of a substantial deterioration, the Emergency Relief Coordinator (ERC) receives an initial assessment from the Humanitarian Country Team.',a:'The trigger is the same. What changes is the frame: the Reset Roadmap is built on four core pillars, to which a fifth, Enable, was added. Define means focusing on the greatest needs. Deliver means a timely, streamlined response. Devolve means a people-centred response. Defend means protecting principles and humanitarian space.'},
+ fr:{w:'Heures 0 à 24',h:'Une crise éclate',b:'Dans les 24 heures suivant un choc soudain ou une dégradation importante, le Coordonnateur des secours d’urgence (ERC) reçoit une première évaluation de l’Équipe humanitaire pays.',a:'Le déclencheur ne change pas. C’est le cadre qui change : la feuille de route du Reset repose sur quatre piliers principaux, auxquels s’est ajouté un cinquième, Enable. Define : se concentrer sur les besoins les plus graves. Deliver : une réponse rapide et allégée. Devolve : une réponse centrée sur les personnes. Defend : protéger les principes et l’espace humanitaire.'},
+ src:['unhcr','gpc','alnap1']},
+{id:'edg',at:.12,nodes:['edg','erc'],lines:['edg-erc'],
+ en:{w:'Hours 24–48',h:'Emergency Directors prepare options',b:'Within 24 hours of receiving the assessment, the Emergency Directors Group (EDG) meets and agrees recommendations for the Principals on leadership and coordination arrangements, including which clusters to activate.',a:'According to the EU, the IASC has committed to regular meetings with donors, ideally at Emergency Director level, ahead of Principals meetings.'},
+ fr:{w:'Heures 24 à 48',h:'Les directeurs des urgences préparent les options',b:'Dans les 24 heures suivant la réception de l’évaluation, le Groupe des directeurs des urgences (EDG) se réunit et arrête des recommandations pour les Principals sur le leadership et le dispositif de coordination, y compris les clusters à activer.',a:'Selon l’UE, l’IASC s’est engagé à rencontrer régulièrement les bailleurs, idéalement au niveau des directeurs des urgences, en amont des réunions des Principals.'},
+ src:['unhcr','tl','eu']},
+{id:'scale-up',at:.24,nodes:['principals','erc'],lines:['erc-principals'],
+ en:{w:'Within 48 hours',h:'The ERC decides on a System-Wide Scale-Up',b:'The ERC convenes the IASC Principals, who discuss the leadership model and coordination set-up. The ERC, as IASC Chair, takes the final decision on five criteria: scale, urgency, complexity, capacity, and the risk of failing to deliver effectively and at scale to affected people. A scale-up lasts up to six months, with one further three-month extension only in exceptional cases.',a:'This page found no published replacement for the 2018 scale-up protocol. UNHCR marks its own handbook entry on the protocol as outdated and under revision. What visibly changes is what follows: fewer clusters, sharper prioritisation and more authority for country leadership.',c:'Confidence: Medium. No revised protocol has been published; UNHCR’s summary of it is marked as under revision.',hl:'The scale-up system was created partly in response to Haiti. The IASC set up its system-wide emergency (L3) mechanism in 2012, following the Haiti earthquake and the Pakistan floods. Haiti was one of four activations reviewed in the IASC’s 2024 learning paper on scale-ups.'},
+ fr:{w:'Sous 48 heures',h:'L’ERC décide d’une montée en puissance',b:'L’ERC réunit les Principals de l’IASC, qui examinent le modèle de leadership et le dispositif de coordination. L’ERC, en tant que président de l’IASC, prend la décision finale sur la base de cinq critères : ampleur, urgence, complexité, capacités et risque de ne pas atteindre efficacement et à l’échelle les personnes affectées. Une montée en puissance dure six mois au plus, avec une seule prolongation de trois mois dans des cas exceptionnels.',a:'Cette page n’a trouvé aucun texte publié remplaçant le protocole de 2018. Le HCR signale sa propre fiche sur le protocole comme dépassée et en cours de révision. Ce qui change visiblement, c’est la suite : moins de clusters, une priorisation plus stricte et davantage d’autorité pour le leadership pays.',c:'Confiance : moyenne. Aucun protocole révisé n’a été publié ; la synthèse du HCR est signalée comme en cours de révision.',hl:'Le système de montée en puissance est né en partie de la réponse en Haïti. L’IASC a mis en place son mécanisme d’urgence à l’échelle du système (L3) en 2012, à la suite du séisme en Haïti et des inondations au Pakistan. Haïti fait partie des quatre activations examinées dans le document d’apprentissage de l’IASC de 2024.'},
+ src:['su','p1','unhcr','iahe']},
+{id:'leadership',at:.4,nodes:['hc','erc'],lines:['erc-hc'],badge:'hcB',
+ en:{w:'Days 3–5',h:'Leadership on the ground',b:'A Humanitarian Coordinator (HC) is designated or confirmed and leads the Humanitarian Country Team (HCT). The HC gets “empowered leadership” for the scale-up, and agencies deploy senior, experienced staff.',a:'Empowering country leadership is central to the Reset: decisions are decentralised and coordination structures are fitted to context. According to the Global Health Cluster, operations with an HC are being reduced from 28 to 20.'},
+ fr:{w:'Jours 3 à 5',h:'Le leadership sur le terrain',b:'Un Coordonnateur humanitaire (HC) est désigné ou confirmé et dirige l’Équipe humanitaire pays (HCT). Le HC dispose d’un « leadership renforcé » pendant la montée en puissance, et les agences déploient du personnel expérimenté.',a:'Renforcer le leadership pays est au cœur du Reset : décisions décentralisées, structures de coordination adaptées au contexte. Selon le Cluster Santé mondial, le nombre d’opérations dotées d’un HC est en cours de réduction, de 28 à 20.'},
+ src:['kog','tl','lead','hc']},
+{id:'clusters',at:.5,nodes:['hc','clusters'],lines:['hc-clusters'],
+ en:{w:'Days 3–5',h:'Clusters switch on',b:'Relevant clusters are activated. They are temporary structures, used when the government’s capacity to coordinate is limited. Before the Reset there were 11 clusters and four areas of responsibility.',a:'At global level the architecture is being reduced to eight clusters: Education, Food Security, Health, Nutrition, Protection, Land and Shelter, Services, and WASH. Protection absorbs its former areas of responsibility for child protection, gender-based violence and mine action. Land and Shelter joins shelter, camp coordination and housing, land and property. Services joins logistics and emergency telecommunications. Early recovery is to be transformed and linked to development and transition coordination. Formal IASC guidance on adapting this in-country came in March 2026.',c:'Names follow the June 2025 proposal to the Principals; lead agencies were left to be agreed. The Global Protection Cluster now uses “Shelter, Land and Site Coordination”.'},
+ fr:{w:'Jours 3 à 5',h:'Les clusters sont activés',b:'Les clusters pertinents sont activés. Ce sont des structures temporaires, utilisées lorsque la capacité de coordination de l’État est limitée. Avant le Reset : 11 clusters et quatre domaines de responsabilité.',a:'Au niveau mondial, l’architecture est ramenée à huit clusters : Éducation, Sécurité alimentaire, Santé, Nutrition, Protection, Terre et abri, Services, et Eau, assainissement et hygiène (EAH). La Protection intègre ses anciens domaines de responsabilité : protection de l’enfance, violences basées sur le genre et action contre les mines. Terre et abri réunit abris, coordination des camps et logement, terre et propriété. Services réunit logistique et télécommunications d’urgence. Le relèvement précoce doit être transformé et relié à la coordination du développement et de la transition. Les orientations formelles de l’IASC pour l’adaptation au niveau pays datent de mars 2026.',c:'Les intitulés suivent la proposition de juin 2025 aux Principals ; les agences chefs de file restaient à convenir. Le Cluster Protection mondial utilise désormais « Shelter, Land and Site Coordination ».'},
+ src:['clg','prop','gpc2','alnap2']},
+{id:'funding',at:.62,nodes:['funds','hc'],lines:['funds-hc'],
+ en:{w:'Day 3 to week 4',h:'Money and the plan',b:'The ERC announces a first allocation from the Central Emergency Response Fund (CERF). A Flash Appeal is developed within five days and revised within four weeks.',a:'Plans are hyper-prioritised. The 2026 Global Humanitarian Overview seeks USD 33 billion to assist 135 million people. Its hyper-prioritised core targets 87 million people in specific geographic areas, for USD 23 billion. Steps were also taken to expand pooled funds, including country-based pooled funds.'},
+ fr:{w:'Du jour 3 à la 4e semaine',h:'Les fonds et le plan',b:'L’ERC annonce une première allocation du Fonds central pour les interventions d’urgence (CERF). Un appel éclair est élaboré en cinq jours et révisé en quatre semaines.',a:'Les plans sont hyper-priorisés. L’Aperçu humanitaire mondial 2026 demande 33 milliards de dollars pour aider 135 millions de personnes. Son noyau hyper-priorisé cible 87 millions de personnes dans des zones géographiques précises, pour 23 milliards de dollars. Des mesures ont aussi été prises pour élargir les fonds communs, dont les fonds de financement pays.'},
+ src:['tl','unhcr','wfp','alnap3']},
+{id:'delivery',at:.75,nodes:['resp','clusters','hc'],lines:['resp-hc','clusters-crisis'],
+ en:{w:'Week 1 onward',h:'Who delivers what',b:'IASC members contribute according to their mandates. Cluster lead agencies are accountable for their sectors.',a:'In June 2026 the Principals endorsed the Humanitarian Complementarity Framework. WHO says it now directly dictates roles, mandates and funding allocations. The EU has asked for it to be implemented and monitored at field level. Common supply chains are being piloted under UN80.',c:'Confidence: Medium. The framework text itself was not found on the IASC website.',hl:'Haiti is one of five supply-chain pilot countries, with Afghanistan, the Occupied Palestinian Territory, Somalia and Sudan.'},
+ fr:{w:'À partir de la 1re semaine',h:'Qui fait quoi',b:'Les membres de l’IASC interviennent selon leur mandat. Les agences chefs de file répondent de leur secteur.',a:'En juin 2026, les Principals ont entériné le Cadre de complémentarité humanitaire. Selon l’OMS, il détermine désormais directement rôles, mandats et allocations de fonds. L’UE demande qu’il soit mis en œuvre et suivi sur le terrain. Des chaînes d’approvisionnement communes sont testées dans le cadre d’ONU80.',c:'Confiance : moyenne. Le texte du cadre n’a pas été trouvé sur le site de l’IASC.',hl:'Haïti fait partie des cinq pays pilotes pour la chaîne d’approvisionnement, avec l’Afghanistan, le Territoire palestinien occupé, la Somalie et le Soudan.'},
+ src:['who','eu','un80']},
+{id:'exit',at:1,nodes:['principals','crisis'],lines:['erc-principals'],
+ en:{w:'Up to 6 months',h:'Extend, deactivate, hand over',b:'The scale-up expires automatically after six months at most. In exceptional cases the EDG can recommend a single three-month extension. Clusters plan their transition and close as national capacity returns.',a:'Some transitions are being accelerated. In 2025 the EDG recommended, and the Principals endorsed, an accelerated transition in eight countries: Cameroon, Colombia, Eritrea, Iraq, Libya, Nigeria, Pakistan and Zimbabwe.'},
+ fr:{w:'Jusqu’à 6 mois',h:'Prolonger, désactiver, transmettre',b:'La montée en puissance expire automatiquement après six mois au plus. Dans des cas exceptionnels, l’EDG peut recommander une seule prolongation de trois mois. Les clusters préparent leur transition et ferment à mesure que les capacités nationales reviennent.',a:'Certaines transitions sont accélérées. En 2025, l’EDG a recommandé et les Principals ont approuvé une transition accélérée dans huit pays : Cameroun, Colombie, Érythrée, Irak, Libye, Nigeria, Pakistan et Zimbabwe.'},
+ src:['su','clg','nrc']}
+];
+const UI={
+ en:{skip:'Skip to content',logo:'Independent IASC explainer',c1:'IASC Overview',c2:'Humanitarian Reset',c3:'Anatomy of a Response',kick:'Interactive explainer · as of 27 November 2026',h1:'Anatomy of a response',lede:'Follow one sudden-onset crisis through the IASC system, from the first hours to the exit. Then switch to “After Reset” to see what the Humanitarian Reset, launched by the Emergency Relief Coordinator on 10 March 2025, has changed at each step.',mB:'Before Reset',mA:'After Reset',hint:'The scenario is generic. Times follow the IASC scale-up protocol (2018). Use the timeline dots, or the j and k keys, to move between steps.',cap1:'Functional overview, not reporting lines',cap2:'Timeline not to scale',scopeN:'Scope: the scale-up protocol covers sudden-onset crises and substantial deteriorations. It does not apply to refugee emergencies, which UNHCR leads under the Refugee Coordination Model.',sumH:'What the Reset changed, at a glance',sh1:'Topic',keep:'The Defend pillar covers humanitarian principles and humanitarian space.',cta1:'Read the Humanitarian Reset stocktake',cta2:'Back to the IASC Overview',srcH:'Sources',th1:'Claim',th2:'Source',th3:'Date',scope:'Every figure on this page comes from the source shown. Status of Reset measures changes often: verify with the IASC Secretariat before external use.',disc:'<strong>Independent explainer. Not an official IASC publication.</strong> Facts checked 27 November 2026. Companion to the IASC Overview and the Humanitarian Reset stocktake.',chg:'What the Reset changed',haiti:'Haiti lens',src:'Sources',cl0:'11 clusters + 4 areas of responsibility',cl1:'8 clusters',
+  n:{crisis:['Affected country','National authorities and local actors'],erc:['ERC','Emergency Relief Coordinator'],edg:['EDG','Emergency Directors'],principals:['Principals','19 heads of entities'],hc:['HC and HCT','Country leadership'],funds:['Funding','CERF and pooled funds'],resp:['Responders','UN, NGOs, local actors'],clusters:['Clusters','']},tG:'Global',tC:'Country',tF:'Field',hcB:'HC operations 28 → 20'},
+ fr:{skip:'Aller au contenu',logo:'Explication indépendante de l’IASC',c1:'Présentation de l’IASC',c2:'Reset humanitaire',c3:'Anatomie d’une réponse',kick:'Explication interactive · au 27 novembre 2026',h1:'Anatomie d’une réponse',lede:'Suivez une crise soudaine à travers le système de l’IASC, des premières heures jusqu’à la sortie. Passez ensuite à « Après le Reset » pour voir ce que le Reset humanitaire, lancé par le Coordonnateur des secours d’urgence le 10 mars 2025, a changé à chaque étape.',mB:'Avant le Reset',mA:'Après le Reset',hint:'Le scénario est générique. Les délais suivent le protocole de montée en puissance de l’IASC (2018). Utilisez les points de la frise, ou les touches j et k, pour passer d’une étape à l’autre.',cap1:'Vue fonctionnelle, pas une hiérarchie',cap2:'Frise chronologique non à l’échelle',scopeN:'Champ : le protocole de montée en puissance couvre les crises soudaines et les dégradations importantes. Il ne s’applique pas aux urgences de réfugiés, que le HCR dirige selon le Modèle de coordination pour les réfugiés.',sumH:'Ce que le Reset a changé, en bref',sh1:'Thème',keep:'Le pilier Defend couvre les principes humanitaires et l’espace humanitaire.',cta1:'Lire le bilan du Reset humanitaire',cta2:'Retour à la présentation de l’IASC',srcH:'Sources',th1:'Affirmation',th2:'Source',th3:'Date',scope:'Chaque chiffre de cette page provient de la source indiquée. L’état des mesures du Reset évolue souvent : vérifier auprès du Secrétariat de l’IASC avant tout usage externe.',disc:'<strong>Explication indépendante. Pas une publication officielle de l’IASC.</strong> Faits vérifiés le 27 novembre 2026. Complément de la présentation de l’IASC et du bilan du Reset humanitaire.',chg:'Ce que le Reset a changé',haiti:'Focus Haïti',src:'Sources',cl0:'11 clusters + 4 domaines de responsabilité',cl1:'8 clusters',
+  n:{crisis:['Pays affecté','Autorités nationales et acteurs locaux'],erc:['ERC','Coordonnateur des secours'],edg:['EDG','Directeurs des urgences'],principals:['Principals','19 responsables d’entités'],hc:['HC et HCT','Leadership pays'],funds:['Financement','CERF et fonds communs'],resp:['Intervenants','ONU, ONG, acteurs locaux'],clusters:['Clusters','']},tG:'Mondial',tC:'Pays',tF:'Terrain',hcB:'Opérations avec HC : 28 → 20'}
+};
+const LAY={
+ wide:{vb:'0 0 600 560',N:{erc:[300,92,196,58],edg:[100,92,170,58],principals:[500,92,170,58],hc:[300,236,170,58],funds:[510,236,170,58],resp:[90,236,170,58],crisis:[300,500,260,58]},
+  g:{cx:300,y0:318,big:30,gap:8,small:20,sgap:8,lbl:440},tiers:[40,186,470],badge:[300,284,200,26]},
+ narrow:{vb:'0 0 340 300',N:{erc:[170,36,96,36],edg:[56,36,96,36],principals:[284,36,96,36],hc:[170,108,110,36],funds:[290,108,90,36],resp:[50,108,90,36],crisis:[170,272,210,36]},
+  g:{cx:170,y0:150,big:18,gap:6,small:12,sgap:6,lbl:232},tiers:null,badge:[170,138,190,20]}};
+let LY=LAY.wide,N=LY.N;
+const L={'edg-erc':['edg','erc'],'erc-principals':['erc','principals'],'erc-hc':['erc','hc'],'funds-hc':['funds','hc'],'resp-hc':['resp','hc'],'hc-clusters':['hc','clusters'],'clusters-crisis':['clusters','crisis']};
+function cellPos(i,after){const g=LY.g;
+  if(after){const c=i%4,r=Math.floor(i/4),st=g.big+g.gap;return[g.cx-(4*st-g.gap)/2+c*st,g.y0+r*st+st/2,g.big]}
+  if(i<11){const c=i%6,r=Math.floor(i/6),st=g.big+g.gap;return[g.cx-(6*st-g.gap)/2+c*st,g.y0+r*st,g.big]}
+  const c=i-11,st=g.small+g.sgap;return[g.cx-(4*st-g.sgap)/2+c*st,g.y0+2*(g.big+g.gap),g.small]}
+let lang='en',mode='before',cur=0;
+const $=s=>document.querySelector(s),esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const svg=$('#map'),NS='http://www.w3.org/2000/svg';
+function edge(a,b){const A=N[a],g=LY.g;
+  if(b==='clusters')return`M${A[0]} ${A[1]+A[3]/2} V ${g.y0-6}`;
+  if(a==='clusters'){const B=N[b];return`M${g.cx} ${g.lbl+8} V ${B[1]-B[3]/2}`}
+  const B=N[b];
+  if(A[1]===B[1]){const s=B[0]>A[0]?1:-1;return`M${A[0]+s*A[2]/2} ${A[1]} H ${B[0]-s*B[2]/2}`}
+  return`M${A[0]} ${A[1]+A[3]/2} V ${B[1]-B[3]/2}`}
+function drawMap(){const u=UI[lang],nar=LY===LAY.narrow;let h='';
+  svg.setAttribute('viewBox',LY.vb);svg.classList.toggle('nar',nar);
+  if(LY.tiers){const[a,b,c]=LY.tiers;h+=`<text class="tier" x="20" y="${a}">${esc(u.tG)}</text><text class="tier" x="20" y="${b}">${esc(u.tC)}</text><text class="tier" x="20" y="${c}">${esc(u.tF)}</text>`}
+  for(const k in L){const[a,b]=L[k];h+=`<path class="ln" data-l="${k}" d="${edge(a,b)}"/>`}
+  for(const k in N){const[x,y,w,hh]=N[k],[t,s]=u.n[k];
+    h+=`<g class="nd" data-n="${k}"><rect x="${x-w/2}" y="${y-hh/2}" width="${w}" height="${hh}" rx="4"/>`+(nar?`<text x="${x}" y="${y+5}">${esc(t)}</text>`:`<text x="${x}" y="${y-3}">${esc(t)}</text><text class="sub" x="${x}" y="${y+16}">${esc(s)}</text>`)+`</g>`}
+  h+=`<g id="clG">`;
+  for(let i=0;i<15;i++){const[x,y,sz]=cellPos(i,false);h+=`<g class="cl" data-i="${i}"><rect x="${x}" y="${y}" width="${sz}" height="${sz}" rx="3"/><title></title></g>`}
+  h+=`<text class="tier" x="${LY.g.cx}" y="${LY.g.lbl}" text-anchor="middle" id="clLbl"></text></g>`;
+  const[bx,by,bw,bh]=LY.badge;
+  h+=`<g class="badge" id="hcB" opacity="0"><rect x="${bx-bw/2}" y="${by-bh/2}" width="${bw}" height="${bh}" rx="${bh/2}"/><text x="${bx}" y="${by+4.5}">${esc(u.hcB)}</text></g>`;
+  svg.innerHTML=h;
+  let r='<div class="track"></div><div class="fill" id="fill"></div>';
+  STEPS.forEach((s,i)=>{r+=`<button class="dot" style="left:${s.at*100}%" data-i="${i}" aria-label="${esc((i+1)+'. '+s[lang].h)}"></button>`});
+  const lab=lang==='en'?[['0',0],['48 h',.32],['Day 5',.6],['6 months',1]]:[['0',0],['48 h',.32],['Jour 5',.6],['6 mois',1]];
+  lab.forEach(([t,p])=>{r+=`<span style="left:${p*100}%">${esc(t)}</span>`});
+  $('#rail').innerHTML=r}
+function renderSteps(){const u=UI[lang];
+  $('#steps').innerHTML=STEPS.map((s,i)=>{const c=s[lang];return`<article class="step" id="step-${i+1}" data-i="${i}" aria-labelledby="h-${i}">
+   <p class="when">${esc(c.w)}</p><h2 id="h-${i}">${esc(c.h)}</h2><p>${esc(c.b)}</p>
+   <div class="change after"><b>${esc(u.chg)}</b>${esc(c.a)}</div>
+   ${c.hl?`<p class="haiti${s.id==='scale-up'?'':' after'}"><b>${esc(u.haiti)}.</b> ${esc(c.hl)}</p>`:''}
+   ${c.c?`<p class="conf after">${esc(c.c)}</p>`:''}
+   <div class="chips" aria-label="${esc(u.src)}">${s.src.map(k=>`<a href="${esc(S[k].u)}" rel="noopener" target="_blank">${esc(S[k].t)}</a>`).join('')}</div></article>`}).join('');
+  observe()}
+const SUM={en:[['Organising frame','—','Four core pillars (Define, Deliver, Devolve, Defend), plus Enable'],['Clusters','11 clusters and 4 areas of responsibility','8 clusters at global level'],['Operations with a Humanitarian Coordinator','28','20 (being reduced)'],['Division of labour','Each agency by its mandate','Humanitarian Complementarity Framework (June 2026)'],['Exit','Expires after 6 months; one 3-month extension in exceptional cases','Accelerated transition in 8 countries']],
+ fr:[['Cadre d’ensemble','—','Quatre piliers principaux (Define, Deliver, Devolve, Defend), plus Enable'],['Clusters','11 clusters et 4 domaines de responsabilité','8 clusters au niveau mondial'],['Opérations dotées d’un Coordonnateur humanitaire','28','20 (réduction en cours)'],['Répartition des rôles','Chaque agence selon son mandat','Cadre de complémentarité humanitaire (juin 2026)'],['Sortie','Expire après 6 mois ; une prolongation de 3 mois dans des cas exceptionnels','Transition accélérée dans 8 pays']]};
+function renderSum(){$('#sumT').innerHTML=SUM[lang].map(r=>`<tr>${r.map(c=>`<td>${esc(c)}</td>`).join('')}</tr>`).join('')}
+function renderSrc(){const rows=[[lang==='en'?'Scope: refugee emergencies':'Champ : urgences de réfugiés','unhcr']];STEPS.forEach(s=>s.src.forEach(k=>rows.push([s[lang].h,k])));
+  $('#srcT').innerHTML=rows.map(([h,k])=>`<tr><td>${esc(h)}</td><td><a href="${esc(S[k].u)}" rel="noopener" target="_blank">${esc(S[k].t)}</a></td><td style="white-space:nowrap">${esc(S[k].d)}</td></tr>`).join('')}
+function paint(){const s=STEPS[cur],after=mode==='after';
+  document.querySelectorAll('.step').forEach(e=>e.classList.toggle('on',+e.dataset.i===cur));
+  document.querySelectorAll('.nd').forEach(g=>g.classList.toggle('on',s.nodes.includes(g.dataset.n)));
+  document.querySelectorAll('.ln').forEach(p=>p.classList.toggle('on',s.lines.includes(p.dataset.l)));
+  const clG=$('#clG');clG.classList.toggle('clOn',s.nodes.includes('clusters'));
+  document.querySelectorAll('.cl').forEach(g=>{const i=+g.dataset.i,[x,y]=cellPos(i,after&&i<8),r=g.firstChild;g.lastChild.textContent=after&&i<8?CL[lang][i]:'';g.classList.toggle('gone',after&&i>=8);r.style.x=x+'px';r.style.y=y+'px'});
+  const lbl=after?UI[lang].cl1:UI[lang].cl0;$('#clLbl').textContent=lbl;
+  $('#hcB').setAttribute('opacity',after&&s.badge?'1':'0');
+  $('#fill').style.width=s.at*100+'%';
+  document.querySelectorAll('.rail .dot').forEach(e=>{e.classList.toggle('past',STEPS[+e.dataset.i].at<=s.at);e.setAttribute('aria-current',+e.dataset.i===cur?'step':'false')});
+  $('#live').textContent=(lang==='en'?'Step ':'Étape ')+(cur+1)+' / '+STEPS.length+' : '+s[lang].h+(after?(lang==='en'?' (after Reset)':' (après le Reset)'):'')}
+let io;
+function observe(){if(io)io.disconnect();io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){cur=+e.target.dataset.i;paint();try{history.replaceState(null,'','#step-'+(cur+1))}catch(_){}}})},{rootMargin:'-45% 0px -45% 0px'});
+  document.querySelectorAll('.step').forEach(e=>io.observe(e))}
+function applyUI(){const u=UI[lang];document.documentElement.lang=lang;
+  document.querySelectorAll('[data-t]').forEach(e=>{const v=u[e.dataset.t];if(v==null)return;if(e.dataset.t==='disc')e.innerHTML=v;else e.textContent=v});
+  document.title=u.c3}
+function pickLayout(){const n=svg.clientWidth<520?LAY.narrow:LAY.wide;if(n===LY)return false;LY=n;N=LY.N;return true}
+function all(){applyUI();pickLayout();drawMap();renderSteps();renderSum();renderSrc();paint()}
+document.querySelectorAll('.lang button').forEach(b=>b.addEventListener('click',()=>{lang=b.dataset.lang;document.querySelectorAll('.lang button').forEach(x=>x.setAttribute('aria-pressed',x===b));const keep=cur;all();cur=keep;paint();const el=document.getElementById('step-'+(keep+1));if(el)el.scrollIntoView({block:'center'})}));
+document.querySelectorAll('.mode button').forEach(b=>b.addEventListener('click',()=>{mode=b.dataset.mode;document.querySelectorAll('.mode button').forEach(x=>x.setAttribute('aria-pressed',x===b));document.body.dataset.mode=mode;paint()}));
+document.getElementById('rail').addEventListener('click',e=>{const b=e.target.closest('.dot');if(!b)return;document.getElementById('step-'+(+b.dataset.i+1)).scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'center'})});
+document.addEventListener('keydown',e=>{if(e.target.closest('input,textarea'))return;const k=e.key;
+  if(k==='j'||k==='k'){const n=Math.max(0,Math.min(STEPS.length-1,cur+(k==='j'?1:-1)));document.getElementById('step-'+(n+1)).scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'center'})}
+  if(k==='b'){(mode==='before'?document.querySelector('[data-mode=after]'):document.querySelector('[data-mode=before]')).click()}});
+all();
+const ro=new ResizeObserver(()=>{if(pickLayout()){drawMap();paint()}});ro.observe(svg);
+const m=/^#step-(\d+)$/.exec(location.hash);if(m){const el=document.getElementById('step-'+m[1]);if(el)addEventListener('load',()=>setTimeout(()=>el.scrollIntoView({block:'center'}),100))}
+}
+</script>
+</body>
+</html>
