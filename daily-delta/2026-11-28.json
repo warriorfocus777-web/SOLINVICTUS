@@ -1,0 +1,38 @@
+{
+  "date": "2026-11-28",
+  "candidates": [
+    {
+      "title": "Haiti gang suppression force says it has killed multiple gang members",
+      "originator": "UN-backed Gang Suppression Force (GSF) statement and released footage, via wire agencies",
+      "publisher": "Africanews",
+      "date": "24.11.2026",
+      "url": "https://www.africanews.com/2026/11/24/haiti-gang-suppression-force-says-it-has-killed-multiple-gang-members/",
+      "lang": "en",
+      "desk_hint": ["cadre22", "cadre509"],
+      "cell_hint": ["pnh", "casualty"],
+      "why_new": "Reports two specific, dated GSF-attributed operations not matched in the known-URL corpus: a clash on the Marassa Bridge (Tabarre-Croix-des-Bouquets corridor, 400 Mawozo territory) that the force says killed at least six suspected gang members and seized five rifles, and a separate raid on a hideout/weapons cache in Cite Soleil (no casualty figure given for that one). Also references the ongoing Martissant toll (70+ reportedly killed in recent fighting there) and the three Salvadoran soldier deaths as context. Bears on cadre22's PNH/GSF operational-tempo subject and cadre509's casualty cell; the already-known 19.11 'heavy fighting' piece covers a different, earlier clash."
+    },
+    {
+      "title": "Haiti: More than 1,000 killed between July and September, UN report reveals",
+      "originator": "BINUH (UN Integrated Office in Haiti) Q3 2026 human rights report; statement by SRSG Carlos Ruiz Massieu",
+      "publisher": "UN News",
+      "date": "12.11.2026",
+      "url": "https://news.un.org/en/story/2026/11/1168789",
+      "lang": "en",
+      "desk_hint": ["cadre509", "cadre7"],
+      "cell_hint": ["casualty", "pnh", "command"],
+      "why_new": "Covers the same BINUH Q3 2026 report whose topline aggregate figures (44 PNH extrajudicial-execution cases vs 14 the prior quarter; roughly half of Q3 deaths occurring in security-force operations) already appear in the corpus via a different secondary source staged 25.11. This primary UN News account adds specific incident-level breakdowns not yet staged: two Kenscoff attacks in July/August (at least 105 dead including 19 children, 36+ shot in a church courtyard), an early-August Cite Soleil beheading of at least 19 people (12 elderly women), 344 documented sexual-violence victims, 137 ransom kidnappings, and 32 forcibly recruited boys killed fighting security forces in Gressier -- all bearing on cadre509's casualty cell. Also states BINUH's position that the GSF 'has yet to be fully deployed' and calls for full deployment 'in accordance with international human rights standards,' plus a reference to a private military company's drone-supported operations -- relevant to cadre7's command-clarity cell."
+    },
+    {
+      "title": "Haiti: Kenscoff violence highlights continued risk of killing, abduction and other abuses against children by gangs - new research",
+      "originator": "Amnesty International (new research release)",
+      "publisher": "Amnesty International",
+      "date": "approx. 11.2026 (exact date unconfirmed -- see note)",
+      "url": "https://www.amnesty.org/en/latest/news/2026/11/haiti-kenscoff-violence-highlights-continued-risk-of-killing-abduction-and-other-abuses-against-children-by-gangs-new-research/",
+      "lang": "en",
+      "desk_hint": ["cadre509"],
+      "cell_hint": ["casualty"],
+      "why_new": "New Amnesty International research specifically on Kenscoff gang violence against children (killing and abduction risk), URL not in the known-URL corpus. NOTE: the page could not be fetched in this run (automated-access permission request to amnesty.org went unanswered, as expected for an unattended scheduled run), so this entry is staged from the search-result title/URL only, not a read of the full text -- a human reviewer should open it directly to confirm date and figures before use."
+    }
+  ]
+}
